@@ -78,7 +78,7 @@ function Service2() {
                         </div>
                     </div>
                 </section>
-                <section className="section-box mt-90">
+                <section id="branding" className="section-box mt-90">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-2 col-sm-1 col-12" />

@@ -12,7 +12,8 @@ function Signup() {
                     <div className="bg-6-opacity-30 pt-90">
                         <div className="container">
                             <div className="box-signup">
-                                <h1 className="text-heading-3 mb-50 text-center">Let’s join us</h1>
+                                <h1 className="text-heading-3 mb-50 text-center">Partner With Us</h1>
+                                <p className="text-body-lead-large color-gray-600 mt-60">Sign up and let us help with your next project manifestation or evolution.</p>
                                 <Link href="/#"><a className="btn btn-login-google color-gray-500 text-heading-6 box-shadow-2"><img className="img-responsive img-middle mr-10" src="assets/imgs/template/icons/Icon-gg-login.svg" alt="Agon" /> Sign up with Google</a></Link>
 
                                 <div className="text-center">
