@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import Layout from "../components/layout/Layout";
-import data from "../util/shopData";
+import Layout from "../../components/layout/Layout";
+import data from "../../util/shopData";
+
 function ShopFrid1() {
   return (
     <>

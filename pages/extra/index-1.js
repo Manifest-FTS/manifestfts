@@ -3,10 +3,10 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState } from "react";
-import PriceTable2 from "../components/elements/PriceTable2";
-import Layout from "../components/layout/Layout";
-import OfferSlider from "../components/slider/Offer";
-import TestimonialSlider from "../components/slider/Testimonial";
+import PriceTable2 from "../../components/elements/PriceTable2";
+import Layout from "../../components/layout/Layout";
+import OfferSlider from "../../components/slider/Offer";
+import TestimonialSlider from "../../components/slider/Testimonial";
 const ModalVideo = dynamic(import("react-modal-video"), {
     ssr: false,
 });

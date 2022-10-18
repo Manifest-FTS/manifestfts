@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import Layout from "../components/layout/Layout";
-import FeaturedSlider from "../components/slider/Featured";
+import Layout from "../../components/layout/Layout";
+import FeaturedSlider from "../../components/slider/Featured";
 
 
 function Index5() {

@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import Accordion from "../components/elements/Accordion";
-import Layout from "../components/layout/Layout";
-import TestimonialSlider from "../components/slider/Testimonial";
+import Accordion from "../../components/elements/Accordion";
+import Layout from "../../components/layout/Layout";
+import TestimonialSlider from "../../components/slider/Testimonial";
 
 
 function About2() {
