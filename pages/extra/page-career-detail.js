@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState } from "react";
 import 'react-modal-video/css/modal-video.css';
-import Layout from "../components/layout/Layout";
+import Layout from "../../components/layout/Layout";
 const ModalVideo = dynamic(import("react-modal-video"), {
     ssr: false,
 });

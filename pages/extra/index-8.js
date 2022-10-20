@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import Layout from "../components/layout/Layout";
-import TestimonialSlider from "../components/slider/Testimonial";
+import Layout from "../../components/layout/Layout";
+import TestimonialSlider from "../../components/slider/Testimonial";
 function Index8() {
   return (
     <>

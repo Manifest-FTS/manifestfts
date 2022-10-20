@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import PriceTable from "../components/elements/PriceTable";
-import Layout from "../components/layout/Layout";
+import PriceTable from "../../components/elements/PriceTable";
+import Layout from "../../components/layout/Layout";
 
 
 function Index2() {

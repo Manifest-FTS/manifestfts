@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import Layout from "../components/layout/Layout";
-import BlogSlider from "../components/slider/Blog";
+import Layout from "../../components/layout/Layout";
+import BlogSlider from "../../components/slider/Blog";
 
 
 function Blog1() {

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import Accordion from "../components/elements/Accordion";
-import Layout from "../components/layout/Layout";
+import Accordion from "../../components/elements/Accordion";
+import Layout from "../../components/layout/Layout";
 
 function Faq1() {
   
