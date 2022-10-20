@@ -23,11 +23,7 @@ function Index3() {
                         <div className="container">
                             <div className="text-center">
                                 <h1 className="text-display-2 color-gray-900 mt-40">Forward thinking<br className="d-lg-block d-none" /> solutions</h1>
-                                <div className="text-body-lead-large color-gray-600 mt-60">We harness innovative software<br className="d-lg-block d-none" />to provide your performant digital experiences.</div>
-                                <div className="mt-60">
-                                    <Link href="/get-started"><a className="btn btn-black icon-arrow-right-white mb-15">Get Started</a></Link>
-                                    <Link href="/capabilities"><a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-15">Our Capabilities</a></Link>
-                                </div>
+                                <div className="text-body-lead-large color-gray-600 mt-60">We harness innovative software<br className="d-lg-block d-none" />to craft valuable digital experiences.</div>
                             </div>
                         </div>
                     </div>
@@ -38,50 +34,86 @@ function Index3() {
                         <h2 className="text-heading-6 text-center color-gray-900 mb-60">Powered by the Best Software on Earth</h2>
                         <div className="row">
                             <div className="col-lg-12">
-                                <ul className="list-partners">
+                                <ul className="list-partners border-0 pb-0">
                                     <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-1.svg" />
+                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Adobe" src="assets/imgs/logos/adobe.svg" />
                                         </a></Link>
-                                    </li>                                        <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-2.svg" />
+                                    </li>  
+                                    <li>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Figma Vector Logo" src="assets/imgs/logos/figma.svg" />
                                         </a></Link>
-                                    </li>                                        <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-3.svg" />
+                                    </li> 
+                                    <li>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Netlify CMS Vector Logo" src="assets/imgs/logos/netlifycms.svg" />
                                         </a></Link>
-                                    </li>                                        <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-4.svg" />
+                                    </li> 
+                                    <li>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Wordpress CMS Vector Logo" src="assets/imgs/logos/wordpress.svg" />
                                         </a></Link>
-                                    </li>                                        <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-5.svg" />
+                                    </li>
+                                    <li>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Strapi CMS Vector Logo" src="assets/imgs/logos/strapi.svg" />
                                         </a></Link>
-                                    </li>                                        <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-6.svg" />
+                                    </li> 
+                                    <li>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Sanity CMS Vector Logo" src="assets/imgs/logos/sanity.svg" />
                                         </a></Link>
-                                    </li>                                        <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-7.svg" />
+                                    </li>
+                                    <li>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="React.js Vector Logo" src="assets/imgs/logos/reactjs.svg" />
                                         </a></Link>
-                                    </li>                                        <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-8.svg" />
+                                    </li>
+                                    <li>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Next.js" src="assets/imgs/logos/nextjs.svg" />
                                         </a></Link>
-                                    </li>                                        <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-9.svg" />
+                                    </li>                                        
+                                    <li>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="TailwindCSS" src="assets/imgs/logos/tailwindcss.svg" />
                                         </a></Link>
-                                    </li>                                    
+                                    </li>        
+                                    <li>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="HTML5 Vector Logo" src="assets/imgs/logos/html5.svg" />
+                                        </a></Link>
+                                    </li>   
+                                    <li> 
+                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Bootstrap Vector Logo" src="assets/imgs/logos/bootstrap.svg" />
+                                        </a></Link>
+                                    </li>   
+                                    <li>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Netlify Vector Logo" src="assets/imgs/logos/netlify.svg" />
+                                        </a></Link>
+                                    </li>   
+                                    <li>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Pantheon" src="assets/imgs/logos/pantheon.svg" />
+                                        </a></Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Vercel Vector Logo" src="assets/imgs/logos/vercel.svg" />
+                                        </a></Link>
+                                    </li>   
+                                    <li>  
+                                        <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Heroku Vector Logo" src="assets/imgs/logos/heroku.svg" />
+                                        </a></Link>
+                                    </li>                            
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
+            
 
                 <section className="section-box">
                     <div className="section-box mt-70">
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-1" />
-                                <div className="col-lg-10">
-                                    <div className="box-image">
-                                            <a className="popup-youtube btn-play-video btn-play-middle" onClick={() => setOpen(true)}></a>
-                                        <img className="img-responsive bdrd-16" src="assets/imgs/page/homepage3/img-banner-video.png" alt="Agon" /></div>
+                                    <div className="col-lg-10">
+                                        <div className="d-flex p-40 justify-content-center">
+                                            <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Software Solutions</span>
+                                        </div>
+                                        <div className="box-image">
+                                            <img className="img-responsive bdrd-16 shadow" src="assets/imgs/sanitycms.gif" alt="Sanity CMS" />
+                                        </div>
                                 </div>
                                 <div className="col-lg-1" />
                             </div>
@@ -92,8 +124,8 @@ function Index3() {
                             <div className="row">
                                 <div className="col-lg-1 col-sm-1 col-12" />
                                 <div className="col-lg-10 col-sm-10 col-12 text-center">
-                                    <h2 className="text-heading-1 color-gray-900 mb-10">We harness innovation</h2>
-                                    <p className="text-body-lead-large color-gray-600 mt-20">Manifest is a creative digital agency that offers branding, design, and innovative web technology to forward thinking businesses and brands. Our forward-thinking approach leverages thoughful creativity and cutting-edge software and technology to give value-rich experiences to our parters.</p>
+                                    <h2 className="text-heading-1 color-gray-900 mb-10">A CMS that allures you<br/>to edit content</h2>
+                                    <p className="text-body-lead-large color-gray-600 mt-20">Sanity has a long list of technical benefits. The ease of editing provides a rich experience and long-lasting value to our clients.</p>
                                 </div>
                                 <div className="col-lg-1 col-sm-1 col-12" />
                             </div>
@@ -102,31 +134,37 @@ function Index3() {
                             <div className="row">
                                 <div className="col-lg-4 col-md-12 col-sm-12">
                                     <div className="list-icons mt-50">
-                                        <div className="item-icon"><span className="icon-left"><img src="/assets/imgs/page/homepage2/icon-acquis.svg" alt="Branding" /></span>
-                                            <h4 className="text-heading-4">Branding</h4>
-                                            <p className="text-body-text color-gray-600 mt-15">Manifest your ideas or evolve your current brand through customer awareness and loyalty achieved with inspired design and strategy.</p>
+                                        <div className="item-icon border-0">
+                                            <h4 className="text-heading-4">Real-Time Collaboration</h4>
+                                            <p className="text-body-text color-gray-600 mt-15">Track changes with live multi-user editing, visual cues, and communication tools.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-lg-4 col-md-12 col-sm-12">
                                     <div className="list-icons mt-50">
-                                        <div className="item-icon"><span className="icon-left"><img src="/assets/imgs/page/homepage2/icon-active.svg" alt="Design" /></span>
-                                            <h4 className="text-heading-4">Design</h4>
-                                            <p className="text-body-text color-gray-600 mt-15">Offer consistently beautiful experiences across digital and print media with thoughtfully crafted design.
-    </p>
+                                        <div className="item-icon border-0">
+                                            <h4 className="text-heading-4">Content First Experience</h4>
+                                            <p className="text-body-text color-gray-600 mt-15">An inituive administrative interface with no software to manage means you're never blocked from editing content.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-lg-4 col-md-12 col-sm-12">
                                     <div className="list-icons mt-50">
-                                        <div className="item-icon"><span className="icon-left"><img src="/assets/imgs/page/homepage2/icon-retent.svg" alt="Software" /></span>
-                                            <h4 className="text-heading-4">Software</h4>
-                                            <p className="text-body-text color-gray-600 mt-15">Reach customers near and far by leveraging cutting-edge software solutions for mobile and web applications.</p>
+                                        <div className="item-icon border-0">
+                                            <h4 className="text-heading-4">Powerful Solution</h4>
+                                            <p className="text-body-text color-gray-600 mt-15">It's powerful API allows manifestation of dynamic relational systems and ecommerce platforms.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </section>
+
+                <section className="section-box pt-100 pb-100 mt-100 bg-green-900">
+                    <div className="d-flex justify-content-center">
+                        <Link href="/get-started"><a className="btn btn-black icon-arrow-right-white mb-15">Get Started</a></Link>
+                        <Link href="/capabilities"><a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-15">Our Capabilities</a></Link>
                     </div>
                 </section>
 
@@ -138,30 +176,30 @@ function Index3() {
                                 <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Design</span>
                                 <span className="tag-1 bg-6 color-green-900 px-4 py-2 rounded-md">Development</span>
                                 <h3 className="text-heading-1 mt-30">Newark Thrives</h3>
-                                <p className="text-body-lead-large color-gray-600 mt-30">UI/UX Design, Digital Strategy, Progressive Web Application Software Development</p>
-                                <div className="line-bd-green mt-50" />
+                                <p className="text-body-lead-large color-gray-600 mt-30">UI/UX Design, Digital Strategy, Progressive Web Application Development</p>
+                                <Link href="https://newark-thrives.us.org" target="_blank"><a className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a></Link>
                                 <div className="row">
                                     <div className="col-12 mt-50">
                                         <h2 className="text-heading-7 text-center color-gray-900 mb-10">Powered by</h2>
-                                        <ul className="list-partners">
+                                        <ul className="list-partners border-0">
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Adobe" src="assets/imgs/logos/adobe.png" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Adobe" src="assets/imgs/logos/adobe.svg" />
                                                 </a></Link>
                                             </li>  
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Bootstrap" src="assets/imgs/logos/tailwindcss.png" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Bootstrap" src="assets/imgs/logos/tailwindcss.svg" />
                                                 </a></Link>
                                             </li>
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Strapi CMS" src="assets/imgs/logos/strapi.png" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Strapi CMS" src="assets/imgs/logos/strapi.svg" />
                                                 </a></Link>
                                             </li>
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Next.js" src="assets/imgs/logos/nextjs.png" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Next.js" src="assets/imgs/logos/nextjs.svg" />
                                                 </a></Link>
                                             </li>
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Vercel" src="assets/imgs/logos/vercel.png" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Vercel" src="assets/imgs/logos/vercel.svg" />
                                                 </a></Link>
                                             </li>                              
                                         </ul>
@@ -172,56 +210,7 @@ function Index3() {
                     </div>
                 </section>
                 
-                <section className="section-box">
-                    <div className="container mt-100">
-                        <div className="row">
-                            <div className="col-lg-8">
-                                <h3 className="text-heading-1 mb-10">Research & News</h3>
-                                <p className="text-body-lead-large color-gray-600">The latest from our blog.</p>
-                            </div>
-                            <div className="col-lg-4 text-lg-end text-start pt-30">
-                                <Link href="/blog"><a className="btn btn-black icon-arrow-right-white">View More
-                                </a></Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="container mt-90">
-                        <div className="row">
-                            <div className="col-lg-4 col-sm-12 pr-30 mb-50">
-                                <div className="card-grid-style-4"><span className="tag-dot">Our Partners</span>
-                                    <Link href="/blog-single"><a className="text-heading-4">Explore North Carolina Waterfalls</a></Link>
-
-                                    <div className="grid-4-img color-bg-5">
-                                        <Link href="/blog-single"><a><img src="/assets/imgs/blog/partner-explore-north-carolina-waterfalls.jpg" alt="Agon" />
-                                        </a></Link>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-sm-12 pr-30 mb-50">
-                                <div className="card-grid-style-4"><span className="tag-dot">Software Solutions</span>
-                                    <Link href="/blog-single"><a className="text-heading-4">The Benefits of Choosing a Headless CMS
-                                    </a></Link>
-
-                                    <div className="grid-4-img color-bg-5">
-                                        <Link href="/blog-single"><a><img src="/assets/imgs/page/homepage1/img-news-2.png" alt="Agon" />
-                                        </a></Link>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-sm-12 pr-30 mb-50">
-                                <div className="card-grid-style-4"><span className="tag-dot">Software Solutions</span>
-                                    <Link href="/blog-single"><a className="text-heading-4">Our Preferred Headless CMS and API</a></Link>
-
-                                    <div className="grid-4-img color-bg-5">
-                                        <Link href="/blog-single"><a><img src="/assets/imgs/page/homepage1/img-news-3.png" alt="Agon" />
-                                        </a></Link>
-                                    </div>
-                                </div>
-                            </div>
-                       
-                        </div>
-                    </div>
-                </section>
+               
                 
                 <FormProject/>
 

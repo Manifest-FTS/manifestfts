@@ -13,8 +13,8 @@ const Footer = () => {
                             <h4 className="text-heading-5">Manifest</h4>
                             <ul className="menu-footer mt-20">
                                 <li>
-                                    <Link href="/about-us">
-                                        <a>About Us</a>
+                                    <Link href="/about">
+                                        <a>About</a>
                                     </Link>
                                 </li>
                                 <li>
@@ -69,7 +69,7 @@ const Footer = () => {
                                                     <Link href="/capabilities#design"><a>Design</a></Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/capabilities#development"><a>Web Applications</a></Link>
+                                                    <Link href="/capabilities#software"><a>Software</a></Link>
                                                 </li>
                             </ul>
                         </div>
