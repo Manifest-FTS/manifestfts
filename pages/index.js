@@ -29,6 +29,8 @@ function Index3() {
                     </div>
                 </section>
 
+                
+
                 <div className="section-box overflow-visible mt-80">
                     <div className="container">
                         <h2 className="text-heading-6 text-center color-gray-900 mb-60">Powered by the Best Software on Earth</h2>
@@ -100,6 +102,54 @@ function Index3() {
                         </div>
                     </div>
                 </div>
+
+                <section className="section-box">
+                    <div className="container mt-120">
+                        <div className="row">
+                            <div className="col-lg-6 col-sm-12 block-img-we-do"><img className="bdrd-16 img-responsive" src="assets/imgs/work/work-newark-thrives.png" alt="Newark Thrives" /></div>
+                            <div className="col-lg-6 col-sm-12 block-we-do">
+                                <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Our Work</span>
+                                <h3 className="text-heading-1 mt-30">Newark Thrives</h3>
+                                <p className="text-body-lead-large color-gray-600 mt-30">UI/UX Design, Digital Strategy, Progressive Web Application Development</p>
+                                <Link href="https://newark-thrives.us.org" target="_blank"><a className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a></Link>
+                                <div className="row">
+                                    <div className="col-12 mt-50">
+                                        <h2 className="text-heading-7 text-center color-gray-900 mb-10">Powered by</h2>
+                                        <ul className="list-partners border-0">
+                                            <li>
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Adobe" src="assets/imgs/logos/adobe.svg" />
+                                                </a></Link>
+                                            </li>  
+                                            <li>
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Bootstrap" src="assets/imgs/logos/tailwindcss.svg" />
+                                                </a></Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Strapi CMS" src="assets/imgs/logos/strapi.svg" />
+                                                </a></Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Next.js" src="assets/imgs/logos/nextjs.svg" />
+                                                </a></Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Vercel" src="assets/imgs/logos/vercel.svg" />
+                                                </a></Link>
+                                            </li>                              
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="section-box pt-100 pb-100 mt-100 bg-green-900">
+                    <div className="d-flex justify-content-center">
+                        <Link href="/get-started"><a className="btn btn-black icon-arrow-right-white mb-15">Get Started</a></Link>
+                        <Link href="/capabilities"><a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-15">Our Capabilities</a></Link>
+                    </div>
+                </section>
             
 
                 <section className="section-box">
@@ -161,54 +211,8 @@ function Index3() {
                     </div>
                 </section>
 
-                <section className="section-box pt-100 pb-100 mt-100 bg-green-900">
-                    <div className="d-flex justify-content-center">
-                        <Link href="/get-started"><a className="btn btn-black icon-arrow-right-white mb-15">Get Started</a></Link>
-                        <Link href="/capabilities"><a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-15">Our Capabilities</a></Link>
-                    </div>
-                </section>
 
-                <section className="section-box">
-                    <div className="container mt-120">
-                        <div className="row">
-                            <div className="col-lg-6 col-sm-12 block-img-we-do"><img className="bdrd-16 img-responsive" src="assets/imgs/work/work-newark-thrives.png" alt="Newark Thrives" /></div>
-                            <div className="col-lg-6 col-sm-12 block-we-do">
-                                <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Design</span>
-                                <span className="tag-1 bg-6 color-green-900 px-4 py-2 rounded-md">Development</span>
-                                <h3 className="text-heading-1 mt-30">Newark Thrives</h3>
-                                <p className="text-body-lead-large color-gray-600 mt-30">UI/UX Design, Digital Strategy, Progressive Web Application Development</p>
-                                <Link href="https://newark-thrives.us.org" target="_blank"><a className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a></Link>
-                                <div className="row">
-                                    <div className="col-12 mt-50">
-                                        <h2 className="text-heading-7 text-center color-gray-900 mb-10">Powered by</h2>
-                                        <ul className="list-partners border-0">
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Adobe" src="assets/imgs/logos/adobe.svg" />
-                                                </a></Link>
-                                            </li>  
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Bootstrap" src="assets/imgs/logos/tailwindcss.svg" />
-                                                </a></Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Strapi CMS" src="assets/imgs/logos/strapi.svg" />
-                                                </a></Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Next.js" src="assets/imgs/logos/nextjs.svg" />
-                                                </a></Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Vercel" src="assets/imgs/logos/vercel.svg" />
-                                                </a></Link>
-                                            </li>                              
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                
                 
                
                 

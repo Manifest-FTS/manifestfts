@@ -1,52 +1,55 @@
-/* eslint-disable @next/next/no-img-element */
-import Link from "next/link";
+import FormProject from "../components/form-project/FormProject";
 import Layout from "../components/layout/Layout";
 
 
-function Signup() {
+function Contact() {
     return (
         <>
-
             <Layout>
                 <section className="section-box">
-                    <div className="bg-6-opacity-30 pt-90">
-                        <div className="container">
-                            <div className="box-signup">
-                                <h1 className="text-heading-3 mb-50 text-center">Partner With Us</h1>
-                                <p className="text-body-lead-large color-gray-600 mt-60">Sign up and let us help with your next project manifestation or evolution.</p>
-                                <Link href="/#"><a className="btn btn-login-google color-gray-500 text-heading-6 box-shadow-2"><img className="img-responsive img-middle mr-10" src="assets/imgs/template/icons/Icon-gg-login.svg" alt="Agon" /> Sign up with Google</a></Link>
-
-                                <div className="text-center">
-                                    <div className="mt-40 box-line-throught mb-40"><span className="text-body-text color-gray-500">Or, sign up with your email</span></div>
-                                </div>
-                                <div className="box-form-signup mb-200">
-                                    <div className="form-group"><input className="form-control" placeholder="Your name *" />
-                                        <Link href="/#"><a className="link-edit text-body-text">Edit</a></Link>
-                                    </div>
-                                    <div className="form-group"><input className="form-control" placeholder="Your email *" /></div>
-                                    <div className="form-group">
-                                        <div className="form-field"><span className="text-body-small color-green-900 tag-top">Password</span><input className="form-control input-green-bd input-with-icon" placeholder /><span className="icon-eye-right" /></div>
-                                    </div>
-                                    <div className="form-group">
-                                        <div className="form-field"><span className="text-body-small color-green-900 tag-top">Re-type Password</span><input className="form-control input-green-bd input-with-icon" placeholder /><span className="icon-eye-right" /></div>
-                                    </div>
-                                    <div className="form-group"><label className="text-body-small color-gray-500"><input className="chkbox" type="checkbox" /> Agree to
-                                        <Link href="/#"><a>terms &amp; conditions</a></Link>
-                                    </label></div>
-                                    <div className="form-group"><button className="btn btn-green-full text-heading-6">Continue</button></div>
-                                    <div><span className="text-body-text color-gray-500">Already have an account?</span>
-                                        <Link href="/page-login"><a className="text-body-text color-green-900">Sign in now</a></Link>
+                    <div className="banner-hero banner-breadcrums">
+                        <div className="container text-center">
+                            <h1 className="text-heading-2 color-gray-1000 mb-20">Contact Us</h1>
+                            <p className="text-body-text color-gray-500">Equidem necessitatibus ei eam, ceteros expetenda<br className="d-lg-block d-none" />hendrerit ei per, tation vituperatoribus ut.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <FormProject />
+                <section className="section-box mt-100">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-12 col-sm-10 col-12 text-center mt-40">
+                                <h2 className="text-heading-1 color-gray-900 mb-20">Virtually or In-Person</h2>
+                                <p className="text-body-lead-large color-gray-600 mt-20">We are a distributed team based in Western NC.<br/>Virtual and in-person meetings can be accomodated on request.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="container mt-100">
+                        <div className="row">
+                            <div className="col-lg-4 col-md-12 col-sm-12">
+                                <div className="list-icons hover-up">
+                                    <div className="item-icon"><span className="icon-left"><img src="/assets/imgs/SVG/usa.svg" alt="NC, USA" /></span>
+                                        <h4 className="text-heading-4">Haw Creek Commons</h4>
+                                        <p className="text-body-text color-gray-1100 mt-15">315 Old Haw Creek Rd,<br />Asheville, NC 28805, US<br />Phone: (828) 229-2450<br/>Email: partner@manifestfts.com</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="images-lists">
-                            <div className="row">
-                                <div className="col-lg-2 col-md-2 col-sm-6 pl-0"><img className="img-responsive img-full img-1" src="assets/imgs/page/signup/img-1.png" alt="Agon" /></div>
-                                <div className="col-lg-2 col-md-2 col-sm-6"><img className="img-responsive img-full img-2" src="assets/imgs/page/signup/img-2.png" alt="Agon" /></div>
-                                <div className="col-lg-4 col-md-4 col-sm-12"><img className="img-responsive img-full img-3" src="assets/imgs/page/signup/img-3.png" alt="Agon" /></div>
-                                <div className="col-lg-2 col-md-2 col-sm-6"><img className="img-responsive img-full img-4" src="assets/imgs/page/signup/img-4.png" alt="Agon" /></div>
-                                <div className="col-lg-2 col-md-2 col-sm-6 pr-0"><img className="img-responsive img-full img-5" src="assets/imgs/page/signup/img-5.png" alt="Agon" /></div>
+                            <div className="col-lg-4 col-md-12 col-sm-12">
+                                <div className="list-icons hover-up">
+                                    <div className="item-icon"><span className="icon-left"><img src="/assets/imgs/SVG/usa.svg" alt="NC, USA" /></span>
+                                        <h4 className="text-heading-4">Büro Hollywood</h4>
+                                        <p className="text-body-text color-gray-1100 mt-15">2031 Harrison St, <br />Hollywood, FL 33020, US<br />Phone: (828) 229-2450<br/>Email: partner@manifestfts.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-lg-4 col-md-12 col-sm-12">
+                                <div className="list-icons hover-up">
+                                    <div className="item-icon"><span className="icon-left"><img src="/assets/imgs/mexico.png" alt="NC, USA" /></span>
+                                        <h4 className="text-heading-4">The Co-Op Baja</h4>
+                                        <p className="text-body-text color-gray-1100 mt-15">Camino Las Playitas y esquina,<br />Telmex, Las Tunas, 23300 <br/>Todos Santos, B.C.S., MX<br />Email: partner@manifestfts.com</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -58,4 +61,4 @@ function Signup() {
     )
 }
 
-export default Signup;
+export default Contact;

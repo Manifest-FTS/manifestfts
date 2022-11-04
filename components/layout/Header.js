@@ -73,7 +73,7 @@ const Header = ({ handleOpen, headerStyle }) => {
                                                 </li>
                                                 <li className="hr"><span /></li>
                                                 <li>
-                                                    <Link href="/contact"><a className="closer"><i className="" />Contact</a></Link>
+                                                    <Link href="/get-started"><a className="closer"><i className="" />Contact</a></Link>
                                                 </li>
                                                 
                                             </ul>
@@ -97,7 +97,7 @@ const Header = ({ handleOpen, headerStyle }) => {
                         </div>
                         <div className="header-right">
                             <div className="block-signin">
-                                <Link href="/partner-inquiry"><a className="btn btn-default hover-up icon-arrow-right">Get Started</a></Link>
+                                <Link href="/get-started"><a className="btn btn-default hover-up icon-arrow-right">Get Started</a></Link>
                             </div>
                         </div>
                     </div>
