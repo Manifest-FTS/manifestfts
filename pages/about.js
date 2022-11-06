@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState } from "react";
 import 'react-modal-video/css/modal-video.css';
-import CounterUp from "../components/elements/CounterUp";
+// import CounterUp from "../components/elements/CounterUp";
 import Layout from "../components/layout/Layout";
 import TeamSlider from "../components/slider/Team";
 import TestimonialSlider from "../components/slider/Testimonial";

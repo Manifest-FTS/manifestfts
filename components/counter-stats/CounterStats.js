@@ -1,4 +1,5 @@
 import React from 'react'
+import CounterUp from '../elements/CounterUp'
 
 function CounterStats() {
   return (
