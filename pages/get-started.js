@@ -7,10 +7,10 @@ function Contact() {
         <>
             <Layout>
                 <section className="section-box">
-                    <div className="banner-hero banner-breadcrums">
+                    <div className="banner-hero bg-8 banner-breadcrums">
                         <div className="container text-center">
                             <h1 className="text-heading-2 color-gray-1000 mb-20">Contact Us</h1>
-                            <p className="text-body-text color-gray-500">Equidem necessitatibus ei eam, ceteros expetenda<br className="d-lg-block d-none" />hendrerit ei per, tation vituperatoribus ut.</p>
+                            {/* <p className="text-body-text color-gray-500">Connect with us regarding an upcoming project or for a consultation.</p> */}
                         </div>
                     </div>
                 </section>

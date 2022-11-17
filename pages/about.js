@@ -53,36 +53,36 @@ function About1() {
                     <div className="container mt-70">
                         <div className="row">
                             <div className="col-lg-4 col-sm-12">
-                                <div className="card-grid-style-3 pb-40 bg-5 mb-30">
-                                    <div className="grid-1-img"><img src="/assets/imgs/page/homepage1/business-strategy.svg" alt="Agon" /></div>
+                                <div className="card-grid-style-6 bg-transparent pb-40 mb-30">
+                                    <div className="grid-1-img"><img src="/assets/imgs/icon-branding.png" alt="Branding" height="100" /></div>
                                     <h3 className="text-heading-3 mt-20">Branding</h3>
                                     <p className="text-body-excerpt mt-20">Manifest your ideas or evolve your current brand through customer awareness and loyalty achieved with inspired design and strategy.</p>
-                                    <div className="mt-30">
+                                    {/* <div className="mt-30">
                                         <Link href="/capabilities#branding"><a className="btn btn-default icon-arrow-right">Learn more about our Branding Solutions
                                         </a></Link>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                             <div className="col-lg-4 col-sm-12">
-                                <div className="card-grid-style-3 bd-bg-6 pb-40 mb-30">
-                                    <div className="grid-1-img"><img src="/assets/imgs/page/homepage1/local.svg" alt="Agon" /></div>
+                                <div className="card-grid-style-6 bg-transparent pb-40 mb-30">
+                                    <div className="grid-1-img"><img src="/assets/imgs/icon-design.png" alt="Design" height="100"/></div>
                                     <h3 className="text-heading-3 mt-20">Design</h3>
                                     <p className="text-body-excerpt mt-20">Offer consistently beautiful experiences across digital and print media with thoughtfully crafted design.</p>
-                                    <div className="mt-30">
+                                    {/* <div className="mt-30">
                                         <Link href="/capabilities#design"><a className="btn btn-default icon-arrow-right">Learn more about our Design Solutions
                                         </a></Link>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                             <div className="col-lg-4 col-sm-12">
-                                <div className="card-grid-style-3 bg-2 pb-40 mb-30">
-                                    <div className="grid-1-img"><img src="/assets/imgs/page/homepage1/social.svg" alt="Agon" /></div>
+                                <div className="card-grid-style-6 bg-transparent pb-40 mb-30">
+                                    <div className="grid-1-img"><img src="/assets/imgs/Monitor.png" alt="Software" height="100" /></div>
                                     <h3 className="text-heading-3 mt-20">Software</h3>
                                     <p className="text-body-excerpt mt-20">Reach customers near and far by leveraging cutting-edge software solutions for mobile and web applications.</p>
-                                    <div className="mt-30">
+                                    {/* <div className="mt-30">
                                         <Link href="/capabilities#software"><a className="btn btn-default icon-arrow-right">Learn more about our Software Solutions
                                         </a></Link>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>

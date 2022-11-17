@@ -17,14 +17,19 @@ const Footer = () => {
                                         <a>About</a>
                                     </Link>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <Link href="/blog">
                                         <a>Blog</a>
+                                    </Link>
+                                </li> */}
+                                <li>
+                                    <Link href="/policy">
+                                        <a>Policy</a>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="/terms">
-                                        <a>Terms of Use</a>
+                                        <a>Terms</a>
                                     </Link>
                                 </li>
                             </ul>

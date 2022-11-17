@@ -28,13 +28,13 @@ const Sidebar = ({ openClass }) => {
                 <PerfectScrollbar className="mobile-header-wrapper-inner">
                     <div className="mobile-header-top">
                         <div className="user-account">
-                            <img src="/assets/imgs/template/ava_1.png" alt="Agon" />
+                            {/* <img src="/assets/imgs/template/ava_1.png" alt="Agon" /> */}
                             <div className="content">
                                 <h6 className="user-name">
-                                    Hi <span className="text-brand">Steven !</span>
+                                    Menu
                                 </h6>
                                 <p className="font-xs text-muted">
-                                    You have 5 new messages
+                                    Click outside menu to close.
                                 </p>
                             </div>
                         </div>
@@ -44,133 +44,48 @@ const Sidebar = ({ openClass }) => {
                             <div className="mobile-menu-wrap mobile-header-border">
                                 <nav>
                                     <ul className="mobile-menu font-heading">
-                                        <li className={isActive.key == 1 ? "has-children active" : "has-children"}>
-                                            <span onClick={() => handleToggle(1)} className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
+                                        <li>
                                             <Link href="/"><a className="active">Home</a></Link>
-                                            <ul className={isActive.key == 1 ? "sub-menu d-block" : "sub-menu d-none"}>
-                                                <li>
-
-                                                    <Link href="/"><a>Homepage - 1</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/index-2"><a>Homepage - 2</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/index-3"><a>Homepage - 3</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/index-4"><a>Homepage - 4</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/index-5"><a>Homepage - 5</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/index-6"><a>Homepage - 6</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/index-7"><a>Homepage - 7</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/index-8"><a>Homepage - 8</a></Link>
-                                                </li>
-                                            </ul>
                                         </li>
                                         <li className={isActive.key == 2 ? "has-children active" : "has-children"}>
                                             <span onClick={() => handleToggle(2)} className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
 
-                                            <Link href="/page-about-1"><a>About</a></Link>
+                                            <Link href="/about"><a>Manifest</a></Link>
                                             <ul className={isActive.key == 2 ? "sub-menu d-block" : "sub-menu d-none"}>
                                                 <li>
 
-                                                    <Link href="/page-about-1"><a>About Us - 1</a></Link>
+                                                    <Link href="/about"><a>About</a></Link>
                                                 </li>
                                                 <li>
 
-                                                    <Link href="/page-about-2"><a>About Us - 2</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/page-about-3"><a>About Us - 3</a></Link>
+                                                    <Link href="/get-started"><a>Contact</a></Link>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li className={isActive.key == 3 ? "has-children active" : "has-children"}>
                                             <span onClick={() => handleToggle(3)}  className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
 
-                                            <Link href="/page-service-1"><a>Company</a></Link>
+                                            <Link href="#"><a>Solutions</a></Link>
                                             <ul className={isActive.key == 3 ? "sub-menu d-block" : "sub-menu d-none"}>
                                                 <li>
-
-                                                    <Link href="/page-service-1"><a className="closer">Services - 1</a></Link>
+                                                    <Link href="/sanity-cms"><a className="closer">Sanity API-1st CMS</a></Link>
                                                 </li>
                                                 <li>
-
-                                                    <Link href="/page-service-2"><a className="closer">Services - 2</a></Link>
-                                                </li>
-                                                <li className="hr"><span /></li>
-                                                <li>
-
-                                                    <Link href="/page-pricing-1"><a className="closer">Pricing - 1</a></Link>
+                                                    <Link href="/dato-cms"><a className="closer">DATO CMS</a></Link>
                                                 </li>
                                                 <li>
-
-                                                    <Link href="/page-pricing-2"><a className="closer">Pricing - 2</a></Link>
-                                                </li>
-                                                <li className="hr"><span /></li>
-                                                <li>
-
-                                                    <Link href="/page-faqs-1"><a className="closer">FAQs - 1</a></Link>
+                                                    <Link href="/strapi-cms"><a className="closer">Strapi Extensible API CMS</a></Link>
                                                 </li>
                                                 <li>
-
-                                                    <Link href="/page-faqs-2"><a className="closer">FAQs - 2</a></Link>
-                                                </li>
-                                                <li className="hr"><span /></li>
-                                                <li>
-
-                                                    <Link href="/page-career"><a className="closer">Career</a></Link>
+                                                    <Link href="/netlify-cms"><a className="closer">Netlify CMS</a></Link>
                                                 </li>
                                                 <li>
-
-                                                    <Link href="/page-career-detail"><a className="closer">Career Detail</a></Link>
+                                                    <Link href="/wordpress-restful-api"><a className="closer">WordPress RESTful API</a></Link>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li className={isActive.key == 4 ? "has-children active" : "has-children"}>
-                                            <span onClick={() => handleToggle(4)}  className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
-
-                                            <Link href="/#"><a>Pages</a></Link>
-                                            <ul className={isActive.key == 4 ? "sub-menu d-block" : "sub-menu d-none"}>
-                                                <li>
-
-                                                    <Link href="/page-contact"><a>Contact</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/page-signup"><a>Sign Up</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/page-login"><a>Log In</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/page-reset"><a>Reset Password</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/404"><a>Error 404</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className={isActive.key == 5 ? "has-children active" : "has-children"}>
+                                        
+                                        {/* <li className={isActive.key == 5 ? "has-children active" : "has-children"}>
                                             <span onClick={() => handleToggle(5)}  className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
 
                                             <Link href="/blog-1"><a>Blog</a></Link>
@@ -208,11 +123,11 @@ const Sidebar = ({ openClass }) => {
                                                     <Link href="/shop/1"><a>Product Details</a></Link>
                                                 </li>
                                             </ul>
-                                        </li>
+                                        </li> */}
                                     </ul>
                                 </nav>
                             </div>
-                            <div className="mobile-account">
+                            {/* <div className="mobile-account">
                                 <h6 className="mb-10">Your Account</h6>
                                 <ul className="mobile-menu font-heading">
                                     <li>
@@ -237,12 +152,10 @@ const Sidebar = ({ openClass }) => {
                                         <Link href="/page-login"><a>Sign Out</a></Link>
                                     </li>
                                 </ul>
-                            </div>
-                            <div className="site-copyright color-gray-400">
-                                Copyright 2022 © Agon - Agency Template.<br />Designed
-                                by
-                                <Link href="http://alithemes.com"><a>&nbsp; AliThemes</a></Link>
-                            </div>
+                            </div> */}
+                            {/* <div className="site-copyright color-gray-400">
+                                Copyright 2022 © Manifest FTS
+                            </div> */}
                         </div>
                     </div>
                 </PerfectScrollbar>

@@ -28,7 +28,7 @@ const Header = ({ handleOpen, headerStyle }) => {
                             <div className="header-nav">
                                 <nav className="nav-main-menu d-none d-xl-block">
                                     <ul className="main-menu">
-                                        <li className="has-children">
+                                        {/* <li className="has-children">
                                             <Link href="/capabilities"><a className="active">Capabilities</a></Link>
                                             <ul className="sub-menu two-col">
                                                 <li>
@@ -41,7 +41,7 @@ const Header = ({ handleOpen, headerStyle }) => {
                                                     <Link href="/capabilities#software"><a>Software</a></Link>
                                                 </li>
                                             </ul>
-                                        </li>
+                                        </li> */}
                                         <li className="has-children">
                                             <Link href="#"><a>Solutions</a></Link>
                                             <ul className="sub-menu">
@@ -68,9 +68,9 @@ const Header = ({ handleOpen, headerStyle }) => {
                                                 <li>
                                                     <Link href="/about"><a className="closer"><i className="" />About</a></Link>
                                                 </li>
-                                                <li>
+                                                {/* <li>
                                                     <Link href="/blog"><a className="closer"><i className="" />Blog</a></Link>
-                                                </li>
+                                                </li> */}
                                                 <li className="hr"><span /></li>
                                                 <li>
                                                     <Link href="/get-started"><a className="closer"><i className="" />Contact</a></Link>

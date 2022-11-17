@@ -31,7 +31,7 @@ const RightSidebar = ({ openClass }) => {
                             <img src="/assets/imgs/template/ava_1.png" alt="Agon" />
                             <div className="content">
                                 <h6 className="user-name">
-                                    Hi <span className="text-brand">Steven !</span>
+                                    Hi <span className="text-brand">Kevin !</span>
                                 </h6>
                                 <p className="font-xs text-muted">
                                     You have 5 new messages
