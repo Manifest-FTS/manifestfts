@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState } from 'react';
 const FormProject = () => {
     return (
@@ -26,7 +27,7 @@ const FormProject = () => {
                                 <div className="col-lg-12">
                                     <div className="form-group"><textarea className="form-control" placeholder="Your message or proejct description" /></div>
                                 </div>
-                                <div className="col-lg-12 mt-15"><button className="btn btn-black icon-arrow-right-white mr-40 mb-20" type="submit">Send Message</button><br className="d-lg-none d-block" /><span className="text-body-text-md color-gray-500 mb-20">By sending a message, you agree to our <a href="/terms">terms</a> and <a href="/policy">policy</a>,</span></div>
+                                <div className="col-lg-12 mt-15"><button className="btn btn-black icon-arrow-right-white mr-40 mb-20" type="submit">Send Message</button><br className="d-lg-none d-block" /><span className="text-body-text-md color-gray-500 mb-20">By sending a message, you agree to our <Link href="/terms" passHref><a>terms</a></Link> and <Link href="/policy" passHref><a>policy</a></Link>,</span></div>
                             </div>
                         </div>
                     </div>
