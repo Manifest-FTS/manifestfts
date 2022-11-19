@@ -5,7 +5,7 @@ const FormProject = () => {
             <div className="container mb-50 mt-70">
                 <div className="bdrd-58 box-gray-100 icon-wave">
                     <div className="row">
-                        <div className="col-lg-12 mb-60"><span className="text-body-capitalized text-uppercase">Let's work together</span>
+                        <div className="col-lg-12 mb-60"><span className="text-body-capitalized text-uppercase">Let&#x2019;s work together</span>
                             <h2 className="text-heading-3 color-gray-900 mt-10">Have a project in mind?</h2>
                             <p className="text-body-text color-gray-600 mt-20">Let us help Manifest your next project. Contact us with us regarding an upcoming project or for a consultation.</p>
                         </div>
