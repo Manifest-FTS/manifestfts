@@ -1,4 +1,4 @@
-import '../public/assets/css/app.2afad0c.bundle.css'
+import '../public/assets/css/style.css'
 import "../public/assets/css/swiper-custom.css";
 import React, { useEffect, useState } from "react";
 import Preloader from '../components/elements/Preloader';
