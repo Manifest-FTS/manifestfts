@@ -23,7 +23,7 @@ const Footer = () => {
                                     </Link>
                                 </li> */}
                                 <li>
-                                    <Link href="/policy">
+                                    <Link href="/privacy-policy">
                                         <a>Policy</a>
                                     </Link>
                                 </li>
@@ -37,31 +37,21 @@ const Footer = () => {
                         <div className="col-lg-3 width-20 mb-30">
                             <h4 className="text-heading-5">Solutions</h4>
                             <ul className="menu-footer mt-20">
-                                <li>
-                                    <Link href="/sanity-cms">
-                                        <a>Sanity</a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/dato-cms">
-                                        <a>DATO CMS</a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/strapi-cms">
-                                        <a>Strapi</a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/netlify-cms">
-                                        <a>Netlifys</a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/wordpress-restful-api">
-                                        <a>WordPress</a>
-                                    </Link>
-                                </li>
+                            <li>
+                                <Link href="/sanity-cms"><a>Sanity</a></Link>
+                            </li>
+                            <li>
+                                <a href="https://www.datocms.com/" target="_blank">DATO CMS</a>
+                            </li>
+                            <li>
+                                <a href="https://strapi.io/" target="_blank">Strapi</a>
+                            </li>
+                            <li>
+                                <a href="https://www.netlifycms.org/" target="_blank">Netlify CMS</a>
+                            </li>
+                            <li>
+                                <a href="https://developer.wordpress.org/rest-api/" target="_blank"><a>WordPress Rest API</a></a>
+                            </li>
                             </ul>
                         </div>
                         <div className="col-lg-3 width-20 mb-30">
@@ -84,16 +74,6 @@ const Footer = () => {
                                 <li>
                                     <Link href="/#">
                                         <a>Client login</a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/#">
-                                        <a>Pricing</a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/#">
-                                        <a>Reviews</a>
                                     </Link>
                                 </li>
                             </ul>
