@@ -60,7 +60,7 @@ function Terms() {
                                     <div className="col-lg-8">
                                         <div className="single-detail">
                                             <h6 className="mt-50">- Last Updated November 25, 2022 -</h6>
-                                            <p>Thank you for your interest in our products and services. These General Terms and Conditions constitute the agreement ("Agreement") between Super Distros LLC dba Manifest FTS ("Manifest") and you as a user of our services ("Customer"), whether you sign up as a company or as an individual, and whether you have a past or existing contract with Manifest.</p>
+                                            <p>Thank you for your interest in our products and services. These General Terms and Conditions constitute the agreement ("Agreement") between Super Distros LLC dba Manifest FTS (&ldquo;Manifest&rdquo;) and you as a user of our services (&ldquo;Customer&rdquo;), whether you sign up as a company or as an individual, and whether you have a past or existing contract with Manifest.</p>
                                             <img className="img-responsive bdr-16" src="assets/imgs/page/blog/single/img-1.png" alt="Agon" />
 
                                             <h6 className="mt-35 mb-25" id="section-1">Customer Data</h6>
@@ -72,14 +72,14 @@ function Terms() {
                                             <p>Under this license you may not: Republish material from, sell, rent or sub-license material, reproduce, duplicate or copy material from Manifest. You may read more about our Privacy Policy here: <Link href="/privacy-policy"><a>https://manifest.com/privacy-policy</a></Link>, which is an addendum of this Terms and Conditions by reference.</p>
                                             
                                             <h6 className="mt-35 mb-25" id="section-3">Limitation of Liability</h6>
-                                            <p>Under no circumstances shall Manifest be liable for any of Customer's direct, indirect, special, incidental or consequential damages, including, but not limited to, loss of data or profit, arising out of the use of delivered services or the materials on this site, even if Manifest, our software partners or an authorized representative has been advised of the possibility of such damages. </p>
-                                            <p>The use of Manifest services and software recommendations is at Customer's own risk, and Customer is fully responsible for any claim, expense, liability, or losses arising from any infringement of the Agreement.</p>
+                                            <p>Under no circumstances shall Manifest be liable for any of Customer&rsquo;s direct, indirect, special, incidental or consequential damages, including, but not limited to, loss of data or profit, arising out of the use of delivered services or the materials on this site, even if Manifest, our software partners or an authorized representative has been advised of the possibility of such damages. </p>
+                                            <p>The use of Manifest services and software recommendations is at Customer&rsquo;s own risk, and Customer is fully responsible for any claim, expense, liability, or losses arising from any infringement of the Agreement.</p>
 
                                             <h6 className="mt-35 mb-25" id="section-4">Delivery & Ownership</h6>
-                                            <p>The cusCustomer's purchased product(s) or service(s) data and/or source files will be provided to Customer once payment is received and work is completed. Even though services are generally rendered within the estimated delivery time, it may take more or less time to be completed. Manifest will in know way be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising from a delay of deliverability of services from Manifest to Customer.</p>
+                                            <p>The cusCustomer&rsquo;s purchased product(s) or service(s) data and/or source files will be provided to Customer once payment is received and work is completed. Even though services are generally rendered within the estimated delivery time, it may take more or less time to be completed. Manifest will in know way be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising from a delay of deliverability of services from Manifest to Customer.</p>
 
                                             <h6 className="mt-35 mb-25" id="section-5">Updates</h6>
-                                            <p>The software upon which Manifest digital services rely are constantly updated to be compatible with the latest stable versions. Please ensure that we always use the most current version of said software at the time of Customer's project start, afterwhich The Customer is responsible for maintenance and security updates unless Manifest is contracted for maintenance and support.</p>
+                                            <p>The software upon which Manifest digital services rely are constantly updated to be compatible with the latest stable versions. Please ensure that we always use the most current version of said software at the time of Customer&rsquo;s project start, afterwhich The Customer is responsible for maintenance and security updates unless Manifest is contracted for maintenance and support.</p>
 
                                             <h6 className="mt-35 mb-25" id="section-6">Help & Support</h6>
                                             <p>Help and support will be billed as needed unless included as part of an existing contract. All contracts will include the scope of said help and support (if any) from Manifest to The Customer.</p>
@@ -92,7 +92,7 @@ function Terms() {
                                             <p>Partial Refund on Retainers: Manifest reserves the right to change our refund policy at any time. Partial refunds of up to and not exceeding 50% can be provided at our discretion for any unused retainer hours already paid by The Customer.</p>
 
                                             <h6 className="mt-35 mb-25" id="section-9">Email &amp; Newsletter</h6>
-                                            <p>Manifest may occasionally send The Customer emails related to the purchase of product(s) and services(s) from Manifest. Manifest may also send The Customer occasional email newsletters relating to related software updates and promotions. Manifest will never sell or release The Customer's email to any third party vendors. The Customer may opt out of these emails at any time without penalty.</p>
+                                            <p>Manifest may occasionally send The Customer emails related to the purchase of product(s) and services(s) from Manifest. Manifest may also send The Customer occasional email newsletters relating to related software updates and promotions. Manifest will never sell or release The Customer&rsquo;s email to any third party vendors. The Customer may opt out of these emails at any time without penalty.</p>
 
                                             <h6 className="mt-35 mb-25" id="section-10">License Agreement</h6>
                                             <p>By purchasing our product(s) and service(s), you indicate and consent that you have read and agree to the Terms &amp; Conditions listed and detailed on this page. Manifest reserves the right to change or modify the current Terms and Conditions without prior notice or consent.</p>
@@ -103,9 +103,9 @@ function Terms() {
                                     </div>
                                     {/* <div className="col-lg-2">
                                         <h3 className="text-heading-6 color-gray-400 mb-20 mt-150">Share</h3>
-                                        <Link href="https://facebook.com"><a className="share-social share-fb" target="_blank" rel="noreferrer" ></a></Link><br />
-                                        <Link href="https://twitter.com"><a className="share-social share-tw" target="_blank" rel="noreferrer" ></a></Link><br />
-                                        <Link href="https://www.pinterest.com"><a className="share-social share-pi" target="_blank" rel="noreferrer" ></a></Link>
+                                        <Link href="https://facebook.com"><a className="share-social share-fb" target="_blank" rel="noreferrer" rel="noreferrer" ></a></Link><br />
+                                        <Link href="https://twitter.com"><a className="share-social share-tw" target="_blank" rel="noreferrer" rel="noreferrer" ></a></Link><br />
+                                        <Link href="https://www.pinterest.com"><a className="share-social share-pi" target="_blank" rel="noreferrer" rel="noreferrer" ></a></Link>
                                     </div> */}
                                 </div>
                             </div>
