@@ -18,9 +18,9 @@ function Service2() {
                                     <h1 className="text-display-2">Sanity <span className="color-green-900">API-1st</span> CMS</h1>
                                     <p className="text-body-lead-large color-gray-500 mt-40 pr-40">Sanity is one of the most flexible platforms for creating data driven content applications.</p>
                                     <div className="mt-40 text-center">
-                                        <Link href="/page-about-1"><a className="btn btn-black icon-arrow-right-white">Get Started</a></Link>
+                                        <Link href="/#get-started" ><a target="_blank" rel="noreferrer" className="btn btn-black icon-arrow-right-white">Get Started</a></Link>
 
-                                        <Link href="https://sanity.io" target="_blank" rel="noreferrer"><a className="btn btn-link icon-arrow-right color-gray-900 ml-10">Visit Sanity.io</a></Link>
+                                        <Link href="https://sanity.io" ><a target="_blank" rel="noreferrer" className="btn btn-link icon-arrow-right color-gray-900 ml-10">Visit Sanity.io</a></Link>
                                     </div>
                                 </div>
                                 <div className="col-lg-12 d-none d-lg-block">
