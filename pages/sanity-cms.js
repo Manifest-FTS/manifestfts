@@ -20,7 +20,7 @@ function Service2() {
                                     <div className="mt-40 text-center">
                                         <Link href="/page-about-1"><a className="btn btn-black icon-arrow-right-white">Get Started</a></Link>
 
-                                        <Link href="https://sanity.io" target="_blank"><a className="btn btn-link icon-arrow-right color-gray-900 ml-10">Visit Sanity.io</a></Link>
+                                        <Link href="https://sanity.io" target="_blank" rel="noreferrer"><a className="btn btn-link icon-arrow-right color-gray-900 ml-10">Visit Sanity.io</a></Link>
                                     </div>
                                 </div>
                                 <div className="col-lg-12 d-none d-lg-block">
@@ -76,7 +76,7 @@ function Service2() {
                         <div className="row">
                             <div className="col-lg-6 col-sm-12 mb-30 first">
                                 <h3 className="text-heading-1 mt-30">Search Engine Optimization<br/><span className="color-violet-600">9 of 10</span></h3>
-                                <p className="text-body-lead-large color-gray-600 mt-30">Search Engine Optimization is essential to give your business visibility. More traffic is more opportunities to convert prospects into customers. Sanity’s <a href="https://www.sanity.io/plugins/sanity-plugin-seo-tools" target="_blank" className="font-bold">SEO Tools</a> uses YoastSEO.js bringing the familiarity of Yoast SEO into Sanity.</p>
+                                <p className="text-body-lead-large color-gray-600 mt-30">Search Engine Optimization is essential to give your business visibility. More traffic is more opportunities to convert prospects into customers. Sanity’s <a href="https://www.sanity.io/plugins/sanity-plugin-seo-tools" target="_blank" rel="noreferrer" className="font-bold">SEO Tools</a> uses YoastSEO.js bringing the familiarity of Yoast SEO into Sanity.</p>
                                 <p className="text-body-lead-large color-gray-600 mt-30">We give SEO a 9 out of 10 due to the additional times it takes to configre for each project. Don’t worry, each project comes with SEO Tools configured and ready to go.
                                 </p>
                             </div>

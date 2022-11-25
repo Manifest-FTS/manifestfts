@@ -60,7 +60,7 @@ function Terms() {
                                     <div className="col-lg-8">
                                         <div className="single-detail">
                                             <h6 className="mt-50">- Last Updated November 25, 2022 -</h6>
-                                            <p>Thank you for your interest in our products and services. These General Terms and Conditions constitute the agreement ("Agreement") between Super Distros LLC dba Manifest FTS (&ldquo;Manifest&rdquo;) and you as a user of our services (&ldquo;Customer&rdquo;), whether you sign up as a company or as an individual, and whether you have a past or existing contract with Manifest.</p>
+                                            <p>Thank you for your interest in our products and services. These General Terms and Conditions constitute the agreement (&ldquo;Agreement&rdquo;) between Super Distros LLC dba Manifest FTS (&ldquo;Manifest&rdquo;) and you as a user of our services (&ldquo;Customer&rdquo;), whether you sign up as a company or as an individual, and whether you have a past or existing contract with Manifest.</p>
                                             <img className="img-responsive bdr-16" src="assets/imgs/page/blog/single/img-1.png" alt="Agon" />
 
                                             <h6 className="mt-35 mb-25" id="section-1">Customer Data</h6>

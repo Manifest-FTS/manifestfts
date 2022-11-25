@@ -49,10 +49,10 @@ function Terms() {
                                             <p>Manifest collects personal and non-personal information such as name, address, contact phone number, email, browser type, operating system, referring website, and the date and time of each website visit. We may also collect personal information that you volunteer when you subscribe to our newsletter, fill out a form, or engage in services with us.</p>
 
                                             <h6 className="mt-35 mb-25" id="section-2">How We Use Your Personal Data?</h6>
-                                            <p>Manifest's primary purpose in collecting personal information is to communicate with you, personalize you ruser experience, and to send you relevent information. We will never sell, lease, or share your data with third-parties without your notice.</p>
+                                            <p>Manifest&rsquo;s primary purpose in collecting personal information is to communicate with you, personalize you ruser experience, and to send you relevent information. We will never sell, lease, or share your data with third-parties without your notice.</p>
 
                                             <h6 className="mt-35 mb-25" id="section-3">How We Use Your Non-Personal Data?</h6>
-                                            <p>Non-Personal data or data provided for use in The Customer&rsquo;s paid services are used to fulfull paid services. This data may be used by the software solutions used is said services according to the software solution's own privacy policies.</p>
+                                            <p>Non-Personal data or data provided for use in The Customer&rsquo;s paid services are used to fulfull paid services. This data may be used by the software solutions used is said services according to the software solution&rsquo;s own privacy policies.</p>
                                             
                                             <h6 className="mt-35 mb-25" id="section-4">Cookies</h6>
                                             <p>Cookies are small data stores used by websites that are stored on a visitor&rsquo;s computer and that the visitor&rsquo;s browser provides to the website each time the visitor returns. Manifest uses cookies to identify visitors, improve their user experience and to track their usage of our website. Visitors who do not wish to have cookies placed on their computer can disable cookies within their browser before accessing our website.</p>
