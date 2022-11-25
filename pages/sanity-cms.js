@@ -20,7 +20,7 @@ function Service2() {
                                     <div className="mt-40 text-center">
                                         <Link href="/page-about-1"><a className="btn btn-black icon-arrow-right-white">Get Started</a></Link>
 
-                                        <Link href="https://sanity.io" target="_blank"><a className="btn btn-link icon-arrow-right color-gray-900 ml-10">Visit Sanity.io</a></Link>
+                                        <Link href="https://sanity.io" target="_blank" rel="noreferrer"><a className="btn btn-link icon-arrow-right color-gray-900 ml-10">Visit Sanity.io</a></Link>
                                     </div>
                                 </div>
                                 <div className="col-lg-12 d-none d-lg-block">
