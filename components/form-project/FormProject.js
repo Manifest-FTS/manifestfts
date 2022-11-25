@@ -27,19 +27,19 @@ const FormProject = () => {
                             <div className="row">
                                 <form className="row" method="post" onSubmit={handleOnSubmit}>
                                     <div className="col-lg-6">
-                                        <div className="form-group"><input className="form-control" type="text"  name="fullname" placeholder="Enter your name" /></div>
+                                        <div className="form-group"><input className="form-control" type="text"  name="fullname" placeholder="Enter your name" required/></div>
                                     </div>
                                     <div className="col-lg-6">
                                         <div className="form-group"><input className="form-control" type="text"  name="company" placeholder="Company (optional)" /></div>
                                     </div>
                                     <div className="col-lg-6">
-                                        <div className="form-group"><input className="form-control" type="text"  name="email" placeholder="Your email" /></div>
+                                        <div className="form-group"><input className="form-control" type="text"  name="email" placeholder="Your email" required/></div>
                                     </div>
                                     <div className="col-lg-6">
-                                        <div className="form-group"><input className="form-control" type="text"  name="phone" placeholder="Phone number" /></div>
+                                        <div className="form-group"><input className="form-control" type="text"  name="phone" placeholder="Phone number" required/></div>
                                     </div>
                                     <div className="col-lg-12">
-                                        <div className="form-group"><textarea className="form-control" type="email" name="message" placeholder="Your message or project description" /></div>
+                                        <div className="form-group"><textarea className="form-control" type="email" name="message" placeholder="Your message or project description" required/></div>
                                     </div>
                                     <div className="col-lg-12 mt-15">
                                         <button className="btn btn-black icon-arrow-right-white mr-40 mb-20" type="submit">Send Message</button>

@@ -61,7 +61,7 @@ const Header = ({ handleOpen, headerStyle }) => {
                                                     <a href="https://www.netlifycms.org/" target="_blank" rel="noreferrer">Netlify CMS*</a>
                                                 </li>
                                                 <li>
-                                                    <a href="https://developer.wordpress.org/rest-api/" target="_blank" rel="noreferrer"><a>WordPress RESTful API*</a></a>
+                                                    <a href="https://developer.wordpress.org/rest-api/" target="_blank" rel="noreferrer">WordPress RESTful API*</a>
                                                 </li>
                                                 <li>
                                                     <a className="ml-2">*Overview page coming soon</a>

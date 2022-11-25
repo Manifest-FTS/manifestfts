@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3 width-20 mb-30">
-                            <Image className="mx-auto w-50" alt="Manifest Forward Thinking Solutions" src="assets/imgs/manifest-logo-mark-fts.svg" />
+                            <Image className="mx-auto w-50" alt="Manifest Forward Thinking Solutions" width="100" height="100" src="/assets/imgs/manifest-logo-mark-fts.svg" />
                         </div>
                         <div className="col-lg-3 width-20 mb-30">
                             <h4 className="text-heading-5">Manifest</h4>

@@ -47,7 +47,7 @@ const Sidebar = ({ openClass }) => {
                                         <li>
                                             <Link href="/"><a className="active">Home</a></Link>
                                         </li>
-                                        <li className={isActive.key == 2 ? "has-children active" : "has-children"}>
+                                        {/* <li className={isActive.key == 2 ? "has-children active" : "has-children"}>
                                             <span onClick={() => handleToggle(2)} className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
 
                                             <Link href="/about"><a>Manifest</a></Link>
@@ -61,7 +61,7 @@ const Sidebar = ({ openClass }) => {
                                                     <Link href="/get-started"><a>Contact</a></Link>
                                                 </li>
                                             </ul>
-                                        </li>
+                                        </li> */}
                                         <li className={isActive.key == 3 ? "has-children active" : "has-children"}>
                                             <span onClick={() => handleToggle(3)}  className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
 
@@ -80,12 +80,15 @@ const Sidebar = ({ openClass }) => {
                                                     <a href="https://www.netlifycms.org/" target="_blank" rel="noreferrer">Netlify CMS*</a>
                                                 </li>
                                                 <li>
-                                                    <a href="https://developer.wordpress.org/rest-api/" target="_blank" rel="noreferrer"><a>WordPress RESTful API*</a></a>
+                                                    <a href="https://developer.wordpress.org/rest-api/" target="_blank" rel="noreferrer">WordPress RESTful API*</a>
                                                 </li>
                                                 <li>
                                                     <a className="ml-2">*Overview page coming soon</a>
                                                 </li>
                                             </ul>
+                                        </li>
+                                        <li>
+                                            <Link href="/"><a className="/about">About</a></Link>
                                         </li>
                                         
                                         {/* <li className={isActive.key == 5 ? "has-children active" : "has-children"}>
