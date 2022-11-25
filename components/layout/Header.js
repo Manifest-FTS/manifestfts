@@ -42,6 +42,9 @@ const Header = ({ handleOpen, headerStyle }) => {
                                                 </li>
                                             </ul>
                                         </li> */}
+                                        <li className="">
+                                            <Link href="/"><a>Home</a></Link>
+                                        </li>
                                         <li className="has-children">
                                             <Link href="#"><a>Solutions</a></Link>
                                             <ul className="sub-menu">
@@ -49,16 +52,19 @@ const Header = ({ handleOpen, headerStyle }) => {
                                                     <Link href="/sanity-cms"><a>Sanity API-1st CMS</a></Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/dato-cms"><a>DATO CMS</a></Link>
+                                                    <a href="https://www.datocms.com/" target="_blank">DATO CMS*</a>
                                                 </li>
                                                 <li>
-                                                    <Link href="/strapi-cms"><a>Strapi Extensible API CMS</a></Link>
+                                                    <a href="https://strapi.io/" target="_blank">Strapi Extensible API CMS*</a>
                                                 </li>
                                                 <li>
-                                                    <Link href="/netlify-cms"><a>Netlify CMS</a></Link>
+                                                    <a href="https://www.netlifycms.org/" target="_blank">Netlify CMS*</a>
                                                 </li>
                                                 <li>
-                                                    <Link href="/wordpress-restful-api"><a>WordPress RESTful API</a></Link>
+                                                    <a href="https://developer.wordpress.org/rest-api/" target="_blank"><a>WordPress RESTful API*</a></a>
+                                                </li>
+                                                <li>
+                                                    <a className="ml-2">*Overview page coming soon</a>
                                                 </li>
                                             </ul>
                                         </li>
