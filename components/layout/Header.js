@@ -20,7 +20,7 @@ const Header = ({ handleOpen, headerStyle }) => {
                             <div className="header-logo">
                                 <Link href="/">
                                     <a className="d-flex">
-                                        {headerStyle ? <img alt="Manifest Vector Logo" src="/assets/imgs/manfiest-logo-vector.svg"  className="img-fluid h-100 w-100" /> : <img alt="Agon" src="/assets/imgs/logo-vector.svg" className="img-fluid h-100 w-100" />}
+                                        {headerStyle ? <img alt="Manifest Vector Logo" src="/assets/imgs/manfiest-logo-vector.svg"  className="img-fluid h-100 w-100" /> : <img alt="Manifest" src="/assets/imgs/logo-vector.svg" className="img-fluid h-100 w-100" />}
 
                                     </a>
                                 </Link>
@@ -52,16 +52,16 @@ const Header = ({ handleOpen, headerStyle }) => {
                                                     <Link href="/sanity-cms"><a>Sanity API-1st CMS</a></Link>
                                                 </li>
                                                 <li>
-                                                    <a href="https://www.datocms.com/" target="_blank">DATO CMS*</a>
+                                                    <a href="https://www.datocms.com/" target="_blank" rel="noreferrer">DATO CMS*</a>
                                                 </li>
                                                 <li>
-                                                    <a href="https://strapi.io/" target="_blank">Strapi Extensible API CMS*</a>
+                                                    <a href="https://strapi.io/" target="_blank" rel="noreferrer">Strapi Extensible API CMS*</a>
                                                 </li>
                                                 <li>
-                                                    <a href="https://www.netlifycms.org/" target="_blank">Netlify CMS*</a>
+                                                    <a href="https://www.netlifycms.org/" target="_blank" rel="noreferrer">Netlify CMS*</a>
                                                 </li>
                                                 <li>
-                                                    <a href="https://developer.wordpress.org/rest-api/" target="_blank"><a>WordPress RESTful API*</a></a>
+                                                    <a href="https://developer.wordpress.org/rest-api/" target="_blank" rel="noreferrer"><a>WordPress RESTful API*</a></a>
                                                 </li>
                                                 <li>
                                                     <a className="ml-2">*Overview page coming soon</a>

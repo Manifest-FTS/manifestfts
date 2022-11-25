@@ -60,7 +60,7 @@ function Terms() {
                                     <div className="col-lg-8">
                                         <div className="single-detail">
                                             <h6 className="mt-50">- Last Updated November 25, 2022 -</h6>
-                                            <p>Thank you for your interest in our products and services. These General Terms and Conditions constitute the agreement ("Agreement") between Super Distros LLC dba Manifest FTS (&ldquo;Manifest&rdquo;) and you as a user of our services ("Customer"), whether you sign up as a company or as an individual, and whether you have a past or existing contract with Manifest.</p>
+                                            <p>Thank you for your interest in our products and services. These General Terms and Conditions constitute the agreement ("Agreement") between Super Distros LLC dba Manifest FTS (&ldquo;Manifest&rdquo;) and you as a user of our services (&ldquo;Customer&rdquo;), whether you sign up as a company or as an individual, and whether you have a past or existing contract with Manifest.</p>
                                             <img className="img-responsive bdr-16" src="assets/imgs/page/blog/single/img-1.png" alt="Agon" />
 
                                             <h6 className="mt-35 mb-25" id="section-1">Customer Data</h6>
@@ -103,9 +103,9 @@ function Terms() {
                                     </div>
                                     {/* <div className="col-lg-2">
                                         <h3 className="text-heading-6 color-gray-400 mb-20 mt-150">Share</h3>
-                                        <Link href="https://facebook.com"><a className="share-social share-fb" target="_blank" rel="noreferrer" ></a></Link><br />
-                                        <Link href="https://twitter.com"><a className="share-social share-tw" target="_blank" rel="noreferrer" ></a></Link><br />
-                                        <Link href="https://www.pinterest.com"><a className="share-social share-pi" target="_blank" rel="noreferrer" ></a></Link>
+                                        <Link href="https://facebook.com"><a className="share-social share-fb" target="_blank" rel="noreferrer" rel="noreferrer" ></a></Link><br />
+                                        <Link href="https://twitter.com"><a className="share-social share-tw" target="_blank" rel="noreferrer" rel="noreferrer" ></a></Link><br />
+                                        <Link href="https://www.pinterest.com"><a className="share-social share-pi" target="_blank" rel="noreferrer" rel="noreferrer" ></a></Link>
                                     </div> */}
                                 </div>
                             </div>

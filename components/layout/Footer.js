@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import Link from "next/link";
 const Footer = () => {
     return (
@@ -7,7 +8,7 @@ const Footer = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3 width-20 mb-30">
-                            <img className="mx-auto w-50" alt="Manifest Forward Thinking Solutions" src="assets/imgs/manifest-logo-mark-fts.svg" />
+                            <Image className="mx-auto w-50" alt="Manifest Forward Thinking Solutions" src="assets/imgs/manifest-logo-mark-fts.svg" />
                         </div>
                         <div className="col-lg-3 width-20 mb-30">
                             <h4 className="text-heading-5">Manifest</h4>
@@ -41,16 +42,16 @@ const Footer = () => {
                                 <Link href="/sanity-cms"><a>Sanity</a></Link>
                             </li>
                             <li>
-                                <a href="https://www.datocms.com/" target="_blank">DATO CMS</a>
+                                <a href="https://www.datocms.com/" target="_blank" rel="noreferrer">DATO CMS</a>
                             </li>
                             <li>
-                                <a href="https://strapi.io/" target="_blank">Strapi</a>
+                                <a href="https://strapi.io/" target="_blank" rel="noreferrer">Strapi</a>
                             </li>
                             <li>
-                                <a href="https://www.netlifycms.org/" target="_blank">Netlify CMS</a>
+                                <a href="https://www.netlifycms.org/" target="_blank" rel="noreferrer">Netlify CMS</a>
                             </li>
                             <li>
-                                <a href="https://developer.wordpress.org/rest-api/" target="_blank"><a>WordPress Rest API</a></a>
+                                <a href="https://developer.wordpress.org/rest-api/" target="_blank" rel="noreferrer"><a>WordPress Rest API</a></a>
                             </li>
                             </ul>
                         </div>

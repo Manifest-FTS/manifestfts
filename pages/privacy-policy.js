@@ -55,7 +55,7 @@ function Terms() {
                                             <p>Non-Personal data or data provided for use in The Customer&rsquo;s paid services are used to fulfull paid services. This data may be used by the software solutions used is said services according to the software solution's own privacy policies.</p>
                                             
                                             <h6 className="mt-35 mb-25" id="section-4">Cookies</h6>
-                                            <p>Cookies are small data stores used by websites that are stored on a visitor’s computer and that the visitor’s browser provides to the website each time the visitor returns. Manifest uses cookies to identify visitors, improve their user experience and to track their usage of our website. Visitors who do not wish to have cookies placed on their computer can disable cookies within their browser before accessing our website.</p>
+                                            <p>Cookies are small data stores used by websites that are stored on a visitor&rsquo;s computer and that the visitor&rsquo;s browser provides to the website each time the visitor returns. Manifest uses cookies to identify visitors, improve their user experience and to track their usage of our website. Visitors who do not wish to have cookies placed on their computer can disable cookies within their browser before accessing our website.</p>
 
                                             <h6 className="mt-35 mb-25" id="section-5">Consent</h6>
                                             <p>By using the Manifest website, you consent to this privacy policy.
@@ -66,9 +66,9 @@ function Terms() {
                                     </div>
                                     {/* <div className="col-lg-2">
                                         <h3 className="text-heading-6 color-gray-400 mb-20 mt-150">Share</h3>
-                                        <Link href="https://facebook.com"><a className="share-social share-fb" target="_blank" rel="noreferrer" ></a></Link><br />
-                                        <Link href="https://twitter.com"><a className="share-social share-tw" target="_blank" rel="noreferrer" ></a></Link><br />
-                                        <Link href="https://www.pinterest.com"><a className="share-social share-pi" target="_blank" rel="noreferrer" ></a></Link>
+                                        <Link href="https://facebook.com"><a className="share-social share-fb" target="_blank" rel="noreferrer" rel="noreferrer" ></a></Link><br />
+                                        <Link href="https://twitter.com"><a className="share-social share-tw" target="_blank" rel="noreferrer" rel="noreferrer" ></a></Link><br />
+                                        <Link href="https://www.pinterest.com"><a className="share-social share-pi" target="_blank" rel="noreferrer" rel="noreferrer" ></a></Link>
                                     </div> */}
                                 </div>
                             </div>
