@@ -1,6 +1,19 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 const FormProject = () => {
+    async function handleOnSubmit(e) {
+        e.preventDefault();
+        const formData = {}
+        Array.from(e.currentTarget.elements).forEach(field => {
+            if ( !field.name ) return;
+            formData[field.name] = field.value;
+        });
+        fetch('/api/mail', {
+            method: 'post',
+            body: JSON.stringify(formData),
+        })
+        console.log(formData);
+    }
     return (
         <section id="get-started" className="section-box">
             <div className="container mb-50 mt-70">
@@ -12,22 +25,27 @@ const FormProject = () => {
                         </div>
                         <div className="col-lg-12">
                             <div className="row">
-                                <div className="col-lg-6">
-                                    <div className="form-group"><input className="form-control"  placeholder="Enter your name" /></div>
-                                </div>
-                                <div className="col-lg-6">
-                                    <div className="form-group"><input className="form-control"  placeholder="Company (optioanl)" /></div>
-                                </div>
-                                <div className="col-lg-6">
-                                    <div className="form-group"><input className="form-control"  placeholder="Your email" /></div>
-                                </div>
-                                <div className="col-lg-6">
-                                    <div className="form-group"><input className="form-control"  placeholder="Phone number" /></div>
-                                </div>
-                                <div className="col-lg-12">
-                                    <div className="form-group"><textarea className="form-control" placeholder="Your message or proejct description" /></div>
-                                </div>
-                                <div className="col-lg-12 mt-15"><button className="btn btn-black icon-arrow-right-white mr-40 mb-20" type="submit">Send Message</button><br className="d-lg-none d-block" /><span className="text-body-text-md color-gray-500 mb-20">By sending a message, you agree to our <Link href="/terms" passHref><a>terms</a></Link> and <Link href="/policy" passHref><a>policy</a></Link>,</span></div>
+                                <form className="row" method="post" onSubmit={handleOnSubmit}>
+                                    <div className="col-lg-6">
+                                        <div className="form-group"><input className="form-control" type="text"  name="fullname" placeholder="Enter your name" /></div>
+                                    </div>
+                                    <div className="col-lg-6">
+                                        <div className="form-group"><input className="form-control" type="text"  name="company" placeholder="Company (optional)" /></div>
+                                    </div>
+                                    <div className="col-lg-6">
+                                        <div className="form-group"><input className="form-control" type="text"  name="email" placeholder="Your email" /></div>
+                                    </div>
+                                    <div className="col-lg-6">
+                                        <div className="form-group"><input className="form-control" type="text"  name="phone" placeholder="Phone number" /></div>
+                                    </div>
+                                    <div className="col-lg-12">
+                                        <div className="form-group"><textarea className="form-control" type="email" name="message" placeholder="Your message or project description" /></div>
+                                    </div>
+                                    <div className="col-lg-12 mt-15">
+                                        <button className="btn btn-black icon-arrow-right-white mr-40 mb-20" type="submit">Send Message</button>
+                                        <br className="d-lg-none d-block" /><span className="text-body-text-md color-gray-500 mb-20">By sending a message, you agree to our <Link href="/terms" passHref><a>terms</a></Link> and <Link href="/policy" passHref><a>policy</a></Link>,</span>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
