@@ -42,7 +42,7 @@ function Terms() {
                                     <div className="col-lg-8">
                                         <div className="single-detail">
                                             <h6 className="mt-50">- Last Updated November 25, 2022 -</h6>
-                                            <p>This is the Privacy Policy of Super Distros LLC dba Manifest FTS ("Manifest"). If you have any concerns about privacy and personal data you may contact dp@manifestfts.com.</p>
+                                            <p>This is the Privacy Policy of Super Distros LLC dba Manifest FTS (&ldquo;Manifest&rdquo;). If you have any concerns about privacy and personal data you may contact dp@manifestfts.com.</p>
                                             <p>This Privacy Policy is part of our Terms of Service: <Link href="/terms"><a>https://manifestfts.com/terms</a></Link>.</p>
                                             
                                             <h6 className="mt-35 mb-25" id="section-1">Your data</h6>
@@ -52,7 +52,7 @@ function Terms() {
                                             <p>Manifest's primary purpose in collecting personal information is to communicate with you, personalize you ruser experience, and to send you relevent information. We will never sell, lease, or share your data with third-parties without your notice.</p>
 
                                             <h6 className="mt-35 mb-25" id="section-3">How We Use Your Non-Personal Data?</h6>
-                                            <p>Non-Personal data or data provided for use in The Customer's paid services are used to fulfull paid services. This data may be used by the software solutions used is said services according to the software solution's own privacy policies.</p>
+                                            <p>Non-Personal data or data provided for use in The Customer&rsquo;s paid services are used to fulfull paid services. This data may be used by the software solutions used is said services according to the software solution's own privacy policies.</p>
                                             
                                             <h6 className="mt-35 mb-25" id="section-4">Cookies</h6>
                                             <p>Cookies are small data stores used by websites that are stored on a visitor’s computer and that the visitor’s browser provides to the website each time the visitor returns. Manifest uses cookies to identify visitors, improve their user experience and to track their usage of our website. Visitors who do not wish to have cookies placed on their computer can disable cookies within their browser before accessing our website.</p>
