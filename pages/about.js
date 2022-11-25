@@ -132,7 +132,7 @@ function About1() {
                         <div className="row">
                             <div className="col-12">
                                 <div className="d-flex justify-content-center">
-                                    <Link href="/get-started"><a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-15">Get Started</a></Link>
+                                    <Link href="/#get-started"><a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-15">Get Started</a></Link>
                                 </div>
                             </div>
                         </div>
