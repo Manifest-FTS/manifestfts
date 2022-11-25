@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState } from "react";
 import 'react-modal-video/css/modal-video.css';
+import FormProject from "../components/form-project/FormProject";
 // import CounterUp from "../components/elements/CounterUp";
 import Layout from "../components/layout/Layout";
 import TeamSlider from "../components/slider/Team";
@@ -21,21 +22,58 @@ function About1() {
                     <div className="banner-hero banner-2 bg-about-1 bg-green-100">
                         <div className="container">
                             <div className="row">
-                                <div className="col-lg-7"><span className="tag-1 bg-5 color-green-900 mr-20 px-4 py-2 rounded-md">About Us</span>
-                                    <h1 className="text-display-3 mt-30">We harness innovation to manifest value</h1>
-                                    <p className="text-body-lead-large color-gray-700 mt-40 pr-40">Manifest is a creative digital agency that offers branding, design, and innovative web technology to forward thinking businesses and brands. </p>
+                                <div className="col-lg-9"><span className="tag-1 bg-5 color-green-900 mr-20 px-4 py-2 rounded-md">About</span>
+                                    <h1 className="text-display-3 mt-30">We harness innovation to manifest value for businesses and brands.</h1>
+                                    {/* <p className="text-body-lead-large color-gray-700 mt-40 pr-40">Manifest is a creative digital agency that offers branding, design, and innovative web technology to forward thinking businesses and brands. </p> */}
 
                                 </div>
                                 <div className="col-lg-5 d-none d-lg-block">
-                                    <div className="banner-imgs">
-                                        <div className="block-1 shape-1"><img src="/assets/imgs/page/about/1/banner2.png" alt="Agon" /></div><img className="img-responsive shape-2" alt="Agon" src="assets/imgs/page/about/1/banner1.png" />
-                                    </div>
+                                    {/* <div className="banner-imgs">
+                                        <div className="block-1 shape-1"><img src="/assets/imgs/page/about/1/banner2.png" alt="Agon" /></div><img className="rounded img-responsive shape-2" alt="Agon" src="assets/imgs/agencys1.jpg" />
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                
+
+                <section className="section-box mt-50">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-12 col-sm-10 col-12 mt-40">
+                                <p className="text-body-lead-large color-gray-600 mt-20">Manifest is a distributed digital consultancy and software development agency that empowers forward-thinking brands through digital manifestations.</p><p className="text-body-lead-large color-gray-600 mt-20">Our expertise spans brand and digital strategy, user experience design, software development, implementation, and data systems. We are a value-driven agency working with some of the most talented professionals to drive results.</p>
+                            </div>
+                        </div>
+                    </div>
+                    {/* <div className="container mt-100">
+                        <div className="row">
+                            <div className="col-lg-4 col-md-12 col-sm-12">
+                                <div className="list-icons hover-up">
+                                    <div className="item-icon"><span className="icon-left"><img src="/assets/imgs/SVG/usa.svg" alt="NC, USA" /></span>
+                                        <h4 className="text-heading-4">Haw Creek Commons</h4>
+                                        <p className="text-body-text color-gray-1100 mt-15">315 Old Haw Creek Rd,<br />Asheville, NC 28805, US<br />Phone: (828) 229-2450<br/>Email: partner@manifestfts.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-lg-4 col-md-12 col-sm-12">
+                                <div className="list-icons hover-up">
+                                    <div className="item-icon"><span className="icon-left"><img src="/assets/imgs/SVG/usa.svg" alt="NC, USA" /></span>
+                                        <h4 className="text-heading-4">Büro Hollywood</h4>
+                                        <p className="text-body-text color-gray-1100 mt-15">2031 Harrison St, <br />Hollywood, FL 33020, US<br />Phone: (828) 229-2450<br/>Email: partner@manifestfts.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-lg-4 col-md-12 col-sm-12">
+                                <div className="list-icons hover-up">
+                                    <div className="item-icon"><span className="icon-left"><img src="/assets/imgs/mexico.png" alt="NC, USA" /></span>
+                                        <h4 className="text-heading-4">The Co-Op Baja</h4>
+                                        <p className="text-body-text color-gray-1100 mt-15">Camino Las Playitas y esquina,<br />Telmex, Las Tunas, 23300 <br/>Todos Santos, B.C.S., MX<br />Email: partner@manifestfts.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> */}
+                </section>                
                 
                 
                 <section className="section-box mt-100">
@@ -88,6 +126,7 @@ function About1() {
                         </div>
                     </div>
                 </section>
+
                 <section className="section-box pt-60 pb-60 mt-100 bg-dark">
                     <div className="container">
                         <div className="row">

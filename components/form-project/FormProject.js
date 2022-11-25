@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 const FormProject = () => {
     return (
-        <section className="section-box">
+        <section id="get-started" className="section-box">
             <div className="container mb-50 mt-70">
                 <div className="bdrd-58 box-gray-100 icon-wave">
                     <div className="row">

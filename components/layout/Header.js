@@ -62,21 +62,21 @@ const Header = ({ handleOpen, headerStyle }) => {
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li className="has-children">
-                                            <Link href="#"><a>Manifest</a></Link>
-                                            <ul className="sub-menu">
+                                        <li className="">
+                                            <Link href="about"><a>About</a></Link>
+                                            {/* <ul className="sub-menu">
                                                 <li>
                                                     <Link href="/about"><a className="closer"><i className="" />About</a></Link>
                                                 </li>
-                                                {/* <li>
+                                                <li>
                                                     <Link href="/blog"><a className="closer"><i className="" />Blog</a></Link>
-                                                </li> */}
+                                                </li>
                                                 <li className="hr"><span /></li>
                                                 <li>
                                                     <Link href="/get-started"><a className="closer"><i className="" />Contact</a></Link>
                                                 </li>
                                                 
-                                            </ul>
+                                            </ul> */}
                                         </li>
 
                                         
@@ -97,7 +97,7 @@ const Header = ({ handleOpen, headerStyle }) => {
                         </div>
                         <div className="header-right">
                             <div className="block-signin">
-                                <Link href="/get-started"><a className="btn btn-default hover-up icon-arrow-right">Get Started</a></Link>
+                                <Link href="/#get-started"><a className="btn btn-default hover-up icon-arrow-right">Get Started</a></Link>
                             </div>
                         </div>
                     </div>
