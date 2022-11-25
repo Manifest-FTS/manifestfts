@@ -68,19 +68,22 @@ const Sidebar = ({ openClass }) => {
                                             <Link href="#"><a>Solutions</a></Link>
                                             <ul className={isActive.key == 3 ? "sub-menu d-block" : "sub-menu d-none"}>
                                                 <li>
-                                                    <Link href="/sanity-cms"><a className="closer">Sanity API-1st CMS</a></Link>
+                                                    <Link href="/sanity-cms"><a>Sanity API-1st CMS</a></Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/dato-cms"><a className="closer">DATO CMS</a></Link>
+                                                    <a href="https://www.datocms.com/" target="_blank">DATO CMS*</a>
                                                 </li>
                                                 <li>
-                                                    <Link href="/strapi-cms"><a className="closer">Strapi Extensible API CMS</a></Link>
+                                                    <a href="https://strapi.io/" target="_blank">Strapi Extensible API CMS*</a>
                                                 </li>
                                                 <li>
-                                                    <Link href="/netlify-cms"><a className="closer">Netlify CMS</a></Link>
+                                                    <a href="https://www.netlifycms.org/" target="_blank">Netlify CMS*</a>
                                                 </li>
                                                 <li>
-                                                    <Link href="/wordpress-restful-api"><a className="closer">WordPress RESTful API</a></Link>
+                                                    <a href="https://developer.wordpress.org/rest-api/" target="_blank"><a>WordPress RESTful API*</a></a>
+                                                </li>
+                                                <li>
+                                                    <a className="ml-2">*Overview page coming soon</a>
                                                 </li>
                                             </ul>
                                         </li>
