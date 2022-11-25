@@ -51,7 +51,7 @@ const Footer = () => {
                                 <a href="https://www.netlifycms.org/" target="_blank" rel="noreferrer">Netlify CMS</a>
                             </li>
                             <li>
-                                <a href="https://developer.wordpress.org/rest-api/" target="_blank" rel="noreferrer"><a>WordPress Rest API</a></a>
+                                <a href="https://developer.wordpress.org/rest-api/" ><a target="_blank" rel="noreferrer">WordPress Rest API</a></a>
                             </li>
                             </ul>
                         </div>
