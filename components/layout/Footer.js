@@ -93,7 +93,7 @@ const Footer = () => {
                                     <Link href="https://www.instagram.com/manifestfts">
                                         <a className="icon-socials icon-instagram"></a>
                                     </Link>
-                                    <Link href="https://www.linkedin.com">
+                                    <Link href="https://www.linkedin.com/company/manifest-fts">
                                         <a className="icon-socials icon-linkedin"></a>
                                     </Link>
                                 </div>
