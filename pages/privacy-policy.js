@@ -47,7 +47,7 @@ function Terms() {
                                             
                                             <h6 className="mt-35 mb-25" id="section-1">Your data</h6>
                                             <p>Manifest collects personal and non-personal information such as name, address, contact phone number, email, browser type, operating system, referring website, and the date and time of each website visit. We may also collect personal information that you volunteer when you subscribe to our newsletter, fill out a form, or engage in services with us.</p>
-s
+
                                             <h6 className="mt-35 mb-25" id="section-2">How We Use Your Personal Data?</h6>
                                             <p>Manifest&rsquo;s primary purpose in collecting personal information is to communicate with you, personalize you ruser experience, and to send you relevent information. We will never sell, lease, or share your data with third-parties without your notice.</p>
 

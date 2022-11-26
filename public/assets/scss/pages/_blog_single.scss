@@ -11,8 +11,8 @@
     p
     {
         margin-bottom: 15px;
-        font-size: $font-lg;
-        font-family: $font-heading;
+        font-size: $font-body;
+        font-family: $font-body;
         color: $color-gray-500;
         line-height: 32px;
         font-weight: 400;
@@ -28,7 +28,8 @@
         color: $color-gray-900;
     }
     h6 {
-        font-size: 18px;
+        font-size: $font-md;
+        font-family: $font-heading;
     }
 }
 .social-sticky {

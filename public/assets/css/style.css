@@ -7523,8 +7523,8 @@ label {
 
 .single-detail p {
   margin-bottom: 15px;
-  font-size: 20px;
-  font-family: "Redzone", sans-serif;
+  font-size: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #667085;
   line-height: 32px;
   font-weight: 400;
@@ -7539,6 +7539,7 @@ label {
 }
 .single-detail h6 {
   font-size: 18px;
+  font-family: "Redzone", sans-serif;
 }
 
 .social-sticky {
@@ -7986,6 +7987,7 @@ label {
   font-weight: 700;
 }
 .table-of-content ul li {
+  font-family: "Poppins", sans-serif;
   padding: 5px 0;
 }
 .table-of-content ul li a {
