@@ -31,7 +31,7 @@ function Index3() {
 
                 <div className="section-box overflow-visible mt-80">
                     <div className="container">
-                        <h2 className="text-heading-6 text-center color-gray-900 mb-60">Powered by the Best Software on Earth</h2>
+                        <h2 className="text-heading-6 text-center color-gray-900 mb-60">emPowered by the Best Software on Earth</h2>
                         <div className="row">
                             <div className="col-lg-12">
                                 <ul className="list-partners border-0 pb-0">
