@@ -43,7 +43,7 @@ const FormProject = () => {
                                     </div>
                                     <div className="col-lg-12 mt-15">
                                         <button className="btn btn-black icon-arrow-right-white mr-40 mb-20" type="submit">Send Message</button>
-                                        <br className="d-lg-none d-block" /><span className="text-body-text-md color-gray-500 mb-20">By sending a message, you agree to our <Link href="/terms" passHref><a>terms</a></Link> and <Link href="/policy" passHref><a>policy</a></Link>,</span>
+                                        <br className="d-lg-none d-block" /><span className="text-body-text-md color-gray-500 mb-20">By sending a message, you agree to our <Link href="/terms" passHref><a>terms</a></Link> and <Link href="/privacy-policy" passHref><a>privacy policy</a></Link>.</span>
                                     </div>
                                 </form>
                             </div>
