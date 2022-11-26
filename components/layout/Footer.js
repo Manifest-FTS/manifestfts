@@ -87,15 +87,12 @@ const Footer = () => {
                             </div>
                             <div className="col-md-6 text-center text-lg-end text-md-end">
                                 <div className="footer-social">
-                                    <Link href="https://twitter.com/manifestfts">
-                                        <a className="icon-socials icon-twitter"></a>
-                                    </Link>
-                                    <Link href="https://www.instagram.com/manifestfts">
-                                        <a className="icon-socials icon-instagram"></a>
-                                    </Link>
-                                    <Link href="https://www.linkedin.com/company/manifest-fts">
-                                        <a className="icon-socials icon-linkedin"></a>
-                                    </Link>
+                                    <a className="icon-socials icon-twitter" href="https://twitter.com/manifestfts" target="_blank" rel="noreferrer">
+                                    </a>
+                                    <a className="icon-socials icon-instagram" href="https://www.instagram.com/manifestfts" target="_blank" rel="noreferrer">
+                                    </a>
+                                    <a className="icon-socials icon-linkedin" href="https://www.linkedin.com/company/manifest-fts" target="_blank" rel="noreferrer">
+                                    </a>
                                 </div>
                             </div>
                         </div>
