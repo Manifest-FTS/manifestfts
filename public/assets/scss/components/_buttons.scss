@@ -1,6 +1,6 @@
 // New Agon
 .btn {
-    font-family: $font-text;
+    font-family: $font-heading;
     padding: 22px 32px;
     font-size: $font-lg;
     line-height: 22px;
@@ -47,7 +47,6 @@
         border-radius: 50px;
         font-size: $font-lg;
         line-height: 22px;
-        font-family: $font-text;
         font-weight: bold;
         &:hover {
             background-color: $color-gray-900;

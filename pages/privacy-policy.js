@@ -47,7 +47,7 @@ function Terms() {
                                             
                                             <h6 className="mt-35 mb-25" id="section-1">Your data</h6>
                                             <p>Manifest collects personal and non-personal information such as name, address, contact phone number, email, browser type, operating system, referring website, and the date and time of each website visit. We may also collect personal information that you volunteer when you subscribe to our newsletter, fill out a form, or engage in services with us.</p>
-
+s
                                             <h6 className="mt-35 mb-25" id="section-2">How We Use Your Personal Data?</h6>
                                             <p>Manifest&rsquo;s primary purpose in collecting personal information is to communicate with you, personalize you ruser experience, and to send you relevent information. We will never sell, lease, or share your data with third-parties without your notice.</p>
 
@@ -75,31 +75,7 @@ function Terms() {
                         </div>
                     </div>
                 </section>
-                <section className="section-box overflow-visible mb-100">
-                    <div className="container mt-100">
-                        <div className="row">
-                            <div className="col-lg-10 mx-auto">
-                                <div className="bg-6 box-newsletter position-relative">
-                                    <div className="row">
-                                        <div className="col-lg-5 col-md-7"><span className="text-body-capitalized color-gray-500 text-uppercase">newsletter</span>
-                                            <h4 className="text-heading-2 mb-10 mt-10">Subscribe our newsletter</h4>
-                                            <p className="text-body-text color-gray-500">By clicking the button, you are agreeing with our</p>
-                                            <Link href="/page-terms"><a>Term &amp; Conditions</a></Link>
-
-                                            <div className="box-form-newsletter mt-30">
-                                                <form className="form-newsletter"><input className="input-newsletter"  placeholder="Enter you mail .." /><button className="btn btn-send" /></form>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-7 col-md-5 mt-30 mt-lg-0 mt-md-30 mt-sm-30 position-relative text-end">
-                                            <div className="block-chart shape-1"><img src="/assets/imgs/template/chart.png" alt="Agon" /></div><img className="img-responsive img-newsletter" src="assets/imgs/template/img-newsletter.png" alt="Agon" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
+               
             </Layout>
 
         </>

@@ -20,7 +20,7 @@ function Newsletter() {
                                 </div>
                             </div>
                             <div className="col-lg-7 col-md-5 mt-30 mt-lg-0 mt-md-30 mt-sm-30 position-relative text-end">
-                                <div className="block-chart shape-1"><img src="/assets/imgs/template/chart.png" alt="Agon" /></div><img className="img-responsive img-newsletter" src="assets/imgs/template/img-newsletter.png" alt="Agon" />
+                                <div className="block-chart shape-1"><img src="/assets/imgs/template/chart.png" alt="Chart" /></div><img className="img-responsive img-newsletter" src="assets/imgs/template/img-newsletter.png" alt="Agon" />
                             </div>
                         </div>
                     </div>

@@ -287,42 +287,42 @@ a {
 // New Agon
 .text-body-lead
 {
-    font-family: $font-heading;
+    font-family: $font-body;
     font-weight: bold;
     font-size: $font-md;
     line-height: 24px;
 }
 .text-body-excerpt
 {
-    font-family: $font-heading;
+    font-family: $font-body;
     font-weight: 400;
     font-size: $font-lg;
     line-height: 26px;
 }
 .text-body-text
 {
-    font-family: $font-heading;
+    font-family: $font-body;
     font-weight: 400 !important;
     font-size: $font-md;
     line-height: 28px;
 }
 .text-body-quote
 {
-    font-family: $font-heading;
+    font-family: $font-body;
     font-weight: 600;
     font-size: $font-xl;
     line-height: 28px;
 }
 .text-body-normal
 {
-    font-family: $font-heading;
+    font-family: $font-body;
     font-weight: 400;
     font-size: $font-xl;
     line-height: 28px;
 }
 .text-body-capitalized
 {
-    font-family: $font-heading;
+    font-family: $font-body;
     font-weight: 400;
     font-size: $font-sm;
     line-height: 19px;
@@ -330,28 +330,28 @@ a {
 }
 .text-body-small
 {
-    font-family: $font-heading;
+    font-family: $font-body;
     font-weight: 500;
     font-size: $font-xs;
     line-height: 16px;
 }
 .text-body-tiny
 {
-    font-family: $font-heading;
+    font-family: $font-body;
     font-weight: 600;
     font-size: $font-3xs;
     line-height: 14px;
 }
 .text-body-lead-large
 {
-    font-family: $font-heading;
+    font-family: $font-body;
     font-weight: 400;
     font-size: 24px;
     line-height: 32px;
 }
 .text-body-text-md
 {
-    font-family: $font-heading;
+    font-family: $font-body;
     font-weight: 400;
     font-size: $font-sm;
     line-height: 19px;
@@ -366,7 +366,7 @@ a {
 }
 .text-display-1
 {
-    font-family: $font-text;
+    font-family: $font-heading;
     font-weight: 900;
     font-size: 96px;
     line-height: 132px;
@@ -374,7 +374,7 @@ a {
 }
 .text-display-2
 {
-    font-family: $font-text;
+    font-family: $font-heading;
     font-weight: bold;
     font-size: 80px;
     line-height: 88px;
@@ -382,7 +382,7 @@ a {
 }
 .text-display-3
 {
-    font-family: $font-text;
+    font-family: $font-heading;
     font-weight: bold;
     font-size: 64px;
     line-height: 72px;
@@ -390,7 +390,7 @@ a {
 }
 .text-display-4
 {
-    font-family: $font-text;
+    font-family: $font-heading;
     font-weight: 400;
     font-size: 56px;
     line-height: 66px;
@@ -398,7 +398,7 @@ a {
 }
 .text-heading-1
 {
-    font-family: $font-text;
+    font-family: $font-heading;
     font-weight: bold;
     font-size: 56px;
     line-height: 64px;
@@ -407,7 +407,7 @@ a {
 }
 .text-heading-2
 {
-    font-family: $font-text;
+    font-family: $font-heading;
     font-weight: bold;
     font-size: 42px;
     line-height: 44px;
@@ -415,7 +415,7 @@ a {
 }
 .text-heading-3
 {
-    font-family: $font-text;
+    font-family: $font-heading;
     font-weight: bold;
     font-size: 35px;
     line-height: 38px;
@@ -424,7 +424,7 @@ a {
 
 .text-heading-4
 {
-    font-family: $font-text;
+    font-family: $font-heading;
     font-weight: bold;
     font-size: 28px;
     line-height: 32px;
@@ -433,7 +433,7 @@ a {
 
 .text-heading-5
 {
-    font-family: $font-text;
+    font-family: $font-heading;
     font-weight: bold;
     font-size: $font-2xl;
     line-height: 24px;
@@ -442,7 +442,7 @@ a {
 
 .text-heading-6
 {
-    font-family: $font-text;
+    font-family: $font-heading;
     font-weight: bold;
     font-size: $font-lg;
     line-height: 22px;

@@ -41,7 +41,7 @@ function About1() {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12 col-sm-10 col-12 mt-40">
-                                <p className="text-body-lead-large color-gray-600 mt-20">Manifest is a distributed digital consultancy and software development agency that empowers forward-thinking brands through digital manifestations.</p><p className="text-body-lead-large color-gray-600 mt-20">Our expertise spans brand and digital strategy, user experience design, software development, implementation, and data systems. We are a value-driven agency working with some of the most talented professionals to drive results.</p>
+                                <p className="text-body-lead-large color-gray-600 mt-20">Manifest is a digital consultancy and software development agency that empowers forward-thinking brands through cutting-edge digital experiences.</p><p className="text-body-lead-large color-gray-600 mt-20">Our expertise spans brand and digital strategy, user experience design, software development, implementation, and data systems. We are a value-driven agency working with some of the most talented professionals to drive results.</p>
                             </div>
                         </div>
                     </div>
