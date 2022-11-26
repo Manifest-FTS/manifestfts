@@ -87,13 +87,10 @@ const Footer = () => {
                             </div>
                             <div className="col-md-6 text-center text-lg-end text-md-end">
                                 <div className="footer-social">
-                                    <Link href="https://facebook.com">
-                                        <a className="icon-socials icon-facebook"></a>
-                                    </Link>
-                                    <Link href="https://twitter.com">
+                                    <Link href="https://twitter.com/manifestfts">
                                         <a className="icon-socials icon-twitter"></a>
                                     </Link>
-                                    <Link href="https://www.instagram.com">
+                                    <Link href="https://www.instagram.com/manifestfts">
                                         <a className="icon-socials icon-instagram"></a>
                                     </Link>
                                     <Link href="https://www.linkedin.com">

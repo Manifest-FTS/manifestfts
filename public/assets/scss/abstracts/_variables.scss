@@ -5,18 +5,118 @@
     url("../fonts/uicons/uicons-regular-rounded.woff2") format("woff2"),
     url("../fonts/uicons/uicons-regular-rounded.woff") format("woff");
 }
-@import url(https://fonts.bunny.net/css?family=chivo:400,700|noto-sans:400,700);
-$font-heading: "Noto Sans", sans-serif;
-$font-text: "Chivo", sans-serif;
+
+/* Webfont: Redtone-Bold */
+@font-face {
+    font-family: 'Redzone';
+    src: url('../fonts/Redtone-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Redtone-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Redtone-Bold.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Redtone-Bold.woff2') format('woff2'), /* Modern Browsers */
+         url('../fonts/Redtone-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Redtone-Regular */@font-face {
+    font-family: 'Redzone';
+    src: url('../fonts/Redtone-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Redtone-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Redtone-Regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Redtone-Regular.woff2') format('woff2'), /* Modern Browsers */
+         url('../fonts/Redtone-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'GT Ricardo';
+    src: url('../fonts/GTRicardo-SemiBold.eot');
+    src: url('../fonts/GTRicardo-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GTRicardo-SemiBold.woff2') format('woff2'),
+        url('../fonts/GTRicardo-SemiBold.woff') format('woff'),
+        url('../fonts/GTRicardo-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Ricardo';
+    src: url('../fonts/GTRicardo-Bold.eot');
+    src: url('../fonts/GTRicardo-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GTRicardo-Bold.woff2') format('woff2'),
+        url('../fonts/GTRicardo-Bold.woff') format('woff'),
+        url('../fonts/GTRicardo-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Ricardo';
+    src: url('../fonts/GTRicardo-Regular.eot');
+    src: url('../fonts/GTRicardo-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GTRicardo-Regular.woff2') format('woff2'),
+        url('../fonts/GTRicardo-Regular.woff') format('woff'),
+        url('../fonts/GTRicardo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+// Poppins
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Bold.eot');
+    src: url('../fonts/Poppins-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Poppins-Bold.woff2') format('woff2'),
+        url('../fonts/Poppins-Bold.woff') format('woff'),
+        url('../fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.eot');
+    src: url('../fonts/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Poppins-Regular.woff2') format('woff2'),
+        url('../fonts/Poppins-Regular.woff') format('woff'),
+        url('../fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-SemiBold.eot');
+    src: url('../fonts/Poppins-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Poppins-SemiBold.woff2') format('woff2'),
+        url('../fonts/Poppins-SemiBold.woff') format('woff'),
+        url('../fonts/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+$font-heading: "Redzone", sans-serif;
+$font-text: "Poppins", sans-serif;
+$font-body: "Poppins", sans-serif;
 $font-3xs: 10px;
 $font-xxs: 12px;
-$font-xs: 13px;
-$font-sm: 14px;
-$font-md: 16px;
-$font-md-2: 15px;
-$font-lg: 18px;
-$font-xl: 20px;
-$font-2xl: 22px;
+$font-xs: 14px;
+$font-sm: 16px;
+$font-md: 18px;
+$font-md-2: 16px;
+$font-lg: 20px;
+$font-xl: 22px;
+$font-2xl: 24px;
 $font-3xl: 58px;
 
 //2.COLOR

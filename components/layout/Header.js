@@ -20,7 +20,7 @@ const Header = ({ handleOpen, headerStyle }) => {
                             <div className="header-logo">
                                 <Link href="/">
                                     <a className="d-flex">
-                                        {headerStyle ? <img alt="Manifest Vector Logo" src="/assets/imgs/manfiest-logo-vector.svg"  className="img-fluid h-100 w-100" /> : <img alt="Manifest" src="/assets/imgs/logo-vector.svg" className="img-fluid h-100 w-100" />}
+                                        {headerStyle ? <img alt="Manifest Vector Logo" src="/assets/imgs/logo.svg"  className="img-fluid h-100 w-100" /> : <img alt="Manifest" src="/assets/imgs/logo.svg" className="img-fluid h-100 w-100" />}
 
                                     </a>
                                 </Link>

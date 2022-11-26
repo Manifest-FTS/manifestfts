@@ -25,7 +25,6 @@ TABLE CONTENT
  WP STYPE
  Custom amine
 ***/
-@import url(https://fonts.bunny.net/css?family=chivo:400,700|noto-sans:400,700);
 @import url(../css/vendors/normalize.css);
 @import url(../css/vendors/bootstrap.min.css);
 @import url(../css/vendors/uicons-regular-rounded.css);
@@ -38,6 +37,72 @@ TABLE CONTENT
 @font-face {
   font-family: "uicons-regular-rounded";
   src: url("../fonts/uicons/uicons-regular-rounded.eot#iefix") format("embedded-opentype"), url("../fonts/uicons/uicons-regular-rounded.woff2") format("woff2"), url("../fonts/uicons/uicons-regular-rounded.woff") format("woff");
+}
+/* Webfont: Redtone-Bold */
+@font-face {
+  font-family: "Redzone";
+  src: url("../fonts/Redtone-Bold.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/Redtone-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Redtone-Bold.woff") format("woff"), url("../fonts/Redtone-Bold.woff2") format("woff2"), url("../fonts/Redtone-Bold.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+/* Webfont: Redtone-Regular */
+@font-face {
+  font-family: "Redzone";
+  src: url("../fonts/Redtone-Regular.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/Redtone-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Redtone-Regular.woff") format("woff"), url("../fonts/Redtone-Regular.woff2") format("woff2"), url("../fonts/Redtone-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: "GT Ricardo";
+  src: url("../fonts/GTRicardo-SemiBold.eot");
+  src: url("../fonts/GTRicardo-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/GTRicardo-SemiBold.woff2") format("woff2"), url("../fonts/GTRicardo-SemiBold.woff") format("woff"), url("../fonts/GTRicardo-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT Ricardo";
+  src: url("../fonts/GTRicardo-Bold.eot");
+  src: url("../fonts/GTRicardo-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/GTRicardo-Bold.woff2") format("woff2"), url("../fonts/GTRicardo-Bold.woff") format("woff"), url("../fonts/GTRicardo-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT Ricardo";
+  src: url("../fonts/GTRicardo-Regular.eot");
+  src: url("../fonts/GTRicardo-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/GTRicardo-Regular.woff2") format("woff2"), url("../fonts/GTRicardo-Regular.woff") format("woff"), url("../fonts/GTRicardo-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Bold.eot");
+  src: url("../fonts/Poppins-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-Bold.woff2") format("woff2"), url("../fonts/Poppins-Bold.woff") format("woff"), url("../fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.eot");
+  src: url("../fonts/Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-Regular.woff2") format("woff2"), url("../fonts/Poppins-Regular.woff") format("woff"), url("../fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-SemiBold.eot");
+  src: url("../fonts/Poppins-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-SemiBold.woff2") format("woff2"), url("../fonts/Poppins-SemiBold.woff") format("woff"), url("../fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 /*import vendors*/ /*RESET*/
 html,
@@ -191,8 +256,8 @@ input,
 select,
 button,
 textarea {
-  font-family: "Chivo", sans-serif;
-  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
 }
 
 *:focus,
@@ -360,78 +425,78 @@ a {
 }
 
 .text-body-lead {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
 }
 
 .text-body-excerpt {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 26px;
 }
 
 .text-body-text {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400 !important;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 28px;
 }
 
 .text-body-quote {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 28px;
 }
 
 .text-body-normal {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 28px;
 }
 
 .text-body-capitalized {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 19px;
   letter-spacing: 2px;
 }
 
 .text-body-small {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 16px;
 }
 
 .text-body-tiny {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 10px;
   line-height: 14px;
 }
 
 .text-body-lead-large {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
 }
 
 .text-body-text-md {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 19px;
 }
 
 .tablet-display-2 {
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   font-size: 72px;
   line-height: 82px;
@@ -439,7 +504,7 @@ a {
 }
 
 .text-display-1 {
-  font-family: "Chivo", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: 900;
   font-size: 96px;
   line-height: 132px;
@@ -447,7 +512,7 @@ a {
 }
 
 .text-display-2 {
-  font-family: "Chivo", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: bold;
   font-size: 80px;
   line-height: 88px;
@@ -455,7 +520,7 @@ a {
 }
 
 .text-display-3 {
-  font-family: "Chivo", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: bold;
   font-size: 64px;
   line-height: 72px;
@@ -463,7 +528,7 @@ a {
 }
 
 .text-display-4 {
-  font-family: "Chivo", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: 400;
   font-size: 56px;
   line-height: 66px;
@@ -471,7 +536,7 @@ a {
 }
 
 .text-heading-1 {
-  font-family: "Chivo", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: bold;
   font-size: 56px;
   line-height: 64px;
@@ -480,7 +545,7 @@ a {
 }
 
 .text-heading-2 {
-  font-family: "Chivo", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: bold;
   font-size: 42px;
   line-height: 44px;
@@ -488,7 +553,7 @@ a {
 }
 
 .text-heading-3 {
-  font-family: "Chivo", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: bold;
   font-size: 35px;
   line-height: 38px;
@@ -496,7 +561,7 @@ a {
 }
 
 .text-heading-4 {
-  font-family: "Chivo", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: bold;
   font-size: 28px;
   line-height: 32px;
@@ -504,24 +569,24 @@ a {
 }
 
 .text-heading-5 {
-  font-family: "Chivo", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 24px;
   line-height: 24px;
   letter-spacing: 0%;
 }
 
 .text-heading-6 {
-  font-family: "Chivo", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 22px;
   letter-spacing: 0%;
 }
 
 .text-bold {
-  font-family: "Noto Sans", sans-serif;
-  font-size: 14px;
+  font-family: "Redzone", sans-serif;
+  font-size: 16px;
   line-height: 14px;
   font-weight: bold;
 }
@@ -648,8 +713,8 @@ a {
 
 .text-billed {
   font-weight: 400;
-  font-family: "Noto Sans", sans-serif;
-  font-size: 16px;
+  font-family: "Redzone", sans-serif;
+  font-size: 18px;
   line-height: 28px;
   display: inline-block;
   vertical-align: middle;
@@ -680,8 +745,8 @@ a:hover {
 }
 .content-detail p {
   margin-bottom: 15px;
-  font-size: 16px;
-  font-family: "Noto Sans", sans-serif;
+  font-size: 18px;
+  font-family: "Redzone", sans-serif;
   color: #101828;
   line-height: 28px;
 }
@@ -689,8 +754,8 @@ a:hover {
   list-style: disc;
   color: #101828;
   padding-left: 20px;
-  font-size: 16px;
-  font-family: "Noto Sans", sans-serif;
+  font-size: 18px;
+  font-family: "Redzone", sans-serif;
   line-height: 28px;
 }
 
@@ -906,7 +971,7 @@ h4 {
 /*TYPOGRAPHY*/
 body {
   color: #101828;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   line-height: 24px;
   font-style: normal;
@@ -924,7 +989,7 @@ h6,
 .display-2,
 .heading-lg,
 .heading-sm-1 {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   color: #101828;
   font-weight: 700;
   line-height: 1.2;
@@ -973,7 +1038,7 @@ h6 {
   line-height: 24px;
   color: #101828;
   font-weight: 500;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
 }
 
 .heading-sm {
@@ -985,20 +1050,20 @@ h6 {
 .text-sm {
   font-size: 12px;
   line-height: 16px;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .text-md {
   font-size: 16px;
   line-height: 20px;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .small-heading {
   font-size: 16px;
   line-height: 20px;
   font-weight: bold;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
 }
 
 .medium-heading {
@@ -1006,7 +1071,7 @@ h6 {
   color: #101828;
   line-height: 22px;
   font-weight: 600;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
 }
 
 .display-block {
@@ -1030,31 +1095,31 @@ h6 {
 }
 
 .font-xs {
-  font-size: 13px;
-}
-
-.font-sm {
   font-size: 14px;
 }
 
-.font-md {
+.font-sm {
   font-size: 16px;
 }
 
-.font-md-2 {
-  font-size: 15px;
-}
-
-.font-lg {
+.font-md {
   font-size: 18px;
 }
 
-.font-xl {
+.font-md-2 {
+  font-size: 16px;
+}
+
+.font-lg {
   font-size: 20px;
 }
 
-.font-2xl {
+.font-xl {
   font-size: 22px;
+}
+
+.font-2xl {
+  font-size: 24px;
 }
 
 .font-3xl {
@@ -1070,9 +1135,9 @@ h6 {
 }
 
 .btn {
-  font-family: "Chivo", sans-serif;
+  font-family: "Redzone", sans-serif;
   padding: 22px 32px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 22px;
   transition: 0.2s;
   letter-spacing: 0.45px;
@@ -1082,7 +1147,7 @@ h6 {
   border-radius: 4px;
   background-color: #101828;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 14px;
   font-weight: bold;
   padding: 18px 20px;
@@ -1112,9 +1177,8 @@ h6 {
   color: #101828;
   background-color: #F2F4F7;
   border-radius: 50px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 22px;
-  font-family: "Chivo", sans-serif;
   font-weight: bold;
 }
 .btn.btn-default:hover {
@@ -1149,9 +1213,9 @@ h6 {
 }
 .btn.btn-green-900 {
   background-color: #006D77;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 22px;
   letter-spacing: 0%;
   color: #ffffff;
@@ -1168,9 +1232,9 @@ h6 {
   color: #ffffff;
   background-color: #101828;
   border-radius: 50px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 22px;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: bold;
 }
 .btn.btn-black.icon-arrow-right-white:hover {
@@ -1192,9 +1256,9 @@ h6 {
   border-radius: 4px;
 }
 .btn.btn-link {
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 18px;
   color: #101828;
   text-decoration: none;
@@ -1211,7 +1275,7 @@ h6 {
   background-color: #101828;
 }
 .btn.btn-link-inter {
-  font-family: "Chivo", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
@@ -1263,8 +1327,8 @@ h6 {
 .btn.btn-tag {
   background-color: #E4E7EC;
   color: #101828;
-  font-family: "Noto Sans", sans-serif;
-  font-size: 14px;
+  font-family: "Redzone", sans-serif;
+  font-size: 16px;
   line-height: 18px;
   font-weight: 400;
   border-radius: 8px;
@@ -1281,9 +1345,9 @@ h6 {
   border-radius: 8px;
   padding: 16px 56px 16px 27px;
   border: 0px;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 22px;
   color: #ffffff;
   background-color: #006D77;
@@ -1305,9 +1369,9 @@ h6 {
   background-image: url(../imgs/page/homepage5/icon-plus.svg);
   background-repeat: no-repeat;
   background-position: center right 10px;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
 }
 .btn.btn-cart:hover {
@@ -1321,9 +1385,9 @@ h6 {
   background-image: url(../imgs/page/homepage8/icon-arrow-green.svg);
   background-repeat: no-repeat;
   background-position: center right 12px;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
 }
 .btn.btn-explorer:hover {
@@ -1367,7 +1431,7 @@ h6 {
   background-repeat: no-repeat;
   background-position: center left;
   padding-left: 30px;
-  font-family: "Chivo", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
@@ -1532,7 +1596,7 @@ textarea:-ms-input-placeholder {
   box-shadow: none;
   padding-left: 30px;
   padding-right: 30px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   width: 100%;
   border-radius: 0px;
@@ -1556,7 +1620,7 @@ textarea.form-control {
   -webkit-box-shadow: none;
   box-shadow: none;
   padding: 30px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   width: 100%;
   border-radius: 0px;
@@ -1581,7 +1645,7 @@ textarea.form-control.form-icons {
   box-shadow: none;
   padding-left: 30px;
   padding-right: 30px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   width: 100%;
   border-radius: 0px;
@@ -1719,9 +1783,9 @@ label {
   padding: 20px;
   width: 100%;
   color: #98A2B3;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 27px;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: 400;
   min-height: 150px;
 }
@@ -2358,7 +2422,7 @@ label {
 .block-pricing .box-info-price .text-price {
   font-size: 36px;
   color: #101828;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   line-height: 46px;
   font-weight: 600;
   margin-right: 15px;
@@ -2380,7 +2444,7 @@ label {
   padding: 1px 0px 1px 30px;
   background: url(../imgs/template/icons/check-circle.svg) no-repeat left center;
   margin-bottom: 12px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 22px;
   color: #101828;
 }
@@ -2466,7 +2530,7 @@ label {
   font-size: 16px;
   line-height: 28px;
   color: #ffffff;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: 400;
   background: url(../imgs/template/icons/icon-untick.svg) no-repeat right 15px top 1px;
 }
@@ -2624,7 +2688,7 @@ label {
   font-size: 12px;
   line-height: 16px;
   color: #006D77;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: bold;
   text-decoration: none;
 }
@@ -2674,13 +2738,13 @@ label {
 .product-item-1 .product-info .title-product {
   color: #101828;
   font-size: 26px;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 32px;
   margin-bottom: 10px;
 }
 .product-item-1 .product-info .price-regular {
   font-size: 28px;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 34px;
   color: #101828;
 }
@@ -2784,7 +2848,7 @@ label {
 }
 .product-item-2 .product-info .box-prices .price-regular {
   font-size: 22px;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   line-height: 24px;
   font-weight: bold;
   color: #006D77;
@@ -2833,7 +2897,7 @@ label {
   font-size: 12px;
   line-height: 16px;
   color: #667085;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: bold;
   text-decoration: none;
   display: inline-block;
@@ -2858,13 +2922,13 @@ label {
 .nav-right li button {
   display: block;
   color: #101828;
-  font-size: 16px;
+  font-size: 18px;
   text-decoration: none;
   padding: 10px 15px;
   border-radius: 8px;
   background: transparent;
   border: 0px;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: 500;
   transition-duration: 0.2s;
 }
@@ -2912,7 +2976,7 @@ label {
   color: #98A2B3;
 }
 .box-newsletter .box-form-newsletter form .font-heading {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: 500;
 }
 .box-newsletter .btn-send {
@@ -3012,7 +3076,7 @@ label {
 
 .breadcrumbs li {
   color: #101828;
-  font-size: 16px;
+  font-size: 18px;
   display: inline-block;
   padding-left: 13px;
   position: relative;
@@ -3025,7 +3089,7 @@ label {
   color: #101828;
 }
 .breadcrumbs li a {
-  font-size: 16px;
+  font-size: 18px;
   color: #101828;
   text-decoration: none;
 }
@@ -3600,10 +3664,10 @@ label {
   margin: 5px 0;
 }
 .header .main-menu li a {
-  font-family: "Chivo", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 20px;
   color: #101828;
   display: block;
   padding: 30px 22px 30px 22px;
@@ -3642,7 +3706,7 @@ label {
   width: 100%;
 }
 .header .main-menu li ul li a {
-  font-size: 14px;
+  font-size: 16px;
   color: #101828;
   position: relative;
   padding: 10px 22px 10px 22px;
@@ -3673,10 +3737,10 @@ label {
   width: 100%;
 }
 .header .text-link-bd-btom {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 150%;
   color: #006D77;
   display: inline-block;
@@ -3745,7 +3809,7 @@ label {
 .user-account .user-name {
   margin-bottom: 0;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .perfect-scroll {
@@ -3778,8 +3842,8 @@ label {
   padding: 10px 0px;
 }
 .header-top span {
-  font-family: "Noto Sans", sans-serif;
-  font-size: 16px;
+  font-family: "Redzone", sans-serif;
+  font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
@@ -3972,11 +4036,11 @@ label {
   content: "\f113";
 }
 .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-header-content-area .mobile-menu-wrap nav .mobile-menu li a {
-  font-size: 16px;
-  font-family: "Chivo", sans-serif;
+  font-size: 18px;
+  font-family: "Redzone", sans-serif;
   line-height: 1;
   text-transform: capitalize;
-  font-weight: 500;
+  font-weight: 600;
   position: relative;
   display: inline-block;
   color: #101828;
@@ -4000,7 +4064,7 @@ label {
   transition-duration: 0.2s;
 }
 .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-header-content-area .mobile-menu-wrap nav .mobile-menu li ul li a {
-  font-size: 14px;
+  font-size: 16px;
   display: block;
   font-weight: 500;
   color: #101828;
@@ -4046,7 +4110,7 @@ label {
   margin-bottom: 0;
 }
 .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-header-content-area .mobile-header-info-wrap .single-mobile-header-info a {
-  font-size: 14px;
+  font-size: 16px;
   display: block;
   font-weight: 500;
   color: #006D77;
@@ -4055,7 +4119,7 @@ label {
   color: #101828;
 }
 .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-header-content-area .mobile-header-info-wrap .single-mobile-header-info a i {
-  font-size: 14px;
+  font-size: 16px;
   color: #101828;
   margin-right: 8px;
 }
@@ -4076,7 +4140,7 @@ label {
   padding-bottom: 0px;
 }
 .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-header-content-area .mobile-header-info-wrap .single-mobile-header-info .lang-curr-dropdown ul li a {
-  font-size: 16px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.7);
   font-weight: 400;
 }
@@ -4090,7 +4154,7 @@ label {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-header-content-area .site-copyright {
-  font-size: 13px;
+  font-size: 14px;
   color: #101828;
 }
 
@@ -4283,7 +4347,7 @@ label {
 }
 .widget-categories li a {
   color: #006D77;
-  font-size: 16px;
+  font-size: 18px;
 }
 .widget-categories li span.count {
   background-color: #DDD3FA;
@@ -4350,8 +4414,8 @@ label {
 }
 .footer .menu-footer li a {
   color: #667085;
-  font-family: "Noto Sans", sans-serif;
-  font-size: 16px;
+  font-family: "Redzone", sans-serif;
+  font-size: 18px;
   line-height: 28px;
   text-decoration: none;
   transition-duration: 0.2s;
@@ -4365,7 +4429,7 @@ label {
   border-top: 1px solid #E4E7EC;
   padding: 30px 0px;
   color: #667085;
-  font-size: 14px;
+  font-size: 16px;
 }
 .footer .footer-bottom a {
   text-decoration: none;
@@ -6042,16 +6106,16 @@ label {
   border-radius: 50px;
   padding: 14px 28px;
   color: #E29578;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 14px;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   display: inline-block;
 }
 
 .tag-dot {
   font-size: 12px;
   line-height: 16px;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   color: #667085;
   background: url(../imgs/template/icons/dot.svg) no-repeat left center;
   display: block;
@@ -6153,7 +6217,7 @@ label {
 }
 
 .list-job-2-col .card-job-description {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 22px;
 }
 
@@ -6462,7 +6526,7 @@ label {
   font-size: 28px;
   line-height: 32px;
   color: #98A2B3;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
 }
 
@@ -6510,7 +6574,7 @@ label {
 }
 
 .text-semibold {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-size: 10px;
   line-height: 14px;
   color: #98A2B3;
@@ -6526,7 +6590,7 @@ label {
   margin: 0px;
 }
 .list-category li {
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   display: inline-block;
   width: 100%;
@@ -6578,9 +6642,9 @@ label {
   padding: 70px 64px;
 }
 .box-green .text-desc-white {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 32px;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   color: #ffffff;
 }
 
@@ -6944,7 +7008,7 @@ label {
 .list-search-popular li a {
   color: #667085;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 14px;
   font-weight: bold;
 }
@@ -7115,9 +7179,9 @@ label {
 }
 
 .text-inter-lg {
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 28px;
   color: D1DAE4;
 }
@@ -7187,10 +7251,10 @@ label {
 }
 
 .table-pricing {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 28px;
   color: #101828;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: 400;
   text-align: center;
 }
@@ -7451,16 +7515,16 @@ label {
 
 .text-summary {
   font-weight: bold;
-  font-family: "Noto Sans", sans-serif;
-  font-size: 18px;
+  font-family: "Redzone", sans-serif;
+  font-size: 20px;
   line-height: 32px;
   color: #667085;
 }
 
 .single-detail p {
   margin-bottom: 15px;
-  font-size: 18px;
-  font-family: "Noto Sans", sans-serif;
+  font-size: 20px;
+  font-family: "Redzone", sans-serif;
   color: #667085;
   line-height: 32px;
   font-weight: 400;
@@ -7531,7 +7595,7 @@ label {
   padding: 75px 0px 0px 0px;
   font-size: 32px;
   line-height: 48px;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   text-align: center;
 }
@@ -7693,7 +7757,7 @@ label {
   padding: 10px 8px;
   margin: 0px 5px;
   font-weight: 700;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #667085;
   line-height: 30px;
   text-decoration: none;
@@ -7764,9 +7828,9 @@ label {
 }
 
 .text-heading-7 {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 18px;
   color: #101828;
 }
@@ -7866,10 +7930,10 @@ label {
   background-image: url(../imgs/page/shop2/filter.svg);
   background-position: 30px center;
   background-repeat: no-repeat;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 22px;
   font-weight: bold;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #006D77;
 }
 .btn-filter:hover {
@@ -7902,14 +7966,14 @@ label {
   font-size: 39px;
   line-height: 42px;
   font-weight: bold;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   color: #006D77;
 }
 .banner-ads .desc-ads {
   font-size: 16px;
   line-height: 20px;
   color: #667085;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
 }
 .banner-ads .box-banner-ads {
   display: table;
@@ -8070,7 +8134,7 @@ label {
   line-height: 16px;
   color: #667085;
   font-weight: bold;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
 }
 
 .box-price {
@@ -8083,7 +8147,7 @@ label {
   line-height: 38px;
   font-weight: bold;
   color: #004B52;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-right: 15px;
 }
 .box-price .price-old {
@@ -8091,7 +8155,7 @@ label {
   font-weight: bold;
   font-size: 28px;
   line-height: 32px;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
   text-decoration: line-through;
   margin-right: 15px;
 }
@@ -8101,7 +8165,7 @@ label {
   line-height: 28px;
   color: #667085;
   font-weight: 400;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
 }
 
 .font-bold {
@@ -8333,7 +8397,7 @@ strong {
   line-height: 22px;
   color: #004B52;
   font-weight: bold;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .process-bar-line {
@@ -8502,7 +8566,7 @@ input.qty-val {
   font-size: 22px;
   line-height: 24px;
   font-weight: bold;
-  font-family: "Chivo", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .countdown-period {
@@ -8511,7 +8575,7 @@ input.qty-val {
   font-size: 10px;
   line-height: 14px;
   font-weight: 600;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Redzone", sans-serif;
   margin-top: 4px;
 }
 
@@ -8911,7 +8975,7 @@ input.qty-val {
   }
   .btn.btn-select {
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 18px;
   }
   .burger-icon {
@@ -9089,18 +9153,18 @@ input.qty-val {
     padding: 25px 15px;
   }
   .box-quote .text-quote {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 32px;
   }
   .text-heading-5 {
-    font-size: 18px;
+    font-size: 20px;
   }
   .text-heading-3 {
     font-size: 25px;
     line-height: 30px;
   }
   .single-detail p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 30px;
   }
   .form-comment .text-end {
