@@ -205,7 +205,7 @@ function Index3() {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-center">
+                                <div className="d-flex justify-content-center">
                                     <Link href="/sanity-cms"><a className="btn btn-black icon-arrow-right-white mb-15">Overview of Sanity CMS</a></Link>
                                 </div>
                             </div>
