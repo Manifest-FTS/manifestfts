@@ -154,11 +154,21 @@ function Index3() {
                     <div className="section-box mt-70">
                         <div className="container">
                             <div className="row">
+                                <div className="col-lg-1 col-sm-1 col-12" />
+                                <div className="col-lg-10 col-sm-10 col-12 text-center">
+                                    <div className="d-flex p-40 justify-content-center">
+                                        <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Software Solutions</span>
+                                    </div>
+                                    <h2 className="text-heading-1 color-gray-900 mb-10">A CMS that allures you<br/>to edit content</h2>
+                                    <p className="text-body-lead-large color-gray-600 mt-20">Sanity has a long list of technical benefits. The ease of editing provides a rich experience and long-lasting value to our clients.</p>
+                                </div>
+                                <div className="col-lg-1 col-sm-1 col-12" />
+                            </div>
+                        </div>
+                        <div className="container mt-50">
+                            <div className="row">
                                 <div className="col-lg-1" />
                                     <div className="col-lg-10">
-                                        <div className="d-flex p-40 justify-content-center">
-                                            <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Software Solutions</span>
-                                        </div>
                                         <div className="box-image">
                                             <img className="img-responsive bdrd-16 shadow" src="assets/imgs/sanitycms.gif" alt="Sanity CMS" />
                                         </div>
@@ -167,17 +177,8 @@ function Index3() {
                             </div>
                         </div>
                     </div>
-                    <div className="section-box mt-100">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-lg-1 col-sm-1 col-12" />
-                                <div className="col-lg-10 col-sm-10 col-12 text-center">
-                                    <h2 className="text-heading-1 color-gray-900 mb-10">A CMS that allures you<br/>to edit content</h2>
-                                    <p className="text-body-lead-large color-gray-600 mt-20">Sanity has a long list of technical benefits. The ease of editing provides a rich experience and long-lasting value to our clients.</p>
-                                </div>
-                                <div className="col-lg-1 col-sm-1 col-12" />
-                            </div>
-                        </div>
+                    <div className="section-box mt-10">
+                        
                         <div className="container mt-40">
                             <div className="row">
                                 <div className="col-lg-4 col-md-12 col-sm-12">
@@ -203,6 +204,9 @@ function Index3() {
                                             <p className="text-body-text color-gray-600 mt-15">It's powerful API allows manifestation of dynamic relational systems and ecommerce platforms.</p>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <Link href="/sanity-cms"><a className="btn btn-black icon-arrow-right-white mb-15">Overview of Sanity CMS</a></Link>
                                 </div>
                             </div>
                         </div>
