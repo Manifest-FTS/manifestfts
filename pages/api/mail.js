@@ -17,8 +17,8 @@ export default function handler(req, res) {
   ;
 
   const data = {
-    to: "andjhait@gmail.com",
-    from: "partner@manifestfts.com",
+    to: "blockchaingamesnetwork@gmail.com",
+    from: "noreply@manifestfts.com",
     subject: "New Manifest Lead",
     text: message,
     html: message.replace(/\r\n/g, "<br>")
