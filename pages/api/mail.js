@@ -17,7 +17,7 @@ export default function handler(req, res) {
   ;
 
   const data = {
-    to: "blockchaingamesnetwork@gmail.com",
+    to: "partner@manifestfts.com",
     from: "noreply@manifestfts.com",
     subject: "New Manifest Lead",
     text: message,
