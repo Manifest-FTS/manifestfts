@@ -26,6 +26,7 @@ function Work() {
                             <div className="col-lg-6 col-sm-12 block-we-do">
                                 <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Strapi Extensible CMS API</span>
                                 <h3 className="text-heading-1 mt-30">Barclay Rex</h3>
+                                <p className="text-body-lead-large color-gray-600 mt-30">Barclay Rex has become one of the top tobacconists in New York City and is the last family-owned tobacconist in the city with over 111 years of service and excellence in fine tobacco</p>
                                 <p className="text-body-lead-large color-gray-600 mt-30">Digital e-Commerce Strategy, Progressive Web Application Development</p>
                                 <a href="https://barclayrex.com" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
                                 <div className="row">
