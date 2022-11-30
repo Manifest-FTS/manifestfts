@@ -75,12 +75,19 @@ const Footer = () => {
                             </ul>
                         </div> */}
                         <div className="col-lg-3 width-16">
-                            <h4 className="text-heading-5">Support</h4>
+                            <h4 className="text-heading-5">Social</h4>
                             <ul className="menu-footer mt-20">
                                 <li>
-                                    <Link href="/#">
-                                        <a>Client login</a>
-                                    </Link>
+                                    <a href="https://twitter.com/manifestfts" target="_blank" rel="noreferrer">Twitter
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/manifestfts" target="_blank" rel="noreferrer">Instagram
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/manifest-fts" target="_blank" rel="noreferrer">LinkedIn
+                                    </a>
                                 </li>
                             </ul>
                         </div>
