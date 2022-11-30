@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React, { useState } from "react";
 const FormProject = () => {
+  const [status, setStatus] = useState(false);
+
   async function handleOnSubmit(e) {
     e.preventDefault();
     const formData = {};
@@ -8,13 +10,19 @@ const FormProject = () => {
       if (!field.name) return;
       formData[field.name] = field.value;
     });
-    const res = await fetch("/api/mail", {
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
+
+    try {
+      const res = await fetch("/api/mail", {
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      });
+      setStatus(true);
+    } catch (e) {
+      setStatus(false);
+    }
 
     const { error } = await res.json();
     console.log(formData);
@@ -114,6 +122,16 @@ const FormProject = () => {
                       .
                     </span>
                   </div>
+
+                  {status && (
+                    <div className="col-lg-12 mt-15">
+                      <h3>We've received your message</h3>
+                      <p>
+                        Our team will be in touch soon, thank you for connecting
+                        with us
+                      </p>
+                    </div>
+                  )}
                 </form>
               </div>
             </div>
