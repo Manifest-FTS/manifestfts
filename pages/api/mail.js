@@ -17,7 +17,7 @@ export default function handler(req, res) {
   ;
 
   const data = {
-    to: "partner@manifestfts.com",
+    to: "manifestfts@gmail.com",
     from: "noreply@manifestfts.com",
     subject: "New Manifest Lead",
     text: message,
