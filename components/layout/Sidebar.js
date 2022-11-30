@@ -45,7 +45,7 @@ const Sidebar = ({ openClass }) => {
                                 <nav>
                                     <ul className="mobile-menu font-heading">
                                         <li>
-                                            <Link href="/"><a className="active">Home</a></Link>
+                                            <Link href="/work"><a className="active">Work</a></Link>
                                         </li>
                                         {/* <li className={isActive.key == 2 ? "has-children active" : "has-children"}>
                                             <span onClick={() => handleToggle(2)} className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>

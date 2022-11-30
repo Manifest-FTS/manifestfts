@@ -63,10 +63,10 @@ function Work() {
 
                 {/* // Ozone */}
                 <section className="section-box">
-                    <div className="container mt-120">
+                    <div className="container mt-120 re-order">
                         <div className="row">
                             
-                            <div className="col-lg-6 col-sm-12 block-we-do">
+                            <div className="col-lg-6 col-sm-12 block-we-do first">
                                 <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Sanity + WordPress Hybrid</span>
                                 <h3 className="text-heading-1 mt-30">OZONE</h3>
                                 <p className="text-body-lead-large color-gray-600 mt-30">Ozone paragliders and kites are one of the world's leading paragliding, paramotoring, kitesurf, snow kite and power kite manufacturers</p><p className="text-body-lead-large color-gray-600 mt-30">E-Commerce Web Application Development</p>
@@ -100,7 +100,7 @@ function Work() {
                                 </div>
                             </div>
 
-                            <div className="col-lg-6 col-sm-12 block-img-we-do"><img className="bdrd-16 img-responsive" src="assets/imgs/work/work-ozone.png" alt="Ozone's website on laptop" /></div>
+                            <div className="col-lg-6 col-sm-12 block-img-we-do second"><img className="bdrd-16 img-responsive" src="assets/imgs/work/work-ozone.png" alt="Ozone's website on laptop" /></div>
                         </div>
                     </div>
                 </section>
