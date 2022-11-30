@@ -16,7 +16,7 @@ const FormProject = () => {
       method: "POST",
     });
 
-    // const { error } = await res.json();
+    const { error } = await res.json();
     console.log(formData);
   }
 
