@@ -123,13 +123,17 @@ const FormProject = () => {
                     </span>
                   </div>
 
-                  {status && (
+                  {status ? (
                     <div className="col-lg-12 mt-15">
                       <h3>We've received your message</h3>
                       <p>
                         Our team will be in touch soon, thank you for connecting
                         with us
                       </p>
+                    </div>
+                  ) : (
+                    <div className="col-lg-12 mt-15">
+                      <h3>Something went wrong</h3>
                     </div>
                   )}
                 </form>
