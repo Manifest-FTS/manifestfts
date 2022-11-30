@@ -27,7 +27,7 @@ function Work() {
                                 <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Strapi Extensible CMS API</span>
                                 <h3 className="text-heading-1 mt-30">Barclay Rex</h3>
                                 <p className="text-body-lead-large color-gray-600 mt-30">Digital e-Commerce Strategy, Progressive Web Application Development</p>
-                                <a href="https://barclayrex.com" target="_blank" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
+                                <a href="https://barclayrex.com" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
                                 <div className="row">
                                     <div className="col-12 mt-50">
                                         <h2 className="text-heading-7 text-center color-gray-900 mb-10">Powered by</h2>
@@ -69,7 +69,7 @@ function Work() {
                                 <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Sanity + WordPress Hybrid</span>
                                 <h3 className="text-heading-1 mt-30">OZONE</h3>
                                 <p className="text-body-lead-large color-gray-600 mt-30">Ozone paragliders and kites are one of the world's leading paragliding, paramotoring, kitesurf, snow kite and power kite manufacturers</p><p className="text-body-lead-large color-gray-600 mt-30">E-Commerce Web Application Development</p>
-                                <a href="https://flyozone.com/" target="_blank" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
+                                <a href="https://flyozone.com/" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
                                 <div className="row">
                                     <div className="col-12 mt-50">
                                         <h2 className="text-heading-7 text-center color-gray-900 mb-10">Powered by</h2>
