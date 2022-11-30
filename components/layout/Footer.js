@@ -18,6 +18,11 @@ const Footer = () => {
                                         <a>About</a>
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link href="/work">
+                                        <a>Work</a>
+                                    </Link>
+                                </li>
                                 {/* <li>
                                     <Link href="/blog">
                                         <a>Blog</a>
@@ -55,20 +60,20 @@ const Footer = () => {
                             </li>
                             </ul>
                         </div>
-                        <div className="col-lg-3 width-20 mb-30">
+                        {/* <div className="col-lg-3 width-20 mb-30">
                             <h4 className="text-heading-5">Capabilities</h4>
                             <ul className="menu-footer mt-20">
                             <li>
-                                                    <Link href="/capabilities#branding"><a>Branding</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link href="/capabilities#design"><a>Design</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link href="/capabilities#software"><a>Software</a></Link>
-                                                </li>
+                                <Link href="/capabilities#branding"><a>Branding</a></Link>
+                            </li>
+                            <li>
+                                <Link href="/capabilities#design"><a>Design</a></Link>
+                            </li>
+                            <li>
+                                <Link href="/capabilities#software"><a>Software</a></Link>
+                            </li>
                             </ul>
-                        </div>
+                        </div> */}
                         <div className="col-lg-3 width-16">
                             <h4 className="text-heading-5">Support</h4>
                             <ul className="menu-footer mt-20">
