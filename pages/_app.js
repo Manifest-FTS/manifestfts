@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
             <title>Manifest FTS | Branding, Design and Software Development</title>
             <meta name="description" content="We help our partners acquire new customers, get more traffic, sell more stuff and create better user experiences. Get started with a free Consultation." />
           </Head>
-          <Script strategy="afterInteractive">
+          <Script id="GTM" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':` +
             `new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],` +
             `j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=` +
