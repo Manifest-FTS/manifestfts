@@ -15,9 +15,9 @@ async function sendEmail(req, res) {
 
   try {
     await sendgrid.send({
-      to: "partner@manifestfts.com",
+      to: "hello@manifestfts.com",
       from: "noreply@manifestfts.com",
-      subject: "New Manifest Lead",
+      subject: "New Message from Manifest Form",
       text: message,
       html: message.replace(/\r\n/g, "<br>"),
     });
