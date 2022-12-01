@@ -7,9 +7,9 @@ import Script from 'next/script';
 function MyApp({ Component, pageProps }) {
     return (
     <>
-        <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=GTM-NPL69N2`}/>
+        <Script id="GTM1" strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=GTM-NPL69N2`}/>
 
-        <Script strategy='lazyOnload'>
+        <Script id="GTM2" strategy='lazyOnload'>
             {`
                 window.datalayer = window.dataLayer || [];
                 
