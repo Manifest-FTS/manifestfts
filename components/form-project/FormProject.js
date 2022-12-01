@@ -132,9 +132,7 @@ const FormProject = () => {
                       </p>
                     </div>
                   ) : (
-                    <div className="col-lg-12 mt-15">
-                      <h3>Something went wrong</h3>
-                    </div>
+                    ""
                   )}
                 </form>
               </div>
