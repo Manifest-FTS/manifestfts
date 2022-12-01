@@ -7,7 +7,8 @@ import Script from 'next/script';
 function MyApp({ Component, pageProps }) {
     return (
     <>
-        <Script id="GTM1" strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=GTM-NPL69N2`}/>
+        <Script id="FreshCRM" src='//fw-cdn.com/2297861/2939382.js' chat='true'></Script>
+        <Script id="GTM1" strategy="lazyOnload" src={`https://www.googletagmanager.com/gtm.js?id=GTM-NPL69N2`}/>
 
         <Script id="GTM2" strategy='lazyOnload'>
             {`
