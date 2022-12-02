@@ -1,5 +1,7 @@
-import '../public/assets/css/style.css'
+import "../public/assets/css/style.css";
 import "../public/assets/css/swiper-custom.css";
+import "../styles/globals.scss";
+
 import React, { useEffect, useState } from "react";
 import Head from 'next/head';
 import Script from 'next/script';
@@ -24,4 +26,4 @@ function MyApp({ Component, pageProps }) {
     )
 }
 
-export default MyApp
+export default MyApp;
