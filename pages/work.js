@@ -18,6 +18,24 @@ function Work() {
         <>
 
             <Layout>
+                <section className="section-box bg-red-100">
+                    <div className="banner-hero banner-2 bg-about-1 bg-green-100">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-lg-9"><span className="tag-1 bg-5 color-green-900 mr-20 px-4 py-2 rounded-md">Our Work</span>
+                                    <h1 className="text-display-3 mt-30">We increase leads, sales, experiences and more for our valued partners.</h1>
+                                    {/* <p className="text-body-lead-large color-gray-700 mt-40 pr-40">Manifest is a creative digital agency that offers branding, design, and innovative web technology to forward thinking businesses and brands. </p> */}
+
+                                </div>
+                                <div className="col-lg-5 d-none d-lg-block">
+                                    {/* <div className="banner-imgs">
+                                        <div className="block-1 shape-1"><img src="/assets/imgs/page/about/1/banner2.png" alt="Agon" /></div><img className="rounded img-responsive shape-2" alt="Agon" src="assets/imgs/agencys1.jpg" />
+                                    </div> */}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 {/* // Barclay */}
                 <section className="section-box">
                     <div className="container mt-120">
@@ -27,7 +45,7 @@ function Work() {
                                 <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Strapi Extensible CMS API</span>
                                 <h3 className="text-heading-1 mt-30">Barclay Rex</h3>
                                 <p className="text-body-lead-large color-gray-600 mt-30">Barclay Rex has become one of the top tobacconists in New York City and is the last family-owned tobacconist in the city with over 111 years of service and excellence in fine tobacco</p>
-                                <p className="text-body-lead-large color-gray-600 mt-30">Digital e-Commerce Strategy, Progressive Web Application Development</p>
+                                <p className="text-body-lead-large color-gray-600 mt-30">AdobeXD Design of client's existing brand. Digital e-Commerce Strategy, Progressive Web Application Development in Strapi CMS/API.</p>
                                 <a href="https://barclayrex.com" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
                                 <div className="row">
                                     <div className="col-12 mt-50">
@@ -69,7 +87,7 @@ function Work() {
                             <div className="col-lg-6 col-sm-12 block-we-do first">
                                 <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Sanity + WordPress Hybrid</span>
                                 <h3 className="text-heading-1 mt-30">OZONE</h3>
-                                <p className="text-body-lead-large color-gray-600 mt-30">Ozone paragliders and kites are one of the world's leading paragliding, paramotoring, kitesurf, snow kite and power kite manufacturers</p><p className="text-body-lead-large color-gray-600 mt-30">E-Commerce Web Application Development</p>
+                                <p className="text-body-lead-large color-gray-600 mt-30">Ozone paragliders and kites are one of the world's leading paragliding, paramotoring, kitesurf, snow kite and power kite manufacturers.</p><p className="text-body-lead-large color-gray-600 mt-30">Customer provided Figma designs. E-Commerce Web Application w/ Sanity API creating a easy to use administrtive interface.</p>
                                 <a href="https://flyozone.com/" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
                                 <div className="row">
                                     <div className="col-12 mt-50">

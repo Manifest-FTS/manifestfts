@@ -64,7 +64,7 @@ const Header = ({ handleOpen, headerStyle }) => {
                                                     <a href="https://developer.wordpress.org/rest-api/" target="_blank" rel="noreferrer">WordPress RESTful API*</a>
                                                 </li>
                                                 <li>
-                                                    <a className="ml-2">*Overview page coming soon</a>
+                                                    <a className="ml-2">*external link.</a>
                                                 </li>
                                             </ul>
                                         </li>
