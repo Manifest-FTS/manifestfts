@@ -8,9 +8,9 @@ import 'react-modal-video/css/modal-video.css';
 
 import Script from 'next/script'
 import { useRouter } from 'next/router'
+import { GTM_ID, pageview } from '../lib/gtm'
 
 function MyApp({ Component, pageProps }) {
-    const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
     const router = useRouter()
     useEffect(() => {
         router.events.on('routeChangeComplete', pageview)
