@@ -8,7 +8,7 @@ const FtsSignin = () => {
                 <div className="col-md-4 col-sm-6 text-center text-md-start">
                     <Link href="/">
                         <a>
-                            <img alt="Manifest" src="/assets/imgs/manifest-logo-mark-fts.svg" className="w-25" />
+                            <Image src="/assets/imgs/manifest-logo-mark-fts.svg" alt="Manifest FTS" width={100} height={100} />
                         </a>
                     </Link>
                 </div>
