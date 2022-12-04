@@ -10,7 +10,7 @@ import Script from 'next/script'
 import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }) {
-    let GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
+    const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
     const router = useRouter()
     useEffect(() => {
         router.events.on('routeChangeComplete', pageview)
