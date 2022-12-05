@@ -51,6 +51,7 @@
             height: 32px;
             width: 32px;
             transition-duration: 0.2s;
+            background-color: $background-green-900;
             &:hover {
                 transform: translateY(-3px);
                 transition-duration: 0.2s;
@@ -64,15 +65,17 @@
                 }
             }
             &.icon-twitter {
-                background: url(../imgs/template/icons/twitter.svg) no-repeat 0px 0px;
                 transition-duration: 0.2s;
+                -webkit-mask:  url(../imgs/template/icons/twitter.svg) no-repeat 50% 50%;
+                mask: url(../imgs/template/icons/twitter.svg) no-repeat 50% 50%;
                 &:hover {
                      opacity: 0.8;
                     transition-duration: 0.2s;
                 }
             }
             &.icon-instagram {
-                background: url(../imgs/template/icons/instagram.svg) no-repeat 0px 0px;
+                -webkit-mask:  url(../imgs/template/icons/instagram.svg) no-repeat 50% 50%;
+                mask: url(../imgs/template/icons/instagram.svg) no-repeat 50% 50%;
                 transition-duration: 0.2s;
                 &:hover {
                      opacity: 0.8;
@@ -80,7 +83,8 @@
                 }
             }
             &.icon-linkedin {
-                background: url(../imgs/template/icons/linkedin.svg) no-repeat 0px 0px;
+                -webkit-mask:  url(../imgs/template/icons/linkedin.svg) no-repeat 50% 50%;
+                mask: url(../imgs/template/icons/linkedin.svg) no-repeat 50% 50%;
                 transition-duration: 0.2s;
                 &:hover {
                     opacity: 0.8;
