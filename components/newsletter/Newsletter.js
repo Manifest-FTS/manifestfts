@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -20,7 +21,10 @@ function Newsletter() {
                                 </div>
                             </div>
                             <div className="col-lg-7 col-md-5 mt-30 mt-lg-0 mt-md-30 mt-sm-30 position-relative text-end">
-                                <div className="block-chart shape-1"><img src="/assets/imgs/template/chart.png" alt="Chart" /></div><img className="img-responsive img-newsletter" src="assets/imgs/template/img-newsletter.png" alt="Agon" />
+                                <div className="block-chart shape-1">
+                                    <Image src="/assets/imgs/template/chart.png" alt="Chart" width={100} height={100} />
+                                </div>
+                                <Image className="img-responsive img-newsletter" src="assets/imgs/template/img-newsletter.png" alt="Manifest" width={100} height={100} />
                             </div>
                         </div>
                     </div>
