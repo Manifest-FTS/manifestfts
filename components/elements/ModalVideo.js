@@ -13,10 +13,10 @@ const ModalVideos = () => {
             <a onClick={() => setOpen(true)}>Click</a>
 
             <ModalVideo
-                channel="youtube"
+                channel="custom"
                 autoplay
+                url="https://motoringstyle.com/manifest-brand-video-background.mp4"
                 isOpen={isOpen}
-                videoId="7e90gBu4pas"
                 onClose={() => setOpen(false)}
             />
         </>

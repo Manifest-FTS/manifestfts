@@ -1,8 +1,13 @@
+
+
 .header {
+    background: #000000;
     padding: 10px 0;
-    float: left;
     width: 100%;
-    position: relative;
+    position: fixed;
+    top: 0;
+    transition: top 0.3s;
+    z-index: 111;
     .main-header {
         display: flex;
         align-items: center;
@@ -74,7 +79,7 @@
                 font-style: normal;
                 font-weight: 600;
                 font-size: $font-lg;
-                color: $color-gray-900;
+                color: $color-white;
                 display: block;
                 padding: 30px 22px 30px 22px;
                 text-decoration: none;
