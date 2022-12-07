@@ -37,8 +37,8 @@ function Index3() {
             </h1>
             <div className="text-body-lead-medium mt-30">
               <a onClick={() => setOpen(true)}>
-                <img width="50" height="50" src="/assets/imgs/SVG/icon-video-play.svg" />
-                <div>PLAY REEL</div>
+                <img width="55" height="55" src="/assets/imgs/SVG/icon-video-play.svg" />
+                <div className="text-body-small text-bold">PLAY REEL</div>
               </a>
             </div>
           </div>
@@ -48,7 +48,7 @@ function Index3() {
             preload="auto"
             aria-hidden="true"
             autoPlay playsInline loop muted
-            src="https://motoringstyle.com/15secv2.mp4" metadata={{ video_id: "video-id-54321", video_title: "Manifest FTS", viewer_user_id: "user-id-007", }} />
+            src="https://motoringstyle.com/manifest-brand-video-loop.mp4" metadata={{ video_id: "video-id-54321", video_title: "Manifest FTS", viewer_user_id: "user-id-007", }} />
           </div>
 
           {/* <video id="brand-video" autoplay muted loop className="brand-video">         
@@ -322,25 +322,24 @@ function Index3() {
           <div className="section-box mt-70">
             <div className="container">
               <div className="row">
-                <div className="col-lg-1 col-sm-1 col-12" />
-                <div className="col-lg-10 col-sm-10 col-12 text-center">
+                <div className="col-lg-2 col-sm-2 col-12" />
+                <div className="col-lg-8 col-sm-8 col-12 text-center">
                   <div className="d-flex p-40 justify-content-center">
                     <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">
                       Software Solutions
                     </span>
                   </div>
                   <h2 className="text-heading-1 color-gray-900 mb-10">
-                    A CMS that allures you
+                    A CMS that elevates your
                     <br />
-                    to edit content
+                    content editing experience
                   </h2>
-                  <p className="text-body-lead-large color-gray-600 mt-20">
-                    Sanity has a long list of technical benefits. The ease of
-                    editing provides a rich experience and long-lasting value to
-                    our clients.
+                  <p className="ft-lead text-body-lead-large color-gray-600 mt-30">
+                    Sanity has a long list of technical benefits. It's the simple interface and visual cues
+                    Sanity has a long list of technical benefits, but the clean interface and visual cues make it our recommended content management system. It provides a hassle-free editing experience and adds long-lasting value for our clients.
                   </p>
                 </div>
-                <div className="col-lg-1 col-sm-1 col-12" />
+                <div className="col-lg-2 col-sm-2 col-12" />
               </div>
             </div>
             <div className="container mt-50">
@@ -416,7 +415,7 @@ function Index3() {
         <ModalVideo
           channel="custom"
           autoplay
-          url="https://motoringstyle.com/manifest-brand-2002-2003-v4.mp4"
+          url="https://motoringstyle.com/manifest-brand-2002-2003-final.mp4"
           isOpen={isOpen}
           onClose={() => setOpen(false)}
         />
