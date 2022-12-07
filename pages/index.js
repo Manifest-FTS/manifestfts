@@ -31,11 +31,11 @@ function Index3() {
       <Layout>
         <section id="home-hero" className="section-box">
           <div className="text-center brand-video-copy">
-            <h1 className="mt-40">
+            <h1 className="mt-60">
               Forward Thinking
               <br className="d-lg-block d-none" /> Solutions
             </h1>
-            <div className="text-body-lead-medium color-gray-600 mt-60">
+            <div className="text-body-lead-medium mt-30">
               <a onClick={() => setOpen(true)}>
                 <img width="50" height="50" src="/assets/imgs/SVG/icon-video-play.svg" />
                 <div>PLAY REEL</div>
@@ -48,7 +48,7 @@ function Index3() {
             preload="auto"
             aria-hidden="true"
             autoPlay playsInline loop muted
-            src="https://motoringstyle.com/15sec.mp4" metadata={{ video_id: "video-id-54321", video_title: "Manifest FTS", viewer_user_id: "user-id-007", }} />
+            src="https://motoringstyle.com/15secv2.mp4" metadata={{ video_id: "video-id-54321", video_title: "Manifest FTS", viewer_user_id: "user-id-007", }} />
           </div>
 
           {/* <video id="brand-video" autoplay muted loop className="brand-video">         
@@ -416,7 +416,7 @@ function Index3() {
         <ModalVideo
           channel="custom"
           autoplay
-          url="https://motoringstyle.com/manifest-brand-2002-2003-v3.mp4"
+          url="https://motoringstyle.com/manifest-brand-2002-2003-v4.mp4"
           isOpen={isOpen}
           onClose={() => setOpen(false)}
         />
