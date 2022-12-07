@@ -1798,99 +1798,12 @@ label {
   margin: 5px 0px 0px 0px;
 }
 
-.box-swiper {
-  position: relative;
-}
-.box-swiper .swiper-container {
-  position: relative;
-}
-.box-swiper .swiper-container .item-logo {
-  border: 1px solid #667085;
-  padding: 39px 0px 36px 0px;
-  display: inline-block;
+.brand-video {
+  object-fit: cover;
   width: 100%;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0px 45px 80px rgba(0, 0, 0, 0.04);
-}
-.box-swiper .swiper-container .item-logo img {
-  max-width: 100%;
-}
-.box-swiper .swiper-container .item-logo:hover {
-  border: 1px solid #1D2939;
-  box-shadow: 0px 47px 65px rgba(21, 28, 38, 0.1);
-}
-.box-swiper .swiper-button-next:after,
-.box-swiper .swiper-button-prev:after {
-  content: "";
-}
-.box-swiper .swiper-button-next {
-  background: url(../imgs/slider/swiper/next.svg) no-repeat 0px 0px;
-}
-.box-swiper .swiper-button-next:hover {
-  background: url(../imgs/slider/swiper/next-active.svg) no-repeat 0px 0px;
-}
-.box-swiper .swiper-button-prev {
-  background: url(../imgs/slider/swiper/prev.svg) no-repeat 0px 0px;
-}
-.box-swiper .swiper-button-prev:hover {
-  background: url(../imgs/slider/swiper/prev-active.svg) no-repeat 0px 0px;
-}
-.box-swiper .swiper-button-next,
-.box-swiper .swiper-button-prev {
-  width: 64px;
-  height: 64px;
-  margin-top: -55px;
-}
-.box-swiper .swiper-button-next {
-  left: auto;
-  right: 0px;
-  top: -65px;
-}
-.box-swiper .swiper-button-prev {
-  left: auto;
-  right: 84px;
-  top: -65px;
-}
-.box-swiper .swiper-button-next.swiper-button-disabled,
-.box-swiper .swiper-button-prev.swiper-button-disabled {
-  opacity: 1;
-}
-
-.swiper-pagination {
-  text-align: center;
-  width: 100%;
-}
-
-.swiper-pagination-bullet {
-  margin: 10px;
-}
-
-/*Style of the location of the div that wraps the custom pager*/
-.swiper-pagination-custom {
-  bottom: -5px;
-}
-
-.swiper-pagination-customs {
-  background: url(../imgs/slider/swiper/dot.svg) no-repeat 0px 0px;
-  display: inline-block;
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 10px;
-  height: 10px;
-  margin-left: 4px;
-  margin-right: 4px;
-}
-
-/*Customize the style representation when pager is activated*/
-.swiper-pagination-customs-active,
-.swiper-pagination-customs:hover {
-  background: url(../imgs/slider/swiper/dot-active.svg) no-repeat 0px 0px;
-  width: 12px;
-  height: 12px;
-  margin-bottom: -1px;
-  margin-left: 3px;
-  margin-right: 3px;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
 }
 
 .box-swiper {

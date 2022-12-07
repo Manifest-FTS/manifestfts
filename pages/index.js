@@ -9,6 +9,7 @@ import Accordion from "../components/elements/Accordion";
 import Faqs from "../components/faqs/Faqs";
 import FormProject from "../components/form-project/FormProject";
 import Layout from "../components/layout/Layout";
+// import BrandVideo from './videos/manifest-brand-2002-2003.mp4';
 const ModalVideo = dynamic(import("react-modal-video"), {
   ssr: false,
 });
@@ -35,8 +36,8 @@ function Index3() {
             <div className="container">
               <div className="text-center">
                 <h1 className="text-display-2 color-gray-900 mt-40">
-                  Forward thinking
-                  <br className="d-lg-block d-none" /> solutions
+                  Forward Thinking
+                  <br className="d-lg-block d-none" /> Solutions
                 </h1>
                 <div className="text-body-lead-large color-gray-600 mt-60">
                   We harness innovative software
@@ -44,6 +45,10 @@ function Index3() {
                   to craft valuable digital experiences.
                 </div>
               </div>
+
+              {/* <video id="brand-video" autoplay muted loop className="brand-video">         
+                <source src={BrandVideo} type="video/mp4"/>       
+              </video> */}
             </div>
           </div>
         </section>
