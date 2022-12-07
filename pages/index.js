@@ -5,11 +5,9 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import "react-modal-video/css/modal-video.css";
-import Accordion from "../components/elements/Accordion";
-import Faqs from "../components/faqs/Faqs";
 import FormProject from "../components/form-project/FormProject";
 import Layout from "../components/layout/Layout";
-// import BrandVideo from './videos/manifest-brand-2002-2003.mp4';
+import ModalVideos from "../components/elements/ModalVideo";
 const ModalVideo = dynamic(import("react-modal-video"), {
   ssr: false,
 });
@@ -31,26 +29,31 @@ function Index3() {
   return (
     <>
       <Layout>
-        <section className="section-box">
-          <div className="banner-hero banner-3">
-            <div className="container">
-              <div className="text-center">
-                <h1 className="text-display-2 color-gray-900 mt-40">
-                  Forward Thinking
-                  <br className="d-lg-block d-none" /> Solutions
-                </h1>
-                <div className="text-body-lead-large color-gray-600 mt-60">
-                  We harness innovative software
-                  <br className="d-lg-block d-none" />
-                  to craft valuable digital experiences.
-                </div>
-              </div>
-
-              {/* <video id="brand-video" autoplay muted loop className="brand-video">         
-                <source src={BrandVideo} type="video/mp4"/>       
-              </video> */}
+        <section id="home-hero" className="section-box">
+          <div className="text-center brand-video-copy">
+            <h1 className="mt-40">
+              Forward Thinking
+              <br className="d-lg-block d-none" /> Solutions
+            </h1>
+            <div className="text-body-lead-medium color-gray-600 mt-60">
+              <a onClick={() => setOpen(true)}>
+                <img width="50" height="50" src="/assets/imgs/SVG/icon-video-play.svg" />
+                <div>PLAY REEL</div>
+              </a>
             </div>
           </div>
+
+          <div className="brand-video-wrapper" aria-hidden="true">
+            <video id="brand-video" aria-label="Video" 
+            preload="auto"
+            aria-hidden="true"
+            autoPlay playsInline loop muted
+            src="https://motoringstyle.com/15sec.mp4" metadata={{ video_id: "video-id-54321", video_title: "Manifest FTS", viewer_user_id: "user-id-007", }} />
+          </div>
+
+          {/* <video id="brand-video" autoplay muted loop className="brand-video">         
+            <source src={BrandVideo} type="video/mp4"/>       
+          </video> */}
         </section>
 
         <div className="section-box overflow-visible mt-80">
@@ -64,7 +67,7 @@ function Index3() {
                   <li>
                     <Link href="/#">
                       <a className="item-logo box-hover-shadow hover-up">
-                        <img alt="Adobe" src="assets/imgs/logos/adobe.svg" />
+                        <img alt="Adobe" src="/assets/imgs/logos/adobe.svg" />
                       </a>
                     </Link>
                   </li>
@@ -73,7 +76,7 @@ function Index3() {
                       <a className="item-logo box-hover-shadow hover-up">
                         <img
                           alt="Figma Vector Logo"
-                          src="assets/imgs/logos/figma.svg"
+                          src="/assets/imgs/logos/figma.svg"
                         />
                       </a>
                     </Link>
@@ -83,7 +86,7 @@ function Index3() {
                       <a className="item-logo box-hover-shadow hover-up">
                         <img
                           alt="Netlify CMS Vector Logo"
-                          src="assets/imgs/logos/netlifycms.svg"
+                          src="/assets/imgs/logos/netlifycms.svg"
                         />
                       </a>
                     </Link>
@@ -93,7 +96,7 @@ function Index3() {
                       <a className="item-logo box-hover-shadow hover-up">
                         <img
                           alt="Wordpress CMS Vector Logo"
-                          src="assets/imgs/logos/wordpress.svg"
+                          src="/assets/imgs/logos/wordpress.svg"
                         />
                       </a>
                     </Link>
@@ -103,7 +106,7 @@ function Index3() {
                       <a className="item-logo box-hover-shadow hover-up">
                         <img
                           alt="Strapi CMS Vector Logo"
-                          src="assets/imgs/logos/strapi.svg"
+                          src="/assets/imgs/logos/strapi.svg"
                         />
                       </a>
                     </Link>
@@ -113,7 +116,7 @@ function Index3() {
                       <a className="item-logo box-hover-shadow hover-up">
                         <img
                           alt="Sanity CMS Vector Logo"
-                          src="assets/imgs/logos/sanity.svg"
+                          src="/assets/imgs/logos/sanity.svg"
                         />
                       </a>
                     </Link>
@@ -123,7 +126,7 @@ function Index3() {
                       <a className="item-logo box-hover-shadow hover-up">
                         <img
                           alt="React.js Vector Logo"
-                          src="assets/imgs/logos/reactjs.svg"
+                          src="/assets/imgs/logos/reactjs.svg"
                         />
                       </a>
                     </Link>
@@ -131,7 +134,7 @@ function Index3() {
                   <li>
                     <Link href="/#">
                       <a className="item-logo box-hover-shadow hover-up">
-                        <img alt="Next.js" src="assets/imgs/logos/nextjs.svg" />
+                        <img alt="Next.js" src="/assets/imgs/logos/nextjs.svg" />
                       </a>
                     </Link>
                   </li>
@@ -140,7 +143,7 @@ function Index3() {
                       <a className="item-logo box-hover-shadow hover-up">
                         <img
                           alt="TailwindCSS"
-                          src="assets/imgs/logos/tailwindcss.svg"
+                          src="/assets/imgs/logos/tailwindcss.svg"
                         />
                       </a>
                     </Link>
@@ -150,7 +153,7 @@ function Index3() {
                       <a className="item-logo box-hover-shadow hover-up">
                         <img
                           alt="HTML5 Vector Logo"
-                          src="assets/imgs/logos/html5.svg"
+                          src="/assets/imgs/logos/html5.svg"
                         />
                       </a>
                     </Link>
@@ -160,7 +163,7 @@ function Index3() {
                       <a className="item-logo box-hover-shadow hover-up">
                         <img
                           alt="Bootstrap Vector Logo"
-                          src="assets/imgs/logos/bootstrap.svg"
+                          src="/assets/imgs/logos/bootstrap.svg"
                         />
                       </a>
                     </Link>
@@ -170,7 +173,7 @@ function Index3() {
                       <a className="item-logo box-hover-shadow hover-up">
                         <img
                           alt="Netlify Vector Logo"
-                          src="assets/imgs/logos/netlify.svg"
+                          src="/assets/imgs/logos/netlify.svg"
                         />
                       </a>
                     </Link>
@@ -180,7 +183,7 @@ function Index3() {
                       <a className="item-logo box-hover-shadow hover-up">
                         <img
                           alt="Pantheon"
-                          src="assets/imgs/logos/pantheon.svg"
+                          src="/assets/imgs/logos/pantheon.svg"
                         />
                       </a>
                     </Link>
@@ -190,7 +193,7 @@ function Index3() {
                       <a className="item-logo box-hover-shadow hover-up">
                         <img
                           alt="Vercel Vector Logo"
-                          src="assets/imgs/logos/vercel.svg"
+                          src="/assets/imgs/logos/vercel.svg"
                         />
                       </a>
                     </Link>
@@ -200,7 +203,7 @@ function Index3() {
                       <a className="item-logo box-hover-shadow hover-up">
                         <img
                           alt="Heroku Vector Logo"
-                          src="assets/imgs/logos/heroku.svg"
+                          src="/assets/imgs/logos/heroku.svg"
                         />
                       </a>
                     </Link>
@@ -217,8 +220,8 @@ function Index3() {
               <div className="col-lg-6 col-sm-12 block-img-we-do">
                 <img
                   className="bdrd-16 img-responsive"
-                  ref={yInfiniteEl}
-                  src="assets/imgs/work/work-barclay-rex.png"
+                  // ref={yInfiniteEl}
+                  src="/assets/imgs/work/work-barclay-rex.png"
                   alt="Barclay Rex website on laptop"
                 />
               </div>
@@ -247,7 +250,7 @@ function Index3() {
                           <a className="item-logo box-hover-shadow hover-up">
                             <img
                               alt="Adobe"
-                              src="assets/imgs/logos/adobe.svg"
+                              src="/assets/imgs/logos/adobe.svg"
                             />
                           </a>
                         </Link>
@@ -257,7 +260,7 @@ function Index3() {
                           <a className="item-logo box-hover-shadow hover-up">
                             <img
                               alt="Bootstrap"
-                              src="assets/imgs/logos/tailwindcss.svg"
+                              src="/assets/imgs/logos/tailwindcss.svg"
                             />
                           </a>
                         </Link>
@@ -267,7 +270,7 @@ function Index3() {
                           <a className="item-logo box-hover-shadow hover-up">
                             <img
                               alt="Strapi CMS"
-                              src="assets/imgs/logos/strapi.svg"
+                              src="/assets/imgs/logos/strapi.svg"
                             />
                           </a>
                         </Link>
@@ -277,7 +280,7 @@ function Index3() {
                           <a className="item-logo box-hover-shadow hover-up">
                             <img
                               alt="Next.js"
-                              src="assets/imgs/logos/nextjs.svg"
+                              src="/assets/imgs/logos/nextjs.svg"
                             />
                           </a>
                         </Link>
@@ -287,7 +290,7 @@ function Index3() {
                           <a className="item-logo box-hover-shadow hover-up">
                             <img
                               alt="Vercel"
-                              src="assets/imgs/logos/vercel.svg"
+                              src="/assets/imgs/logos/vercel.svg"
                             />
                           </a>
                         </Link>
@@ -347,7 +350,7 @@ function Index3() {
                   <div className="box-image">
                     <img
                       className="img-responsive bdrd-16 shadow effect-1"
-                      src="assets/imgs/sanitycms.gif"
+                      src="/assets/imgs/sanitycms.gif"
                       alt="Sanity CMS"
                     />
                   </div>
@@ -411,10 +414,10 @@ function Index3() {
         <FormProject />
 
         <ModalVideo
-          channel="youtube"
+          channel="custom"
           autoplay
+          url="https://motoringstyle.com/manifest-brand-2002-2003-v3.mp4"
           isOpen={isOpen}
-          videoId="7e90gBu4pas"
           onClose={() => setOpen(false)}
         />
       </Layout>
