@@ -10,20 +10,9 @@ const Header = ({ handleOpen, headerStyle }) => {
             if (scrollCheck !== scroll) {
                 setScroll(scrollCheck)
             }
-
-            /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-            const prevScrollpos = window.pageYOffset;
-            window.onscroll = function() {
-            const currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
-                document.getElementById("navbar").style.top = "0";
-            } else {
-                document.getElementById("navbar").style.top = "-50px";
-            }
-            prevScrollpos = currentScrollPos;
-            }
         })
     })
+    
     return (
         <>
             <header id="navbar" className={scroll ? `${headerStyle} header sticky-bar stick ` : `${headerStyle} header sticky-bar`}>
@@ -33,7 +22,7 @@ const Header = ({ handleOpen, headerStyle }) => {
                             <div className="header-logo">
                                 <Link href="/">
                                     <a className="d-flex">
-                                        {headerStyle ? <img alt="Manifest Vector Logo" id="Logo" src="/assets/imgs/logo-white.svg" width="223" height="33"  className="img-fluid h-100 w-100" /> : <img id="Logo" alt="Manifest" src="/assets/imgs/logo-white.svg" width="223" height="33" className="img-fluid h-100 w-100" />}
+                                        {headerStyle ? <img alt="Manifest Vector Logo" id="Logo" src="/assets/imgs/logo.svg" width="223" height="33"  className="img-fluid h-100 w-100" /> : <img id="Logo" alt="Manifest" src="/assets/imgs/logo-white.svg" width="223" height="33" className="img-fluid h-100 w-100" />}
                                     </a>
                                 </Link>
                             </div>

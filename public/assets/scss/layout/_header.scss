@@ -198,8 +198,8 @@
         width: 100%;
         z-index: 999;
         left: 0;
-        -webkit-transition: all 0.3s ease 0s;
-        transition: all 0.3s ease 0s;
+        -webkit-transition: all 0.5s ease 0s;
+        transition: all 0.5s ease 0s;
         border-bottom: 1px solid $color-gray-100;
         background: #fff;
         &.sticky-white-bg {
@@ -210,6 +210,20 @@
         }
         .burger-icon {
             top: 45px;
+        }
+        .header-logo {
+            #Logo {
+                content: url("/assets/imgs/logo.svg");
+            }
+        }
+        .main-menu {
+            li {
+                a {
+                    color: #000000;
+                    -webkit-transition: all 0.5s ease 0s;
+                    transition: all 0.5s ease 0s;
+                }
+            }
         }
     }
 }

@@ -1798,30 +1798,21 @@ label {
   margin: 5px 0px 0px 0px;
 }
 
+.modal-video .modal-video-body {
+  height: 88vh;
+  max-width: 90% !important;
+}
+
 #home-hero {
   display: flex;
   flex-direction: column;
-  height: 88vh;
+  height: 80vh;
   position: relative;
   padding: 0;
   justify-content: center;
   width: 100%;
 }
-
-.brand-video-wrapper {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: 0;
-  align-items: center;
-  text-align: center;
-}
-
-.brand-video-copy {
+#home-hero .brand-video-copy {
   align-items: center;
   align-self: center;
   display: inline-flex;
@@ -1834,11 +1825,22 @@ label {
   transition: opacity 444ms linear;
   z-index: 5;
 }
-.brand-video-copy h1, .brand-video-copy div {
+#home-hero .brand-video-copy h1, #home-hero .brand-video-copy div {
   color: #ffffff;
 }
-
-#brand-video {
+#home-hero .brand-video-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  align-items: center;
+  text-align: center;
+}
+#home-hero .brand-video-wrapper #brand-video {
   display: block;
   object-fit: cover;
   width: 100%;
@@ -3739,8 +3741,8 @@ label {
   width: 100%;
   z-index: 999;
   left: 0;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
   border-bottom: 1px solid #F2F4F7;
   background: #fff;
 }
@@ -3752,6 +3754,14 @@ label {
 }
 .sticky-bar.stick .burger-icon {
   top: 45px;
+}
+.sticky-bar.stick .header-logo #Logo {
+  content: url("/assets/imgs/logo.svg");
+}
+.sticky-bar.stick .main-menu li a {
+  color: #000000;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 
 .user-account {
