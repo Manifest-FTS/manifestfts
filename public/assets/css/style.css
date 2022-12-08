@@ -9306,5 +9306,9 @@ input.qty-val {
     display: none;
   }
 }
+.logo-circle.rotating {
+  animation: animName 7s linear infinite;
+  animation-direction: reverse;
+}
 
 /*# sourceMappingURL=style.css.map */

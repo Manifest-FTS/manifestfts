@@ -31,7 +31,7 @@ function Index3() {
       <Layout>
         <section id="home-hero" className="section-box">
           <div className="text-center brand-video-copy">
-            <h1 className="mt-60">
+            <h1 className="pt-60">
               Forward Thinking
               <br className="d-lg-block d-none" /> Solutions
             </h1>
@@ -48,7 +48,7 @@ function Index3() {
             preload="auto"
             aria-hidden="true"
             autoPlay playsInline loop muted
-            src="https://motoringstyle.com/manifest-brand-video-loop.mp4" metadata={{ video_id: "video-id-54321", video_title: "Manifest FTS", viewer_user_id: "user-id-007", }} />
+            src="/assets/vids/manifest-brand-video-loop.mp4" metadata={{ video_id: "video-id-54321", video_title: "Manifest FTS", viewer_user_id: "user-id-007", }} />
           </div>
 
           {/* <video id="brand-video" autoplay muted loop className="brand-video">         
@@ -413,9 +413,13 @@ function Index3() {
         <FormProject />
 
         <ModalVideo
-          channel="custom"
-          autoplay
-          url="https://motoringstyle.com/manifest-brand-2002-2003-final.mp4"
+          channel="youtube"
+          videoId="-SqGLNUkM30"
+          youtube={{
+            autoplay: 1,
+            rel: 0,
+          }}
+          // url="https://motoringstyle.com/manifest-brand-2002-2003-final.mp4"
           isOpen={isOpen}
           onClose={() => setOpen(false)}
         />
