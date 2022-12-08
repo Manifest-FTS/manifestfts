@@ -13,7 +13,7 @@ function Error() {
                             <div className="col-lg-12 text-center mt-40">
                                 <img className="img-responsive rounded-circle" src="/assets/imgs/404.jpg" alt="404. Manifest page not found." width="444" />
                                 <h2 className="text-heading-1 color-gray-900 mb-20 mt-50">
-                                    We're sorry!
+                                    We&rsquo;re sorry!
                                 </h2>
                                 <p className="text-heading-5 color-gray-600 mt-30 mb-70">
                                     The page you requested no longer exists or never did.
