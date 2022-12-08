@@ -41,6 +41,7 @@ function Terms() {
                                     </div>
                                     <div className="col-lg-8">
                                         <div className="single-detail">
+                                            <h1 className="">Privacy Policy</h1>
                                             <h6 className="mt-50">- Last Updated November 25, 2022 -</h6>
                                             <p>This is the Privacy Policy of Super Distros LLC dba Manifest FTS (&ldquo;Manifest&rdquo;). If you have any concerns about privacy and personal data you may contact dp@manifestfts.com.</p>
                                             <p>This Privacy Policy is part of our Terms of Service: <Link href="/terms"><a>https://manifestfts.com/terms</a></Link>.</p>

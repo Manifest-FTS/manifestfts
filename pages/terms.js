@@ -59,9 +59,9 @@ function Terms() {
                                     </div>
                                     <div className="col-lg-8">
                                         <div className="single-detail">
+                                            <h1 className="">Terms of Use</h1>
                                             <h6 className="mt-50">- Last Updated November 25, 2022 -</h6>
                                             <p>Thank you for your interest in our products and services. These General Terms and Conditions constitute the agreement (&ldquo;Agreement&rdquo;) between Super Distros LLC dba Manifest FTS (&ldquo;Manifest&rdquo;) and you as a user of our services (&ldquo;Customer&rdquo;), whether you sign up as a company or as an individual, and whether you have a past or existing contract with Manifest.</p>
-                                            <img className="img-responsive bdr-16" src="assets/imgs/page/blog/single/img-1.png" alt="Agon" />
 
                                             <h6 className="mt-35 mb-25" id="section-1">Customer Data</h6>
                                             <p>Manifest does not own any Customer Data and the Customer has sole responsibility for the accuracy, integrity, legality, reliability, appropriateness, and intellectual property ownership or right to use of all Customer Data. The Customer grants to Manifest a worldwide, royalty-free, and non-exclusive license to access and use the Customer Data, as well as any other material and software you may provided to Manifest, for the sole purpose of providing the services to you as a Customer. This license is valid only as long as this Agreement is in force. Upon termination of the Agreement the license is revoked. For avoidance of doubt, there is no transfer of ownership of Customer Data or any other data or Intellectual Property Rights from Customer to Manifest under this Agreement.</p>
