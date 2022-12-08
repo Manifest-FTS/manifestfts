@@ -36,7 +36,7 @@ function Index3() {
               <br className="d-lg-block d-none" /> Solutions
             </h1>
             <div className="text-body-lead-medium mt-30">
-              <a onClick={() => setOpen(true)}>
+              <a className="play-reel" onClick={() => setOpen(true)}>
                 <img width="55" height="55" src="/assets/imgs/SVG/icon-video-play.svg" />
                 <div className="text-body-small text-bold">PLAY REEL</div>
               </a>

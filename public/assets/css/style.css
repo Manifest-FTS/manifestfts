@@ -9311,4 +9311,8 @@ input.qty-val {
   animation-direction: reverse;
 }
 
+.play-reel {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=style.css.map */
