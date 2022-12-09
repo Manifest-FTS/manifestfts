@@ -50,8 +50,8 @@ const FormProject = () => {
                   Have a project in mind?
                 </h2>
                 <p className="text-body-text color-gray-600 mt-20">
-                  Let us help Manifest your next project. Contact us regarding
-                  an upcoming project or for a consultation.
+                  Call <span className="text-heading-5 color-gray-900 mt-10">+1 828-229-2450</span> or send us a message regarding
+                  an upcoming project or to schedule a consultation.
                 </p>
               </div>
               <div className="col-lg-12">
