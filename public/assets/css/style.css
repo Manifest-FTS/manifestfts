@@ -1799,8 +1799,12 @@ label {
 }
 
 .modal-video .modal-video-body {
-  height: 80vh;
-  max-width: 90% !important;
+  margin-top: 33px;
+  max-width: 97% !important;
+}
+.modal-video .modal-video-inner {
+  max-width: 90%;
+  max-height: 88vh;
 }
 
 #home-hero {
