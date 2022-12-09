@@ -31,7 +31,7 @@ function Index3() {
       <Layout>
         <section id="home-hero" className="section-box">
           <div className="text-center brand-video-copy">
-            <h1 className="pt-60">
+            <h1 className="mt-10">
               Forward Thinking
               <br className="d-lg-block d-none" /> Solutions
             </h1>

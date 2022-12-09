@@ -1806,7 +1806,7 @@ label {
 #home-hero {
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 62vh;
   position: relative;
   padding: 0;
   justify-content: center;
@@ -3556,7 +3556,6 @@ label {
   background: #000000;
   padding: 10px 0;
   width: 100%;
-  position: fixed;
   top: 0;
   transition: top 0.3s;
   z-index: 111;
