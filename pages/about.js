@@ -3,12 +3,16 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState } from "react";
-import 'react-modal-video/css/modal-video.css';
-import FormProject from "../components/form-project/FormProject";
-// import CounterUp from "../components/elements/CounterUp";
 import Layout from "../components/layout/Layout";
-import TeamSlider from "../components/slider/Team";
-import TestimonialSlider from "../components/slider/Testimonial";
+import 'react-modal-video/css/modal-video.css';
+import Lottie from 'lottie-react';
+import support from './../public/assets/anim/customer-service.json';
+
+// import FormProject from "../components/form-project/FormProject";
+// import CounterUp from "../components/elements/CounterUp";
+// import TeamSlider from "../components/slider/Team";
+// import TestimonialSlider from "../components/slider/Testimonial";
+
 const ModalVideo = dynamic(import("react-modal-video"), {
     ssr: false,
 });
@@ -74,8 +78,37 @@ function About1() {
                         </div>
                     </div> */}
                 </section>                
-                
-                
+
+                <section className="section-box mt-100">
+                    <div className="container">
+                        <div className="text-center mb-20">
+                            <div className="block px-0 rounded-md w-75 mx-auto mobAnim">
+                                <Lottie animationData={support} />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-lg-2 col-sm-1 col-12" />
+                            <div className="col-lg-8 col-sm-10 col-12 text-center">
+                                <h2 className="text-heading-1 color-gray-900">Call, text, or email.</h2>
+                                <p className="text-body-lead-large color-gray-600 mt-20">We value our partners and your concerns. Connect with us on your terms, no inquiry is too small. </p>
+                            </div>
+                            <div className="col-lg-2 col-sm-1 col-12" />
+                        </div>
+                    </div>
+                </section>
+
+                <section className="section-box pt-60 pb-60 mt-100 bg-dark">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="d-flex justify-content-center">
+                                    <Link href="/#get-started"><a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-15">Get Started</a></Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <section className="section-box mt-100">
                     <div className="container">
                         <div className="text-center mb-20"><span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Core Capabilities</span></div>
@@ -121,18 +154,6 @@ function About1() {
                                         <Link href="/capabilities#software"><a className="btn btn-default icon-arrow-right">Learn more about our Software Solutions
                                         </a></Link>
                                     </div> */}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="section-box pt-60 pb-60 mt-100 bg-dark">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="d-flex justify-content-center">
-                                    <Link href="/#get-started"><a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-15">Get Started</a></Link>
                                 </div>
                             </div>
                         </div>

@@ -330,13 +330,10 @@ function Index3() {
                     </span>
                   </div>
                   <h2 className="text-heading-1 color-gray-900 mb-10">
-                    A CMS that elevates your
-                    <br />
-                    content editing experience
+                    Our recommended CMS<br/>for your next project
                   </h2>
-                  <p className="ft-lead text-body-lead-large color-gray-600 mt-30">
-                    Sanity has a long list of technical benefits. It's the simple interface and visual cues
-                    Sanity has a long list of technical benefits, but the clean interface and visual cues make it our recommended content management system. It provides a hassle-free editing experience and adds long-lasting value for our clients.
+                  <p className="ft-lead text-body-lead-large color-gray-600 mt-30">Sanity has a long list of technical benefits, but the clean interface and visual cues make it our recommended content management system. It provides a hassle-free editing experience and adds long-lasting value for our clients.
+
                   </p>
                 </div>
                 <div className="col-lg-2 col-sm-2 col-12" />
