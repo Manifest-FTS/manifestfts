@@ -2,6 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import Lottie from 'lottie-react';
+import logo from '/public/assets/anim/mfts-animated-logo.json';
 const Header = ({ handleOpen, headerStyle }) => {
     const [scroll, setScroll] = useState(0)
     useEffect(() => {
@@ -12,6 +14,10 @@ const Header = ({ handleOpen, headerStyle }) => {
             }
         })
     })
+
+    const style = {
+        width: 225,
+      };
     
     return (
         <>
@@ -20,11 +26,19 @@ const Header = ({ handleOpen, headerStyle }) => {
                     <div className="main-header">
                         <div className="header-left">
                             <div className="header-logo">
-                                <Link href="/">
+                                {/* <Link href="/">
                                     <a className="d-flex">
                                         {headerStyle ? <img alt="Manifest Vector Logo" id="Logo" src="/assets/imgs/logo.svg" width="223" height="33"  className="img-fluid h-100 w-100" /> : <img id="Logo" alt="Manifest" src="/assets/imgs/logo-white.svg" width="223" height="33" className="img-fluid h-100 w-100" />}
                                     </a>
+                                </Link> */}
+                                <Link href="/">
+                                    <a className="d-flex">
+                                        {headerStyle ? <Lottie animationData={logo} loop={false} style={style} /> : <Lottie animationData={logo} loop={false} style={style} />}
+                                    </a>
                                 </Link>
+                                {/* <div className="w-25">
+                                    <Lottie animationData={logo} loop={false} />
+                                </div> */}
                             </div>
                             <div className="header-nav">
                                 <nav className="nav-main-menu d-none d-xl-block">
