@@ -7,7 +7,11 @@ import { useEffect, useRef, useState } from "react";
 import "react-modal-video/css/modal-video.css";
 import FormProject from "../components/form-project/FormProject";
 import Layout from "../components/layout/Layout";
+
+import YoutubeVideo from "../components/youtube-video/YoutubeVideo";
+
 import ModalVideos from "../components/elements/ModalVideo";
+
 const ModalVideo = dynamic(import("react-modal-video"), {
   ssr: false,
 });
@@ -31,24 +35,46 @@ function Index3() {
       <Layout>
         <section id="home-hero" className="section-box">
           <div className="text-center brand-video-copy">
-            <h1 className="mt-10">
-              Forward Thinking
-              <br className="d-lg-block d-none" /> Solutions
-            </h1>
-            <div className="text-body-lead-medium mt-30">
-              <a className="play-reel" onClick={() => setOpen(true)}>
-                <img width="55" height="55" src="/assets/imgs/SVG/icon-video-play.svg" />
-                <div className="text-body-small text-bold">PLAY REEL</div>
-              </a>
-            </div>
+            {isOpen ? (
+              <YoutubeVideo setOpen={setOpen} />
+            ) : (
+              <>
+                <h1 className="mt-10">
+                  Forward Thinking
+                  <br className="d-lg-block d-none" /> Solutions
+                </h1>
+
+                <div className="text-body-lead-medium mt-30">
+                  <div className="play-reel" onClick={() => setOpen(true)}>
+                    <img
+                      width="55"
+                      height="55"
+                      src="/assets/imgs/SVG/icon-video-play.svg"
+                    />
+                    <div className="text-body-small text-bold">PLAY REEL</div>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
 
           <div className="brand-video-wrapper" aria-hidden="true">
-            <video id="brand-video" aria-label="Video" 
-            preload="auto"
-            aria-hidden="true"
-            autoPlay playsInline loop muted
-            src="/assets/vids/manifest-brand-video-loop.mp4" metadata={{ video_id: "video-id-54321", video_title: "Manifest FTS", viewer_user_id: "user-id-007", }} />
+            <video
+              id="brand-video"
+              aria-label="Video"
+              preload="auto"
+              aria-hidden="true"
+              autoPlay
+              playsInline
+              loop
+              muted
+              src="/assets/vids/manifest-brand-video-loop.mp4"
+              metadata={{
+                video_id: "video-id-54321",
+                video_title: "Manifest FTS",
+                viewer_user_id: "user-id-007",
+              }}
+            />
           </div>
 
           {/* <video id="brand-video" autoplay muted loop className="brand-video">         
@@ -134,7 +160,10 @@ function Index3() {
                   <li>
                     <Link href="/#">
                       <a className="item-logo box-hover-shadow hover-up">
-                        <img alt="Next.js" src="/assets/imgs/logos/nextjs.svg" />
+                        <img
+                          alt="Next.js"
+                          src="/assets/imgs/logos/nextjs.svg"
+                        />
                       </a>
                     </Link>
                   </li>
@@ -330,10 +359,15 @@ function Index3() {
                     </span>
                   </div>
                   <h2 className="text-heading-1 color-gray-900 mb-10">
-                    Our recommended CMS<br/>for your next project
+                    Our recommended CMS
+                    <br />
+                    for your next project
                   </h2>
-                  <p className="ft-lead text-body-lead-large color-gray-600 mt-30">Sanity has a long list of technical benefits, but the clean interface and visual cues make it our recommended content management system. It provides a hassle-free editing experience and adds long-lasting value for our clients.
-
+                  <p className="ft-lead text-body-lead-large color-gray-600 mt-30">
+                    Sanity has a long list of technical benefits, but the clean
+                    interface and visual cues make it our recommended content
+                    management system. It provides a hassle-free editing
+                    experience and adds long-lasting value for our clients.
                   </p>
                 </div>
                 <div className="col-lg-2 col-sm-2 col-12" />
@@ -408,18 +442,6 @@ function Index3() {
         </section>
 
         <FormProject />
-
-        <ModalVideo
-          channel="youtube"
-          videoId="-SqGLNUkM30"
-          youtube={{
-            autoplay: 1,
-            rel: 0,
-          }}
-          // url="https://motoringstyle.com/manifest-brand-2002-2003-final.mp4"
-          isOpen={isOpen}
-          onClose={() => setOpen(false)}
-        />
       </Layout>
     </>
   );
