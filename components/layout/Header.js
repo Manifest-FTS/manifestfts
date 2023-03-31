@@ -33,7 +33,7 @@ const Header = ({ handleOpen, headerStyle }) => {
                                 </Link> */}
                                 <Link href="/">
                                     <a className="d-flex">
-                                        {headerStyle ? <Lottie animationData={logo} loop={false} style={style} /> : <Lottie animationData={logo} loop={false} style={style} />}
+                                        {scroll ? <img alt="Manifest Vector Logo" id="Logo" src="/assets/imgs/logo.svg" width="223" height="33"  className="img-fluid h-100 w-100" /> : <Lottie animationData={logo} loop={false} style={style} />}
                                     </a>
                                 </Link>
                                 {/* <div className="w-25">
