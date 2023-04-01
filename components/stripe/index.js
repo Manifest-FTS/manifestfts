@@ -78,7 +78,7 @@ const PaymentForm = ({ paymentIntent }) => {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `${process.env.NEXT_PUBLIC_CLIENT_URL}funding`,
+        return_url: `${process.env.NEXT_PUBLIC_CLIENT_URL}funding/success`,
         payment_method_data: {
           billing_details: {
             name: input.cardholderName,
@@ -99,7 +99,7 @@ const PaymentForm = ({ paymentIntent }) => {
     <>
       <form onSubmit={handleSubmit}>
         <CustomDonationInput
-          className="w-full d-block"
+          className="w-full d-block form-control w-100"
           name="customDonation"
           value={input.customDonation}
           min={config.MIN_AMOUNT}
@@ -108,12 +108,12 @@ const PaymentForm = ({ paymentIntent }) => {
           currency={config.CURRENCY}
           onChange={handleInputChange}
         />
-        <fieldset className="elements-style">
-          <legend>Your payment details:</legend>
+        <fieldset className="elements-style form-group">
+          {/* <legend>Your payment details:</legend> */}
           {paymentType === 'card' ? (
             <input
               placeholder="Cardholder name"
-              className="elements-style d-block"
+              className="form-control mb-3 d-block"
               type="text"
               name="cardholderName"
               onChange={handleInputChange}
@@ -128,8 +128,9 @@ const PaymentForm = ({ paymentIntent }) => {
             />
           </div>
         </fieldset>
+        <div className="text-center">
         <button
-          className="elements-style-background"
+          className="elements-style-background m-auto btn btn-black mr-40 mb-20"
           type="submit"
           disabled={
             !['initial', 'succeeded', 'error'].includes(payment.status) ||
@@ -138,6 +139,7 @@ const PaymentForm = ({ paymentIntent }) => {
         >
           Donate {formatAmountForDisplay(input.customDonation, config.CURRENCY)}
         </button>
+        </div>
       </form>
       <PaymentStatus status={payment.status} />
     </>

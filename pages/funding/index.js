@@ -28,8 +28,8 @@ export default function Funding() {
         <div className="banner-hero banner-2 bg-about-1 bg-green-100">
           <div className="container">
             <div className="row">
-              <div className="col-lg-9"><span className="tag-1 bg-5 color-green-900 mr-20 px-4 py-2 rounded-md">About</span>
-                <h1 className="text-display-3 mt-30">Payment</h1>
+              <div className="col-lg-9"><span className="tag-1 bg-5 color-green-900 mr-20 px-4 py-2 rounded-md">Funding</span>
+                {/* <h1 className="text-display-3 mt-30">Payment</h1> */}
 
 
               </div>
@@ -39,7 +39,7 @@ export default function Funding() {
         {/* Header End */}
 
         {/* Payment Start */}
-        <div className="container">
+        <div className="container mt-50 box-gray-100">
           <div className="row">
             {paymentIntent && paymentIntent.client_secret ? (
               <Elements
