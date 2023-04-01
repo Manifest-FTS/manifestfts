@@ -6,7 +6,6 @@ import { useEffect } from 'react';
 export default function FundingSuccess() {
   const router = useRouter();
   // useEffect(() => {
-  //   console.log('arun jha', router.query.payment_intent)
   //   // if ((router.query.payment_intent && !router.query.payment_intent.length) || !router.query.payment_intent) router.push('/404')
   // }, [router.query.payment_intent])
 
