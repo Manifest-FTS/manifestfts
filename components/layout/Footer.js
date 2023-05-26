@@ -62,42 +62,13 @@ const Footer = () => {
               </ul>
             </div>
             <div className="col-lg-3 width-20 mb-30">
-              <h4 className="text-heading-5">Solutions</h4>
+              <h4 className="text-heading-5">Case Study</h4>
               <ul className="menu-footer mt-20">
                 <li>
-                  <Link href="/sanity-cms">
-                    <a>Sanity</a>
-                  </Link>
+                    <Link href="/case-study/barclay-rex"><a>Barclay Rex</a></Link>
                 </li>
                 <li>
-                  <a
-                    href="https://www.datocms.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    DATO CMS
-                  </a>
-                </li>
-                <li>
-                  <a href="https://strapi.io/" target="_blank" rel="noreferrer">
-                    Strapi
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.netlifycms.org/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Netlify CMS
-                  </a>
-                </li>
-                <li>
-                  <a href="https://developer.wordpress.org/rest-api/">
-                    <a target="_blank" rel="noreferrer">
-                      WordPress Rest API
-                    </a>
-                  </a>
+                    <Link href="/sanity-cms"><a>Sanity API-1st CMS</a></Link>
                 </li>
               </ul>
             </div>
