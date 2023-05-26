@@ -15,17 +15,6 @@ function Service2() {
                     <div className="banner-hero bg-service-2">
                         <div className="container">
                             <div className="row">
-                            <div className="col-lg-12 d-none d-lg-block">
-                                    <div className="row">
-                                        <div className="col-lg-2" />
-                                        <div className="col-lg-8" id="case-study">
-                                            <div className="banner-imgs">
-                                                <img src="/assets/imgs/work/rex-f1.png" alt="Barclay Rex Responsive Website" />
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-2" />
-                                    </div>
-                                </div>
                                 <div className="col-lg-12 text-center">
                                     <h1 className="text-display-2">Barclay Rex: eCommerce After over <span className="color-green-900">112 Years of 
 History</span> In New York City.</h1>
@@ -36,7 +25,17 @@ History</span> In New York City.</h1>
                                         <Link href="https://barclayrex.com" ><a target="_blank" className="btn btn-link icon-arrow-right color-gray-900 ml-10">Visit barclayrex.com</a></Link>
                                     </div>
                                 </div>
-                                
+                                <div className="col-lg-12 d-none d-lg-block">
+                                    <div className="row">
+                                        <div className="col-lg-2" />
+                                        <div className="col-lg-8" id="case-study">
+                                            <div className="banner-imgs">
+                                                <img src="/assets/imgs/work/rex-f1.png" alt="Barclay Rex Responsive Website" />
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-2" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
