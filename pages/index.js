@@ -234,11 +234,12 @@ function Index3() {
                   Digital e-Commerce Strategy, Progressive Web Application
                   Development
                 </p>
-                <Link href="https://barclayrex.com" target="_blank">
-                  <a className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">
-                    Visit Website
-                  </a>
-                </Link>
+                <div className="align-items-center">
+                    <Link href="/case-study/barclay-rex" passHref>
+                        <span className="btn btn-light icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3">View Case Study</span>
+                    </Link>
+                    <a href="https://barclayrex.com" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
+                </div>
                 <div className="row">
                   <div className="col-12 mt-50">
                     <h2 className="text-heading-7 text-center color-gray-900 mb-10">

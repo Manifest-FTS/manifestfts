@@ -108,8 +108,10 @@ function Work() {
                                 <h3 className="text-heading-1 mt-30">Barclay Rex</h3>
                                 <p className="text-body-lead-large color-gray-600 mt-30">Barclay Rex has become one of the top tobacconists in New York City and is the last family-owned tobacconist in the city with over 111 years of service and excellence in fine tobacco</p>
                                 <p className="text-body-lead-large color-gray-600 mt-30">Strategic UI/UX in AdobeXD utlizing our partners existing brand. Digital e-Commerce strategy, and progressive web application development with Strapi CMS/API.</p>
-                                <div className="align-items-center justify-content-center">
-                                    <a href="/case-study/barclay-rex" className="btn btn-light icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3">View Case Study</a>
+                                <div className="align-items-center">
+                                    <Link href="/case-study/barclay-rex" passHref>
+                                        <span className="btn btn-light icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3">View Case Study</span>
+                                    </Link>
                                     <a href="https://barclayrex.com" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
                                 </div>
                                 <div className="row">
