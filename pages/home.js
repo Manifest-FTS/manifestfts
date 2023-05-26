@@ -30,7 +30,7 @@ function Index6() {
                                             <img src="/assets/imgs/page/homepage6/code-stars.svg" alt="Graphic of code symbol" /></div>
                                         <div className="block-2 shape-3 h-100 w-100 ">
                                             <img src="/assets/imgs/page/homepage6/light-stars.svg" alt="Graphic of lightbulb" /></div>
-                                        <img className="img-banner img-responsive shape-2" alt="Technologist working" src="assets/imgs/page/homepage6/technologist-working.svg" />
+                                        <img className="img-banner img-responsive shape-2" alt="Technologist working" src="/assets/imgs/page/homepage6/technologist-working.svg" />
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@ function Index6() {
                             <div className="box-video-homepage6">
                                 <div className="box-image mt-30 mb-30">
                                     <a className="popup-youtube btn-play-video btn-play-middle" onClick={() => setOpen(true)}></a>
-                                    <img className="img-responsive bdrd-16" src="assets/imgs/page/homepage6/img.png" /></div>
+                                    <img className="img-responsive bdrd-16" src="/assets/imgs/page/homepage6/img.png" /></div>
                             </div>
                             <div className="row">
                                 <div className="col-lg-4 col-md-12 col-sm-12">
@@ -124,7 +124,7 @@ function Index6() {
                 <div className="section-box">
                     <div className="container mt-120">
                         <div className="row">
-                            <div className="col-xl-5 col-lg-6 col-sm-12 mb-30"><img className="bdrd-16 img-responsive" src="assets/imgs/page/homepage6/img-1.png" alt="Agon" /></div>
+                            <div className="col-xl-5 col-lg-6 col-sm-12 mb-30"><img className="bdrd-16 img-responsive" src="/assets/imgs/page/homepage6/img-1.png" alt="Agon" /></div>
                             <div className="col-xl-7 col-lg-6 col-sm-12 block-we-do"><span className="tag-1 bg-6 color-green-900">What We Do, What You Get</span>
                                 <h3 className="text-heading-1 mt-20">Exceptional Solution for Digital Business Model</h3>
                                 <p className="text-body-lead-large color-gray-600 mt-30">In a professional context it often happens that private or corporate clients order a publication news while still not being ready.</p>
@@ -150,22 +150,22 @@ function Index6() {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                                <Link href="#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-1.svg" /></a></Link>
+                                <Link href="#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="/assets/imgs/slider/logo/sample-logo-1.svg" /></a></Link>
                             </div>
                             <div className="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                                <Link href="#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-2.svg" /></a></Link>
+                                <Link href="#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="/assets/imgs/slider/logo/sample-logo-2.svg" /></a></Link>
                             </div>
                             <div className="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                                <Link href="#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-3.svg" /></a></Link>
+                                <Link href="#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="/assets/imgs/slider/logo/sample-logo-3.svg" /></a></Link>
                             </div>
                             <div className="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                                <Link href="#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-4.svg" /></a></Link>
+                                <Link href="#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="/assets/imgs/slider/logo/sample-logo-4.svg" /></a></Link>
                             </div>
                             <div className="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                                <Link href="#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-5.svg" /></a></Link>
+                                <Link href="#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="/assets/imgs/slider/logo/sample-logo-5.svg" /></a></Link>
                             </div>
                             <div className="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                                <Link href="#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-6.svg" /></a></Link>
+                                <Link href="#"><a className="item-logo box-hover-shadow hover-up"><img alt="Agon" src="/assets/imgs/slider/logo/sample-logo-6.svg" /></a></Link>
                             </div>
                         </div>
                     </div>

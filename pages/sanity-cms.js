@@ -16,9 +16,9 @@ function Service2() {
                             <div className="row">
                                 <div className="col-lg-12 text-center">
                                     <h1 className="text-display-2">Sanity <span className="color-green-900">API-1st</span> CMS</h1>
-                                    <p className="text-body-lead-large color-gray-500 mt-40 pr-40">Sanity is one of the most flexible platforms for creating data driven content applications.</p>
+                                    <p className="text-body-lead-large color-gray-500 mt-40 pr-40">Sanity is not just another CMS; it is a platform that takes a transformative approach to content management. As one of the most flexible platforms available today, it specializes in creating data-driven content applications. Unlike traditional CMSs that focus mainly on serving website content, Sanity breaks those boundaries, favoring a fully customizable, API-first approach.</p>
                                     <div className="mt-40 text-center">
-                                        <Link href="/#get-started" ><a target="_blank" rel="noreferrer" className="btn btn-black icon-arrow-right-white">Get Started</a></Link>
+                                        {/* <Link href="/#get-started" ><a target="_blank" rel="noreferrer" className="btn btn-black icon-arrow-right-white">Get Started</a></Link> */}
 
                                         <Link href="https://sanity.io" ><a target="_blank" rel="noreferrer" className="btn btn-link icon-arrow-right color-gray-900 ml-10">Visit Sanity.io</a></Link>
                                     </div>
@@ -51,8 +51,8 @@ function Service2() {
                                 <p className="text-body-lead-large color-gray-600 mt-30">Sanity supports localization, language translations and allows you to preview everything before publishing.</p>
                             </div>
                             <div className="col-lg-6 col-sm-12 second">
-                                <div className="inner-image"><img className="bdrd-16 img-responsive" src="assets/imgs/sanityease.webp" alt="Agon" />
-                                    {/* <div className="block-image-bottom"><img className="bdrd-16 img-responsive" src="assets/imgs/page/homepage2/img-built-2.png" alt="Agon" /></div> */}
+                                <div className="inner-image"><img className="bdrd-16 img-responsive" src="/assets/imgs/sanityease.webp" alt="Agon" />
+                                    {/* <div className="block-image-bottom"><img className="bdrd-16 img-responsive" src="/assets/imgs/page/homepage2/img-built-2.png" alt="Agon" /></div> */}
                                 </div>
                             </div>
                         </div>
@@ -61,8 +61,8 @@ function Service2() {
                     <div className="container mt-70">
                         <div className="row">
                             <div className="col-lg-6 col-sm-12">
-                                <div className="inner-image"><img className="bdrd-16 img-responsive" src="assets/imgs/sanitycollab.webp" alt="Agon" />
-                                    {/* <div className="block-image-bottom"><img className="bdrd-16 img-responsive" src="assets/imgs/page/homepage2/img-built-2.png" alt="Agon" /></div> */}
+                                <div className="inner-image"><img className="bdrd-16 img-responsive" src="/assets/imgs/sanitycollab.webp" alt="Agon" />
+                                    {/* <div className="block-image-bottom"><img className="bdrd-16 img-responsive" src="/assets/imgs/page/homepage2/img-built-2.png" alt="Agon" /></div> */}
                                 </div>
                             </div>
                             <div className="col-lg-6 col-sm-12 mb-30">
@@ -81,19 +81,21 @@ function Service2() {
                                 </p>
                             </div>
                             <div className="col-lg-6 col-sm-12 second">
-                                <div className="inner-image"><img className="bdrd-16 img-responsive" src="assets/imgs/sanityseo.gif" alt="Sanity SEO" />
-                                    {/* <div className="block-image-bottom"><img className="bdrd-16 img-responsive" src="assets/imgs/page/homepage2/img-built-2.png" alt="Agon" /></div> */}
+                                <div className="inner-image"><img className="bdrd-16 img-responsive" src="/assets/imgs/sanityseo.gif" alt="Sanity SEO" />
+                                    {/* <div className="block-image-bottom"><img className="bdrd-16 img-responsive" src="/assets/imgs/page/homepage2/img-built-2.png" alt="Agon" /></div> */}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section className="section-box pt-60 pb-60 mt-100 bg-dark">
+                <section className="section-box pt-60 pb-60 mt-100 bg-primary">
                     <div className="container">
                         <div className="row">
                             <div className="col-12">
-                                <div className="d-flex justify-content-center">
+                                <div className="text-center justify-content-center">
+                                    <p className="text-body-lead-large color-white mt-10 mb-20">Excited about the flexibility and power of Sanity CMS for your next project?<br/>We can help you leverage its full potential. Hit the button below, and let&rsquo;s manifest.
+                                    </p>
                                     <Link href="/get-started"><a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-15">Get Started</a></Link>
                                 </div>
                             </div>

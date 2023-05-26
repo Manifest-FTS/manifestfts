@@ -29,7 +29,7 @@ function Work() {
                                 </div>
                                 <div className="col-lg-5 d-none d-lg-block">
                                     {/* <div className="banner-imgs">
-                                        <div className="block-1 shape-1"><img src="/assets/imgs/page/about/1/banner2.png" alt="Agon" /></div><img className="rounded img-responsive shape-2" alt="Agon" src="assets/imgs/agencys1.jpg" />
+                                        <div className="block-1 shape-1"><img src="/assets/imgs/page/about/1/banner2.png" alt="Agon" /></div><img className="rounded img-responsive shape-2" alt="Agon" src="/assets/imgs/agencys1.jpg" />
                                     </div> */}
                                 </div>
                             </div>
@@ -41,7 +41,7 @@ function Work() {
                 <section className="section-box">
                     <div className="container mt-120">
                         <div className="row">
-                            <div className="col-lg-6 col-sm-12 block-img-we-do"><img className="bdrd-16 img-responsive" src="assets/imgs/work/ccr-f1.png" alt="Community Coalition on Race website on laptop" /></div>
+                            <div className="col-lg-6 col-sm-12 block-img-we-do"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/ccr-f1.png" alt="Community Coalition on Race website on laptop" /></div>
                             <div className="col-lg-6 col-sm-12 block-we-do">
                                 <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">NationBuilder Outreach Platform</span>
                                 <h3 className="text-heading-1 mt-30">South Orange & Maplewood Community Coalition on Race</h3>
@@ -53,11 +53,11 @@ function Work() {
                                         <h2 className="text-heading-7 text-center color-gray-900 mb-10">Powered by</h2>
                                         <ul className="list-partners border-0">
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Adobe" src="assets/imgs/logos/adobe.svg" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Adobe" src="/assets/imgs/logos/adobe.svg" />
                                                 </a></Link>
                                             </li>  
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="NationBuilder" src="assets/imgs/logos/nationbuilder-horizontal-black.svg" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="NationBuilder" src="/assets/imgs/logos/nationbuilder-horizontal-black.svg" />
                                                 </a></Link>
                                             </li>                         
                                         </ul>
@@ -84,7 +84,7 @@ function Work() {
                                         <h2 className="text-heading-7 text-center color-gray-900 mb-10">Powered by</h2>
                                         <ul className="list-partners border-0">
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="WordPress" src="assets/imgs/logos/wordpress.svg" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="WordPress" src="/assets/imgs/logos/wordpress.svg" />
                                                 </a></Link>
                                             </li>                            
                                         </ul>
@@ -92,7 +92,7 @@ function Work() {
                                 </div>
                             </div>
 
-                            <div className="col-lg-6 col-sm-12 block-img-we-do second"><img className="bdrd-16 img-responsive" src="assets/imgs/work/gse-f1.png" alt="Ozone's website on laptop" /></div>
+                            <div className="col-lg-6 col-sm-12 block-img-we-do second"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/gse-f1.png" alt="Ozone's website on laptop" /></div>
                         </div>
                     </div>
                 </section>
@@ -102,7 +102,7 @@ function Work() {
                 <section className="section-box">
                     <div className="container mt-120">
                         <div className="row">
-                            <div className="col-lg-6 col-sm-12 block-img-we-do"><img className="bdrd-16 img-responsive" src="assets/imgs/work/rex-f1.png" alt="Barclay Rex website on laptop" /></div>
+                            <div className="col-lg-6 col-sm-12 block-img-we-do"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/rex-f1.png" alt="Barclay Rex website on laptop" /></div>
                             <div className="col-lg-6 col-sm-12 block-we-do">
                                 <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Strapi Extensible CMS API</span>
                                 <h3 className="text-heading-1 mt-30">Barclay Rex</h3>
@@ -114,23 +114,23 @@ function Work() {
                                         <h2 className="text-heading-7 text-center color-gray-900 mb-10">Powered by</h2>
                                         <ul className="list-partners border-0">
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Adobe" src="assets/imgs/logos/adobe.svg" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Adobe" src="/assets/imgs/logos/adobe.svg" />
                                                 </a></Link>
                                             </li>  
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Bootstrap" src="assets/imgs/logos/tailwindcss.svg" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Bootstrap" src="/assets/imgs/logos/tailwindcss.svg" />
                                                 </a></Link>
                                             </li>
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Strapi CMS" src="assets/imgs/logos/strapi.svg" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Strapi CMS" src="/assets/imgs/logos/strapi.svg" />
                                                 </a></Link>
                                             </li>
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Next.js" src="assets/imgs/logos/nextjs.svg" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Next.js" src="/assets/imgs/logos/nextjs.svg" />
                                                 </a></Link>
                                             </li>
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Vercel" src="assets/imgs/logos/vercel.svg" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Vercel" src="/assets/imgs/logos/vercel.svg" />
                                                 </a></Link>
                                             </li>                              
                                         </ul>
@@ -156,23 +156,23 @@ function Work() {
                                         <h2 className="text-heading-7 text-center color-gray-900 mb-10">Powered by</h2>
                                         <ul className="list-partners border-0">
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Figma" src="assets/imgs/logos/figma.svg" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Figma" src="/assets/imgs/logos/figma.svg" />
                                                 </a></Link>
                                             </li>  
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Sanity CMS" src="assets/imgs/logos/sanity.svg" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Sanity CMS" src="/assets/imgs/logos/sanity.svg" />
                                                 </a></Link>
                                             </li>
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="WordPress" src="assets/imgs/logos/wordpress.svg" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="WordPress" src="/assets/imgs/logos/wordpress.svg" />
                                                 </a></Link>
                                             </li>  
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="React.js" src="assets/imgs/logos/reactjs.svg" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="React.js" src="/assets/imgs/logos/reactjs.svg" />
                                                 </a></Link>
                                             </li>
                                             <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Vue.js" src="assets/imgs/logos/vuejs.svg" />
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Vue.js" src="/assets/imgs/logos/vuejs.svg" />
                                                 </a></Link>
                                             </li>                             
                                         </ul>
@@ -180,7 +180,7 @@ function Work() {
                                 </div>
                             </div>
 
-                            <div className="col-lg-6 col-sm-12 block-img-we-do second"><img className="bdrd-16 img-responsive" src="assets/imgs/work/oz-f1.png" alt="Ozone's website on laptop" /></div>
+                            <div className="col-lg-6 col-sm-12 block-img-we-do second"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/oz-f1.png" alt="Ozone's website on laptop" /></div>
                         </div>
                     </div>
                 </section>

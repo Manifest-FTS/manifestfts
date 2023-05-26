@@ -47,31 +47,31 @@ function Service2() {
                             <div className="col-lg-12">
                                 <ul className="list-partners">
                                     <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-1.svg" /></a></Link>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="/assets/imgs/slider/logo/sample-logo-1.svg" /></a></Link>
                                     </li>
                                     <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-1.svg" /></a></Link>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="/assets/imgs/slider/logo/sample-logo-1.svg" /></a></Link>
                                     </li>
                                     <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-2.svg" /></a></Link>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="/assets/imgs/slider/logo/sample-logo-2.svg" /></a></Link>
                                     </li>
                                     <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-3.svg" /></a></Link>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="/assets/imgs/slider/logo/sample-logo-3.svg" /></a></Link>
                                     </li>
                                     <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-4.svg" /></a></Link>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="/assets/imgs/slider/logo/sample-logo-4.svg" /></a></Link>
                                     </li>
                                     <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-5.svg" /></a></Link>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="/assets/imgs/slider/logo/sample-logo-5.svg" /></a></Link>
                                     </li>
                                     <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-6.svg" /></a></Link>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="/assets/imgs/slider/logo/sample-logo-6.svg" /></a></Link>
                                     </li>
                                     <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-7.svg" /></a></Link>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="/assets/imgs/slider/logo/sample-logo-7.svg" /></a></Link>
                                     </li>
                                     <li>
-                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="assets/imgs/slider/logo/sample-logo-8.svg" /></a></Link>
+                                        <Link href="/#"><a className="item-logo box-hover-shadow"><img alt="Agon" src="/assets/imgs/slider/logo/sample-logo-8.svg" /></a></Link>
                                     </li>
                                 </ul>
                             </div>
@@ -169,7 +169,7 @@ function Service2() {
                                             </div>
                                         </div>
                                         <div className="col-lg-7 col-md-5 mt-30 mt-lg-0 mt-md-30 mt-sm-30 position-relative text-end">
-                                            <div className="block-chart shape-1"><img src="/assets/imgs/template/chart.png" alt="Agon" /></div><img className="img-responsive img-newsletter" src="assets/imgs/template/img-newsletter.png" alt="Agon" />
+                                            <div className="block-chart shape-1"><img src="/assets/imgs/template/chart.png" alt="Agon" /></div><img className="img-responsive img-newsletter" src="/assets/imgs/template/img-newsletter.png" alt="Agon" />
                                         </div>
                                     </div>
                                 </div>
