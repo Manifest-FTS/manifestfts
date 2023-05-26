@@ -33,7 +33,7 @@ function About1() {
                                 </div>
                                 <div className="col-lg-5 d-none d-lg-block">
                                     {/* <div className="banner-imgs">
-                                        <div className="block-1 shape-1"><img src="/assets/imgs/page/about/1/banner2.png" alt="Agon" /></div><img className="rounded img-responsive shape-2" alt="Agon" src="assets/imgs/agencys1.jpg" />
+                                        <div className="block-1 shape-1"><img src="/assets/imgs/page/about/1/banner2.png" alt="Agon" /></div><img className="rounded img-responsive shape-2" alt="Agon" src="/assets/imgs/agencys1.jpg" />
                                     </div> */}
                                 </div>
                             </div>

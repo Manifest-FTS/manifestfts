@@ -24,7 +24,7 @@ function Newsletter() {
                                 <div className="block-chart shape-1">
                                     <Image src="/assets/imgs/template/chart.png" alt="Chart" width={100} height={100} />
                                 </div>
-                                <Image className="img-responsive img-newsletter" src="assets/imgs/template/img-newsletter.png" alt="Manifest" width={100} height={100} />
+                                <Image className="img-responsive img-newsletter" src="/assets/imgs/template/img-newsletter.png" alt="Manifest" width={100} height={100} />
                             </div>
                         </div>
                     </div>

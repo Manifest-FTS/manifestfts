@@ -61,25 +61,13 @@ const Header = ({ handleOpen, headerStyle }) => {
                                             <Link href="/work"><a>Work</a></Link>
                                         </li>
                                         <li className="has-children">
-                                            <Link href="#"><a>Solutions</a></Link>
+                                            <Link href="#"><a>Case Studies</a></Link>
                                             <ul className="sub-menu">
                                                 <li>
+                                                    <Link href="/case-study/barclay-rex"><a>Barclay Rex</a></Link>
+                                                </li>
+                                                <li>
                                                     <Link href="/sanity-cms"><a>Sanity API-1st CMS</a></Link>
-                                                </li>
-                                                <li>
-                                                    <a href="https://www.datocms.com/" target="_blank" rel="noreferrer">DATO CMS*</a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://strapi.io/" target="_blank" rel="noreferrer">Strapi Extensible API CMS*</a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://www.netlifycms.org/" target="_blank" rel="noreferrer">Netlify CMS*</a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://developer.wordpress.org/rest-api/" target="_blank" rel="noreferrer">WordPress RESTful API*</a>
-                                                </li>
-                                                <li>
-                                                    <a className="ml-2">*external link.</a>
                                                 </li>
                                             </ul>
                                         </li>
