@@ -15,17 +15,7 @@ function Service2() {
                     <div className="banner-hero bg-service-2">
                         <div className="container">
                             <div className="row">
-                                <div className="col-lg-12 text-center">
-                                    <h1 className="text-display-2">Barclay Rex: eCommerce After over <span className="color-green-900">112 Years of 
-History</span> In New York City.</h1>
-                                    <p className="text-body-lead-large color-gray-500 mt-40 pr-40">In 1910, an Italian immigrant, Vincent Nastri, opened a cigar store in New York City. Now, over 112 years later, his grandchildren continue that legacy as they work to implement eCommerce. In 2020 Barclay Rex Celebrated its 110th anniversary and enjoys the title of the oldest cigar shop in New York City. </p>
-                                    <div className="mt-40 text-center">
-                                        <Link href="#case-study" ><a rel="noreferrer" className="btn btn-black icon-arrow-down-white">Continue Reading</a></Link>
-
-                                        <Link href="https://barclayrex.com" ><a target="_blank" className="btn btn-link icon-arrow-right color-gray-900 ml-10">Visit barclayrex.com</a></Link>
-                                    </div>
-                                </div>
-                                <div className="col-lg-12 d-none d-lg-block">
+                            <div className="col-lg-12 d-none d-lg-block">
                                     <div className="row">
                                         <div className="col-lg-2" />
                                         <div className="col-lg-8" id="case-study">
@@ -36,6 +26,17 @@ History</span> In New York City.</h1>
                                         <div className="col-lg-2" />
                                     </div>
                                 </div>
+                                <div className="col-lg-12 text-center">
+                                    <h1 className="text-display-2">Barclay Rex: eCommerce After over <span className="color-green-900">112 Years of 
+History</span> In New York City.</h1>
+                                    <p className="text-body-lead-large color-gray-500 mt-40 pr-40">In 1910, an Italian immigrant, Vincent Nastri, opened a cigar store in New York City. Now, over 112 years later, his grandchildren continue that legacy as they work to implement eCommerce. In 2020 Barclay Rex Celebrated its 110th anniversary and enjoys the title of the oldest cigar shop in New York City. </p>
+                                    <div className="mt-40 text-center">
+                                        <Link href="#case-study" ><a rel="noreferrer" className="btn btn-black icon-arrow-down-white">Continue Reading</a></Link>
+
+                                        <Link href="https://barclayrex.com" ><a target="_blank" className="btn btn-link icon-arrow-right color-gray-900 ml-10">Visit barclayrex.com</a></Link>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
