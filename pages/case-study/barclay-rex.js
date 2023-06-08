@@ -16,9 +16,9 @@ function Service2() {
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-12 text-center">
-                                    <h1 className="text-display-2">Barclay Rex: eCommerce After over <span className="color-green-900">112 Years of 
+                                    <h1 className="text-display-2">Barclay Rex: eCommerce After over <span className="color-green-900">111 Years of 
 History</span> In New York City.</h1>
-                                    <p className="text-body-lead-large color-gray-500 mt-40 pr-40">In 1910, an Italian immigrant, Vincent Nastri, opened a cigar store in New York City. Now, over 112 years later, his grandchildren continue that legacy as they work to implement eCommerce. In 2020 Barclay Rex Celebrated its 110th anniversary and enjoys the title of the oldest cigar shop in New York City. </p>
+                                    <p className="text-body-lead-large color-gray-500 mt-40 pr-40">In 1910, an Italian immigrant, Vincent Nastri, opened a cigar store in New York City. Now, over 111 years later, his grandchildren continue that legacy as they work to implement eCommerce. In 2020 Barclay Rex Celebrated its 110th anniversary and enjoys the title of the oldest cigar shop in New York City. </p>
                                     <div className="mt-40 text-center">
                                         <Link href="#case-study" ><a rel="noreferrer" className="btn btn-black icon-arrow-down-white">Continue Reading</a></Link>
 
@@ -87,7 +87,7 @@ History</span> In New York City.</h1>
                         <div className="row align-items-center">
                             <div className="col-lg-6 col-sm-12 mb-30 first">
                                 <h3 className="text-heading-1 mt-30">Quantifying Results.<br/><span className="color-violet-600">Data-Driven Success.</span></h3>
-                                <p className="text-body-lead-large color-gray-600 mt-30">Barclay Rex is continuing to expand their eCommerce product lists. Vanessa Nastri confirmed that they had seen a <span className="color-violet-600 font-bold">10% increase in sales</span> since the opening of their eCommerce store. She is confident that with continued marketing efforts, the transition into eCommerce will continue to build on the success of the past 112 years. </p>
+                                <p className="text-body-lead-large color-gray-600 mt-30">Barclay Rex is continuing to expand their eCommerce product lists. Vanessa Nastri confirmed that they had seen a <span className="color-violet-600 font-bold">10% increase in sales</span> since the opening of their eCommerce store. She is confident that with continued marketing efforts, the transition into eCommerce will continue to build on the success of the past 111 years. </p>
                             </div>
                             <div className="col-lg-6 col-sm-12 second">
                                 <div className="block px-0 w-full mx-auto mobAnim">
