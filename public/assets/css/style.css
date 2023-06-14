@@ -307,13 +307,13 @@ li.hr span {
 }
 
 ::placeholder {
-  color: #667085;
+  color: #475467;
   opacity: 1;
 }
 
 :-ms-input-placeholder,
 ::-webkit-input-placeholder {
-  color: #667085;
+  color: #475467;
   opacity: 1;
 }
 
@@ -434,7 +434,7 @@ a {
 .text-body-excerpt {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 26px;
 }
 
@@ -579,7 +579,7 @@ a {
 .text-heading-6 {
   font-family: "Redzone", sans-serif;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 22px;
   letter-spacing: 0%;
 }
@@ -636,7 +636,7 @@ a {
 }
 
 .color-gray-500 {
-  color: #667085;
+  color: #475467;
 }
 
 .color-gray-400 {
@@ -1034,7 +1034,7 @@ h6 {
 }
 
 .heading-md {
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 24px;
   color: #101828;
   font-weight: 500;
@@ -1111,7 +1111,7 @@ h6 {
 }
 
 .font-lg {
-  font-size: 20px;
+  font-size: 1.25em;
 }
 
 .font-xl {
@@ -1131,13 +1131,13 @@ h6 {
 }
 
 .text-muted {
-  color: #667085 !important;
+  color: #475467 !important;
 }
 
 .btn {
   font-family: "Redzone", sans-serif;
   padding: 22px 32px;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 22px;
   transition: 0.2s;
   letter-spacing: 0.45px;
@@ -1177,7 +1177,7 @@ h6 {
   color: #101828;
   background-color: #F2F4F7;
   border-radius: 50px;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 22px;
   font-weight: bold;
 }
@@ -1215,7 +1215,7 @@ h6 {
   background-color: #3F8077;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 22px;
   letter-spacing: 0%;
   color: #ffffff;
@@ -1232,7 +1232,7 @@ h6 {
   color: #ffffff;
   background-color: #101828;
   border-radius: 50px;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 22px;
   font-family: "Redzone", sans-serif;
   font-weight: bold;
@@ -1258,13 +1258,13 @@ h6 {
 .btn.btn-link {
   font-family: "Poppins", sans-serif;
   font-style: normal;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 18px;
   color: #101828;
   text-decoration: none;
 }
 .btn.btn-link:hover {
-  color: #667085;
+  color: #475467;
 }
 .btn.btn-pink {
   background-color: #E29578;
@@ -1277,7 +1277,7 @@ h6 {
 .btn.btn-link-inter {
   font-family: "Poppins", sans-serif !important;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 24px;
 }
 .btn.btn-round-icon {
@@ -1347,7 +1347,7 @@ h6 {
   border: 0px;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 22px;
   color: #ffffff;
   background-color: #3F8077;
@@ -1433,7 +1433,7 @@ h6 {
   padding-left: 30px;
   font-family: "Poppins", sans-serif !important;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 24px;
 }
 
@@ -1860,7 +1860,7 @@ label {
   position: relative;
 }
 .box-swiper .swiper-container .item-logo {
-  border: 1px solid #667085;
+  border: 1px solid #475467;
   padding: 39px 0px 36px 0px;
   display: inline-block;
   width: 100%;
@@ -2534,7 +2534,7 @@ label {
 }
 .block-pricing-3 .block-price-item .tag-round {
   border-radius: 14px;
-  background-color: #667085;
+  background-color: #475467;
   display: inline-block;
   padding: 2px 15px;
   color: #ffffff;
@@ -2656,7 +2656,7 @@ label {
   color: #101828;
 }
 .grid-category-2 .category-info-bottom span {
-  color: #667085;
+  color: #475467;
 }
 .grid-category-2 .category-info-bottom .link-category {
   width: 75%;
@@ -2709,7 +2709,7 @@ label {
   color: #101828;
 }
 .product-item-1 .product-info .price-line {
-  color: #667085;
+  color: #475467;
   text-decoration: line-through;
 }
 
@@ -2856,7 +2856,7 @@ label {
 .product-item-3 .location-icon, .product-item-3 .calendar-icon {
   font-size: 12px;
   line-height: 16px;
-  color: #667085;
+  color: #475467;
   font-family: "Redzone", sans-serif;
   font-weight: bold;
   text-decoration: none;
@@ -3629,7 +3629,7 @@ label {
   font-family: "Redzone", sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.25em;
   color: #ffffff;
   display: block;
   padding: 30px 22px 30px 22px;
@@ -4184,7 +4184,7 @@ label {
 
 .burger-icon.burger-icon-white > span::before,
 .burger-icon.burger-icon-white > span::after {
-  background-color: #667085;
+  background-color: #475467;
 }
 
 .mobile-search form {
@@ -4210,7 +4210,7 @@ label {
 
 .mobile-social-icon h6 {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.25em;
   margin-bottom: 30px;
 }
 .mobile-social-icon a {
@@ -4299,7 +4299,7 @@ label {
   transform: translateY(-50%);
   right: 0;
   border: none;
-  font-size: 20px;
+  font-size: 1.25em;
   height: 100%;
   padding: 0 24px;
   background-color: transparent;
@@ -4383,7 +4383,7 @@ label {
   margin-bottom: 8px;
 }
 .footer .menu-footer li a {
-  color: #667085;
+  color: #475467;
   font-family: "Redzone", sans-serif;
   font-size: 18px;
   line-height: 28px;
@@ -4398,7 +4398,7 @@ label {
 .footer .footer-bottom {
   border-top: 1px solid #E4E7EC;
   padding: 30px 0px;
-  color: #667085;
+  color: #475467;
   font-size: 16px;
 }
 .footer .footer-bottom a {
@@ -4470,7 +4470,7 @@ label {
 #scrollUp i {
   display: block;
   line-height: 46px !important;
-  font-size: 20px;
+  font-size: 1.25em;
   color: #fff;
 }
 #scrollUp:hover {
@@ -6090,7 +6090,7 @@ label {
   font-size: 12px;
   line-height: 16px;
   font-family: "Redzone", sans-serif;
-  color: #667085;
+  color: #475467;
   background: url(../imgs/template/icons/dot.svg) no-repeat left center;
   display: block;
   padding: 0px 0px 0px 10px;
@@ -6446,7 +6446,7 @@ label {
   padding: 20px 30px;
   background-color: #E4E7EC;
   border-width: 0;
-  color: #667085;
+  color: #475467;
 }
 
 .accordion-button:not(.collapsed) {
@@ -6512,7 +6512,7 @@ label {
 }
 
 .list-icon-3 li {
-  color: #667085;
+  color: #475467;
   padding: 2px 0px 2px 35px;
   margin-bottom: 15px;
   float: left;
@@ -6589,7 +6589,7 @@ label {
 .list-category li a {
   font-size: 19px;
   line-height: 30px;
-  color: #667085;
+  color: #475467;
   display: inline-block;
   vertical-align: text-top;
 }
@@ -6616,7 +6616,7 @@ label {
   padding: 70px 64px;
 }
 .box-green .text-desc-white {
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 32px;
   font-family: "Redzone", sans-serif;
   color: #ffffff;
@@ -6980,7 +6980,7 @@ label {
   margin-bottom: 15px;
 }
 .list-search-popular li a {
-  color: #667085;
+  color: #475467;
   text-decoration: none;
   font-size: 16px;
   line-height: 14px;
@@ -7155,7 +7155,7 @@ label {
 .text-inter-lg {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 28px;
   color: D1DAE4;
 }
@@ -7284,7 +7284,7 @@ label {
 }
 .list-icons-2 > li ul {
   list-style: disc;
-  color: #667085;
+  color: #475467;
   padding-left: 20px;
 }
 
@@ -7490,16 +7490,16 @@ label {
 .text-summary {
   font-weight: bold;
   font-family: "Redzone", sans-serif;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 32px;
-  color: #667085;
+  color: #475467;
 }
 
 .single-detail p {
   margin-bottom: 15px;
-  font-size: "Poppins", sans-serif;
+  font-size: 1.25em;
   font-family: "Poppins", sans-serif;
-  color: #667085;
+  color: #475467;
   line-height: 32px;
   font-weight: 400;
 }
@@ -7507,7 +7507,7 @@ label {
   border-radius: 16px;
 }
 .single-detail h1, .single-detail h2, .single-detail h3, .single-detail h4, .single-detail h5, .single-detail h6 {
-  margin: 0px 0px 20px 0px;
+  margin: 25px 0px 10px 0px;
   font-weight: 700;
   color: #101828;
 }
@@ -7568,8 +7568,8 @@ label {
 .box-quote .text-quote {
   background: url(../imgs/template/icons/left-quote.svg) no-repeat top center;
   padding: 75px 0px 0px 0px;
-  font-size: 32px;
-  line-height: 48px;
+  font-size: 2em;
+  line-height: 1.75em;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   text-align: center;
@@ -7681,7 +7681,7 @@ label {
   color: #88929b;
   float: right;
   margin: 0px 7px 0px 0px;
-  font-size: 20px;
+  font-size: 1.25em;
 }
 .dropdown-sort .dropdown-toggle::after {
   border: 0px;
@@ -7733,7 +7733,7 @@ label {
   margin: 0px 5px;
   font-weight: 700;
   font-family: "Poppins", sans-serif;
-  color: #667085;
+  color: #475467;
   line-height: 30px;
   text-decoration: none;
   position: relative;
@@ -7905,7 +7905,7 @@ label {
   background-image: url(../imgs/page/shop2/filter.svg);
   background-position: 30px center;
   background-repeat: no-repeat;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 22px;
   font-weight: bold;
   font-family: "Poppins", sans-serif;
@@ -7947,7 +7947,7 @@ label {
 .banner-ads .desc-ads {
   font-size: 16px;
   line-height: 20px;
-  color: #667085;
+  color: #475467;
   font-family: "Redzone", sans-serif;
 }
 .banner-ads .box-banner-ads {
@@ -7965,7 +7965,7 @@ label {
   padding: 5px 0;
 }
 .table-of-content ul li a {
-  color: #667085;
+  color: #475467;
   transition-duration: 0.2s;
 }
 .table-of-content ul li a:hover {
@@ -7996,7 +7996,7 @@ label {
   background: url(../imgs/page/single-product/right-arrow.svg) no-repeat 10px 5px;
 }
 .nav-breadcrums .breadcrumb ul li a {
-  color: #667085;
+  color: #475467;
   font-size: 14px;
   line-height: 19px;
 }
@@ -8108,7 +8108,7 @@ label {
 .tag-category {
   font-size: 12px;
   line-height: 16px;
-  color: #667085;
+  color: #475467;
   font-weight: bold;
   font-family: "Redzone", sans-serif;
 }
@@ -8127,7 +8127,7 @@ label {
   margin-right: 15px;
 }
 .box-price .price-old {
-  color: #667085;
+  color: #475467;
   font-weight: bold;
   font-size: 28px;
   line-height: 32px;
@@ -8139,7 +8139,7 @@ label {
 .text-stock {
   font-size: 16px;
   line-height: 28px;
-  color: #667085;
+  color: #475467;
   font-weight: 400;
   font-family: "Redzone", sans-serif;
 }
@@ -8159,7 +8159,7 @@ label {
 .product-description .tab-content ul {
   padding: 0px 0px 0px 20px;
   list-style: disc;
-  color: #667085;
+  color: #475467;
   margin: 20px 0px;
 }
 .product-description .tab-content ul li {
@@ -8175,7 +8175,7 @@ label {
 .btn.btn-tab {
   padding: 15px 32px;
   border-color: #E4E7EC;
-  color: #667085;
+  color: #475467;
   background-color: #ffffff;
   margin-right: 20px;
   margin-bottom: 15px;
@@ -8213,7 +8213,7 @@ label {
 
 .title-question {
   font-size: 18px;
-  color: #667085;
+  color: #475467;
   line-height: 28px;
 }
 
@@ -8310,7 +8310,7 @@ label {
 }
 
 .comments-area .text-muted {
-  color: #667085 !important;
+  color: #475467 !important;
 }
 .comments-area .text-brand {
   color: #3F8077 !important;
@@ -8350,14 +8350,14 @@ strong {
   padding: 10px 20px;
   border: 1px solid #ececec;
   vertical-align: middle;
-  color: #667085;
+  color: #475467;
   font-weight: 400;
 }
 .tab-pane .table th {
   padding: 10px 20px;
   border: 1px solid #ececec;
   vertical-align: middle;
-  color: #667085;
+  color: #475467;
   font-weight: 400;
 }
 
@@ -8446,7 +8446,7 @@ input.qty-val {
   padding: 0 !important;
   width: 100%;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.25em;
   color: #004B52;
 }
 
@@ -8512,7 +8512,7 @@ input.qty-val {
   position: relative;
   width: 25%;
   padding: 0px 20px 0px 0px;
-  color: #667085;
+  color: #475467;
 }
 .countdown-section::before {
   content: "";
@@ -9048,11 +9048,11 @@ input.qty-val {
     line-height: 32px;
   }
   .text-heading-4 {
-    font-size: 20px;
+    font-size: 1.25em;
     line-height: 26px;
   }
   .text-body-lead-large {
-    font-size: 20px;
+    font-size: 1.25em;
     line-height: 28px;
   }
   .box-optimized {
@@ -9129,11 +9129,11 @@ input.qty-val {
     padding: 25px 15px;
   }
   .box-quote .text-quote {
-    font-size: 20px;
+    font-size: 1.25em;
     line-height: 32px;
   }
   .text-heading-5 {
-    font-size: 20px;
+    font-size: 1.25em;
   }
   .text-heading-3 {
     font-size: 25px;
