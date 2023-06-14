@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import Layout from "../components/layout/Layout";
+import Layout from "../../components/layout/Layout";
 
 
 function Blog2() {
@@ -13,61 +13,85 @@ function Blog2() {
                             <div className="container text-center">
                                 <div className="row">
                                     <div className="col-lg-12">
-                                        <h1 className="text-display-3 color-gray-900 mb-20">Our Blog</h1>
-                                        <p className="text-heading-6 color-gray-600 mb-20">From year to year we strive to invent the most innovative technology<br className="d-lg-block d-none" />that is used by both small enterprises and space enterprises.</p>
+                                        <h1 className="text-display-3 color-gray-900 mb-20">Ahead with FTS</h1>
+                                        <p className="text-heading-6 mb-20 box-mw-610 mx-auto">Explore &lsquo;Ahead with FTS&rsquo;, our insights blog offering deep insights into emerging technology trends, digital marketing strategies, and forward-thinking solutions to empower businesses for future growth. Keep up with our latest articles and be at the forefront of innovation.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
                     <section className="section-box">
-                        <div className="container mt-130">
+                        <div className="container mt-70">
                             <div className="row">
                                 <div className="col-lg-1 col-sm-1 col-12" />
                                 <div className="col-lg-10 col-sm-10 col-12 text-center">
-                                    <h2 className="text-heading-1 color-gray-900 mb-10">Featured Articles</h2>
-                                    <p className="text-body-lead-large color-gray-600 mt-20">From Our Blog And Event Fanpage</p>
+                                    <h2 className="text-heading-1 color-gray-900">Featured Articles</h2>
                                 </div>
                                 <div className="col-lg-1 col-sm-1 col-12" />
                             </div>
                         </div>
-                        <div className="container mt-90">
-                            <div className="row">
+                        
+                        <div className="container mt-40">
+                            <div className="row border-bottom">
+                                {/* article 1 */}
                                 <div className="col-lg-4 col-sm-6 pr-30 mb-50">
                                     <div className="card-grid-style-4">
                                         <div className="grid-4-img mb-20">
-                                            <Link href="/blog-single"><a><img src="/assets/imgs/page/blog/2/img-1.png" alt="Agon" />
-                                            </a></Link>
+                                            <Link href="/ahead-with-fts/upgrading-to-google-analytics-4-the-time-is-now" passHref>
+                                                <img src="/assets/imgs/blog/thumb-google-dash.webp" alt="Google Analytics Dashboard" />
+                                            </Link>
                                         </div>
-                                        <Link href="/blog-single"><a className="text-heading-4">We can blend colors multiple ways, the most common
-                                        </a></Link>
+                                        <span className="text-heading-4"><Link href="/ahead-with-fts/upgrading-to-google-analytics-4-the-time-is-now" passHref>Upgrading to Google Analytics 4: Why the Time is Now!</Link></span>
 
-                                        <p className="text-body-text color-gray-500">Lorem ipsum dolor sit amet consectetur adipiscing elit interdum ullamcorper sed pharetra senectus donec nunc. Consequat semper viverra nam libero justo laoreet facilisis magna etiam.</p>
+                                        <p className="text-body-text color-gray-500 mt-5">On July 1, 2023, Google Universal Analytics 3 (GA3), the analytics tool that marketers and businesses worldwide have come to rely on, is heading into the sunset.</p>
                                         <div className="blog-img-user">
-                                            <div className="img-user img-user-round"><img src="/assets/imgs/page/blog/2/user-1.png" alt="Agon" /></div>
-                                            <h4 className="text-heading-6 color-gray-900">Jenny Wilson</h4>
-                                            <p className="text-body-small color-gray-500">August 25, 2022</p>
+                                            <div className="img-user img-user-round"><img src="/assets/imgs/blog/author-kevinw.jpg" alt="Kevin W." /></div>
+                                            <h4 className="text-heading-6 color-gray-900">Kevin Williams</h4>
+                                            <p className="text-body-small color-gray-500">July 7, 2023</p>
                                         </div>
                                     </div>
                                 </div>
+
+                                {/* article 2 */}
                                 <div className="col-lg-4 col-sm-6 pr-30 mb-50">
                                     <div className="card-grid-style-4">
-                                        <div className="grid-4-img color-bg-2 mb-20">
-                                            <Link href="/blog-single"><a><img src="/assets/imgs/page/blog/2/img-2.png" alt="Agon" />
-                                            </a></Link>
+                                        <div className="grid-4-img mb-20">
+                                            <Link href="/ahead-with-fts/leveraging-ai-unleashing-the-future-today" passHref>
+                                                <img src="/assets/imgs/blog/thumb-ai-touch.webp" alt="Leveraging Artificial Intelligence" />
+                                            </Link>
                                         </div>
-                                        <Link href="/blog-single"><a className="text-heading-4">We can blend colors multiple ways, the most common
-                                        </a></Link>
+                                        <span className="text-heading-4"><Link href="/ahead-with-fts/leveraging-ai-unleashing-the-future-today" passHref>Leveraging AI: Unleashing the Future Today</Link></span>
 
-                                        <p className="text-body-text color-gray-500">Lorem ipsum dolor sit amet consectetur adipiscing elit interdum ullamcorper sed pharetra senectus donec nunc. Consequat semper viverra nam libero justo laoreet facilisis magna etiam.</p>
+                                        <p className="text-body-text color-gray-500 mt-5">Explore how artificial intelligence can revolutionize processes, boost productivity, and offer unique customer experiences. Stay Ahead with FTS.</p>
                                         <div className="blog-img-user">
-                                            <div className="img-user img-user-round"><img src="/assets/imgs/page/blog/2/user-2.png" alt="Agon" /></div>
-                                            <h4 className="text-heading-6 color-gray-900">Jenny Wilson</h4>
-                                            <p className="text-body-small color-gray-500">August 25, 2022</p>
+                                            <div className="img-user img-user-round"><img src="/assets/imgs/blog/author-kevinw.jpg" alt="Kevin W." /></div>
+                                            <h4 className="text-heading-6 color-gray-900">Kevin Williams</h4>
+                                            <p className="text-body-small color-gray-500">May 11, 2023</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-lg-4 col-sm-12 pr-30 mb-50">
+
+                                {/* article 3 */}
+                                <div className="col-lg-4 col-sm-6 pr-30 mb-50">
+                                    <div className="card-grid-style-4">
+                                        <div className="grid-4-img mb-20">
+                                            <Link href="/ahead-with-fts/the-future-of-work-preparing-for-a-hybrid-workplace" passHref>
+                                                <img src="/assets/imgs/blog/thumb-future-office.webp" alt="Hybrid Workplace" />
+                                            </Link>
+                                        </div>
+                                        <span className="text-heading-4"><Link href="/ahead-with-fts/the-future-of-work-preparing-for-a-hybrid-workplace" passHref>The Future of Work: Preparing for a Hybrid Workplace</Link></span>
+
+                                        <p className="text-body-text color-gray-500 mt-5">Unpack the potential of a hybrid workplace model in fostering productivity and employee satisfaction. Future-proof your workspace with FTS.</p>
+                                        <div className="blog-img-user">
+                                            <div className="img-user img-user-round"><img src="/assets/imgs/blog/author-kevinw.jpg" alt="Kevin W." /></div>
+                                            <h4 className="text-heading-6 color-gray-900">Kevin Williams</h4>
+                                            <p className="text-body-small color-gray-500">May 4, 2023</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* articles  */}
+                                {/* <div className="col-lg-4 col-sm-12 pr-30 mb-50">
                                     <div className="card-list-style-1">
                                         <Link href="/blog-single"><a className="text-heading-6">Design Studios That Everyone Should Know About?
                                         </a></Link>
@@ -124,11 +148,12 @@ function Blog2() {
                                             </a></Link>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                </div>*/}
+                            </div> 
                         </div>
                     </section>
-                    <section className="section-box">
+
+                    {/* <section className="section-box">
                         <div className="container mt-100">
                             <div className="row">
                                 <div className="col-lg-1 col-sm-1 col-12" />
@@ -271,7 +296,7 @@ function Blog2() {
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> */}
                 </div>
 
             </Layout>
