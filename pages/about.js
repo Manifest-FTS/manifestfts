@@ -28,7 +28,8 @@ function About1() {
                             <div className="row">
                                 <div className="col-lg-7"><span className="tag-1 color-orange-900">Forward Thinking Team</span>
                                     <h1 className="text-display-3 mt-30">We harness innovation to manifest value for businesses and brands.</h1>
-                                    <p className="text-body-lead-large color-gray-500 mt-40 pr-40">Manifest is a digital consultancy and software development agency that empowers forward-thinking brands through cutting-edge digital experiences.  Our expertise spans brand and digital strategy, user experience design, software development, implementation, and data systems. We are a value-driven agency working with some of the most talented professionals to drive results.</p>
+                                    <p className="text-body-lead-large color-gray-500 mt-40 pr-40">Manifest is a digital consultancy and software development agency that empowers forward-thinking brands through cutting-edge digital experiences.</p>
+                                    <p className="text-body-lead-large color-gray-500 mt-40 pr-40">Our expertise spans brand and digital strategy, user experience design, software development, implementation, and data systems. We are a value-driven agency working with some of the most talented professionals to drive results.</p>
                                     <div className="mt-40">
                                         <Link href="/#get-started"><a
                                             className="btn btn-black shape-square icon-arrow-right-white">GET STARTED
@@ -52,7 +53,6 @@ function About1() {
                         <div className="row">
                             <div className="col-lg-9 col-sm-8">
                                 <h3 className="text-heading-1 mb-10">Our Team</h3>
-                                <p className="text-body-lead-large color-gray-600">We value our clients</p>
                             </div>
                         </div>
                     </div>
