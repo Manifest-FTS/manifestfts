@@ -40,7 +40,7 @@ const TeamSlider = () => {
             <div className="row">
                 <div className="col-lg-3 col-md-6 col-sm-6">
                     <div className="card-grid-style-5 hover-up">
-                        <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/kevin_williams.png" alt="Agon"/>
+                        <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/kevin_williams.png" alt="Kevin Williams"/>
                         </div>
                         <span className="text-body-text-md color-gray-500">Founder, Chief Technology Officer</span>
                         <h3 className="text-heading-5 mb-5 mt-5">Kevin Williams</h3>
@@ -55,7 +55,7 @@ const TeamSlider = () => {
                 </div>
                 <div className="col-lg-3 col-md-6 col-sm-6">
                     <div className="card-grid-style-5 hover-up">
-                        <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/mohammed_masum.png" alt="Agon"/>
+                        <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/mohammed_masum.png" alt="Mohammed Masum"/>
                         </div>
                         <span className="text-body-text-md color-gray-500">Product & Project Manager</span>
                         <h3 className="text-heading-5 mb-5 mt-5">Mohammed Masum</h3>
@@ -69,7 +69,7 @@ const TeamSlider = () => {
                 </div>
                 <div className="col-lg-3 col-md-6 col-sm-6">
                     <div className="card-grid-style-5 hover-up">
-                        <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/profile.jpg" alt="Agon"/>
+                        <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/profile.jpg" alt="Daniel Kane"/>
                         </div>
                         <span className="text-body-text-md color-gray-500">Client Relations Manager</span>
                         <h3 className="text-heading-5 mb-5 mt-5">Daniel Kane</h3>
@@ -81,7 +81,7 @@ const TeamSlider = () => {
                 </div>
                 <div className="col-lg-3 col-md-6 col-sm-6">
                     <div className="card-grid-style-5 hover-up">
-                        <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/profile.jpg" alt="Agon"/>
+                        <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/profile.jpg" alt="Arun Jha"/>
                         </div>
                         <span className="text-body-text-md color-gray-500">Software Engineer, Solutions Architect</span>
                         <h3 className="text-heading-5 mb-5 mt-5">Arun Jha</h3>
