@@ -7057,6 +7057,14 @@ label {
   transform: translateY(-3px);
   transition-duration: 0.2s;
 }
+.social-bottom .icon-socials.icon-email {
+  background: url(../imgs/template/icons/email.svg) no-repeat 0px 0px;
+  transition-duration: 0.2s;
+}
+.social-bottom .icon-socials.icon-email:hover {
+  background: url(../imgs/template/icons/email-green.svg) no-repeat 0px 0px;
+  transition-duration: 0.2s;
+}
 .social-bottom .icon-socials.icon-facebook {
   background: url(../imgs/template/icons/facebook-gray.svg) no-repeat 0px 0px;
   transition-duration: 0.2s;
