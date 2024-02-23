@@ -52,7 +52,6 @@ function About1() {
                         <div className="row">
                             <div className="col-lg-9 col-sm-8">
                                 <h3 className="text-heading-1 mb-10">Our Team</h3>
-                                <p className="text-body-lead-large color-gray-600">We value our clients</p>
                             </div>
                         </div>
                     </div>
