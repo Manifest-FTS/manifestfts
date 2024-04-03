@@ -3,6 +3,7 @@
 import gsap, { Power3, Sine } from "gsap";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import MuxPlayer, { MuxPlayerProps, MaxResolution, MinResolution, RenditionOrder } from "@mux/mux-player-react";
 import { useEffect, useRef, useState } from "react";
 import "react-modal-video/css/modal-video.css";
 import FormProject from "../components/form-project/FormProject";
@@ -44,11 +45,23 @@ function Index3() {
           </div>
 
           <div className="brand-video-wrapper" aria-hidden="true">
-            <video id="brand-video" aria-label="Video" 
+            <MuxPlayer
+              streamType="on-demand"
+              playbackId="pqBNp01aZtS2CdC01jvh00rqnKBj6ngpoEClaAJ01AaMgA8"
+              // metadataVideoTitle=""
+              metadataViewerUserId=""
+              primaryColor="#FFFFFF"
+              secondaryColor="#000000"
+              autoPlay={true}
+              loop={true}
+              autoplay={true}
+              muted={true}
+            />
+            {/* <video id="brand-video" aria-label="Video" 
             preload="auto"
             aria-hidden="true"
             autoPlay playsInline loop muted
-            src="/assets/vids/manifest-brand-video-loop.mp4" metadata={{ video_id: "video-id-54321", video_title: "Manifest FTS", viewer_user_id: "user-id-007", }} />
+            src="/assets/vids/manifest-brand-video-loop.mp4" metadata={{ video_id: "video-id-54321", video_title: "Manifest FTS", viewer_user_id: "user-id-007", }} /> */}
           </div>
 
           {/* <video id="brand-video" autoplay muted loop className="brand-video">         
@@ -235,10 +248,10 @@ function Index3() {
                   Development
                 </p>
                 <div className="align-items-center">
-                    <Link href="/case-study/barclay-rex" passHref>
-                        <span className="btn btn-light icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3">View Case Study</span>
-                    </Link>
-                    <a href="https://barclayrex.com" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
+                  <Link href="/case-study/barclay-rex" passHref>
+                    <span className="btn btn-light icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3">View Case Study</span>
+                  </Link>
+                  <a href="https://barclayrex.com" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
                 </div>
                 <div className="row">
                   <div className="col-12 mt-50">
@@ -331,7 +344,7 @@ function Index3() {
                     </span>
                   </div>
                   <h2 className="text-heading-1 color-gray-900 mb-10">
-                    Our recommended CMS<br/>for your next project
+                    Our recommended CMS<br />for your next project
                   </h2>
                   <p className="ft-lead text-body-lead-large color-gray-600 mt-30">Sanity has a long list of technical benefits, but the clean interface and visual cues make it our recommended content management system. It provides a hassle-free editing experience and adds long-lasting value for our clients.
 
