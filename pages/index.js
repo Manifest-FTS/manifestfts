@@ -45,7 +45,7 @@ function Index3() {
           </div>
 
           <div className="brand-video-wrapper" aria-hidden="true">
-            <MuxPlayer
+            {/* <MuxPlayer
               streamType="on-demand"
               playbackId="pqBNp01aZtS2CdC01jvh00rqnKBj6ngpoEClaAJ01AaMgA8"
               // metadataVideoTitle=""
@@ -56,12 +56,14 @@ function Index3() {
               loop={true}
               autoplay={true}
               muted={true}
-            />
-            {/* <video id="brand-video" aria-label="Video" 
+              controls={false}
+              playsInline={true}
+            /> */}
+            <video id="brand-video" aria-label="Video" 
             preload="auto"
             aria-hidden="true"
             autoPlay playsInline loop muted
-            src="/assets/vids/manifest-brand-video-loop.mp4" metadata={{ video_id: "video-id-54321", video_title: "Manifest FTS", viewer_user_id: "user-id-007", }} /> */}
+            src="https://stream.mux.com/qe4BsoQrkHB02OoLFC02005n02HNSf4Trq1then2bAGDDhs.m3u8" metadata={{ video_id: "video-id-54321", video_title: "Manifest FTS", viewer_user_id: "user-id-007", }} />
           </div>
 
           {/* <video id="brand-video" autoplay muted loop className="brand-video">         
