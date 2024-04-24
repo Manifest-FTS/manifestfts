@@ -30,22 +30,22 @@ function Index3() {
   return (
     <>
       <Layout>
-        <section id="home-hero" className="section-box">
+        <section id="home-hero" className="section-box bg-[url('/assets/imgs/hero-image.png')] bg-cover bg-center h-screen">
           <div className="text-center brand-video-copy">
             <h1 className="mt-10">
               Forward Thinking
               <br className="d-lg-block d-none" /> Solutions
             </h1>
-            <div className="text-body-lead-medium mt-30">
+            {/* <div className="text-body-lead-medium mt-30">
               <a className="play-reel" onClick={() => setOpen(true)}>
                 <img width="55" height="55" src="/assets/imgs/SVG/icon-video-play.svg" />
                 <div className="text-body-small text-bold">PLAY REEL</div>
               </a>
-            </div>
+            </div> */}
           </div>
 
-          <div className="brand-video-wrapper" aria-hidden="true">
-            <MuxPlayer
+          {/* <div className="brand-video-wrapper" aria-hidden="true"> */}
+            {/* <MuxPlayer
               streamType="on-demand"
               playbackId="pqBNp01aZtS2CdC01jvh00rqnKBj6ngpoEClaAJ01AaMgA8"
               // metadataVideoTitle=""
@@ -56,13 +56,13 @@ function Index3() {
               loop={true}
               autoplay={true}
               muted={true}
-            />
+            /> */}
             {/* <video id="brand-video" aria-label="Video" 
             preload="auto"
             aria-hidden="true"
             autoPlay playsInline loop muted
             src="/assets/vids/manifest-brand-video-loop.mp4" metadata={{ video_id: "video-id-54321", video_title: "Manifest FTS", viewer_user_id: "user-id-007", }} /> */}
-          </div>
+          {/* </div> */}
 
           {/* <video id="brand-video" autoplay muted loop className="brand-video">         
             <source src={BrandVideo} type="video/mp4"/>       
