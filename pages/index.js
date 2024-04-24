@@ -36,12 +36,12 @@ function Index3() {
               Forward Thinking
               <br className="d-lg-block d-none" /> Solutions
             </h1>
-            {/* <div className="text-body-lead-medium mt-30">
+            <div className="text-body-lead-medium mt-30">
               <a className="play-reel" onClick={() => setOpen(true)}>
                 <img width="55" height="55" src="/assets/imgs/SVG/icon-video-play.svg" />
                 <div className="text-body-small text-bold">PLAY REEL</div>
               </a>
-            </div> */}
+            </div>
           </div>
 
           {/* <div className="brand-video-wrapper" aria-hidden="true"> */}
@@ -51,7 +51,7 @@ function Index3() {
               // metadataVideoTitle=""
               metadataViewerUserId=""
               primaryColor="#FFFFFF"
-              secondaryColor="#000000"
+              secondaryColor="#000000" 
               autoPlay={true}
               loop={true}
               autoplay={true}

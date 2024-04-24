@@ -1815,7 +1815,8 @@ label {
   padding: 0;
   justify-content: center;
   width: 100%;
-  background-image: url('/assets/imgs/hero-image.png');
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),  url('/assets/imgs/hero-image.png');
+  
 }
 #home-hero .brand-video-copy {
   align-items: center;
