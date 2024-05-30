@@ -3,7 +3,12 @@
 import gsap, { Power3, Sine } from "gsap";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import MuxPlayer, { MuxPlayerProps, MaxResolution, MinResolution, RenditionOrder } from "@mux/mux-player-react";
+import MuxPlayer, {
+  MuxPlayerProps,
+  MaxResolution,
+  MinResolution,
+  RenditionOrder,
+} from "@mux/mux-player-react";
 import { useEffect, useRef, useState } from "react";
 import "react-modal-video/css/modal-video.css";
 import FormProject from "../components/form-project/FormProject";
@@ -30,7 +35,10 @@ function Index3() {
   return (
     <>
       <Layout>
-        <section id="home-hero" className="section-box bg-[url('/assets/imgs/hero-image.png')] bg-cover bg-center h-screen">
+        <section
+          id="home-hero"
+          className="section-box bg-[url('/assets/imgs/hero-image.png')] bg-cover bg-center h-screen"
+        >
           <div className="text-center brand-video-copy">
             <h1 className="mt-10">
               Forward Thinking
@@ -38,14 +46,18 @@ function Index3() {
             </h1>
             <div className="text-body-lead-medium mt-30">
               <a className="play-reel" onClick={() => setOpen(true)}>
-                <img width="55" height="55" src="/assets/imgs/SVG/icon-video-play.svg" />
+                <img
+                  width="55"
+                  height="55"
+                  src="/assets/imgs/SVG/icon-video-play.svg"
+                />
                 <div className="text-body-small text-bold">PLAY REEL</div>
               </a>
             </div>
           </div>
 
           {/* <div className="brand-video-wrapper" aria-hidden="true"> */}
-            {/* <MuxPlayer
+          {/* <MuxPlayer
               streamType="on-demand"
               playbackId="pqBNp01aZtS2CdC01jvh00rqnKBj6ngpoEClaAJ01AaMgA8"
               // metadataVideoTitle=""
@@ -57,7 +69,7 @@ function Index3() {
               autoplay={true}
               muted={true}
             /> */}
-            {/* <video id="brand-video" aria-label="Video" 
+          {/* <video id="brand-video" aria-label="Video" 
             preload="auto"
             aria-hidden="true"
             autoPlay playsInline loop muted
@@ -147,7 +159,10 @@ function Index3() {
                   <li>
                     <Link href="/#">
                       <a className="item-logo box-hover-shadow hover-up">
-                        <img alt="Next.js" src="/assets/imgs/logos/nextjs.svg" />
+                        <img
+                          alt="Next.js"
+                          src="/assets/imgs/logos/nextjs.svg"
+                        />
                       </a>
                     </Link>
                   </li>
@@ -249,9 +264,18 @@ function Index3() {
                 </p>
                 <div className="align-items-center">
                   <Link href="/case-study/barclay-rex" passHref>
-                    <span className="btn btn-light icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3">View Case Study</span>
+                    <span className="btn btn-light icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3">
+                      View Case Study
+                    </span>
                   </Link>
-                  <a href="https://barclayrex.com" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
+                  <a
+                    href="https://barclayrex.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3"
+                  >
+                    Visit Website
+                  </a>
                 </div>
                 <div className="row">
                   <div className="col-12 mt-50">
@@ -344,10 +368,15 @@ function Index3() {
                     </span>
                   </div>
                   <h2 className="text-heading-1 color-gray-900 mb-10">
-                    Our recommended CMS<br />for your next project
+                    Our recommended CMS
+                    <br />
+                    for your next project
                   </h2>
-                  <p className="ft-lead text-body-lead-large color-gray-600 mt-30">Sanity has a long list of technical benefits, but the clean interface and visual cues make it our recommended content management system. It provides a hassle-free editing experience and adds long-lasting value for our clients.
-
+                  <p className="ft-lead text-body-lead-large color-gray-600 mt-30">
+                    Sanity has a long list of technical benefits, but the clean
+                    interface and visual cues make it our recommended content
+                    management system. It provides a hassle-free editing
+                    experience and adds long-lasting value for our clients.
                   </p>
                 </div>
                 <div className="col-lg-2 col-sm-2 col-12" />
@@ -357,12 +386,20 @@ function Index3() {
               <div className="row">
                 <div className="col-lg-1" />
                 <div className="col-lg-10">
-                  <div className="box-image">
-                    <img
-                      className="img-responsive bdrd-16 shadow effect-1"
-                      src="/assets/imgs/sanitycms.gif"
-                      alt="Sanity CMS"
-                    />
+                  <div className="box-image">                  
+                    <div className="img-responsive bdrd-16 shadow effect-1">
+                      <MuxPlayer
+                        streamType="on-demand"
+                        playbackId="xVEspFYOw6gtvRjEMk8xFnrjXtJ3YqGzajrvtjdV1cU"
+                        metadataVideoTitle=""
+                        metadataViewerUserId=""
+                        primaryColor="#FFFFFF"
+                        secondaryColor="#000000"
+                        autoPlay={true}
+                        loop={true}
+                        muted={true}
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="col-lg-1" />
