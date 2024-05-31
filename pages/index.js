@@ -37,8 +37,20 @@ function Index3() {
       <Layout>
         <section
           id="home-hero"
-          className="section-box bg-[url('/assets/imgs/hero-image.png')] bg-cover bg-center h-screen"
+          className="section-box position-relative overflow-hidden"
         >
+          <MuxPlayer
+            streamType="on-demand"
+            playbackId="9aEC9vgcsVx01MgwwTGwU7G3i02B4jhtShGymd2HjyU8M"
+            metadataVideoTitle=""
+            metadataViewerUserId=""
+            primaryColor="#FFFFFF"
+            secondaryColor="#000000"
+            muted={true}
+            loop={true}
+            autoPlay={true}
+            className='background-video'
+          />
           <div className="text-center brand-video-copy">
             <h1 className="mt-10">
               Forward Thinking
@@ -55,30 +67,6 @@ function Index3() {
               </a>
             </div>
           </div>
-
-          {/* <div className="brand-video-wrapper" aria-hidden="true"> */}
-          {/* <MuxPlayer
-              streamType="on-demand"
-              playbackId="pqBNp01aZtS2CdC01jvh00rqnKBj6ngpoEClaAJ01AaMgA8"
-              // metadataVideoTitle=""
-              metadataViewerUserId=""
-              primaryColor="#FFFFFF"
-              secondaryColor="#000000" 
-              autoPlay={true}
-              loop={true}
-              autoplay={true}
-              muted={true}
-            /> */}
-          {/* <video id="brand-video" aria-label="Video" 
-            preload="auto"
-            aria-hidden="true"
-            autoPlay playsInline loop muted
-            src="/assets/vids/manifest-brand-video-loop.mp4" metadata={{ video_id: "video-id-54321", video_title: "Manifest FTS", viewer_user_id: "user-id-007", }} /> */}
-          {/* </div> */}
-
-          {/* <video id="brand-video" autoplay muted loop className="brand-video">         
-            <source src={BrandVideo} type="video/mp4"/>       
-          </video> */}
         </section>
 
         <div className="section-box overflow-visible mt-80">
@@ -386,7 +374,7 @@ function Index3() {
               <div className="row">
                 <div className="col-lg-1" />
                 <div className="col-lg-10">
-                  <div className="box-image">                  
+                  <div className="box-image">
                     <div className="img-responsive bdrd-16 shadow effect-1">
                       <MuxPlayer
                         streamType="on-demand"
