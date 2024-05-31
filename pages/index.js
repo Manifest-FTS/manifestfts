@@ -49,7 +49,7 @@ function Index3() {
             muted={true}
             loop={true}
             autoPlay={true}
-            className='background-video'
+            className='background-video'                         
           />
           <div className="text-center brand-video-copy">
             <h1 className="mt-10">
