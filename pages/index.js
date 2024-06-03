@@ -41,15 +41,15 @@ function Index3() {
         >
           <MuxPlayer
             streamType="on-demand"
-            playbackId="9aEC9vgcsVx01MgwwTGwU7G3i02B4jhtShGymd2HjyU8M"
-            metadataVideoTitle=""
+            playbackId="9aEC9vgcsVx01MgwwTGwU7G3i02B4jhtShGymd2HjyU8M"          
             metadataViewerUserId=""
             primaryColor="#FFFFFF"
             secondaryColor="#000000"
             muted={true}
             loop={true}
             autoPlay={true}
-            className='background-video'                         
+            className='background-video'      
+            thumbnailTime={0}                             
           />
           <div className="text-center brand-video-copy">
             <h1 className="mt-10">

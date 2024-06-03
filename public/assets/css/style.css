@@ -1816,7 +1816,7 @@ label {
   justify-content: center;
   width: 100%;
   /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),  url('/assets/imgs/hero-image.png'); */
-  
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 }
 #home-hero .brand-video-copy {
   align-items: center;
@@ -1854,13 +1854,17 @@ label {
   opacity: 1;
   transition: opacity 1000ms linear;
 }
-#home-hero .background-video {
+#home-hero .background-video {  
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   width: 100%;
+  transform: translate(-50%, -50%);
   z-index: -1;
   --controls: none;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center;
 }
 
 .box-swiper {
