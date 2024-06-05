@@ -11,6 +11,7 @@ const Sidebar = ({ openClass }) => {
     });
 
     const handleToggle = (key) => {
+        console.log("Clicked on submenu:", key);
         if (isActive.key === key) {
             setIsActive({
                 status: false,
@@ -76,7 +77,7 @@ const Sidebar = ({ openClass }) => {
                                             </ul>
                                         </li>
                                         <li>
-                                            <Link href="/"><a className="/about">About</a></Link>
+                                            <Link href="/about"><a className="/about">About</a></Link>
                                         </li>
                                         
                                         {/* <li className={isActive.key == 5 ? "has-children active" : "has-children"}>
