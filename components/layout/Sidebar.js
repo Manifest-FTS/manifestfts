@@ -10,8 +10,7 @@ const Sidebar = ({ openClass }) => {
         key: "",
     });
 
-    const handleToggle = (key) => {
-        console.log("Clicked on submenu:", key);
+    const handleToggle = (key) => {        
         if (isActive.key === key) {
             setIsActive({
                 status: false,
@@ -63,8 +62,8 @@ const Sidebar = ({ openClass }) => {
                                                 </li>
                                             </ul>
                                         </li> */}
-                                        <li className={isActive.key == 3 ? "has-children active" : "has-children"}>
-                                            <span onClick={() => handleToggle(3)}  className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
+                                        <li onClick={() => handleToggle(3)} className={isActive.key == 3 ? "has-children active" : "has-children"}>
+                                            <span className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
 
                                             <Link href="#"><a>Case Study</a></Link>
                                             <ul className={isActive.key == 3 ? "sub-menu d-block" : "sub-menu d-none"}>
