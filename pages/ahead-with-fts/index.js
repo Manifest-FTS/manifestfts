@@ -2,96 +2,311 @@
 import Link from "next/link";
 import Layout from "../../components/layout/Layout";
 
-
 function Blog2() {
-    return (
-        <>
-            <Layout>
-                <div>
-                    <section className="section-box">
-                        <div className="banner-hero banner-breadcrums bg-gray-100">
-                            <div className="container text-center">
-                                <div className="row">
-                                    <div className="col-lg-12">
-                                        <h1 className="text-display-3 color-gray-900 mb-20">Ahead with FTS</h1>
-                                        <p className="text-heading-6 mb-20 box-mw-610 mx-auto">Explore &lsquo;Ahead with FTS&rsquo;, our insights blog offering deep insights into emerging technology trends, digital marketing strategies, and forward-thinking solutions to empower businesses for future growth. Keep up with our latest articles and be at the forefront of innovation.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section className="section-box">
-                        <div className="container mt-70">
-                            <div className="row">
-                                <div className="col-lg-1 col-sm-1 col-12" />
-                                <div className="col-lg-10 col-sm-10 col-12 text-center">
-                                    <h2 className="text-heading-1 color-gray-900">Featured Articles</h2>
-                                </div>
-                                <div className="col-lg-1 col-sm-1 col-12" />
-                            </div>
-                        </div>
-                        
-                        <div className="container mt-40">
-                            <div className="row border-bottom">
-                                {/* article 1 */}
-                                <div className="col-lg-4 col-sm-6 pr-30 mb-50">
-                                    <div className="card-grid-style-4">
-                                        <div className="grid-4-img mb-20">
-                                            <Link href="/ahead-with-fts/upgrading-to-google-analytics-4-the-time-is-now" passHref>
-                                                <img src="/assets/imgs/blog/thumb-google-dash.webp" alt="Google Analytics Dashboard" />
-                                            </Link>
-                                        </div>
-                                        <span className="text-heading-4"><Link href="/ahead-with-fts/upgrading-to-google-analytics-4-the-time-is-now" passHref>Upgrading to Google Analytics 4: Why the Time is Now!</Link></span>
+  return (
+    <>
+      <Layout>
+        <div>
+          <section className="section-box">
+            <div className="banner-hero banner-breadcrums bg-gray-100">
+              <div className="container text-center">
+                <div className="row">
+                  <div className="col-lg-12">
+                    <h1 className="text-display-3 color-gray-900 mb-20">
+                      Ahead with FTS
+                    </h1>
+                    <p className="text-heading-6 mb-20 box-mw-610 mx-auto">
+                      Explore &lsquo;Ahead with FTS&rsquo;, our insights blog
+                      offering deep insights into emerging technology trends,
+                      digital marketing strategies, and forward-thinking
+                      solutions to empower businesses for future growth. Keep up
+                      with our latest articles and be at the forefront of
+                      innovation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className="section-box">
+            <div className="container mt-70">
+              <div className="row">
+                <div className="col-lg-1 col-sm-1 col-12" />
+                <div className="col-lg-10 col-sm-10 col-12 text-center">
+                  <h2 className="text-heading-1 color-gray-900">
+                    Featured Articles
+                  </h2>
+                </div>
+                <div className="col-lg-1 col-sm-1 col-12" />
+              </div>
+            </div>
 
-                                        <p className="text-body-text color-gray-500 mt-5">On July 1, 2023, Google Universal Analytics 3 (GA3), the analytics tool that marketers and businesses worldwide have come to rely on, is heading into the sunset.</p>
-                                        <div className="blog-img-user">
-                                            <div className="img-user img-user-round"><img src="/assets/imgs/blog/author-kevinw.jpg" alt="Kevin W." /></div>
-                                            <h4 className="text-heading-6 color-gray-900">Kevin Williams</h4>
-                                            <p className="text-body-small color-gray-500">July 7, 2023</p>
-                                        </div>
-                                    </div>
-                                </div>
+            <div className="container mt-40">
+              <div className="row border-bottom">
+                {/* article 1 */}
+                <div className="col-lg-4 col-sm-6 pr-30 mb-50">
+                  <div className="card-grid-style-4">
+                    <div className="grid-4-img mb-20">
+                      <Link
+                        href="/ahead-with-fts/upgrading-to-google-analytics-4-the-time-is-now"
+                        passHref
+                      >
+                        <img
+                          src="/assets/imgs/blog/thumb-google-dash.webp"
+                          alt="Google Analytics Dashboard"
+                        />
+                      </Link>
+                    </div>
+                    <span className="text-heading-4">
+                      <Link
+                        href="/ahead-with-fts/upgrading-to-google-analytics-4-the-time-is-now"
+                        passHref
+                      >
+                        Upgrading to Google Analytics 4: Why the Time is Now!
+                      </Link>
+                    </span>
 
-                                {/* article 2 */}
-                                <div className="col-lg-4 col-sm-6 pr-30 mb-50">
-                                    <div className="card-grid-style-4">
-                                        <div className="grid-4-img mb-20">
-                                            <Link href="/ahead-with-fts/leveraging-ai-unleashing-the-future-today" passHref>
-                                                <img src="/assets/imgs/blog/thumb-ai-touch.webp" alt="Leveraging Artificial Intelligence" />
-                                            </Link>
-                                        </div>
-                                        <span className="text-heading-4"><Link href="/ahead-with-fts/leveraging-ai-unleashing-the-future-today" passHref>Leveraging AI: Unleashing the Future Today</Link></span>
+                    <p className="text-body-text color-gray-500 mt-5">
+                      On July 1, 2023, Google Universal Analytics 3 (GA3), the
+                      analytics tool that marketers and businesses worldwide
+                      have come to rely on, is heading into the sunset.
+                    </p>
+                    <div className="blog-img-user">
+                      <div className="img-user img-user-round">
+                        <img
+                          src="/assets/imgs/blog/author-kevinw.jpg"
+                          alt="Kevin W."
+                        />
+                      </div>
+                      <h4 className="text-heading-6 color-gray-900">
+                        Kevin Williams
+                      </h4>
+                      <p className="text-body-small color-gray-500">
+                        July 7, 2023
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-                                        <p className="text-body-text color-gray-500 mt-5">Explore how artificial intelligence can revolutionize processes, boost productivity, and offer unique customer experiences. Stay Ahead with FTS.</p>
-                                        <div className="blog-img-user">
-                                            <div className="img-user img-user-round"><img src="/assets/imgs/blog/author-kevinw.jpg" alt="Kevin W." /></div>
-                                            <h4 className="text-heading-6 color-gray-900">Kevin Williams</h4>
-                                            <p className="text-body-small color-gray-500">May 11, 2023</p>
-                                        </div>
-                                    </div>
-                                </div>
+                {/* article 2 */}
+                <div className="col-lg-4 col-sm-6 pr-30 mb-50">
+                  <div className="card-grid-style-4">
+                    <div className="grid-4-img mb-20">
+                      <Link
+                        href="/ahead-with-fts/leveraging-ai-unleashing-the-future-today"
+                        passHref
+                      >
+                        <img
+                          src="/assets/imgs/blog/thumb-ai-touch.webp"
+                          alt="Leveraging Artificial Intelligence"
+                        />
+                      </Link>
+                    </div>
+                    <span className="text-heading-4">
+                      <Link
+                        href="/ahead-with-fts/leveraging-ai-unleashing-the-future-today"
+                        passHref
+                      >
+                        Leveraging AI: Unleashing the Future Today
+                      </Link>
+                    </span>
 
-                                {/* article 3 */}
-                                <div className="col-lg-4 col-sm-6 pr-30 mb-50">
-                                    <div className="card-grid-style-4">
-                                        <div className="grid-4-img mb-20">
-                                            <Link href="/ahead-with-fts/the-future-of-work-preparing-for-a-hybrid-workplace" passHref>
-                                                <img src="/assets/imgs/blog/thumb-future-office.webp" alt="Hybrid Workplace" />
-                                            </Link>
-                                        </div>
-                                        <span className="text-heading-4"><Link href="/ahead-with-fts/the-future-of-work-preparing-for-a-hybrid-workplace" passHref>The Future of Work: Preparing for a Hybrid Workplace</Link></span>
+                    <p className="text-body-text color-gray-500 mt-5">
+                      Explore how artificial intelligence can revolutionize
+                      processes, boost productivity, and offer unique customer
+                      experiences. Stay Ahead with FTS.
+                    </p>
+                    <div className="blog-img-user">
+                      <div className="img-user img-user-round">
+                        <img
+                          src="/assets/imgs/blog/author-kevinw.jpg"
+                          alt="Kevin W."
+                        />
+                      </div>
+                      <h4 className="text-heading-6 color-gray-900">
+                        Kevin Williams
+                      </h4>
+                      <p className="text-body-small color-gray-500">
+                        May 11, 2023
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-                                        <p className="text-body-text color-gray-500 mt-5">Unpack the potential of a hybrid workplace model in fostering productivity and employee satisfaction. Future-proof your workspace with FTS.</p>
-                                        <div className="blog-img-user">
-                                            <div className="img-user img-user-round"><img src="/assets/imgs/blog/author-kevinw.jpg" alt="Kevin W." /></div>
-                                            <h4 className="text-heading-6 color-gray-900">Kevin Williams</h4>
-                                            <p className="text-body-small color-gray-500">May 4, 2023</p>
-                                        </div>
-                                    </div>
-                                </div>
+                {/* article 3 */}
+                <div className="col-lg-4 col-sm-6 pr-30 mb-50">
+                  <div className="card-grid-style-4">
+                    <div className="grid-4-img mb-20">
+                      <Link
+                        href="/ahead-with-fts/the-future-of-work-preparing-for-a-hybrid-workplace"
+                        passHref
+                      >
+                        <img
+                          src="/assets/imgs/blog/thumb-future-office.webp"
+                          alt="Hybrid Workplace"
+                        />
+                      </Link>
+                    </div>
+                    <span className="text-heading-4">
+                      <Link
+                        href="/ahead-with-fts/the-future-of-work-preparing-for-a-hybrid-workplace"
+                        passHref
+                      >
+                        The Future of Work: Preparing for a Hybrid Workplace
+                      </Link>
+                    </span>
 
-                                {/* articles  */}
-                                {/* <div className="col-lg-4 col-sm-12 pr-30 mb-50">
+                    <p className="text-body-text color-gray-500 mt-5">
+                      Unpack the potential of a hybrid workplace model in
+                      fostering productivity and employee satisfaction.
+                      Future-proof your workspace with FTS.
+                    </p>
+                    <div className="blog-img-user">
+                      <div className="img-user img-user-round">
+                        <img
+                          src="/assets/imgs/blog/author-kevinw.jpg"
+                          alt="Kevin W."
+                        />
+                      </div>
+                      <h4 className="text-heading-6 color-gray-900">
+                        Kevin Williams
+                      </h4>
+                      <p className="text-body-small color-gray-500">
+                        May 4, 2023
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* article 4 */}
+                <div className="col-lg-4 col-sm-6 pr-30 mb-50">
+                  <div className="card-grid-style-4">
+                    <div className="grid-4-img mb-20">
+                      <Link
+                        href="/ahead-with-fts/the-power-of-ui-ux-design"
+                        passHref
+                      >
+                        <img
+                          src="/assets/imgs/blog/ui-ux.jpg"
+                          alt="UI/UX Design"
+                        />
+                      </Link>
+                    </div>
+                    <span className="text-heading-4">
+                      <Link
+                        href="/ahead-with-fts/the-power-of-ui-ux-design"
+                        passHref
+                      >
+                        The Power of UI/UX Design: How a Refresh Can Boost Your
+                        Sales and Leads
+                      </Link>
+                    </span>
+
+                    <p className="text-body-text color-gray-500 mt-5">
+                      In today's digital age, your website or application is
+                      often the first interaction, potential customers have with
+                      your brand.
+                    </p>
+                    <div className="blog-img-user">
+                      <div className="img-user img-user-round">
+                        <img
+                          src="/assets/imgs/blog/author-kevinw.jpg"
+                          alt="Kevin W."
+                        />
+                      </div>
+                      <h4 className="text-heading-6 color-gray-900">
+                        Kevin Williams
+                      </h4>
+                      <p className="text-body-small color-gray-500">
+                        June 10, 2024
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* article 5 */}
+                <div className="col-lg-4 col-sm-6 pr-30 mb-50">
+                  <div className="card-grid-style-4">
+                    <div className="grid-4-img mb-20">
+                      <Link href="/ahead-with-fts/the-ai-revolution" passHref>
+                        <img
+                          src="/assets/imgs/blog/ai.png"
+                          alt="AI Revolution"
+                        />
+                      </Link>
+                    </div>
+                    <span className="text-heading-4">
+                      <Link href="/ahead-with-fts/the-ai-revolution" passHref>
+                        The AI Revolution: Transforming Business in the 21st
+                        Century
+                      </Link>
+                    </span>
+
+                    <p className="text-body-text color-gray-500 mt-5">
+                      Artificial Intelligence (AI) is no longer a futuristic
+                      concept; it is a present reality that is fundamentally
+                      transforming the business landscape.
+                    </p>
+                    <div className="blog-img-user">
+                      <div className="img-user img-user-round">
+                        <img
+                          src="/assets/imgs/blog/author-kevinw.jpg"
+                          alt="Kevin W."
+                        />
+                      </div>
+                      <h4 className="text-heading-6 color-gray-900">
+                        Kevin Williams
+                      </h4>
+                      <p className="text-body-small color-gray-500">
+                        June 10, 2024
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* article 6 */}
+                <div className="col-lg-4 col-sm-6 pr-30 mb-50">
+                  <div className="card-grid-style-4">
+                    <div className="grid-4-img mb-20">
+                      <Link href="/ahead-with-fts/transform-business-with-cutting-edge-web-app" passHref>
+                        <img
+                          src="/assets/imgs/blog/web-development.png"
+                          alt="Hybrid Workplace"
+                        />
+                      </Link>
+                    </div>
+                    <span className="text-heading-4">
+                      <Link href="/ahead-with-fts/transform-business-with-cutting-edge-web-app" passHref>
+                        Transform Your Business with Cutting-Edge Web App
+                        Development
+                      </Link>
+                    </span>
+
+                    <p className="text-body-text color-gray-500 mt-5">
+                      In today's digital age, having a robust online presence is
+                      essential for any business looking to thrive. Web
+                      applications (web apps) play a crucial role in connecting
+                      businesses with their customers, streamlining operations,
+                      and driving growth.
+                    </p>
+                    <div className="blog-img-user">
+                      <div className="img-user img-user-round">
+                        <img
+                          src="/assets/imgs/blog/author-kevinw.jpg"
+                          alt="Kevin W."
+                        />
+                      </div>
+                      <h4 className="text-heading-6 color-gray-900">
+                        Kevin Williams
+                      </h4>
+                      <p className="text-body-small color-gray-500">
+                        June 10, 2024
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* articles  */}
+                {/* <div className="col-lg-4 col-sm-12 pr-30 mb-50">
                                     <div className="card-list-style-1">
                                         <Link href="/blog-single"><a className="text-heading-6">Design Studios That Everyone Should Know About?
                                         </a></Link>
@@ -149,11 +364,11 @@ function Blog2() {
                                         </div>
                                     </div>
                                 </div>*/}
-                            </div> 
-                        </div>
-                    </section>
+              </div>
+            </div>
+          </section>
 
-                    {/* <section className="section-box">
+          {/* <section className="section-box">
                         <div className="container mt-100">
                             <div className="row">
                                 <div className="col-lg-1 col-sm-1 col-12" />
@@ -297,12 +512,10 @@ function Blog2() {
                             </div>
                         </div>
                     </section> */}
-                </div>
-
-            </Layout>
-
-        </>
-    )
+        </div>
+      </Layout>
+    </>
+  );
 }
 
 export default Blog2;
