@@ -47,7 +47,7 @@ function BlogSingle() {
                         <div className="img-user img-user-round">
                           <img
                             src="/assets/imgs/blog/author-kevinw.jpg"
-                            alt="Agon"
+                            alt="Kevin Williams, author of AI transformation article"
                           />
                         </div>
                         <h4 className="text-body-lead color-gray-900">
@@ -68,7 +68,7 @@ function BlogSingle() {
                     <img
                       className="img-responsive bdr-16"
                       src="/assets/imgs/blog/ai-2.png"
-                      alt="Artificial Intelligence"
+                      alt="AI Revolution in Business"
                     />
                     <h2 className="text-heading-3">
                       Enhanced Customer Service

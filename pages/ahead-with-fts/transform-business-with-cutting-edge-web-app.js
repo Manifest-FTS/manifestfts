@@ -48,7 +48,7 @@ function BlogSingle() {
                         <div className="img-user img-user-round">
                           <img
                             src="/assets/imgs/blog/author-kevinw.jpg"
-                            alt="Agon"
+                            alt="Kevin Williams, author of web app development article"
                           />
                         </div>
                         <h4 className="text-body-lead color-gray-900">
@@ -69,7 +69,7 @@ function BlogSingle() {
                     <img
                       className="img-responsive bdr-16"
                       src="/assets/imgs/blog/web-development-2.png"
-                      alt="Web Development"
+                      alt="Web App Development"
                     />
                     <h2 className="text-heading-3">
                       The Power of Web Apps for Your Business

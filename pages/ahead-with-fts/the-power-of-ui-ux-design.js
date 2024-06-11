@@ -15,7 +15,7 @@ function BlogSingle() {
               }}
             >
               <div className="container">
-                <div className="text-center">                  
+                <div className="text-center">
                   <h1 className="text-heading-1 color-white mt-30 ma">
                     The Power of UI/UX Design: How a Refresh Can Boost Your
                     Sales and Leads
@@ -31,18 +31,20 @@ function BlogSingle() {
                 <div className="col-lg-1 col-md-2 col-sm-2 col-3 text-center"></div>
                 <div className="col-lg-8 col-md-8 col-sm-10 col-9">
                   <div className="text-summary">
-                    User Interface (UI): This is the visual aspect of your
-                    digital presence. It includes everything from the layout and
-                    colors to the buttons and typography. A well-designed UI is
-                    visually appealing and intuitive, making it easy for users
-                    to navigate your site or app.
-                    <br />
-                    <br />
-                    User Experience (UX): This goes beyond the visuals to
-                    encompass the overall feel of the user’s interaction with
-                    your digital product. UX design focuses on usability,
-                    accessibility, and the overall satisfaction a user feels
-                    when using your website or application.
+                    <p>
+                      User Interface (UI): This is the visual aspect of your
+                      digital presence. It includes everything from the layout
+                      and colors to the buttons and typography. A well-designed
+                      UI is visually appealing and intuitive, making it easy for
+                      users to navigate your site or app.
+                    </p>
+                    <p>
+                      User Experience (UX): This goes beyond the visuals to
+                      encompass the overall feel of the user’s interaction with
+                      your digital product. UX design focuses on usability,
+                      accessibility, and the overall satisfaction a user feels
+                      when using your website or application.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -55,7 +57,7 @@ function BlogSingle() {
                         <div className="img-user img-user-round">
                           <img
                             src="/assets/imgs/blog/author-kevinw.jpg"
-                            alt="Agon"
+                            alt="Kevin Williams, author of UI/UX design article"
                           />
                         </div>
                         <h4 className="text-body-lead color-gray-900">
@@ -76,7 +78,7 @@ function BlogSingle() {
                     <img
                       className="img-responsive bdr-16"
                       src="/assets/imgs/blog/ui-ux-2.jpg"
-                      alt="Leveragin Artificial Intelligence"
+                      alt="UI/UX Design Concepts"
                     />
                     <h2 className="text-heading-3">Improved User Experience</h2>
                     <p>

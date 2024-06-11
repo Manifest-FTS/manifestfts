@@ -43,7 +43,7 @@ function BlogSingle() {
                                     <div className="row">
                                         <div className="col-lg-6 col-md-7 col-sm-7 col-7">
                                             <div className="blog-img-user">
-                                                <div className="img-user img-user-round"><img src="/assets/imgs/blog/author-kevinw.jpg" alt="Agon" /></div>
+                                                <div className="img-user img-user-round"><img src="/assets/imgs/blog/author-kevinw.jpg" alt="Kevin Williams, author of Leveraging AI" /></div>
                                                 <h4 className="text-body-lead color-gray-900">Kevin Williams</h4>
                                                 <p className="text-body-small color-gray-500">May 11, 2023</p>
                                             </div>

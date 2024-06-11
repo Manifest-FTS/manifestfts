@@ -53,18 +53,18 @@ function Blog2() {
                       >
                         <img
                           src="/assets/imgs/blog/thumb-google-dash.webp"
-                          alt="Google Analytics Dashboard"
+                          alt="Google Analytics Dashboard Overview"
                         />
                       </Link>
                     </div>
-                    <span className="text-heading-4">
+                    <h2 className="text-heading-4">
                       <Link
                         href="/ahead-with-fts/upgrading-to-google-analytics-4-the-time-is-now"
                         passHref
                       >
                         Upgrading to Google Analytics 4: Why the Time is Now!
                       </Link>
-                    </span>
+                    </h2>
 
                     <p className="text-body-text color-gray-500 mt-5">
                       On July 1, 2023, Google Universal Analytics 3 (GA3), the
@@ -75,7 +75,7 @@ function Blog2() {
                       <div className="img-user img-user-round">
                         <img
                           src="/assets/imgs/blog/author-kevinw.jpg"
-                          alt="Kevin W."
+                          alt="Kevin Williams, author of Upgrading to Google Analytics 4 article"
                         />
                       </div>
                       <h4 className="text-heading-6 color-gray-900">
@@ -102,14 +102,14 @@ function Blog2() {
                         />
                       </Link>
                     </div>
-                    <span className="text-heading-4">
+                    <h2 className="text-heading-4">
                       <Link
                         href="/ahead-with-fts/leveraging-ai-unleashing-the-future-today"
                         passHref
                       >
                         Leveraging AI: Unleashing the Future Today
                       </Link>
-                    </span>
+                    </h2>
 
                     <p className="text-body-text color-gray-500 mt-5">
                       Explore how artificial intelligence can revolutionize
@@ -120,7 +120,7 @@ function Blog2() {
                       <div className="img-user img-user-round">
                         <img
                           src="/assets/imgs/blog/author-kevinw.jpg"
-                          alt="Kevin W."
+                          alt="Kevin Williams, author of Leveraging AI"
                         />
                       </div>
                       <h4 className="text-heading-6 color-gray-900">
@@ -147,14 +147,14 @@ function Blog2() {
                         />
                       </Link>
                     </div>
-                    <span className="text-heading-4">
+                    <h2 className="text-heading-4">
                       <Link
                         href="/ahead-with-fts/the-future-of-work-preparing-for-a-hybrid-workplace"
                         passHref
                       >
                         The Future of Work: Preparing for a Hybrid Workplace
                       </Link>
-                    </span>
+                    </h2>
 
                     <p className="text-body-text color-gray-500 mt-5">
                       Unpack the potential of a hybrid workplace model in
@@ -165,7 +165,7 @@ function Blog2() {
                       <div className="img-user img-user-round">
                         <img
                           src="/assets/imgs/blog/author-kevinw.jpg"
-                          alt="Kevin W."
+                          alt="Kevin Williams, author of The Future Hybrid Workplace"
                         />
                       </div>
                       <h4 className="text-heading-6 color-gray-900">
@@ -188,11 +188,11 @@ function Blog2() {
                       >
                         <img
                           src="/assets/imgs/blog/ui-ux.jpg"
-                          alt="UI/UX Design"
+                          alt="UI/UX Design Concepts"
                         />
                       </Link>
                     </div>
-                    <span className="text-heading-4">
+                    <h2 className="text-heading-4">
                       <Link
                         href="/ahead-with-fts/the-power-of-ui-ux-design"
                         passHref
@@ -200,7 +200,7 @@ function Blog2() {
                         The Power of UI/UX Design: How a Refresh Can Boost Your
                         Sales and Leads
                       </Link>
-                    </span>
+                    </h2>
 
                     <p className="text-body-text color-gray-500 mt-5">
                       In today's digital age, your website or application is
@@ -211,14 +211,14 @@ function Blog2() {
                       <div className="img-user img-user-round">
                         <img
                           src="/assets/imgs/blog/author-kevinw.jpg"
-                          alt="Kevin W."
+                          alt="Kevin Williams, author of UI/UX design article"
                         />
                       </div>
                       <h4 className="text-heading-6 color-gray-900">
                         Kevin Williams
                       </h4>
                       <p className="text-body-small color-gray-500">
-                        June 10, 2024
+                        June 5, 2024
                       </p>
                     </div>
                   </div>
@@ -228,19 +228,19 @@ function Blog2() {
                 <div className="col-lg-4 col-sm-6 pr-30 mb-50">
                   <div className="card-grid-style-4">
                     <div className="grid-4-img mb-20">
-                      <Link href="/ahead-with-fts/the-ai-revolution" passHref>
+                      <Link href="/ahead-with-fts/ai-revolution-transforming-business" passHref>
                         <img
                           src="/assets/imgs/blog/ai.png"
-                          alt="AI Revolution"
+                          alt="AI Revolution in Business"
                         />
                       </Link>
                     </div>
-                    <span className="text-heading-4">
-                      <Link href="/ahead-with-fts/the-ai-revolution" passHref>
+                    <h2 className="text-heading-4">
+                      <Link href="/ahead-with-fts/ai-revolution-transforming-business" passHref>
                         The AI Revolution: Transforming Business in the 21st
                         Century
                       </Link>
-                    </span>
+                    </h2>
 
                     <p className="text-body-text color-gray-500 mt-5">
                       Artificial Intelligence (AI) is no longer a futuristic
@@ -251,14 +251,14 @@ function Blog2() {
                       <div className="img-user img-user-round">
                         <img
                           src="/assets/imgs/blog/author-kevinw.jpg"
-                          alt="Kevin W."
+                          alt="Kevin Williams, author of UI/UX design article"
                         />
                       </div>
                       <h4 className="text-heading-6 color-gray-900">
                         Kevin Williams
                       </h4>
                       <p className="text-body-small color-gray-500">
-                        June 10, 2024
+                        June 6, 2024
                       </p>
                     </div>
                   </div>
@@ -271,16 +271,16 @@ function Blog2() {
                       <Link href="/ahead-with-fts/transform-business-with-cutting-edge-web-app" passHref>
                         <img
                           src="/assets/imgs/blog/web-development.png"
-                          alt="Hybrid Workplace"
+                          alt="Web App Development"
                         />
                       </Link>
                     </div>
-                    <span className="text-heading-4">
+                    <h2 className="text-heading-4">
                       <Link href="/ahead-with-fts/transform-business-with-cutting-edge-web-app" passHref>
                         Transform Your Business with Cutting-Edge Web App
                         Development
                       </Link>
-                    </span>
+                    </h2>
 
                     <p className="text-body-text color-gray-500 mt-5">
                       In today's digital age, having a robust online presence is
@@ -293,7 +293,7 @@ function Blog2() {
                       <div className="img-user img-user-round">
                         <img
                           src="/assets/imgs/blog/author-kevinw.jpg"
-                          alt="Kevin W."
+                          alt="Kevin Williams, author of web app development article"
                         />
                       </div>
                       <h4 className="text-heading-6 color-gray-900">
