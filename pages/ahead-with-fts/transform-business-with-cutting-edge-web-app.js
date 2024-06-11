@@ -31,9 +31,9 @@ function BlogSingle() {
                 <div className="col-lg-1 col-md-2 col-sm-2 col-3 text-center"></div>
                 <div className="col-lg-8 col-md-8 col-sm-10 col-9">
                   <div className="text-summary">
-                    Whether you're a startup or an established enterprise,
+                    Whether you&rsquo;re a startup or an established enterprise,
                     investing in web app development can significantly enhance
-                    your business capabilities. Here's how web apps can
+                    your business capabilities. Here&rsquo;s how web apps can
                     transform your business and the latest trends shaping this
                     dynamic field.
                   </div>
@@ -115,7 +115,7 @@ function BlogSingle() {
                       state-of-the-art web applications tailored to your
                       business needs. Our team of expert developers stays
                       updated with the latest trends and technologies to deliver
-                      solutions that drive results. Here's why you should choose
+                      solutions that drive results. Here&rsquo;s why you should choose
                       us:
                     </p>
                     <p>

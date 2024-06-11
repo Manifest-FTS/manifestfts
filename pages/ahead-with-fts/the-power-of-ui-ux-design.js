@@ -84,7 +84,7 @@ function BlogSingle() {
                     <p>
                       Imagine walking into a store where products are difficult
                       to find, the aisles are cluttered, and the checkout
-                      process is slow and frustrating. You'd probably leave
+                      process is slow and frustrating. You would probably leave
                       without making a purchase. The same goes for your website
                       or app. A UI/UX refresh can streamline navigation, making
                       it easier for users to find what they’re looking for and

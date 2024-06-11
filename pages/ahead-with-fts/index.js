@@ -203,7 +203,7 @@ function Blog2() {
                     </h2>
 
                     <p className="text-body-text color-gray-500 mt-5">
-                      In today's digital age, your website or application is
+                      In today&rsquo;s digital age, your website or application is
                       often the first interaction, potential customers have with
                       your brand.
                     </p>
@@ -283,7 +283,7 @@ function Blog2() {
                     </h2>
 
                     <p className="text-body-text color-gray-500 mt-5">
-                      In today's digital age, having a robust online presence is
+                      In today&rsquo;s digital age, having a robust online presence is
                       essential for any business looking to thrive. Web
                       applications (web apps) play a crucial role in connecting
                       businesses with their customers, streamlining operations,
