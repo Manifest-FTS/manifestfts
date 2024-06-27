@@ -3148,6 +3148,11 @@ label {
   left: 3.5em;
 }
 
+.banner-hero .banner-imgs .sanitycms-gif {
+  --controls: none;
+  aspect-ratio: 16/9;
+}
+
 .banner-hero {
   padding: 60px 0px 20px 0px;
   position: relative;

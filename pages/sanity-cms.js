@@ -3,7 +3,7 @@ import Link from "next/link";
 import Accordion from "../components/elements/Accordion";
 import Layout from "../components/layout/Layout";
 import OfferSlider from "../components/slider/Offer";
-
+import MuxPlayer from "@mux/mux-player-react";
 
 function Service2() {
     return (
@@ -31,7 +31,20 @@ function Service2() {
                                                 {/* <div className="block-1 shape-2"><img src="/assets/imgs/page/services/2/banner2.png" alt="Agon" /></div>
                                                 <div className="block-2 shape-2"><img src="/assets/imgs/page/services/2/banner1.png" alt="Agon" /></div>
                                                 <div className="block-3 shape-2"><img src="/assets/imgs/page/services/2/banner3.png" alt="Agon" /></div> */}
-                                                <img src="/assets/imgs/sanitycms.gif" alt="Sanity CMS" />
+                                                {/* <img src="/assets/imgs/sanitycms.gif" alt="Sanity CMS" /> */}
+                                                <MuxPlayer
+                                                    streamType="on-demand"
+                                                    playbackId="xVEspFYOw6gtvRjEMk8xFnrjXtJ3YqGzajrvtjdV1cU"
+                                                    metadataVideoTitle=""
+                                                    metadataViewerUserId=""
+                                                    primaryColor="#FFFFFF"
+                                                    secondaryColor="#000000"
+                                                    autoPlay={true}
+                                                    loop={true}
+                                                    muted={true}
+                                                    className="sanitycms-gif"
+                                                    thumbnailTime={1}                                                    
+                                                />
                                             </div>
                                         </div>
                                         <div className="col-lg-2" />
