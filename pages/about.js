@@ -41,7 +41,7 @@ function About1() {
                                 <div className="col-lg-5 d-none d-lg-block">
                                     <div className="banner-imgs">
                                         <img className="img-responsive shape-2" alt="Agon"
-                                             src="assets/imgs/page/about/1/banner1.png"/>
+                                             src="assets/imgs/page/about/1/banner1.webp"/>
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@ function About1() {
                         <div className="row">
                             <div className="col-lg-4 col-sm-12">
                                 <div className="card-grid-style-6 bg-transparent pb-40 mb-30">
-                                    <div className="grid-1-img"><img src="/assets/imgs/icon-branding2.png" alt="Branding"
+                                    <div className="grid-1-img"><img src="/assets/imgs/icon-branding.webp" alt="Branding"
                                                                      height="100"/></div>
                                     <h3 className="text-heading-3 mt-20">Branding</h3>
                                     <p className="text-body-excerpt mt-20">Manifest your ideas or evolve your current
@@ -127,7 +127,7 @@ function About1() {
                             </div>
                             <div className="col-lg-4 col-sm-12">
                                 <div className="card-grid-style-6 bg-transparent pb-40 mb-30">
-                                    <div className="grid-1-img"><img src="/assets/imgs/icon-design2.png" alt="Design"
+                                    <div className="grid-1-img"><img src="/assets/imgs/icon-design.webp" alt="Design"
                                                                      height="100"/></div>
                                     <h3 className="text-heading-3 mt-20">Design</h3>
                                     <p className="text-body-excerpt mt-20">Offer consistently beautiful experiences
@@ -140,7 +140,7 @@ function About1() {
                             </div>
                             <div className="col-lg-4 col-sm-12">
                                 <div className="card-grid-style-6 bg-transparent pb-40 mb-30">
-                                    <div className="grid-1-img"><img src="/assets/imgs/monitor2.png" alt="Software"
+                                    <div className="grid-1-img"><img src="/assets/imgs/monitor.webp" alt="Software"
                                                                      height="100"/></div>
                                     <h3 className="text-heading-3 mt-20">Software</h3>
                                     <p className="text-body-excerpt mt-20">Reach customers near and far by leveraging

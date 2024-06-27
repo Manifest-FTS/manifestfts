@@ -237,7 +237,7 @@ function Index3() {
                 <img
                   className="bdrd-16 img-responsive"
                   // ref={yInfiniteEl}
-                  src="/assets/imgs/work/work-barclay-rex.png"
+                  src="/assets/imgs/work/work-barclay-rex.webp"
                   alt="Barclay Rex website on laptop"
                 />
               </div>

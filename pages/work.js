@@ -41,7 +41,7 @@ function Work() {
                 <section className="section-box">
                     <div className="container mt-120">
                         <div className="row">
-                            <div className="col-lg-6 col-sm-12 block-img-we-do"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/ccr-f1.png" alt="Community Coalition on Race website on laptop" /></div>
+                            <div className="col-lg-6 col-sm-12 block-img-we-do"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/ccr-f1.webp" alt="Community Coalition on Race website on laptop" /></div>
                             <div className="col-lg-6 col-sm-12 block-we-do">
                                 <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">NationBuilder Outreach Platform</span>
                                 <h3 className="text-heading-1 mt-30">South Orange & Maplewood Community Coalition on Race</h3>
@@ -92,7 +92,7 @@ function Work() {
                                 </div>
                             </div>
 
-                            <div className="col-lg-6 col-sm-12 block-img-we-do second"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/gse-f1.png" alt="Ozone's website on laptop" /></div>
+                            <div className="col-lg-6 col-sm-12 block-img-we-do second"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/gse-f1.webp" alt="Ozone's website on laptop" /></div>
                         </div>
                     </div>
                 </section>
@@ -102,7 +102,7 @@ function Work() {
                 <section className="section-box">
                     <div className="container mt-120">
                         <div className="row">
-                            <div className="col-lg-6 col-sm-12 block-img-we-do"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/rex-f1.png" alt="Barclay Rex website on laptop" /></div>
+                            <div className="col-lg-6 col-sm-12 block-img-we-do"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/rex-f1.webp" alt="Barclay Rex website on laptop" /></div>
                             <div className="col-lg-6 col-sm-12 block-we-do">
                                 <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Strapi Extensible CMS API</span>
                                 <h3 className="text-heading-1 mt-30">Barclay Rex</h3>
@@ -185,7 +185,7 @@ function Work() {
                                 </div>
                             </div>
 
-                            <div className="col-lg-6 col-sm-12 block-img-we-do second"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/oz-f1.png" alt="Ozone's website on laptop" /></div>
+                            <div className="col-lg-6 col-sm-12 block-img-we-do second"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/oz-f1.webp" alt="Ozone's website on laptop" /></div>
                         </div>
                     </div>
                 </section>
