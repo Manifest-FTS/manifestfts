@@ -56,12 +56,12 @@ function BlogSingle() {
                       <div className="blog-img-user">
                         <div className="img-user img-user-round">
                           <img
-                            src="/assets/imgs/blog/author-kevinw.jpg"
-                            alt="Kevin Williams, author of UI/UX design article"
+                            src="/assets/imgs/blog/bk3.jpg"
+                            alt="Bashar Khan, author of UI/UX design article"
                           />
                         </div>
                         <h4 className="text-body-lead color-gray-900">
-                          Kevin Williams
+                          Bashar Khan
                         </h4>
                         <p className="text-body-small color-gray-500">
                           June 24, 2024
