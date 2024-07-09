@@ -30,7 +30,7 @@ History</span> In New York City.</h1>
                                         <div className="col-lg-2" />
                                         <div className="col-lg-8" id="case-study">
                                             <div className="banner-imgs">
-                                                <img src="/assets/imgs/work/rex-f1.png" alt="Barclay Rex Responsive Website" />
+                                                <img src="/assets/imgs/work/rex-f1.webp" alt="Barclay Rex Responsive Website" />
                                             </div>
                                         </div>
                                         <div className="col-lg-2" />
@@ -60,7 +60,7 @@ History</span> In New York City.</h1>
                                 </div>
                             </div>
                             <div className="col-lg-6 col-sm-12 second">
-                                <div className="inner-image"><img className="bdrd-16 img-responsive" src="/assets/imgs/case-studies/rex-01.png" alt="Olver versions of the Barclay Rex website." />
+                                <div className="inner-image"><img className="bdrd-16 img-responsive" src="/assets/imgs/case-studies/rex-01.webp" alt="Olver versions of the Barclay Rex website." />
                                     {/* <div className="block-image-bottom"><img className="bdrd-16 img-responsive" src="/assets/imgs/page/homepage2/img-built-2.png" alt="Agon" /></div> */}
                                 </div>
                             </div>
