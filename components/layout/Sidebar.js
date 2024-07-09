@@ -10,7 +10,7 @@ const Sidebar = ({ openClass }) => {
         key: "",
     });
 
-    const handleToggle = (key) => {
+    const handleToggle = (key) => {        
         if (isActive.key === key) {
             setIsActive({
                 status: false,
@@ -62,8 +62,8 @@ const Sidebar = ({ openClass }) => {
                                                 </li>
                                             </ul>
                                         </li> */}
-                                        <li className={isActive.key == 3 ? "has-children active" : "has-children"}>
-                                            <span onClick={() => handleToggle(3)}  className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
+                                        <li onClick={() => handleToggle(3)} className={isActive.key == 3 ? "has-children active" : "has-children"}>
+                                            <span className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
 
                                             <Link href="#"><a>Case Study</a></Link>
                                             <ul className={isActive.key == 3 ? "sub-menu d-block" : "sub-menu d-none"}>
@@ -76,7 +76,7 @@ const Sidebar = ({ openClass }) => {
                                             </ul>
                                         </li>
                                         <li>
-                                            <Link href="/"><a className="/about">About</a></Link>
+                                            <Link href="/about"><a className="/about">About</a></Link>
                                         </li>
                                         
                                         {/* <li className={isActive.key == 5 ? "has-children active" : "has-children"}>
