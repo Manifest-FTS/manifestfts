@@ -187,7 +187,7 @@ function Blog2() {
                         passHref
                       >
                         <img
-                          src="/assets/imgs/blog/ui-ux-44.jpg"
+                          src="/assets/imgs/blog/ui-ux-xxx.jpg"
                           alt="UI/UX Design Concepts"
                         />
                       </Link>
