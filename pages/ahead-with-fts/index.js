@@ -183,22 +183,21 @@ function Blog2() {
                   <div className="card-grid-style-4">
                     <div className="grid-4-img mb-20">
                       <Link
-                        href="/ahead-with-fts/the-power-of-ui-ux-design"
+                        href="/ahead-with-fts/boost-your-sales-and-leads-with-the-power-of-effective-ui-ux-design"
                         passHref
                       >
                         <img
-                          src="/assets/imgs/blog/ui-ux.jpg"
+                          src="/assets/imgs/blog/ui-ux-44.jpg"
                           alt="UI/UX Design Concepts"
                         />
                       </Link>
                     </div>
                     <h2 className="text-heading-4">
                       <Link
-                        href="/ahead-with-fts/the-power-of-ui-ux-design"
+                        href="/ahead-with-fts/boost-your-sales-and-leads-with-the-power-of-effective-ui-ux-design"
                         passHref
                       >
-                        The Power of UI/UX Design: How a Refresh Can Boost Your
-                        Sales and Leads
+                        Boost Your Sales and Leads with the Power of Effective UI/UX Design
                       </Link>
                     </h2>
 
@@ -210,12 +209,12 @@ function Blog2() {
                     <div className="blog-img-user">
                       <div className="img-user img-user-round">
                         <img
-                          src="/assets/imgs/blog/author-kevinw.jpg"
+                          src="/assets/imgs/blog/author-bashark.jpg"
                           alt="Kevin Williams, author of UI/UX design article"
                         />
                       </div>
                       <h4 className="text-heading-6 color-gray-900">
-                        Kevin Williams
+                        Bashar Khan
                       </h4>
                       <p className="text-body-small color-gray-500">
                         June 5, 2024
