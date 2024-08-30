@@ -31,7 +31,7 @@ function BlogSingle() {
                 <div className="col-lg-1 col-md-2 col-sm-2 col-3 text-center"></div>
                 <div className="col-lg-8 col-md-8 col-sm-10 col-9">
                   <div className="text-summary">
-                    In today's digital-first world, having an online presence is no longer enough to
+                    In today&apos digital-first world, having an online presence is no longer enough to
                     remain competitive. Businesses must innovate and adapt to new technologies
                     to meet the growing demands of their customers. One of the most impactful
                     ways to transform your business is through cutting-edge web app development.
@@ -74,7 +74,7 @@ function BlogSingle() {
                     <img
                       className="img-responsive bdr-16"
                       src="/assets/imgs/blog/web-development-2.png"
-                      alt="Web App Development"
+                      alt="Transform your business with Web App"
                     />
                     <h2 className="text-heading-3">
                       Reach a Broader Audience

@@ -73,7 +73,7 @@ function BlogSingle() {
                                         <img
                                             className="img-responsive bdr-16"
                                             src="/assets/imgs/blog/ui-ux-2.jpg"
-                                            alt="UI/UX Design Concepts"
+                                            alt="UI/UX Design Concepts for Engaging and Attractive Website Interfaces"
                                         />
                                         <h2 className="text-heading-3">First Impressions Matter: Attract and Engage Users</h2>
                                         <p>
