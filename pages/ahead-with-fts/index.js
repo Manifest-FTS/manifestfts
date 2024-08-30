@@ -187,7 +187,7 @@ function Blog2() {
                         passHref
                       >
                         <img
-                          src="/assets/imgs/blog/ui-ux-xxx.jpg"
+                          src="/assets/imgs/blog/ui-ux-1.jpg"
                           alt="UI/UX Design Concepts"
                         />
                       </Link>
@@ -249,12 +249,12 @@ function Blog2() {
                     <div className="blog-img-user">
                       <div className="img-user img-user-round">
                         <img
-                          src="/assets/imgs/blog/author-kevinw.jpg"
+                          src="/assets/imgs/blog/author-bashark.jpg"
                           alt="Kevin Williams, author of UI/UX design article"
                         />
                       </div>
                       <h4 className="text-heading-6 color-gray-900">
-                        Kevin Williams
+                        Bashar Khan
                       </h4>
                       <p className="text-body-small color-gray-500">
                         June 6, 2024
@@ -282,8 +282,7 @@ function Blog2() {
                     </h2>
 
                     <p className="text-body-text color-gray-500 mt-5">
-                      In today&rsquo;s digital age, having a robust online presence is
-                      essential for any business looking to thrive. Web
+                      In today&rsquo;s digital age, Web
                       applications (web apps) play a crucial role in connecting
                       businesses with their customers, streamlining operations,
                       and driving growth.
@@ -291,8 +290,8 @@ function Blog2() {
                     <div className="blog-img-user">
                       <div className="img-user img-user-round">
                         <img
-                          src="/assets/imgs/blog/author-kevinw.jpg"
-                          alt="Kevin Williams, author of web app development article"
+                          src="/assets/imgs/blog/author-bashark.jpg"
+                          alt="Bashar Khan, author of web app development article"
                         />
                       </div>
                       <h4 className="text-heading-6 color-gray-900">

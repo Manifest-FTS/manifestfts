@@ -72,7 +72,7 @@ function BlogSingle() {
                                     <div className="single-detail mt-50">
                                         <img
                                             className="img-responsive bdr-16"
-                                            src="/assets/imgs/blog/ui-ux-zz.jpg"
+                                            src="/assets/imgs/blog/ui-ux-2.jpg"
                                             alt="UI/UX Design Concepts"
                                         />
                                         <h2 className="text-heading-3">First Impressions Matter: Attract and Engage Users</h2>
