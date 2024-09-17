@@ -44,6 +44,9 @@ const Footer = () => {
                     <a>Work</a>
                   </Link>
                 </li>
+                <li className="">
+                    <Link href="/ahead-with-fts/"><a>Ahead with FTS</a></Link>
+                </li>
                 {/* <li>
                                     <Link href="/blog">
                                         <a>Blog</a>
