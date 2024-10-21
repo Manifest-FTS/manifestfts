@@ -33,7 +33,25 @@ function Blog2() {
                         
                         <div className="container mt-40">
                             <div className="row border-bottom">
-                                {/* article 1 */}
+                              {/* article 1 */}
+                              <div className="col-lg-4 col-sm-6 pr-30 mb-50">
+                                  <div className="card-grid-style-4">
+                                    <div className="grid-4-img mb-20">
+                                        <Link href="/ahead-with-fts/is-saas-right-for-your-business" passHref>
+                                            <img src="/assets/imgs/blog/thumb-saas-business.jpg" alt="Google Analytics Dashboard" />
+                                        </Link>
+                                    </div>
+                                    <span className="text-heading-4"><Link href="/ahead-with-fts/is-saas-right-for-your-business" passHref>Is SaaS (Software as a Service) Right for Your Business?</Link></span>
+
+                                    <p className="text-body-text color-gray-500 mt-5">Discover whether SaaS is the right fit for your business. Explore the benefits and considerations of adopting a cloud-based software model.</p>
+                                    <div className="blog-img-user">
+                                      <div className="img-user img-user-round"><img src="/assets/imgs/blog/logo@2x-mark.png" alt="Ahead with FTS" /></div>
+                                      <h4 className="text-heading-6 color-gray-900">Ahead w. FTS</h4>
+                                      <p className="text-body-small color-gray-500">October 21, 2024</p>
+                                    </div>
+                                  </div>
+                                </div>
+
                                 <div className="col-lg-4 col-sm-6 pr-30 mb-50">
                                     <div className="card-grid-style-4">
                                         <div className="grid-4-img mb-20">
@@ -52,7 +70,6 @@ function Blog2() {
                                     </div>
                                 </div>
 
-                                {/* article 2 */}
                                 <div className="col-lg-4 col-sm-6 pr-30 mb-50">
                                     <div className="card-grid-style-4">
                                         <div className="grid-4-img mb-20">
@@ -71,7 +88,6 @@ function Blog2() {
                                     </div>
                                 </div>
 
-                                {/* article 3 */}
                                 <div className="col-lg-4 col-sm-6 pr-30 mb-50">
                                     <div className="card-grid-style-4">
                                         <div className="grid-4-img mb-20">

@@ -1,0 +1,8 @@
+.logo-circle.rotating {
+  animation: animName 7s linear infinite;
+  animation-direction: reverse;
+}
+
+.play-reel {
+  cursor: pointer;
+}/*# sourceMappingURL=manifest.css.map */

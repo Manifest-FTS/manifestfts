@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["..\\scss\\manifest.scss"],"names":[],"mappings":"AAAA;EACI;EACA;;;AAGJ;EACI","sourcesContent":[".logo-circle.rotating {\r\n    animation: animName 7s linear infinite;\r\n    animation-direction: reverse;\r\n}\r\n\r\n.play-reel {\r\n    cursor: pointer;\r\n}"]}
