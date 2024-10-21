@@ -22,12 +22,12 @@
     "@sanity/eslint-config-studio": "^2.0.1",
     "@sanity/vision": "^2.35.2",
     "eslint": "^8.6.0",
+    "manifest": "file:",
     "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0",
     "styled-components": "^5.2.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git@github.com:SuperDistros/manifestfts.git"

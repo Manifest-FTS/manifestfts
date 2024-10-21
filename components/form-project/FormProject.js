@@ -50,7 +50,7 @@ const FormProject = () => {
                   Have a project in mind?
                 </h2>
                 <p className="text-body-text color-gray-600 mt-20">
-                  Call <span className="text-heading-5 color-gray-900 mt-10">+1 828-229-2450</span> or send us a message for a free consultation.
+                  Call <span className="text-heading-5 color-gray-900 mt-10">+1 732-618-5084</span> or send us a message for a free consultation.
                 </p>
               </div>
               <div className="col-lg-12">
