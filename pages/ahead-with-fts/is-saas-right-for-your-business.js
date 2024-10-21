@@ -61,7 +61,7 @@ function BlogSingle() {
                                         <p>That&rsquo;s a pretty somber picture, isn&rsquo;t it? But don&rsquo;t worry, all is not lost. Now is the perfect time to embrace the change, familiarize yourself with GA4, and start benefiting from its advanced capabilities. Yes, the clock is ticking, but don&rsquo;t let that create a sense of dread. See it instead as a call to action!</p>
 
                                         <img className="img-responsive bdr-16" src="/assets/imgs/blog/blog-saas-notion.jpg" alt="Notion SaaS" />
-                                        <caption>Notion SaaS Homepage. Photo by <a href="https://unsplash.com/@teamnocoloco" target="_blank">Team Nocoloco</a>.</caption>
+                                        <caption>Notion SaaS Homepage. Photo by <a href="https://unsplash.com/@teamnocoloco" target="_blank" rel="noreferrer">Team Nocoloco</a>.</caption>
 
                                         <h2 className="text-heading-3">Advantages of SaaS for Your Business</h2>
                                         
@@ -89,7 +89,7 @@ function BlogSingle() {
                                         </ol>
 
                                         <img className="img-responsive bdr-16" src="/assets/imgs/blog/blog-saas-shopify.jpg" alt="Shopify on Laptop" />
-                                        <caption>Shopify ecommerce platform. Photo by <a href="https://unsplash.com/@hookle" target="_blank">hookle</a>.</caption>
+                                        <caption>Shopify ecommerce platform. Photo by <a href="https://unsplash.com/@hookle" target="_blank" rel="noreferrer">hookle</a>.</caption>
 
                                         <h2 className="text-heading-3">Shopify: A SaaS Success Story in E-commerce</h2>
                                         <p>One of the most successful SaaS platforms helping businesses thrive is Shopify. Shopify is a well-known SaaS provider in the e-commerce space, enabling small and medium-sized businesses to build and manage their online stores with ease.</p>
