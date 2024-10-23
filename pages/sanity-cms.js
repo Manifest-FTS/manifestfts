@@ -109,7 +109,7 @@ function Service2() {
                                 <div className="text-center justify-content-center">
                                     <p className="text-body-lead-large color-white mt-10 mb-20">Excited about the flexibility and power of Sanity CMS for your next project?<br/>We can help you leverage its full potential. Hit the button below, and let&rsquo;s manifest.
                                     </p>
-                                    <Link href="/#get-started" className="cursor-pointer"><span className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-15">Get Started</span></Link>
+                                    <Link href="/#get-started" className="cursor-pointer"><span className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-15 cursor-pointer">Get Started</span></Link>
                                 </div>
                             </div>
                         </div>
