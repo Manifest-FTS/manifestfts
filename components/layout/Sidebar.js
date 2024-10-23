@@ -76,6 +76,9 @@ const Sidebar = ({ openClass }) => {
                                             </ul>
                                         </li>
                                         <li>
+                                            <Link href="/ahead-with-fts"><a className="/about" title="FTS Blog">Ahead with FTS</a></Link>
+                                        </li>
+                                        <li>
                                             <Link href="/about"><a className="/about">About</a></Link>
                                         </li>
                                         
