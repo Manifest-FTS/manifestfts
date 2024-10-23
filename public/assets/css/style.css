@@ -723,6 +723,7 @@ a {
 }
 
 a {
+  font-weight: 600;
   color: #3F8077;
 }
 a:hover {
