@@ -9324,7 +9324,7 @@ input.qty-val {
   }
 }
 /*OTHER SCREEN*/
-@media screen and (min-width: 1200px) and (max-width: 1440px) {
+@media screen and (min-width: 1200px) and (max-width: 1240px) {
   .header-right {
     display: none;
   }

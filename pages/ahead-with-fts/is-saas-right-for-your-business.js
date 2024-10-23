@@ -101,7 +101,7 @@ function BlogSingle() {
                                         <h2 className="text-heading-3">Is SaaS Right for Your Business?</h2>
                                         <p>The decision to adopt SaaS depends on several factors, including the size of your business, your budget, and your technical needs. If you&rsquo;re looking for a cost-effective, flexible solution that requires minimal IT infrastructure, SaaS could be the perfect fit for your business. However, if you have highly specialized requirements or need full control over your software and data, traditional software may be a better choice.</p>
                                         <p>SaaS is transforming how businesses operate, providing flexibility, cost efficiency, and scalability. By evaluating your company&rsquo;s needs and weighing the benefits against potential challenges, you can make an informed decision on whether SaaS is the right solution for your business. Whether you&rsquo;re a startup or an established brand, SaaS offers a pathway to modern, cloud-powered innovation.</p>
-                                        <p>Explore how SaaS solutions can transform your business. <a href="/get-started">Let us help you</a> navigate the SaaS landscape and choose the right platform for your business needs.</p>
+                                        <p>Explore how SaaS solutions can transform your business. <a href="/#get-started">Let us help you</a> navigate the SaaS landscape and choose the right platform for your business needs.</p>
                                         
                                             <div className="border-bottom mt-50 mb-50" />
                                             {/* <div>
