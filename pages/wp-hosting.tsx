@@ -312,7 +312,7 @@ const WordPressLandingPage = () => {
   animate={{ opacity: isFormVisible ? 1 : 0 }}
   transition={{ duration: 0.3 }}
 >
-  <div className="bg-white p-8 max-w-6xl mx-auto rounded-lg shadow-lg relative overflow-hidden">
+  <div className="bg-white p-4 md:p-8 max-w-[90%] md:max-w-6xl mx-auto max-h-[90%] rounded-lg shadow-lg relative overflow-hidden">
     {/* Close Icon */}
     <button
       onClick={handleCloseForm}
@@ -414,7 +414,7 @@ const WordPressLandingPage = () => {
       </div>
       
       {/* Submit Button */}
-      <button type="submit" className="w-full py-3 bg-black text-white rounded-lg mt-6 hover:bg-gradient-to-r hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500">
+      <button type="submit" className="w-full py-3 bg-black text-white rounded-lg my-2 md:my-5 hover:bg-gradient-to-r hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500">
         Start My Migration
       </button>
     </form>
