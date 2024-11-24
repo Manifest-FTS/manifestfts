@@ -126,9 +126,9 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-bottom mt-12 text-center lg:text-left">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center flex-col mb:flex-row">
               <div className="text-gray-500">
-                <span>&copy; 2022 Manifest.</span>
+                <span>&copy; 2023{new Date().getFullYear() !== 2023 ? `– ${new Date().getFullYear()}` : ''} Manifest FTS LLC.</span>
               </div>
               <div className="footer-social">
                 <a
