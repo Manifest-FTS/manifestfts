@@ -20,7 +20,7 @@ const WordPressLandingPage = () => {
         formData[field.name] = field.value;
       }
     });
-    
+
     try {
       const res = await fetch("/api/submit-form", {
         method: "POST",
@@ -272,8 +272,8 @@ const WordPressLandingPage = () => {
       </section>
 
       {/* Enter to Win Section */}
-      <section className="mt-16 mb-32">
-        <div className="bg-blue-100 px-12 py-24 rounded-lg shadow-lg text-center">
+      <section className="mt-16 mb-32 max-w-6xl mx-auto">
+        <div className="bg-gradient-to-r from-pink-300 via-indigo-300 to-blue-300 px-12 py-24 rounded-lg shadow-lg text-center">
           <div className="mx-auto max-w-5xl">
             <h2 className="text-3xl font-semibold text-dark mb-4">Enter to Win 20 Free Development Hours</h2>
             <p className="mb-4 text-lg text-gray-600">
