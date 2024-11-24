@@ -67,12 +67,12 @@ const WordPressLandingPage = () => {
           transition={{ duration: 1.2 }}
         >
           <h1 className="text-5xl font-extrabold text-white leading-tight mb-4">
-            Don’t Just Host Your WordPress Site, <br /> Let Experts Manage It
+            Don&rsquo;t Just Host Your WordPress Site, <br /> Let Experts Manage It
           </h1>
           <div className="max-w-4xl mx-auto">
             <p className="mt-4 text-xl">
               With our expert WordPress engineers, your site will grow with you.
-              From seamless migrations to performance optimization, we're here to
+              From seamless migrations to performance optimization, we&rsquo;re here to
               handle the technical aspects so you can focus on your business.
             </p>
           </div>
