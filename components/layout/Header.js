@@ -58,23 +58,6 @@ const Header = ({ handleOpen, headerStyle }) => {
                                             </ul>
                                         </li> */}
                                         <li className="">
-                                            <Link href="/work"><a>Work</a></Link>
-                                        </li>
-                                        <li className="has-children">
-                                            <Link href="#"><a>Case Studies</a></Link>
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link href="/case-study/barclay-rex"><a>Barclay Rex</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link href="/sanity-cms"><a>Sanity API-1st CMS</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className="">
-                                            <Link href="/ahead-with-fts/"><a>Ahead with FTS</a></Link>
-                                        </li>
-                                        <li className="">
                                             <Link href="/about"><a>About</a></Link>
                                             {/* <ul className="sub-menu">
                                                 <li>
@@ -91,6 +74,24 @@ const Header = ({ handleOpen, headerStyle }) => {
                                             </ul> */}
                                         </li>
 
+                                        <li className="">
+                                            <Link href="/work"><a>Work</a></Link>
+                                        </li>
+                                        <li className="has-children">
+                                            <Link href="#"><a>Case Studies</a></Link>
+                                            <ul className="sub-menu">
+                                                <li>
+                                                    <Link href="/case-study/barclay-rex"><a>Barclay Rex</a></Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="/sanity-cms"><a>Sanity API-1st CMS</a></Link>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li className="">
+                                            <Link href="/ahead-with-fts/"><a>Ahead with FTS</a></Link>
+                                        </li>
+                                        
                                         
                                         <li className="has-children hidden">
                                             <a href="#">Shop</a>

@@ -77,7 +77,7 @@ const Footer = () => {
             </div>
 
             <div className="mb-8 text-center lg:text-left">
-              <h4 className="text-lg font-semibold">Case Study</h4>
+              <h4 className="text-lg font-semibold">Case Studies</h4>
               <ul className="menu-footer mt-4">
                 <li>
                   <Link href="/case-study/barclay-rex">
