@@ -102,7 +102,8 @@ const WordPressLandingPage = () => {
         },
         body: JSON.stringify(formData),
       });
-  
+      
+      console.log(res);
       if (res.ok) {
         // Close the form modal
         setIsFormVisible(false);
@@ -118,6 +119,7 @@ const WordPressLandingPage = () => {
       }
     } catch (error) {
       toast.error("Error submitting the form.");
+      console.error(error);
       setStatus("error"); // Update the status to a string
     }
   };
