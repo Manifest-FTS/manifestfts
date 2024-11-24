@@ -292,7 +292,7 @@ const WordPressLandingPage = () => {
 
         {/* Enter to Win Section */}
         <section className="mt-16 mb-32 mx-3 max-w-6xl md:mx-auto">
-          <div className="bg-gradient-to-r from-pink-300 via-indigo-300 to-blue-300 px-12 py-24 rounded-lg shadow-lg text-center">
+          <div className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 px-12 py-24 rounded-lg shadow-xl text-center">
             <div className="mx-auto max-w-5xl">
               <h2 className="text-3xl font-semibold text-gray-900 mb-4">Enter to Win 20 Free Development Hours</h2>
               <p className="mb-4 text-lg text-gray-900">
