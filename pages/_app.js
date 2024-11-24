@@ -1,6 +1,6 @@
 import "../public/assets/css/style.css";
 import "../public/assets/css/swiper-custom.css";
-import "../styles/globals.scss";
+import "../css/globals.min.css";
 
 import React, { useEffect, useState } from "react";
 import 'react-modal-video/css/modal-video.css';

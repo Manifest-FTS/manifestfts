@@ -32,9 +32,12 @@
 //   color: #fff;
 // }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .effect-1 {
-  transform: perspective(100em) rotateX(50deg) rotateY(0deg) rotateZ(-40deg)
-    scale(0.75);
+  transform: perspective(100em) rotateX(50deg) rotateY(0deg) rotateZ(-40deg) scale(0.75);
   transform-style: preserve-3d;
   box-shadow: -4px 4px 0 1px #f9f9fb, 1px 0 28px 0 rgba(34, 33, 81, 0.01),
     -28px 28px 28px 0 rgba(34, 33, 81, 0.25);
@@ -65,13 +68,14 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) { 
+@media (min-width: 576px) {
   .mobAnim {
     max-width: 500px;
   }

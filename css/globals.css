@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .effect-1 {
   transform: perspective(100em) rotateX(50deg) rotateY(0deg) rotateZ(-40deg) scale(0.75);
   transform-style: preserve-3d;

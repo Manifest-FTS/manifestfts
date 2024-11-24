@@ -44,11 +44,11 @@ const Footer = () => {
                     <a>Work</a>
                   </Link>
                 </li>
-                {/* <li>
-                                    <Link href="/blog">
-                                        <a>Blog</a>
-                                    </Link>
-                                </li> */}
+                <li>
+                  <Link href="/ahead-with-fts">
+                      <a>Ahead with FTS</a>
+                  </Link>
+                </li>
                 <li>
                   <Link href="/privacy-policy">
                     <a>Privacy Policy</a>
