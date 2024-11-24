@@ -199,7 +199,7 @@ const WordPressLandingPage = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <h3 className="text-xl font-semibold text-dark">Custom Solutions Tailored to Your Needs</h3>
+              <h3 className="text-xl font-semibold text-dark">Bespoke Solutions Tailored to You</h3>
               <p className="mt-4 text-gray-600">From bespoke design to custom development, we create tailored solutions that help your business thrive.</p>
             </motion.div>
           </div>
