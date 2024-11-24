@@ -99,7 +99,7 @@ const WordPressLandingPage = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="mx-auto max-w-6xl my-16">
+        <section className="mx-5 max-w-6xl my-16">
           <h2 className="text-3xl text-center text-dark mb-8">Why Choose ManifestFTS?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
@@ -141,7 +141,7 @@ const WordPressLandingPage = () => {
         </section>
 
         {/* Do More With WordPress Section */}
-        <section className="mx-auto max-w-6xl my-16">
+        <section className="mx-5 max-w-6xl my-16">
           <h2 className="text-3xl text-center text-dark mb-8">Do More With WordPress</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <motion.div
@@ -208,7 +208,7 @@ const WordPressLandingPage = () => {
         </section>
 
         {/* Hosting Plan Selection */}
-        <section className="mx-auto max-w-6xl my-16">
+        <section className="mx-5 max-w-6xl my-16">
           <h2 className="text-3xl text-center text-dark mb-8">Choose Your WordPress Hosting Plan</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Starter Plan */}
@@ -291,12 +291,12 @@ const WordPressLandingPage = () => {
         </section>
 
         {/* Enter to Win Section */}
-        <section className="mt-16 mb-32 max-w-6xl mx-auto">
+        <section className="mt-16 mb-32 mx-5 max-w-6xl md:mx-auto">
           <div className="bg-gradient-to-r from-pink-300 via-indigo-300 to-blue-300 px-12 py-24 rounded-lg shadow-lg text-center">
             <div className="mx-auto max-w-5xl">
               <h2 className="text-3xl font-semibold text-gray-900 mb-4">Enter to Win 20 Free Development Hours</h2>
               <p className="mb-4 text-lg text-gray-900">
-                Sign up or migrate your WordPress site today and you&apos;re automatically entered to win 10 development hours for site migration, redesign/redevelopment, or improvements. ($800 value).
+                Sign up or migrate your WordPress site today and you&rsquo;re automatically entered to win 10 development hours for site migration, redesign/redevelopment, or improvements. ($800 value).
               </p>
               <p className="text-xs text-gray-900">
                 *Winners announced on our <Link href="/ahead-with-fts"><span className="text-blue-600">Ahead with FTS</span></Link> blog starting the first month of each quarter.<br/>Promo starts 11/11/2023. Winners announced at the beginning of each quarter: January (for Q1), April (for Q2), July (for Q3), and October (for Q4).
