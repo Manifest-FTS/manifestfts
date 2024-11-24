@@ -91,7 +91,7 @@ const WordPressLandingPage = () => {
           >
             <h3 className="text-xl font-semibold text-dark">Professional WordPress Engineers</h3>
             <p className="mt-2 text-gray-600">
-              Our professional engineers don't just host your site. We stay on top of maintenance, security, and performance so that your website is always secure and running smoothly.
+              Our professional engineers don&apos;t just host your site. We stay on top of maintenance, security, and performance so that your website is always secure and running smoothly.
             </p>
           </motion.div>
 
@@ -115,7 +115,7 @@ const WordPressLandingPage = () => {
           >
             <h3 className="text-xl font-semibold text-dark">One Stop Shop</h3>
             <p className="mt-2 text-gray-600">
-              We are always ready with tailored WordPress solutions, whether you're scaling your website, adding custom features, or need help with design and development.
+              We are always ready with tailored WordPress solutions, whether you&apos;re scaling your website, adding custom features, or need help with design and development.
             </p>
           </motion.div>
         </div>
@@ -132,7 +132,7 @@ const WordPressLandingPage = () => {
             transition={{ duration: 0.5 }}
           >
             <h3 className="text-xl font-semibold text-dark">For Hobbyists</h3>
-            <p className="mt-4 text-gray-600">Create your blog, portfolio, or creative website with ease. Affordable, fast, and fully supported, we’ve got you covered.</p>
+            <p className="mt-4 text-gray-600">Create your blog, portfolio, or creative website with ease. Affordable, fast, and fully supported, we&apos;ve got you covered.</p>
           </motion.div>
 
           <motion.div
@@ -163,7 +163,7 @@ const WordPressLandingPage = () => {
             transition={{ duration: 0.5 }}
           >
             <h3 className="text-xl font-semibold text-dark">Advanced REST API Integration</h3>
-            <p className="mt-4 text-gray-600">Integrate powerful third-party tools with the WordPress REST API to enhance your site's functionality and performance.</p>
+            <p className="mt-4 text-gray-600">Integrate powerful third-party tools with the WordPress REST API to enhance your site&apos;s functionality and performance.</p>
           </motion.div>
 
           <motion.div
@@ -277,7 +277,7 @@ const WordPressLandingPage = () => {
           <div className="mx-auto max-w-5xl">
             <h2 className="text-3xl font-semibold text-gray-900 mb-4">Enter to Win 20 Free Development Hours</h2>
             <p className="mb-4 text-lg text-gray-900">
-              Sign up or migrate your WordPress site today and you&rsquo;re automatically entered to win 10 development hours for site migration, redesign/redevelopment, or improvements. ($800 value).
+              Sign up or migrate your WordPress site today and you&apos;re automatically entered to win 10 development hours for site migration, redesign/redevelopment, or improvements. ($800 value).
             </p>
             <p className="text-xs text-gray-900">
               *Winners announced on our <a href="/ahead-with-fts" className="text-blue-600">Manifest FTS Blog</a> starting the first month of each quarter.<br/>Promo starts 11/11/2023. Winners announced at the beginning of each quarter: January (for Q1), April (for Q2), July (for Q3), and October (for Q4).
