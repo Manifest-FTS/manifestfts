@@ -82,7 +82,7 @@ const WordPressLandingPage = () => {
         formData[field.name] = field.value;
       }
     });
-
+  
     try {
       const res = await fetch("/api/mail", {
         method: "POST",
@@ -91,7 +91,7 @@ const WordPressLandingPage = () => {
         },
         body: JSON.stringify(formData),
       });
-
+  
       if (res.ok) {
         // Close the form modal
         setIsFormVisible(false);
@@ -103,10 +103,11 @@ const WordPressLandingPage = () => {
         toast.error("Something went wrong. Please try again.", {
           duration: 30000 // 30 seconds
         });
-        setStatus(false);
+        setStatus("error"); // Update the status to a string
       }
     } catch (error) {
       toast.error("Error submitting the form.");
+      setStatus("error"); // Update the status to a string
     }
   };
 
