@@ -72,6 +72,17 @@ const WordPressLandingPage = () => {
     }
   };
 
+  // disable scroll when modal open
+  useEffect(() => {
+    if (isFormVisible) {
+      // Disable body scroll when the form modal is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Enable body scroll when the form modal is closed
+      document.body.style.overflow = 'auto';
+    }
+  }, [isFormVisible]); // Depend on isFormVisible state
+
   const handleOnSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData: any = {};

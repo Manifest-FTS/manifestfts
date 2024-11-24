@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast';
 import "../public/assets/css/style.css";
 import "../public/assets/css/swiper-custom.css";
 import "../css/globals.min.css";
@@ -35,6 +36,7 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
+      <Toaster />
       <Component {...pageProps} />
     </>
   )

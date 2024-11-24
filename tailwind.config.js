@@ -13,6 +13,7 @@ module.exports = {
         light: '#FFFFFF', // Light background for sections
         success: '#28a745', // Green for success messages
         error: '#dc3545', // Red for error messages
+        'green-900': '#3f8077',
       },
     },
   },

@@ -332,12 +332,12 @@ function Index3() {
         <section className="section-box pt-100 pb-100 mt-100 bg-green-900">
           <div className="d-flex justify-content-center">
             <Link href="/#get-started">
-              <a className="btn btn-black icon-arrow-right-white mb-15">
+              <a className="btn btn-black icon-arrow-right-white mb-15 hover:text-black hover:bg-white">
                 Get Started
               </a>
             </Link>
             <Link href="/work">
-              <a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-15">
+              <a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-15 hover:bg-black">
                 Our Work
               </a>
             </Link>
