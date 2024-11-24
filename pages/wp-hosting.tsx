@@ -312,7 +312,7 @@ const WordPressLandingPage = () => {
           animate={{ opacity: isFormVisible ? 1 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="bg-white p-8 max-w-6xl mx-auto rounded-lg shadow-lg relative">
+          <div className="bg-white p-8 max-w-6xl mx-auto rounded-lg shadow-lg relative overflow-hidden">
             {/* Close Icon */}
             <button
               onClick={handleCloseForm}
@@ -321,9 +321,13 @@ const WordPressLandingPage = () => {
               &times;
             </button>
             <h2 className="text-3xl mb-4">Tell Us About Your Site</h2>
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={handleOnSubmit}>
+            
+            {/* Form container */}
+            <form className="flex flex-col md:flex-row md:flex-wrap gap-4 overflow-y-auto max-h-[80vh] pr-8 pb-6 form-scrollbar">
               <input type="hidden" name="selectedPlan" value={selectedPlan} />
-              <div>
+              
+              {/* Full Name */}
+              <div className="flex-1">
                 <label htmlFor="name" className="block text-lg text-gray-600">Full Name</label>
                 <input
                   type="text"
@@ -334,7 +338,9 @@ const WordPressLandingPage = () => {
                   required
                 />
               </div>
-              <div>
+              
+              {/* Email */}
+              <div className="flex-1">
                 <label htmlFor="email" className="block text-lg text-gray-600">Email</label>
                 <input
                   type="email"
@@ -345,7 +351,9 @@ const WordPressLandingPage = () => {
                   required
                 />
               </div>
-              <div>
+              
+              {/* Phone */}
+              <div className="flex-1">
                 <label htmlFor="phone" className="block text-lg text-gray-600">Phone (Optional)</label>
                 <input
                   type="tel"
@@ -355,7 +363,9 @@ const WordPressLandingPage = () => {
                   placeholder="Enter your phone number"
                 />
               </div>
-              <div>
+              
+              {/* Website URL */}
+              <div className="flex-1">
                 <label htmlFor="websiteUrl" className="block text-lg text-gray-600">Website URL (Optional)</label>
                 <input
                   type="url"
@@ -365,7 +375,9 @@ const WordPressLandingPage = () => {
                   placeholder="Enter your website URL"
                 />
               </div>
-              <div>
+              
+              {/* Services */}
+              <div className="flex-1">
                 <label htmlFor="services" className="block text-lg text-gray-600">Do you need any non-hosting services?</label>
                 <select
                   id="services"
@@ -376,7 +388,9 @@ const WordPressLandingPage = () => {
                   <option value="yes">Yes</option>
                 </select>
               </div>
-              <div>
+              
+              {/* Multiple Sites */}
+              <div className="flex-1">
                 <label htmlFor="multipleSites" className="block text-lg text-gray-600">Do you have multiple WordPress sites?</label>
                 <select
                   id="multipleSites"
@@ -387,8 +401,10 @@ const WordPressLandingPage = () => {
                   <option value="yes">Yes</option>
                 </select>
               </div>
-              <div className="col-span-2">
-                <label htmlFor="message" className="block text-lg text-gray-600">Tell us about your goals and needs. What brought you hear today?</label>
+              
+              {/* Message */}
+              <div className="col-span-2 w-full">
+                <label htmlFor="message" className="block text-lg text-gray-600">Tell us about your goals and needs. What brought you here today?</label>
                 <textarea
                   name="message"
                   className="w-full px-3 py-2 border border-gray-300 rounded-md"
@@ -396,7 +412,9 @@ const WordPressLandingPage = () => {
                   required
                 />
               </div>
-              <button type="submit" className="w-full py-3 bg-black text-white rounded-lg">
+              
+              {/* Submit Button */}
+              <button type="submit" className="w-full py-3 bg-black text-white hover:text-black rounded-lg mt-6 hover:bg-gradient-to-r hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500">
                 Start My Migration
               </button>
             </form>
