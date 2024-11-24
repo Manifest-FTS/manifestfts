@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Lottie from 'lottie-react';
-import logo from '/public/assets/anim/mfts-animated-logo.json';
+import logo from '../public/assets/anim/mfts-animated-logo.json';
 const Header = ({ handleOpen, headerStyle }) => {
     const [scroll, setScroll] = useState(0)
     useEffect(() => {

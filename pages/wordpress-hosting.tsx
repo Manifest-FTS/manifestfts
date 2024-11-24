@@ -5,7 +5,7 @@ import { StarIcon } from '@heroicons/react/16/solid';
 import Countdown from 'react-countdown';
 import WPLanding from "../components/layout/WPLanding";
 import Lottie from 'lottie-react';
-import logo from '/public/assets/anim/mfts-animated-logo.json';
+import logo from '../public/assets/anim/mfts-animated-logo.json';
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
