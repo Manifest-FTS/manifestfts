@@ -80,7 +80,7 @@ const WordPressLandingPage = () => {
         <section className="relative bg-gradient-to-r from-pink-300 via-indigo-300 to-blue-300 text-white py-24 flex flex-col items-center justify-center mb-24">
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-0"></div>
           <motion.div
-            className="relative z-10 text-center"
+            className="relative z-10 text-center mx-3 md:mx-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
@@ -99,7 +99,7 @@ const WordPressLandingPage = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="mx-5 max-w-6xl my-16">
+        <section className="mx-3 max-w-6xl my-16">
           <h2 className="text-3xl text-center text-dark mb-8">Why Choose ManifestFTS?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
@@ -141,7 +141,7 @@ const WordPressLandingPage = () => {
         </section>
 
         {/* Do More With WordPress Section */}
-        <section className="mx-5 max-w-6xl my-16">
+        <section className="mx-3 max-w-6xl my-16">
           <h2 className="text-3xl text-center text-dark mb-8">Do More With WordPress</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <motion.div
@@ -208,7 +208,7 @@ const WordPressLandingPage = () => {
         </section>
 
         {/* Hosting Plan Selection */}
-        <section className="mx-5 max-w-6xl my-16">
+        <section className="mx-3 max-w-6xl my-16">
           <h2 className="text-3xl text-center text-dark mb-8">Choose Your WordPress Hosting Plan</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Starter Plan */}
@@ -291,7 +291,7 @@ const WordPressLandingPage = () => {
         </section>
 
         {/* Enter to Win Section */}
-        <section className="mt-16 mb-32 mx-5 max-w-6xl md:mx-auto">
+        <section className="mt-16 mb-32 mx-3 max-w-6xl md:mx-auto">
           <div className="bg-gradient-to-r from-pink-300 via-indigo-300 to-blue-300 px-12 py-24 rounded-lg shadow-lg text-center">
             <div className="mx-auto max-w-5xl">
               <h2 className="text-3xl font-semibold text-gray-900 mb-4">Enter to Win 20 Free Development Hours</h2>
