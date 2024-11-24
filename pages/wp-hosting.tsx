@@ -23,7 +23,7 @@ const WordPressLandingPage = () => {
     });
 
     try {
-      const res = await fetch("/api/submit-form", {
+      const res = await fetch("/api/mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
