@@ -281,7 +281,7 @@ const WordPressLandingPage = () => {
               Sign up or migrate your WordPress site today and you&apos;re automatically entered to win 10 development hours for site migration, redesign/redevelopment, or improvements. ($800 value).
             </p>
             <p className="text-xs text-gray-900">
-              *Winners announced on our <Link href="/ahead-with-fts" className="text-blue-600">Manifest FTS Blog</Link> starting the first month of each quarter.<br/>Promo starts 11/11/2023. Winners announced at the beginning of each quarter: January (for Q1), April (for Q2), July (for Q3), and October (for Q4).
+              *Winners announced on our <Link href="/ahead-with-fts"><span className="text-blue-600">Ahead with FTS</span> blog</Link> starting the first month of each quarter.<br/>Promo starts 11/11/2023. Winners announced at the beginning of each quarter: January (for Q1), April (for Q2), July (for Q3), and October (for Q4).
             </p>
           </div>
         </div>
