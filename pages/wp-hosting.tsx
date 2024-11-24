@@ -307,119 +307,120 @@ const WordPressLandingPage = () => {
 
         {/* Form Lightbox (hidden initially) */}
         <motion.div
-          className={`fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center ${isFormVisible ? "block" : "hidden"}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isFormVisible ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
+  className={`fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center ${isFormVisible ? "block" : "hidden"}`}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: isFormVisible ? 1 : 0 }}
+  transition={{ duration: 0.3 }}
+>
+  <div className="bg-white p-8 max-w-6xl mx-auto rounded-lg shadow-lg relative overflow-hidden">
+    {/* Close Icon */}
+    <button
+      onClick={handleCloseForm}
+      className="absolute top-4 right-4 text-gray-600 text-3xl"
+    >
+      &times;
+    </button>
+    <h2 className="text-3xl mb-4">Tell Us About Your Site</h2>
+    
+    {/* Form container */}
+    <form className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-6 overflow-y-auto max-h-[80vh] pr-8 pb-6 form-scrollbar">
+      <input type="hidden" name="selectedPlan" value={selectedPlan} />
+      
+      {/* Full Name */}
+      <div className="flex flex-col">
+        <label htmlFor="name" className="block text-lg text-gray-600">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md"
+          placeholder="Enter your full name"
+          required
+        />
+      </div>
+      
+      {/* Email */}
+      <div className="flex flex-col">
+        <label htmlFor="email" className="block text-lg text-gray-600">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+      
+      {/* Phone */}
+      <div className="flex flex-col">
+        <label htmlFor="phone" className="block text-lg text-gray-600">Phone (Optional)</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md"
+          placeholder="Enter your phone number"
+        />
+      </div>
+      
+      {/* Website URL */}
+      <div className="flex flex-col">
+        <label htmlFor="websiteUrl" className="block text-lg text-gray-600">Website URL (Optional)</label>
+        <input
+          type="url"
+          id="websiteUrl"
+          name="websiteUrl"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md"
+          placeholder="Enter your website URL"
+        />
+      </div>
+      
+      {/* Services */}
+      <div className="flex flex-col">
+        <label htmlFor="services" className="block text-lg text-gray-600">Do you need any non-hosting services?</label>
+        <select
+          id="services"
+          name="services"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md"
         >
-          <div className="bg-white p-8 max-w-6xl mx-auto rounded-lg shadow-lg relative overflow-hidden">
-            {/* Close Icon */}
-            <button
-              onClick={handleCloseForm}
-              className="absolute top-4 right-4 text-gray-600 text-3xl"
-            >
-              &times;
-            </button>
-            <h2 className="text-3xl mb-4">Tell Us About Your Site</h2>
-            
-            {/* Form container */}
-            <form className="flex flex-col md:flex-row md:flex-wrap gap-4 overflow-y-auto max-h-[80vh] pr-8 pb-6 form-scrollbar">
-              <input type="hidden" name="selectedPlan" value={selectedPlan} />
-              
-              {/* Full Name */}
-              <div className="flex-1">
-                <label htmlFor="name" className="block text-lg text-gray-600">Full Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                  placeholder="Enter your full name"
-                  required
-                />
-              </div>
-              
-              {/* Email */}
-              <div className="flex-1">
-                <label htmlFor="email" className="block text-lg text-gray-600">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                  placeholder="Enter your email"
-                  required
-                />
-              </div>
-              
-              {/* Phone */}
-              <div className="flex-1">
-                <label htmlFor="phone" className="block text-lg text-gray-600">Phone (Optional)</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                  placeholder="Enter your phone number"
-                />
-              </div>
-              
-              {/* Website URL */}
-              <div className="flex-1">
-                <label htmlFor="websiteUrl" className="block text-lg text-gray-600">Website URL (Optional)</label>
-                <input
-                  type="url"
-                  id="websiteUrl"
-                  name="websiteUrl"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                  placeholder="Enter your website URL"
-                />
-              </div>
-              
-              {/* Services */}
-              <div className="flex-1">
-                <label htmlFor="services" className="block text-lg text-gray-600">Do you need any non-hosting services?</label>
-                <select
-                  id="services"
-                  name="services"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                >
-                  <option value="no">No</option>
-                  <option value="yes">Yes</option>
-                </select>
-              </div>
-              
-              {/* Multiple Sites */}
-              <div className="flex-1">
-                <label htmlFor="multipleSites" className="block text-lg text-gray-600">Do you have multiple WordPress sites?</label>
-                <select
-                  id="multipleSites"
-                  name="multipleSites"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                >
-                  <option value="no">No</option>
-                  <option value="yes">Yes</option>
-                </select>
-              </div>
-              
-              {/* Message */}
-              <div className="col-span-2 w-full">
-                <label htmlFor="message" className="block text-lg text-gray-600">Tell us about your goals and needs. What brought you here today?</label>
-                <textarea
-                  name="message"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                  placeholder="What would you like us to do for you?"
-                  required
-                />
-              </div>
-              
-              {/* Submit Button */}
-              <button type="submit" className="w-full py-3 bg-black text-white hover:text-black rounded-lg mt-6 hover:bg-gradient-to-r hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500">
-                Start My Migration
-              </button>
-            </form>
-          </div>
-        </motion.div>
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+      </div>
+      
+      {/* Multiple Sites */}
+      <div className="flex flex-col">
+        <label htmlFor="multipleSites" className="block text-lg text-gray-600">Do you have multiple WordPress sites?</label>
+        <select
+          id="multipleSites"
+          name="multipleSites"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md"
+        >
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+      </div>
+      
+      {/* Message */}
+      <div className="col-span-2 flex flex-col">
+        <label htmlFor="message" className="block text-lg text-gray-600">Tell us about your goals and needs. What brought you here today?</label>
+        <textarea
+          name="message"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md"
+          placeholder="What would you like us to do for you?"
+          required
+        />
+      </div>
+      
+      {/* Submit Button */}
+      <button type="submit" className="w-full py-3 bg-black text-white rounded-lg mt-6 hover:bg-gradient-to-r hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500">
+        Start My Migration
+      </button>
+    </form>
+  </div>
+</motion.div>
+
       </WPLanding>
     </>
   );
