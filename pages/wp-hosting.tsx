@@ -4,6 +4,7 @@ import { toast } from "react-hot-toast";
 import WPLanding from "../components/layout/WPLanding";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 // Function to handle form submission
 const WordPressLandingPage = () => {
