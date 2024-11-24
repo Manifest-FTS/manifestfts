@@ -33,7 +33,9 @@ const WordPressLandingPage = () => {
       });
 
       if (res.ok) {
-        setStatus(true);
+        // Close the form modal
+        setIsFormVisible(false);
+        // Show success toast notification
         toast.success("Thank you for your submission! We'll get back to you soon.", {
           duration: 30000 // 30 seconds
         });
@@ -61,7 +63,7 @@ const WordPressLandingPage = () => {
     <>
       <Head>
         <title>WordPress Hosting Solutions - Fast & Reliable | ManifestFTS</title>
-        <meta name="description" content="Discover premium WordPress hosting services. Managed WordPress hosting for seamless performance, security, and uptime. Let our expert engineers optimize your website." />
+        <meta name="description" content="Discover managed WordPress hosting services. WordPress hosting for seamless performance, security, and uptime. Let our expert engineers optimize your website." />
         <meta name="keywords" content="WordPress hosting, managed WordPress hosting, WordPress support, fast hosting, reliable hosting, WordPress security, performance optimization" />
         <meta property="og:title" content="Premium WordPress Hosting | ManifestFTS" />
         <meta property="og:description" content="Experience top-tier WordPress hosting with expert management and fast, secure, and reliable hosting services tailored to your needs." />
