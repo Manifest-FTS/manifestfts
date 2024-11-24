@@ -275,11 +275,11 @@ const WordPressLandingPage = () => {
       <section className="mt-16 mb-32 max-w-6xl mx-auto">
         <div className="bg-gradient-to-r from-pink-300 via-indigo-300 to-blue-300 px-12 py-24 rounded-lg shadow-lg text-center">
           <div className="mx-auto max-w-5xl">
-            <h2 className="text-3xl font-semibold text-dark mb-4">Enter to Win 20 Free Development Hours</h2>
-            <p className="mb-4 text-lg text-gray-600">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4">Enter to Win 20 Free Development Hours</h2>
+            <p className="mb-4 text-lg text-gray-900">
               Sign up or migrate your WordPress site today and you&rsquo;re automatically entered to win 10 development hours for site migration, redesign/redevelopment, or improvements. ($800 value).
             </p>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-gray-900">
               *Winners announced on our <a href="/ahead-with-fts" className="text-blue-600">Manifest FTS Blog</a> starting the first month of each quarter.<br/>Promo starts 11/11/2023. Winners announced at the beginning of each quarter: January (for Q1), April (for Q2), July (for Q3), and October (for Q4).
             </p>
           </div>
