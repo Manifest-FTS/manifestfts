@@ -13,11 +13,14 @@ const WordPressLandingPage = () => {
   const handleOnSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData: any = {};
-    Array.from(e.currentTarget.elements).forEach((field: HTMLInputElement) => {
-      if (!field.name) return;
-      formData[field.name] = field.value;
+    Array.from(e.currentTarget.elements as HTMLCollectionOf<HTMLElement>).forEach((field) => {
+      // Ensure field is an HTMLInputElement or similar
+      if (field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement || field instanceof HTMLSelectElement) {
+        if (!field.name) return;
+        formData[field.name] = field.value;
+      }
     });
-
+    
     try {
       const res = await fetch("/api/submit-form", {
         method: "POST",
@@ -29,9 +32,13 @@ const WordPressLandingPage = () => {
 
       if (res.ok) {
         setStatus(true);
-        toast.success("Thank you for your submission! We'll get back to you soon.");
+        toast.success("Thank you for your submission! We'll get back to you soon.", {
+          duration: 30000 // 30 seconds
+        });
       } else {
-        toast.error("Something went wrong. Please try again.");
+        toast.error("Something went wrong. Please try again.", {
+          duration: 30000 // 30 seconds
+        });
         setStatus(false);
       }
     } catch (error) {
@@ -193,7 +200,7 @@ const WordPressLandingPage = () => {
             transition={{ duration: 0.5 }}
           >
             <h4 className="text-xl font-semibold text-dark">Starter</h4>
-            <p className="mt-2 text-gray-600">$39/month</p>
+            <p className="mt-2 text-gray-600 text-base font-bold">$39/month</p>
             <ul className="mt-4 text-gray-600">
               <li>1 WordPress Install</li>
               <li>25,000 Monthly Visits</li>
@@ -205,7 +212,7 @@ const WordPressLandingPage = () => {
             </ul>
             <button
               onClick={() => handleSelectPlan("starter")}
-              className={`w-full mt-6 py-2 text-white ${selectedPlan === "starter" ? "bg-blue-600" : "bg-gray-500"}`}
+              className={`w-full mt-6 py-2 text-white ${selectedPlan === "starter" ? "bg-blue-600" : "bg-gray-500"} transition-colors duration-300`}
             >
               {selectedPlan === "starter" ? "Selected" : "Select Plan"}
             </button>
@@ -219,7 +226,7 @@ const WordPressLandingPage = () => {
             transition={{ duration: 0.5 }}
           >
             <h4 className="text-xl font-semibold text-dark">Growth</h4>
-            <p className="mt-2 text-gray-600">$149/month</p>
+            <p className="mt-2 text-gray-600 text-base font-bold">$149/month</p>
             <ul className="mt-4 text-gray-600">
               <li>Everything in <em>Starter</em> +</li>
               <li>100,000 Monthly Visits</li>
@@ -244,7 +251,7 @@ const WordPressLandingPage = () => {
             transition={{ duration: 0.5 }}
           >
             <h4 className="text-xl font-semibold text-dark">Enterprise</h4>
-            <p className="mt-2 text-gray-600">Custom Pricing</p>
+            <p className="mt-2 text-gray-600 text-base font-bold">Custom Pricing</p>
             <ul className="mt-4 text-gray-600">
               <li>Everything in <em>Growth</em> +</li>
               <li>100k+ Monthly Visits</li>
