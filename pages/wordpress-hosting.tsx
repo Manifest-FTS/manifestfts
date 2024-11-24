@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "react-hot-toast";
+import { StarIcon } from '@heroicons/react/16/solid';
+import Countdown from 'react-countdown';
 import WPLanding from "../components/layout/WPLanding";
+import Lottie from 'lottie-react';
+import logo from '/public/assets/anim/mfts-animated-logo.json';
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
@@ -9,8 +13,64 @@ import Head from "next/head";
 // Function to handle form submission
 const WordPressLandingPage = () => {
   const [isFormVisible, setIsFormVisible] = useState<boolean>(false);
-  const [status, setStatus] = useState<boolean>(false);
   const [selectedPlan, setSelectedPlan] = useState<string>("");
+  const [nextQuarter, setNextQuarter] = useState<Date | null>(null);
+  const [status, setStatus] = useState<string>("");
+
+  // Function to determine the next quarter's start date
+  const getNextQuarterDate = () => {
+    const currentDate = new Date();
+    const currentMonth = currentDate.getMonth(); // Month is zero-indexed
+
+    let nextQuarterStartMonth;
+    if (currentMonth < 3) {
+      nextQuarterStartMonth = 0; // Q1 (January)
+    } else if (currentMonth < 6) {
+      nextQuarterStartMonth = 3; // Q2 (April)
+    } else if (currentMonth < 9) {
+      nextQuarterStartMonth = 6; // Q3 (July)
+    } else {
+      nextQuarterStartMonth = 9; // Q4 (October)
+    }
+
+    // If it's past the start of the quarter, move to the next quarter
+    if (currentMonth >= nextQuarterStartMonth) {
+      nextQuarterStartMonth = nextQuarterStartMonth + 3;
+    }
+
+    // Set the date to the first day of the next quarter
+    const nextQuarterDate = new Date(currentDate.getFullYear(), nextQuarterStartMonth, 1);
+    return nextQuarterDate;
+  };
+
+  useEffect(() => {
+    const nextQuarterDate = getNextQuarterDate();
+    setNextQuarter(nextQuarterDate);
+
+    const currentDate = new Date();
+    if (currentDate < nextQuarterDate) {
+      setStatus("Upcoming"); // Countdown until next quarter
+    } else {
+      setStatus("Ended"); // If the current date is after the next quarter date
+    }
+  }, []); // Empty dependency array means this runs once on mount
+
+  // Countdown renderer
+  const renderer = ({ days, hours, minutes, seconds, completed }: any) => {
+    if (completed) {
+      if (status === "Upcoming") {
+        return <span>Drawing Time! 🎉</span>;
+      } else {
+        return <span>Drawing Ended!</span>;
+      }
+    } else {
+      return (
+        <div>
+          <p className="font-bold text-lg">{days}d {hours}h {minutes}m {seconds}s</p>
+        </div>
+      );
+    }
+  };
 
   const handleOnSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -59,6 +119,10 @@ const WordPressLandingPage = () => {
     setIsFormVisible(false); // Close the form
   };
 
+  const style = {
+    width: 225,
+  };
+
   return (
     <>
       <Head>
@@ -84,18 +148,79 @@ const WordPressLandingPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
-          >
-            <h1 className="text-5xl font-extrabold text-white leading-tight mb-4">
-              Don&rsquo;t Just Host Your WordPress Site, <br /> Let Experts Manage It
+          > 
+            <div className="header-logo">
+              <div className="mx-auto max-w-[223px]">
+                <Lottie animationData={logo} loop={false} style={style}/>
+              </div>
+            </div>
+            <h1 className="max-w-2xl mx-auto text-5xl font-extrabold text-white leading-tight my-4">Effortless WordPress Hosting, Designed for Your Success
             </h1>
             <div className="max-w-4xl mx-auto">
-              <p className="mt-4 text-xl">
-                With our expert WordPress engineers, your site will grow with you.
-                From seamless migrations to performance optimization, we&rsquo;re here to
-                handle the technical aspects so you can focus on your business.
-              </p>
+              <p className="mt-4 text-lg">Let our expert WordPress engineers handle the technical side of things, so you can focus on what matters most &mdash; growing your business. From seamless migrations to peak performance, we&rsquo;ve got you covered every step of the way.</p>
+
+              {nextQuarter && (
+                <div className="px-5 py-2 mt-12 max-w-[350px] text-base bg-gradient-to-r from-yellow-300/70 via-yellow-400/70 to-yellow-500/70 rounded-md mx-auto text-black backdrop-blur-4xl">
+                  <p className="font-semibold text-center text-xs">
+                    {status === "Upcoming" ? `Next drawing in:` : "Drawing has ended. See you next quarter!"}
+                  </p>
+                  <Countdown
+                    date={nextQuarter}
+                    renderer={renderer}
+                  />
+                  <Link href="#drawing">
+                    <span className="font-semibold text-center text-xs hover:cursor-pointer hover:underline hover:animate-bounce">
+                      view details
+                    </span>
+                  </Link>
+                </div>
+              )}
             </div>
           </motion.div>
+        </section>
+
+        {/* Why Choose Us */}
+        <section className="w-full px-3 my-16">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl text-center text-dark mb-8">Why Choose Manifest?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <motion.div
+                className="bg-white p-6 rounded-lg shadow-lg hover:bg-gradient-to-r hover:from-pink-200 hover:to-yellow-200 transform transition duration-300"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h3 className="text-xl font-semibold text-dark">Professional WordPress Engineers</h3>
+                <p className="mt-2 text-gray-600">
+                  Our professional engineers don&apos;t just host your site. We stay on top of maintenance, security, and performance so that your website is always secure and running smoothly.
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="bg-white p-6 rounded-lg shadow-lg hover:bg-gradient-to-r hover:from-indigo-200 hover:to-blue-300 transform transition duration-300"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h3 className="text-xl font-semibold text-dark">Proactive Maintenance</h3>
+                <p className="mt-2 text-gray-600">
+                  Stay ahead of security risks and performance issues with ongoing monitoring, updates, and optimizations. We ensure your site is always ready for what comes next.
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="bg-white p-6 rounded-lg shadow-lg hover:bg-gradient-to-r hover:from-green-300 hover:to-teal-400 transform transition duration-300"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h3 className="text-xl font-semibold text-dark">Full-Service Provider</h3>
+                <p className="mt-2 text-gray-600">
+                  We are always ready with tailored WordPress solutions, whether you&apos;re scaling your website, adding custom features, or need help with design and development.
+                </p>
+              </motion.div>
+            </div>
+          </div>
         </section>
 
         {/* Hosting Plan Selection */}
@@ -183,61 +308,17 @@ const WordPressLandingPage = () => {
           </div>
         </section>
 
-        {/* Why Choose Us */}
-        <section className="w-full px-3 my-16">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl text-center text-dark mb-8">Why Choose ManifestFTS?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <motion.div
-                className="bg-white p-6 rounded-lg shadow-lg hover:bg-gradient-to-r hover:from-pink-200 hover:to-yellow-200 transform transition duration-300"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h3 className="text-xl font-semibold text-dark">Professional WordPress Engineers</h3>
-                <p className="mt-2 text-gray-600">
-                  Our professional engineers don&apos;t just host your site. We stay on top of maintenance, security, and performance so that your website is always secure and running smoothly.
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="bg-white p-6 rounded-lg shadow-lg hover:bg-gradient-to-r hover:from-indigo-200 hover:to-blue-300 transform transition duration-300"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h3 className="text-xl font-semibold text-dark">Proactive Maintenance</h3>
-                <p className="mt-2 text-gray-600">
-                  Stay ahead of security risks and performance issues with ongoing monitoring, updates, and optimizations. We ensure your site is always ready for what comes next.
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="bg-white p-6 rounded-lg shadow-lg hover:bg-gradient-to-r hover:from-green-300 hover:to-teal-400 transform transition duration-300"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h3 className="text-xl font-semibold text-dark">One Stop Shop</h3>
-                <p className="mt-2 text-gray-600">
-                  We are always ready with tailored WordPress solutions, whether you&apos;re scaling your website, adding custom features, or need help with design and development.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
         {/* Enter to Win Section */}
-        <section className="w-full px-3 my-16">
+        <section id="drawing" className="w-full px-3 my-16">
           <div className="max-w-7xl mx-auto">
             <div className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 px-12 py-24 rounded-lg shadow-xl text-center">
               <div className="mx-auto max-w-5xl">
                 <h2 className="text-3xl font-semibold text-gray-900 mb-4">Enter to Win 20 Free Development Hours</h2>
                 <p className="mb-4 text-lg text-gray-900">
-                  Sign up or migrate your WordPress site today and you&rsquo;re automatically entered to win 10 development hours for site migration, redesign/redevelopment, or improvements. ($800 value).
+                  Sign up or migrate your WordPress site today and you&rsquo;re automatically entered to win 10 hours towards any of our digital services. ($800 value).
                 </p>
                 <p className="text-xs text-gray-900">
-                  *Winners announced on our <Link href="/ahead-with-fts"><span className="text-blue-600">Ahead with FTS</span></Link> blog starting the first month of each quarter.<br/>Promo starts 11/11/2023. Winners announced at the beginning of each quarter: January (for Q1), April (for Q2), July (for Q3), and October (for Q4).
+                  *Winners announced on our <Link href="/ahead-with-fts"><span className="text-blue-600 hover:cursor-pointer">Ahead with FTS</span></Link> blog starting the first month of each quarter.<br/>Promo starts 11/11/2023. Winners announced at the beginning of each quarter: January (for Q1), April (for Q2), July (for Q3), and October (for Q4).
                 </p>
               </div>
             </div>
