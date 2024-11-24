@@ -1,6 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Custom Scrollbar Styling */
+.form-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #f6c8b1 #f4f4f4;
+  /* Custom scrollbar thumb and track colors */
+}
+
+/* For Webkit Browsers like Chrome and Safari */
+.form-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.form-scrollbar::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  /* Light background for the track */
+  border-radius: 10px;
+}
+
+.form-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #f6c8b1, #f4a300);
+  /* Gradient for the thumb */
+  border-radius: 10px;
+}
+
+.form-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #f4a300;
+  /* Darker thumb color on hover */
+}
+
 .effect-1 {
   transform: perspective(100em) rotateX(50deg) rotateY(0deg) rotateZ(-40deg) scale(0.75);
   transform-style: preserve-3d;
