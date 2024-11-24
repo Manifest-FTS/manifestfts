@@ -7,8 +7,8 @@ async function sendEmail(req, res) {
 
   let message = '';
 
-  // Determine which form is being submitted based on the form data
-  if (body.fullname) {
+  // Check the form type to determine which form was submitted
+  if (body.formType === "getQuote") {
     // Handle "Get a Quote" form
     message = `
       Name: ${body.fullname}\r\n
@@ -17,7 +17,7 @@ async function sendEmail(req, res) {
       Company: ${body.company || "N/A"}\r\n
       Message: ${body.message}
     `;
-  } else if (body.name) {
+  } else if (body.formType === "wordpressHosting") {
     // Handle "WordPress Hosting" form
     message = `
       Name: ${body.name}\r\n

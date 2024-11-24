@@ -56,6 +56,7 @@ const FormProject = () => {
               <div className="col-lg-12">
                 <div className="row">
                   <form className="row" method="post" onSubmit={handleOnSubmit}>
+                    <input type="hidden" name="formType" value="getQuote" />
                     <div className="col-lg-6">
                       <div className="form-group">
                         <input
