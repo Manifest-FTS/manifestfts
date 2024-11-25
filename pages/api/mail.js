@@ -33,8 +33,7 @@ async function sendEmail(req, res) {
 
   try {
     await sendgrid.send({
-      // to: "hello@manifestfts.com",
-      to: "andjhait@gmail.com",
+      to: "hello@manifestfts.com",
       from: "noreply@manifestfts.com",
       subject: "New Lead from Manifest FTS",
       text: message,
