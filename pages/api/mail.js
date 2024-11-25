@@ -25,6 +25,8 @@ async function sendEmail(req, res) {
       Phone: ${body.phone || "N/A"}\r\n
       Website URL: ${body.websiteUrl || "N/A"}\r\n
       Selected Plan: ${body.selectedPlan || "N/A"}\r\n
+      Services: ${body.services || "N/A"}\r\n
+      Multiple Sites: ${body.multipleSites || "N/A"}\r\n
       Message: ${body.message}
     `;
   } else {
