@@ -1,6 +1,6 @@
 import sendgrid from "@sendgrid/mail";
 
-sendgrid.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 async function sendEmail(req, res) {
   const { body } = req;
@@ -33,7 +33,8 @@ async function sendEmail(req, res) {
 
   try {
     await sendgrid.send({
-      to: "hello@manifestfts.com",
+      // to: "hello@manifestfts.com",
+      to: "andjhait@gmail.com",
       from: "noreply@manifestfts.com",
       subject: "New Lead from Manifest FTS",
       text: message,
@@ -41,6 +42,7 @@ async function sendEmail(req, res) {
     });
     return res.status(200).json({ status: "Ok" });
   } catch (error) {
+    console.log('Arun Jha error', JSON.stringify(error))
     return res.status(error.statusCode || 500).json({ error: error.message });
   }
 }
