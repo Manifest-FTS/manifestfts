@@ -108,9 +108,9 @@ const WordPressLandingPage = () => {
         // Close the form modal
         setIsFormVisible(false);
         // Show success toast notification
+        console.log("Form submitted successfully!");
         toast.success("Thank you for your submission! We'll get back to you soon.", {
           duration: 30000 // 30 seconds
-          console.log("Form submitted successfully!");
         });
       } else {
         toast.error("Something went wrong. Please try again.", {
@@ -487,7 +487,7 @@ const WordPressLandingPage = () => {
             <h2 className="text-3xl mb-4">Tell Us About Your Site</h2>
             
             {/* Form container */}
-            <form className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-6 overflow-y-auto max-h-[80vh] pr-8 pb-6 form-scrollbar">
+            <form className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-6 overflow-y-auto max-h-[80vh] pr-8 pb-6 form-scrollbar" onSubmit={handleOnSubmit}>
               <input type="hidden" name="formType" value="wordpressHosting" />
               <input type="hidden" name="selectedPlan" value={selectedPlan} />
               
