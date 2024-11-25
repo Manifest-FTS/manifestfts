@@ -41,7 +41,6 @@ async function sendEmail(req, res) {
     });
     return res.status(200).json({ status: "Ok" });
   } catch (error) {
-    console.log('Arun Jha error', JSON.stringify(error))
     return res.status(error.statusCode || 500).json({ error: error.message });
   }
 }
