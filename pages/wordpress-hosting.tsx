@@ -239,7 +239,7 @@ const WordPressLandingPage = () => {
         </section>
 
         {/* Hosting Plan Selection */}
-        <section className="w-full px-3 my-16">
+        <section id="plans" className="w-full px-3 my-16">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl text-center text-dark mb-8">Choose Your WordPress Hosting Plan</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -330,10 +330,10 @@ const WordPressLandingPage = () => {
               <div className="mx-auto max-w-5xl">
                 <h2 className="text-3xl font-semibold text-gray-900 mb-4">Enter to Win 10 Free Development Hours</h2>
                 <p className="mb-4 text-lg text-gray-900">
-                  Sign up or migrate your WordPress site today and you&rsquo;re automatically entered to win 10 hours towards any of our digital services. ($1200 value).
+                  Sign up or migrate your WordPress site to a <Link href="#plans">Growth*</Link> plan today and you&rsquo;re automatically entered to win 10 hours towards any of our digital services. ($1200 value).
                 </p>
                 <p className="text-xs text-gray-900">
-                  *Winners announced on our <Link href="/ahead-with-fts"><span className="text-blue-600 hover:cursor-pointer">Ahead with FTS</span></Link> blog starting the first month of each quarter.<br/>Promo starts 11/11/2023. Winners announced at the beginning of each quarter: January (for Q1), April (for Q2), July (for Q3), and October (for Q4).
+                  *Promotion starts 11/11/2024 and open to active Growth plan or higher tier subscribers who have not previously won the promotion during the current calendar year. Winners are announced on our <Link href="/ahead-with-fts"><span className="text-blue-600 hover:cursor-pointer">Ahead with FTS</span></Link> blog at the beginning of each quarter: January (for Q1), April (for Q2), July (for Q3), and October (for Q4)s. 
                 </p>
               </div>
             </div>
