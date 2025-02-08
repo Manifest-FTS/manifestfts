@@ -169,7 +169,7 @@ const WordPressLandingPage = () => {
                 <Lottie animationData={logo} loop={false} style={style}/>
               </div>
             </div>
-            <h1 className="max-w-2xl mx-auto text-5xl font-extrabold text-white leading-tight my-4">Effortless WordPress Hosting, Designed for Your Success
+            <h1 className="max-w-2xl mx-auto text-5xl font-extrabold text-white leading-tight my-4">Effortless WordPress Hosting & Management, Designed for Your Success
             </h1>
             <div className="max-w-4xl mx-auto">
               <p className="mt-4 text-lg">Let our expert WordPress engineers handle the technical side of things, so you can focus on what matters most &mdash; growing your business. From seamless migrations to peak performance, we&rsquo;ve got you covered every step of the way.</p>

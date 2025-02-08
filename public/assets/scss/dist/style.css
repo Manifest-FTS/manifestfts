@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /***
  Template Name: ManifestFTS
  Description: Forward Thinking Solutions
@@ -302,12 +303,14 @@ li.hr span {
 
 /*--- Common Classes---------------------*/
 ::selection {
-  background: #3F8077; /* WebKit/Blink Browsers */
+  background: #3F8077;
+  /* WebKit/Blink Browsers */
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #3F8077; /* Gecko Browsers */
+  background: #3F8077;
+  /* Gecko Browsers */
   color: #fff;
 }
 
@@ -673,7 +676,7 @@ a {
 }
 
 .bg-2-opacity-80 {
-  background-color: rgba(255, 243, 234, 0.8);
+  background-color: #fff3eacc;
 }
 
 .bg-3 {
@@ -693,7 +696,7 @@ a {
 }
 
 .bg-6-opacity-30 {
-  background-color: rgba(190, 225, 230, 0.3019607843) !important;
+  background-color: #bee1e64d !important;
 }
 
 .bg-7 {
@@ -1829,7 +1832,7 @@ label {
   max-width: 1140px;
   margin-right: auto;
   margin-left: auto;
-  position: absolute;
+  position: relative;
   text-align: center;
   transition: opacity 444ms linear;
   z-index: 5;
@@ -1838,7 +1841,6 @@ label {
   color: #ffffff;
 }
 #home-hero .brand-video-wrapper {
-  bottom: 10%;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -3610,7 +3612,7 @@ label {
   text-align: left;
 }
 .header .main-menu li.has-children > a::after {
-  content: "\f151";
+  content: "";
   font-family: uicons-regular-rounded !important;
   font-style: normal;
   font-weight: normal !important;
@@ -4009,7 +4011,7 @@ label {
   background: rgba(255, 255, 255, 0.2);
 }
 .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-header-content-area .mobile-menu-wrap nav .mobile-menu li.has-children.active > .menu-expand i::before {
-  content: "\f113";
+  content: "";
 }
 .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-header-content-area .mobile-menu-wrap nav .mobile-menu li a {
   font-size: 18px;
@@ -4458,8 +4460,8 @@ label {
   transition-duration: 0.2s;
 }
 .footer .footer-bottom .icon-socials.icon-email {
-  -webkit-mask: url(../imgs/template/icons/icon-email.svg) no-repeat 50% 50%;
-  mask: url(../imgs/template/icons/icon-email.svg) no-repeat 50% 50%;
+  -webkit-mask: url(../imgs/template/icons/email.svg) no-repeat 50% 50%;
+  mask: url(../imgs/template/icons/email.svg) no-repeat 50% 50%;
   transition-duration: 0.2s;
 }
 .footer .footer-bottom .icon-socials.icon-email:hover {
@@ -7172,7 +7174,7 @@ label {
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  color: #D1DAE4;
+  color: D1DAE4;
 }
 
 .block-gallery-1 img {
@@ -7385,6 +7387,7 @@ label {
   .login-left {
     width: 55%;
   }
+
   .login-right {
     width: 45%;
   }
@@ -8606,6 +8609,7 @@ input.qty-val {
   .slider-nav-thumbnails .slick-prev {
     right: 20px;
   }
+
   .galleries {
     padding: 0px 0px 0px 165px;
   }
@@ -8619,6 +8623,7 @@ input.qty-val {
   .galleries {
     padding: 0px 0px 0px 0px;
   }
+
   .slider-nav-thumbnails {
     width: auto;
     position: relative;
@@ -8645,17 +8650,21 @@ input.qty-val {
     top: 50%;
     margin-top: -10px;
   }
+
   .deals-countdown {
     right: -15px;
   }
+
   .product-image-slider {
     min-height: auto;
     line-height: auto;
   }
+
   .btn.btn-tab {
     padding: 11px 12px !important;
     font-size: 13px;
   }
+
   .box-green-2 {
     background-image: none;
   }
@@ -8670,23 +8679,29 @@ input.qty-val {
   .detail-extralink .detail-qty {
     max-width: 90px;
   }
+
   .box-countdown {
     display: inline-block;
     width: 100%;
   }
+
   .box-processbar {
     width: 100%;
   }
+
   .box-count {
     width: 100%;
     margin-top: 20px;
   }
+
   .countdown-section:first-child {
     margin-left: 0px;
   }
+
   .deals-countdown {
     right: -5px;
   }
+
   .slider-nav-thumbnails .slick-next {
     right: 0px;
   }
@@ -8710,6 +8725,7 @@ input.qty-val {
   .block-we-do {
     padding-left: 40px;
   }
+
   .block-img-we-do {
     padding-right: 30px;
   }
@@ -8718,6 +8734,7 @@ input.qty-val {
   .custom-class {
     display: block;
   }
+
   .banner-hero.banner-2 .block-2 {
     right: -10px;
   }
@@ -8726,12 +8743,14 @@ input.qty-val {
   .custom-class {
     display: block;
   }
+
   .box-newsletter .block-chart {
     bottom: -60px;
     left: 10px;
     max-width: 215px;
     height: 164px;
   }
+
   .list-steps li {
     padding-right: 30px;
   }
@@ -8750,15 +8769,18 @@ input.qty-val {
     width: 30px;
     right: 0px;
   }
+
   .block-pl {
     padding-left: 30px;
   }
   .block-pl .mt-20 {
     margin-top: 0px !important;
   }
+
   .block-news .right-news {
     padding: 40px 30px 40px 30px;
   }
+
   .block-pricing-3 .block-pricing-left {
     margin-bottom: 30px;
   }
@@ -8767,33 +8789,42 @@ input.qty-val {
   .list-partners li {
     width: 28%;
   }
+
   .panel-box {
     max-height: unset;
   }
+
   .panel-box img {
     max-height: unset;
   }
+
   .block-video .btn-play-video {
     left: 50%;
     margin-left: -68px;
   }
+
   .text-display-2 {
     font-size: 64px;
     line-height: 70px;
   }
+
   .pattern-white {
     padding-left: 30px;
     padding-right: 30px;
   }
+
   .card-grid-style-2 {
     padding: 24px 20px;
   }
+
   .pt-xs-30 {
     padding-top: 30px;
   }
+
   .block-img-we-do {
     margin-bottom: 30px;
   }
+
   .banner-hero {
     max-width: 100%;
     padding: 60px 0px 60px 0px;
@@ -8801,6 +8832,7 @@ input.qty-val {
   .banner-hero.banner-3 {
     padding-top: 50px;
   }
+
   .header .main-header .header-right {
     max-width: 265px;
   }
@@ -8808,11 +8840,13 @@ input.qty-val {
     padding: 12px 55px 12px 20px;
     font-size: 16px;
   }
+
   .box-newsletter .img-newsletter {
     position: relative;
     bottom: 0px;
     max-width: 100%;
   }
+
   .box-newsletter {
     padding: 37px 30px 36px 30px;
   }
@@ -8821,20 +8855,25 @@ input.qty-val {
     left: 0px;
     max-width: 225px;
   }
+
   .burger-icon {
     top: 25px;
   }
+
   .sticky-bar.stick .burger-icon {
     top: 25px;
   }
+
   .text-heading-1 {
     font-size: 46px;
     line-height: 52px;
   }
+
   .block-img-we-do .block-chart {
     bottom: -30px;
     right: -10px;
   }
+
   .block-we-do .inner-image {
     position: relative;
   }
@@ -8842,25 +8881,31 @@ input.qty-val {
     bottom: -80px;
     right: -30px;
   }
+
   .block-we-do-2 {
     padding-left: 15px;
   }
+
   .box-square {
     height: auto;
     margin-bottom: 30px;
   }
+
   .box-gray-100 {
     padding: 40px;
   }
+
   .banner-hero.bg-about-1 {
     padding-top: 60px;
   }
+
   .footer .width-20 {
     width: 50%;
   }
   .footer .width-16 {
     width: 50%;
   }
+
   .list-steps li {
     padding-left: 8px;
     padding-right: 8px;
@@ -8870,19 +8915,23 @@ input.qty-val {
   .list-steps li::before {
     display: none;
   }
+
   .block-pl {
     padding-left: 0px;
   }
   .block-pl .mt-20 {
     margin-top: 20px !important;
   }
+
   .text-display-3 {
     font-size: 45px;
     line-height: 52px;
   }
+
   .mb-mobile {
     margin-bottom: 0px !important;
   }
+
   .list-5-col {
     display: inline-block;
     width: 100%;
@@ -8894,12 +8943,15 @@ input.qty-val {
     margin-bottom: 30px;
     vertical-align: top;
   }
+
   .page-service-2 {
     background-size: auto 650px;
   }
+
   .banner-hero.bg-service-2 {
     padding-top: 20px;
   }
+
   .images-lists img {
     margin-bottom: 25px;
   }
@@ -8915,30 +8967,38 @@ input.qty-val {
   .images-lists .img-5 {
     bottom: 0px;
   }
+
   .box-login .login-right {
     padding-bottom: 90px;
   }
   .box-login .login-left {
     min-height: 550px;
   }
+
   .page-blog-1 {
     background-size: auto 550px;
   }
+
   .mt-md-0 {
     margin-top: 0 !important;
   }
+
   .pl-lg-15 {
     padding-left: 15px !important;
   }
+
   .header-right {
     padding-right: 50px;
   }
+
   h2.section-title {
     font-size: 48px;
   }
+
   .nav.nav-right {
     margin-top: 30px;
   }
+
   .mt-lg-30 {
     margin-top: 30px !important;
   }
@@ -8949,28 +9009,36 @@ input.qty-val {
     display: -ms-flex;
     flex-direction: column;
   }
+
   .re-order .row .first {
     order: 2;
   }
+
   .re-order .row .second {
     order: 1;
   }
+
   .icon-wave::before {
     content: none;
   }
+
   .box-optimized {
     padding: 40px;
   }
+
   .text-display-2 {
     font-size: 50px;
     line-height: 58px;
   }
+
   .footer .width-20 {
     width: 100%;
   }
+
   .footer .width-16 {
     width: 100%;
   }
+
   .block-video .btn-paly-video {
     left: 0px;
     right: 0px;
@@ -8978,57 +9046,74 @@ input.qty-val {
     top: 50%;
     transform: translateY(-50%);
   }
+
   .pattern-white {
     padding-left: 15px;
     padding-right: 15px;
   }
+
   .btn.btn-select {
     padding: 10px 20px;
     font-size: 16px;
     line-height: 18px;
   }
+
   .burger-icon {
     top: 17px;
   }
+
   .sticky-bar.stick .burger-icon {
     top: 17px;
   }
+
   .block-img-we-do .block-chart {
     right: -5px;
   }
+
   .block-we-do .inner-image .block-image-bottom {
     right: -20px;
   }
+
   .list-partners li {
     width: 24%;
   }
+
   .text-mb-center {
     text-align: center !important;
   }
+
   .page-faqs-1 {
     background-size: auto 560px;
   }
+
   .box-login .login-left {
     min-height: 450px;
   }
+
   .box-comments ul li .item-comment {
     padding: 65px 0px 0px 0px;
   }
+
   .slider-news {
     padding: 0px;
   }
+
   .swiper-button-next-5, .swiper-button-prev-5 {
     display: none !important;
   }
+
   .section-title-large {
     font-size: 42px;
   }
+
   .banner-hero .block-banner {
     padding: 0;
   }
+
   .header-right {
     display: none;
   }
+
   .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-header-top {
     padding: 15px 30px 13px 30px;
     border-bottom: 1px solid #101828;
@@ -9039,13 +9124,16 @@ input.qty-val {
   .mobile-header-wrapper-style .mobile-header-wrapper-inner .mobile-header-content-area {
     padding: 30px;
   }
+
   .nav.nav-right {
     margin-top: 30px;
   }
+
   .box-head-single h3 {
     font-size: 36px;
     line-height: 1.2;
   }
+
   .social-share {
     margin-top: 25px;
   }
@@ -9053,9 +9141,11 @@ input.qty-val {
     padding: 10px 15px;
     vertical-align: middle;
   }
+
   .job-overview {
     padding: 25px !important;
   }
+
   .text-mb-sm-20 {
     margin: 0 0 20px 0 !important;
     display: block;
@@ -9068,33 +9158,41 @@ input.qty-val {
   .header.stick {
     padding: 15px 0;
   }
+
   .text-display-2 {
     font-size: 40px;
     line-height: 48px;
   }
+
   .text-heading-1 {
     font-size: 35px;
     line-height: 44px;
   }
+
   .text-heading-2 {
     font-size: 28px;
     line-height: 32px;
   }
+
   .text-heading-4 {
     font-size: 20px;
     line-height: 26px;
   }
+
   .text-body-lead-large {
     font-size: 20px;
     line-height: 28px;
   }
+
   .box-optimized {
     padding: 20px;
   }
+
   .block-we-do .inner-image .block-image-bottom {
     bottom: -50px;
     right: -5px;
   }
+
   .list-partners li {
     width: 32%;
     padding: 0px;
@@ -9102,10 +9200,12 @@ input.qty-val {
   .list-partners li a {
     padding: 10px 15px;
   }
+
   .text-display-3 {
     font-size: 35px;
     line-height: 42px;
   }
+
   .banner-2 .pr-40 {
     padding-right: 0px !important;
   }
@@ -9113,33 +9213,41 @@ input.qty-val {
     margin-left: 10px !important;
     margin-top: 15px;
   }
+
   .bg-service-1 .ml-40 {
     margin-left: 10px !important;
   }
+
   .btn-mb {
     margin-left: 0px !important;
   }
+
   .box-image .btn-play-middle {
     width: 70px;
     height: 70px;
     background-size: 70px;
   }
+
   .btn {
     padding: 15px 22px;
   }
   .btn.icon-arrow-left {
     padding-left: 50px;
   }
+
   .icon-arrow-right-white, .icon-arrow-right {
     padding-right: 45px;
     background-position: center right 20px;
   }
+
   .list-icons .item-icon.none-bd {
     margin-bottom: 20px;
   }
+
   .page-service-2 {
     background-size: auto 550px;
   }
+
   .images-lists img {
     margin-bottom: 25px;
   }
@@ -9155,9 +9263,11 @@ input.qty-val {
   .images-lists .img-5 {
     bottom: auto;
   }
+
   .box-login .login-left {
     min-height: 400px;
   }
+
   .box-quote {
     padding: 25px 15px;
   }
@@ -9165,32 +9275,40 @@ input.qty-val {
     font-size: 20px;
     line-height: 32px;
   }
+
   .text-heading-5 {
     font-size: 20px;
   }
+
   .text-heading-3 {
     font-size: 25px;
     line-height: 30px;
   }
+
   .single-detail p {
     font-size: 18px;
     line-height: 30px;
   }
+
   .form-comment .text-end {
     text-align: center !important;
   }
+
   .section-box.mt-70,
-  .section-box.mt-80,
-  .section-box.mt-100,
-  .section-box.mt-40 {
+.section-box.mt-80,
+.section-box.mt-100,
+.section-box.mt-40 {
     margin-top: 30px !important;
   }
+
   .header.sticky-bar .col-lg-7 .burger-icon {
     right: 15px;
   }
+
   .banner-hero.hero-1 h1 {
     font-size: 38px;
   }
+
   .banner-hero .block-banner .form-find {
     padding: 15px;
     margin-top: 40px !important;
@@ -9204,32 +9322,41 @@ input.qty-val {
   .banner-hero .block-banner .form-find form button {
     margin-top: 15px;
   }
+
   .swiper-button-next,
-  .swiper-button-prev {
+.swiper-button-prev {
     display: none;
   }
+
   h2.section-title {
     font-size: 32px;
     line-height: 48px;
   }
+
   .mt-sm-15 {
     margin-top: 15px !important;
   }
+
   .mt-sm-30 {
     margin-top: 30px !important;
   }
+
   .pt-sm-15 {
     padding-top: 15px;
   }
+
   .swiper-group-6 {
     max-height: 140px;
   }
+
   .box-swiper .swiper-container .item-logo {
     box-shadow: none;
   }
+
   .list-partners li {
     padding: 15px 15px;
   }
+
   .box-newsletter {
     padding: 50px 15px;
   }
@@ -9243,6 +9370,7 @@ input.qty-val {
   .box-newsletter form {
     display: block;
   }
+
   .footer .col-xs-6 {
     width: 50%;
   }
@@ -9254,9 +9382,11 @@ input.qty-val {
     margin-top: 15px;
     margin-left: -10px;
   }
+
   .nav-right li {
     margin-bottom: 15px;
   }
+
   .archive-header h3 {
     font-size: 32px;
     line-height: 1.2;
@@ -9268,16 +9398,20 @@ input.qty-val {
     padding-right: 0px;
     width: 100%;
   }
+
   .list-5-col li {
     width: 49%;
   }
+
   .page-service-2 {
     background-size: auto 650px;
   }
+
   .box-signup .box-form-signup {
     padding: 20px;
     margin-bottom: 120px !important;
   }
+
   .box-line-throught {
     padding: 0px 30px;
   }
@@ -9287,17 +9421,21 @@ input.qty-val {
   .box-line-throught::after {
     width: 26px;
   }
+
   .box-login .login-left {
     min-height: 300px;
   }
+
   .box-login-form .box-signup .box-form-signup {
     margin-bottom: 0px !important;
   }
+
   .tag-mb .tag-1 {
     padding: 10px 15px;
     font-size: 12px;
     line-height: 14px;
   }
+
   .block-pricing-3 {
     padding: 15px;
   }
@@ -9324,6 +9462,7 @@ input.qty-val {
   .container.wide {
     max-width: 1544px;
   }
+
   .box-login-form .box-signup {
     margin: 0px;
   }
@@ -9332,6 +9471,7 @@ input.qty-val {
   .mb-lg-100 {
     margin-bottom: 100px;
   }
+
   .mt-lg-100 {
     margin-top: 100px;
   }
@@ -9349,4 +9489,4 @@ input.qty-val {
 
 .play-reel {
   cursor: pointer;
-}/*# sourceMappingURL=style.css.map */
+}

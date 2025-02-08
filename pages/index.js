@@ -1,45 +1,30 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
-import gsap, { Power3, Sine } from "gsap";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import MuxPlayer, {
-  MuxPlayerProps,
-  MaxResolution,
-  MinResolution,
-  RenditionOrder,
-} from "@mux/mux-player-react";
-import { useEffect, useRef, useState } from "react";
+import MuxPlayer from "@mux/mux-player-react";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import "react-modal-video/css/modal-video.css";
 import FormProject from "../components/form-project/FormProject";
 import Layout from "../components/layout/Layout";
-import ModalVideos from "../components/elements/ModalVideo";
+// Note: The original GSAP animation has been replaced by Framer Motion.
+// If you still need GSAP for other purposes, you can import it separately.
+
 const ModalVideo = dynamic(import("react-modal-video"), {
   ssr: false,
 });
 
 function Index3() {
   const [isOpen, setOpen] = useState(false);
-  const yInfiniteEl = useRef();
-
-  useEffect(() => {
-    gsap.to(yInfiniteEl.current, {
-      y: 40,
-      repeat: -1,
-      yoyo: true,
-      duration: 1.5,
-      ease: "sine.inOut",
-    });
-  }, []);
 
   return (
-    <>
-      <Layout>
+    <Layout>
         <section
           id="home-hero"
           className="section-box position-relative overflow-hidden"
         >
-          <MuxPlayer
+          <MuxPlayer id="hp-reel"
             streamType="on-demand"
             playbackId="9aEC9vgcsVx01MgwwTGwU7G3i02B4jhtShGymd2HjyU8M"          
             metadataViewerUserId=""
@@ -49,10 +34,11 @@ function Index3() {
             loop={true}
             autoPlay={true}
             className='background-video'      
-            thumbnailTime={0}                             
+            thumbnailTime={0}   
+            controls={false}                          
           />
-          <div className="text-center brand-video-copy">
-            <h1 className="mt-10">
+          <div className="flex brand-video-copy">
+            <h1 className="text-3xl md:text-7xl font-bold mt-10">
               Forward Thinking
               <br className="d-lg-block d-none" /> Solutions
             </h1>
@@ -69,398 +55,201 @@ function Index3() {
           </div>
         </section>
 
-        <div className="section-box overflow-visible mt-80">
-          <div className="container">
-            <h2 className="text-heading-6 text-center color-gray-900 mb-60">
-              emPowered by the Best Software on Earth
-            </h2>
-            <div className="row">
-              <div className="col-lg-12">
-                <ul className="list-partners border-0 pb-0">
-                  <li>
-                    <Link href="/#">
-                      <a className="item-logo box-hover-shadow hover-up">
-                        <img alt="Adobe" src="/assets/imgs/logos/adobe.svg" />
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#">
-                      <a className="item-logo box-hover-shadow hover-up">
-                        <img
-                          alt="Figma Vector Logo"
-                          src="/assets/imgs/logos/figma.svg"
-                        />
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#">
-                      <a className="item-logo box-hover-shadow hover-up">
-                        <img
-                          alt="Netlify CMS Vector Logo"
-                          src="/assets/imgs/logos/netlifycms.svg"
-                        />
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#">
-                      <a className="item-logo box-hover-shadow hover-up">
-                        <img
-                          alt="Wordpress CMS Vector Logo"
-                          src="/assets/imgs/logos/wordpress.svg"
-                        />
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#">
-                      <a className="item-logo box-hover-shadow hover-up">
-                        <img
-                          alt="Strapi CMS Vector Logo"
-                          src="/assets/imgs/logos/strapi.svg"
-                        />
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#">
-                      <a className="item-logo box-hover-shadow hover-up">
-                        <img
-                          alt="Sanity CMS Vector Logo"
-                          src="/assets/imgs/logos/sanity.svg"
-                        />
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#">
-                      <a className="item-logo box-hover-shadow hover-up">
-                        <img
-                          alt="React.js Vector Logo"
-                          src="/assets/imgs/logos/reactjs.svg"
-                        />
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#">
-                      <a className="item-logo box-hover-shadow hover-up">
-                        <img
-                          alt="Next.js"
-                          src="/assets/imgs/logos/nextjs.svg"
-                        />
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#">
-                      <a className="item-logo box-hover-shadow hover-up">
-                        <img
-                          alt="TailwindCSS"
-                          src="/assets/imgs/logos/tailwindcss.svg"
-                        />
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#">
-                      <a className="item-logo box-hover-shadow hover-up">
-                        <img
-                          alt="HTML5 Vector Logo"
-                          src="/assets/imgs/logos/html5.svg"
-                        />
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#">
-                      <a className="item-logo box-hover-shadow hover-up">
-                        <img
-                          alt="Bootstrap Vector Logo"
-                          src="/assets/imgs/logos/bootstrap.svg"
-                        />
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#">
-                      <a className="item-logo box-hover-shadow hover-up">
-                        <img
-                          alt="Netlify Vector Logo"
-                          src="/assets/imgs/logos/netlify.svg"
-                        />
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#">
-                      <a className="item-logo box-hover-shadow hover-up">
-                        <img
-                          alt="Pantheon"
-                          src="/assets/imgs/logos/pantheon.svg"
-                        />
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#">
-                      <a className="item-logo box-hover-shadow hover-up">
-                        <img
-                          alt="Vercel Vector Logo"
-                          src="/assets/imgs/logos/vercel.svg"
-                        />
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/#">
-                      <a className="item-logo box-hover-shadow hover-up">
-                        <img
-                          alt="Heroku Vector Logo"
-                          src="/assets/imgs/logos/heroku.svg"
-                        />
-                      </a>
-                    </Link>
-                  </li>
-                </ul>
+      {/* Partners Section */}
+      <div className="my-20 overflow-visible">
+        <div className="max-w-7xl mx-auto px-5">
+          <h2 className="text-center text-lg font-semibold text-gray-900 mb-16">
+            emPowered by the Best Software on Earth
+          </h2>
+          <div className="flex flex-wrap justify-center gap-12">
+            {[
+              { href: "/#", alt: "Adobe", src: "/assets/imgs/logos/adobe.svg" },
+              { href: "/#", alt: "Figma", src: "/assets/imgs/logos/figma.svg" },
+              { href: "/#", alt: "Netlify CMS", src: "/assets/imgs/logos/netlifycms.svg" },
+              { href: "/#", alt: "Wordpress", src: "/assets/imgs/logos/wordpress.svg" },
+              { href: "/#", alt: "Strapi", src: "/assets/imgs/logos/strapi.svg" },
+              { href: "/#", alt: "Sanity", src: "/assets/imgs/logos/sanity.svg" },
+              { href: "/#", alt: "React.js", src: "/assets/imgs/logos/reactjs.svg" },
+              { href: "/#", alt: "Next.js", src: "/assets/imgs/logos/nextjs.svg" },
+              { href: "/#", alt: "TailwindCSS", src: "/assets/imgs/logos/tailwindcss.svg" },
+              { href: "/#", alt: "HTML5", src: "/assets/imgs/logos/html5.svg" },
+              { href: "/#", alt: "Bootstrap", src: "/assets/imgs/logos/bootstrap.svg" },
+              { href: "/#", alt: "Netlify", src: "/assets/imgs/logos/netlify.svg" },
+              { href: "/#", alt: "Vercel", src: "/assets/imgs/logos/vercel.svg" },
+              { href: "/#", alt: "Heroku", src: "/assets/imgs/logos/heroku.svg" },
+              { href: "/#", alt: "Pantheon", src: "/assets/imgs/logos/pantheon.svg" },
+            ].map((partner, index) => (
+              <Link key={index} href={partner.href}>
+                <a className="transition transform hover:-translate-y-1 hover:shadow-lg">
+                  <img alt={partner.alt} src={partner.src} className="mx-auto" />
+                </a>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Work Section */}
+      <section className="py-8">
+        <div className="max-w-7xl mx-auto px-4 mt-[120px] flex flex-wrap">
+          {/* Image Column */}
+          <div className="w-full lg:w-1/2 px-4">
+            <motion.img
+              src="/assets/imgs/work/work-barclay-rex.webp"
+              alt="Barclay Rex website on laptop"
+              className="rounded-lg w-full"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            />
+          </div>
+          {/* Content Column */}
+          <div className="w-full lg:w-1/2 px-4 justify-center">
+            <span className="bg-green-100 text-green-900 px-4 py-2 rounded-full">Our Work</span>
+            <h3 className="mt-9 text-5xl font-bold text-gray-900">Barclay Rex</h3>
+            <p className="text-xl text-gray-600 my-4">
+              Digital e-Commerce Strategy, Progressive Web Application Development
+            </p>
+            <div className="flex items-center mt-8 space-x-4">
+              <Link href="/case-study/barclay-rex" passHref>
+                <a className="inline-flex items-center text-gray-900 border bg-gray-100 px-6 py-3 rounded-full transition">
+                  View Case Study
+                </a>
+              </Link>
+              <a
+                href="https://barclayrex.com"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center bg-white text-gray-900 border border-gray-300 hover:bg-gray-100 px-6 py-3 rounded-full transition"
+              >
+                Visit Website
+              </a>
+            </div>
+            <div className="mt-12">
+              <h2 className="text-center text-sm font-semibold text-gray-900 mb-4">
+                Powered by
+              </h2>
+              <div className="flex justify-center gap-6">
+                {[
+                  { href: "/#", alt: "Adobe", src: "/assets/imgs/logos/adobe.svg" },
+                  { href: "/#", alt: "Bootstrap", src: "/assets/imgs/logos/tailwindcss.svg" },
+                  { href: "/#", alt: "Strapi CMS", src: "/assets/imgs/logos/strapi.svg" },
+                  { href: "/#", alt: "Next.js", src: "/assets/imgs/logos/nextjs.svg" },
+                  { href: "/#", alt: "Vercel", src: "/assets/imgs/logos/vercel.svg" },
+                ].map((partner, index) => (
+                  <Link key={index} href={partner.href}>
+                    <a className="transition transform hover:-translate-y-1 hover:shadow-lg">
+                      <img alt={partner.alt} src={partner.src} className="mx-auto" />
+                    </a>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <section className="section-box">
-          <div className="container mt-120">
-            <div className="row">
-              <div className="col-lg-6 col-sm-12 block-img-we-do">
-                <img
-                  className="bdrd-16 img-responsive"
-                  // ref={yInfiniteEl}
-                  src="/assets/imgs/work/work-barclay-rex.webp"
-                  alt="Barclay Rex website on laptop"
+      {/* Call-to-Action Section */}
+      <section className="py-[60px] mt-[70px] bg-green-900">
+        <div className="flex justify-center items-center space-x-5">
+          <Link href="/#get-started" className="cursor-pointer">
+            <span className="inline-flex items-center font-bold bg-black text-white transition px-6 py-3 rounded-full cursor-pointer">
+              Get Started
+            </span>
+          </Link>
+          <Link href="/work" className="cursor-pointer">
+            <span className="inline-flex items-center font-bold bg-white text-gray-900 border border-gray-300 transition px-6 py-3 rounded-full cursor-pointer">
+              Our Work
+            </span>
+          </Link>
+        </div>
+      </section>
+
+      {/* CMS Recommendation Section */}
+      <section className="py-8">
+        <div className="max-w-7xl mx-auto px-4 mt-16">
+          <div className="flex justify-center px-4">
+            <span className="bg-green-100 text-green-900 mr-5 px-4 py-2 rounded-full">
+              Software Solutions
+            </span>
+          </div>
+          <h2 className="text-center text-5xl font-bold text-gray-900 mb-4">
+            Our recommended CMS
+            <br />
+            for your next project
+          </h2>
+          <p className="mt-8 text-2xl text-gray-600 text-center max-w-3xl mx-auto">
+            Sanity has a long list of technical benefits, but the clean interface and visual cues make it our recommended content management system. It provides a hassle-free editing experience and adds long-lasting value for our clients.
+          </p>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 mt-12">
+          <div className="flex justify-center">
+            <div className="w-full lg:w-10/12">
+              <div className="rounded-lg shadow-lg overflow-hidden img-responsive bdrd-16 effect-1">
+                <MuxPlayer
+                  streamType="on-demand"
+                  playbackId="xVEspFYOw6gtvRjEMk8xFnrjXtJ3YqGzajrvtjdV1cU"
+                  metadataVideoTitle=""
+                  metadataViewerUserId=""
+                  primaryColor="#FFFFFF"
+                  secondaryColor="#000000"
+                  autoPlay={true}
+                  loop={true}
+                  muted={true}
+                  className="w-full h-full"
                 />
               </div>
-              <div className="col-lg-6 col-sm-12 block-we-do">
-                <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">
-                  Work
-                </span>
-                <h3 className="text-heading-1 mt-30">Barclay Rex</h3>
-                <p className="text-body-lead-large color-gray-600 mt-30">
-                  Digital e-Commerce Strategy, Progressive Web Application
-                  Development
-                </p>
-                <div className="align-items-center">
-                  <Link href="/case-study/barclay-rex" passHref>
-                    <span className="btn btn-light icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3">
-                      View Case Study
-                    </span>
-                  </Link>
-                  <a
-                    href="https://barclayrex.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3"
-                  >
-                    Visit Website
-                  </a>
-                </div>
-                <div className="row">
-                  <div className="col-12 mt-50">
-                    <h2 className="text-heading-7 text-center color-gray-900 mb-10">
-                      Powered by
-                    </h2>
-                    <ul className="list-partners border-0">
-                      <li>
-                        <Link href="/#">
-                          <a className="item-logo box-hover-shadow hover-up">
-                            <img
-                              alt="Adobe"
-                              src="/assets/imgs/logos/adobe.svg"
-                            />
-                          </a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/#">
-                          <a className="item-logo box-hover-shadow hover-up">
-                            <img
-                              alt="Bootstrap"
-                              src="/assets/imgs/logos/tailwindcss.svg"
-                            />
-                          </a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/#">
-                          <a className="item-logo box-hover-shadow hover-up">
-                            <img
-                              alt="Strapi CMS"
-                              src="/assets/imgs/logos/strapi.svg"
-                            />
-                          </a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/#">
-                          <a className="item-logo box-hover-shadow hover-up">
-                            <img
-                              alt="Next.js"
-                              src="/assets/imgs/logos/nextjs.svg"
-                            />
-                          </a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/#">
-                          <a className="item-logo box-hover-shadow hover-up">
-                            <img
-                              alt="Vercel"
-                              src="/assets/imgs/logos/vercel.svg"
-                            />
-                          </a>
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-        </section>
-
-        <section className="section-box pt-100 pb-100 mt-100 bg-green-900">
-          <div className="d-flex justify-content-center">
-            <Link href="/#get-started">
-              <a className="btn btn-black icon-arrow-right-white mb-15 hover:text-black hover:bg-white">
-                Get Started
-              </a>
-            </Link>
-            <Link href="/work">
-              <a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-15 hover:bg-black">
-                Our Work
+        </div>
+        <div className="max-w-7xl mx-auto px-4 mt-10">
+          <div className="flex flex-wrap">
+            <div className="w-full lg:w-1/3 px-4 mt-12">
+              <h4 className="text-2xl font-semibold">
+                Real-Time Collaboration
+              </h4>
+              <p className="mt-4 text-lg text-gray-600">
+                Track changes with live multi-user editing, visual cues, and communication tools.
+              </p>
+            </div>
+            <div className="w-full lg:w-1/3 px-4 mt-12">
+              <h4 className="text-2xl font-semibold">
+                Content First Experience
+              </h4>
+              <p className="mt-4 text-lg text-gray-600">
+                An intuitive administrative interface that lets you edit content without software hassles.
+              </p>
+            </div>
+            <div className="w-full lg:w-1/3 px-4 mt-12">
+              <h4 className="text-2xl font-semibold">Powerful Solution</h4>
+              <p className="mt-4 text-lg text-gray-600">
+                Its powerful API allows dynamic relational systems and ecommerce platforms to come to life.
+              </p>
+            </div>
+          </div>
+          <div className="flex justify-center mt-9 font-bold">
+            <Link href="/sanity-cms">
+              <a className="inline-flex items-center bg-black text-white transition px-6 py-3 rounded-full hover:bg-gray-800">
+                Overview of Sanity CMS
               </a>
             </Link>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="section-box">
-          <div className="section-box mt-70">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-2 col-sm-2 col-12" />
-                <div className="col-lg-8 col-sm-8 col-12 text-center">
-                  <div className="d-flex p-40 justify-content-center">
-                    <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">
-                      Software Solutions
-                    </span>
-                  </div>
-                  <h2 className="text-heading-1 color-gray-900 mb-10">
-                    Our recommended CMS
-                    <br />
-                    for your next project
-                  </h2>
-                  <p className="ft-lead text-body-lead-large color-gray-600 mt-30">
-                    Sanity has a long list of technical benefits, but the clean
-                    interface and visual cues make it our recommended content
-                    management system. It provides a hassle-free editing
-                    experience and adds long-lasting value for our clients.
-                  </p>
-                </div>
-                <div className="col-lg-2 col-sm-2 col-12" />
-              </div>
-            </div>
-            <div className="container mt-50">
-              <div className="row">
-                <div className="col-lg-1" />
-                <div className="col-lg-10">
-                  <div className="box-image">
-                    <div className="img-responsive bdrd-16 shadow effect-1">
-                      <MuxPlayer
-                        streamType="on-demand"
-                        playbackId="xVEspFYOw6gtvRjEMk8xFnrjXtJ3YqGzajrvtjdV1cU"
-                        metadataVideoTitle=""
-                        metadataViewerUserId=""
-                        primaryColor="#FFFFFF"
-                        secondaryColor="#000000"
-                        autoPlay={true}
-                        loop={true}
-                        muted={true}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-1" />
-              </div>
-            </div>
-          </div>
-          <div className="section-box mt-10">
-            <div className="container mt-40">
-              <div className="row">
-                <div className="col-lg-4 col-md-12 col-sm-12">
-                  <div className="list-icons mt-50">
-                    <div className="item-icon border-0">
-                      <h4 className="text-heading-4">
-                        Real-Time Collaboration
-                      </h4>
-                      <p className="text-body-text color-gray-600 mt-15">
-                        Track changes with live multi-user editing, visual cues,
-                        and communication tools.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-4 col-md-12 col-sm-12">
-                  <div className="list-icons mt-50">
-                    <div className="item-icon border-0">
-                      <h4 className="text-heading-4">
-                        Content First Experience
-                      </h4>
-                      <p className="text-body-text color-gray-600 mt-15">
-                        An inituive administrative interface with no software to
-                        manage means you're never blocked from editing content.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-4 col-md-12 col-sm-12">
-                  <div className="list-icons mt-50">
-                    <div className="item-icon border-0">
-                      <h4 className="text-heading-4">Powerful Solution</h4>
-                      <p className="text-body-text color-gray-600 mt-15">
-                        It's powerful API allows manifestation of dynamic
-                        relational systems and ecommerce platforms.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="d-flex justify-content-center">
-                  <Link href="/sanity-cms">
-                    <a className="btn btn-black icon-arrow-right-white mb-15">
-                      Overview of Sanity CMS
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      <FormProject />
 
-        <FormProject />
-
-        <ModalVideo
-          channel="youtube"
-          videoId="-SqGLNUkM30"
-          youtube={{
-            autoplay: 1,
-            rel: 0,
-          }}
-          // url="https://motoringstyle.com/manifest-brand-2002-2003-final.mp4"
-          isOpen={isOpen}
-          onClose={() => setOpen(false)}
-        />
-      </Layout>
-    </>
+      <ModalVideo
+        channel="youtube"
+        videoId="-SqGLNUkM30"
+        youtube={{
+          autoplay: 1,
+          rel: 0,
+        }}
+        isOpen={isOpen}
+        onClose={() => setOpen(false)}
+      />
+    </Layout>
   );
 }
 

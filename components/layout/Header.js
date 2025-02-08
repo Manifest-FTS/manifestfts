@@ -103,14 +103,14 @@ const Header = ({ handleOpen, headerStyle }) => {
                                         </li>
                                     </ul>
                                 </nav>
-                                <div className="burger-icon burger-icon-white" onClick={handleOpen}>
+                                <div className="burger-icon burger-icon-white block xg:hidden" onClick={handleOpen}>
                                     <span className="burger-icon-top" /><span className="burger-icon-mid" /><span className="burger-icon-bottom" />
                                 </div>
                             </div>
                         </div>
-                        <div className="header-right">
-                            <div className="block-signin">
-                                <Link href="/#get-started"><a className="btn btn-default hover-up icon-arrow-right">Get Started</a></Link>
+                        <div className="header-right hidden md:block">
+                            <div className="block-signin mr-6">
+                                <Link href="/#get-started"><a className="btn btn-default hover-up px-3 py-3">Get Started</a></Link>
                             </div>
                         </div>
                     </div>
