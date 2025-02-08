@@ -34,7 +34,7 @@ const FormProject = () => {
         <div className="bdrd-58 box-gray-100 icon-wave">
           {status ? (
             <div className="col-lg-12 mt-15">
-              <h3>We&apos;ve received your message</h3>
+              <h3 className="text-2xl font-bold mb-2">We&apos;ve received your message</h3>
               <p>
                 Our team will be in touch soon, thank you for connecting with
                 us.

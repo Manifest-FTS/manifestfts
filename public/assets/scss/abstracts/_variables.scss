@@ -1,113 +1,128 @@
 //1.FONT
 @font-face {
-    font-family: "uicons-regular-rounded";
-    src: url("../fonts/uicons/uicons-regular-rounded.eot#iefix") format("embedded-opentype"),
+  font-family: "uicons-regular-rounded";
+  src: url("../fonts/uicons/uicons-regular-rounded.eot#iefix") format("embedded-opentype"),
     url("../fonts/uicons/uicons-regular-rounded.woff2") format("woff2"),
     url("../fonts/uicons/uicons-regular-rounded.woff") format("woff");
 }
 
 /* Webfont: Redtone-Bold */
 @font-face {
-    font-family: 'Redzone';
-    src: url('../fonts/Redtone-Bold.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/Redtone-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/Redtone-Bold.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/Redtone-Bold.woff2') format('woff2'), /* Modern Browsers */
-         url('../fonts/Redtone-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
-    font-style: normal;
-    font-weight: bold;
-    text-rendering: optimizeLegibility;
+  font-family: 'Redzone';
+  src: url('../fonts/Redtone-Bold.eot');
+  /* IE9 Compat Modes */
+  src: url('../fonts/Redtone-Bold.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('../fonts/Redtone-Bold.woff') format('woff'),
+    /* Modern Browsers */
+    url('../fonts/Redtone-Bold.woff2') format('woff2'),
+    /* Modern Browsers */
+    url('../fonts/Redtone-Bold.ttf') format('truetype');
+  /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Redtone-Regular */@font-face {
-    font-family: 'Redzone';
-    src: url('../fonts/Redtone-Regular.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/Redtone-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/Redtone-Regular.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/Redtone-Regular.woff2') format('woff2'), /* Modern Browsers */
-         url('../fonts/Redtone-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
-    font-style: normal;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
+/* Webfont: Redtone-Regular */
+@font-face {
+  font-family: 'Redzone';
+  src: url('../fonts/Redtone-Regular.eot');
+  /* IE9 Compat Modes */
+  src: url('../fonts/Redtone-Regular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('../fonts/Redtone-Regular.woff') format('woff'),
+    /* Modern Browsers */
+    url('../fonts/Redtone-Regular.woff2') format('woff2'),
+    /* Modern Browsers */
+    url('../fonts/Redtone-Regular.ttf') format('truetype');
+  /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
 }
 
 @font-face {
-    font-family: 'GT Ricardo';
-    src: url('../fonts/GTRicardo-SemiBold.eot');
-    src: url('../fonts/GTRicardo-SemiBold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/GTRicardo-SemiBold.woff2') format('woff2'),
-        url('../fonts/GTRicardo-SemiBold.woff') format('woff'),
-        url('../fonts/GTRicardo-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'GT Ricardo';
+  src: url('../fonts/GTRicardo-SemiBold.eot');
+  src: url('../fonts/GTRicardo-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/GTRicardo-SemiBold.woff2') format('woff2'),
+    url('../fonts/GTRicardo-SemiBold.woff') format('woff'),
+    url('../fonts/GTRicardo-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'GT Ricardo';
-    src: url('../fonts/GTRicardo-Bold.eot');
-    src: url('../fonts/GTRicardo-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/GTRicardo-Bold.woff2') format('woff2'),
-        url('../fonts/GTRicardo-Bold.woff') format('woff'),
-        url('../fonts/GTRicardo-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'GT Ricardo';
+  src: url('../fonts/GTRicardo-Bold.eot');
+  src: url('../fonts/GTRicardo-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/GTRicardo-Bold.woff2') format('woff2'),
+    url('../fonts/GTRicardo-Bold.woff') format('woff'),
+    url('../fonts/GTRicardo-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'GT Ricardo';
-    src: url('../fonts/GTRicardo-Regular.eot');
-    src: url('../fonts/GTRicardo-Regular.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/GTRicardo-Regular.woff2') format('woff2'),
-        url('../fonts/GTRicardo-Regular.woff') format('woff'),
-        url('../fonts/GTRicardo-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'GT Ricardo';
+  src: url('../fonts/GTRicardo-Regular.eot');
+  src: url('../fonts/GTRicardo-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/GTRicardo-Regular.woff2') format('woff2'),
+    url('../fonts/GTRicardo-Regular.woff') format('woff'),
+    url('../fonts/GTRicardo-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
+
 // Poppins
 @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins-Bold.eot');
-    src: url('../fonts/Poppins-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Poppins-Bold.woff2') format('woff2'),
-        url('../fonts/Poppins-Bold.woff') format('woff'),
-        url('../fonts/Poppins-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Bold.eot');
+  src: url('../fonts/Poppins-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Poppins-Bold.woff2') format('woff2'),
+    url('../fonts/Poppins-Bold.woff') format('woff'),
+    url('../fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins-Regular.eot');
-    src: url('../fonts/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Poppins-Regular.woff2') format('woff2'),
-        url('../fonts/Poppins-Regular.woff') format('woff'),
-        url('../fonts/Poppins-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.eot');
+  src: url('../fonts/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Poppins-Regular.woff2') format('woff2'),
+    url('../fonts/Poppins-Regular.woff') format('woff'),
+    url('../fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins-SemiBold.eot');
-    src: url('../fonts/Poppins-SemiBold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Poppins-SemiBold.woff2') format('woff2'),
-        url('../fonts/Poppins-SemiBold.woff') format('woff'),
-        url('../fonts/Poppins-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-SemiBold.eot');
+  src: url('../fonts/Poppins-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Poppins-SemiBold.woff2') format('woff2'),
+    url('../fonts/Poppins-SemiBold.woff') format('woff'),
+    url('../fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 
 
-$font-heading: "Redzone", sans-serif;
-$font-text: "Poppins", sans-serif;
-$font-body: "Poppins", sans-serif;
+$font-heading: "Redzone",
+sans-serif;
+$font-text: "Poppins",
+sans-serif;
+$font-body: "Poppins",
+sans-serif;
 $font-3xs: 10px;
 $font-xxs: 12px;
 $font-xs: 14px;
@@ -121,8 +136,6 @@ $font-3xl: 58px;
 
 //2.COLOR
 // New
-$color-gray-600: #475467;
-$color-gray-900: #101828;
 $color-green-900: #3F8077;
 $color-green-500: #264D47;
 $color-green-100: #ECF2F1;
@@ -150,7 +163,7 @@ $color-gray-900: #101828;
 $color-gray-1000: #1F2938;
 $color-gray-1100: #7E7E7E;
 $color-gray-1200: #9A9A9A;
-$color-gray: D1DAE4;
+$color-gray: #D1DAE4;
 // End New
 
 //3.Boxshadow
@@ -159,7 +172,7 @@ $box-shadow-1: 14px 14px 36px rgba(153, 153, 153, 0.22);
 $box-shadow-2: 0px 45px 80px rgba(0, 0, 0, 0.04);
 $box-shadow-3: 0px 47px 65px rgba(21, 28, 38, 0.1);
 $box-shadow-4: 4px 6px 23px rgba(228, 92, 35, 0.1);
-$box-shadow-5: 4px 4px 40px rgba(16,24,40,0.1);
+$box-shadow-5: 4px 4px 40px rgba(16, 24, 40, 0.1);
 $box-shadow-inner: inset 0px 40px 80px #FCFCFC;
 // End new
 
@@ -194,12 +207,10 @@ $background-bg-12: #3F6980;
 // 6. text-shadow
 $text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 // 7. breakpoints
-$grid-breakpoints: (
-    xs: 0,
-    xsm: 450px,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px,
-    xxl: 1400px
-);
+$grid-breakpoints: (xs: 0,
+  xsm: 450px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px);
