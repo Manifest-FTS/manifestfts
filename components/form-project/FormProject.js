@@ -1,10 +1,24 @@
 import Link from "next/link";
 import React, { useState } from "react";
+import { toast } from "react-hot-toast";
+
 const FormProject = () => {
   const [status, setStatus] = useState(false);
+  const [showVerification, setShowVerification] = useState(false);
+  const [userAnswer, setUserAnswer] = useState("");
 
   async function handleOnSubmit(e) {
     e.preventDefault();
+    setShowVerification(true);
+  }
+
+  async function verifyAndSend(e) {
+    e.preventDefault();
+    if (userAnswer !== "10") {
+      toast.error("Human verification failed");
+      return;
+    }
+
     const formData = {};
     Array.from(e.currentTarget.elements).forEach((field) => {
       if (!field.name) return;
@@ -23,9 +37,6 @@ const FormProject = () => {
     } catch (e) {
       setStatus(false);
     }
-
-    const { error } = await res.json();
-    console.log(formData);
   }
 
   return (
@@ -55,7 +66,7 @@ const FormProject = () => {
               </div>
               <div className="col-lg-12">
                 <div className="row">
-                  <form className="row" method="post" onSubmit={handleOnSubmit}>
+                  <form className="row" method="post" onSubmit={showVerification ? verifyAndSend : handleOnSubmit}>
                     <input type="hidden" name="formType" value="getQuote" />
                     <div className="col-lg-6">
                       <div className="form-group">
@@ -111,12 +122,26 @@ const FormProject = () => {
                         />
                       </div>
                     </div>
+                    {showVerification && (
+                      <div className="col-lg-12">
+                        <div className="form-group">
+                          <label className="text-sm">What is 2 + 8?</label>
+                          <input
+                            className="form-control mt-2"
+                            type="text"
+                            value={userAnswer}
+                            onChange={(e) => setUserAnswer(e.target.value)}
+                            required
+                          />
+                        </div>
+                      </div>
+                    )}
                     <div className="col-lg-12 mt-15">
                       <button
                         className="btn btn-black icon-arrow-right-white mr-40 mb-20"
                         type="submit"
                       >
-                        Send Message
+                        {showVerification ? "Verify & Send" : "Send Message"}
                       </button>
                       <br className="d-lg-none d-block" />
                       <span className="text-body-text-md color-gray-500 mb-20">
