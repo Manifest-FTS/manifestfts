@@ -10,7 +10,7 @@ const ContinuousTestimonialSlider = () => {
     const data = [
         {
             avatar: "cfuscarino.png",
-            name: "Christian F.",
+            name: "Christian Fuscarino",
             title: "Executive Director",
             company: "Garden State Equality",
             quote: "Working with ManifestFTS has truly been a breath of fresh air. Their innovative approach and technical expertise have helped us drive our mission forward in ways we never imagined. I highly recommend them for any organization looking for reliable, mission-driven partners.",
@@ -26,7 +26,7 @@ const ContinuousTestimonialSlider = () => {
         },
         {
             avatar: "vnastri.png",
-            name: "Vanessa N.",
+            name: "Vanessa Nastri",
             title: "CEO",
             company: "Barclay Rex Cigars",
             quote: "Kevin and his team are true professionals—efficient, skilled, and reliable. They consistently deliver quality work that helps us stand out in a competitive industry. ManifestFTS is an essential partner for our business.",
