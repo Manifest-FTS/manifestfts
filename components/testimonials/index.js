@@ -45,7 +45,7 @@ const ContinuousTestimonialSlider = () => {
             name: "Kevin Adams",
             title: "Photographer",
             company: "Kadamsphoto.com",
-            quote: "I needed a digital strategy that reflected my vision and artistic style. ManifestFTS delivered beyond my expectations, providing a seamless and elegant platform for showcasing my work.",
+            quote: "I needed a reliable partner to maintain and optimize my digital presence while ensuring my work was showcased seamlessly. ManifestFTS exceeded my expectations, providing top-tier hosting, maintenance, and updates that keep my platform running smoothly and looking its best.",
             bg: ""
         },
         {
