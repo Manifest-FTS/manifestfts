@@ -7,6 +7,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import "react-modal-video/css/modal-video.css";
 import FormProject from "../components/form-project/FormProject";
+import Testimonials from "../components/testimonials";
 import Layout from "../components/layout/Layout";
 // Note: The original GSAP animation has been replaced by Framer Motion.
 // If you still need GSAP for other purposes, you can import it separately.
@@ -236,6 +237,8 @@ function Index3() {
           </div>
         </div>
       </section>
+
+      <Testimonials />
 
       <FormProject />
 
