@@ -21,7 +21,7 @@ const ContinuousTestimonialSlider = () => {
             name: "Kevin Adams",
             title: "Executive Director & Founder",
             company: "Waterfall Keepers of NC",
-            quote: "ManifestFTS provided us with the tools and strategy we needed to expand our conservation efforts. Their attention to detail and commitment to our mission have been invaluable, and we’re thrilled with the results.",
+            quote: "ManifestFTS did an amazing job transforming our Junior Waterfall keepers online presence. Kevin provided just enough tools and a simple strategy we needed to redesign our new pages and expand our conservation efforts. Their attention to detail and commitment to our mission have been invaluable, and we’re thrilled with the results.",
             bg: "bd-bg-6"
         },
         {
@@ -29,7 +29,7 @@ const ContinuousTestimonialSlider = () => {
             name: "Vanessa Nastri",
             title: "CEO",
             company: "Barclay Rex Cigars",
-            quote: "Kevin and his team are true professionals—efficient, skilled, and reliable. They consistently deliver quality work that helps us stand out in a competitive industry. ManifestFTS is an essential partner for our business.",
+            quote: "Kevin and his team are true professionals—efficient, skilled, and reliable. They consistently deliver quality work that helps us stand out in a competitive industry. ManifestFTS has been an essential partner for our business.",
             bg: "bd-bg-10"
         },
         {
@@ -37,7 +37,7 @@ const ContinuousTestimonialSlider = () => {
             name: "Frank Salzano",
             title: "Astrologer",
             company: "Medicine of The Starry Heavens",
-            quote: "The expertise and personalized approach from ManifestFTS have helped me enhance my online presence and connect with my clients on a deeper level. Their work is truly transformative.",
+            quote: "The expertise and personalized approach from Kevin at ManifestFTS have helped me enhance my online presence and connect with my clients on a deeper level. His work is truly transformative.",
             bg: "bd-bg-6"
         },
         {
@@ -45,7 +45,7 @@ const ContinuousTestimonialSlider = () => {
             name: "Kevin Adams",
             title: "Photographer",
             company: "Kadamsphoto.com",
-            quote: "I needed a reliable partner to maintain and optimize my digital presence while ensuring my work was showcased seamlessly. ManifestFTS exceeded my expectations, providing top-tier hosting, maintenance, and updates that keep my platform running smoothly and looking its best.",
+            quote: "I needed a reliable partner to maintain and optimize my digital presence while ensuring my work was showcased seamlessly. Daniel at ManifestFTS exceeded my expectations, providing top-tier hosting, maintenance, and updates that keep my platform running smoothly and looking its best.",
             bg: ""
         },
         {
