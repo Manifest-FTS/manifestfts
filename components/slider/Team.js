@@ -52,7 +52,7 @@ const TeamSlider = () => {
                         <Link href="http://linkedin.com/in/kevinorin"><a className="icon-socials icon-linkedin"></a></Link>
                     </div>
                 </div>
-                <div className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl">
+                {/* <div className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl">
                     <div className="mb-4">
                         <img src="/assets/imgs/page/about/1/mohammed_masum.webp" alt="Mohammed Masum" className="w-full rounded-lg" />
                     </div>
@@ -65,7 +65,7 @@ const TeamSlider = () => {
                       </Link>
                       <Link href="https://www.linkedin.com/in/mmasum/"><a className="icon-socials icon-linkedin"></a></Link>
                     </div>
-                </div>
+                </div> */}
                 <div className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl">
                     <div className="mb-4">
                         <img src="/assets/imgs/page/about/1/daniel_kane.webp" alt="Daniel Kane" className="w-full rounded-lg" />
