@@ -56,7 +56,7 @@ const TeamSlider = () => {
                     <div className="mb-4">
                         <img src="/assets/imgs/page/about/1/mohammed_masum.webp" alt="Mohammed Masum" className="w-full rounded-lg" />
                     </div>
-                    <span className="text-gray-500 text-sm">Business Development, Project Manager</span>
+                    <span className="text-gray-500 text-sm">Business Analyst & Project Manager</span>
                     <h3 className="text-xl font-semibold mt-2 mb-2">Mohammed Masum</h3>
                     <span className="text-gray-600 text-sm">Let’s Connect</span>
                     <div className="social-bottom flex space-x-3">
