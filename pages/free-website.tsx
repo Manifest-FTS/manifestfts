@@ -143,6 +143,7 @@ const WordPressLandingPage = () => {
       <Head>
         <title>WordPress Hosting Solutions - Fast & Reliable | ManifestFTS</title>
         <meta name="description" content="Discover managed WordPress hosting services. WordPress hosting for seamless performance, security, and uptime. Let our expert engineers optimize your website." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="keywords" content="WordPress hosting, managed WordPress hosting, WordPress support, fast hosting, reliable hosting, WordPress security, performance optimization" />
         <meta property="og:title" content="Premium WordPress Hosting | ManifestFTS" />
         <meta property="og:description" content="Experience top-tier WordPress hosting with expert management and fast, secure, and reliable hosting services tailored to your needs." />
@@ -472,18 +473,21 @@ const WordPressLandingPage = () => {
           animate={{ opacity: isFormVisible ? 1 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="bg-white p-4 md:p-8 max-w-[90%] md:max-w-6xl mx-auto max-h-[90%] rounded-lg shadow-lg relative overflow-hidden">
+          <div className="bg-white p-4 md:p-8 max-w-[90%] md:max-w-6xl mx-auto max-h-[90vh] rounded-lg shadow-lg relative overflow-auto">
             {/* Close Icon */}
             <button
               onClick={handleCloseForm}
-              className="absolute top-4 right-4 text-gray-600 text-3xl"
+              className="absolute top-4 right-4 text-gray-600 text-3xl z-10"
             >
               &times;
             </button>
             <h2 className="text-3xl mb-4">Tell Us About Your Site</h2>
             
-            {/* Form container */}
-            <form className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-6 overflow-y-auto max-h-[80vh] pr-8 pb-6 form-scrollbar" onSubmit={handleOnSubmit}>
+            {/* Form container - Improved for mobile scrolling */}
+            <form 
+              className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-6 overflow-y-auto pb-6 form-scrollbar" 
+              onSubmit={handleOnSubmit}
+            >
               <input type="hidden" name="formType" value="wordpressHosting" />
               <input type="hidden" name="selectedPlan" value={selectedPlan} />
               
@@ -524,10 +528,23 @@ const WordPressLandingPage = () => {
                   placeholder="Enter your phone number"
                 />
               </div>
+
+
+              {/* Phone */}
+              <div className="flex flex-col">
+                <label htmlFor="businessName" className="block text-lg text-gray-600">Business Name</label>
+                <input
+                  type="text"
+                  id="businessName"
+                  name="businessName"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                  placeholder="Enter your business name"
+                />
+              </div>
               
               {/* Website URL */}
               <div className="flex flex-col">
-                <label htmlFor="websiteUrl" className="block text-lg text-gray-600">Website URL (Optional)</label>
+                <label htmlFor="websiteUrl" className="block text-lg text-gray-600">Website URL If You Have One Already (Optional)</label>
                 <input
                   type="url"
                   id="websiteUrl"
@@ -537,22 +554,9 @@ const WordPressLandingPage = () => {
                 />
               </div>
               
-              {/* Services */}
-              <div className="flex flex-col">
-                <label htmlFor="services" className="block text-lg text-gray-600">Do you need any non-hosting services?</label>
-                <select
-                  id="services"
-                  name="services"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                >
-                  <option value="no">No</option>
-                  <option value="yes">Yes</option>
-                </select>
-              </div>
-              
               {/* Multiple Sites */}
               <div className="flex flex-col">
-                <label htmlFor="multipleSites" className="block text-lg text-gray-600">Do you have multiple WordPress sites?</label>
+                <label htmlFor="multipleSites" className="block text-lg text-gray-600">Do you have multiple sites?</label>
                 <select
                   id="multipleSites"
                   name="multipleSites"
@@ -576,7 +580,7 @@ const WordPressLandingPage = () => {
               
               {/* Submit Button */}
               <button type="submit" className="w-full py-3 bg-black text-white rounded-lg my-2 md:my-5 hover:bg-gradient-to-r hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500">
-                Start My Migration
+                Send
               </button>
             </form>
           </div>
