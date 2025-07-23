@@ -130,7 +130,7 @@ function Terms() {
                           <strong>Custom Work:</strong> Custom features, API integrations, or non-standard plugins may be reviewed for compatibility, but are not guaranteed. Enterprise clients may receive priority support and tailored solutions.
                         </li>
                         <li>
-                          <strong>Promotional Entry:</strong> Active Growth or Enterprise plan subscribers who sign up or migrate after November 11, 2024 are automatically entered to win 10 free development hours ($1200 value). Winners are announced quarterly on the "Ahead with FTS" blog. Previous winners within the same calendar year are not eligible for repeat entry.
+                          <strong>Promotional Entry:</strong> Active Growth or Enterprise plan subscribers who sign up or migrate after November 11, 2024 are automatically entered to win 10 free development hours ($1200 value). Winners are announced quarterly on the &ldquo;Ahead with FTS&rdquo; blog. Previous winners within the same calendar year are not eligible for repeat entry.
                         </li>
                         <li>
                           <strong>Billing:</strong> Subscription fees are billed monthly. Failed payments may result in suspension after 15 days. Canceling the plan stops future billing but does not issue a refund for the current period.
@@ -139,7 +139,6 @@ function Terms() {
                           <strong>Termination:</strong> Manifest FTS reserves the right to suspend or terminate hosting services for violations of these terms, non-payment, misuse of server resources, or abusive behavior.
                         </li>
                       </ul>
-
 
                       <h6 className="mt-35 mb-25" id="section-13">Free Website Promotion Terms</h6>
                       <p><strong>Summary:</strong> The Free Website Promotion waives the upfront setup fee in exchange for an active monthly support subscription. You retain ownership of your submitted content (text, images, logo), but the website design, source code, and backend remain licensed by Manifest FTS. Full admin access is restricted. Late payments may result in site suspension.</p>
@@ -162,12 +161,6 @@ function Terms() {
                       </ul>
                     </div>
                   </div>
-                  {/* <div className="col-lg-2">
-                                        <h3 className="text-heading-6 color-gray-400 mb-20 mt-150">Share</h3>
-                                        <Link href="https://facebook.com"><a className="share-social share-fb" target="_blank" rel="noreferrer" rel="noreferrer" ></a></Link><br />
-                                        <Link href="https://twitter.com"><a className="share-social share-tw" target="_blank" rel="noreferrer" rel="noreferrer" ></a></Link><br />
-                                        <Link href="https://www.pinterest.com"><a className="share-social share-pi" target="_blank" rel="noreferrer" rel="noreferrer" ></a></Link>
-                                    </div> */}
                 </div>
               </div>
             </div>
