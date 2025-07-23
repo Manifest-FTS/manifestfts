@@ -181,6 +181,13 @@ const WordPressLandingPage = () => {
                   <p>Get Started</p>
                 </button>
             </div>
+            <p className="mt-4 text-sm text-white">
+                By signing up, you agree to our{" "}
+                <a href="/terms#section-11" className="underline hover:text-yellow-200">
+                    Terms & Conditions
+                </a>
+                .
+            </p>
           </motion.div>
         </section>
 

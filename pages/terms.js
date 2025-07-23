@@ -52,7 +52,10 @@ function Terms() {
                                                     <Link href="#section-9"><a>License Agreement</a></Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="#section-9"><a>Severability</a></Link>
+                                                    <Link href="#section-10"><a>Severability</a></Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="#section-11"><a>Free Website Promotion</a></Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -96,9 +99,15 @@ function Terms() {
 
                                             <h6 className="mt-35 mb-25" id="section-10">License Agreement</h6>
                                             <p>By purchasing our product(s) and service(s), you indicate and consent that you have read and agree to the Terms &amp; Conditions listed and detailed on this page. Manifest reserves the right to change or modify the current Terms and Conditions without prior notice or consent.</p>
-                                            <h6 className="mt-35 mb-25" id="section-13">Severability</h6>
+                                            
+                                            <h6 className="mt-35 mb-25" id="section-10">Severability</h6>
                                             <p>If any part of this Agreement is declared unenforceable or invalid, all remaining clauses in this Agreement shall remain binding on The Customer.</p>
                                             
+                                            <h6 className="mt-35 mb-25" id="section-11">Free Website Promotion Terms</h6>
+                                            <p>Clients enrolled in our Free Website Promotion agree to additional terms specific to this offer. Websites are built using pre-designed templates provided by ManifestFTS, and include up to five standard pages. Clients must choose from the available templates; design changes are not permitted except for minor visual adjustments (such as logo, colors, or small layout tweaks).</p>
+                                            <p>Full admin access or access to the codebase and cPanel is not provided. However, limited WordPress admin access may be granted solely for posting and managing blog content.</p>
+                                            <p>A two-month advance payment is required to start the service. Afterward, the monthly subscription must be paid within the first five calendar days of each billing cycle. If payment is missed, the subscription will be marked as canceled and the site will remain live for a 15-day grace period. During this time, reactivation is possible by paying the missed month along with a $10 late fee. After 15 days of non-payment, the website will be taken offline.</p>
+                                            <p>This promotion does not include advanced development, third-party integrations, or non-scope custom requests unless agreed upon separately.</p>
                                         </div>
                                     </div>
                                     {/* <div className="col-lg-2">
