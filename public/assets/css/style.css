@@ -1829,7 +1829,7 @@ label {
   max-width: 1140px;
   margin-right: auto;
   margin-left: auto;
-  position: absolute;
+  position: relative;
   text-align: center;
   transition: opacity 444ms linear;
   z-index: 5;
@@ -1838,7 +1838,6 @@ label {
   color: #ffffff;
 }
 #home-hero .brand-video-wrapper {
-  bottom: 10%;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -9349,4 +9348,6 @@ input.qty-val {
 
 .play-reel {
   cursor: pointer;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

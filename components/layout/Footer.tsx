@@ -2,21 +2,26 @@
 import gsap, { Linear } from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const Footer = () => {
   const logoRef = useRef<HTMLDivElement>(null);
 
   // Use gsap to control the rotation
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (logoRef.current) {
       gsap.to(logoRef.current, {
         rotation: 360,
-        duration: 10, // Adjust duration to control rotation speed
-        repeat: -1,   // Infinite loop
-        ease: Linear.easeNone, // Continuous, linear rotation
+        duration: 10,
+        repeat: -1,
+        ease: Linear.easeNone,
       });
     }
+  }, []);
+
+  const [year, setYear] = useState(2023);
+  useEffect(() => {
+    setYear(new Date().getFullYear());
   }, []);
 
   return (
@@ -128,7 +133,7 @@ const Footer = () => {
           <div className="footer-bottom mt-12 text-center lg:text-left">
             <div className="flex justify-between items-center flex-col mb:flex-row">
               <div className="text-gray-500">
-                <span>&copy; 2023{new Date().getFullYear() !== 2023 ? `– ${new Date().getFullYear()}` : ''} Manifest FTS LLC.</span>
+                <span> &copy; 2023{year !== 2023 ? `– ${year}` : ''} Manifest FTS LLC. </span>
               </div>
               <div className="footer-social">
                 <a

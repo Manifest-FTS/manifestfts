@@ -4,11 +4,12 @@ import { toast } from "react-hot-toast";
 import { StarIcon } from '@heroicons/react/16/solid';
 import Countdown from 'react-countdown';
 import WPLanding from "../components/layout/WPLanding";
-import Lottie from 'lottie-react';
 import logo from '../public/assets/anim/mfts-animated-logo.json';
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 // Function to handle form submission
 const WordPressLandingPage = () => {
@@ -74,14 +75,14 @@ const WordPressLandingPage = () => {
 
   // disable scroll when modal open
   useEffect(() => {
-    if (isFormVisible) {
-      // Disable body scroll when the form modal is open
-      document.body.style.overflow = 'hidden';
-    } else {
-      // Enable body scroll when the form modal is closed
-      document.body.style.overflow = 'auto';
+    if (typeof document !== "undefined") {
+      if (isFormVisible) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
     }
-  }, [isFormVisible]); // Depend on isFormVisible state
+  }, [isFormVisible]);
 
   const handleOnSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -93,7 +94,7 @@ const WordPressLandingPage = () => {
         formData[field.name] = field.value;
       }
     });
-  
+
     try {
       const res = await fetch("/api/mail", {
         method: "POST",
@@ -102,7 +103,7 @@ const WordPressLandingPage = () => {
         },
         body: JSON.stringify(formData),
       });
-      
+
       console.log(res);
       if (res.ok) {
         // Close the form modal
@@ -141,7 +142,6 @@ const WordPressLandingPage = () => {
   return (
     <>
       <Head>
-        <title>WordPress Hosting Solutions - Fast & Reliable | ManifestFTS</title>
         <meta name="description" content="Discover managed WordPress hosting services. WordPress hosting for seamless performance, security, and uptime. Let our expert engineers optimize your website." />
         <meta name="keywords" content="WordPress hosting, managed WordPress hosting, WordPress support, fast hosting, reliable hosting, WordPress security, performance optimization" />
         <meta property="og:title" content="Premium WordPress Hosting | ManifestFTS" />
@@ -156,20 +156,20 @@ const WordPressLandingPage = () => {
       </Head>
       <WPLanding>
         {/* Hero Section with Animated Ethereal Background */}
-        <section className="relative bg-gradient-to-r from-pink-300 via-indigo-300 to-blue-300 text-white py-24 flex flex-col items-center justify-center mb-24">
+        <section className="relative bg-gradient-to-r from-blue-400 via-teal-400 to-sky-400 text-white py-24 flex flex-col items-center justify-center mb-24">
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-0"></div>
           <motion.div
             className="relative z-10 text-center mx-3 md:mx-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
-          > 
+          >
             <div className="header-logo">
               <div className="mx-auto max-w-[223px]">
-                <Lottie animationData={logo} loop={false} style={style}/>
+                <Lottie animationData={logo} loop={false} style={style} />
               </div>
             </div>
-            <h1 className="max-w-2xl mx-auto text-5xl font-extrabold text-white leading-tight my-4">Effortless WordPress Hosting & Management, Designed for Your Success
+            <h1 className="max-w-4xl mx-auto text-5xl font-extrabold text-white leading-tight my-4">Effortless WordPress Hosting & Management, Designed for Your Success
             </h1>
             <div className="max-w-4xl mx-auto">
               <p className="mt-4 text-lg">Let our expert WordPress engineers handle the technical side of things, so you can focus on what matters most &mdash; growing your business. From seamless migrations to peak performance, we&rsquo;ve got you covered every step of the way.</p>
@@ -333,7 +333,7 @@ const WordPressLandingPage = () => {
                   Sign up or migrate your WordPress site to a <Link href="#plans">Growth*</Link> plan today and you&rsquo;re automatically entered to win 10 hours towards any of our digital services. ($1200 value).
                 </p>
                 <p className="text-xs text-gray-900">
-                  *Promotion starts 11/11/2024 and open to active Growth plan or higher tier subscribers who have not previously won the promotion during the current calendar year. Winners are announced on our <Link href="/ahead-with-fts"><span className="text-blue-600 hover:cursor-pointer">Ahead with FTS</span></Link> blog at the beginning of each quarter: January (for Q1), April (for Q2), July (for Q3), and October (for Q4)s. 
+                  *Promotion starts 11/11/2024 and open to active Growth plan or higher tier subscribers who have not previously won the promotion during the current calendar year. Winners are announced on our <Link href="/ahead-with-fts"><span className="text-blue-600 hover:cursor-pointer">Ahead with FTS</span></Link> blog at the beginning of each quarter: January (for Q1), April (for Q2), July (for Q3), and October (for Q4)s.
                 </p>
               </div>
             </div>
@@ -345,7 +345,7 @@ const WordPressLandingPage = () => {
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl text-center text-dark mb-8">Do More With WordPress</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              
+
               {/* Card 1 */}
               <motion.div
                 className="bg-white p-6 rounded-lg shadow-lg group overflow-hidden transform transition duration-300 hover:scale-105"
@@ -354,9 +354,9 @@ const WordPressLandingPage = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="relative w-full h-48 mb-4 group-hover:scale-110 transform transition duration-300">
-                  <Image 
-                    src="/assets/imgs/marketing/hobbyist-podcaster.jpg" 
-                    alt="Hobbyists" 
+                  <Image
+                    src="/assets/imgs/marketing/hobbyist-podcaster.jpg"
+                    alt="Hobbyists"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-t-lg"
@@ -374,9 +374,9 @@ const WordPressLandingPage = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="relative w-full h-48 mb-4 group-hover:scale-110 transform transition duration-300">
-                  <Image 
-                    src="/assets/imgs/marketing/business.jpg" 
-                    alt="Business Websites" 
+                  <Image
+                    src="/assets/imgs/marketing/business.jpg"
+                    alt="Business Websites"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-t-lg"
@@ -394,9 +394,9 @@ const WordPressLandingPage = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="relative w-full h-48 mb-4 group-hover:scale-110 transform transition duration-300">
-                  <Image 
-                    src="/assets/imgs/marketing/enterprise.jpg" 
-                    alt="Enterprises" 
+                  <Image
+                    src="/assets/imgs/marketing/enterprise.jpg"
+                    alt="Enterprises"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-t-lg"
@@ -414,9 +414,9 @@ const WordPressLandingPage = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="relative w-full h-48 mb-4 group-hover:scale-110 transform transition duration-300">
-                  <Image 
-                    src="/assets/imgs/marketing/tech-code.jpg" 
-                    alt="Advanced REST API Integration" 
+                  <Image
+                    src="/assets/imgs/marketing/tech-code.jpg"
+                    alt="Advanced REST API Integration"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-t-lg"
@@ -434,9 +434,9 @@ const WordPressLandingPage = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="relative w-full h-48 mb-4 group-hover:scale-110 transform transition duration-300">
-                  <Image 
-                    src="/assets/imgs/marketing/wordpress.jpg" 
-                    alt="Headless WordPress with React/Next.js" 
+                  <Image
+                    src="/assets/imgs/marketing/wordpress.jpg"
+                    alt="Headless WordPress with React/Next.js"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-t-lg"
@@ -454,9 +454,9 @@ const WordPressLandingPage = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="relative w-full h-48 mb-4 group-hover:scale-110 transform transition duration-300">
-                  <Image 
-                    src="/assets/imgs/marketing/bespoke.jpg" 
-                    alt="Bespoke Solutions" 
+                  <Image
+                    src="/assets/imgs/marketing/bespoke.jpg"
+                    alt="Bespoke Solutions"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-t-lg"
@@ -485,12 +485,12 @@ const WordPressLandingPage = () => {
               &times;
             </button>
             <h2 className="text-3xl mb-4">Tell Us About Your Site</h2>
-            
+
             {/* Form container */}
             <form className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-6 overflow-y-auto max-h-[80vh] pr-8 pb-6 form-scrollbar" onSubmit={handleOnSubmit}>
               <input type="hidden" name="formType" value="wordpressHosting" />
               <input type="hidden" name="selectedPlan" value={selectedPlan} />
-              
+
               {/* Full Name */}
               <div className="flex flex-col">
                 <label htmlFor="name" className="block text-lg text-gray-600">Full Name</label>
@@ -503,7 +503,7 @@ const WordPressLandingPage = () => {
                   required
                 />
               </div>
-              
+
               {/* Email */}
               <div className="flex flex-col">
                 <label htmlFor="email" className="block text-lg text-gray-600">Email</label>
@@ -516,7 +516,7 @@ const WordPressLandingPage = () => {
                   required
                 />
               </div>
-              
+
               {/* Phone */}
               <div className="flex flex-col">
                 <label htmlFor="phone" className="block text-lg text-gray-600">Phone (Optional)</label>
@@ -528,7 +528,7 @@ const WordPressLandingPage = () => {
                   placeholder="Enter your phone number"
                 />
               </div>
-              
+
               {/* Website URL */}
               <div className="flex flex-col">
                 <label htmlFor="websiteUrl" className="block text-lg text-gray-600">Website URL (Optional)</label>
@@ -540,7 +540,7 @@ const WordPressLandingPage = () => {
                   placeholder="Enter your website URL"
                 />
               </div>
-              
+
               {/* Services */}
               <div className="flex flex-col">
                 <label htmlFor="services" className="block text-lg text-gray-600">Do you need any non-hosting services?</label>
@@ -553,7 +553,7 @@ const WordPressLandingPage = () => {
                   <option value="yes">Yes</option>
                 </select>
               </div>
-              
+
               {/* Multiple Sites */}
               <div className="flex flex-col">
                 <label htmlFor="multipleSites" className="block text-lg text-gray-600">Do you have multiple WordPress sites?</label>
@@ -566,7 +566,7 @@ const WordPressLandingPage = () => {
                   <option value="yes">Yes</option>
                 </select>
               </div>
-              
+
               {/* Message */}
               <div className="col-span-2 flex flex-col">
                 <label htmlFor="message" className="block text-lg text-gray-600">Tell us about your goals and needs. What brought you here today?</label>
@@ -577,7 +577,7 @@ const WordPressLandingPage = () => {
                   required
                 />
               </div>
-              
+
               {/* Submit Button */}
               <button type="submit" className="w-full py-3 bg-black text-white rounded-lg my-2 md:my-5 hover:bg-gradient-to-r hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500">
                 Start My Migration

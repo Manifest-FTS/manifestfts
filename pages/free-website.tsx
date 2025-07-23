@@ -4,11 +4,12 @@ import { toast } from "react-hot-toast";
 import { StarIcon } from '@heroicons/react/16/solid';
 import Countdown from 'react-countdown';
 import WPLanding from "../components/layout/WPLanding";
-import Lottie from 'lottie-react';
 import logo from '../public/assets/anim/mfts-animated-logo.json';
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 // Function to handle form submission
 const WordPressLandingPage = () => {
@@ -74,14 +75,14 @@ const WordPressLandingPage = () => {
 
   // disable scroll when modal open
   useEffect(() => {
-    if (isFormVisible) {
-      // Disable body scroll when the form modal is open
-      document.body.style.overflow = 'hidden';
-    } else {
-      // Enable body scroll when the form modal is closed
-      document.body.style.overflow = 'auto';
+    if (typeof document !== "undefined") {
+      if (isFormVisible) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
     }
-  }, [isFormVisible]); // Depend on isFormVisible state
+  }, [isFormVisible]);
 
   const handleOnSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -93,7 +94,7 @@ const WordPressLandingPage = () => {
         formData[field.name] = field.value;
       }
     });
-  
+
     try {
       const res = await fetch("/api/mail", {
         method: "POST",
@@ -102,7 +103,7 @@ const WordPressLandingPage = () => {
         },
         body: JSON.stringify(formData),
       });
-      
+
       console.log(res);
       if (res.ok) {
         // Close the form modal
@@ -141,7 +142,6 @@ const WordPressLandingPage = () => {
   return (
     <>
       <Head>
-        <title>WordPress Hosting Solutions - Fast & Reliable | ManifestFTS</title>
         <meta name="description" content="Discover managed WordPress hosting services. WordPress hosting for seamless performance, security, and uptime. Let our expert engineers optimize your website." />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="keywords" content="WordPress hosting, managed WordPress hosting, WordPress support, fast hosting, reliable hosting, WordPress security, performance optimization" />
@@ -157,36 +157,37 @@ const WordPressLandingPage = () => {
       </Head>
       <WPLanding>
         {/* Hero Section with Animated Ethereal Background */}
-        <section className="relative bg-gradient-to-r from-pink-300 via-indigo-300 to-blue-300 text-white py-24 flex flex-col items-center justify-center mb-24">
+        <section className="relative bg-gradient-to-r from-blue-300 via-teal-300 to-cyan-300
+ text-white py-24 flex flex-col items-center justify-center mb-24">
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-0"></div>
           <motion.div
             className="relative z-10 text-center mx-3 md:mx-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
-          > 
+          >
             <div className="header-logo">
               <div className="mx-auto max-w-[223px]">
-                <Lottie animationData={logo} loop={false} style={style}/>
+                <Lottie animationData={logo} loop={false} style={style} />
               </div>
             </div>
             <h1 className="max-w-2xl mx-auto text-5xl font-extrabold text-white leading-tight my-4">Free Website for Your Small Business
             </h1>
             <div className="max-w-4xl mx-auto">
-              <p className="mt-4 text-lg">ManifestFTS is helping small business owners go digital — with no upfront cost for the website. You get a professional, modern site, and we manage everything for you. Just $86/month for ongoing support. Cancel anytime.</p>
+              <p className="mt-4 text-lg">ManifestFTS is helping small business owners go digital — with no upfront cost for the website. You get a professional, modern site, and we manage everything for you. Just $86/month for ongoing support. Cancel anytime.*</p>
 
-              <button 
-              onClick={() => handleSelectPlan("starter")}
-              className="px-5 py-2 mt-12 max-w-[350px] text-base bg-gradient-to-r from-yellow-300/70 via-yellow-400/70 to-yellow-500/70 rounded-md mx-auto text-black backdrop-blur-4xl">
-                  <p>Get Started</p>
-                </button>
+              <Link href="#plans">
+                <a className="inline-block px-5 py-2 mt-12 max-w-[350px] text-base text-black text-center mx-auto rounded-md backdrop-blur-4xl
+                  bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500
+                  animate-gradient hover:from-yellow-400 hover:via-yellow-500 hover:to-yellow-600">
+                  Explore Plans
+                </a>
+              </Link>
             </div>
             <p className="mt-4 text-sm text-white">
-                By signing up, you agree to our{" "}
-                <Link href="/terms#section-11">
-                    <a className="underline hover:text-yellow-200">Terms & Conditions</a>
-                </Link>
-                .
+              *<Link href="/terms#section-13">
+                <a className="underline hover:text-yellow-200" target="_blank">Terms & Conditions</a>
+              </Link> apply.
             </p>
           </motion.div>
         </section>
@@ -199,88 +200,88 @@ const WordPressLandingPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Starter Plan */}
               <motion.div
-            className="bg-gray-100 p-6 rounded-lg shadow-lg transform hover:translate-y-[-10px] transition-all duration-300 flex flex-col justify-between"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+                className="bg-gray-100 p-6 rounded-lg shadow-lg transform hover:translate-y-[-10px] transition-all duration-300 flex flex-col justify-between"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
               >
-            <div>
-              <h4 className="text-xl font-semibold text-dark">Basic</h4>
-              <p className="mt-2 text-gray-600 text-base font-bold">$86/month</p>
-              <ul className="mt-4 text-gray-600">
-                <li>Free Website</li>
-                <li>5 Pages + Blog</li>
-                <li>2 Hours of Monthly Support</li>
-                <li>10GB Storage</li>
-                <li>50GB Bandwidth</li>
-                <li>Daily Backups</li>
-                <li>Free SSL</li>
-                <li>Quarterly WordPress Maintenance</li>
-              </ul>
-            </div>
-            <button
-              onClick={() => handleSelectPlan("starter")}
-              className={`w-full mt-6 py-2 text-white ${selectedPlan === "starter" ? "bg-blue-600" : "bg-gray-500"} transition-colors duration-300`}
-            >
-              {selectedPlan === "starter" ? "Selected" : "Select Plan"}
-            </button>
+                <div>
+                  <h4 className="text-xl font-semibold text-dark">Basic</h4>
+                  <p className="mt-2 text-gray-600 text-base font-bold">$86/month</p>
+                  <ul className="mt-4 text-gray-600">
+                    <li>Free Website</li>
+                    <li>5 Pages + Blog</li>
+                    <li>2 Hours of Monthly Support</li>
+                    <li>10GB Storage</li>
+                    <li>50GB Bandwidth</li>
+                    <li>Daily Backups</li>
+                    <li>Free SSL</li>
+                    <li>Quarterly WordPress Maintenance</li>
+                  </ul>
+                </div>
+                <button
+                  onClick={() => handleSelectPlan("starter")}
+                  className={`w-full mt-6 py-2 text-white ${selectedPlan === "starter" ? "bg-blue-600" : "bg-gray-500"} transition-colors duration-300`}
+                >
+                  {selectedPlan === "starter" ? "Selected" : "Select Plan"}
+                </button>
               </motion.div>
 
               {/* Growth Plan */}
               <motion.div
-            className="bg-gray-100 p-6 rounded-lg shadow-lg transform hover:translate-y-[-10px] transition-all duration-300 flex flex-col justify-between"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+                className="bg-gray-100 p-6 rounded-lg shadow-lg transform hover:translate-y-[-10px] transition-all duration-300 flex flex-col justify-between"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
               >
-            <div>
-              <h4 className="text-xl font-semibold text-dark">Professional</h4>
-              <p className="mt-2 text-gray-600 text-base font-bold">$172/month</p>
-              <ul className="mt-4 text-gray-600">
-                <li>Everything in <em>Basic</em> +</li>
-                <li>10 pages + Blog</li>
-                <li>2 Custom Feature at Setup</li>
-                <li>Total 5 Hours of Monthly Support</li>
-                <li>20GB Storage</li>
-                <li>200GB Bandwidth</li>
-                <li>Performance Insights</li>
-                <li>Quarterly WordPress Maintenance & Security Analysis</li>
-              </ul>
-            </div>
-            <button
-              onClick={() => handleSelectPlan("growth")}
-              className={`w-full mt-6 py-2 text-white ${selectedPlan === "growth" ? "bg-blue-600" : "bg-gray-500"}`}
-            >
-              {selectedPlan === "growth" ? "Selected" : "Select Plan"}
-            </button>
+                <div>
+                  <h4 className="text-xl font-semibold text-dark">Professional</h4>
+                  <p className="mt-2 text-gray-600 text-base font-bold">$172/month</p>
+                  <ul className="mt-4 text-gray-600">
+                    <li>Everything in <em>Basic</em> +</li>
+                    <li>10 pages + Blog</li>
+                    <li>2 Custom Feature at Setup</li>
+                    <li>Total 5 Hours of Monthly Support</li>
+                    <li>20GB Storage</li>
+                    <li>200GB Bandwidth</li>
+                    <li>Performance Insights</li>
+                    <li>Quarterly WordPress Maintenance & Security Analysis</li>
+                  </ul>
+                </div>
+                <button
+                  onClick={() => handleSelectPlan("growth")}
+                  className={`w-full mt-6 py-2 text-white ${selectedPlan === "growth" ? "bg-blue-600" : "bg-gray-500"}`}
+                >
+                  {selectedPlan === "growth" ? "Selected" : "Select Plan"}
+                </button>
               </motion.div>
 
               {/* Enterprise Plan */}
               <motion.div
-            className="bg-gray-100 p-6 rounded-lg shadow-lg transform hover:translate-y-[-10px] transition-all duration-300 flex flex-col justify-between"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+                className="bg-gray-100 p-6 rounded-lg shadow-lg transform hover:translate-y-[-10px] transition-all duration-300 flex flex-col justify-between"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
               >
-            <div>
-              <h4 className="text-xl font-semibold text-dark">Advanced</h4>
-              <p className="mt-2 text-gray-600 text-base font-bold">Custom Pricing</p>
-              <ul className="mt-4 text-gray-600">
-                <li>Everything in <em>Professional</em> +</li>
-                <li>Custom Requirements</li>
-                <li>50GB+ Storage</li>
-                <li>500GB+ Bandwidth</li>
-                <li>Dedicated DevOps Support</li>
-                <li>Custom Performance Insights/Reports</li>
-                <li>Custom Add-ons & Integrations</li>
-              </ul>
-            </div>
-            <button
-              onClick={() => handleSelectPlan("enterprise")}
-              className={`w-full mt-6 py-2 text-white ${selectedPlan === "enterprise" ? "bg-blue-600" : "bg-gray-500"}`}
-            >
-              {selectedPlan === "enterprise" ? "Selected" : "Select Plan"}
-            </button>
+                <div>
+                  <h4 className="text-xl font-semibold text-dark">Advanced</h4>
+                  <p className="mt-2 text-gray-600 text-base font-bold">Custom Pricing</p>
+                  <ul className="mt-4 text-gray-600">
+                    <li>Everything in <em>Professional</em> +</li>
+                    <li>Custom Requirements</li>
+                    <li>50GB+ Storage</li>
+                    <li>500GB+ Bandwidth</li>
+                    <li>Dedicated DevOps Support</li>
+                    <li>Custom Performance Insights/Reports</li>
+                    <li>Custom Add-ons & Integrations</li>
+                  </ul>
+                </div>
+                <button
+                  onClick={() => handleSelectPlan("enterprise")}
+                  className={`w-full mt-6 py-2 text-white ${selectedPlan === "enterprise" ? "bg-blue-600" : "bg-gray-500"}`}
+                >
+                  {selectedPlan === "enterprise" ? "Selected" : "Select Plan"}
+                </button>
               </motion.div>
             </div>
           </div>
@@ -293,7 +294,7 @@ const WordPressLandingPage = () => {
               <div className="mx-auto max-w-5xl">
                 <h2 className="text-3xl font-semibold text-gray-900 mb-4">Cancel Anytime</h2>
                 <p className="mb-4 text-lg text-gray-900">
-                    We believe in flexibility. If our service no longer suits your business, you can cancel your subscription at any time with no penalties or hidden fees.
+                  We believe in flexibility. If our service no longer suits your business, you can cancel your subscription at any time with no penalties or hidden fees.
                 </p>
               </div>
             </div>
@@ -305,7 +306,7 @@ const WordPressLandingPage = () => {
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl text-center text-dark mb-8">Do More With WordPress</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              
+
               {/* Card 1 */}
               <motion.div
                 className="bg-white p-6 rounded-lg shadow-lg group overflow-hidden transform transition duration-300 hover:scale-105"
@@ -314,9 +315,9 @@ const WordPressLandingPage = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="relative w-full h-48 mb-4 group-hover:scale-110 transform transition duration-300">
-                  <Image 
-                    src="/assets/imgs/marketing/hobbyist-podcaster.jpg" 
-                    alt="Small Business Websites" 
+                  <Image
+                    src="/assets/imgs/marketing/hobbyist-podcaster.jpg"
+                    alt="Small Business Websites"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-t-lg"
@@ -334,9 +335,9 @@ const WordPressLandingPage = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="relative w-full h-48 mb-4 group-hover:scale-110 transform transition duration-300">
-                  <Image 
-                    src="/assets/imgs/marketing/business.jpg" 
-                    alt="Mid-Level Platforms" 
+                  <Image
+                    src="/assets/imgs/marketing/business.jpg"
+                    alt="Mid-Level Platforms"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-t-lg"
@@ -354,9 +355,9 @@ const WordPressLandingPage = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="relative w-full h-48 mb-4 group-hover:scale-110 transform transition duration-300">
-                  <Image 
-                    src="/assets/imgs/marketing/enterprise.jpg" 
-                    alt="Enterprises" 
+                  <Image
+                    src="/assets/imgs/marketing/enterprise.jpg"
+                    alt="Enterprises"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-t-lg"
@@ -374,9 +375,9 @@ const WordPressLandingPage = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="relative w-full h-48 mb-4 group-hover:scale-110 transform transition duration-300">
-                  <Image 
-                    src="/assets/imgs/marketing/tech-code.jpg" 
-                    alt="Custom Software Development" 
+                  <Image
+                    src="/assets/imgs/marketing/tech-code.jpg"
+                    alt="Custom Software Development"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-t-lg"
@@ -394,9 +395,9 @@ const WordPressLandingPage = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="relative w-full h-48 mb-4 group-hover:scale-110 transform transition duration-300">
-                  <Image 
-                    src="/assets/imgs/marketing/bespoke.jpg" 
-                    alt="Third-Party Integrations" 
+                  <Image
+                    src="/assets/imgs/marketing/bespoke.jpg"
+                    alt="Third-Party Integrations"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-t-lg"
@@ -406,25 +407,25 @@ const WordPressLandingPage = () => {
                 <p className="mt-4 text-gray-600">Integrate with CRMs, APIs, payment systems, or marketing tools to boost business productivity.</p>
               </motion.div>
 
-                {/* Card 6 */}
-                <motion.div
+              {/* Card 6 */}
+              <motion.div
                 className="bg-white p-6 rounded-lg shadow-lg group overflow-hidden transform transition duration-300 hover:scale-105"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                >
+              >
                 <div className="relative w-full h-48 mb-4 group-hover:scale-110 transform transition duration-300">
-                    <Image 
-                    src="/assets/imgs/marketing/wordpress.jpg" 
-                    alt="Ongoing Support & Strategy" 
+                  <Image
+                    src="/assets/imgs/marketing/wordpress.jpg"
+                    alt="Ongoing Support & Strategy"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-t-lg"
-                    />
+                  />
                 </div>
                 <h3 className="text-xl font-semibold text-dark">Ongoing Support & Strategy</h3>
                 <p className="mt-4 text-gray-600">We don’t just build and leave. We support your system and help you adapt your tech as you grow.</p>
-                </motion.div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -489,15 +490,15 @@ const WordPressLandingPage = () => {
               &times;
             </button>
             <h2 className="text-3xl mb-4">Tell Us About Your Site</h2>
-            
+
             {/* Form container - Improved for mobile scrolling */}
-            <form 
-              className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-6 overflow-y-auto pb-6 form-scrollbar" 
+            <form
+              className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-6 overflow-y-auto pb-6 form-scrollbar"
               onSubmit={handleOnSubmit}
             >
               <input type="hidden" name="formType" value="wordpressHosting" />
               <input type="hidden" name="selectedPlan" value={selectedPlan} />
-              
+
               {/* Full Name */}
               <div className="flex flex-col">
                 <label htmlFor="name" className="block text-lg text-gray-600">Full Name</label>
@@ -510,7 +511,7 @@ const WordPressLandingPage = () => {
                   required
                 />
               </div>
-              
+
               {/* Email */}
               <div className="flex flex-col">
                 <label htmlFor="email" className="block text-lg text-gray-600">Email</label>
@@ -523,7 +524,7 @@ const WordPressLandingPage = () => {
                   required
                 />
               </div>
-              
+
               {/* Phone */}
               <div className="flex flex-col">
                 <label htmlFor="phone" className="block text-lg text-gray-600">Phone (Optional)</label>
@@ -548,7 +549,7 @@ const WordPressLandingPage = () => {
                   placeholder="Enter your business name"
                 />
               </div>
-              
+
               {/* Website URL */}
               <div className="flex flex-col">
                 <label htmlFor="websiteUrl" className="block text-lg text-gray-600">Website URL If You Have One Already (Optional)</label>
@@ -560,7 +561,7 @@ const WordPressLandingPage = () => {
                   placeholder="Enter your website URL"
                 />
               </div>
-              
+
               {/* Multiple Sites */}
               <div className="flex flex-col">
                 <label htmlFor="multipleSites" className="block text-lg text-gray-600">Do you have multiple sites?</label>
@@ -573,7 +574,7 @@ const WordPressLandingPage = () => {
                   <option value="yes">Yes</option>
                 </select>
               </div>
-              
+
               {/* Message */}
               <div className="col-span-2 flex flex-col">
                 <label htmlFor="message" className="block text-lg text-gray-600">Tell us about your goals and needs. What brought you here today?</label>
@@ -584,7 +585,7 @@ const WordPressLandingPage = () => {
                   required
                 />
               </div>
-              
+
               {/* Submit Button */}
               <button type="submit" className="w-full py-3 bg-black text-white rounded-lg my-2 md:my-5 hover:bg-gradient-to-r hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500">
                 Send

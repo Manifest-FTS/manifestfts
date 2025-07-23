@@ -1,7 +1,7 @@
 import { Toaster } from 'react-hot-toast';
 import "../public/assets/css/style.css";
 import "../public/assets/css/swiper-custom.css";
-import "../css/globals.min.css";
+import "../public/assets/css/globals.min.css";
 
 import React, { useEffect, useState } from "react";
 import 'react-modal-video/css/modal-video.css';
@@ -12,12 +12,12 @@ import { useRouter } from 'next/router'
 import { GTM_ID, pageview } from '../lib/gtm'
 
 function MyApp({ Component, pageProps }) {
-    const router = useRouter()
-    useEffect(() => {
-        router.events.on('routeChangeComplete', pageview)
-        return () => {
-        router.events.off('routeChangeComplete', pageview)
-        }
+  const router = useRouter()
+  useEffect(() => {
+    router.events.on('routeChangeComplete', pageview)
+    return () => {
+      router.events.off('routeChangeComplete', pageview)
+    }
   }, [router.events])
 
   return (
