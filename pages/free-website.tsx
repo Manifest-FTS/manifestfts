@@ -183,9 +183,9 @@ const WordPressLandingPage = () => {
             </div>
             <p className="mt-4 text-sm text-white">
                 By signing up, you agree to our{" "}
-                <a href="/terms#section-11" className="underline hover:text-yellow-200">
-                    Terms & Conditions
-                </a>
+                <Link href="/terms#section-11">
+                    <a className="underline hover:text-yellow-200">Terms & Conditions</a>
+                </Link>
                 .
             </p>
           </motion.div>
