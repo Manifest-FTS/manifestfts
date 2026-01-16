@@ -49,13 +49,16 @@ function Terms() {
                           <Link href="#section-8"><a>Email &amp; Newsletter</a></Link>
                         </li>
                         <li>
-                          <Link href="#section-9"><a>License Agreement</a></Link>
+                          <Link href="#section-9"><a>Mobile Apps</a></Link>
                         </li>
                         <li>
-                          <Link href="#section-10"><a>Severability</a></Link>
+                          <Link href="#section-10"><a>License Agreement</a></Link>
                         </li>
                         <li>
-                          <Link href="#section-11"><a>Free Website Promotion</a></Link>
+                          <Link href="#section-11"><a>Severability</a></Link>
+                        </li>
+                        <li>
+                          <Link href="#section-12"><a>Promotions</a></Link>
                         </li>
                       </ul>
                     </div>
@@ -63,48 +66,50 @@ function Terms() {
                   <div className="col-lg-8">
                     <div className="single-detail">
                       <h1 className="">Terms of Use</h1>
-                      <h6 className="mt-50">- Last Updated November 25, 2022 -</h6>
-                      <p>Thank you for your interest in our products and services. These General Terms and Conditions constitute the agreement (&ldquo;Agreement&rdquo;) between Super Distros LLC dba Manifest FTS (&ldquo;Manifest&rdquo;) and you as a user of our services (&ldquo;Customer&rdquo;), whether you sign up as a company or as an individual, and whether you have a past or existing contract with Manifest.</p>
+                      <h6 className="mt-50">- Last Updated January 16, 2026 -</h6>
+                      <p>Thank you for your interest in our products and services. These General Terms and Conditions constitute the agreement (&ldquo;Agreement&rdquo;) between Super Distros LLC dba Manifest FTS (&ldquo;Manifest&rdquo;) and you as a user of our services (&ldquo;Customer&rdquo; or &ldquo;User&rdquo;), whether you sign up as a company or as an individual, and whether you have a past or existing contract with Manifest. These terms apply to all Manifest services, including websites, web applications, mobile applications, and digital products.</p>
 
                       <h6 className="mt-35 mb-25" id="section-1">Customer Data</h6>
                       <p>Manifest does not own any Customer Data and the Customer has sole responsibility for the accuracy, integrity, legality, reliability, appropriateness, and intellectual property ownership or right to use of all Customer Data. The Customer grants to Manifest a worldwide, royalty-free, and non-exclusive license to access and use the Customer Data, as well as any other material and software you may provided to Manifest, for the sole purpose of providing the services to you as a Customer. This license is valid only as long as this Agreement is in force. Upon termination of the Agreement the license is revoked. For avoidance of doubt, there is no transfer of ownership of Customer Data or any other data or Intellectual Property Rights from Customer to Manifest under this Agreement.</p>
 
                       <h6 className="mt-35 mb-25" id="section-2">License</h6>
                       <p>Unless otherwise stated, all software solutions are licensed by their respective owners and not Manifest.</p>
-                      <p>All other intellectual property rights are reserved. Permission is granted for temporary use of information or software on Manifest website for press, personal and/or noncommercial viewing only by grant of a license, not a transfer of ownership.</p>
-                      <p>Under this license you may not: Republish material from, sell, rent or sub-license material, reproduce, duplicate or copy material from Manifest. You may read more about our Privacy Policy here: <Link href="/privacy-policy"><a>https://manifest.com/privacy-policy</a></Link>, which is an addendum of this Terms and Conditions by reference.</p>
+                      <p>All other intellectual property rights are reserved. Permission is granted for temporary use of information or software on Manifest website and mobile applications for press, personal and/or noncommercial viewing only by grant of a license, not a transfer of ownership.</p>
+                      <p>Under this license you may not: Republish material from, sell, rent or sub-license material, reproduce, duplicate or copy material from Manifest. You may read more about our Privacy Policy here: <Link href="/privacy-policy"><a>https://manifestfts.com/privacy-policy</a></Link>, which is an addendum of this Terms and Conditions by reference.</p>
 
                       <h6 className="mt-35 mb-25" id="section-3">Limitation of Liability</h6>
-                      <p>Under no circumstances shall Manifest be liable for any of Customer&rsquo;s direct, indirect, special, incidental or consequential damages, including, but not limited to, loss of data or profit, arising out of the use of delivered services or the materials on this site, even if Manifest, our software partners or an authorized representative has been advised of the possibility of such damages. </p>
-                      <p>The use of Manifest services and software recommendations is at Customer&rsquo;s own risk, and Customer is fully responsible for any claim, expense, liability, or losses arising from any infringement of the Agreement.</p>
+                      <p>Under no circumstances shall Manifest be liable for any of Customer&rsquo;s direct, indirect, special, incidental or consequential damages, including, but not limited to, loss of data or profit, arising out of the use of delivered services, mobile applications, or the materials on this site, even if Manifest, our software partners or an authorized representative has been advised of the possibility of such damages.</p>
+                      <p>The use of Manifest services, mobile applications, and software recommendations is at Customer&rsquo;s own risk, and Customer is fully responsible for any claim, expense, liability, or losses arising from any infringement of the Agreement.</p>
 
                       <h6 className="mt-35 mb-25" id="section-4">Delivery & Ownership</h6>
-                      <p>The cusCustomer&rsquo;s purchased product(s) or service(s) data and/or source files will be provided to Customer once payment is received and work is completed. Even though services are generally rendered within the estimated delivery time, it may take more or less time to be completed. Manifest will in know way be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising from a delay of deliverability of services from Manifest to Customer.</p>
+                      <p>The Customer&rsquo;s purchased product(s) or service(s) data and/or source files will be provided to Customer once payment is received and work is completed. Even though services are generally rendered within the estimated delivery time, it may take more or less time to be completed. Manifest will in no way be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising from a delay of deliverability of services from Manifest to Customer.</p>
 
                       <h6 className="mt-35 mb-25" id="section-5">Updates</h6>
                       <p>The software upon which Manifest digital services rely are constantly updated to be compatible with the latest stable versions. Please ensure that we always use the most current version of said software at the time of Customer&rsquo;s project start, afterwhich The Customer is responsible for maintenance and security updates unless Manifest is contracted for maintenance and support.</p>
+                      <p>Mobile applications published by Manifest may receive updates from time to time to add features, fix bugs, improve performance, or maintain compatibility with operating system updates. Users are encouraged to keep apps updated to the latest version.</p>
 
                       <h6 className="mt-35 mb-25" id="section-6">Help & Support</h6>
                       <p>Help and support will be billed as needed unless included as part of an existing contract. All contracts will include the scope of said help and support (if any) from Manifest to The Customer.</p>
 
                       <h6 className="mt-35 mb-25" id="section-7">Price Changes</h6>
-                      <p>Manifest reserves the right to modify our pricing, hourly rates or suspend (temporarily or permanently) any subscriptions at any point of time and from time to time with or without any notice.</p>
+                      <p>Manifest reserves the right to modify our pricing, hourly rates, app subscription fees, in-app purchase prices, or suspend (temporarily or permanently) any subscriptions at any point of time and from time to time with or without any notice.</p>
 
                       <h6 className="mt-35 mb-25" id="section-8">Refund Policy</h6>
-                      <p>No Refunds on Digital: Manifest reserves the right to change our refund policy at any time. Refunds are not applicable for digital products or services under any circumstance.</p>
-                      <p>Partial Refund on Retainers: Manifest reserves the right to change our refund policy at any time. Partial refunds of up to and not exceeding 50% can be provided at our discretion for any unused retainer hours already paid by The Customer.</p>
+                      <p><strong>No Refunds on Digital:</strong> Manifest reserves the right to change our refund policy at any time. Refunds are not applicable for digital products, mobile app purchases, in-app purchases, or services under any circumstance.</p>
+                      <p><strong>Partial Refund on Retainers:</strong> Manifest reserves the right to change our refund policy at any time. Partial refunds of up to and not exceeding 50% can be provided at our discretion for any unused retainer hours already paid by The Customer.</p>
+                      <p><strong>App Store Refunds:</strong> For mobile app purchases made through third-party app stores (Apple App Store, Google Play Store), refund policies of those platforms apply. Manifest does not control or process refunds for purchases made through these platforms.</p>
 
                       <h6 className="mt-35 mb-25" id="section-9">Email &amp; Newsletter</h6>
-                      <p>Manifest may occasionally send The Customer emails related to the purchase of product(s) and services(s) from Manifest. Manifest may also send The Customer occasional email newsletters relating to related software updates and promotions. Manifest will never sell or release The Customer&rsquo;s email to any third party vendors. The Customer may opt out of these emails at any time without penalty.</p>
+                      <p>Manifest may occasionally send The Customer emails related to the purchase of product(s) and service(s) from Manifest. Manifest may also send The Customer occasional email newsletters relating to related software updates and promotions. Manifest will never sell or release The Customer&rsquo;s email to any third party vendors. The Customer may opt out of these emails at any time without penalty.</p>
 
-                      <h6 className="mt-35 mb-25" id="section-10">License Agreement</h6>
+                      <h6 className="mt-35 mb-25" id="section-10">Mobile Apps</h6>
                       <p>By purchasing our product(s) and service(s), you indicate and consent that you have read and agree to the Terms &amp; Conditions listed and detailed on this page. Manifest reserves the right to change or modify the current Terms and Conditions without prior notice or consent.</p>
 
-                      <h6 className="mt-35 mb-25" id="section-11">Severability</h6>
+                      <h6 className="mt-35 mb-25" id="section-12">Severability</h6>
                       <p>If any part of this Agreement is declared unenforceable or invalid, all remaining clauses in this Agreement shall remain binding on The Customer.</p>
 
-                      <h2 className="text-xl mt-35 mb-25">Promotions</h2>
-                      <h6 className="mt-35 mb-25" id="section-12">WordPress Hosting & Management Terms</h6>
+                      <h2 className="text-xl mt-35 mb-25" id="section-13">Promotions</h2>
+                      <h6 className="mt-35 mb-25" id="section-14">WordPress Hosting & Management Terms</h6>
                       <p><strong>Summary:</strong> Manifest FTS offers scalable, managed WordPress hosting plans designed to support your business goals. Plans include performance-optimized infrastructure, backups, SSL, and quarterly maintenance. You retain ownership of your content, while infrastructure and platform-level configurations remain licensed and managed by Manifest.</p>
                       <p><strong>Clients enrolled in any WordPress Hosting Plan agree to the following terms:</strong></p>
                       <ul>
@@ -140,7 +145,7 @@ function Terms() {
                         </li>
                       </ul>
 
-                      <h6 className="mt-35 mb-25" id="section-13">Free Website Promotion Terms</h6>
+                      <h6 className="mt-35 mb-25" id="section-15">Free Website Promotion Terms</h6>
                       <p><strong>Summary:</strong> The Free Website Promotion waives the upfront setup fee in exchange for an active monthly support subscription. You retain ownership of your submitted content (text, images, logo), but the website design, source code, and backend remain licensed by Manifest FTS. Full admin access is restricted. Late payments may result in site suspension.</p>
                       <p><strong>Clients enrolled in this promotion agree to the following terms:</strong></p>
                       <ul>
