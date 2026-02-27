@@ -33,8 +33,20 @@ const FormProject = () => {
         },
         method: "POST",
       });
+      
+      const data = await res.json();
+      
+      if (!res.ok) {
+        toast.error(data.error || "Failed to send message. Please try again.");
+        setStatus(false);
+        return;
+      }
+      
       setStatus(true);
+      toast.success("Message sent successfully!");
     } catch (e) {
+      console.error("Form submission error:", e);
+      toast.error("An error occurred. Please try again later.");
       setStatus(false);
     }
   }

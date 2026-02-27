@@ -1,0 +1,45 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 232 232" width="232" height="232">
+	<title>manifest-logo-mark-fts-circle</title>
+	<defs>
+		<image  width="107" height="74" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGsAAABKCAMAAACLkVqtAAAAAXNSR0IB2cksfwAAAIdQTFRF////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////EldLgwAAAC10Uk5TAFMUVcBwLP7S0JD/QDgE66AKWPQTYGgeiDCYULiA4Miw+kg+eKhHv75NuguMrGYUnwAAA2hJREFUeJylmVlv00AUhT1JmlaGhrQkalDCIgpIVf//P+GJJxBr6UIUUKFpZeMzXjLLneWOz0MUNc75Kt3PcXwjMjtCFMRfWRmWRIUgDhyJ+74ssoJgjYX41xM1FoO/UaxcZOJPP1ZVMfgdwZqIh2xv3Qt1VJAVNuv4LssOxFUf1vy2qih+hVmj/eph28sOWfHoZ5B1sh5VjwUx2uiMBV1hsRb1TInRRievSyffAyyYgfSwo6148i3AWjaMHnZALllh2mGyVu3r6XZIMxDTDoNVm4Ek2+GuMFjPb7qnqXYsdu8z7NBZk+l19zzRjtYMxLBDZy2VfuLEj4mnQmet1NfsEz8mWkV+6WTtxook2aFXzD45WYoZiHXiR2ShG6VVqCzVDMQ68cNRzUDKWwdraZiXYIdZMRooFSrr1aV+oDHamKzM/06tUFgnuSmePtqI6GaYFQrLMAPh2uGvUFgvrq0DmXaYciGKHTvW6wv7zdKOU+IFO9utbQai2LFjWWYgGG13jfCz7j0VBmt2SH0kYbTttc8bXFttuZC77ozrWG9oDarRmucnGVwVCDOqPJRbk0WYgWC0i4grWXW1o8xoKzQWZQaC0dpnjRV8TlNmyIpyo7PIsSJxdjjNQPZvNBZtBoLRBu1wm9FWKCyHGVk92qAdbjNkxfRCZTnMQGLswPcgT8XhD4X1uHT3YLQBO2CGS662omO99X3uYbR+O7xmtBUNy20GErQDZoQrGtbe2HNc2A6Y4ZZLVkg7JOtg6DswaEfADETaAZbPDCRgB8yIqZAsrxmI3w6YEayYfpUs/1gRrx1hM5CjL5LlNwPBaJ12hM1oK0TQDASjzal1UhZlBnL8uWKFxopgtPXdvZUYM5Cn643IpjE3qxgtbUeUGXWFmJUxiy6MlrQjzgxk/lG8c4xBj/hQ0HbAjLOodeNQRJGaUHZw7qo5LMIO1v0gh0XYwdqCsFiWHbztDotl2cHbS7BYlh28fQuPZdjB3BTwWIYdzP0YkzVX7+u5ez8mCxvqLtyNFZOl2cHdxHFZih3sHRKXpdjB3pyyWZ0d/I0wm9XZwd9lslmdHfwdLZ/V2JGwXeSzGjsSduoJLGlHym8FCSxpR8qWO4El7UjZ3qewnm3S9s4prOzlVdKvLUmseZH0K1IS61y8T3nbfx3yQ4V57MyBAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+		.s0 { fill: #231f20 } 
+	</style>
+	<g id="Layer_1-2">
+		<g>
+			<filter id="f0">
+				<feFlood flood-color="#ffffff" flood-opacity="1" />
+				<feBlend mode="normal" in2="SourceGraphic"/>
+				<feComposite in2="SourceAlpha" operator="in" />
+			</filter>
+			<g filter="url(#f0)">
+				<path class="s0" d="m1 96.8l2.3-10.6 3.3 0.7-1.5 7 4.5 0.9 1.4-6.4 3.1 0.6-1.3 6.5 7.9 1.7-0.8 3.6z"/>
+				<path class="s0" d="m15.9 77.4c-5.3-2.7-6.8-8.5-4.5-13.3 2.4-4.8 8-7.1 13.3-4.5 5.3 2.7 6.9 8.5 4.5 13.3-2.4 4.8-8 7.1-13.3 4.5zm10.1-6c1.5-3 0.5-6.6-3-8.4-3.4-1.7-6.9-0.3-8.4 2.7-1.5 2.9-0.5 6.6 3 8.3 3.5 1.7 7 0.3 8.4-2.6z"/>
+				<path class="s0" d="m38.9 47l-2 2.1 4.8 4.3-2.5 2.7-14.3-12.9 4.5-5c2.8-3.1 6.5-3.3 9.5-0.7 2 1.9 2.6 4.2 1.8 6.5l8.2 1.4-2.6 2.9-7.4-1.4zm-2.6-2c1.4-1.5 1.7-3.1 0-4.6-1.6-1.5-3.2-1.1-4.6 0.4l-1.8 2 4.7 4.2z"/>
+				<path class="s0" d="m44.1 23.6l3.3-2.1 9.9 9.1-3.1-13.2 2.5-1.5 10.2 8.9-3.4-13 3.3-2 4.9 19.6-2.5 1.5-10.5-8.8 3 13.3-2.5 1.5z"/>
+				<path class="s0" d="m87.1 3.5l12.2 16.6-3.9 1.1-2.1-3-8 2.1-0.3 3.7-3.9 1 2.2-20.5 3.8-1zm4.1 11.7l-4.8-6.7-0.8 8.2c0 0 5.5-1.5 5.6-1.5z"/>
+				<path class="s0" d="m114.7 12.9l-2.8 0.1 0.1 6.3-3.8 0.1-0.3-19.3 6.8-0.1c4.1-0.1 6.8 2.5 6.9 6.4 0.1 2.8-1.2 4.8-3.4 5.8l4.6 6.9-4 0.1c0 0-4.1-6.3-4.1-6.3zm-0.2-3.2c2-0.1 3.4-1 3.3-3.2 0-2.2-1.4-3.1-3.4-3.1l-2.7 0.1 0.1 6.2c0 0 2.7 0 2.7 0z"/>
+				<path class="s0" d="m137 1.8l6.8 1.7c5.1 1.3 8 6.2 6.6 11.7-1.5 5.5-6.3 8.3-11.5 7l-6.7-1.8c0 0 4.8-18.6 4.8-18.6zm2.7 16.9c3.5 1 6-1 6.9-4.5 0.9-3.5-0.3-6.4-3.8-7.3l-3.1-0.8-3.1 11.9 3.1 0.7z"/>
+				<path class="s0" d="m181 24.6l-3.7-2.8 2-2.7 10.4 7.7-2 2.8-3.7-2.8-9.5 12.7-3-2.2c0 0 9.5-12.7 9.5-12.7z"/>
+				<path class="s0" d="m198.6 52.7l-5-6.2-6.2 5-2.3-2.8 14.9-12.3 2.4 2.9-6.2 5.1 5 6.1 6.2-5 2.4 2.8-15 12.3-2.3-2.9z"/>
+				<path class="s0" d="m217.1 60.5l1.7 3.3-17.1 9-1.7-3.3z"/>
+				<path class="s0" d="m224.7 76.8l1 3.6-10.4 12.1 0.1 0.1 12.7-3.5 1 3.6-18.6 5.1-1-3.6 10.3-12v-0.1l-12.7 3.5-1-3.6z"/>
+				<path class="s0" d="m230.9 107.4l0.1 3.7-8.8 0.2 8.9 7.1 0.1 4.1-8.9-7.1-10.4 8.1-0.1-4.2 7.8-6.1-2.3-1.8h-5.6v-3.7z"/>
+				<path class="s0" d="m229.2 136.5l-0.7 3.6-18.9-3.7 0.7-3.7z"/>
+				<path class="s0" d="m224.9 153.9l-1.5 3.5-15.6 2.9v0.1l12.1 5.2-1.5 3.4-17.7-7.6 1.5-3.4 15.6-2.9v-0.2l-12.1-5.2 1.5-3.4z"/>
+				<path class="s0" d="m203.2 175.9c4.6 3.8 4.8 9.8 1.3 14-1.6 2-4.4 3.8-8.2 3.3l0.3-3.2c2.2 0.1 3.9-0.8 5.1-2.3 2.2-2.7 2.1-6.4-0.9-8.9-3.1-2.5-6.8-2-9 0.7-1.5 1.8-2 4.2-0.1 6.5l3-3.5 2.4 2-5.2 6.3c-5.8-3.6-6-9.5-2.6-13.6 3.4-4.1 9.3-5.1 13.9-1.3z"/>
+				<path class="s0" d="m168.1 202.1l-2 2.6c-1.2-1.1-2.9-1.7-4.6-0.8-1.4 0.7-2.2 2-1.4 3.5 0.7 1.3 1.7 1.4 3.8 1.2l1.3-0.1c2.8-0.3 5.5 0 6.8 2.6 1.5 2.8 0.1 5.9-2.8 7.4-3 1.5-5.7 0.6-7.4-0.8l1.7-2.6c1.5 1 2.8 1.2 4 0.5 1.2-0.6 1.8-1.7 1.2-2.8-0.4-0.9-1.3-1.4-3.6-1.1l-1.3 0.1c-3.7 0.4-5.9-0.1-7.1-2.6-1.9-3.4 0.3-6.7 3.2-8.2 2.9-1.6 6.3-1.1 8.2 1.1z"/>
+				<path class="s0" d="m148 217.2c1.2 5.7-2.3 10.6-7.6 11.8-5.2 1.1-10.6-1.8-11.8-7.6-1.3-5.7 2.3-10.6 7.5-11.8 5.3-1.1 10.6 1.8 11.8 7.6zm-11-4.1c-3.2 0.7-5.4 3.7-4.6 7.5 0.8 3.8 4.1 5.6 7.3 4.9 3.3-0.7 5.5-3.7 4.6-7.5-0.8-3.8-4.1-5.6-7.3-4.9z"/>
+				<path class="s0" d="m115.9 231.5l-3.7-0.1 0.7-15.9-7.6-0.3 0.2-3.4 11.2 0.5c0 0-0.8 19.2-0.8 19.2z"/>
+				<path class="s0" d="m94.6 217.5l-3.2 11.7-3.6-1 3.2-11.7c0.8-2.9-0.7-4.3-2.4-4.7-1.6-0.5-3.6-0.1-4.4 2.8l-3.3 11.7-3.6-1 3.3-11.7c1.3-4.7 5.1-6.3 9-5.2 3.9 1.1 6.3 4.4 5 9.1z"/>
+				<path class="s0" d="m62 214.6l4 2.2-1.6 3-11.4-6.4 1.7-2.9 4.1 2.3 7.7-13.9 3.3 1.9c0 0-7.8 13.8-7.8 13.8z"/>
+				<path class="s0" d="m42.4 205.6l-2.8-2.4 12.3-14.8 2.9 2.4z"/>
+				<path class="s0" d="m36.8 187.7c-4.7 3.6-10.6 2.4-13.9-1.9-3.2-4.3-2.8-10.3 1.9-13.9 4.7-3.6 10.7-2.4 13.9 1.9 3.3 4.3 2.8 10.3-1.9 13.9zm-0.9-11.8c-2-2.6-5.7-3.3-8.8-1-3.1 2.4-3.4 6.1-1.4 8.8 2 2.6 5.7 3.3 8.8 1 3.1-2.4 3.4-6.1 1.4-8.8z"/>
+				<path class="s0" d="m10 164.3l-1.3-3.5 9.2-12.9-0.1-0.1-12.3 4.6-1.3-3.4 18-6.9 1.3 3.5-9.2 13 0.1 0.1 12.3-4.7 1.3 3.5z"/>
+				<path class="s0" d="m15.7 133.4l-1.7-2.8c1.4-0.7 2.6-2.1 2.4-4-0.2-1.5-1.1-2.7-2.8-2.5-1.4 0.1-1.9 1-2.5 3l-0.3 1.3c-0.8 2.7-2 5.1-4.9 5.4-3.2 0.3-5.5-2.1-5.9-5.4-0.3-3.3 1.5-5.5 3.4-6.6l1.9 2.6c-1.5 1-2.1 2.1-2 3.5 0.2 1.4 1 2.4 2.2 2.2 1-0.1 1.8-0.7 2.3-2.9l0.4-1.4c1-3.5 2.3-5.3 5-5.6 3.9-0.4 6.2 2.8 6.5 6 0.4 3.3-1.3 6.3-4 7.2z"/>
+			</g>
+		</g>
+		<use id="manifest-logo-mark-fts" href="#img1" x="62" y="80"/>
+	</g>
+</svg>
