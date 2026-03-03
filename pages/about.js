@@ -46,9 +46,9 @@ function About1() {
                   <Link href="/#get-started">
                     <a className="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800">GET STARTED</a>
                   </Link>
-                  <Link href="mailto:hello@manifestfts.com">
+                  {/* <Link href="mailto:hello@manifestfts.com">
                     <a className="text-gray-900 text-lg font-medium hover:underline">Join Our Team</a>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               <div className="hidden lg:block lg:w-5/12">

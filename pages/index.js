@@ -57,7 +57,7 @@ function Index3() {
         </section>
 
       {/* Partners Section */}
-      <div className="my-20 overflow-visible">
+      {/* <div className="my-20 overflow-visible">
         <div className="max-w-7xl mx-auto px-5">
           <h2 className="text-center text-lg font-semibold text-gray-900 mb-16">
             emPowered by the Best Software on Earth
@@ -88,7 +88,7 @@ function Index3() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Work Section */}
       <section className="py-8">
@@ -96,7 +96,7 @@ function Index3() {
           {/* Image Column */}
           <div className="w-full lg:w-1/2 px-4">
             <motion.img
-              src="/assets/imgs/work/work-barclay-rex.webp"
+              src="/assets/imgs/work/work-ncwf.jpg"
               alt="Barclay Rex website on laptop"
               className="rounded-lg w-full"
               initial={{ opacity: 0, x: -50 }}
@@ -106,22 +106,51 @@ function Index3() {
           </div>
           {/* Content Column */}
           <div className="w-full lg:w-1/2 px-4 justify-center">
-            <span className="bg-green-100 text-green-900 px-4 py-2 rounded-full">Our Work</span>
-            <h3 className="mt-9 text-5xl font-bold text-gray-900">Barclay Rex</h3>
+            {/* <span className="bg-green-100 text-green-900 px-4 py-2 rounded-full">
+              Case Study
+            </span> */}
+
+            <h3 className="mt-9 text-5xl font-bold text-gray-900">
+              NC Waterfalls
+            </h3>
+
             <p className="text-xl text-gray-600 my-4">
-              Digital e-Commerce Strategy, Progressive Web Application Development
+              Building a living archive for North Carolina’s waterfalls — 
+              transforming decades of fieldwork into enduring digital infrastructure.
             </p>
+
             <div className="flex items-center mt-8 space-x-4">
-              <Link href="/case-study/barclay-rex" passHref>
-                <a className="inline-flex items-center text-gray-900 border bg-gray-100 px-6 py-3 rounded-full transition">
+              <Link href="/case-study/nc-waterfalls" passHref>
+                <a
+                  className="inline-flex items-center text-gray-900 border bg-gray-100 px-6 py-3 rounded-full transition hover:bg-gray-200"
+                  onClick={() => {
+                    if (typeof window !== "undefined" && window.dataLayer) {
+                      window.dataLayer.push({
+                        event: "case_study_click",
+                        case_study: "nc_waterfalls",
+                        location: "homepage_feature"
+                      });
+                    }
+                  }}
+                >
                   View Case Study
                 </a>
               </Link>
+
               <a
-                href="https://barclayrex.com"
+                href="https://www.ncwaterfalls.com?utm_source=manifestfts&utm_medium=homepage&utm_campaign=nc_waterfalls_feature"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center bg-white text-gray-900 border border-gray-300 hover:bg-gray-100 px-6 py-3 rounded-full transition"
+                onClick={() => {
+                  if (typeof window !== "undefined" && window.dataLayer) {
+                    window.dataLayer.push({
+                      event: "external_project_click",
+                      project: "nc_waterfalls",
+                      location: "homepage_feature"
+                    });
+                  }
+                }}
               >
                 Visit Website
               </a>
@@ -132,11 +161,10 @@ function Index3() {
               </h2>
               <div className="flex justify-center gap-6">
                 {[
-                  { href: "/#", alt: "Adobe", src: "/assets/imgs/logos/adobe.svg" },
-                  { href: "/#", alt: "Bootstrap", src: "/assets/imgs/logos/tailwindcss.svg" },
-                  { href: "/#", alt: "Strapi CMS", src: "/assets/imgs/logos/strapi.svg" },
+                  { href: "/#", alt: "Adobe", src: "/assets/imgs/logos/figma.svg" },
+                  { href: "/#", alt: "Strapi CMS", src: "/assets/imgs/logos/sanity.svg" },
                   { href: "/#", alt: "Next.js", src: "/assets/imgs/logos/nextjs.svg" },
-                  { href: "/#", alt: "Vercel", src: "/assets/imgs/logos/vercel.svg" },
+                  { href: "/#", alt: "Bootstrap", src: "/assets/imgs/logos/vercel.svg" },
                 ].map((partner, index) => (
                   <Link key={index} href={partner.href}>
                     <a className="transition transform hover:-translate-y-1 hover:shadow-lg">
@@ -147,6 +175,8 @@ function Index3() {
               </div>
             </div>
           </div>
+          
+
         </div>
       </section>
 

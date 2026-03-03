@@ -37,6 +37,45 @@ function Work() {
                     </div>
                 </section>
 
+                {/* // NC Waterfalls */}
+                <section className="section-box">
+                    <div className="container mt-120">
+                        <div className="row">
+                            <div className="col-lg-6 col-sm-12 block-img-we-do"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/work-ncwf.jpg" alt="NC Waterfalls digital archive on laptop" /></div>
+                            <div className="col-lg-6 col-sm-12 block-we-do">
+                                <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Custom Searchable Archive</span>
+                                <h3 className="text-heading-1 mt-30">NC Waterfalls</h3>
+                                <p className="text-body-lead-large color-gray-600 mt-30">Translating decades of waterfall exploration into a durable, searchable digital archive built for discovery and longevity.</p>
+                                <div className="align-items-center">
+                                    <Link href="/case-study/nc-waterfalls" passHref>
+                                        <span className="btn btn-light icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3">View Case Study</span>
+                                    </Link>
+                                    <a href="https://www.ncwaterfalls.com" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
+                                </div>
+                                <div className="row">
+                                    <div className="col-12 mt-50">
+                                        <h2 className="text-heading-7 text-center color-gray-900 mb-10">Powered by</h2>
+                                        <ul className="list-partners border-0">
+                                            <li>
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Next.js" src="/assets/imgs/logos/nextjs.svg" /></a></Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="TailwindCSS" src="/assets/imgs/logos/tailwindcss.svg" /></a></Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Strapi CMS" src="/assets/imgs/logos/strapi.svg" /></a></Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Vercel" src="/assets/imgs/logos/vercel.svg" /></a></Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* // CCoalition on Race */}
                 <section className="section-box">
                     <div className="container mt-120">
