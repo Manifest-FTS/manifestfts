@@ -89,8 +89,8 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/sanity-cms">
-                    <a>Sanity API-1st CMS</a>
+                  <Link href="/case-study/sanity-cms">
+                    <a>Sanity CMS</a>
                   </Link>
                 </li>
               </ul>

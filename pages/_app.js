@@ -26,6 +26,16 @@ const pageMeta = {
     description:
       'Explore selected digital partnerships, case studies, and platform outcomes delivered by Manifest FTS.',
   },
+  '/sanity-cms': {
+    title: 'Sanity CMS Case Study | Manifest FTS',
+    description:
+      'This page has moved to our Sanity CMS case study route with updated positioning, SEO context, and structured content.',
+  },
+  '/case-study/sanity-cms': {
+    title: 'Case Study: Sanity CMS Platform | Manifest FTS',
+    description:
+      'A client-friendly case study on why Manifest FTS recommends Sanity CMS for flexible, scalable, and future-ready content operations.',
+  },
   '/about': {
     title: 'About Manifest FTS',
     description:
