@@ -36,6 +36,7 @@ function Index3() {
                   width="55"
                   height="55"
                   src="/assets/imgs/SVG/icon-video-play.svg"
+                  alt="Play reel"
                 />
                 <div className="text-body-small text-bold">PLAY REEL</div>
               </a>
@@ -170,15 +171,15 @@ function Index3() {
       {/* Call-to-Action Section */}
       <section className="py-[60px] mt-[70px] bg-green-900">
         <div className="flex justify-center items-center space-x-5">
-          <Link href="/#get-started" className="cursor-pointer">
-            <span className="inline-flex items-center font-bold bg-black text-white transition px-6 py-3 rounded-full cursor-pointer">
+          <Link href="/#get-started" passHref>
+            <a className="inline-flex items-center font-bold bg-black text-white transition px-6 py-3 rounded-full cursor-pointer">
               Get Started
-            </span>
+            </a>
           </Link>
-          <Link href="/work" className="cursor-pointer">
-            <span className="inline-flex items-center font-bold bg-white text-gray-900 border border-gray-300 transition px-6 py-3 rounded-full cursor-pointer">
+          <Link href="/work" passHref>
+            <a className="inline-flex items-center font-bold bg-white text-gray-900 border border-gray-300 transition px-6 py-3 rounded-full cursor-pointer">
               Our Work
-            </span>
+            </a>
           </Link>
         </div>
       </section>
@@ -192,12 +193,12 @@ function Index3() {
             </span>
           </div>
           <h2 className="text-center text-5xl font-bold text-gray-900 mb-4">
-            Our recommended CMS
+            Why we recommend Sanity CMS
             <br />
-            for your next project
+            for modern content teams
           </h2>
           <p className="mt-8 text-2xl text-gray-600 text-center max-w-3xl mx-auto">
-            Sanity has a long list of technical benefits, but the clean interface and visual cues make it our recommended content management system. It provides a hassle-free editing experience and adds long-lasting value for our clients.
+            Sanity is not our product — it is a platform we love implementing for clients who need flexible, scalable, and future-ready content operations. We design the system around your team so publishing is easier now and growth is cleaner later.
           </p>
         </div>
         <div className="max-w-7xl mx-auto px-4 mt-12">
@@ -246,9 +247,9 @@ function Index3() {
             </div>
           </div>
           <div className="flex justify-center mt-9 font-bold">
-            <Link href="/sanity-cms">
+            <Link href="/case-study/sanity-cms">
               <a className="inline-flex items-center bg-black text-white transition px-6 py-3 rounded-full hover:bg-gray-800">
-                Overview of Sanity CMS
+                Read Sanity CMS Case Study
               </a>
             </Link>
           </div>

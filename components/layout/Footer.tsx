@@ -1,8 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 import gsap, { Linear } from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Footer = () => {
   const logoRef = useRef<HTMLDivElement>(null);
@@ -28,7 +27,7 @@ const Footer = () => {
     <>
       <footer className="footer mt-12">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="footer-logo mx-auto">
               <div className="logo">
                 <Image
@@ -90,70 +89,18 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/sanity-cms">
-                    <a>Sanity API-1st CMS</a>
+                  <Link href="/case-study/sanity-cms">
+                    <a>Sanity CMS</a>
                   </Link>
                 </li>
               </ul>
             </div>
 
-            <div className="mb-8 text-center lg:text-left">
-              <h4 className="text-lg font-semibold">Social</h4>
-              <ul className="menu-footer mt-4">
-                <li>
-                  <a
-                    href="https://twitter.com/manifestfts"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Twitter
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com/manifestfts"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/company/manifest-fts"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    LinkedIn
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
           <div className="footer-bottom mt-12 text-center lg:text-left">
-            <div className="flex justify-between items-center flex-col mb:flex-row">
+            <div className="flex justify-center items-center flex-col">
               <div className="text-gray-500">
                 <span> &copy; 2023{year !== 2023 ? `– ${year}` : ''} Manifest FTS LLC. </span>
-              </div>
-              <div className="footer-social">
-                <a
-                  className="icon-socials icon-twitter mx-2"
-                  href="https://twitter.com/manifestfts"
-                  target="_blank"
-                  rel="noreferrer"
-                ></a>
-                <a
-                  className="icon-socials icon-instagram mx-2"
-                  href="https://www.instagram.com/manifestfts"
-                  target="_blank"
-                  rel="noreferrer"
-                ></a>
-                <a
-                  className="icon-socials icon-linkedin mx-2"
-                  href="https://www.linkedin.com/company/manifest-fts"
-                  target="_blank"
-                  rel="noreferrer"
-                ></a>
               </div>
             </div>
           </div>
