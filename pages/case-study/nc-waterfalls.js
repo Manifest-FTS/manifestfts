@@ -236,7 +236,7 @@ function NcWaterfallsCaseStudy() {
         <section className="section-box py-20">
           <div className="container max-w-7xl">
             <p className="text-lg text-gray-700 mb-6">
-              Working with Kevin was genuinely enjoyable. Our conversations moved naturally between creative nuance and technical possibilities. He brought decades of field experience and careful writing; I brought the systems thinking needed to support and elevate it.
+              Working with Kevin A. was genuinely enjoyable. Our conversations moved naturally between creative nuance and technical possibilities. He brought decades of field experience and careful writing; I brought the systems thinking needed to support and elevate it.
             </p>
 
             <p className="text-lg text-gray-700 mb-6">

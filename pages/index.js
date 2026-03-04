@@ -25,21 +25,8 @@ function Index3() {
           id="home-hero"
           className="section-box position-relative overflow-hidden"
         >
-          <MuxPlayer id="hp-reel"
-            streamType="on-demand"
-            playbackId="9aEC9vgcsVx01MgwwTGwU7G3i02B4jhtShGymd2HjyU8M"          
-            metadataViewerUserId=""
-            primaryColor="#FFFFFF"
-            secondaryColor="#000000"
-            muted={true}
-            loop={true}
-            autoPlay={true}
-            className='background-video'      
-            thumbnailTime={0}   
-            controls={false}                          
-          />
           <div className="flex brand-video-copy">
-            <h1 className="text-3xl md:text-7xl font-bold mt-10">
+            <h1 className="text-3xl md:text-7xl font-bold">
               Forward Thinking
               <br className="d-lg-block d-none" /> Solutions
             </h1>
@@ -92,7 +79,7 @@ function Index3() {
 
       {/* Work Section */}
       <section className="py-8">
-        <div className="max-w-7xl mx-auto px-4 mt-[120px] flex flex-wrap">
+        <div className="max-w-7xl mx-auto px-4 mt-16 md:mt-[120px] flex flex-wrap">
           {/* Image Column */}
           <div className="w-full lg:w-1/2 px-4">
             <motion.img
