@@ -11,52 +11,67 @@
 
 #home-hero {
     display: flex;
-    flex-direction: column;
-    height: 62vh;
-    position: relative;
-    padding: 0;
+    align-items: center;
     justify-content: center;
+    position: relative;
+    min-height: clamp(360px, 68svh, 740px);
+    padding: 120px 20px 90px;
     width: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(16, 24, 40, 0.45), rgba(16, 24, 40, 0.45)), url('/assets/imgs/hero-image.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 
     .brand-video-copy {
         align-items: center;
-        align-self: center;
-        display: inline-flex;
+        display: flex;
         flex-direction: column;
+        gap: 24px;
         max-width: 1140px;
-        margin-right: auto;
-        margin-left: auto;
+        margin: 0 auto;
         position: relative;
         text-align: center;
-        transition: opacity 444ms linear;
-        z-index: 5;
-        h1, div {
+        z-index: 2;
+
+        h1 {
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.05;
+            text-wrap: balance;
+        }
+
+        .play-reel {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            z-index: 3;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        div {
             color: #ffffff;
         }
     }
 
-    .brand-video-wrapper {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin: 0;
-        align-items: center;
-        text-align: center;
+    @media (max-width: 991.98px) {
+        min-height: 0;
+        padding: 108px 16px 64px;
 
-        #brand-video {  
-            display: block; 
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-            opacity: 1;
-            transition: opacity 1000ms linear;
+        .brand-video-copy {
+            gap: 20px;
+
+            h1 {
+                line-height: 1.12;
+            }
         }
     }
 }
+
+
 
 
 

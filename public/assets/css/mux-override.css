@@ -1,0 +1,91 @@
+/* Overrides for background hero Mux player */
+/* Overrides for background hero Mux player */
+/* Ensure the wrapper covers the full hero area */
+#home-hero .brand-video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  transition: none !important;
+  /* DEBUGGING: bright red border to see if wrapper changes */
+  border: 3px solid #ff0000 !important;
+}
+
+/* Make sure hero copy sits above the video */
+#home-hero .brand-video-copy {
+  z-index: 10;
+}
+
+/* DEBUGGING: outline the hero section to see sizing */
+#home-hero {
+  outline: 2px dashed #ffff00 !important;
+}
+
+/* Make the mux player fill the wrapper */
+mux-player#brand-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* DEBUGGING: bright blue border to see mux-player boundaries */
+  border: 2px solid #0000ff !important;
+}
+
+/* Style the internal media element (via part) to cover */
+mux-player#brand-video::part(media) {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Hide media chrome controls */
+mux-player#brand-video::part(controls),
+mux-player#brand-video::part(center-controls) {
+  display: none !important;
+}
+
+/* Prevent the player from intercepting pointer events so CTA is clickable */
+#home-hero .brand-video-wrapper #brand-video,
+#home-hero .brand-video-wrapper #brand-video * {
+  pointer-events: none;
+  touch-action: none;
+}
+
+/* Ensure poster / placeholder images also cover the area */
+mux-player#brand-video::part(poster),
+mux-player#brand-video::part(img),
+mux-player#brand-video::part(poster) img,
+mux-player#brand-video::part(img) img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Generic fallbacks: if player ID/class differs (hp-reel, background-video), target them too */
+mux-player.background-video, mux-player#hp-reel, mux-player#brand-video, .background-video {
+  width: 100vw !important;
+  height: 100% !important;
+}
+
+mux-player.background-video::part(media),
+mux-player.background-video::part(poster),
+mux-player.background-video::part(img) {
+  object-fit: cover !important;
+  object-position: center center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Strong fallbacks: enforce no transitions and fixed sizing on the element itself */
+#home-hero mux-player, #home-hero mux-player.background-video, #home-hero #hp-reel {
+  height: 62vh !important;
+  min-height: 62vh !important;
+  max-height: 62vh !important;
+  transition: none !important;
+}
