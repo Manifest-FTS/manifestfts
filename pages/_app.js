@@ -56,6 +56,11 @@ const pageMeta = {
     description:
       'How decades of waterfall fieldwork were translated into searchable, scalable digital infrastructure built for longevity.',
   },
+  '/case-study/joyfeed': {
+    title: 'Case Study Draft: JoyFeed | Manifest FTS',
+    description:
+      'Draft JoyFeed case study focused on strategy, UX, and a persistent BLS ambient audio layer for a restorative platform experience.',
+  },
 }
 
 function MyApp({ Component, pageProps }) {

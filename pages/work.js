@@ -76,6 +76,27 @@ function Work() {
                     </div>
                 </section>
 
+                {/* // JoyFeed */}
+                <section className="section-box">
+                    <div className="container mt-120 re-order">
+                        <div className="row">
+
+                            <div className="col-lg-6 col-sm-12 block-we-do first">
+                                <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Wellness Social Platform</span>
+                                <h3 className="text-heading-1 mt-30">JoyFeed</h3>
+                                <p className="text-body-lead-large color-gray-600 mt-30">JoyFeed is a restorative social platform built around positive content, meaningful engagement, and emotional wellbeing.</p>
+                                <p className="text-body-lead-large color-gray-600 mt-30">A signature product feature is the persistent BLS ambient audio layer, available from a floating bottom-right control across the full platform experience.</p>
+                                <div className="align-items-center">
+                                    {/* JoyFeed case study link intentionally stubbed until publish-ready */}
+                                    <span className="btn btn-light color-gray-500 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3 cursor-not-allowed">Case Study Coming Soon</span>
+                                </div>
+                            </div>
+
+                            <div className="col-lg-6 col-sm-12 block-img-we-do second"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/work-ozone.png" alt="JoyFeed platform preview on laptop" /></div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* // CCoalition on Race */}
                 <section className="section-box">
                     <div className="container mt-120">
@@ -148,9 +169,6 @@ function Work() {
                                 <p className="text-body-lead-large color-gray-600 mt-30">Barclay Rex has become one of the top tobacconists in New York City and is the last family-owned tobacconist in the city with over 111 years of service and excellence in fine tobacco</p>
                                 <p className="text-body-lead-large color-gray-600 mt-30">Strategic UI/UX in AdobeXD utlizing our partners existing brand. Digital e-Commerce strategy, and progressive web application development with Strapi CMS/API.</p>
                                 <div className="align-items-center">
-                                    <Link href="/case-study/barclay-rex" passHref>
-                                        <span className="btn btn-light icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3">View Case Study</span>
-                                    </Link>
                                     <a href="https://barclayrex.com" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
                                 </div>
                                 <div className="row">
