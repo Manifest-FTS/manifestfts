@@ -181,22 +181,10 @@ function Index3() {
             </p>
 
             <div className="flex items-center mt-8 space-x-4">
-              <Link href="/case-study/joyfeed" passHref>
-                <a
-                  className="inline-flex items-center text-gray-900 border bg-gray-100 px-6 py-3 rounded-full transition hover:bg-gray-200"
-                  onClick={() => {
-                    if (typeof window !== "undefined" && window.dataLayer) {
-                      window.dataLayer.push({
-                        event: "case_study_click",
-                        case_study: "joyfeed",
-                        location: "homepage_feature",
-                      });
-                    }
-                  }}
-                >
-                  View Case Study
-                </a>
-              </Link>
+              {/* JoyFeed case study link intentionally stubbed until publish-ready */}
+              <span className="inline-flex items-center text-gray-500 border bg-gray-100 px-6 py-3 rounded-full cursor-not-allowed">
+                Case Study Coming Soon
+              </span>
             </div>
           </div>
 

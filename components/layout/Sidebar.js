@@ -70,9 +70,7 @@ const Sidebar = ({ openClass }) => {
                                                 <li>
                                                     <Link href="/case-study/nc-waterfalls"><a>NC Waterfalls</a></Link>
                                                 </li>
-                                                <li>
-                                                    <Link href="/case-study/joyfeed"><a>JoyFeed</a></Link>
-                                                </li>
+                                                {/* JoyFeed case study link intentionally hidden until publish-ready */}
                                                 <li>
                                                     <Link href="/case-study/sanity-cms"><a>Sanity CMS</a></Link>
                                                 </li>

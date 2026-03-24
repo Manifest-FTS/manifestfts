@@ -87,9 +87,8 @@ function Work() {
                                 <p className="text-body-lead-large color-gray-600 mt-30">JoyFeed is a restorative social platform built around positive content, meaningful engagement, and emotional wellbeing.</p>
                                 <p className="text-body-lead-large color-gray-600 mt-30">A signature product feature is the persistent BLS ambient audio layer, available from a floating bottom-right control across the full platform experience.</p>
                                 <div className="align-items-center">
-                                    <Link href="/case-study/joyfeed" passHref>
-                                        <span className="btn btn-light icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3">View Case Study</span>
-                                    </Link>
+                                    {/* JoyFeed case study link intentionally stubbed until publish-ready */}
+                                    <span className="btn btn-light color-gray-500 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3 cursor-not-allowed">Case Study Coming Soon</span>
                                 </div>
                             </div>
 
