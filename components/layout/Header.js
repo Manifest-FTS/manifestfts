@@ -113,10 +113,10 @@ const Header = ({ handleOpen, headerStyle }) => {
                       <Link href="#"><a>Case Studies</a></Link>
                       <ul className="sub-menu">
                         <li>
-                          <Link href="/case-study/barclay-rex"><a>Barclay Rex</a></Link>
+                          <Link href="/case-study/nc-waterfalls"><a>NC Waterfalls</a></Link>
                         </li>
                         <li>
-                          <Link href="/case-study/nc-waterfalls"><a>NC Waterfalls</a></Link>
+                          <Link href="/case-study/joyfeed"><a>JoyFeed</a></Link>
                         </li>
                         <li>
                           <Link href="/case-study/sanity-cms"><a>Sanity CMS</a></Link>

@@ -168,6 +168,53 @@ function Index3() {
         </div>
       </section>
 
+      {/* JoyFeed Case Study Section */}
+      <section className="py-8">
+        <div className="max-w-7xl mx-auto px-4 mt-8 md:mt-16 flex flex-wrap items-center">
+          {/* Content Column (left on desktop) */}
+          <div className="w-full lg:w-1/2 px-4 order-2 lg:order-1">
+            <h3 className="mt-9 text-5xl font-bold text-gray-900">JoyFeed</h3>
+
+            <p className="text-xl text-gray-600 my-4">
+              A restorative social wellness platform designed around positive content,
+              meaningful engagement, and a persistent BLS ambient audio layer.
+            </p>
+
+            <div className="flex items-center mt-8 space-x-4">
+              <Link href="/case-study/joyfeed" passHref>
+                <a
+                  className="inline-flex items-center text-gray-900 border bg-gray-100 px-6 py-3 rounded-full transition hover:bg-gray-200"
+                  onClick={() => {
+                    if (typeof window !== "undefined" && window.dataLayer) {
+                      window.dataLayer.push({
+                        event: "case_study_click",
+                        case_study: "joyfeed",
+                        location: "homepage_feature",
+                      });
+                    }
+                  }}
+                >
+                  View Case Study
+                </a>
+              </Link>
+            </div>
+          </div>
+
+          {/* Image Column (right on desktop, top on mobile) */}
+          <div className="w-full lg:w-1/2 px-4 order-1 lg:order-2">
+            <motion.img
+              src="/assets/imgs/work/work-ozone.png"
+              alt="JoyFeed product preview"
+              className="rounded-lg w-full"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Call-to-Action Section */}
       <section className="py-[60px] mt-[70px] bg-green-900">
         <div className="flex justify-center items-center space-x-5">

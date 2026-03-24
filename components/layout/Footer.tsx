@@ -84,8 +84,13 @@ const Footer = () => {
               <h4 className="text-lg font-semibold">Case Studies</h4>
               <ul className="menu-footer mt-4">
                 <li>
-                  <Link href="/case-study/barclay-rex">
-                    <a>Barclay Rex</a>
+                  <Link href="/case-study/nc-waterfalls">
+                    <a>NC Waterfalls</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/case-study/joyfeed">
+                    <a>JoyFeed</a>
                   </Link>
                 </li>
                 <li>

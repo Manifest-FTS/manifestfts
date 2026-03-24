@@ -68,10 +68,10 @@ const Sidebar = ({ openClass }) => {
                                             <Link href="#"><a>Case Study</a></Link>
                                             <ul className={isActive.key == 3 ? "sub-menu d-block" : "sub-menu d-none"}>
                                                 <li>
-                                                    <Link href="/case-study/barclay-rex"><a>Barclay Rex</a></Link>
+                                                    <Link href="/case-study/nc-waterfalls"><a>NC Waterfalls</a></Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/case-study/nc-waterfalls"><a>NC Waterfalls</a></Link>
+                                                    <Link href="/case-study/joyfeed"><a>JoyFeed</a></Link>
                                                 </li>
                                                 <li>
                                                     <Link href="/case-study/sanity-cms"><a>Sanity CMS</a></Link>

@@ -156,9 +156,9 @@ function SanityCMSCaseStudyPage() {
               >
                 Visit Sanity.io
               </a>
-              <Link href="/#get-started">
-                <a className="inline-flex items-center justify-center rounded-full border border-white px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-gray-900 sm:w-auto">
-                  Talk About Fit
+              <Link href="#why-we-recommend-it">
+                <a className="inline-flex items-center justify-center rounded-full border border-white px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-[#102a3a] sm:w-auto">
+                  Why it’s recommended
                 </a>
               </Link>
             </div>
@@ -184,7 +184,7 @@ function SanityCMSCaseStudyPage() {
           </div>
         </section>
 
-        <section className="bg-white">
+        <section id="why-we-recommend-it" className="bg-white">
           <div className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 sm:pb-14 lg:px-8 lg:pb-16">
             <div className="max-w-3xl">
               <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
