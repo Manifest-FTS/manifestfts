@@ -6,6 +6,10 @@ import WPLanding from "../components/layout/WPLanding";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+import logo from "../public/assets/anim/mfts-animated-logo.json";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 type JsonLdObject = {
   "@context": string;
@@ -47,6 +51,7 @@ function WordPressLandingPage() {
   const [selectedPlan, setSelectedPlan] = useState<string>("");
   const [status, setStatus] = useState<string>("idle");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const logoAnimationStyle = { width: 225 };
 
   useEffect(() => {
     if (typeof document !== "undefined") {
@@ -284,13 +289,11 @@ function WordPressLandingPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="header-logo mb-6">
-                <div className="mx-auto w-[200px] md:w-[223px]">
-                  <Image
-                    src="/assets/imgs/logo.svg"
-                    alt="Manifest FTS"
-                    width={223}
-                    height={52}
-                    priority
+                <div className="mx-auto max-w-[223px]">
+                  <Lottie
+                    animationData={logo}
+                    loop={false}
+                    style={logoAnimationStyle}
                   />
                 </div>
               </div>
