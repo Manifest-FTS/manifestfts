@@ -390,7 +390,7 @@ const WordPressLandingPage = () => {
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-dark">Online Presence Drives Growth</h3>
-                <p className="mt-4 text-gray-600">Industry average: small businesses can see around <strong>XX% more inquiries</strong> after launching a clear, mobile-friendly website.</p>
+                <p className="mt-4 text-gray-600">Industry average: small businesses can see around <strong>2x-10x more inquiries</strong> after launching a clear, search optimized, and mobile-friendly website.</p>
               </motion.div>
 
               {/* Card 3 */}
@@ -430,7 +430,7 @@ const WordPressLandingPage = () => {
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-dark">Customers Research Before They Call</h3>
-                <p className="mt-4 text-gray-600">Industry average: around <strong>XX% of buyers</strong> check a business online before deciding to contact or book.</p>
+                <p className="mt-4 text-gray-600">Improving speed and mobile usability often leads to a noticeable increase in inquiries or donations — sometimes <strong>20% or more</strong>.</p>
               </motion.div>
 
               {/* Card 5 - Industry average placeholder (replaces Third-Party Integrations) */}
@@ -450,7 +450,7 @@ const WordPressLandingPage = () => {
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-dark">Fast Sites Convert Better</h3>
-                <p className="mt-4 text-gray-600">Industry average: improving speed and mobile experience can lift conversion rates by <strong>XX%</strong> or more for local businesses.</p>
+                <p className="mt-4 text-gray-600">Industry average: improving speed and mobile experience can lift conversion rates by <strong>20%</strong> or more for local businesses.</p>
               </motion.div>
 
               {/* Card 6 */}
