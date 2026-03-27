@@ -95,17 +95,64 @@ const WordPressLandingPage = () => {
       }
     });
 
-    try {
-      const res = await fetch("/api/mail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+    if (selectedPlan === "guided_onboarding" && (!formData.preferredDate || !formData.preferredTime)) {
+      toast.error("Please select your preferred date and time for guided onboarding.");
+      return;
+    }
 
-      console.log(res);
-      if (res.ok) {
+    try {
+      const intakePayload = {
+        businessName: formData.businessName || formData.name || "",
+        contactName: formData.name || "",
+        email: formData.email || "",
+        phone: formData.phone || "",
+        businessCategory: "",
+        businessDescription: formData.message || "",
+        serviceArea: "",
+        websiteStatus: formData.websiteUrl ? "active_site" : "no_site",
+        desiredPages: "",
+        primaryGoal: "visibility",
+        servicesOffered: "",
+        preferredStyleTone: "",
+        socialLinks: "",
+        googleBusinessProfileStatus: "unsure",
+        domainStatus: "unsure",
+        logoStatus: "none",
+        imageUploadNotes: "",
+        notesSpecialRequests: `Selected Plan: ${selectedPlan || "N/A"}\nWebsite URL: ${formData.websiteUrl || "N/A"}\nMultiple Sites: ${formData.multipleSites || "N/A"}\nPreferred Onboarding Date: ${formData.preferredDate || "N/A"}\nPreferred Onboarding Time: ${formData.preferredTime || "N/A"}\nTimezone: ${formData.timezone || "N/A"}\nContact Preference: ${formData.contactPreference || "N/A"}\nMessage: ${formData.message || ""}`,
+        templateAcknowledged: true,
+        upgradeInterests: {
+          advancedSEO: false,
+          copywritingContentHelp: false,
+          blogContentStrategy: false,
+          domainEmailSetup: false,
+          hostingMaintenance: false,
+          customDesignFeatures: false,
+        },
+      };
+
+      const [mailRes, intakeRes] = await Promise.all([
+        fetch("/api/mail", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            formType: "freeWebsiteIntake",
+            selectedPlan,
+          }),
+        }),
+        fetch("/api/free-website/submissions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(intakePayload),
+        }),
+      ]);
+
+      if (mailRes.ok && intakeRes.ok) {
         // Close the form modal
         setIsFormVisible(false);
         // Show success toast notification
@@ -174,7 +221,7 @@ const WordPressLandingPage = () => {
             <h1 className="max-w-2xl mx-auto text-5xl font-extrabold text-white leading-tight my-4">Free Website for Your Small Business
             </h1>
             <div className="max-w-4xl mx-auto">
-              <p className="mt-4 text-lg">ManifestFTS is helping small business owners go digital — with no upfront cost for the website. You get a professional, modern site, and we manage everything for you. Just $86/month for ongoing support. Cancel anytime.*</p>
+              <p className="mt-4 text-lg">ManifestFTS is helping small business owners go digital — with no upfront cost for the website. You get a professional, modern site, and we manage everything for you. Just $149/month for ongoing support. Cancel anytime.*</p>
 
               <Link href="#plans">
                 <a className="inline-block px-5 py-2 mt-12 max-w-[350px] text-base text-black text-center mx-auto rounded-md backdrop-blur-4xl
@@ -207,7 +254,7 @@ const WordPressLandingPage = () => {
               >
                 <div>
                   <h4 className="text-xl font-semibold text-dark">Basic</h4>
-                  <p className="mt-2 text-gray-600 text-base font-bold">$86/month</p>
+                  <p className="mt-2 text-gray-600 text-base font-bold">$149/month</p>
                   <ul className="mt-4 text-gray-600">
                     <li>Free Website</li>
                     <li>5 Pages + Blog</li>
@@ -236,7 +283,7 @@ const WordPressLandingPage = () => {
               >
                 <div>
                   <h4 className="text-xl font-semibold text-dark">Professional</h4>
-                  <p className="mt-2 text-gray-600 text-base font-bold">$172/month</p>
+                  <p className="mt-2 text-gray-600 text-base font-bold">$298/month</p>
                   <ul className="mt-4 text-gray-600">
                     <li>Everything in <em>Basic</em> +</li>
                     <li>10 pages + Blog</li>
@@ -264,23 +311,22 @@ const WordPressLandingPage = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div>
-                  <h4 className="text-xl font-semibold text-dark">Advanced</h4>
-                  <p className="mt-2 text-gray-600 text-base font-bold">Custom Pricing</p>
+                  <h4 className="text-xl font-semibold text-dark">Guided Onboarding</h4>
+                  <p className="mt-2 text-gray-600 text-base font-bold">Contact Us</p>
                   <ul className="mt-4 text-gray-600">
-                    <li>Everything in <em>Professional</em> +</li>
-                    <li>Custom Requirements</li>
-                    <li>50GB+ Storage</li>
-                    <li>500GB+ Bandwidth</li>
-                    <li>Dedicated DevOps Support</li>
-                    <li>Custom Performance Insights/Reports</li>
-                    <li>Custom Add-ons & Integrations</li>
+                    <li>• Best for advanced or unique project requirements</li>
+                    <li>• Book a guided onboarding call with our team</li>
+                    <li>• Share timeline, integrations, and complexity upfront</li>
+                    <li>• Get a right-fit recommendation and next steps</li>
+                    <li>• Includes migration and architecture discussion</li>
+                    <li>• Ideal for custom functionality and scale planning</li>
                   </ul>
                 </div>
                 <button
-                  onClick={() => handleSelectPlan("enterprise")}
-                  className={`w-full mt-6 py-2 text-white ${selectedPlan === "enterprise" ? "bg-blue-600" : "bg-gray-500"}`}
+                  onClick={() => handleSelectPlan("guided_onboarding")}
+                  className={`w-full mt-6 py-2 text-white ${selectedPlan === "guided_onboarding" ? "bg-blue-600" : "bg-gray-500"}`}
                 >
-                  {selectedPlan === "enterprise" ? "Selected" : "Select Plan"}
+                  {selectedPlan === "guided_onboarding" ? "Selected" : "Contact Us"}
                 </button>
               </motion.div>
             </div>
@@ -327,7 +373,7 @@ const WordPressLandingPage = () => {
                 <p className="mt-4 text-gray-600">Need a simple online presence? We create sleek, mobile-ready sites tailored to your brand and goals.</p>
               </motion.div>
 
-              {/* Card 2 */}
+              {/* Card 2 - Industry average placeholder (replaces Mid-Level Platforms) */}
               <motion.div
                 className="bg-white p-6 rounded-lg shadow-lg group overflow-hidden transform transition duration-300 hover:scale-105"
                 initial={{ opacity: 0 }}
@@ -343,8 +389,8 @@ const WordPressLandingPage = () => {
                     className="rounded-t-lg"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-dark">Mid-Level Platforms</h3>
-                <p className="mt-4 text-gray-600">From appointment systems to e-commerce — our custom solutions help your operations run smarter.</p>
+                <h3 className="text-xl font-semibold text-dark">Online Presence Drives Growth</h3>
+                <p className="mt-4 text-gray-600">Industry average: small businesses can see around <strong>XX% more inquiries</strong> after launching a clear, mobile-friendly website.</p>
               </motion.div>
 
               {/* Card 3 */}
@@ -367,7 +413,7 @@ const WordPressLandingPage = () => {
                 <p className="mt-4 text-gray-600">We build powerful ERP systems for inventory, HR, finance, and more. Tailored for growing companies.</p>
               </motion.div>
 
-              {/* Card 4 */}
+              {/* Card 4 - Industry average placeholder (replaces Custom Software Development) */}
               <motion.div
                 className="bg-white p-6 rounded-lg shadow-lg group overflow-hidden transform transition duration-300 hover:scale-105"
                 initial={{ opacity: 0 }}
@@ -383,11 +429,11 @@ const WordPressLandingPage = () => {
                     className="rounded-t-lg"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-dark">Custom Software Development</h3>
-                <p className="mt-4 text-gray-600">Need something unique? We design and develop scalable systems and applications from the ground up.</p>
+                <h3 className="text-xl font-semibold text-dark">Customers Research Before They Call</h3>
+                <p className="mt-4 text-gray-600">Industry average: around <strong>XX% of buyers</strong> check a business online before deciding to contact or book.</p>
               </motion.div>
 
-              {/* Card 5 */}
+              {/* Card 5 - Industry average placeholder (replaces Third-Party Integrations) */}
               <motion.div
                 className="bg-white p-6 rounded-lg shadow-lg group overflow-hidden transform transition duration-300 hover:scale-105"
                 initial={{ opacity: 0 }}
@@ -403,8 +449,8 @@ const WordPressLandingPage = () => {
                     className="rounded-t-lg"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-dark">Third-Party Integrations</h3>
-                <p className="mt-4 text-gray-600">Integrate with CRMs, APIs, payment systems, or marketing tools to boost business productivity.</p>
+                <h3 className="text-xl font-semibold text-dark">Fast Sites Convert Better</h3>
+                <p className="mt-4 text-gray-600">Industry average: improving speed and mobile experience can lift conversion rates by <strong>XX%</strong> or more for local businesses.</p>
               </motion.div>
 
               {/* Card 6 */}
@@ -496,7 +542,7 @@ const WordPressLandingPage = () => {
               className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-6 overflow-y-auto pb-6 form-scrollbar"
               onSubmit={handleOnSubmit}
             >
-              <input type="hidden" name="formType" value="wordpressHosting" />
+              <input type="hidden" name="formType" value="freeWebsiteIntake" />
               <input type="hidden" name="selectedPlan" value={selectedPlan} />
 
               {/* Full Name */}
@@ -585,6 +631,56 @@ const WordPressLandingPage = () => {
                   required
                 />
               </div>
+
+              {selectedPlan === "guided_onboarding" && (
+                <>
+                  <div className="flex flex-col">
+                    <label htmlFor="preferredDate" className="block text-lg text-gray-600">Preferred Date</label>
+                    <input
+                      type="date"
+                      id="preferredDate"
+                      name="preferredDate"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                      required
+                    />
+                  </div>
+
+                  <div className="flex flex-col">
+                    <label htmlFor="preferredTime" className="block text-lg text-gray-600">Preferred Time</label>
+                    <input
+                      type="time"
+                      id="preferredTime"
+                      name="preferredTime"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                      required
+                    />
+                  </div>
+
+                  <div className="flex flex-col">
+                    <label htmlFor="timezone" className="block text-lg text-gray-600">Timezone</label>
+                    <input
+                      type="text"
+                      id="timezone"
+                      name="timezone"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                      placeholder="e.g. EST"
+                    />
+                  </div>
+
+                  <div className="flex flex-col">
+                    <label htmlFor="contactPreference" className="block text-lg text-gray-600">Preferred Contact Method</label>
+                    <select
+                      id="contactPreference"
+                      name="contactPreference"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                    >
+                      <option value="phone">Phone</option>
+                      <option value="email">Email</option>
+                      <option value="either">Either</option>
+                    </select>
+                  </div>
+                </>
+              )}
 
               {/* Submit Button */}
               <button type="submit" className="w-full py-3 bg-black text-white rounded-lg my-2 md:my-5 hover:bg-gradient-to-r hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500">

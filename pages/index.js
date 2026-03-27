@@ -169,7 +169,7 @@ function Index3() {
       </section>
 
       {/* JoyFeed Case Study Section */}
-      <section className="py-8">
+      <section className="py-8 hidden">
         <div className="max-w-7xl mx-auto px-4 mt-8 md:mt-16 flex flex-wrap items-center">
           {/* Content Column (left on desktop) */}
           <div className="w-full lg:w-1/2 px-4 order-2 lg:order-1">
