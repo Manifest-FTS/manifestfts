@@ -1,1 +1,144 @@
-[]
+[
+  {
+    "id": "fw_1774619803912_zyhc6w",
+    "createdAt": "2026-03-27T13:56:43.912Z",
+    "updatedAt": "2026-03-27T13:56:43.912Z",
+    "status": "new",
+    "intake": {
+      "businessName": "JD CO",
+      "contactName": "Kevin Williams",
+      "email": "lot6six@gmail.com",
+      "phone": "",
+      "businessCategory": "small_business",
+      "businessDescription": "g",
+      "serviceArea": "",
+      "websiteStatus": "no_site",
+      "desiredPages": "",
+      "primaryGoal": "visibility",
+      "servicesOffered": "",
+      "preferredStyleTone": "",
+      "socialLinks": "",
+      "googleBusinessProfileStatus": "unsure",
+      "domainStatus": "unsure",
+      "logoStatus": "none",
+      "imageUploadNotes": "",
+      "notesSpecialRequests": "Selected Plan: guided_onboarding\nWebsite URL: N/A\nPrimary Goal: visibility\nBest Time To Call: sddfg\nMessage: g",
+      "templateAcknowledged": true,
+      "upgradeInterests": {
+        "advancedSEO": false,
+        "copywritingContentHelp": false,
+        "blogContentStrategy": false,
+        "domainEmailSetup": false,
+        "hostingMaintenance": true,
+        "customDesignFeatures": false
+      }
+    },
+    "internalNotes": [],
+    "generatedContentDraft": {
+      "heroHeading": "JD CO — Trusted small_business in your service area",
+      "heroSubheading": "Clear, mobile-friendly, and launch-ready — built to help customers find and contact you quickly.",
+      "aboutSection": "JD CO provides dependable service with a focus on professionalism, clarity, and customer experience. This draft can be personalized once final details are confirmed.",
+      "servicesSummary": "Core services can be listed here in plain language with short benefit-focused descriptions.",
+      "contactCTA": "Ready to get started? Contact us today to request a quote or schedule your first conversation.",
+      "seoTitleSuggestion": "JD CO | small_business in your service area",
+      "metaDescriptionSuggestion": "JD CO offers professional small_business services in your service area. Contact us for reliable support and clear next steps.",
+      "locationServiceNotes": "Add nearby locations, neighborhoods, and service qualifiers as needed for premium SEO expansion."
+    },
+    "seoVisibilityNotes": "Basic on-page SEO is included. Review service + location specificity for premium strategy opportunities.",
+    "premiumUpsellRecommendations": "Evaluate for service pages, location pages, and enhanced copywriting after intake review.",
+    "fulfillment": {
+      "templateAssignment": "",
+      "contentReadiness": "not_ready",
+      "assetReadiness": "missing",
+      "wordpressSetupStatus": "pending",
+      "previewUrl": "",
+      "launchUrl": "",
+      "assignedTeamMember": "",
+      "handoffStatus": "not_started",
+      "readinessForFulfillment": false,
+      "contentMissing": true,
+      "contentApproved": false,
+      "paidConversion": false
+    },
+    "timeline": [
+      {
+        "id": "ev_1774619803912_87xs3c",
+        "type": "created",
+        "message": "Submission created from public free website intake.",
+        "createdAt": "2026-03-27T13:56:43.912Z",
+        "actor": "public_form"
+      }
+    ]
+  },
+  {
+    "id": "fw_1774619134313_cxsr37",
+    "createdAt": "2026-03-27T13:45:34.313Z",
+    "updatedAt": "2026-03-27T13:45:34.313Z",
+    "status": "new",
+    "intake": {
+      "businessName": "FTS",
+      "contactName": "Kevin Williams",
+      "email": "devkev@manifestfts.com",
+      "phone": "732000000",
+      "businessCategory": "nonprofit",
+      "businessDescription": "Love to work together.",
+      "serviceArea": "",
+      "websiteStatus": "active_site",
+      "desiredPages": "6_10",
+      "primaryGoal": "donations",
+      "servicesOffered": "",
+      "preferredStyleTone": "",
+      "socialLinks": "",
+      "googleBusinessProfileStatus": "unsure",
+      "domainStatus": "unsure",
+      "logoStatus": "none",
+      "imageUploadNotes": "",
+      "notesSpecialRequests": "Selected Plan: growth\nWebsite URL: https://sohps.org\nOrganization Type: nonprofit\nDesired Pages: 6_10\nPrimary Goal: donations\nPreferred Style/Tone: N/A\nMultiple Sites: no\nPreferred Onboarding Date: N/A\nPreferred Onboarding Time: N/A\nTimezone: N/A\nContact Preference: N/A\nMessage: Love to work together.",
+      "templateAcknowledged": true,
+      "upgradeInterests": {
+        "advancedSEO": false,
+        "copywritingContentHelp": false,
+        "blogContentStrategy": false,
+        "domainEmailSetup": false,
+        "hostingMaintenance": true,
+        "customDesignFeatures": false
+      }
+    },
+    "internalNotes": [],
+    "generatedContentDraft": {
+      "heroHeading": "FTS — Trusted nonprofit in your service area",
+      "heroSubheading": "Clear, mobile-friendly, and launch-ready — built to help customers find and contact you quickly.",
+      "aboutSection": "FTS provides dependable service with a focus on professionalism, clarity, and customer experience. This draft can be personalized once final details are confirmed.",
+      "servicesSummary": "Core services can be listed here in plain language with short benefit-focused descriptions.",
+      "contactCTA": "Ready to get started? Contact us today to request a quote or schedule your first conversation.",
+      "seoTitleSuggestion": "FTS | nonprofit in your service area",
+      "metaDescriptionSuggestion": "FTS offers professional nonprofit services in your service area. Contact us for reliable support and clear next steps.",
+      "locationServiceNotes": "Add nearby locations, neighborhoods, and service qualifiers as needed for premium SEO expansion."
+    },
+    "seoVisibilityNotes": "Basic on-page SEO is included. Review service + location specificity for premium strategy opportunities.",
+    "premiumUpsellRecommendations": "Evaluate for service pages, location pages, and enhanced copywriting after intake review.",
+    "fulfillment": {
+      "templateAssignment": "",
+      "contentReadiness": "not_ready",
+      "assetReadiness": "missing",
+      "wordpressSetupStatus": "pending",
+      "previewUrl": "",
+      "launchUrl": "",
+      "assignedTeamMember": "",
+      "handoffStatus": "not_started",
+      "readinessForFulfillment": false,
+      "contentMissing": true,
+      "contentApproved": false,
+      "paidConversion": false
+    },
+    "timeline": [
+      {
+        "id": "ev_1774619134313_fq7w7z",
+        "type": "created",
+        "message": "Submission created from public free website intake.",
+        "createdAt": "2026-03-27T13:45:34.313Z",
+        "actor": "public_form"
+      }
+    ]
+  }
+]

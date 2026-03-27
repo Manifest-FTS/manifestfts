@@ -47,31 +47,12 @@ async function sendEmail(req, res) {
       Email: ${body.email || "N/A"}\r\n
       Phone: ${body.phone || "N/A"}\r\n
       Selected Plan: ${body.selectedPlan || "N/A"}\r\n
-      Business Category: ${body.businessCategory || "N/A"}\r\n
-      Service Area: ${body.serviceArea || "N/A"}\r\n
-      Website Status: ${body.websiteStatus || "N/A"}\r\n
-      Desired Pages: ${body.desiredPages || "N/A"}\r\n
+      Organization Type: ${body.organizationType || body.businessCategory || "N/A"}\r\n
+      Website URL: ${body.websiteUrl || "N/A"}\r\n
       Primary Goal: ${body.primaryGoal || "N/A"}\r\n
-      Services Offered: ${body.servicesOffered || "N/A"}\r\n
-      Preferred Style/Tone: ${body.preferredStyleTone || "N/A"}\r\n
-      Social Links: ${body.socialLinks || "N/A"}\r\n
-      Google Business Profile Status: ${body.googleBusinessProfileStatus || "N/A"}\r\n
-      Domain Status: ${body.domainStatus || "N/A"}\r\n
-      Logo Status: ${body.logoStatus || "N/A"}\r\n
-      Image Upload Notes: ${body.imageUploadNotes || "N/A"}\r\n
-      Preferred Onboarding Date: ${body.preferredDate || "N/A"}\r\n
-      Preferred Onboarding Time: ${body.preferredTime || "N/A"}\r\n
-      Timezone: ${body.timezone || "N/A"}\r\n
       Contact Preference: ${body.contactPreference || "N/A"}\r\n
-
-      Upgrade Interests:
-      - Advanced SEO: ${body.upgradeAdvancedSEO ? "Yes" : "No"}\r\n
-      - Copywriting/Content Help: ${body.upgradeCopywriting ? "Yes" : "No"}\r\n
-      - Blog/Content Strategy: ${body.upgradeBlogStrategy ? "Yes" : "No"}\r\n
-      - Domain/Email Setup: ${body.upgradeDomainEmail ? "Yes" : "No"}\r\n
-      - Hosting/Maintenance: ${body.upgradeHostingMaintenance ? "Yes" : "No"}\r\n
-      - Custom Design/Features: ${body.upgradeCustomFeatures ? "Yes" : "No"}\r\n
-      Notes/Special Requests: ${body.notesSpecialRequests || "N/A"}
+      Best Time To Call: ${body.bestTimeToCall || "N/A"}\r\n
+      Message: ${body.message || body.notesSpecialRequests || "N/A"}
     `;
     subject = "New Free Website Intake - Manifest FTS";
   } else {
