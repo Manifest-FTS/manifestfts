@@ -304,8 +304,7 @@ function WordPressLandingPage() {
 
               <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-white/95">
                 Most people check online before they decide to contact, book, or
-                donate. We help you launch a modern, credible website with no
-                upfront website build cost and ongoing support starting at just
+                donate. We help you launch a modern, credible website with ongoing support starting at just
                 $149/month.
               </p>
 
@@ -319,7 +318,7 @@ function WordPressLandingPage() {
 
               <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto text-sm md:text-base">
                 <div className="rounded-lg bg-white/15 backdrop-blur-sm px-4 py-4 items-center justify-center">
-                  No upfront website design and build costs
+                  No large website design and build costs
                 </div>
                 <div className="rounded-lg bg-white/15 backdrop-blur-sm px-4 py-4 items-center justify-center">
                   Hosting, backups, SSL, and support included
@@ -607,7 +606,7 @@ function WordPressLandingPage() {
                   </p>
                   <p className="mt-3 text-sm text-gray-600">
                     Best for small businesses and nonprofits that need a clean,
-                    credible online presence without upfront build costs.
+                    credible online presence without large build costs.
                   </p>
 
                   <ul className="mt-6 space-y-3 text-sm text-gray-700">
@@ -807,8 +806,8 @@ function WordPressLandingPage() {
                   Flexible support, no long-term lock-in
                 </h2>
                 <p className="mt-4 text-lg text-gray-900">
-                  We are piloting this program to help more organizations get
-                  online without the usual upfront friction. If it is a fit, we
+                  We are offering this program to help more organizations get
+                  online without the usual upfront costs and friction. If it is a fit, we
                   will help you move forward. If it is not, you can cancel
                   anytime.
                 </p>
