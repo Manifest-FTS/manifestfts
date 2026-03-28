@@ -193,27 +193,41 @@ function WordPressLandingPage() {
         }),
       });
 
-      const intakeRes = await fetch("/api/free-website/submissions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(intakePayload),
-      });
-
-      if (mailRes.ok && intakeRes.ok) {
-        setIsFormVisible(false);
-        setStatus("success");
-        toast.success(
-          "Thanks for reaching out. We will review your request and get back to you soon.",
-          { duration: 12000 }
-        );
-      } else {
+      if (!mailRes.ok) {
         setStatus("error");
         toast.error("Something went wrong. Please try again.", {
           duration: 12000,
         });
+        return;
       }
+
+      // Best-effort intake write for internal admin tracking.
+      // In some production environments, this endpoint may fail even when email succeeds.
+      // We should still treat this as a successful lead submission for the user.
+      try {
+        const intakeRes = await fetch("/api/free-website/submissions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(intakePayload),
+        });
+
+        if (!intakeRes.ok) {
+          console.warn("Free website intake storage request failed", {
+            status: intakeRes.status,
+          });
+        }
+      } catch (intakeError) {
+        console.warn("Free website intake storage request failed", intakeError);
+      }
+
+      setIsFormVisible(false);
+      setStatus("success");
+      toast.success(
+        "Thanks for reaching out. We will review your request and get back to you soon.",
+        { duration: 12000 }
+      );
     } catch (error) {
       console.error(error);
       setStatus("error");
