@@ -1,5 +1,147 @@
 [
   {
+    "id": "fw_1774664372314_z5h00i",
+    "createdAt": "2026-03-28T02:19:32.314Z",
+    "updatedAt": "2026-03-28T02:19:32.314Z",
+    "status": "new",
+    "intake": {
+      "businessName": "sdasd",
+      "contactName": "asdasd",
+      "email": "devkev@manifestfts.com",
+      "phone": "sadsad",
+      "businessCategory": "small_business",
+      "businessDescription": "asdasd",
+      "serviceArea": "",
+      "websiteStatus": "no_site",
+      "desiredPages": "",
+      "primaryGoal": "visibility",
+      "servicesOffered": "",
+      "preferredStyleTone": "",
+      "socialLinks": "",
+      "googleBusinessProfileStatus": "unsure",
+      "domainStatus": "unsure",
+      "logoStatus": "none",
+      "imageUploadNotes": "",
+      "notesSpecialRequests": "Selected Plan: growth\nWebsite URL: N/A\nPrimary Goal: visibility\nBest Time To Call: N/A\nMessage: asdasd",
+      "templateAcknowledged": true,
+      "upgradeInterests": {
+        "advancedSEO": false,
+        "copywritingContentHelp": false,
+        "blogContentStrategy": false,
+        "domainEmailSetup": false,
+        "hostingMaintenance": true,
+        "customDesignFeatures": false
+      }
+    },
+    "internalNotes": [],
+    "generatedContentDraft": {
+      "heroHeading": "sdasd — Trusted small_business in your service area",
+      "heroSubheading": "Clear, mobile-friendly, and launch-ready — built to help customers find and contact you quickly.",
+      "aboutSection": "sdasd provides dependable service with a focus on professionalism, clarity, and customer experience. This draft can be personalized once final details are confirmed.",
+      "servicesSummary": "Core services can be listed here in plain language with short benefit-focused descriptions.",
+      "contactCTA": "Ready to get started? Contact us today to request a quote or schedule your first conversation.",
+      "seoTitleSuggestion": "sdasd | small_business in your service area",
+      "metaDescriptionSuggestion": "sdasd offers professional small_business services in your service area. Contact us for reliable support and clear next steps.",
+      "locationServiceNotes": "Add nearby locations, neighborhoods, and service qualifiers as needed for premium SEO expansion."
+    },
+    "seoVisibilityNotes": "Basic on-page SEO is included. Review service + location specificity for premium strategy opportunities.",
+    "premiumUpsellRecommendations": "Evaluate for service pages, location pages, and enhanced copywriting after intake review.",
+    "fulfillment": {
+      "templateAssignment": "",
+      "contentReadiness": "not_ready",
+      "assetReadiness": "missing",
+      "wordpressSetupStatus": "pending",
+      "previewUrl": "",
+      "launchUrl": "",
+      "assignedTeamMember": "",
+      "handoffStatus": "not_started",
+      "readinessForFulfillment": false,
+      "contentMissing": true,
+      "contentApproved": false,
+      "paidConversion": false
+    },
+    "timeline": [
+      {
+        "id": "ev_1774664372314_xta7jl",
+        "type": "created",
+        "message": "Submission created from public free website intake.",
+        "createdAt": "2026-03-28T02:19:32.314Z",
+        "actor": "public_form"
+      }
+    ]
+  },
+  {
+    "id": "fw_1774664346645_ucxxcs",
+    "createdAt": "2026-03-28T02:19:06.645Z",
+    "updatedAt": "2026-03-28T02:19:06.645Z",
+    "status": "new",
+    "intake": {
+      "businessName": "Test Biz",
+      "contactName": "Test User",
+      "email": "test@example.com",
+      "phone": "",
+      "businessCategory": "small_business",
+      "businessDescription": "hello",
+      "serviceArea": "",
+      "websiteStatus": "no_site",
+      "desiredPages": "",
+      "primaryGoal": "visibility",
+      "servicesOffered": "",
+      "preferredStyleTone": "",
+      "socialLinks": "",
+      "googleBusinessProfileStatus": "unsure",
+      "domainStatus": "unsure",
+      "logoStatus": "none",
+      "imageUploadNotes": "",
+      "notesSpecialRequests": "",
+      "templateAcknowledged": true,
+      "upgradeInterests": {
+        "advancedSEO": false,
+        "copywritingContentHelp": false,
+        "blogContentStrategy": false,
+        "domainEmailSetup": false,
+        "hostingMaintenance": true,
+        "customDesignFeatures": false
+      }
+    },
+    "internalNotes": [],
+    "generatedContentDraft": {
+      "heroHeading": "Test Biz — Trusted small_business in your service area",
+      "heroSubheading": "Clear, mobile-friendly, and launch-ready — built to help customers find and contact you quickly.",
+      "aboutSection": "Test Biz provides dependable service with a focus on professionalism, clarity, and customer experience. This draft can be personalized once final details are confirmed.",
+      "servicesSummary": "Core services can be listed here in plain language with short benefit-focused descriptions.",
+      "contactCTA": "Ready to get started? Contact us today to request a quote or schedule your first conversation.",
+      "seoTitleSuggestion": "Test Biz | small_business in your service area",
+      "metaDescriptionSuggestion": "Test Biz offers professional small_business services in your service area. Contact us for reliable support and clear next steps.",
+      "locationServiceNotes": "Add nearby locations, neighborhoods, and service qualifiers as needed for premium SEO expansion."
+    },
+    "seoVisibilityNotes": "Basic on-page SEO is included. Review service + location specificity for premium strategy opportunities.",
+    "premiumUpsellRecommendations": "Evaluate for service pages, location pages, and enhanced copywriting after intake review.",
+    "fulfillment": {
+      "templateAssignment": "",
+      "contentReadiness": "not_ready",
+      "assetReadiness": "missing",
+      "wordpressSetupStatus": "pending",
+      "previewUrl": "",
+      "launchUrl": "",
+      "assignedTeamMember": "",
+      "handoffStatus": "not_started",
+      "readinessForFulfillment": false,
+      "contentMissing": true,
+      "contentApproved": false,
+      "paidConversion": false
+    },
+    "timeline": [
+      {
+        "id": "ev_1774664346645_08ah13",
+        "type": "created",
+        "message": "Submission created from public free website intake.",
+        "createdAt": "2026-03-28T02:19:06.645Z",
+        "actor": "public_form"
+      }
+    ]
+  },
+  {
     "id": "fw_1774619803912_zyhc6w",
     "createdAt": "2026-03-27T13:56:43.912Z",
     "updatedAt": "2026-03-27T13:56:43.912Z",
