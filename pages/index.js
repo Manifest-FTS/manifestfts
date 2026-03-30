@@ -27,9 +27,12 @@ function Index3() {
         >
           <div className="flex brand-video-copy">
             <h1 className="text-3xl md:text-7xl font-bold">
-              Forward Thinking
-              <br className="d-lg-block d-none" /> Solutions
+              Forward Thinking Solutions
             </h1>
+            <h2 className="text-2xl md:text-3xl font-bold text-white max-w-3xl">
+              We design and build scalable websites, mobile apps, and digital platforms 
+              that help businesses and organizations grow.
+            </h2>
             <div className="text-body-lead-medium mt-30">
               <a className="play-reel" onClick={() => setOpen(true)}>
                 <img
