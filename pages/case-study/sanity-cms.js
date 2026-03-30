@@ -102,7 +102,7 @@ function SanityCMSCaseStudyPage() {
         <meta property="og:url" content={canonical} />
         <meta
           property="og:image"
-          content="https://www.manifestfts.com/assets/imgs/hero-image.png"
+          content="https://www.manifestfts.com/assets/imgs/hero-image.jpg"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -113,7 +113,7 @@ function SanityCMSCaseStudyPage() {
         />
         <meta
           name="twitter:image"
-          content="https://www.manifestfts.com/assets/imgs/hero-image.png"
+          content="https://www.manifestfts.com/assets/imgs/hero-image.jpg"
         />
 
         <script

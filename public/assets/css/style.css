@@ -1821,7 +1821,7 @@ label {
   padding: 120px 20px 90px;
   width: 100%;
   overflow: hidden;
-  background-image: linear-gradient(rgba(16, 24, 40, 0.45), rgba(16, 24, 40, 0.45)), url("/assets/imgs/hero-image.png");
+  background-image: linear-gradient(rgba(16, 24, 40, 0.45), rgba(16, 24, 40, 0.45)), url("/assets/imgs/hero-image.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

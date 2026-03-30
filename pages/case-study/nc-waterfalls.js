@@ -50,7 +50,7 @@ function NcWaterfallsCaseStudy() {
           content="Translating decades of waterfall exploration into enduring digital infrastructure built for discovery and longevity."
         />
         <meta property="og:url" content={canonical} />
-        <meta property="og:image" content="https://www.manifestfts.com/assets/imgs/hero-image.png" />
+        <meta property="og:image" content="https://www.manifestfts.com/assets/imgs/hero-image.pjpgng" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="NC Waterfalls Case Study | Manifest FTS" />
@@ -58,7 +58,7 @@ function NcWaterfallsCaseStudy() {
           name="twitter:description"
           content="A multi-year effort to transform waterfall fieldwork into scalable digital infrastructure."
         />
-        <meta name="twitter:image" content="https://www.manifestfts.com/assets/imgs/hero-image.png" />
+        <meta name="twitter:image" content="https://www.manifestfts.com/assets/imgs/hero-image.jpg" />
 
         <script
           type="application/ld+json"
