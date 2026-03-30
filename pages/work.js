@@ -77,7 +77,7 @@ function Work() {
                 </section>
 
                 {/* // JoyFeed */}
-                <section className="section-box">
+                {/* <section className="section-box">
                     <div className="container mt-120 re-order">
                         <div className="row">
 
@@ -87,7 +87,6 @@ function Work() {
                                 <p className="text-body-lead-large color-gray-600 mt-30">JoyFeed is a restorative social platform built around positive content, meaningful engagement, and emotional wellbeing.</p>
                                 <p className="text-body-lead-large color-gray-600 mt-30">A signature product feature is the persistent BLS ambient audio layer, available from a floating bottom-right control across the full platform experience.</p>
                                 <div className="align-items-center">
-                                    {/* JoyFeed case study link intentionally stubbed until publish-ready */}
                                     <span className="btn btn-light color-gray-500 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3 cursor-not-allowed">Case Study Coming Soon</span>
                                 </div>
                             </div>
@@ -95,7 +94,7 @@ function Work() {
                             <div className="col-lg-6 col-sm-12 block-img-we-do second"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/work-ozone.png" alt="JoyFeed platform preview on laptop" /></div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 {/* // CCoalition on Race */}
                 <section className="section-box">
