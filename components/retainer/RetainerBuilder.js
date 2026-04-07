@@ -10,30 +10,38 @@ const anchorPoints = [5, 10, 20, 40];
 const RetainerBuilder = ({
   hours,
   onHoursChange,
-  title = 'Build a monthly retainer',
-  subtitle = 'Choose a monthly commitment that fits the level of support you need right now.',
+  title = 'Choose your monthly support level',
+  subtitle = 'Select a monthly rhythm that matches the pace of support you need right now.',
   compact = false,
 }) => {
   const snapshot = getRetainerSnapshot(hours);
+  const wrapperClass = compact ? 'bg-2 bdrd-16 p-20' : 'bg-2 bdrd-16 p-30 p-lg-5';
+  const titleClass = compact ? 'text-heading-4 color-gray-900 mt-10' : 'text-heading-3 color-gray-900 mt-10';
+  const summaryValueClass = compact ? 'text-heading-5 color-gray-900 mt-10' : 'text-heading-4 color-gray-900 mt-10';
+  const copyClass = compact ? 'text-body-text-md color-gray-600 mt-15' : 'text-body-text color-gray-600 mt-20';
 
   return (
-    <div className={compact ? '' : 'bg-2 bdrd-16 p-30 p-lg-5'}>
+    <div className={wrapperClass}>
       <div className="row align-items-end">
         <div className="col-lg-7">
-          <span className="text-body-capitalized color-gray-500 text-uppercase">Flexible monthly support</span>
-          <h3 className="text-heading-3 color-gray-900 mt-10">{title}</h3>
-          <p className="text-body-text color-gray-600 mt-20">{subtitle}</p>
+          <span className="text-body-capitalized color-gray-500 text-uppercase">Monthly support</span>
+          <h3 className={titleClass}>{title}</h3>
+          <p className={copyClass}>{subtitle}</p>
         </div>
         <div className="col-lg-5 mt-30 mt-lg-0 text-lg-end">
           <span className="tag-1 bg-6 color-green-900">{snapshot.supportLabel}</span>
-          <div className="text-heading-2 color-gray-900 mt-20">{snapshot.hours} hours / month</div>
+          <div className={compact ? 'text-heading-3 color-gray-900 mt-15' : 'text-heading-2 color-gray-900 mt-20'}>
+            {snapshot.hours} hours / month
+          </div>
         </div>
       </div>
 
-      <div className="mt-30">
+      <div className={compact ? 'mt-20' : 'mt-30'}>
         <div className="row align-items-center">
           <div className="col-lg-12">
-            <label className="text-body-text-md color-gray-600 mb-15 d-inline-block">Monthly commitment</label>
+            <label className="text-body-text-md color-gray-600 mb-15 d-inline-block">
+              Monthly hours
+            </label>
             <input
               className="w-100"
               type="range"
@@ -47,23 +55,25 @@ const RetainerBuilder = ({
             />
             <div className="d-flex justify-content-between mt-10">
               {anchorPoints.map((point) => (
-                <span key={point} className="text-body-small color-gray-500">{point}h</span>
+                <span key={point} className="text-body-small color-gray-500">
+                  {point}h
+                </span>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="row mt-30">
-          <div className="col-lg-4 mb-20">
-            <span className="text-body-capitalized color-gray-500 text-uppercase">Effective rate</span>
-            <h4 className="text-heading-4 color-gray-900 mt-10">{formatUsd(snapshot.effectiveRate)}/hr</h4>
+        <div className={compact ? 'row mt-20' : 'row mt-30'}>
+          <div className="col-lg-4 col-md-4 mb-20">
+            <span className="text-body-capitalized color-gray-500 text-uppercase">Hourly rate</span>
+            <h4 className={summaryValueClass}>{formatUsd(snapshot.effectiveRate)}/hr</h4>
           </div>
-          <div className="col-lg-4 mb-20">
+          <div className="col-lg-4 col-md-4 mb-20">
             <span className="text-body-capitalized color-gray-500 text-uppercase">Monthly total</span>
-            <h4 className="text-heading-4 color-gray-900 mt-10">{formatUsd(snapshot.monthlyTotal)}</h4>
+            <h4 className={summaryValueClass}>{formatUsd(snapshot.monthlyTotal)}</h4>
           </div>
-          <div className="col-lg-4 mb-20">
-            <span className="text-body-capitalized color-gray-500 text-uppercase">Best for</span>
+          <div className="col-lg-4 col-md-4 mb-0">
+            <span className="text-body-capitalized color-gray-500 text-uppercase">Good fit for</span>
             <p className="text-sm color-gray-600 mt-10 mb-0">{snapshot.supportDescription}</p>
           </div>
         </div>
