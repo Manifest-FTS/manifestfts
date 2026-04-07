@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import { RetainerTrigger } from "../retainer";
 import logo from '/public/assets/anim/mfts-animated-logo.json';
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -90,6 +91,9 @@ const Header = ({ handleOpen, headerStyle }) => {
                                             </ul>
                                         </li> */}
                     <li className="">
+                      <Link href="/capabilities"><a>Capabilities</a></Link>
+                    </li>
+                    <li className="">
                       <Link href="/about"><a>About</a></Link>
                       {/* <ul className="sub-menu">
                                                 <li>
@@ -143,7 +147,9 @@ const Header = ({ handleOpen, headerStyle }) => {
             </div>
             <div className="header-right hidden md:block">
               <div className="block-signin mr-6">
-                <Link href="/#get-started"><a className="btn btn-default hover-up px-3 py-3">Get Started</a></Link>
+                <RetainerTrigger className="btn btn-default hover-up px-3 py-3" source="header_cta" hours={10}>
+                  Start a Retainer
+                </RetainerTrigger>
               </div>
             </div>
           </div>

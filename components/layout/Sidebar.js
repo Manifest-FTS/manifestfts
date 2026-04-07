@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
+import { RetainerTrigger } from "../retainer";
 
 const Sidebar = ({ openClass }) => {
     const [isActive, setIsActive] = useState({
@@ -44,6 +45,9 @@ const Sidebar = ({ openClass }) => {
                             <div className="mobile-menu-wrap mobile-header-border">
                                 <nav>
                                     <ul className="mobile-menu font-heading">
+                                        <li>
+                                            <Link href="/capabilities"><a>Capabilities</a></Link>
+                                        </li>
                                         <li>
                                             <Link href="/work"><a className="active">Work</a></Link>
                                         </li>
@@ -123,6 +127,11 @@ const Sidebar = ({ openClass }) => {
                                             </ul>
                                         </li> */}
                                     </ul>
+                                    <div className="mt-30">
+                                        <RetainerTrigger className="btn btn-black icon-arrow-right-white" source="mobile_menu_cta" hours={10}>
+                                            Start a Retainer
+                                        </RetainerTrigger>
+                                    </div>
                                 </nav>
                             </div>
                             {/* <div className="mobile-account">
