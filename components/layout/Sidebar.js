@@ -3,164 +3,143 @@ import Link from "next/link";
 import { useState } from "react";
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
+import { RetainerTrigger } from "../retainer";
 
-const Sidebar = ({ openClass }) => {
-    const [isActive, setIsActive] = useState({
-        status: false,
-        key: "",
-    });
+const PRIMARY_LINKS = [
+  { href: "/capabilities", label: "Capabilities" },
+  { href: "/work", label: "Work" },
+  { href: "/about", label: "About" },
+  { href: "/ahead-with-fts", label: "Ahead with FTS" },
+];
 
-    const handleToggle = (key) => {        
-        if (isActive.key === key) {
-            setIsActive({
-                status: false,
-            });
-        } else {
-            setIsActive({
-                status: true,
-                key,
-            });
-        }
-    };
-    return (
-        <>
-            <div className={`mobile-header-active mobile-header-wrapper-style perfect-scrollbar ${openClass}`}>
-                <PerfectScrollbar className="mobile-header-wrapper-inner">
-                    <div className="mobile-header-top">
-                        <div className="user-account">
-                            {/* <img src="/assets/imgs/template/ava_1.png" alt="Agon" /> */}
-                            <div className="content">
-                                <h6 className="user-name">
-                                    Menu
-                                </h6>
-                                <p className="font-xs text-muted">
-                                    Click outside menu to close.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mobile-header-content-area">
-                        <div className="perfect-scroll">
-                            <div className="mobile-menu-wrap mobile-header-border">
-                                <nav>
-                                    <ul className="mobile-menu font-heading">
-                                        <li>
-                                            <Link href="/work"><a className="active">Work</a></Link>
-                                        </li>
-                                        {/* <li className={isActive.key == 2 ? "has-children active" : "has-children"}>
-                                            <span onClick={() => handleToggle(2)} className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
+const Sidebar = ({ openClass, onClose }) => {
+  const [caseStudiesOpen, setCaseStudiesOpen] = useState(false);
 
-                                            <Link href="/about"><a>Manifest</a></Link>
-                                            <ul className={isActive.key == 2 ? "sub-menu d-block" : "sub-menu d-none"}>
-                                                <li>
+  const close = () => {
+    if (typeof onClose === "function") onClose();
+  };
 
-                                                    <Link href="/about"><a>About</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/get-started"><a>Contact</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li> */}
-                                        <li onClick={() => handleToggle(3)} className={isActive.key == 3 ? "has-children active" : "has-children"}>
-                                            <span className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
-
-                                            <Link href="#"><a>Case Study</a></Link>
-                                            <ul className={isActive.key == 3 ? "sub-menu d-block" : "sub-menu d-none"}>
-                                                <li>
-                                                    <Link href="/case-study/nc-waterfalls"><a>NC Waterfalls</a></Link>
-                                                </li>
-                                                {/* JoyFeed case study link intentionally hidden until publish-ready */}
-                                                <li>
-                                                    <Link href="/case-study/sanity-cms"><a>Sanity CMS</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <Link href="/ahead-with-fts"><a className="/about" title="FTS Blog">Ahead with FTS</a></Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/about"><a className="/about">About</a></Link>
-                                        </li>
-                                        
-                                        {/* <li className={isActive.key == 5 ? "has-children active" : "has-children"}>
-                                            <span onClick={() => handleToggle(5)}  className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
-
-                                            <Link href="/blog-1"><a>Blog</a></Link>
-                                            <ul className={isActive.key == 5 ? "sub-menu d-block" : "sub-menu d-none"}>
-                                                <li>
-
-                                                    <Link href="/blog-1"><a className="closer">Blog 1</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/blog-2"><a className="closer">Blog 2</a></Link>
-                                                </li>
-                                                <li className="hr"><span /></li>
-                                                <li>
-
-                                                    <Link href="/blog-single"><a>Blog Single</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className={isActive.key == 6 ? "has-children active" : "has-children"}>
-                                            <span onClick={() => handleToggle(6)}  className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
-
-                                            <Link href="/page-shop-grid-1"><a>Shop</a></Link>
-                                            <ul className={isActive.key == 6 ? "sub-menu d-block" : "sub-menu d-none"}>
-                                                <li>
-
-                                                    <Link href="/page-shop-grid-1"><a className="closer">Shop Grid - 1</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/page-shop-grid-2"><a className="closer">Shop Grid - 2</a></Link>
-                                                </li>
-                                                <li>
-
-                                                    <Link href="/shop/1"><a>Product Details</a></Link>
-                                                </li>
-                                            </ul>
-                                        </li> */}
-                                    </ul>
-                                </nav>
-                            </div>
-                            {/* <div className="mobile-account">
-                                <h6 className="mb-10">Your Account</h6>
-                                <ul className="mobile-menu font-heading">
-                                    <li>
-                                        <Link href="/#"><a>Profile</a></Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/#"><a>Work Preferences</a></Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/#"><a>My Boosted Shots</a></Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/#"><a>My Collections</a></Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/#"><a>Account Settings</a></Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/#"><a>Go Pro</a></Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/page-login"><a>Sign Out</a></Link>
-                                    </li>
-                                </ul>
-                            </div> */}
-                            {/* <div className="site-copyright color-gray-400">
-                                Copyright 2022 © Manifest FTS
-                            </div> */}
-                        </div>
-                    </div>
-                </PerfectScrollbar>
+  return (
+    <div
+      id="mobile-navigation"
+      className={`mobile-header-active mobile-header-wrapper-style perfect-scrollbar mobile-header-modern ${openClass || ""}`}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Site menu"
+    >
+      <PerfectScrollbar className="mobile-header-wrapper-inner">
+        <div className="mobile-header-top">
+          <div className="mobile-drawer-header">
+            <div className="mobile-drawer-header__brand">
+              <div className="d-flex align-items-center" style={{ gap: 10 }}>
+                <img
+                  src="/assets/imgs/logo.svg"
+                  alt=""
+                  width="120"
+                  height="18"
+                  style={{ display: "block", height: 18, width: "auto" }}
+                />
+              </div>
             </div>
-
-        </>
-    );
+            <button
+              type="button"
+              className="site-header__drawer-close"
+              onClick={close}
+              aria-label="Close menu"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M15 5L5 15M5 5L15 15"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div className="mobile-header-content-area">
+          <div className="perfect-scroll">
+            <div className="mobile-menu-wrap mobile-header-border">
+              <nav aria-label="Mobile">
+                <div className="mobile-drawer-section-label">Navigation</div>
+                <ul className="mobile-menu-modern">
+                  {PRIMARY_LINKS.map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href}>
+                        <a onClick={close}>{item.label}</a>
+                      </Link>
+                    </li>
+                  ))}
+                  <li className={caseStudiesOpen ? "has-children active" : "has-children"}>
+                    <span
+                      className="menu-expand"
+                      onClick={() => setCaseStudiesOpen((open) => !open)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setCaseStudiesOpen((open) => !open);
+                        }
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      aria-expanded={caseStudiesOpen}
+                    >
+                      <i className="fi-rr-angle-small-down" />
+                    </span>
+                    <span
+                      className="font-heading mobile-case-studies-label"
+                      onClick={() => setCaseStudiesOpen((open) => !open)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setCaseStudiesOpen((open) => !open);
+                        }
+                      }}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      Case studies
+                    </span>
+                    <ul className={caseStudiesOpen ? "sub-menu d-block" : "sub-menu d-none"}>
+                      <li>
+                        <Link href="/case-study/nc-waterfalls">
+                          <a onClick={close}>NC Waterfalls</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/case-study/sanity-cms">
+                          <a onClick={close}>Sanity CMS</a>
+                        </Link>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+              <div className="mobile-menu-cta px-1">
+                <RetainerTrigger
+                  className="btn btn-black icon-arrow-right-white"
+                  source="mobile_drawer"
+                  hours={10}
+                  onClick={close}
+                >
+                  Start a Retainer
+                </RetainerTrigger>
+              </div>
+            </div>
+          </div>
+        </div>
+      </PerfectScrollbar>
+    </div>
+  );
 };
 
 export default Sidebar;

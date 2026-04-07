@@ -184,13 +184,15 @@ const RetainerModal = function () {
         brief: formData.brief,
         source: purchaseState.source,
         commitmentHours: snapshot.hours,
-        effectiveRate: snapshot.effectiveRate,
-        monthlyTotal: snapshot.monthlyTotal,
-        supportLabel: snapshot.supportLabel,
       });
 
       if (!response || !response.ok) {
         throw new Error((response && response.message) || 'Unable to start checkout right now.');
+      }
+
+      if (response.mode === 'stub') {
+        toast.error(response.message || 'Stripe checkout is not configured yet.');
+        return;
       }
 
       if (response.checkoutUrl && typeof window !== 'undefined') {
@@ -284,7 +286,7 @@ const RetainerModal = function () {
         </div>
 
         <div style={bodyStyle}>
-          <form onSubmit={handleSubmit} className="p-20 p-lg-25">
+          <form id="retainer-sheet-form" onSubmit={handleSubmit} className="p-20 p-lg-25">
             {step === 1 && (
               <div>
                 <RetainerBuilder
@@ -477,7 +479,6 @@ const RetainerModal = function () {
                   type="submit"
                   form="retainer-sheet-form"
                   disabled={isSubmitting}
-                  onClick={handleSubmit}
                 >
                   {isSubmitting ? 'Preparing checkout' : 'Continue'}
                 </button>

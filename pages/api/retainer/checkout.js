@@ -1,6 +1,8 @@
 import Stripe from 'stripe';
+import { getRetainerSnapshot } from '../../../util/retainer';
 
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+const clientBaseUrl = process.env.NEXT_PUBLIC_CLIENT_URL;
 
 const stripe = stripeSecretKey
   ? new Stripe(stripeSecretKey, {
@@ -8,8 +10,41 @@ const stripe = stripeSecretKey
     })
   : null;
 
-function getBaseUrl(req) {
-  return process.env.NEXT_PUBLIC_CLIENT_URL || `https://${req.headers.host}`;
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX = 10;
+const rateLimitByIp = new Map();
+
+function getClientIp(req) {
+  const forwardedFor = req.headers['x-forwarded-for'];
+  if (typeof forwardedFor === 'string' && forwardedFor.length > 0) return forwardedFor.split(',')[0].trim();
+  return (req.socket && req.socket.remoteAddress) || 'unknown';
+}
+
+function checkRateLimit(req) {
+  const ip = getClientIp(req);
+  const now = Date.now();
+  const entry = rateLimitByIp.get(ip) || { windowStart: now, count: 0 };
+
+  if (now - entry.windowStart > RATE_LIMIT_WINDOW_MS) {
+    rateLimitByIp.set(ip, { windowStart: now, count: 1 });
+    return { ok: true };
+  }
+
+  if (entry.count >= RATE_LIMIT_MAX) return { ok: false };
+
+  entry.count += 1;
+  rateLimitByIp.set(ip, entry);
+  return { ok: true };
+}
+
+function isValidEmail(value) {
+  const email = String(value || '').trim();
+  if (!email || email.length > 254) return false;
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function assertMaxLength(value, max) {
+  return String(value || '').trim().length <= max;
 }
 
 export default async function handler(req, res) {
@@ -18,6 +53,9 @@ export default async function handler(req, res) {
     return res.status(405).json({ ok: false, message: 'Method Not Allowed' });
   }
 
+  const rateLimit = checkRateLimit(req);
+  if (!rateLimit.ok) return res.status(429).json({ ok: false, message: 'Too many requests. Please try again shortly.' });
+
   const {
     name,
     email,
@@ -25,14 +63,29 @@ export default async function handler(req, res) {
     brief,
     source,
     commitmentHours,
-    effectiveRate,
-    monthlyTotal,
-    supportLabel,
   } = req.body || {};
 
-  if (!name || !email || !brief || !commitmentHours || !effectiveRate || !monthlyTotal) {
+  if (!name || !email || !brief || !commitmentHours) {
     return res.status(400).json({ ok: false, message: 'Missing required checkout details.' });
   }
+
+  if (!assertMaxLength(name, 120)) {
+    return res.status(400).json({ ok: false, message: 'Name is too long.' });
+  }
+
+  if (!isValidEmail(email)) {
+    return res.status(400).json({ ok: false, message: 'Please provide a valid email address.' });
+  }
+
+  if (!assertMaxLength(company, 120)) {
+    return res.status(400).json({ ok: false, message: 'Company name is too long.' });
+  }
+
+  if (!assertMaxLength(brief, 2000)) {
+    return res.status(400).json({ ok: false, message: 'Brief is too long.' });
+  }
+
+  const snapshot = getRetainerSnapshot(commitmentHours);
 
   const metadata = {
     contactName: String(name),
@@ -40,10 +93,10 @@ export default async function handler(req, res) {
     company: String(company || ''),
     brief: String(brief).slice(0, 500),
     source: String(source || 'site'),
-    selectedCommitment: `${commitmentHours} hours/month`,
-    effectiveRate: `${effectiveRate}`,
-    monthlyTotal: `${monthlyTotal}`,
-    supportLabel: String(supportLabel || ''),
+    selectedCommitment: `${snapshot.hours} hours/month`,
+    effectiveRate: `${snapshot.effectiveRate}`,
+    monthlyTotal: `${snapshot.monthlyTotal}`,
+    supportLabel: String(snapshot.supportLabel || ''),
   };
 
   if (!stripe) {
@@ -51,13 +104,20 @@ export default async function handler(req, res) {
       ok: true,
       mode: 'stub',
       message:
-        'Stripe secret key is not configured yet. Connect STRIPE_SECRET_KEY and NEXT_PUBLIC_CLIENT_URL to enable live checkout.',
+        'Stripe checkout is not configured yet. Connect STRIPE_SECRET_KEY and NEXT_PUBLIC_CLIENT_URL to enable live checkout.',
       metadata,
     });
   }
 
+  if (!clientBaseUrl) {
+    return res.status(500).json({
+      ok: false,
+      message: 'Checkout is not configured yet (missing NEXT_PUBLIC_CLIENT_URL).',
+    });
+  }
+
   try {
-    const baseUrl = getBaseUrl(req).replace(/\/$/, '');
+    const baseUrl = clientBaseUrl.replace(/\/$/, '');
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
       success_url: `${baseUrl}/capabilities?checkout=success`,
@@ -70,14 +130,14 @@ export default async function handler(req, res) {
           price_data: {
             currency: 'usd',
             product_data: {
-              name: `Manifest FTS Retainer — ${commitmentHours} hours/month`,
-              description: `${supportLabel} · Flexible monthly support for design, development, strategy, and digital execution.`,
+              name: `Manifest FTS Retainer — ${snapshot.hours} hours/month`,
+              description: `${snapshot.supportLabel} · Flexible monthly support for design, development, strategy, and digital execution.`,
               metadata,
             },
             recurring: {
               interval: 'month',
             },
-            unit_amount: Math.round(Number(monthlyTotal) * 100),
+            unit_amount: Math.round(Number(snapshot.monthlyTotal) * 100),
           },
         },
       ],

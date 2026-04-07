@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/router";
+import { toast } from "react-hot-toast";
 import Layout from "../components/layout/Layout";
 import { RetainerBuilder, RetainerTrigger } from "../components/retainer";
 
@@ -39,6 +41,29 @@ const faqItems = [
 
 function CapabilitiesPage() {
   const [hours, setHours] = useState(10);
+  const router = useRouter();
+  const hasHandledCheckoutReturn = useRef(false);
+
+  useEffect(() => {
+    if (!router.isReady) return;
+    if (hasHandledCheckoutReturn.current) return;
+
+    const rawCheckout = router.query.checkout;
+    const checkout = Array.isArray(rawCheckout) ? rawCheckout[0] : rawCheckout;
+
+    if (checkout === "success") {
+      toast.success("Checkout complete — we’ll follow up shortly with next steps.");
+      hasHandledCheckoutReturn.current = true;
+      router.replace("/capabilities", undefined, { shallow: true });
+      return;
+    }
+
+    if (checkout === "cancelled") {
+      toast("Checkout cancelled. Your retainer details are still here if you want to continue.");
+      hasHandledCheckoutReturn.current = true;
+      router.replace("/capabilities", undefined, { shallow: true });
+    }
+  }, [router.isReady, router.query.checkout]);
 
   return (
     <Layout>

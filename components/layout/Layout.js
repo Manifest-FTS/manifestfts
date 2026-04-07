@@ -21,12 +21,14 @@ const Layout = ({ children, headerStyle }) => {
     }
   };
 
+  const isMobileMenuOpen = openClass === "sidebar-visible";
+
   return (
     <>
       <div className={openClass && "body-overlay-1"} onClick={handleRemove} />
 
-      <Header handleOpen={handleOpen} headerStyle={headerStyle} />
-      <Sidebar openClass={openClass} />
+      <Header handleOpen={handleOpen} headerStyle={headerStyle} isMobileMenuOpen={isMobileMenuOpen} />
+      <Sidebar openClass={openClass} onClose={handleRemove} />
       <main className="main">
         {children}
       </main>
