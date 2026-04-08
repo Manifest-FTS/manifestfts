@@ -53,6 +53,26 @@ const Header = ({ handleOpen, headerStyle = "", isMobileMenuOpen = false }) => {
     return current === href || current.startsWith(`${href}/`);
   };
 
+  const getNavLinkClasses = (href) => {
+    const active = isActive(href);
+    const baseClasses =
+      "site-header__link inline-flex items-center rounded-lg !px-3 !py-2 !font-semibold !text-base !transition-colors !duration-200 xl:!px-4 xl:!text-lg";
+
+    if (scroll) {
+      return `${baseClasses} ${
+        active
+          ? "is-active !text-[#3f8077] !bg-[rgba(63,128,119,0.10)] hover:!text-[#3f8077] hover:!bg-[rgba(16,24,40,0.05)]"
+          : "!text-gray-900 hover:!text-[#3f8077] hover:!bg-[rgba(16,24,40,0.05)]"
+      }`;
+    }
+
+    return `${baseClasses} ${
+      active
+        ? "is-active !text-emerald-500 !bg-white/10 hover:!text-emerald-500 hover:!bg-white/10"
+        : "!text-white hover:!text-emerald-500 hover:!bg-white/5"
+    }`;
+  };
+
   return (
     <header id="navbar" className={headerClassName}>
       <div className="container">
@@ -93,9 +113,7 @@ const Header = ({ handleOpen, headerStyle = "", isMobileMenuOpen = false }) => {
                 {NAV_ITEMS.map((item) => (
                   <li key={item.href} className="site-header__item">
                     <Link href={item.href}>
-                      <a
-                        className={`site-header__link${isActive(item.href) ? " is-active" : ""}`}
-                      >
+                      <a className={getNavLinkClasses(item.href)}>
                         {item.label}
                       </a>
                     </Link>

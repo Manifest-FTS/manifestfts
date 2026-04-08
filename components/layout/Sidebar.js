@@ -70,7 +70,6 @@ const Sidebar = ({ openClass, onClose }) => {
           <div className="perfect-scroll">
             <div className="mobile-menu-wrap mobile-header-border">
               <nav aria-label="Mobile">
-                <div className="mobile-drawer-section-label">Navigation</div>
                 <ul className="mobile-menu-modern">
                   {PRIMARY_LINKS.map((item) => (
                     <li key={item.href}>
