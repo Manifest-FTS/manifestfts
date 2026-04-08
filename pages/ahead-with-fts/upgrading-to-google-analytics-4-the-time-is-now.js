@@ -60,7 +60,7 @@ function BlogSingle() {
                                         <p>That&rsquo;s a pretty somber picture, isn&rsquo;t it? But don&rsquo;t worry, all is not lost. Now is the perfect time to embrace the change, familiarize yourself with GA4, and start benefiting from its advanced capabilities. Yes, the clock is ticking, but don&rsquo;t let that create a sense of dread. See it instead as a call to action!</p>
 
                                         <h2 className="text-heading-3">Getting the Ball Rolling</h2>
-                                        <p>The transition to GA4 is actually simpler than you might think. For basic websites, it&rsquo;s a quick and straightforward process. If your site uses event tracking, e-commerce, or other more advanced features, the process will take a bit more time and testing. But don&rsquo;t let that deter you; <strong><Link href="/#get-started">get started now</Link></strong>, and you&rsquo;ll have plenty of time to work out the kinks before the deadline.</p>
+                                        <p>The transition to GA4 is actually simpler than you might think. For basic websites, it&rsquo;s a quick and straightforward process. If your site uses event tracking, e-commerce, or other more advanced features, the process will take a bit more time and testing. But don&rsquo;t let that deter you; <strong><Link href="/#contact-us">Contact Us now</Link></strong>, and you&rsquo;ll have plenty of time to work out the kinks before the deadline.</p>
 
                                         <div className="box-quote">
                                             <div className="text-quote">Google Analytics 4 sets a new standard for how to understand your customers in the digital age. It&rsquo;s more than an upgrade, it&rsquo;s a reimagination of what analytics can be, and it&rsquo;s a chance for businesses to pivot their strategies towards more informed, customer-centric approaches.</div>
@@ -78,7 +78,7 @@ function BlogSingle() {
                                         <h2 className="text-heading-3">Looking Ahead</h2>
                                         <p>The switch to GA4 isn&rsquo;t just about upgrading your analytics tools. It&rsquo;s also about embracing the future of privacy-preserving technologies. In a world where privacy concerns are paramount, the ability to provide meaningful insights without compromising user privacy is invaluable.</p>
                                         <p>To cap it off, GA4 will also support new integrations like the Privacy Sandbox APIs and the SKAdNetwork for iOS App campaigns. These additions are set to enhance your ability to measure and optimize your marketing efforts, ensuring you stay ahead of the curve.</p>
-                                        <p>So, let&rsquo;s not wait any longer. Make the switch to GA4 today and step into a more insightful, efficient, and privacy-conscious future. You&rsquo;ve got this, and <strong><Link href="/#get-started">we&rsquo;re here to help!</Link></strong></p>
+                                        <p>So, let&rsquo;s not wait any longer. Make the switch to GA4 today and step into a more insightful, efficient, and privacy-conscious future. You&rsquo;ve got this, and <strong><Link href="/#contact-us">we&rsquo;re here to help!</Link></strong></p>
                                         
                                             <div className="border-bottom mt-50 mb-50" />
                                             {/* <div>

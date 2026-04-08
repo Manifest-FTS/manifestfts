@@ -62,7 +62,7 @@ export function buildDefaultDraft(intake: FreeWebsiteIntake): ContentDraft {
       intake.servicesOffered ||
       "Core services can be listed here in plain language with short benefit-focused descriptions.",
     contactCTA:
-      "Ready to get started? Contact us today to request a quote or schedule your first conversation.",
+      "Ready to Contact Us? Contact us today to request a quote or schedule your first conversation.",
     seoTitleSuggestion: `${business} | ${category} in ${serviceArea}`,
     metaDescriptionSuggestion:
       `${business} offers professional ${category} services in ${serviceArea}. Contact us for reliable support and clear next steps.`,

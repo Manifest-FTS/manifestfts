@@ -42,7 +42,7 @@ const PriceTable2 = () => {
                                             </li>
                                         </ul>
                                         <div>
-                                            <Link href="/#"><a className="btn btn-black-border text-body-lead icon-arrow-right">Get Started</a></Link>
+                                            <Link href="/#"><a className="btn btn-black-border text-body-lead icon-arrow-right">Contact Us</a></Link>
                                         </div>
                                     </div>
                                 </div>
@@ -71,7 +71,7 @@ const PriceTable2 = () => {
                                             </li>
                                         </ul>
                                         <div>
-                                            <Link href="/#"><a className="btn btn-black-border text-body-lead icon-arrow-right">Get Started</a></Link>
+                                            <Link href="/#"><a className="btn btn-black-border text-body-lead icon-arrow-right">Contact Us</a></Link>
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@ const PriceTable2 = () => {
                                             <li>Custom instructors</li>
                                         </ul>
                                         <div>
-                                            <Link href="/#"><a className="btn btn-black-border text-body-lead icon-arrow-right">Get Started</a></Link>
+                                            <Link href="/#"><a className="btn btn-black-border text-body-lead icon-arrow-right">Contact Us</a></Link>
                                         </div>
                                     </div>
                                 </div>

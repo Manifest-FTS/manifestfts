@@ -266,7 +266,7 @@ function SanityCMSCaseStudyPage() {
               integration — all designed around your real workflows, not generic templates.
             </p>
             <div className="mt-8">
-              <Link href="/#get-started">
+              <Link href="/#contact-us">
                 <a className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-gray-900 transition hover:bg-gray-200">
                   Let’s plan your content foundation
                 </a>

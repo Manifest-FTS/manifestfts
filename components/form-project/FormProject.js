@@ -1,11 +1,13 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
+import { RetainerTrigger } from "../retainer";
 
 const FormProject = () => {
   const [status, setStatus] = useState(false);
   const [showVerification, setShowVerification] = useState(false);
   const [userAnswer, setUserAnswer] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   async function handleOnSubmit(e) {
     e.preventDefault();
@@ -14,7 +16,8 @@ const FormProject = () => {
 
   async function verifyAndSend(e) {
     e.preventDefault();
-    if (userAnswer !== "10") {
+
+    if (userAnswer.trim() !== "10") {
       toast.error("Human verification failed");
       return;
     }
@@ -26,6 +29,8 @@ const FormProject = () => {
     });
 
     try {
+      setIsSubmitting(true);
+
       const res = await fetch("/api/mail", {
         body: JSON.stringify(formData),
         headers: {
@@ -33,64 +38,98 @@ const FormProject = () => {
         },
         method: "POST",
       });
-      
+
       const data = await res.json();
-      
+
       if (!res.ok) {
         toast.error(data.error || "Failed to send message. Please try again.");
         setStatus(false);
+        setIsSubmitting(false);
         return;
       }
-      
+
       setStatus(true);
+      setShowVerification(false);
+      setUserAnswer("");
       toast.success("Message sent successfully!");
-    } catch (e) {
-      console.error("Form submission error:", e);
+    } catch (error) {
+      console.error("Form submission error:", error);
       toast.error("An error occurred. Please try again later.");
       setStatus(false);
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
   return (
-    <section id="get-started" className="section-box">
+    <section id="contact-us" className="section-box">
       <div className="container mb-50 mt-70">
         <div className="bdrd-58 box-gray-100 icon-wave">
-          {status ? (
-            <div className="col-lg-12 mt-15">
-              <h3 className="text-2xl font-bold mb-2">We&apos;ve received your message</h3>
-              <p>
-                Our team will be in touch soon, thank you for connecting with
-                us.
-              </p>
-            </div>
-          ) : (
-            <div className="row">
-              <div className="col-lg-12 mb-60">
-                <span className="text-body-capitalized text-uppercase">
-                  Let&#x2019;s work together
+          <div className="p-30 p-lg-5">
+            {status ? (
+              <div className="col-lg-10 mt-15">
+                <span className="text-body-capitalized text-uppercase color-gray-500">
+                  Message received
                 </span>
-                <h2 className="text-heading-3 color-gray-900 mt-10">
-                  Have a project in mind?
-                </h2>
-                <p className="text-body-text color-gray-600 mt-20">
-                  Call <span className="text-heading-5 color-gray-900 mt-10">+1 864-660-9125</span> or send us a message for a free consultation.
+                <h3 className="text-heading-3 color-gray-900 mt-10 mb-15">
+                  Thanks — we’ve got it.
+                </h3>
+                <p className="text-body-text color-gray-600 mb-0">
+                  We’ll review your message and follow up soon.
                 </p>
               </div>
-              <div className="col-lg-12">
-                <div className="row">
-                  <form className="row" method="post" onSubmit={showVerification ? verifyAndSend : handleOnSubmit}>
-                    <input type="hidden" name="formType" value="getQuote" />
+            ) : (
+              <div className="row">
+                <div className="col-lg-7 mb-40">
+                  <span className="text-body-capitalized text-uppercase color-gray-500">
+                    Get in touch
+                  </span>
+                  <h2 className="text-heading-3 color-gray-900 mt-10">
+                    Let’s start the conversation.
+                  </h2>
+                  <p className="text-body-text color-gray-600 mt-20 mb-0">
+                    Questions, project inquiries, partnerships, or ongoing support —
+                    send us a message and I&rsquo;ll follow up with next steps. You
+                    can also call or text{" "}
+                    <span className="text-heading-6 color-gray-900">
+                      +1 864-660-9125
+                    </span>
+                    .
+                  </p>
+                </div>
+
+                <div className="col-lg-5 mb-40">
+                  <div className="bg-white bdrd-16 p-20">
+                    <span className="text-body-capitalized text-uppercase color-gray-500">
+                      Typical inquiries
+                    </span>
+                    <p className="text-body-text-md color-gray-600 mt-15 mb-0">
+                      New projects, redesigns, web and mobile work, product support,
+                      technical guidance, partnerships, and ongoing digital help.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-lg-12">
+                  <form
+                    className="row"
+                    method="post"
+                    onSubmit={showVerification ? verifyAndSend : handleOnSubmit}
+                  >
+                    <input type="hidden" name="formType" value="contact" />
+
                     <div className="col-lg-6">
                       <div className="form-group">
                         <input
                           className="form-control"
                           type="text"
                           name="fullname"
-                          placeholder="Enter your name"
+                          placeholder="Your name"
                           required
                         />
                       </div>
                     </div>
+
                     <div className="col-lg-6">
                       <div className="form-group">
                         <input
@@ -101,45 +140,50 @@ const FormProject = () => {
                         />
                       </div>
                     </div>
+
                     <div className="col-lg-6">
                       <div className="form-group">
                         <input
                           className="form-control"
-                          type="text"
+                          type="email"
                           name="email"
-                          placeholder="Your email"
+                          placeholder="Email"
                           required
                         />
                       </div>
                     </div>
+
                     <div className="col-lg-6">
                       <div className="form-group">
                         <input
                           className="form-control"
                           type="text"
                           name="phone"
-                          placeholder="Phone number"
-                          required
+                          placeholder="Phone (optional)"
                         />
                       </div>
                     </div>
+
                     <div className="col-lg-12">
                       <div className="form-group">
                         <textarea
                           className="form-control"
-                          type="email"
                           name="message"
-                          placeholder="Your message or project description"
+                          rows="6"
+                          placeholder="How can we help?"
                           required
                         />
                       </div>
                     </div>
+
                     {showVerification && (
                       <div className="col-lg-12">
                         <div className="form-group">
-                          <label className="text-sm">What is 2 + 8?</label>
+                          <label className="text-body-small color-gray-600 mb-10 d-block">
+                            What is 2 + 8?
+                          </label>
                           <input
-                            className="form-control mt-2"
+                            className="form-control"
                             type="text"
                             value={userAnswer}
                             onChange={(e) => setUserAnswer(e.target.value)}
@@ -148,31 +192,63 @@ const FormProject = () => {
                         </div>
                       </div>
                     )}
-                    <div className="col-lg-12 mt-15">
-                      <button
-                        className="btn btn-black icon-arrow-right-white mr-40 mb-20"
-                        type="submit"
+
+                    <div className="col-lg-12 mt-10">
+                      <div
+                        className="d-flex align-items-start justify-content-between flex-wrap"
+                        style={{ gap: 16 }}
                       >
-                        {showVerification ? "Verify & Send" : "Send Message"}
-                      </button>
-                      <br className="d-lg-none d-block" />
-                      <span className="text-body-text-md color-gray-500 mb-20">
-                        By sending a message, you agree to our{" "}
-                        <Link href="/terms" passHref>
-                          <a>terms</a>
-                        </Link>{" "}
-                        and{" "}
-                        <Link href="/privacy-policy" passHref>
-                          <a>privacy policy</a>
-                        </Link>
-                        .
-                      </span>
+                        <div>
+                          <button
+                            className="btn btn-black icon-arrow-right-white mb-15"
+                            type="submit"
+                            disabled={isSubmitting}
+                          >
+                            {showVerification
+                              ? isSubmitting
+                                ? "Sending..."
+                                : "Verify & Send"
+                              : "Send Message"}
+                          </button>
+                        </div>
+
+                        <div className="text-body-text-md color-gray-500 mb-15">
+                          By sending a message, you agree to our{" "}
+                          <Link href="/terms" passHref>
+                            <a>terms</a>
+                          </Link>{" "}
+                          and{" "}
+                          <Link href="/privacy-policy" passHref>
+                            <a>privacy policy</a>
+                          </Link>
+                          .
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="col-lg-12 mt-20">
+                      <div
+                        className="pt-20"
+                        style={{ borderTop: "1px solid rgba(16,24,40,0.08)" }}
+                      >
+                        <p className="text-body-text color-gray-600 mb-10">
+                          If you already know you need ongoing support, a retainer is
+                          usually the best fit.
+                        </p>
+                        <RetainerTrigger
+                          className="btn btn-link text-heading-6 p-0"
+                          source="contact_form"
+                          hours={10}
+                        >
+                          Start a Retainer
+                        </RetainerTrigger>
+                      </div>
                     </div>
                   </form>
                 </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </section>

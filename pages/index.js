@@ -208,9 +208,9 @@ function Index3() {
       {/* Call-to-Action Section */}
       <section className="py-[60px] mt-[70px] bg-green-900">
         <div className="flex justify-center items-center space-x-5">
-          <Link href="/#get-started" passHref>
+          <Link href="/#contact-us" passHref>
             <a className="inline-flex items-center font-bold bg-black text-white transition px-6 py-3 rounded-full cursor-pointer">
-              Get Started
+              Contact Us
             </a>
           </Link>
           <Link href="/work" passHref>
