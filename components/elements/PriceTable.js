@@ -44,7 +44,7 @@ const PriceTable = () => {
                                         </ul>
                                         <div>
 
-                                            <Link href="/#"><a className="btn btn-black text-body-lead icon-arrow-right-white">Get Started
+                                            <Link href="/#"><a className="btn btn-black text-body-lead icon-arrow-right-white">Contact Us
                                             </a></Link>
 
                                         </div>
@@ -73,7 +73,7 @@ const PriceTable = () => {
                                         </ul>
                                         <div>
 
-                                            <Link href="/#"><a className="btn btn-black text-body-lead icon-arrow-right-white">Get Started
+                                            <Link href="/#"><a className="btn btn-black text-body-lead icon-arrow-right-white">Contact Us
                                             </a></Link>
 
                                         </div>
@@ -105,7 +105,7 @@ const PriceTable = () => {
                                         </ul>
                                         <div>
 
-                                            <Link href="/#"><a className="btn btn-black text-body-lead icon-arrow-right-white">Get Started
+                                            <Link href="/#"><a className="btn btn-black text-body-lead icon-arrow-right-white">Contact Us
                                             </a></Link>
 
                                         </div>
@@ -140,7 +140,7 @@ const PriceTable = () => {
                                         </ul>
                                         <div>
 
-                                            <Link href="/#"><a className="btn btn-black text-body-lead icon-arrow-right-white">Get Started
+                                            <Link href="/#"><a className="btn btn-black text-body-lead icon-arrow-right-white">Contact Us
                                             </a></Link>
 
                                         </div>

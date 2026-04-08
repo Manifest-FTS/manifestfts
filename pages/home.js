@@ -17,11 +17,11 @@ function Index6() {
                     <div className="banner-hero banner-homepage6">
                         <div className="container">
                             <div className="row">
-                                <div className="col-lg-7 mt-50 pb-120"><span className="tag-1 bg-green-900">Digital Marketing Agency</span>
+                                <div className="col-lg-7 mt-50 pb-120"><span className="tag-1 bg-emerald-900">Digital Marketing Agency</span>
                                     <h1 className="text-display-2 mt-20">Forward thinking solutions</h1>
                                     <p className="text-body-lead-large color-gray-500 mt-30 pr-40">Your design, development, and technology partner — building and supporting websites, apps, and digital platforms as your business grows.</p>
                                     <div className="mt-40">
-                                        <Link href="#"><a className="btn btn-black shape-square icon-arrow-right-white">Get Started</a></Link>
+                                        <Link href="#"><a className="btn btn-black shape-square icon-arrow-right-white">Contact Us</a></Link>
                                     </div>
                                 </div>
                                 <div className="col-lg-5 d-none d-lg-block">
@@ -201,7 +201,7 @@ function Index6() {
                                         <div className="col-lg-12">
                                             <div className="form-group"><textarea className="form-control" placeholder="Tell us about yourself"></textarea></div>
                                         </div>
-                                        <div className="col-lg-12 mt-15"><button className="btn btn-black icon-arrow-right-white mr-40 mb-20" type="submit">Send Message</button><br className="d-lg-none d-block" /><span className="text-body-text-md color-gray-500 mb-20">By clicking contact us button, you agree our terms and policy,</span></div>
+                                        <div className="col-lg-12 mt-15"><button className="btn btn-black icon-arrow-right-white mr-40 mb-20" type="submit">Send</button><br className="d-lg-none d-block" /><span className="text-body-text-md color-gray-500 mb-20">By clicking contact us button, you agree our terms and policy,</span></div>
                                     </div>
                                 </div>
                             </div>

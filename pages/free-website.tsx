@@ -829,7 +829,7 @@ function WordPressLandingPage() {
                 <div className="mt-8 flex items-center justify-center">
                   <Link href="#plans">
                     <a className="inline-flex items-center justify-center rounded-lg bg-black px-6 py-3 font-semibold text-white hover:bg-gray-900 transition-colors duration-300 w-full sm:w-auto">
-                      Get Started
+                      Contact Us
                     </a>
                   </Link>
                 </div>

@@ -11,6 +11,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { useRouter } from 'next/router'
 import { GTM_ID, pageview } from '../lib/gtm'
+import { RetainerModal, RetainerProvider } from '../components/retainer'
 
 const SITE_URL = 'https://www.manifestfts.com'
 const DEFAULT_OG_IMAGE = `${SITE_URL}/assets/imgs/hero-image.png`
@@ -40,6 +41,11 @@ const pageMeta = {
     title: 'About Manifest FTS',
     description:
       'Learn about Manifest FTS, our approach to strategy and engineering, and how we help teams build durable digital systems.',
+  },
+  '/capabilities': {
+    title: 'Capabilities + Retainer | Manifest FTS',
+    description:
+      'Flexible monthly support for design, development, strategy, websites, applications, UX, enhancements, maintenance, and digital execution.',
   },
   '/case-study/barclay-rex': {
     title: 'Case Study: Barclay Rex | Manifest FTS',
@@ -168,8 +174,11 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
-      <Toaster />
-      <Component {...pageProps} />
+      <RetainerProvider>
+        <Toaster />
+        <Component {...pageProps} />
+        <RetainerModal />
+      </RetainerProvider>
     </>
   )
 }

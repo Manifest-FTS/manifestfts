@@ -248,7 +248,7 @@ function NcWaterfallsCaseStudy() {
                 The right foundation changes what&rsquo;s possible.
               </span>{" "}
               If you&rsquo;re looking for a builder who can think across design, systems, and strategy,{" "}
-              <Link href="/#get-started">
+              <Link href="/#contact-us">
                 <a className="text-green-600 underline hover:text-green-700 transition-colors">
                   let&rsquo;s talk
                 </a>

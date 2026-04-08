@@ -116,6 +116,10 @@
             background-color: $color-gray-100;
             background-image: url(../imgs/template/icons/fi-sr-arrow-small-right.svg);
             background-repeat: no-repeat;
+            background-position: right 25px center;
+            background-origin: padding-box;
+            background-size: 18px 18px;
+            padding-right: 56px;
             color: $color-gray-900;
             transform: translateY(-2px);
             transition: 0.2s;
@@ -303,7 +307,8 @@
 {
     background-image: url(../imgs/template/icons/fi-sr-arrow-small-right.svg);
     background-repeat: no-repeat;
-    background-position: center right 25px;
+    background-position: right 25px center;
+    background-origin: padding-box;
     padding-right: 56px;
 }
 .icon-arrow-left
@@ -321,7 +326,8 @@
 {
     background-image: url(../imgs/template/icons/arrow-small-right-w.svg);
     background-repeat: no-repeat;
-    background-position: center right 25px;
+    background-position: right 25px center;
+    background-origin: padding-box;
     padding-right: 56px;
 }
 .icon-triangle

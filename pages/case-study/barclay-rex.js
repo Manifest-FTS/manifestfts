@@ -105,7 +105,7 @@ function Service2() {
                 <div className="text-center">
                   <p className="text-body-lead-large color-white mt-10 mb-20">If you&rsquo;re ready to work with us on your next venture, click the button below.<br />For those interested in the technical details of this project, <Link href="#continue" className="color-white">continue reading below</Link>.
                   </p>
-                  <Link href="/#get-started"><a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-10">Get Started</a></Link>
+                  <Link href="/#contact-us"><a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-10">Contact Us</a></Link>
                 </div>
               </div>
             </div>
@@ -202,7 +202,7 @@ function Service2() {
                 <div className="text-center">
                   <p className="text-body-lead-large color-white mt-10 mb-20">Ready to supercharge your own project?<br />Tap that button below and let&rsquo;s let&rsquo;s manifest it.
                   </p>
-                  <Link href="/#get-started"><a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-10">Get Started</a></Link>
+                  <Link href="/#contact-us"><a className="btn btn-default icon-arrow-right color-gray-900 ml-20 btn-mb mb-10">Contact Us</a></Link>
                 </div>
               </div>
             </div>

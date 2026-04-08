@@ -43,8 +43,8 @@ function About1() {
                 <p className="text-lg text-gray-600 mt-8">Manifest is a digital consultancy and software development agency that empowers forward-thinking brands through cutting-edge digital experiences.</p>
                 <p className="text-lg text-gray-600 my-6">Our expertise spans brand and digital strategy, user experience design, software development, implementation, and data systems. We are a value-driven agency working with some of the most talented professionals to drive results.</p>
                 <div className="mt-10 flex space-x-4 items-center">
-                  <Link href="/#get-started">
-                    <a className="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800">GET STARTED</a>
+                  <Link href="/#contact-us">
+                    <a className="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800">Contact Us</a>
                   </Link>
                   {/* <Link href="mailto:hello@manifestfts.com">
                     <a className="text-gray-900 text-lg font-medium hover:underline">Join Our Team</a>
@@ -87,13 +87,11 @@ function About1() {
 
         <section className="py-14 bg-gray-900">
           <div className="container mx-auto text-center">
-            <Link href="/#get-started">
-              <a className="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-teal-600 hover:text-teal-600">Get Started</a>
+            <Link href="/#contact-us">
+              <a className="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-teal-600 hover:text-teal-600">Contact Us</a>
             </Link>
           </div>
         </section>
-
-        <Capabilities />
 
         <ModalVideo
           channel="youtube"

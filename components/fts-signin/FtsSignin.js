@@ -14,7 +14,7 @@ const FtsSignin = () => {
                     </Link>
                 </div>
                 <div className="col-md-8 col-sm-6 text-center text-md-end">
-                    <span className="color-gray-900 text-heading-6 mr-30 text-mb-sm-20">Ready to get started?</span>
+                    <span className="color-gray-900 text-heading-6 mr-30 text-mb-sm-20">Ready to Contact Us?</span>
                     <Link href="/page-signup">
                         <a className="btn btn-square">Create an Account</a>
                     </Link>
