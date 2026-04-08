@@ -17,7 +17,7 @@ function Index6() {
                     <div className="banner-hero banner-homepage6">
                         <div className="container">
                             <div className="row">
-                                <div className="col-lg-7 mt-50 pb-120"><span className="tag-1 bg-green-900">Digital Marketing Agency</span>
+                                <div className="col-lg-7 mt-50 pb-120"><span className="tag-1 bg-emerald-900">Digital Marketing Agency</span>
                                     <h1 className="text-display-2 mt-20">Forward thinking solutions</h1>
                                     <p className="text-body-lead-large color-gray-500 mt-30 pr-40">Your design, development, and technology partner — building and supporting websites, apps, and digital platforms as your business grows.</p>
                                     <div className="mt-40">
