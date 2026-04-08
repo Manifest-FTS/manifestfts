@@ -61,14 +61,23 @@ const Header = ({ handleOpen, headerStyle = "", isMobileMenuOpen = false }) => {
             <div className="header-logo">
               <Link href="/">
                 <a className="d-flex align-items-center" aria-label="Manifest FTS home">
-                  {!mounted || scroll ? (
+                  {!mounted ? (
+                    <img
+                      alt=""
+                      src="/assets/imgs/logo-white.svg"
+                      width="200"
+                      height="30"
+                      className="img-fluid"
+                      style={{ maxHeight: 32 }}
+                    />
+                  ) : scroll ? (
                     <img
                       alt=""
                       src="/assets/imgs/logo.svg"
                       width="200"
                       height="30"
                       className="img-fluid"
-                      style={{ maxHeight: 32, width: "auto" }}
+                      style={{ maxHeight: 32 }}
                     />
                   ) : (
                     <Lottie animationData={logo} loop={false} style={lottieStyle} />
