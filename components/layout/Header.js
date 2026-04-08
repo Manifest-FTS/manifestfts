@@ -131,7 +131,7 @@ const Header = ({ handleOpen, headerStyle = "", isMobileMenuOpen = false }) => {
             </div>
             <div className="site-header__desktop-cta">
               <RetainerTrigger
-                className="btn rounded-full bg-white hover:bg-gray-100 hover:text-teal site-header__cta"
+                className="btn text-base font-bold rounded-full px-3 py-2 bg-white hover:bg-gray-100 hover:text-teal"
                 source="header_cta"
                 hours={10}
               >
