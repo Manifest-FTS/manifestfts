@@ -19,6 +19,7 @@ const SMTP2GO_API_KEY = process.env.SMTP2GO_API_KEY;
 
 const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
 const NOTIFY_TO = ['hello@manifestfts.com'];
+const NOTIFY_CC = ['mdm@manifestfts.com'];
 const SENDER = 'noreply@manifestfts.com';
 const SEND_CUSTOMER_RECEIPT =
   process.env.RETAINER_SEND_CUSTOMER_RECEIPT === '1' ||
@@ -77,12 +78,13 @@ async function readRawBody(req) {
   return Buffer.concat(chunks);
 }
 
-async function sendSmtp2GoEmail({ to, subject, text, html }) {
+async function sendSmtp2GoEmail({ to, cc, subject, text, html }) {
   if (!SMTP2GO_API_KEY) throw new Error('SMTP2GO_API_KEY is not configured.');
 
   const payload = {
     api_key: SMTP2GO_API_KEY,
     to: to || NOTIFY_TO,
+    cc: cc || undefined,
     sender: SENDER,
     subject,
     text_body: text,
@@ -141,6 +143,7 @@ export default async function handler(req, res) {
         const internal = buildInternalRetainerSubscriptionEmail(session);
         await sendSmtp2GoEmail({
           to: NOTIFY_TO,
+          cc: NOTIFY_CC,
           subject: internal.subject,
           text: internal.text,
           html: internal.html,
