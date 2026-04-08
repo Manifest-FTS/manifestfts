@@ -73,6 +73,9 @@ const Header = ({ handleOpen, headerStyle = "", isMobileMenuOpen = false }) => {
     }`;
   };
 
+  const retainerButtonClasses =
+    "btn site-header__cta rounded-full px-3 py-2 text-base font-bold text-white bg-emerald-600 transition-colors duration-200 hover:bg-gray-100 hover:text-emerald-600";
+
   return (
     <header id="navbar" className={headerClassName}>
       <div className="container">
@@ -126,7 +129,7 @@ const Header = ({ handleOpen, headerStyle = "", isMobileMenuOpen = false }) => {
           <div className="site-header__actions">
             <div className="site-header__mobile-actions">
               <RetainerTrigger
-                className="btn btn-default hover-up site-header__cta"
+                className={retainerButtonClasses}
                 source="header_cta"
                 hours={10}
               >
@@ -149,7 +152,7 @@ const Header = ({ handleOpen, headerStyle = "", isMobileMenuOpen = false }) => {
             </div>
             <div className="site-header__desktop-cta">
               <RetainerTrigger
-                className="btn text-base font-bold rounded-full px-3 py-2 text-white bg-emerald-600 hover:bg-gray-100 hover:text-emerald-600"
+                className={retainerButtonClasses}
                 source="header_cta"
                 hours={10}
               >

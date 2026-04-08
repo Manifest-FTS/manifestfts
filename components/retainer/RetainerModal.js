@@ -34,7 +34,7 @@ const shellStyle = function (isVisible) {
   return {
     position: 'fixed',
     left: '50%',
-    bottom: 12,
+    bottom: 32,
     transform: 'translateX(-50%) translateY(' + (isVisible ? '0' : '20px') + ')',
     opacity: isVisible ? 1 : 0,
     width: 'min(760px, calc(100vw - 24px))',
@@ -232,14 +232,11 @@ const RetainerModal = function () {
 
           <div className="d-flex justify-content-between align-items-start" style={{ gap: 16 }}>
             <div>
-              <span className="text-body-capitalized color-gray-500 text-uppercase">
-                Monthly retainer
-              </span>
               <h3 id="retainer-sheet-title" className="text-heading-4 color-gray-900 mt-10 mb-10">
-                Start a flexible support partnership
+                Start a Retainer
               </h3>
               <p className="text-body-text-md color-gray-600 mb-0">
-                Set your monthly rhythm, share a short brief, and continue when you&apos;re ready.
+                Start a monthly partnership, share your brief, and we&rsquo;ll get to work.
               </p>
             </div>
 
@@ -293,8 +290,8 @@ const RetainerModal = function () {
                   compact
                   hours={hours}
                   onHoursChange={setHours}
-                  title="Choose your monthly support level"
-                  subtitle="Set a monthly pace for design, development, product support, implementation, and ongoing improvements."
+                  title="Select hours"
+                  subtitle="Set a monthly pace for design, development, and ongoing product support."
                 />
 
                 <div className="mt-20" style={compactMetaStyle}>
@@ -467,7 +464,7 @@ const RetainerModal = function () {
             <div>
               {step < 3 ? (
                 <button
-                  className="btn btn-black icon-arrow-right-white"
+                  className="btn btn-black icon-arrow-right-white px-5 py-2"
                   type="button"
                   onClick={nextStep}
                 >
@@ -475,7 +472,7 @@ const RetainerModal = function () {
                 </button>
               ) : (
                 <button
-                  className="btn btn-black icon-arrow-right-white"
+                  className="btn btn-black icon-arrow-right-white px-5 py-2"
                   type="submit"
                   form="retainer-sheet-form"
                   disabled={isSubmitting}

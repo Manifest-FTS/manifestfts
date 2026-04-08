@@ -16,7 +16,7 @@ const RetainerBuilder = ({
 }) => {
   const snapshot = getRetainerSnapshot(hours);
   const wrapperClass = compact ? 'bg-2 bdrd-16 p-20' : 'bg-2 bdrd-16 p-30 p-lg-5';
-  const titleClass = compact ? 'text-heading-4 color-gray-900 mt-10' : 'text-heading-3 color-gray-900 mt-10';
+  const titleClass = compact ? 'text-heading-4 color-gray-900 mt-5' : 'text-heading-3 color-gray-900 mt-10';
   const summaryValueClass = compact ? 'text-heading-5 color-gray-900 mt-10' : 'text-heading-4 color-gray-900 mt-10';
   const copyClass = compact ? 'text-body-text-md color-gray-600 mt-15' : 'text-body-text color-gray-600 mt-20';
 
@@ -24,11 +24,10 @@ const RetainerBuilder = ({
     <div className={wrapperClass}>
       <div className="row align-items-end">
         <div className="col-lg-7">
-          <span className="text-body-capitalized color-gray-500 text-uppercase">Monthly support</span>
           <h3 className={titleClass}>{title}</h3>
           <p className={copyClass}>{subtitle}</p>
         </div>
-        <div className="col-lg-5 mt-30 mt-lg-0 text-lg-end">
+        <div className="col-lg-5 mt-5 mt-lg-0 text-lg-end">
           <span className="tag-1 bg-6 color-green-900">{snapshot.supportLabel}</span>
           <div className={compact ? 'text-heading-3 color-gray-900 mt-15' : 'text-heading-2 color-gray-900 mt-20'}>
             {snapshot.hours} hours / month

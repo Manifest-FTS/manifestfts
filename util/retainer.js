@@ -9,7 +9,7 @@ const supportBands = [
     rate: 150,
     label: 'Focused support',
     description:
-      'A good fit for maintenance, targeted improvements, strategic guidance, and a short list of meaningful priorities each month.',
+      'Maintenance, improvements, and a focused monthly scope.',
   },
   {
     min: 10,
@@ -17,7 +17,7 @@ const supportBands = [
     rate: 140,
     label: 'Steady momentum',
     description:
-      'A balanced rhythm for ongoing design, development, UX improvements, implementation work, and steady product progress.',
+      'Ongoing design, development, and product progress.',
   },
   {
     min: 20,
@@ -25,7 +25,7 @@ const supportBands = [
     rate: 130,
     label: 'Integrated support',
     description:
-      'Well-suited for organizations that need regular throughput across product, design, development, enhancements, and support.',
+      'Consistent output across design and development.',
   },
   {
     min: 30,
@@ -33,7 +33,7 @@ const supportBands = [
     rate: 120,
     label: 'Embedded partner',
     description:
-      'Best for teams that want broader coverage and a more embedded monthly partnership across strategy and execution.',
+      'Embedded partnership across strategy and execution.',
   },
 ];
 
