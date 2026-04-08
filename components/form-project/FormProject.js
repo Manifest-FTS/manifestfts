@@ -116,7 +116,7 @@ const FormProject = () => {
                     method="post"
                     onSubmit={showVerification ? verifyAndSend : handleOnSubmit}
                   >
-                    <input type="hidden" name="formType" value="contact" />
+                    <input type="hidden" name="formType" value="getQuote" />
 
                     <div className="col-lg-6">
                       <div className="form-group">
@@ -160,6 +160,7 @@ const FormProject = () => {
                           type="text"
                           name="phone"
                           placeholder="Phone (optional)"
+                          required
                         />
                       </div>
                     </div>
@@ -232,8 +233,7 @@ const FormProject = () => {
                         style={{ borderTop: "1px solid rgba(16,24,40,0.08)" }}
                       >
                         <p className="text-body-text color-gray-600 mb-10">
-                          If you already know you need ongoing support, a retainer is
-                          usually the best fit.
+                          Ready to move forward? Start a retainer — urgent requests get a response within 15 minutes to 24 hours.
                         </p>
                         <RetainerTrigger
                           className="btn btn-link text-heading-6 p-0"
