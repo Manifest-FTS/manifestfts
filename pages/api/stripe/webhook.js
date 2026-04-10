@@ -136,10 +136,10 @@ export default async function handler(req, res) {
     if (event.type === 'checkout.session.completed') {
       const session = event.data.object;
 
-      // Only notify for retainer subscription checkouts.
-      const isSubscription = session && session.mode === 'subscription';
+      // Only notify for retainer Stripe checkouts (recurring or one-time).
+      const isSupportedCheckout = session && (session.mode === 'subscription' || session.mode === 'payment');
       const isRetainer = typeof session?.metadata?.selectedCommitment === 'string';
-      if (isSubscription && isRetainer) {
+      if (isSupportedCheckout && isRetainer) {
         const internal = buildInternalRetainerSubscriptionEmail(session);
         await sendSmtp2GoEmail({
           to: NOTIFY_TO,
