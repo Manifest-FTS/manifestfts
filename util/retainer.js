@@ -1,12 +1,12 @@
-export const RETAINER_MIN_HOURS = 5;
+export const RETAINER_MIN_HOURS = 3;
 export const RETAINER_MAX_HOURS = 40;
 export const RETAINER_DEFAULT_HOURS = 10;
 
 const supportBands = [
   {
-    min: 5,
+    min: 3,
     max: 9,
-    rate: 150,
+    rate: 120,
     label: 'Focused support',
     description:
       'Maintenance, improvements, and a focused monthly scope.',
@@ -14,7 +14,7 @@ const supportBands = [
   {
     min: 10,
     max: 19,
-    rate: 140,
+    rate: 110,
     label: 'Steady momentum',
     description:
       'Ongoing design, development, and product progress.',
@@ -22,7 +22,7 @@ const supportBands = [
   {
     min: 20,
     max: 29,
-    rate: 130,
+    rate: 100,
     label: 'Integrated support',
     description:
       'Consistent output across design and development.',
@@ -30,7 +30,7 @@ const supportBands = [
   {
     min: 30,
     max: 40,
-    rate: 120,
+    rate: 90,
     label: 'Embedded partner',
     description:
       'Embedded partnership across strategy and execution.',
@@ -57,7 +57,7 @@ export function getRetainerSnapshot(hours) {
     monthlyTotal: safeHours * band.rate,
     supportLabel: band.label,
     supportDescription: band.description,
-    anchorPoints: [5, 10, 20, 40],
+    anchorPoints: [3, 10, 20, 30, 40],
   };
 }
 

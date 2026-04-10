@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { trackEvent } from '../../lib/gtm';
 import { fetchPostJSON } from '../../util/api-helpers';
-import { getRetainerSnapshot } from '../../util/retainer';
+import { formatUsd, getRetainerSnapshot } from '../../util/retainer';
 import RetainerBuilder from './RetainerBuilder';
 import { useRetainerPurchase } from './RetainerContext';
 
@@ -102,13 +103,29 @@ const compactMetaStyle = {
   background: '#ffffff',
 };
 
+const billingModeButtonStyle = function (isActive) {
+  return {
+    border: 0,
+    borderRadius: 999,
+    padding: '8px 14px',
+    background: isActive ? '#101828' : 'transparent',
+    color: isActive ? '#ffffff' : '#475467',
+    cursor: 'pointer',
+    fontSize: 14,
+    fontWeight: 600,
+    lineHeight: 1.2,
+  };
+};
+
 const RetainerModal = function () {
   const { isOpen, purchaseState, closeRetainerPurchase } = useRetainerPurchase();
   const [hours, setHours] = useState(purchaseState.hours);
+  const [billingMode, setBillingMode] = useState('recurring');
   const [formData, setFormData] = useState(initialForm);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [step, setStep] = useState(1);
+  const lastTrackedStepRef = useRef(null);
   const snapshot = useMemo(function () {
     return getRetainerSnapshot(hours);
   }, [hours]);
@@ -123,6 +140,8 @@ const RetainerModal = function () {
       setIsSubmitting(false);
       setIsVisible(false);
       setStep(1);
+      setBillingMode('recurring');
+      lastTrackedStepRef.current = null;
       return undefined;
     }
 
@@ -134,6 +153,29 @@ const RetainerModal = function () {
       window.clearTimeout(timer);
     };
   }, [isOpen]);
+
+  useEffect(
+    function () {
+      if (!isOpen) return;
+      if (lastTrackedStepRef.current === step) return;
+
+      const currentStep = steps.find(function (item) {
+        return item.id === step;
+      });
+
+      lastTrackedStepRef.current = step;
+      trackEvent('retainer_step_view', {
+        source: purchaseState.source,
+        billingMode,
+        step,
+        stepLabel: currentStep ? currentStep.label : `Step ${step}`,
+        hours: snapshot.hours,
+        hourlyRate: snapshot.effectiveRate,
+        monthlyTotal: snapshot.monthlyTotal,
+      });
+    },
+    [billingMode, isOpen, purchaseState.source, snapshot.effectiveRate, snapshot.hours, snapshot.monthlyTotal, step]
+  );
 
   const handleFieldChange = function (event) {
     const name = event.target.name;
@@ -147,7 +189,29 @@ const RetainerModal = function () {
     });
   };
 
+  const handleBillingModeChange = function (mode) {
+    setBillingMode(mode);
+    trackEvent('retainer_billing_mode_selected', {
+      source: purchaseState.source,
+      billingMode: mode,
+      hours: snapshot.hours,
+      hourlyRate: snapshot.effectiveRate,
+      monthlyTotal: snapshot.monthlyTotal,
+    });
+  };
+
   const handleClose = function () {
+    trackEvent('retainer_modal_close', {
+      source: purchaseState.source,
+      billingMode,
+      step,
+      hours: snapshot.hours,
+      hourlyRate: snapshot.effectiveRate,
+      monthlyTotal: snapshot.monthlyTotal,
+      hasBrief: Boolean(formData.brief.trim()),
+      hasContactDetails: Boolean(formData.name.trim() || formData.email.trim()),
+    });
+
     setIsVisible(false);
 
     window.setTimeout(function () {
@@ -157,8 +221,24 @@ const RetainerModal = function () {
 
   const nextStep = function () {
     if (step === 2 && !formData.brief.trim()) {
+      trackEvent('retainer_step_error', {
+        source: purchaseState.source,
+        billingMode,
+        step,
+        field: 'brief',
+      });
       toast.error('Please add a short brief before continuing.');
       return;
+    }
+
+    if (step === 1) {
+      trackEvent('retainer_hours_selected', {
+        source: purchaseState.source,
+        billingMode,
+        hours: snapshot.hours,
+        hourlyRate: snapshot.effectiveRate,
+        monthlyTotal: snapshot.monthlyTotal,
+      });
     }
 
     setStep(function (current) {
@@ -176,6 +256,16 @@ const RetainerModal = function () {
     event.preventDefault();
     setIsSubmitting(true);
 
+    trackEvent('retainer_checkout_started', {
+      source: purchaseState.source,
+      billingMode,
+      hours: snapshot.hours,
+      hourlyRate: snapshot.effectiveRate,
+      monthlyTotal: snapshot.monthlyTotal,
+      hasCompany: Boolean(formData.company.trim()),
+      hasBrief: Boolean(formData.brief.trim()),
+    });
+
     try {
       const response = await fetchPostJSON('/api/retainer/checkout', {
         name: formData.name,
@@ -184,6 +274,7 @@ const RetainerModal = function () {
         brief: formData.brief,
         source: purchaseState.source,
         commitmentHours: snapshot.hours,
+        billingMode,
       });
 
       if (!response || !response.ok) {
@@ -196,6 +287,12 @@ const RetainerModal = function () {
       }
 
       if (response.checkoutUrl && typeof window !== 'undefined') {
+        trackEvent('retainer_checkout_redirect', {
+          source: purchaseState.source,
+          billingMode,
+          hours: snapshot.hours,
+          monthlyTotal: snapshot.monthlyTotal,
+        });
         window.location.href = response.checkoutUrl;
         return;
       }
@@ -203,6 +300,12 @@ const RetainerModal = function () {
       toast.success('Retainer request captured. Stripe checkout is ready to connect.');
       closeRetainerPurchase();
     } catch (error) {
+      trackEvent('retainer_checkout_error', {
+        source: purchaseState.source,
+        billingMode,
+        step,
+        message: error instanceof Error ? error.message : 'Unable to start checkout right now.',
+      });
       toast.error(error.message || 'Unable to start checkout right now.');
     } finally {
       setIsSubmitting(false);
@@ -236,7 +339,8 @@ const RetainerModal = function () {
                 Start a Retainer
               </h3>
               <p className="text-body-text-md color-gray-600 mb-0">
-                Start a monthly partnership, share your brief, and we&rsquo;ll get to work.
+                Choose a monthly retainer or a one-time support block, share your brief, and
+                we&rsquo;ll get to work.
               </p>
             </div>
 
@@ -275,9 +379,10 @@ const RetainerModal = function () {
             </div>
 
             <span className="text-body-small color-gray-600" style={summaryPillStyle}>
-              {snapshot.hours}h / mo
+              {billingMode === 'recurring' ? `${snapshot.hours}h / mo` : `${snapshot.hours}h one-time`}
               <span className="color-gray-400">•</span>
-              ${snapshot.monthlyTotal.toLocaleString()}
+              {formatUsd(snapshot.monthlyTotal)}
+              {billingMode === 'recurring' ? ' / mo' : ''}
             </span>
           </div>
         </div>
@@ -286,12 +391,51 @@ const RetainerModal = function () {
           <form id="retainer-sheet-form" onSubmit={handleSubmit} className="p-20 p-lg-25">
             {step === 1 && (
               <div>
+                <div className="mb-20">
+                  <span className="text-body-small color-gray-500 d-block mb-10">Billing option</span>
+                  <div
+                    className="d-inline-flex align-items-center"
+                    style={{
+                      gap: 4,
+                      padding: 4,
+                      borderRadius: 999,
+                      border: '1px solid rgba(16,24,40,0.08)',
+                      background: '#f8fafc',
+                    }}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => handleBillingModeChange('recurring')}
+                      style={billingModeButtonStyle(billingMode === 'recurring')}
+                    >
+                      Recurring
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleBillingModeChange('one_time')}
+                      style={billingModeButtonStyle(billingMode === 'one_time')}
+                    >
+                      One-time
+                    </button>
+                  </div>
+                  <p className="text-body-small color-gray-600 mt-10 mb-0">
+                    {billingMode === 'recurring'
+                      ? 'Monthly support renews automatically until you change or cancel it.'
+                      : 'A one-time support block is charged once for the selected hours.'}
+                  </p>
+                </div>
+
                 <RetainerBuilder
                   compact
                   hours={hours}
                   onHoursChange={setHours}
+                  billingMode={billingMode}
                   title="Select hours"
-                  subtitle="Set a monthly pace for design, development, and ongoing product support."
+                  subtitle={
+                    billingMode === 'recurring'
+                      ? 'Set a monthly pace for design, development, and ongoing product support.'
+                      : 'Choose a one-time block of support for design, development, and product work.'
+                  }
                 />
 
                 <div className="mt-20" style={compactMetaStyle}>
@@ -299,7 +443,7 @@ const RetainerModal = function () {
                     <div className="col-4">
                       <span className="text-body-small color-gray-500">Hours</span>
                       <div className="text-heading-7 color-gray-900 mt-5">
-                        {snapshot.hours}/mo
+                        {billingMode === 'recurring' ? `${snapshot.hours}/mo` : `${snapshot.hours} total`}
                       </div>
                     </div>
                     <div className="col-4">
@@ -309,9 +453,11 @@ const RetainerModal = function () {
                       </div>
                     </div>
                     <div className="col-4">
-                      <span className="text-body-small color-gray-500">Total</span>
+                      <span className="text-body-small color-gray-500">
+                        {billingMode === 'recurring' ? 'Monthly total' : 'One-time total'}
+                      </span>
                       <div className="text-heading-7 color-gray-900 mt-5">
-                        ${snapshot.monthlyTotal.toLocaleString()}
+                        {formatUsd(snapshot.monthlyTotal)}
                       </div>
                     </div>
                   </div>
