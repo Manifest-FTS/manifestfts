@@ -17,6 +17,17 @@ type JsonLdObject = {
   [key: string]: any;
 };
 
+type DataLayerEvent = {
+  event: string;
+  [key: string]: unknown;
+};
+
+declare global {
+  interface Window {
+    dataLayer: DataLayerEvent[];
+  }
+}
+
 const SITE_URL = "https://www.manifestfts.com/free-website";
 const SITE_NAME = "Manifest FTS";
 const PAGE_TITLE =
