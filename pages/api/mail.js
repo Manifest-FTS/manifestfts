@@ -81,33 +81,35 @@ async function sendSmtp2GoEmail({ to, cc, subject, textBody, htmlBody }, options
 }
 
 async function sendEmail(req, res) {
-  // Validate that SMTP2GO API key is configured
-  if (!SMTP2GO_API_KEY) {
-    console.error("SMTP2GO_API_KEY environment variable is not set");
-    return res.status(500).json({
-      error: "Email service is not properly configured. Please contact support.",
-    });
-  }
+  try {
+    // Validate that SMTP2GO API key is configured
+    if (!SMTP2GO_API_KEY) {
+      console.error("SMTP2GO_API_KEY environment variable is not set");
+      return res.status(500).json({
+        error: "Email service is not properly configured. Please contact support.",
+      });
+    }
 
-  const { body } = req;
+    const body = req.body || {};
+    const formType = typeof body.formType === "string" ? body.formType : "";
 
-  let message = "";
-  let subject = "New Lead from Manifest FTS";
+    let message = "";
+    let subject = "New Lead from Manifest FTS";
 
-  // Check the form type to determine which form was submitted
-  if (body.formType === "getQuote") {
-    // Handle "Get a Quote" form
-    message = `
+    // Check the form type to determine which form was submitted
+    if (formType === "getQuote") {
+      // Handle "Get a Quote" form
+      message = `
       Name: ${body.fullname}\r\n
       Email: ${body.email}\r\n
       Phone: ${body.phone}\r\n
       Company: ${body.company || "N/A"}\r\n
       Message: ${body.message}
     `;
-    subject = "New Project Inquiry - Manifest FTS";
-  } else if (body.formType === "wordpressHosting") {
-    // Handle "WordPress Hosting" form
-    message = `
+      subject = "New Project Inquiry - Manifest FTS";
+    } else if (formType === "wordpressHosting") {
+      // Handle "WordPress Hosting" form
+      message = `
       Name: ${body.name}\r\n
       Email: ${body.email}\r\n
       Phone: ${body.phone || "N/A"}\r\n
@@ -117,66 +119,93 @@ async function sendEmail(req, res) {
       Multiple Sites: ${body.multipleSites || "N/A"}\r\n
       Message: ${body.message}
     `;
-    subject = "New WordPress Hosting Inquiry - Manifest FTS";
-  } else if (body.formType === "freeWebsiteIntake") {
-    try {
-      const internalEmail = buildInternalFreeWebsiteIntakeEmail(body);
-      await sendSmtp2GoEmail({
-        to: ["hello@manifestfts.com"],
-        cc: ["mdm@manifestfts.com"],
-        subject: internalEmail.subject,
-        textBody: internalEmail.text,
-        htmlBody: internalEmail.html,
-      }, { retries: 1 });
+      subject = "New WordPress Hosting Inquiry - Manifest FTS";
+    } else if (formType === "freeWebsiteIntake") {
+      try {
+        const internalEmail = buildInternalFreeWebsiteIntakeEmail(body);
+        let ccAccepted = true;
 
-      const customerEmailAddress =
-        typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
-      let sentConfirmation = false;
-
-      if (customerEmailAddress) {
-        sentConfirmation = true;
-        const customerEmail = buildCustomerFreeWebsiteConfirmationEmail(body);
-        sendSmtp2GoEmail(
-          {
-            to: [customerEmailAddress],
-            subject: customerEmail.subject,
-            textBody: customerEmail.text,
-            htmlBody: customerEmail.html,
-          },
-          { retries: 1 }
-        ).catch((confirmationError) => {
-          console.error(
-            "Customer confirmation email failed for free website intake:",
-            confirmationError
+        // Try with CC first. If that fails, retry once without CC so the lead still lands.
+        try {
+          await sendSmtp2GoEmail(
+            {
+              to: ["hello@manifestfts.com"],
+              cc: ["mdm@manifestfts.com"],
+              subject: internalEmail.subject,
+              textBody: internalEmail.text,
+              htmlBody: internalEmail.html,
+            },
+            { retries: 1 }
           );
+        } catch (ccError) {
+          ccAccepted = false;
+          console.error("Free website intake internal send with CC failed, retrying without CC", ccError);
+          await sendSmtp2GoEmail(
+            {
+              to: ["hello@manifestfts.com"],
+              subject: internalEmail.subject,
+              textBody: internalEmail.text,
+              htmlBody: internalEmail.html,
+            },
+            { retries: 1 }
+          );
+        }
+
+        const customerEmailAddress =
+          typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
+        let sentConfirmation = false;
+
+        if (customerEmailAddress) {
+          sentConfirmation = true;
+          const customerEmail = buildCustomerFreeWebsiteConfirmationEmail(body);
+          sendSmtp2GoEmail(
+            {
+              to: [customerEmailAddress],
+              subject: customerEmail.subject,
+              textBody: customerEmail.text,
+              htmlBody: customerEmail.html,
+            },
+            { retries: 1 }
+          ).catch((confirmationError) => {
+            console.error(
+              "Customer confirmation email failed for free website intake:",
+              confirmationError
+            );
+          });
+        }
+
+        return res.status(200).json({
+          status: "Ok",
+          sentConfirmation,
+          ccAccepted,
+        });
+      } catch (error) {
+        console.error("Error sending free website intake emails via SMTP2GO:", error);
+        return res.status(500).json({
+          error: "Failed to send email. Please try again later.",
         });
       }
+    } else {
+      return res.status(400).json({ error: "Invalid form data" });
+    }
 
-      return res.status(200).json({
-        status: "Ok",
-        sentConfirmation,
+    try {
+      await sendSmtp2GoEmail({
+        to: ["hello@manifestfts.com"],
+        subject,
+        textBody: message,
+        htmlBody: message.replace(/\r\n/g, "<br>"),
       });
+
+      return res.status(200).json({ status: "Ok" });
     } catch (error) {
-      console.error("Error sending free website intake emails via SMTP2GO:", error);
+      console.error("Error sending email via SMTP2GO:", error);
       return res.status(500).json({
         error: "Failed to send email. Please try again later.",
       });
     }
-  } else {
-    return res.status(400).json({ error: "Invalid form data" });
-  }
-
-  try {
-    await sendSmtp2GoEmail({
-      to: ["hello@manifestfts.com"],
-      subject,
-      textBody: message,
-      htmlBody: message.replace(/\r\n/g, "<br>"),
-    });
-
-    return res.status(200).json({ status: "Ok" });
-  } catch (error) {
-    console.error("Error sending email via SMTP2GO:", error);
+  } catch (unhandledError) {
+    console.error("Unhandled /api/mail error:", unhandledError);
     return res.status(500).json({
       error: "Failed to send email. Please try again later.",
     });
