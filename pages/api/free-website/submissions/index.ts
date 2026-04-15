@@ -15,16 +15,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ error: parsed.error });
     }
 
-    const submissions = await readAllSubmissions();
-    const newSubmission = buildSubmission(parsed.value);
-    submissions.unshift(newSubmission);
-    await writeAllSubmissions(submissions);
+    try {
+      const submissions = await readAllSubmissions();
+      const newSubmission = buildSubmission(parsed.value);
+      submissions.unshift(newSubmission);
+      await writeAllSubmissions(submissions);
 
-    return res.status(201).json({
-      id: newSubmission.id,
-      status: newSubmission.status,
-      message: "Submission received successfully.",
-    });
+      return res.status(201).json({
+        id: newSubmission.id,
+        status: newSubmission.status,
+        message: "Submission received successfully.",
+      });
+    } catch (error) {
+      console.error("Free website submission could not be persisted", error);
+      return res.status(202).json({
+        status: "accepted_unstored",
+        message: "Submission received, but persistence failed.",
+      });
+    }
   }
 
   if (req.method === "GET") {

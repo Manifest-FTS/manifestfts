@@ -82,20 +82,29 @@ async function sendEmail(req, res) {
 
       const customerEmailAddress =
         typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
+      let sentConfirmation = false;
 
       if (customerEmailAddress) {
-        const customerEmail = buildCustomerFreeWebsiteConfirmationEmail(body);
-        await sendSmtp2GoEmail({
-          to: [customerEmailAddress],
-          subject: customerEmail.subject,
-          textBody: customerEmail.text,
-          htmlBody: customerEmail.html,
-        });
+        try {
+          const customerEmail = buildCustomerFreeWebsiteConfirmationEmail(body);
+          await sendSmtp2GoEmail({
+            to: [customerEmailAddress],
+            subject: customerEmail.subject,
+            textBody: customerEmail.text,
+            htmlBody: customerEmail.html,
+          });
+          sentConfirmation = true;
+        } catch (confirmationError) {
+          console.error(
+            "Customer confirmation email failed for free website intake:",
+            confirmationError
+          );
+        }
       }
 
       return res.status(200).json({
         status: "Ok",
-        sentConfirmation: Boolean(customerEmailAddress),
+        sentConfirmation,
       });
     } catch (error) {
       console.error("Error sending free website intake emails via SMTP2GO:", error);
