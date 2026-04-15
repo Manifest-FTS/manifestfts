@@ -6,7 +6,18 @@ import {
 const SMTP2GO_API_URL = "https://api.smtp2go.com/v3";
 const SMTP2GO_API_KEY = process.env.SMTP2GO_API_KEY;
 
-async function sendSmtp2GoEmail({ to, cc, subject, textBody, htmlBody }) {
+function wait(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+async function sendSmtp2GoEmail({ to, cc, subject, textBody, htmlBody }, options = {}) {
+  const {
+    retries = 0,
+    retryDelayMs = 350,
+  } = options;
+
   const payload = {
     api_key: SMTP2GO_API_KEY,
     to,
@@ -28,10 +39,29 @@ async function sendSmtp2GoEmail({ to, cc, subject, textBody, htmlBody }) {
     body: JSON.stringify(payload),
   });
 
-  const result = await response.json();
+  let result = null;
+  const responseText = await response.text();
+  if (responseText) {
+    try {
+      result = JSON.parse(responseText);
+    } catch (parseError) {
+      result = { parseError: true, raw: responseText };
+    }
+  }
+
   if (!response.ok || result.data?.error) {
+    const shouldRetry = retries > 0 && response.status >= 500;
+    if (shouldRetry) {
+      await wait(retryDelayMs);
+      return sendSmtp2GoEmail(
+        { to, cc, subject, textBody, htmlBody },
+        { retries: retries - 1, retryDelayMs: retryDelayMs * 2 }
+      );
+    }
+
     const error = new Error("SMTP2GO API request failed");
     error.response = result;
+    error.status = response.status;
     throw error;
   }
 
@@ -85,7 +115,7 @@ async function sendEmail(req, res) {
         subject: internalEmail.subject,
         textBody: internalEmail.text,
         htmlBody: internalEmail.html,
-      });
+      }, { retries: 1 });
 
       const customerEmailAddress =
         typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
