@@ -136,6 +136,46 @@ function WordPressLandingPage() {
     });
   }
 
+  async function submitMailWithRetry(payload: Record<string, unknown>) {
+    const attempts = 2;
+
+    for (let attempt = 1; attempt <= attempts; attempt += 1) {
+      try {
+        const response = await fetch("/api/mail", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+
+        const body = await response.json().catch(function onJsonParseError() {
+          return null;
+        });
+
+        if (response.ok && body?.status === "Ok") {
+          return { ok: true, body };
+        }
+
+        if (attempt < attempts) {
+          await new Promise((resolve) => setTimeout(resolve, 700));
+          continue;
+        }
+
+        return { ok: false, body };
+      } catch (error) {
+        if (attempt < attempts) {
+          await new Promise((resolve) => setTimeout(resolve, 700));
+          continue;
+        }
+
+        throw error;
+      }
+    }
+
+    return { ok: false, body: null };
+  }
+
   async function handleOnSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
@@ -203,23 +243,13 @@ function WordPressLandingPage() {
         },
       };
 
-      const mailRes = await fetch("/api/mail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          formType: "freeWebsiteIntake",
-          selectedPlan: selectedPlan,
-        }),
+      const mailResult = await submitMailWithRetry({
+        ...formData,
+        formType: "freeWebsiteIntake",
+        selectedPlan: selectedPlan,
       });
 
-      const mailJson = await mailRes.json().catch(function onMailJsonError() {
-        return null;
-      });
-
-      if (!mailRes.ok || mailJson?.status !== "Ok") {
+      if (!mailResult.ok) {
         setStatus("error");
         toast.error("Something went wrong. Please try again.", {
           duration: 12000,
