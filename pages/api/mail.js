@@ -31,13 +31,25 @@ async function sendSmtp2GoEmail({ to, cc, subject, textBody, htmlBody }, options
     payload.cc = cc;
   }
 
-  const response = await fetch(`${SMTP2GO_API_URL}/email/send`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
+  let response;
+  try {
+    response = await fetch(`${SMTP2GO_API_URL}/email/send`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+  } catch (networkError) {
+    if (retries > 0) {
+      await wait(retryDelayMs);
+      return sendSmtp2GoEmail(
+        { to, cc, subject, textBody, htmlBody },
+        { retries: retries - 1, retryDelayMs: retryDelayMs * 2 }
+      );
+    }
+    throw networkError;
+  }
 
   let result = null;
   const responseText = await response.text();
@@ -50,7 +62,7 @@ async function sendSmtp2GoEmail({ to, cc, subject, textBody, htmlBody }, options
   }
 
   if (!response.ok || result.data?.error) {
-    const shouldRetry = retries > 0 && response.status >= 500;
+    const shouldRetry = retries > 0 && (response.status >= 500 || response.status === 429);
     if (shouldRetry) {
       await wait(retryDelayMs);
       return sendSmtp2GoEmail(
@@ -122,21 +134,22 @@ async function sendEmail(req, res) {
       let sentConfirmation = false;
 
       if (customerEmailAddress) {
-        try {
-          const customerEmail = buildCustomerFreeWebsiteConfirmationEmail(body);
-          await sendSmtp2GoEmail({
+        sentConfirmation = true;
+        const customerEmail = buildCustomerFreeWebsiteConfirmationEmail(body);
+        sendSmtp2GoEmail(
+          {
             to: [customerEmailAddress],
             subject: customerEmail.subject,
             textBody: customerEmail.text,
             htmlBody: customerEmail.html,
-          });
-          sentConfirmation = true;
-        } catch (confirmationError) {
+          },
+          { retries: 1 }
+        ).catch((confirmationError) => {
           console.error(
             "Customer confirmation email failed for free website intake:",
             confirmationError
           );
-        }
+        });
       }
 
       return res.status(200).json({
