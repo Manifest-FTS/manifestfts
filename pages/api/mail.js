@@ -6,20 +6,26 @@ import {
 const SMTP2GO_API_URL = "https://api.smtp2go.com/v3";
 const SMTP2GO_API_KEY = process.env.SMTP2GO_API_KEY;
 
-async function sendSmtp2GoEmail({ to, subject, textBody, htmlBody }) {
+async function sendSmtp2GoEmail({ to, cc, subject, textBody, htmlBody }) {
+  const payload = {
+    api_key: SMTP2GO_API_KEY,
+    to,
+    sender: "noreply@manifestfts.com",
+    subject,
+    text_body: textBody,
+    html_body: htmlBody,
+  };
+
+  if (Array.isArray(cc) && cc.length > 0) {
+    payload.cc = cc;
+  }
+
   const response = await fetch(`${SMTP2GO_API_URL}/email/send`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      api_key: SMTP2GO_API_KEY,
-      to,
-      sender: "noreply@manifestfts.com",
-      subject,
-      text_body: textBody,
-      html_body: htmlBody,
-    }),
+    body: JSON.stringify(payload),
   });
 
   const result = await response.json();
@@ -75,6 +81,7 @@ async function sendEmail(req, res) {
       const internalEmail = buildInternalFreeWebsiteIntakeEmail(body);
       await sendSmtp2GoEmail({
         to: ["hello@manifestfts.com"],
+        cc: ["mdm@manifestfts.com"],
         subject: internalEmail.subject,
         textBody: internalEmail.text,
         htmlBody: internalEmail.html,
