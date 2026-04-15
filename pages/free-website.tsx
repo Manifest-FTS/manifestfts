@@ -17,6 +17,17 @@ type JsonLdObject = {
   [key: string]: any;
 };
 
+type DataLayerEvent = {
+  event: string;
+  [key: string]: unknown;
+};
+
+declare global {
+  interface Window {
+    dataLayer: DataLayerEvent[];
+  }
+}
+
 const SITE_URL = "https://www.manifestfts.com/free-website";
 const SITE_NAME = "Manifest FTS";
 const PAGE_TITLE =
@@ -114,6 +125,17 @@ function WordPressLandingPage() {
     };
   }, []);
 
+  function trackLeadFormSubmitSuccess() {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "lead_form_submit_success",
+    });
+  }
+
   async function handleOnSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
@@ -193,7 +215,11 @@ function WordPressLandingPage() {
         }),
       });
 
-      if (!mailRes.ok) {
+      const mailJson = await mailRes.json().catch(function onMailJsonError() {
+        return null;
+      });
+
+      if (!mailRes.ok || mailJson?.status !== "Ok") {
         setStatus("error");
         toast.error("Something went wrong. Please try again.", {
           duration: 12000,
@@ -221,6 +247,8 @@ function WordPressLandingPage() {
       } catch (intakeError) {
         console.warn("Free website intake storage request failed", intakeError);
       }
+
+      trackLeadFormSubmitSuccess();
 
       setIsFormVisible(false);
       setStatus("success");

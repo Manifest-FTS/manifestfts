@@ -1,5 +1,36 @@
+import {
+  buildCustomerFreeWebsiteConfirmationEmail,
+  buildInternalFreeWebsiteIntakeEmail,
+} from "../../lib/email/freeWebsiteIntakeEmails";
+
 const SMTP2GO_API_URL = "https://api.smtp2go.com/v3";
 const SMTP2GO_API_KEY = process.env.SMTP2GO_API_KEY;
+
+async function sendSmtp2GoEmail({ to, subject, textBody, htmlBody }) {
+  const response = await fetch(`${SMTP2GO_API_URL}/email/send`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      api_key: SMTP2GO_API_KEY,
+      to,
+      sender: "noreply@manifestfts.com",
+      subject,
+      text_body: textBody,
+      html_body: htmlBody,
+    }),
+  });
+
+  const result = await response.json();
+  if (!response.ok || result.data?.error) {
+    const error = new Error("SMTP2GO API request failed");
+    error.response = result;
+    throw error;
+  }
+
+  return result;
+}
 
 async function sendEmail(req, res) {
   // Validate that SMTP2GO API key is configured
@@ -40,51 +71,49 @@ async function sendEmail(req, res) {
     `;
     subject = "New WordPress Hosting Inquiry - Manifest FTS";
   } else if (body.formType === "freeWebsiteIntake") {
-    // Handle "Free Website Intake" form
-    message = `
-      Contact Name: ${body.name || body.contactName || "N/A"}\r\n
-      Business Name: ${body.businessName || "N/A"}\r\n
-      Email: ${body.email || "N/A"}\r\n
-      Phone: ${body.phone || "N/A"}\r\n
-      Selected Plan: ${body.selectedPlan || "N/A"}\r\n
-      Organization Type: ${body.organizationType || body.businessCategory || "N/A"}\r\n
-      Website URL: ${body.websiteUrl || "N/A"}\r\n
-      Primary Goal: ${body.primaryGoal || "N/A"}\r\n
-      Contact Preference: ${body.contactPreference || "N/A"}\r\n
-      Best Time To Call: ${body.bestTimeToCall || "N/A"}\r\n
-      Message: ${body.message || body.notesSpecialRequests || "N/A"}
-    `;
-    subject = "New Free Website Intake - Manifest FTS";
+    try {
+      const internalEmail = buildInternalFreeWebsiteIntakeEmail(body);
+      await sendSmtp2GoEmail({
+        to: ["hello@manifestfts.com"],
+        subject: internalEmail.subject,
+        textBody: internalEmail.text,
+        htmlBody: internalEmail.html,
+      });
+
+      const customerEmailAddress =
+        typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
+
+      if (customerEmailAddress) {
+        const customerEmail = buildCustomerFreeWebsiteConfirmationEmail(body);
+        await sendSmtp2GoEmail({
+          to: [customerEmailAddress],
+          subject: customerEmail.subject,
+          textBody: customerEmail.text,
+          htmlBody: customerEmail.html,
+        });
+      }
+
+      return res.status(200).json({
+        status: "Ok",
+        sentConfirmation: Boolean(customerEmailAddress),
+      });
+    } catch (error) {
+      console.error("Error sending free website intake emails via SMTP2GO:", error);
+      return res.status(500).json({
+        error: "Failed to send email. Please try again later.",
+      });
+    }
   } else {
     return res.status(400).json({ error: "Invalid form data" });
   }
 
   try {
-    const emailPayload = {
-      api_key: SMTP2GO_API_KEY,
+    await sendSmtp2GoEmail({
       to: ["hello@manifestfts.com"],
-      sender: "noreply@manifestfts.com",
-      subject: subject,
-      text_body: message,
-      html_body: message.replace(/\r\n/g, "<br>"),
-    };
-
-    const response = await fetch(`${SMTP2GO_API_URL}/email/send`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(emailPayload),
+      subject,
+      textBody: message,
+      htmlBody: message.replace(/\r\n/g, "<br>"),
     });
-
-    const result = await response.json();
-
-    if (!response.ok || result.data?.error) {
-      console.error("SMTP2GO API error:", result);
-      return res.status(500).json({
-        error: "Failed to send email. Please try again later.",
-      });
-    }
 
     return res.status(200).json({ status: "Ok" });
   } catch (error) {

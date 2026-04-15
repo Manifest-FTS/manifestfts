@@ -117,7 +117,7 @@ function NcWaterfallsCaseStudy() {
                     href="https://www.ncwaterfalls.com?utm_source=manifestfts&utm_medium=case_study&utm_campaign=nc_waterfalls_feature"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-link hover:text-green-400 text-white"
+                    className="btn hover:text-green-400 text-white"
                   >
                     Visit ncwaterfalls.com →
                   </a>
