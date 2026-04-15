@@ -6,18 +6,7 @@ import {
 const SMTP2GO_API_URL = "https://api.smtp2go.com/v3";
 const SMTP2GO_API_KEY = process.env.SMTP2GO_API_KEY;
 
-function wait(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
-
-async function sendSmtp2GoEmail({ to, cc, subject, textBody, htmlBody }, options = {}) {
-  const {
-    retries = 0,
-    retryDelayMs = 350,
-  } = options;
-
+async function sendSmtp2GoEmail({ to, cc, subject, textBody, htmlBody }) {
   const payload = {
     api_key: SMTP2GO_API_KEY,
     to,
@@ -31,25 +20,13 @@ async function sendSmtp2GoEmail({ to, cc, subject, textBody, htmlBody }, options
     payload.cc = cc;
   }
 
-  let response;
-  try {
-    response = await fetch(`${SMTP2GO_API_URL}/email/send`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
-  } catch (networkError) {
-    if (retries > 0) {
-      await wait(retryDelayMs);
-      return sendSmtp2GoEmail(
-        { to, cc, subject, textBody, htmlBody },
-        { retries: retries - 1, retryDelayMs: retryDelayMs * 2 }
-      );
-    }
-    throw networkError;
-  }
+  const response = await fetch(`${SMTP2GO_API_URL}/email/send`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
 
   let result = null;
   const responseText = await response.text();
@@ -62,15 +39,6 @@ async function sendSmtp2GoEmail({ to, cc, subject, textBody, htmlBody }, options
   }
 
   if (!response.ok || result.data?.error) {
-    const shouldRetry = retries > 0 && (response.status >= 500 || response.status === 429);
-    if (shouldRetry) {
-      await wait(retryDelayMs);
-      return sendSmtp2GoEmail(
-        { to, cc, subject, textBody, htmlBody },
-        { retries: retries - 1, retryDelayMs: retryDelayMs * 2 }
-      );
-    }
-
     const error = new Error("SMTP2GO API request failed");
     error.response = result;
     error.status = response.status;
@@ -123,50 +91,26 @@ async function sendEmail(req, res) {
     } else if (formType === "freeWebsiteIntake") {
       try {
         const internalEmail = buildInternalFreeWebsiteIntakeEmail(body);
-        let ccAccepted = true;
-
-        // Try with CC first. If that fails, retry once without CC so the lead still lands.
-        try {
-          await sendSmtp2GoEmail(
-            {
-              to: ["hello@manifestfts.com"],
-              cc: ["mdm@manifestfts.com"],
-              subject: internalEmail.subject,
-              textBody: internalEmail.text,
-              htmlBody: internalEmail.html,
-            },
-            { retries: 1 }
-          );
-        } catch (ccError) {
-          ccAccepted = false;
-          console.error("Free website intake internal send with CC failed, retrying without CC", ccError);
-          await sendSmtp2GoEmail(
-            {
-              to: ["hello@manifestfts.com"],
-              subject: internalEmail.subject,
-              textBody: internalEmail.text,
-              htmlBody: internalEmail.html,
-            },
-            { retries: 1 }
-          );
-        }
+        await sendSmtp2GoEmail({
+          to: ["hello@manifestfts.com"],
+          subject: internalEmail.subject,
+          textBody: internalEmail.text,
+          htmlBody: internalEmail.html,
+        });
 
         const customerEmailAddress =
           typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
-        let sentConfirmation = false;
+        const sentConfirmation = Boolean(customerEmailAddress);
 
-        if (customerEmailAddress) {
-          sentConfirmation = true;
+        if (sentConfirmation) {
           const customerEmail = buildCustomerFreeWebsiteConfirmationEmail(body);
-          sendSmtp2GoEmail(
-            {
-              to: [customerEmailAddress],
-              subject: customerEmail.subject,
-              textBody: customerEmail.text,
-              htmlBody: customerEmail.html,
-            },
-            { retries: 1 }
-          ).catch((confirmationError) => {
+          // Best-effort async send. Do not block the lead submission response.
+          sendSmtp2GoEmail({
+            to: [customerEmailAddress],
+            subject: customerEmail.subject,
+            textBody: customerEmail.text,
+            htmlBody: customerEmail.html,
+          }).catch((confirmationError) => {
             console.error(
               "Customer confirmation email failed for free website intake:",
               confirmationError
@@ -177,7 +121,6 @@ async function sendEmail(req, res) {
         return res.status(200).json({
           status: "Ok",
           sentConfirmation,
-          ccAccepted,
         });
       } catch (error) {
         console.error("Error sending free website intake emails via SMTP2GO:", error);
