@@ -92,7 +92,7 @@ async function sendEmail(req, res) {
       try {
         const internalEmail = buildInternalFreeWebsiteIntakeEmail(body);
         await sendSmtp2GoEmail({
-          to: ["hello@manifestfts.com"],
+          to: ["hello@manifestfts.com", "mdm@manifestfts.com"],
           subject: internalEmail.subject,
           textBody: internalEmail.text,
           htmlBody: internalEmail.html,
