@@ -22,6 +22,22 @@ type DataLayerEvent = {
   [key: string]: unknown;
 };
 
+type AttributionParams = {
+  gclid: string;
+  utmSource: string;
+  utmMedium: string;
+  utmCampaign: string;
+  utmTerm: string;
+  utmContent: string;
+};
+
+type HeroVariantKey = "a" | "b" | "c";
+
+type HeroVariantContent = {
+  headline: string;
+  subtext: string;
+};
+
 declare global {
   interface Window {
     dataLayer: DataLayerEvent[];
@@ -35,6 +51,34 @@ const PAGE_TITLE =
 const PAGE_DESCRIPTION =
   "Get a professional website with no upfront website build cost. Manifest FTS helps small businesses and nonprofits launch a modern website with hosting, support, maintenance, backups, and SSL included.";
 const OG_IMAGE = "https://www.manifestfts.com/assets/imgs/marketing/wordpress.jpg";
+const ATTRIBUTION_STORAGE_KEY = "manifest_free_website_attribution";
+
+const defaultAttribution: AttributionParams = {
+  gclid: "",
+  utmSource: "",
+  utmMedium: "",
+  utmCampaign: "",
+  utmTerm: "",
+  utmContent: "",
+};
+
+const heroVariants: Record<HeroVariantKey, HeroVariantContent> = {
+  a: {
+    headline: "Get a higher-performing website with a dedicated tech partner",
+    subtext:
+      "No upfront build fee. We manage, maintain, and improve your website for $149/month.",
+  },
+  b: {
+    headline: "Launch fast, stay supported, and keep improving every month",
+    subtext:
+      "Go live in days, then keep momentum with ongoing technical support and optimization.",
+  },
+  c: {
+    headline: "Your dedicated tech partner for a website that keeps improving",
+    subtext:
+      "No upfront website build fee. Ongoing hosting, maintenance, and expert ownership for $149/month.",
+  },
+};
 
 const testimonialHighlights = [
   {
@@ -57,11 +101,118 @@ const testimonialHighlights = [
   },
 ];
 
+const alsoIncludedItems = [
+  "Managed hosting (Flywheel-level infrastructure)",
+  "SSL, backups, and updates",
+  "DevOps-level support",
+  "Access to experienced engineers",
+  "Performance monitoring and improvements",
+  "Ongoing technical maintenance",
+];
+
+const managedChecklist = [
+  {
+    title: "Website Setup",
+    items: [
+      "Professional launch and brand-aligned layout",
+      "Core pages configured with conversion-ready structure",
+      "Contact and lead capture setup",
+      "Mobile-first performance checks before launch",
+    ],
+  },
+  {
+    title: "Business Functionality",
+    items: [
+      "Inquiry forms and email routing",
+      "Service or program page structure support",
+      "Basic analytics and event foundations",
+      "Content update support through monthly hours",
+    ],
+  },
+  {
+    title: "Infrastructure",
+    items: [
+      "Managed hosting environment",
+      "SSL, backups, and update cycles",
+      "Security hardening and uptime oversight",
+      "Release support from experienced engineers",
+    ],
+  },
+  {
+    title: "Growth & Support",
+    items: [
+      "Ongoing maintenance and troubleshooting",
+      "Performance monitoring and optimization guidance",
+      "SEO-friendly foundations for local discoverability",
+      "A dedicated partner for technical ownership",
+    ],
+  },
+];
+
+const comparisonRows = [
+  {
+    label: "Cost over time",
+    diy: "Low upfront, but hidden add-ons and time cost",
+    freelancers: "Variable project fees and change-order risk",
+    manifest: "Predictable monthly investment with support included",
+  },
+  {
+    label: "Effort required from you",
+    diy: "High - you manage setup, copy, and troubleshooting",
+    freelancers: "Medium - project coordination and follow-ups required",
+    manifest: "Low - we handle delivery, maintenance, and updates",
+  },
+  {
+    label: "Ongoing support",
+    diy: "Self-serve docs and ticket queues",
+    freelancers: "Usually ad hoc or unavailable after launch",
+    manifest: "Built-in monthly expert support and technical ownership",
+  },
+];
+
+const placeholderPortfolioCards = [
+  "Portfolio Example 01",
+  "Portfolio Example 02",
+  "Portfolio Example 03",
+];
+
+const placeholderCaseStudyCards = [
+  "Case Study Preview: Local Business Growth",
+  "Case Study Preview: Nonprofit Visibility Lift",
+];
+
+function readAttributionFromSearch(search: string): AttributionParams {
+  const params = new URLSearchParams(search);
+  return {
+    gclid: params.get("gclid") || "",
+    utmSource: params.get("utm_source") || "",
+    utmMedium: params.get("utm_medium") || "",
+    utmCampaign: params.get("utm_campaign") || "",
+    utmTerm: params.get("utm_term") || "",
+    utmContent: params.get("utm_content") || "",
+  };
+}
+
+function hasAttributionValue(attribution: AttributionParams): boolean {
+  return Object.values(attribution).some((value) => Boolean(value));
+}
+
+function readHeroVariantFromSearch(search: string): HeroVariantKey {
+  const params = new URLSearchParams(search);
+  const queryValue = (params.get("heroVariant") || "").toLowerCase();
+  if (queryValue === "a" || queryValue === "b" || queryValue === "c") {
+    return queryValue;
+  }
+  return "c";
+}
+
 function WordPressLandingPage() {
   const [isFormVisible, setIsFormVisible] = useState<boolean>(false);
   const [selectedPlan, setSelectedPlan] = useState<string>("");
   const [status, setStatus] = useState<string>("idle");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [attribution, setAttribution] = useState<AttributionParams>(defaultAttribution);
+  const [heroVariant, setHeroVariant] = useState<HeroVariantKey>("c");
   const logoAnimationStyle = { width: 225 };
 
   useEffect(() => {
@@ -75,6 +226,60 @@ function WordPressLandingPage() {
       }
     };
   }, [isFormVisible]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    setHeroVariant(readHeroVariantFromSearch(window.location.search));
+
+    const parsed = readAttributionFromSearch(window.location.search);
+    const hasIncomingAttribution = hasAttributionValue(parsed);
+
+    if (hasIncomingAttribution) {
+      setAttribution(parsed);
+      window.localStorage.setItem(ATTRIBUTION_STORAGE_KEY, JSON.stringify(parsed));
+      return;
+    }
+
+    const stored = window.localStorage.getItem(ATTRIBUTION_STORAGE_KEY);
+    if (stored) {
+      try {
+        const parsedStored = JSON.parse(stored) as AttributionParams;
+        setAttribution({
+          ...defaultAttribution,
+          ...parsedStored,
+        });
+      } catch (error) {
+        console.warn("Could not parse stored attribution payload", error);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const checkoutStatus = params.get("checkout");
+    if (checkoutStatus === "success") {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "free_website_checkout_success",
+      });
+      toast.success("Checkout completed. Our team will start your onboarding shortly.", {
+        duration: 10000,
+      });
+    }
+
+    if (checkoutStatus === "cancelled") {
+      toast("Checkout canceled. You can resume whenever you're ready.", {
+        duration: 8000,
+      });
+    }
+  }, []);
 
   const fadeUp = {
     hidden: { opacity: 0, y: 18 },
@@ -133,6 +338,25 @@ function WordPressLandingPage() {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "lead_form_submit_success",
+    });
+  }
+
+  function trackCheckoutStart(selectedPlanName: string, intakeId: string) {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "free_website_checkout_start",
+      selectedPlan: selectedPlanName,
+      intakeId,
+      gclid: attribution.gclid,
+      utmSource: attribution.utmSource,
+      utmMedium: attribution.utmMedium,
+      utmCampaign: attribution.utmCampaign,
+      utmTerm: attribution.utmTerm,
+      utmContent: attribution.utmContent,
     });
   }
 
@@ -203,6 +427,8 @@ function WordPressLandingPage() {
       setIsSubmitting(true);
       setStatus("submitting");
 
+      const isCheckoutPlan = selectedPlan === "starter" || selectedPlan === "growth";
+
       const intakePayload = {
         businessName: formData.businessName || formData.name || "",
         contactName: formData.name || "",
@@ -224,6 +450,18 @@ function WordPressLandingPage() {
         notesSpecialRequests:
           "Selected Plan: " +
           (selectedPlan || "N/A") +
+          "\nGCLID: " +
+          (attribution.gclid || "N/A") +
+          "\nUTM Source: " +
+          (attribution.utmSource || "N/A") +
+          "\nUTM Medium: " +
+          (attribution.utmMedium || "N/A") +
+          "\nUTM Campaign: " +
+          (attribution.utmCampaign || "N/A") +
+          "\nUTM Term: " +
+          (attribution.utmTerm || "N/A") +
+          "\nUTM Content: " +
+          (attribution.utmContent || "N/A") +
           "\nWebsite URL: " +
           (formData.websiteUrl || "N/A") +
           "\nPrimary Goal: " +
@@ -241,7 +479,101 @@ function WordPressLandingPage() {
           hostingMaintenance: true,
           customDesignFeatures: false,
         },
+        marketingAttribution: {
+          gclid: attribution.gclid,
+          utmSource: attribution.utmSource,
+          utmMedium: attribution.utmMedium,
+          utmCampaign: attribution.utmCampaign,
+          utmTerm: attribution.utmTerm,
+          utmContent: attribution.utmContent,
+        },
       };
+
+      let intakeId = "";
+      try {
+        const intakeRes = await fetch("/api/free-website/submissions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(intakePayload),
+        });
+
+        const intakeBody = await intakeRes.json().catch(() => ({}));
+        intakeId = intakeBody?.id || "";
+
+        if (!intakeRes.ok && intakeRes.status !== 202) {
+          console.warn("Free website intake storage request failed", {
+            status: intakeRes.status,
+          });
+          throw new Error("Unable to save your intake details.");
+        }
+      } catch (intakeError) {
+        console.warn("Free website intake storage request failed", intakeError);
+        if (isCheckoutPlan) {
+          setStatus("error");
+          toast.error("We could not start checkout. Please try again.", {
+            duration: 12000,
+          });
+          return;
+        }
+      }
+
+      if (isCheckoutPlan) {
+        trackCheckoutStart(selectedPlan, intakeId || "pending");
+
+        const checkoutResponse = await fetch("/api/free-website/checkout", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name || "",
+            email: formData.email || "",
+            businessName: formData.businessName || "",
+            businessType: formData.organizationType || "",
+            primaryGoal: formData.primaryGoal || "",
+            selectedPlan,
+            intakeId,
+            gclid: attribution.gclid,
+            utmSource: attribution.utmSource,
+            utmMedium: attribution.utmMedium,
+            utmCampaign: attribution.utmCampaign,
+            utmTerm: attribution.utmTerm,
+            utmContent: attribution.utmContent,
+          }),
+        });
+
+        const checkoutBody = await checkoutResponse.json().catch(() => ({}));
+        if (!checkoutResponse.ok || !checkoutBody?.checkoutUrl) {
+          setStatus("error");
+          toast.error(
+            checkoutBody?.message || "Unable to launch checkout. Please try again.",
+            {
+              duration: 12000,
+            }
+          );
+          return;
+        }
+
+        // Send intake emails before redirect so browser navigation does not cancel requests.
+        const preCheckoutMailResult = await submitMailWithRetry({
+          ...formData,
+          formType: "freeWebsiteIntake",
+          selectedPlan,
+          intakeId,
+        }).catch((mailError) => {
+          console.warn("Pre-checkout intake email failed", mailError);
+          return { ok: false, body: null };
+        });
+
+        if (!preCheckoutMailResult.ok) {
+          console.warn("Pre-checkout intake email did not confirm success.");
+        }
+
+        window.location.href = checkoutBody.checkoutUrl;
+        return;
+      }
 
       const mailResult = await submitMailWithRetry({
         ...formData,
@@ -255,27 +587,6 @@ function WordPressLandingPage() {
           duration: 12000,
         });
         return;
-      }
-
-      // Best-effort intake write for internal admin tracking.
-      // In some production environments, this endpoint may fail even when email succeeds.
-      // We should still treat this as a successful lead submission for the user.
-      try {
-        const intakeRes = await fetch("/api/free-website/submissions", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(intakePayload),
-        });
-
-        if (!intakeRes.ok) {
-          console.warn("Free website intake storage request failed", {
-            status: intakeRes.status,
-          });
-        }
-      } catch (intakeError) {
-        console.warn("Free website intake storage request failed", intakeError);
       }
 
       trackLeadFormSubmitSuccess();
@@ -371,19 +682,41 @@ function WordPressLandingPage() {
               </div>
 
               <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-                Free Website for Small Businesses & Nonprofits
+                {heroVariants[heroVariant].headline}
               </h1>
 
               <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-white/95">
-                Most people check online before they decide to contact, book, or
-                donate. We help you launch a modern, credible website with ongoing support starting at just
-                $149/month.
+                {heroVariants[heroVariant].subtext}
+              </p>
+
+              <p className="mt-3 text-base md:text-lg max-w-3xl mx-auto text-white/90 font-semibold">
+                You focus on your business - we handle everything technical.
+              </p>
+
+              <p className="mt-2 text-sm md:text-base max-w-3xl mx-auto text-amber-100 font-medium">
+                No more dealing with broken plugins, outdated sites, or DIY builders.
+              </p>
+
+              <p className="mt-2 text-sm md:text-base max-w-3xl mx-auto text-white/85">
+                Built for businesses serious about growth - not DIY website builders.
+              </p>
+
+              <p className="mt-2 text-xs md:text-sm max-w-3xl mx-auto text-white/75">
+                We use modern AI-assisted workflows internally to move faster, while your strategy, quality, and outcomes stay expert-led.
               </p>
 
               <div className="mt-7 flex items-center justify-center">
                 <Link href="#plans">
                   <a className="inline-flex items-center justify-center rounded-lg bg-black px-6 py-3 font-semibold text-white hover:bg-gray-900 transition-colors duration-300 w-full sm:w-auto">
-                    Start My Free Website
+                    Get Started Instantly
+                  </a>
+                </Link>
+              </div>
+
+              <div className="mt-4 flex items-center justify-center">
+                <Link href="#plans">
+                  <a className="inline-flex items-center justify-center rounded-lg border border-white/40 bg-white/15 px-6 py-3 font-semibold text-white hover:bg-white/25 transition-colors duration-300 w-full sm:w-auto">
+                    Start My Website
                   </a>
                 </Link>
               </div>
@@ -393,10 +726,10 @@ function WordPressLandingPage() {
                   No large website design and build costs
                 </div>
                 <div className="rounded-lg bg-white/15 backdrop-blur-sm px-4 py-4 items-center justify-center">
-                  Hosting, backups, SSL, and support included
+                  Hosting, backups, SSL, and managed support included
                 </div>
                 <div className="rounded-lg bg-white/15 backdrop-blur-sm px-4 py-4 flex items-center justify-center">
-                  Cancel anytime*
+                  Cancel anytime + no contracts*
                 </div>
               </div>
 
@@ -642,6 +975,125 @@ function WordPressLandingPage() {
           </div>
         </section>
 
+        <section className="w-full px-4 py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <div className="max-w-4xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                Recent Work and Case Study Previews
+              </h2>
+              <p className="mt-3 text-gray-600 text-lg">
+                Placeholder blocks are ready for portfolio screenshots and case study visuals so social proof can be expanded without layout changes.
+              </p>
+            </div>
+
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+              {placeholderPortfolioCards.map((label, index) => (
+                <motion.div
+                  key={label}
+                  className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.35 }}
+                  transition={{ duration: 0.4 + index * 0.08 }}
+                >
+                  <div className="h-40 rounded-lg bg-gradient-to-r from-slate-200 via-slate-100 to-slate-200 border border-dashed border-slate-300" />
+                  <p className="mt-3 text-sm font-semibold text-gray-800">{label}</p>
+                  <p className="mt-1 text-xs text-gray-500">Image placeholder ready</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {placeholderCaseStudyCards.map((label, index) => (
+                <motion.div
+                  key={label}
+                  className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.35 }}
+                  transition={{ duration: 0.45 + index * 0.08 }}
+                >
+                  <div className="h-32 rounded-lg bg-gradient-to-r from-indigo-100 via-sky-50 to-indigo-100 border border-dashed border-indigo-200" />
+                  <p className="mt-3 text-sm font-semibold text-gray-800">{label}</p>
+                  <p className="mt-1 text-xs text-gray-500">Case study preview placeholder</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full px-4 py-16 bg-slate-900 text-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="max-w-4xl">
+              <h2 className="text-3xl md:text-4xl font-bold">
+                What We Handle For You
+              </h2>
+              <p className="mt-3 text-slate-200 text-lg">
+                You focus on your business. We handle the technical work across setup, delivery, infrastructure, and ongoing growth support.
+              </p>
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {managedChecklist.map((group, index) => (
+                <motion.div
+                  key={group.title}
+                  className="rounded-xl border border-white/15 bg-white/10 p-6"
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.45 + index * 0.08 }}
+                >
+                  <h3 className="text-xl font-semibold text-white">{group.title}</h3>
+                  <ul className="mt-4 space-y-2 text-slate-100 text-sm md:text-base">
+                    {group.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2">
+                        <CheckCircleIcon className="w-5 h-5 mt-0.5 text-cyan-300" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full px-4 py-16 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="max-w-4xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                DIY Builders vs Freelancers vs Manifest FTS
+              </h2>
+              <p className="mt-3 text-gray-600 text-lg">
+                If your goal is consistent growth without technical headaches, ownership and support quality matter more than a low starting price.
+              </p>
+            </div>
+
+            <div className="mt-8 overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+              <table className="min-w-full text-sm md:text-base">
+                <thead className="bg-gray-900 text-white">
+                  <tr>
+                    <th className="text-left px-4 py-3">Comparison</th>
+                    <th className="text-left px-4 py-3">DIY Builders</th>
+                    <th className="text-left px-4 py-3">Freelancers</th>
+                    <th className="text-left px-4 py-3">Manifest FTS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonRows.map((row) => (
+                    <tr key={row.label} className="border-t border-gray-200 align-top">
+                      <td className="px-4 py-4 font-semibold text-gray-900">{row.label}</td>
+                      <td className="px-4 py-4 text-gray-700">{row.diy}</td>
+                      <td className="px-4 py-4 text-gray-700">{row.freelancers}</td>
+                      <td className="px-4 py-4 text-gray-900 font-medium">{row.manifest}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         <section id="plans" className="w-full px-4 py-16 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl mx-auto text-center">
@@ -652,17 +1104,33 @@ function WordPressLandingPage() {
                 Start lean, stay supported, and upgrade only if and when it
                 makes sense.
               </p>
+              <div className="mt-4 mb-2 flex items-center justify-center">
+                <Link href="#plans">
+                  <a className="inline-flex items-center justify-center rounded-lg bg-black px-6 py-3 font-semibold text-white hover:bg-gray-900 transition-colors duration-300 w-full sm:w-auto">
+                    Get Started Instantly
+                  </a>
+                </Link>
+              </div>
             </div>
 
             <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
-                className="bg-white border border-gray-200 p-6 rounded-xl shadow-lg flex flex-col justify-between"
+                className={
+                  "p-6 rounded-xl shadow-xl flex flex-col justify-between relative border-2 " +
+                  (selectedPlan === "starter"
+                    ? "bg-blue-50 border-blue-500 ring-4 ring-blue-100"
+                    : "bg-white border-blue-300")
+                }
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.35 }}
                 transition={{ duration: 0.45 }}
               >
+                <div className="absolute -top-3 right-4 px-3 py-1 rounded-full text-xs font-semibold bg-blue-700 text-white shadow-md">
+                  Most Popular
+                </div>
+
                 <div>
                   <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700 mb-3">
                     Starter Presence
@@ -679,6 +1147,9 @@ function WordPressLandingPage() {
                   <p className="mt-3 text-sm text-gray-600">
                     Best for small businesses and nonprofits that need a clean,
                     credible online presence without large build costs.
+                  </p>
+                  <p className="mt-2 text-sm font-semibold text-blue-700">
+                    Includes up to 2 hours of expert support ($240 value)
                   </p>
 
                   <ul className="mt-6 space-y-3 text-sm text-gray-700">
@@ -700,13 +1171,23 @@ function WordPressLandingPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <StarIcon className="w-4 h-4 mt-0.5 text-blue-500" />
-                      <span>2 hours of monthly support/edits</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-blue-500" />
-                      <span>SSL, backups, updates, and managed essentials</span>
+                      <span>Monthly support with execution ownership</span>
                     </li>
                   </ul>
+
+                  <div className="mt-6 rounded-lg border border-blue-100 bg-blue-50 p-4">
+                    <p className="text-sm font-semibold text-blue-900">
+                      Also Included
+                    </p>
+                    <ul className="mt-3 space-y-2 text-sm text-blue-950">
+                      {alsoIncludedItems.map((item) => (
+                        <li key={item} className="flex items-start gap-2">
+                          <CheckCircleIcon className="w-4 h-4 mt-0.5 text-blue-700" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
                 <button
@@ -720,22 +1201,23 @@ function WordPressLandingPage() {
                       : "bg-gray-900 hover:bg-black")
                   }
                 >
-                  {selectedPlan === "starter" ? "Selected" : "Select Basic"}
+                  {selectedPlan === "starter" ? "Selected" : "Start Basic Checkout"}
                 </button>
               </motion.div>
 
               <motion.div
-                className="bg-white border-2 border-blue-300 p-6 rounded-xl shadow-xl flex flex-col justify-between relative"
+                className={
+                  "p-6 rounded-xl shadow-lg flex flex-col justify-between relative border " +
+                  (selectedPlan === "growth"
+                    ? "bg-indigo-50 border-indigo-500 ring-4 ring-indigo-100"
+                    : "bg-white border-gray-200")
+                }
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.35 }}
                 transition={{ duration: 0.55 }}
               >
-                <div className="absolute -top-3 right-4 px-3 py-1 rounded-full text-xs font-semibold bg-blue-600 text-white shadow-md">
-                  Most Popular
-                </div>
-
                 <div>
                   <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-700 mb-3">
                     Growth Focused
@@ -752,6 +1234,9 @@ function WordPressLandingPage() {
                   <p className="mt-3 text-sm text-gray-600">
                     Best for organizations that want more visibility, stronger
                     content structure, and steady growth support.
+                  </p>
+                  <p className="mt-2 text-sm font-semibold text-indigo-700">
+                    Includes up to 4 hours of expert support ($480 value)
                   </p>
 
                   <ul className="mt-6 space-y-3 text-sm text-gray-700">
@@ -773,13 +1258,23 @@ function WordPressLandingPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <StarIcon className="w-4 h-4 mt-0.5 text-indigo-500" />
-                      <span>4 hours of monthly support/updates</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-indigo-500" />
-                      <span>Simple performance snapshot and guidance</span>
+                      <span>4 hours of monthly expert support and execution</span>
                     </li>
                   </ul>
+
+                  <div className="mt-6 rounded-lg border border-indigo-100 bg-indigo-50 p-4">
+                    <p className="text-sm font-semibold text-indigo-900">
+                      Also Included
+                    </p>
+                    <ul className="mt-3 space-y-2 text-sm text-indigo-950">
+                      {alsoIncludedItems.map((item) => (
+                        <li key={item} className="flex items-start gap-2">
+                          <CheckCircleIcon className="w-4 h-4 mt-0.5 text-indigo-700" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
                 <button
@@ -795,7 +1290,7 @@ function WordPressLandingPage() {
                 >
                   {selectedPlan === "growth"
                     ? "Selected"
-                    : "Select Professional"}
+                    : "Start Professional Checkout"}
                 </button>
               </motion.div>
 
@@ -881,13 +1376,17 @@ function WordPressLandingPage() {
                   We are offering this program to help more organizations get
                   online without the usual upfront costs and friction. If it is a fit, we
                   will help you move forward. If it is not, you can cancel
-                  anytime.
+                  anytime. No contracts.
+                </p>
+
+                <p className="mt-3 text-sm font-semibold text-gray-800">
+                  Cancel anytime. No contracts. Built for businesses ready to grow.
                 </p>
 
                 <div className="mt-8 flex items-center justify-center">
                   <Link href="#plans">
                     <a className="inline-flex items-center justify-center rounded-lg bg-black px-6 py-3 font-semibold text-white hover:bg-gray-900 transition-colors duration-300 w-full sm:w-auto">
-                      Contact Us
+                      Get Started Instantly
                     </a>
                   </Link>
                 </div>
@@ -920,7 +1419,7 @@ function WordPressLandingPage() {
                 : "Tell us about your site"}
             </h2>
             <p className="text-gray-600 mb-6">
-              A few quick details and we will follow up shortly.
+              A few quick details, then we will route you to the next best step.
             </p>
 
             <form
@@ -984,6 +1483,7 @@ function WordPressLandingPage() {
                   name="businessName"
                   className="w-full px-3 py-2 border border-gray-300 rounded-md"
                   placeholder="Enter your organization name"
+                  required
                 />
               </div>
 
@@ -992,7 +1492,7 @@ function WordPressLandingPage() {
                   htmlFor="organizationType"
                   className="block text-lg text-gray-700"
                 >
-                  Organization Type
+                  Business Type
                 </label>
                 <select
                   id="organizationType"
@@ -1094,7 +1594,11 @@ function WordPressLandingPage() {
                       : "bg-black text-white hover:bg-gray-900")
                   }
                 >
-                  {isSubmitting ? "Sending..." : "Send"}
+                  {isSubmitting
+                    ? "Sending..."
+                    : selectedPlan === "guided_onboarding"
+                    ? "Send"
+                    : "Continue to Checkout"}
                 </button>
 
                 {status === "success" ? (

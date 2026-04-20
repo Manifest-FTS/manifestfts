@@ -48,6 +48,15 @@ export interface UpgradeInterest {
   customDesignFeatures: boolean;
 }
 
+export interface MarketingAttribution {
+  gclid: string;
+  utmSource: string;
+  utmMedium: string;
+  utmCampaign: string;
+  utmTerm: string;
+  utmContent: string;
+}
+
 export interface FreeWebsiteIntake {
   businessName: string;
   contactName: string;
@@ -69,6 +78,7 @@ export interface FreeWebsiteIntake {
   notesSpecialRequests: string;
   templateAcknowledged: boolean;
   upgradeInterests: UpgradeInterest;
+  marketingAttribution?: MarketingAttribution;
 }
 
 export interface ContentDraft {

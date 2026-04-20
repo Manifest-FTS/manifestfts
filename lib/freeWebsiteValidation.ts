@@ -108,6 +108,14 @@ export function validateCreatePayload(payload: unknown): ValidationResult<Create
         (input.upgradeInterests as Record<string, unknown>)?.customDesignFeatures
       ),
     },
+    marketingAttribution: {
+      gclid: asString((input.marketingAttribution as Record<string, unknown>)?.gclid),
+      utmSource: asString((input.marketingAttribution as Record<string, unknown>)?.utmSource),
+      utmMedium: asString((input.marketingAttribution as Record<string, unknown>)?.utmMedium),
+      utmCampaign: asString((input.marketingAttribution as Record<string, unknown>)?.utmCampaign),
+      utmTerm: asString((input.marketingAttribution as Record<string, unknown>)?.utmTerm),
+      utmContent: asString((input.marketingAttribution as Record<string, unknown>)?.utmContent),
+    },
   };
 
   if (!cleaned.businessName || !cleaned.contactName || !cleaned.email) {
