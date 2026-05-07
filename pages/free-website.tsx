@@ -1,7 +1,18 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "react-hot-toast";
-import { StarIcon, CheckCircleIcon } from "@heroicons/react/16/solid";
+import {
+  ArrowRightIcon,
+  BoltIcon,
+  ChartBarSquareIcon,
+  CheckBadgeIcon,
+  Cog6ToothIcon,
+  LifebuoyIcon,
+  RocketLaunchIcon,
+  ShieldCheckIcon,
+  SparklesIcon,
+  WrenchScrewdriverIcon,
+} from "@heroicons/react/24/outline";
 import WPLanding from "../components/layout/WPLanding";
 import Image from "next/image";
 import Link from "next/link";
@@ -110,6 +121,48 @@ const alsoIncludedItems = [
   "Ongoing technical maintenance",
 ];
 
+const trustChips = [
+  {
+    label: "Dedicated Partner",
+    icon: LifebuoyIcon,
+  },
+  {
+    label: "Performance-Led",
+    icon: ChartBarSquareIcon,
+  },
+  {
+    label: "Ongoing Reliability",
+    icon: ShieldCheckIcon,
+  },
+];
+
+const valueCards = [
+  {
+    title: "Professional launch",
+    description:
+      "A polished website foundation that makes your business credible from the first click.",
+    icon: SparklesIcon,
+  },
+  {
+    title: "Hosting + security",
+    description:
+      "Managed infrastructure, SSL, backups, maintenance, and proactive technical oversight.",
+    icon: ShieldCheckIcon,
+  },
+  {
+    title: "Better visibility",
+    description:
+      "Search-ready structure and technical improvements to help people find and trust you faster.",
+    icon: RocketLaunchIcon,
+  },
+  {
+    title: "Ongoing help",
+    description:
+      "Monthly support from experienced engineers so updates and fixes actually get done.",
+    icon: WrenchScrewdriverIcon,
+  },
+];
+
 const managedChecklist = [
   {
     title: "Website Setup",
@@ -171,14 +224,49 @@ const comparisonRows = [
 ];
 
 const placeholderPortfolioCards = [
-  "Portfolio Example 01",
-  "Portfolio Example 02",
-  "Portfolio Example 03",
+  {
+    label: "Local Service Website",
+    industry: "Home Services",
+  },
+  {
+    label: "Mission-Focused Nonprofit",
+    industry: "Nonprofit",
+  },
+  {
+    label: "Growth-Oriented Small Business",
+    industry: "Professional Services",
+  },
 ];
 
 const placeholderCaseStudyCards = [
-  "Case Study Preview: Local Business Growth",
-  "Case Study Preview: Nonprofit Visibility Lift",
+  {
+    title: "Case Study Preview: Local Business Growth",
+    result: "42% increase in qualified leads",
+    badges: ["Lead Generation", "SEO Foundation"],
+  },
+  {
+    title: "Case Study Preview: Nonprofit Visibility Lift",
+    result: "2.1x increase in monthly engagement",
+    badges: ["Mission Impact", "Content Structure"],
+  },
+];
+
+const teamSupportAvatars = [
+  {
+    name: "Kevin Williams",
+    role: "Engineering",
+    src: "/assets/imgs/page/about/1/kevin_williams.webp",
+  },
+  {
+    name: "Mohammed Masum",
+    role: "Design",
+    src: "/assets/imgs/page/about/1/mohammed_masum.webp",
+  },
+  {
+    name: "Daniel Kane",
+    role: "Product",
+    src: "/assets/imgs/page/about/1/daniel_kane.webp",
+  },
 ];
 
 function readAttributionFromSearch(search: string): AttributionParams {
@@ -658,114 +746,168 @@ function WordPressLandingPage() {
       </Head>
 
       <WPLanding>
-        <section className="relative overflow-hidden relative bg-gradient-to-r from-blue-300 via-teal-300 to-cyan-300 text-white flex flex-col items-center justify-center">
-          <div className="absolute inset-0 bg-black opacity-30 z-0"></div>
-          <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.25),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.18),transparent_30%)]"></div>
+        <section className="relative overflow-hidden bg-[#051225] text-white">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(12,164,150,0.34),transparent_45%),radial-gradient(circle_at_82%_26%,rgba(9,182,214,0.22),transparent_42%),radial-gradient(circle_at_55%_88%,rgba(16,185,129,0.16),transparent_38%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(2,6,23,0.6),rgba(2,6,23,0.86))]" />
+          <div className="absolute inset-0 opacity-[0.16] [background-size:42px_42px] [background-image:linear-gradient(to_right,rgba(148,163,184,0.22)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.22)_1px,transparent_1px)]" />
 
-          <div className="relative z-10 max-w-7xl mx-auto px-4 py-14 md:py-20">
-            <motion.div
-              className="max-w-4xl mx-auto text-center"
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="header-logo mb-6">
-                <div className="mx-auto max-w-[223px]">
-                  <Lottie
-                    animationData={logo}
-                    loop={false}
-                    style={logoAnimationStyle}
-                  />
+          <div className="relative z-10 max-w-7xl mx-auto px-4 py-14 md:py-20 lg:py-24">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="header-logo mb-6">
+                  <div className="max-w-[223px]">
+                    <Lottie
+                      animationData={logo}
+                      loop={false}
+                      style={logoAnimationStyle}
+                    />
+                  </div>
                 </div>
-              </div>
 
-              <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-                {heroVariants[heroVariant].headline}
-              </h1>
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.04] tracking-tight text-balance text-white drop-shadow-[0_6px_24px_rgba(2,6,23,0.45)]">
+                  {heroVariants[heroVariant].headline}
+                </h1>
 
-              <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-white/95">
-                {heroVariants[heroVariant].subtext}
-              </p>
+                <p className="mt-5 text-lg md:text-xl max-w-2xl text-slate-100 leading-relaxed font-medium">
+                  {heroVariants[heroVariant].subtext}
+                </p>
 
-              <p className="mt-3 text-base md:text-lg max-w-3xl mx-auto text-white/90 font-semibold">
-                You focus on your business - we handle everything technical.
-              </p>
+                <p className="mt-4 text-base md:text-lg max-w-2xl text-cyan-100 font-semibold">
+                  You focus on your business - we handle everything technical.
+                </p>
 
-              <p className="mt-2 text-sm md:text-base max-w-3xl mx-auto text-amber-100 font-medium">
-                No more dealing with broken plugins, outdated sites, or DIY builders.
-              </p>
+                <p className="mt-2 text-sm md:text-base max-w-2xl text-emerald-100 font-semibold">
+                  No more dealing with broken plugins, outdated sites, or DIY builders.
+                </p>
 
-              <p className="mt-2 text-sm md:text-base max-w-3xl mx-auto text-white/85">
-                Built for businesses serious about growth - not DIY website builders.
-              </p>
+                <p className="mt-2 text-sm md:text-base max-w-2xl text-white/90">
+                  Built for businesses serious about growth - not DIY website builders.
+                </p>
 
-              <p className="mt-2 text-xs md:text-sm max-w-3xl mx-auto text-white/75">
-                We use modern AI-assisted workflows internally to move faster, while your strategy, quality, and outcomes stay expert-led.
-              </p>
-
-              <div className="mt-7 flex items-center justify-center">
-                <Link href="#plans">
-                  <a className="inline-flex items-center justify-center rounded-lg bg-black px-6 py-3 font-semibold text-white hover:bg-gray-900 transition-colors duration-300 w-full sm:w-auto">
-                    Get Started Instantly
-                  </a>
-                </Link>
-              </div>
-
-              <div className="mt-4 flex items-center justify-center">
-                <Link href="#plans">
-                  <a className="inline-flex items-center justify-center rounded-lg border border-white/40 bg-white/15 px-6 py-3 font-semibold text-white hover:bg-white/25 transition-colors duration-300 w-full sm:w-auto">
-                    Start My Website
-                  </a>
-                </Link>
-              </div>
-
-              <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto text-sm md:text-base">
-                <div className="rounded-lg bg-white/15 backdrop-blur-sm px-4 py-4 items-center justify-center">
-                  No large website design and build costs
+                <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
+                  <Link href="#plans">
+                    <a className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-300 px-7 py-3.5 font-bold text-slate-950 ring-1 ring-cyan-100/70 shadow-[0_20px_42px_rgba(34,211,238,0.5)] hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-[0_24px_48px_rgba(34,211,238,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200 focus-visible:ring-offset-2 focus-visible:ring-offset-[#051225] transition-all duration-300 w-full sm:w-auto">
+                      Get Started Instantly
+                      <ArrowRightIcon className="w-4 h-4" />
+                    </a>
+                  </Link>
                 </div>
-                <div className="rounded-lg bg-white/15 backdrop-blur-sm px-4 py-4 items-center justify-center">
-                  Hosting, backups, SSL, and managed support included
-                </div>
-                <div className="rounded-lg bg-white/15 backdrop-blur-sm px-4 py-4 flex items-center justify-center">
-                  Cancel anytime + no contracts*
-                </div>
-              </div>
 
-              <p className="mt-5 text-sm text-white/90">
-                *{" "}
-                <Link href="/terms#section-13">
-                  <a
-                    className="underline hover:text-yellow-200"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Terms & Conditions
-                  </a>
-                </Link>{" "}
-                apply.
-              </p>
-            </motion.div>
+                <p className="mt-5 text-sm text-slate-100">
+                  Cancel anytime, no contracts. *
+                  <Link href="/terms#section-13">
+                    <a
+                      className="underline decoration-cyan-300/60 underline-offset-2 hover:text-cyan-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200 rounded-sm ml-1"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Terms apply
+                    </a>
+                  </Link>
+                </p>
+
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl">
+                  {trustChips.map((chip) => (
+                    <div
+                      key={chip.label}
+                      className="rounded-xl border border-white/32 bg-slate-900/55 backdrop-blur-sm px-4 py-3 flex items-center gap-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.16)]"
+                    >
+                      <chip.icon className="w-4 h-4 text-cyan-50" />
+                      <span className="text-sm text-white font-semibold">{chip.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(34,211,238,0.28),transparent_62%)] blur-3xl" />
+
+                <motion.div
+                  className="relative mx-auto w-full max-w-[560px] rounded-3xl border border-white/28 bg-white/12 backdrop-blur-xl shadow-[0_30px_85px_rgba(3,7,18,0.56)] overflow-hidden"
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <div className="px-5 py-3 border-b border-white/18 bg-white/10 flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-rose-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-300" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-300" />
+                    <div className="ml-3 h-7 rounded-lg bg-white/14 border border-white/18 flex-1 flex items-center px-3 text-xs text-white/90">
+                      manifestfts.com
+                    </div>
+                  </div>
+
+                  <div className="p-5 md:p-6">
+                    <div className="rounded-2xl border border-white/14 bg-slate-950/65 p-4">
+                      <div className="h-28 rounded-xl bg-gradient-to-r from-cyan-300/28 via-emerald-300/22 to-teal-300/24 border border-white/10" />
+                      <div className="mt-4 space-y-2">
+                        <div className="h-3 rounded bg-white/20 w-11/12" />
+                        <div className="h-3 rounded bg-white/16 w-8/12" />
+                      </div>
+                      <div className="mt-5 grid grid-cols-2 gap-3">
+                        <div className="h-20 rounded-lg border border-white/12 bg-white/8" />
+                        <div className="h-20 rounded-lg border border-white/12 bg-white/8" />
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="absolute -top-5 -right-4 md:-right-8 rounded-2xl border border-emerald-100/30 bg-emerald-300/24 backdrop-blur-md px-4 py-3 shadow-[0_16px_40px_rgba(16,185,129,0.26)]"
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 6.2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <div className="flex items-center gap-2">
+                    <BoltIcon className="w-4 h-4 text-emerald-50" />
+                    <p className="text-xs text-white font-semibold">Monthly technical improvements</p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="absolute -bottom-6 -left-3 md:-left-8 rounded-2xl border border-cyan-100/30 bg-cyan-300/22 backdrop-blur-md px-4 py-3 shadow-[0_16px_44px_rgba(34,211,238,0.24)]"
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 6.7, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <div className="flex items-center gap-2">
+                    <Cog6ToothIcon className="w-4 h-4 text-cyan-50" />
+                    <p className="text-xs text-white font-semibold">Hosting, updates, and support included</p>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
-        <section className="w-full px-4 py-16 bg-white">
+        <section className="w-full px-4 py-14 md:py-16 bg-[#f4fbfb]">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl mx-auto text-center">
+              <span className="inline-flex items-center rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-800 mb-3">
+                Why It Matters
+              </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                 Why a better website matters
               </h2>
-              <p className="mt-4 text-gray-600 text-lg">
+              <p className="mt-3 text-gray-700 text-lg leading-relaxed">
                 A modern online presence helps people trust you faster, find you
                 more easily, and follow through when they are ready to take
                 action.
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
               <motion.div
-                className="rounded-xl border border-gray-200 bg-white p-7 shadow-sm"
+                className="rounded-2xl border border-slate-200 bg-white/95 p-7 shadow-[0_18px_42px_rgba(15,23,42,0.09)]"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
@@ -775,10 +917,10 @@ function WordPressLandingPage() {
                 <div className="text-4xl font-extrabold text-gray-900">
                   81%
                 </div>
-                <h3 className="mt-3 text-xl font-semibold text-gray-900">
+                <h3 className="mt-2 text-xl font-semibold text-gray-900">
                   People check online first
                 </h3>
-                <p className="mt-3 text-gray-600">
+                <p className="mt-3 text-gray-700 leading-relaxed">
                   Before they contact, book, or donate, most people look up an
                   organization online. Your website often decides whether they
                   move forward.
@@ -786,7 +928,7 @@ function WordPressLandingPage() {
               </motion.div>
 
               <motion.div
-                className="rounded-xl border border-gray-200 bg-white p-7 shadow-sm"
+                className="rounded-2xl border border-slate-200 bg-white/95 p-7 shadow-[0_18px_42px_rgba(15,23,42,0.09)]"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
@@ -796,17 +938,17 @@ function WordPressLandingPage() {
                 <div className="text-4xl font-extrabold text-gray-900">
                   20%+
                 </div>
-                <h3 className="mt-3 text-xl font-semibold text-gray-900">
+                <h3 className="mt-2 text-xl font-semibold text-gray-900">
                   Better mobile experience, better conversions
                 </h3>
-                <p className="mt-3 text-gray-600">
+                <p className="mt-3 text-gray-700 leading-relaxed">
                   Improving speed and mobile usability often leads to a
                   noticeable lift in inquiries, signups, or donations.
                 </p>
               </motion.div>
 
               <motion.div
-                className="rounded-xl border border-gray-200 bg-white p-7 shadow-sm"
+                className="rounded-2xl border border-slate-200 bg-white/95 p-7 shadow-[0_18px_42px_rgba(15,23,42,0.09)]"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
@@ -816,10 +958,10 @@ function WordPressLandingPage() {
                 <div className="text-4xl font-extrabold text-gray-900">
                   2x–10x
                 </div>
-                <h3 className="mt-3 text-xl font-semibold text-gray-900">
+                <h3 className="mt-2 text-xl font-semibold text-gray-900">
                   More inquiries is possible
                 </h3>
-                <p className="mt-3 text-gray-600">
+                <p className="mt-3 text-gray-700 leading-relaxed">
                   When a site is clear, search-friendly, and easy to use, many
                   small organizations see a meaningful increase in engagement.
                 </p>
@@ -828,7 +970,7 @@ function WordPressLandingPage() {
           </div>
         </section>
 
-        <section className="w-full px-4 py-16 bg-gray-50">
+        <section className="w-full px-4 py-14 md:py-16 bg-[#f8fbff]">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <motion.div
               initial={{ opacity: 0, x: -14 }}
@@ -853,7 +995,7 @@ function WordPressLandingPage() {
               viewport={{ once: true, amount: 0.35 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700 mb-4">
+              <div className="inline-flex items-center rounded-full bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-700 mb-4 border border-cyan-100">
                 Built for practical growth
               </div>
 
@@ -861,78 +1003,57 @@ function WordPressLandingPage() {
                 What you actually get
               </h2>
 
-              <p className="mt-4 text-lg text-gray-600">
+              <p className="mt-3 text-lg text-gray-700 leading-relaxed">
                 This is not just hosting. We help you launch a clean, credible
                 site that is easier to maintain and easier for people to trust.
               </p>
 
+              <div className="mt-5 flex flex-col sm:flex-row sm:items-center gap-3">
+                <div className="flex items-center">
+                  {teamSupportAvatars.map((member, index) => (
+                    <div
+                      key={member.name}
+                      className={
+                        "relative h-10 w-10 rounded-full border-2 border-white ring-1 ring-cyan-200 shadow-sm overflow-hidden bg-slate-100 " +
+                        (index === 0 ? "" : "-ml-3")
+                      }
+                      title={member.name + " - " + member.role}
+                    >
+                      <Image src={member.src} alt={member.name} layout="fill" objectFit="cover" />
+                    </div>
+                  ))}
+                </div>
+                <div className="inline-flex items-center rounded-full border border-cyan-200 bg-white px-3 py-1.5 text-xs font-semibold text-cyan-900">
+                  Backed by a real design + development team
+                </div>
+              </div>
+
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="rounded-lg bg-white border border-gray-200 p-3">
-                  <div className="flex items-start gap-2">
-                    <CheckCircleIcon className="w-10 h-10 mt-0.5 text-green-600" />
-                    <div className="items-start align-text-top">
-                      <h3 className="font-semibold text-gray-900 line-height-[47px]">
-                        Professional launch
-                      </h3>
-                      <p className="text-sm text-gray-600 mt-1">
-                        A polished template-based website that helps you look
-                        credible online.
-                      </p>
+                {valueCards.map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_16px_36px_rgba(15,23,42,0.1)] relative overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-[linear-gradient(to_bottom_right,rgba(6,182,212,0.08),transparent_45%)] pointer-events-none" />
+                    <div className="relative">
+                      <div className="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-100 flex items-center justify-center mb-3">
+                        <item.icon className="w-5 h-5 text-cyan-700" />
+                      </div>
+                      <h3 className="font-semibold text-gray-900">{item.title}</h3>
+                      <p className="text-sm text-gray-700 mt-2 leading-relaxed">{item.description}</p>
                     </div>
                   </div>
-                </div>
-
-                <div className="rounded-lg bg-white border border-gray-200 p-3">
-                  <div className="flex items-start gap-2">
-                    <CheckCircleIcon className="w-10 h-10 mt-0.5 text-green-600" />
-                    <div className="items-start align-text-top">
-                      <h3 className="font-semibold text-gray-900 line-height-[47px]">
-                        Hosting + security
-                      </h3>
-                      <p className="text-sm text-gray-600 mt-1">
-                        SSL, backups, maintenance, and core managed essentials
-                        included.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="rounded-lg bg-white border border-gray-200 p-3">
-                  <div className="flex items-start gap-2">
-                    <CheckCircleIcon className="w-10 h-10 mt-0.5 text-green-600" />
-                    <div className="items-start align-text-top">
-                      <h3 className="font-semibold text-gray-900 line-height-[47px]">
-                        Better visibility
-                      </h3>
-                      <p className="text-sm text-gray-600 mt-1">
-                        Basic SEO setup to help people find you when they search for your services or mission online.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="rounded-lg bg-white border border-gray-200 p-3">
-                  <div className="flex items-start gap-2">
-                    <CheckCircleIcon className="w-10 h-10 mt-0.5 text-green-600" />
-                    <div className="items-start align-text-top">
-                      <h3 className="font-semibold text-gray-900 line-height-[47px]">
-                        Ongoing help
-                      </h3>
-                      <p className="text-sm text-gray-600 mt-1">
-                        You receive monthly support hours for edits and updates and a trusted technology partner.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </motion.div>
           </div>
         </section>
 
-        <section className="w-full px-4 py-16 bg-gradient-to-r from-slate-500 via-indigo-300 to-blue-300 text-white overflow-hidden">
+        <section className="w-full px-4 py-14 md:py-16 bg-[#0b2037] text-white overflow-hidden relative">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_30%,rgba(45,212,191,0.2),transparent_42%),radial-gradient(circle_at_80%_70%,rgba(56,189,248,0.18),transparent_42%)]" />
           <div className="max-w-7xl mx-auto">
             <motion.div
-              className="max-w-3xl"
+              className="max-w-3xl relative"
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
@@ -945,29 +1066,29 @@ function WordPressLandingPage() {
               <h2 className="mt-4 text-3xl md:text-4xl font-bold">
                 Trusted by organizations doing meaningful work
               </h2>
-              <p className="my-3 text-white/80 text-lg">
+              <p className="mt-3 text-slate-100/95 text-lg leading-relaxed">
                 Highlights from teams we have supported across nonprofit,
                 local business, and mission-driven projects.
               </p>
             </motion.div>
 
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 relative">
               {testimonialHighlights.map((item, index) => (
                 <motion.div
                   key={item.name}
-                  className="relative rounded-xl border border-white/15 bg-white p-6 backdrop-blur-sm"
+                  className="relative rounded-2xl border border-white/24 bg-slate-900/78 p-6 shadow-[0_20px_48px_rgba(2,6,23,0.34)]"
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.45 + index * 0.1 }}
                 >
-                  <div className="absolute -top-3 right-4 text-5xl leading-none text-slate-950">
+                  <div className="absolute -top-3 right-4 text-5xl leading-none text-cyan-200/50">
                     “
                   </div>
-                  <p className="text-black leading-relaxed">{item.quote}</p>
-                  <div className="mt-5 pt-4 border-t border-white/15">
-                    <p className="font-semibold text-black">{item.name}</p>
-                    <p className="text-sm text-slate-950">{item.role}</p>
+                  <p className="text-slate-50 leading-relaxed">{item.quote}</p>
+                  <div className="mt-5 pt-4 border-t border-white/18">
+                    <p className="font-semibold text-white">{item.name}</p>
+                    <p className="text-sm text-slate-100">{item.role}</p>
                   </div>
                 </motion.div>
               ))}
@@ -975,60 +1096,98 @@ function WordPressLandingPage() {
           </div>
         </section>
 
-        <section className="w-full px-4 py-16 bg-gray-50">
+        <section className="w-full px-4 py-14 md:py-16 bg-[#eef7f7]">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-4xl">
+              <span className="inline-flex items-center rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-semibold text-teal-800 mb-3">
+                Proof Modules
+              </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                 Recent Work and Case Study Previews
               </h2>
-              <p className="mt-3 text-gray-600 text-lg">
+              <p className="mt-3 text-gray-700 text-lg leading-relaxed">
                 Placeholder blocks are ready for portfolio screenshots and case study visuals so social proof can be expanded without layout changes.
               </p>
             </div>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-              {placeholderPortfolioCards.map((label, index) => (
+              {placeholderPortfolioCards.map((item, index) => (
                 <motion.div
-                  key={label}
-                  className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+                  key={item.label}
+                  className="rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_16px_38px_rgba(15,23,42,0.1)] overflow-hidden"
                   initial={{ opacity: 0, y: 14 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.35 }}
                   transition={{ duration: 0.4 + index * 0.08 }}
                 >
-                  <div className="h-40 rounded-lg bg-gradient-to-r from-slate-200 via-slate-100 to-slate-200 border border-dashed border-slate-300" />
-                  <p className="mt-3 text-sm font-semibold text-gray-800">{label}</p>
-                  <p className="mt-1 text-xs text-gray-500">Image placeholder ready</p>
+                  <div className="aspect-[16/10] rounded-xl border border-slate-200 overflow-hidden bg-slate-50">
+                    <div className="h-7 border-b border-slate-200 bg-white flex items-center gap-1.5 px-3">
+                      <span className="w-2 h-2 rounded-full bg-rose-300" />
+                      <span className="w-2 h-2 rounded-full bg-amber-300" />
+                      <span className="w-2 h-2 rounded-full bg-emerald-300" />
+                    </div>
+                    <div className="h-[calc(100%-1.75rem)] p-3 bg-gradient-to-br from-cyan-50 via-teal-50 to-slate-100">
+                      <div className="h-full rounded-lg border border-cyan-100 bg-white/70" />
+                    </div>
+                  </div>
+                  <div className="mt-3 flex items-center justify-between gap-2">
+                    <p className="text-sm font-semibold text-gray-900">{item.label}</p>
+                    <span className="text-[11px] px-2 py-1 rounded-full bg-cyan-100 text-cyan-900 border border-cyan-200 font-semibold">
+                      {item.industry}
+                    </span>
+                  </div>
+                  <div className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-cyan-900">
+                    View live preview
+                    <ArrowRightIcon className="w-4 h-4" />
+                  </div>
                 </motion.div>
               ))}
             </div>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {placeholderCaseStudyCards.map((label, index) => (
+              {placeholderCaseStudyCards.map((item, index) => (
                 <motion.div
-                  key={label}
-                  className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+                  key={item.title}
+                  className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_16px_38px_rgba(15,23,42,0.1)]"
                   initial={{ opacity: 0, y: 14 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.35 }}
                   transition={{ duration: 0.45 + index * 0.08 }}
                 >
-                  <div className="h-32 rounded-lg bg-gradient-to-r from-indigo-100 via-sky-50 to-indigo-100 border border-dashed border-indigo-200" />
-                  <p className="mt-3 text-sm font-semibold text-gray-800">{label}</p>
-                  <p className="mt-1 text-xs text-gray-500">Case study preview placeholder</p>
+                  <div className="rounded-xl overflow-hidden border border-slate-200">
+                    <div className="h-32 bg-gradient-to-r from-indigo-100 via-sky-100 to-teal-100" />
+                    <div className="p-4 bg-white">
+                      <p className="text-sm font-semibold text-gray-900">{item.title}</p>
+                      <p className="mt-2 text-sm text-emerald-800 font-bold">{item.result}</p>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {item.badges.map((badge) => (
+                          <span
+                            key={badge}
+                            className="text-[11px] px-2 py-1 rounded-full border border-slate-300 bg-slate-100 text-slate-800 font-medium"
+                          >
+                            {badge}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-cyan-900">
+                        View case study
+                        <ArrowRightIcon className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="w-full px-4 py-16 bg-slate-900 text-white">
+        <section className="w-full px-4 py-14 md:py-16 bg-[#071b31] text-white">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-4xl">
               <h2 className="text-3xl md:text-4xl font-bold">
                 What We Handle For You
               </h2>
-              <p className="mt-3 text-slate-200 text-lg">
+              <p className="mt-3 text-slate-100 text-lg leading-relaxed">
                 You focus on your business. We handle the technical work across setup, delivery, infrastructure, and ongoing growth support.
               </p>
             </div>
@@ -1037,17 +1196,18 @@ function WordPressLandingPage() {
               {managedChecklist.map((group, index) => (
                 <motion.div
                   key={group.title}
-                  className="rounded-xl border border-white/15 bg-white/10 p-6"
+                  className="rounded-2xl border border-white/26 bg-slate-900/56 p-6 shadow-[0_18px_40px_rgba(2,6,23,0.38)] relative overflow-hidden"
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.45 + index * 0.08 }}
                 >
-                  <h3 className="text-xl font-semibold text-white">{group.title}</h3>
-                  <ul className="mt-4 space-y-2 text-slate-100 text-sm md:text-base">
+                  <div className="absolute inset-0 bg-[linear-gradient(to_bottom_right,rgba(45,212,191,0.12),transparent_48%)]" />
+                  <h3 className="text-xl font-semibold text-white relative">{group.title}</h3>
+                  <ul className="mt-4 space-y-2.5 text-slate-50 text-sm md:text-base relative leading-relaxed">
                     {group.items.map((item) => (
                       <li key={item} className="flex items-start gap-2">
-                        <CheckCircleIcon className="w-5 h-5 mt-0.5 text-cyan-300" />
+                        <CheckBadgeIcon className="w-5 h-5 mt-0.5 text-cyan-200" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -1058,18 +1218,18 @@ function WordPressLandingPage() {
           </div>
         </section>
 
-        <section className="w-full px-4 py-16 bg-white">
+        <section className="w-full px-4 py-14 md:py-16 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-4xl">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                 DIY Builders vs Freelancers vs Manifest FTS
               </h2>
-              <p className="mt-3 text-gray-600 text-lg">
+              <p className="mt-3 text-gray-700 text-lg leading-relaxed">
                 If your goal is consistent growth without technical headaches, ownership and support quality matter more than a low starting price.
               </p>
             </div>
 
-            <div className="mt-8 overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+            <div className="mt-8 overflow-x-auto rounded-2xl border border-slate-200 shadow-[0_18px_42px_rgba(15,23,42,0.09)] bg-white">
               <table className="min-w-full text-sm md:text-base">
                 <thead className="bg-gray-900 text-white">
                   <tr>
@@ -1081,7 +1241,7 @@ function WordPressLandingPage() {
                 </thead>
                 <tbody>
                   {comparisonRows.map((row) => (
-                    <tr key={row.label} className="border-t border-gray-200 align-top">
+                    <tr key={row.label} className="border-t border-slate-200 align-top">
                       <td className="px-4 py-4 font-semibold text-gray-900">{row.label}</td>
                       <td className="px-4 py-4 text-gray-700">{row.diy}</td>
                       <td className="px-4 py-4 text-gray-700">{row.freelancers}</td>
@@ -1094,19 +1254,22 @@ function WordPressLandingPage() {
           </div>
         </section>
 
-        <section id="plans" className="w-full px-4 py-16 bg-white">
+        <section id="plans" className="w-full px-4 py-14 md:py-16 bg-[#eef3f8]">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl mx-auto text-center">
+              <span className="inline-flex items-center rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-800 mb-3">
+                Plans
+              </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                 Choose your support plan
               </h2>
-              <p className="mt-2 mb-6 text-lg text-gray-600">
+              <p className="mt-2 mb-6 text-lg text-gray-700 leading-relaxed">
                 Start lean, stay supported, and upgrade only if and when it
                 makes sense.
               </p>
               <div className="mt-4 mb-2 flex items-center justify-center">
                 <Link href="#plans">
-                  <a className="inline-flex items-center justify-center rounded-lg bg-black px-6 py-3 font-semibold text-white hover:bg-gray-900 transition-colors duration-300 w-full sm:w-auto">
+                  <a className="inline-flex items-center justify-center rounded-xl bg-slate-950 px-6 py-3 font-semibold text-white shadow-[0_12px_28px_rgba(15,23,42,0.25)] hover:bg-slate-900 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 transition-all duration-300 w-full sm:w-auto">
                     Get Started Instantly
                   </a>
                 </Link>
@@ -1116,9 +1279,9 @@ function WordPressLandingPage() {
             <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
                 className={
-                  "p-6 rounded-xl shadow-xl flex flex-col justify-between relative border-2 " +
+                  "p-6 rounded-2xl shadow-[0_18px_42px_rgba(15,23,42,0.12)] flex flex-col justify-between relative border-2 " +
                   (selectedPlan === "starter"
-                    ? "bg-blue-50 border-blue-500 ring-4 ring-blue-100"
+                    ? "bg-blue-50 border-blue-600 ring-4 ring-blue-100"
                     : "bg-white border-blue-300")
                 }
                 variants={fadeUp}
@@ -1127,7 +1290,7 @@ function WordPressLandingPage() {
                 viewport={{ once: true, amount: 0.35 }}
                 transition={{ duration: 0.45 }}
               >
-                <div className="absolute -top-3 right-4 px-3 py-1 rounded-full text-xs font-semibold bg-blue-700 text-white shadow-md">
+                <div className="absolute -top-3 right-4 px-3 py-1 rounded-full text-xs font-semibold bg-blue-700 text-white shadow-md ring-1 ring-white/70">
                   Most Popular
                 </div>
 
@@ -1138,51 +1301,57 @@ function WordPressLandingPage() {
                   <h3 className="text-2xl font-semibold text-gray-900">
                     Basic
                   </h3>
-                  <p className="mt-2 text-3xl font-extrabold text-gray-900">
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-blue-700">
+                    Founding offer
+                  </p>
+                  <p className="mt-1 text-sm text-slate-600 line-through font-medium">
+                    $249/month
+                  </p>
+                  <p className="mt-1 text-3xl font-extrabold text-gray-900 flex items-end gap-1">
                     $149
-                    <span className="text-base font-medium text-gray-600">
+                    <span className="text-base font-semibold text-gray-800">
                       /month
                     </span>
                   </p>
-                  <p className="mt-3 text-sm text-gray-600">
+                  <p className="mt-3 text-sm text-gray-700 leading-relaxed">
                     Best for small businesses and nonprofits that need a clean,
                     credible online presence without large build costs.
                   </p>
-                  <p className="mt-2 text-sm font-semibold text-blue-700">
+                  <p className="mt-2 text-sm font-bold text-blue-900">
                     Includes up to 2 hours of expert support ($240 value)
                   </p>
 
-                  <ul className="mt-6 space-y-3 text-sm text-gray-700">
+                  <ul className="mt-6 space-y-3.5 text-sm text-gray-800 leading-relaxed">
                     <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-blue-500" />
+                      <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-blue-500" />
                       <span>Free template-based website launch</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-blue-500" />
+                      <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-blue-500" />
                       <span>Up to 5 core pages + optional blog setup</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-blue-500" />
+                      <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-blue-500" />
                       <span>Basic SEO setup for visibility</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-blue-500" />
+                      <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-blue-500" />
                       <span>Contact form or inquiry capture setup</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-blue-500" />
+                      <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-blue-500" />
                       <span>Monthly support with execution ownership</span>
                     </li>
                   </ul>
 
-                  <div className="mt-6 rounded-lg border border-blue-100 bg-blue-50 p-4">
+                  <div className="mt-6 rounded-xl border border-blue-200 bg-blue-50 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]">
                     <p className="text-sm font-semibold text-blue-900">
                       Also Included
                     </p>
-                    <ul className="mt-3 space-y-2 text-sm text-blue-950">
+                    <ul className="mt-3 space-y-2.5 text-sm text-blue-950 leading-relaxed font-medium">
                       {alsoIncludedItems.map((item) => (
                         <li key={item} className="flex items-start gap-2">
-                          <CheckCircleIcon className="w-4 h-4 mt-0.5 text-blue-700" />
+                          <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-blue-700" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -1195,10 +1364,10 @@ function WordPressLandingPage() {
                     handleSelectPlan("starter");
                   }}
                   className={
-                    "w-full mt-8 py-3 rounded-lg text-white font-semibold transition-colors duration-300 " +
+                    "w-full mt-8 py-3.5 rounded-xl text-white font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 " +
                     (selectedPlan === "starter"
-                      ? "bg-blue-600"
-                      : "bg-gray-900 hover:bg-black")
+                      ? "bg-blue-700 shadow-[0_12px_28px_rgba(37,99,235,0.32)]"
+                      : "bg-slate-900 hover:bg-black hover:-translate-y-0.5")
                   }
                 >
                   {selectedPlan === "starter" ? "Selected" : "Start Basic Checkout"}
@@ -1207,10 +1376,10 @@ function WordPressLandingPage() {
 
               <motion.div
                 className={
-                  "p-6 rounded-xl shadow-lg flex flex-col justify-between relative border " +
+                  "p-6 rounded-2xl shadow-[0_16px_38px_rgba(15,23,42,0.11)] flex flex-col justify-between relative border " +
                   (selectedPlan === "growth"
-                    ? "bg-indigo-50 border-indigo-500 ring-4 ring-indigo-100"
-                    : "bg-white border-gray-200")
+                    ? "bg-indigo-50 border-indigo-600 ring-4 ring-indigo-100"
+                    : "bg-white border-slate-300")
                 }
                 variants={fadeUp}
                 initial="hidden"
@@ -1225,51 +1394,54 @@ function WordPressLandingPage() {
                   <h3 className="text-2xl font-semibold text-gray-900">
                     Professional
                   </h3>
-                  <p className="mt-2 text-3xl font-extrabold text-gray-900">
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-indigo-700">
+                    Growth plan
+                  </p>
+                  <p className="mt-1 text-3xl font-extrabold text-gray-900 flex items-end gap-1">
                     $298
-                    <span className="text-base font-medium text-gray-600">
+                    <span className="text-base font-semibold text-gray-700">
                       /month
                     </span>
                   </p>
-                  <p className="mt-3 text-sm text-gray-600">
+                  <p className="mt-3 text-sm text-gray-700 leading-relaxed">
                     Best for organizations that want more visibility, stronger
                     content structure, and steady growth support.
                   </p>
-                  <p className="mt-2 text-sm font-semibold text-indigo-700">
+                  <p className="mt-2 text-sm font-bold text-indigo-900">
                     Includes up to 4 hours of expert support ($480 value)
                   </p>
 
-                  <ul className="mt-6 space-y-3 text-sm text-gray-700">
+                  <ul className="mt-6 space-y-3.5 text-sm text-gray-800 leading-relaxed">
                     <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-indigo-500" />
+                      <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-indigo-500" />
                       <span>Everything in Basic</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-indigo-500" />
+                      <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-indigo-500" />
                       <span>Expanded site structure up to 10 pages</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-indigo-500" />
+                      <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-indigo-500" />
                       <span>SEO-enriched service or location page support</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-indigo-500" />
+                      <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-indigo-500" />
                       <span>Monthly optimization recommendations</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-indigo-500" />
+                      <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-indigo-500" />
                       <span>4 hours of monthly expert support and execution</span>
                     </li>
                   </ul>
 
-                  <div className="mt-6 rounded-lg border border-indigo-100 bg-indigo-50 p-4">
+                  <div className="mt-6 rounded-xl border border-indigo-200 bg-indigo-50 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]">
                     <p className="text-sm font-semibold text-indigo-900">
                       Also Included
                     </p>
-                    <ul className="mt-3 space-y-2 text-sm text-indigo-950">
+                    <ul className="mt-3 space-y-2.5 text-sm text-indigo-950 leading-relaxed font-medium">
                       {alsoIncludedItems.map((item) => (
                         <li key={item} className="flex items-start gap-2">
-                          <CheckCircleIcon className="w-4 h-4 mt-0.5 text-indigo-700" />
+                          <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-indigo-700" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -1282,10 +1454,10 @@ function WordPressLandingPage() {
                     handleSelectPlan("growth");
                   }}
                   className={
-                    "w-full mt-8 py-3 rounded-lg text-white font-semibold transition-colors duration-300 " +
+                    "w-full mt-8 py-3.5 rounded-xl text-white font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 " +
                     (selectedPlan === "growth"
-                      ? "bg-blue-600"
-                      : "bg-indigo-700 hover:bg-indigo-800")
+                      ? "bg-indigo-700 shadow-[0_12px_28px_rgba(67,56,202,0.32)]"
+                      : "bg-indigo-700 hover:bg-indigo-800 hover:-translate-y-0.5")
                   }
                 >
                   {selectedPlan === "growth"
@@ -1295,7 +1467,7 @@ function WordPressLandingPage() {
               </motion.div>
 
               <motion.div
-                className="bg-white border border-gray-200 p-6 rounded-xl shadow-lg flex flex-col justify-between"
+                className="bg-white border border-slate-300 p-6 rounded-2xl shadow-[0_16px_38px_rgba(15,23,42,0.11)] flex flex-col justify-between"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
@@ -1312,34 +1484,34 @@ function WordPressLandingPage() {
                   <p className="mt-2 text-3xl font-extrabold text-gray-900">
                     Contact Us
                   </p>
-                  <p className="mt-3 text-sm text-gray-600">
+                  <p className="mt-3 text-sm text-gray-700 leading-relaxed">
                     Best for teams that want help choosing the right path before
                     launching.
                   </p>
 
-                  <ul className="mt-6 space-y-3 text-sm text-gray-700">
+                  <ul className="mt-6 space-y-3.5 text-sm text-gray-800 leading-relaxed">
                     <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-amber-500" />
+                      <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-amber-500" />
                       <span>Book a guided call to map goals and constraints</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-amber-500" />
+                      <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-amber-500" />
                       <span>
                         Best for unique requirements or phased growth plans
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-amber-500" />
+                      <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-amber-500" />
                       <span>
                         Discuss SEO, content scope, integrations, and support
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-amber-500" />
+                      <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-amber-500" />
                       <span>Get realistic next steps and recommendations</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <StarIcon className="w-4 h-4 mt-0.5 text-amber-500" />
+                      <CheckBadgeIcon className="w-4 h-4 mt-0.5 text-amber-500" />
                       <span>No pressure, just clarity</span>
                     </li>
                   </ul>
@@ -1350,10 +1522,10 @@ function WordPressLandingPage() {
                     handleSelectPlan("guided_onboarding");
                   }}
                   className={
-                    "w-full mt-8 py-3 rounded-lg text-white font-semibold transition-colors duration-300 " +
+                    "w-full mt-8 py-3.5 rounded-xl text-white font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 " +
                     (selectedPlan === "guided_onboarding"
-                      ? "bg-blue-600"
-                      : "bg-amber-700 hover:bg-amber-800")
+                      ? "bg-amber-700 shadow-[0_12px_28px_rgba(180,83,9,0.28)]"
+                      : "bg-amber-700 hover:bg-amber-800 hover:-translate-y-0.5")
                   }
                 >
                   {selectedPlan === "guided_onboarding"
@@ -1365,14 +1537,14 @@ function WordPressLandingPage() {
           </div>
         </section>
 
-        <section className="w-full px-4 py-16 bg-gray-50">
+        <section className="w-full px-4 py-16 bg-[#f4f9ff]">
           <div className="max-w-7xl mx-auto">
-            <div className="rounded-xl bg-gradient-to-r from-blue-100 via-sky-100 to-indigo-100 px-6 md:px-12 py-12 md:py-16 shadow-xl border border-blue-200">
+            <div className="rounded-xl bg-gradient-to-r from-blue-100 via-sky-100 to-indigo-100 px-6 md:px-12 py-12 md:py-16 shadow-xl border border-blue-300">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                   Flexible support, no long-term lock-in
                 </h2>
-                <p className="mt-4 text-lg text-gray-900">
+                <p className="mt-4 text-lg text-slate-900 leading-relaxed font-medium">
                   We are offering this program to help more organizations get
                   online without the usual upfront costs and friction. If it is a fit, we
                   will help you move forward. If it is not, you can cancel
@@ -1385,7 +1557,7 @@ function WordPressLandingPage() {
 
                 <div className="mt-8 flex items-center justify-center">
                   <Link href="#plans">
-                    <a className="inline-flex items-center justify-center rounded-lg bg-black px-6 py-3 font-semibold text-white hover:bg-gray-900 transition-colors duration-300 w-full sm:w-auto">
+                    <a className="inline-flex items-center justify-center rounded-xl bg-slate-950 px-6 py-3 font-bold text-white shadow-[0_14px_32px_rgba(15,23,42,0.3)] hover:bg-black hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 transition-all duration-300 w-full sm:w-auto">
                       Get Started Instantly
                     </a>
                   </Link>
@@ -1394,6 +1566,22 @@ function WordPressLandingPage() {
             </div>
           </div>
         </section>
+
+        <style jsx global>{`
+          .footer .menu-footer a,
+          .footer .footer-bottom,
+          .footer .footer-bottom p,
+          .footer .footer-bottom span {
+            color: #dbe7ff !important;
+          }
+
+          .footer .menu-footer a:hover,
+          .footer .menu-footer a:focus-visible {
+            color: #ffffff !important;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+          }
+        `}</style>
         
         <motion.div
           className={
