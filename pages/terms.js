@@ -73,7 +73,7 @@ function Terms() {
                   <div className="col-lg-8">
                     <div className="single-detail">
                       <h1 className="" id="section-0">Terms of Use</h1>
-                      <h6 className="mt-50">- Last Updated January 16, 2026 -</h6>
+                      <h6 className="mt-50">- Last Updated May 4, 2026 -</h6>
                       <p>Thank you for your interest in our products and services. These General Terms and Conditions constitute the agreement (&ldquo;Agreement&rdquo;) between Super Distros LLC dba Manifest FTS (&ldquo;Manifest&rdquo;) and you as a user of our services (&ldquo;Customer&rdquo; or &ldquo;User&rdquo;), whether you sign up as a company or as an individual, and whether you have a past or existing contract with Manifest. These terms apply to all Manifest services, including websites, web applications, mobile applications, and digital products.</p>
 
                       <h6 className="mt-35 mb-25" id="section-1">Customer Data</h6>
