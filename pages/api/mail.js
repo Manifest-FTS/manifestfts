@@ -2,9 +2,27 @@ import {
   buildCustomerFreeWebsiteConfirmationEmail,
   buildInternalFreeWebsiteIntakeEmail,
 } from "../../lib/email/freeWebsiteIntakeEmails";
+import { sendNewsletterVerificationEmail } from "../../lib/email/mailjetNewsletter";
 
 const SMTP2GO_API_URL = "https://api.smtp2go.com/v3";
 const SMTP2GO_API_KEY = process.env.SMTP2GO_API_KEY;
+
+async function maybeSendNewsletterVerification({ email, name, source }) {
+  if (!email) {
+    return;
+  }
+
+  try {
+    await sendNewsletterVerificationEmail({
+      email,
+      name,
+      source,
+    });
+  } catch (error) {
+    // Do not block primary form delivery if newsletter verification fails.
+    console.error("Newsletter verification email send failed:", error);
+  }
+}
 
 async function sendSmtp2GoEmail({ to, cc, subject, textBody, htmlBody }) {
   const payload = {
@@ -63,10 +81,15 @@ async function sendEmail(req, res) {
 
     let message = "";
     let subject = "New Lead from Manifest FTS";
+    let contactEmail = "";
+    let contactName = "";
 
     // Check the form type to determine which form was submitted
     if (formType === "getQuote") {
       // Handle "Get a Quote" form
+      contactEmail = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
+      contactName = typeof body.fullname === "string" ? body.fullname.trim() : "";
+
       message = `
       Name: ${body.fullname}\r\n
       Email: ${body.email}\r\n
@@ -77,6 +100,9 @@ async function sendEmail(req, res) {
       subject = "New Project Inquiry - Manifest FTS";
     } else if (formType === "wordpressHosting") {
       // Handle "WordPress Hosting" form
+      contactEmail = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
+      contactName = typeof body.name === "string" ? body.name.trim() : "";
+
       message = `
       Name: ${body.name}\r\n
       Email: ${body.email}\r\n
@@ -90,6 +116,14 @@ async function sendEmail(req, res) {
       subject = "New WordPress Hosting Inquiry - Manifest FTS";
     } else if (formType === "freeWebsiteIntake") {
       try {
+        contactEmail = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
+        contactName =
+          typeof body.name === "string"
+            ? body.name.trim()
+            : typeof body.contactName === "string"
+            ? body.contactName.trim()
+            : "";
+
         const internalEmail = buildInternalFreeWebsiteIntakeEmail(body);
         await sendSmtp2GoEmail({
           to: ["hello@manifestfts.com", "mdm@manifestfts.com"],
@@ -98,8 +132,7 @@ async function sendEmail(req, res) {
           htmlBody: internalEmail.html,
         });
 
-        const customerEmailAddress =
-          typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
+        const customerEmailAddress = contactEmail;
         let sentConfirmation = false;
 
         if (customerEmailAddress) {
@@ -121,6 +154,12 @@ async function sendEmail(req, res) {
           }
         }
 
+        await maybeSendNewsletterVerification({
+          email: contactEmail,
+          name: contactName,
+          source: "form_free_website_intake",
+        });
+
         return res.status(200).json({
           status: "Ok",
           sentConfirmation,
@@ -141,6 +180,12 @@ async function sendEmail(req, res) {
         subject,
         textBody: message,
         htmlBody: message.replace(/\r\n/g, "<br>"),
+      });
+
+      await maybeSendNewsletterVerification({
+        email: contactEmail,
+        name: contactName,
+        source: `form_${formType || "unknown"}`,
       });
 
       return res.status(200).json({ status: "Ok" });
