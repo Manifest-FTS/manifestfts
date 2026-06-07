@@ -1,4 +1,5 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
+import { trackEvent } from '../../lib/gtm';
 import {
   RETAINER_DEFAULT_HOURS,
   clampRetainerHours,
@@ -15,11 +16,12 @@ export function RetainerProvider({ children }) {
   });
 
   const openRetainerPurchase = useCallback((options = {}) => {
-    setPurchaseState({
-      source: options.source || 'site',
-      hours: clampRetainerHours(options.hours || RETAINER_DEFAULT_HOURS),
-    });
+    const source = options.source || 'site';
+    const hours = clampRetainerHours(options.hours || RETAINER_DEFAULT_HOURS);
+
+    setPurchaseState({ source, hours });
     setIsOpen(true);
+    trackEvent('retainer_modal_open', { source, hours });
   }, []);
 
   const closeRetainerPurchase = useCallback(() => setIsOpen(false), []);

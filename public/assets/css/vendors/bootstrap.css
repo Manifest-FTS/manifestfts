@@ -8276,7 +8276,7 @@ fieldset:disabled .btn {
 }
 
 .text-white {
-  color: #fff !important;
+  color: #fff;
 }
 
 .text-body {

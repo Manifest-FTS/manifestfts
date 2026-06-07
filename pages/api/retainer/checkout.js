@@ -63,6 +63,7 @@ export default async function handler(req, res) {
     brief,
     source,
     commitmentHours,
+    billingMode,
   } = req.body || {};
 
   if (!name || !email || !brief || !commitmentHours) {
@@ -86,6 +87,8 @@ export default async function handler(req, res) {
   }
 
   const snapshot = getRetainerSnapshot(commitmentHours);
+  const normalizedBillingMode = billingMode === 'one_time' ? 'one_time' : 'recurring';
+  const isRecurring = normalizedBillingMode === 'recurring';
 
   const metadata = {
     contactName: String(name),
@@ -93,7 +96,10 @@ export default async function handler(req, res) {
     company: String(company || ''),
     brief: String(brief).slice(0, 500),
     source: String(source || 'site'),
-    selectedCommitment: `${snapshot.hours} hours/month`,
+    billingMode: normalizedBillingMode,
+    billingLabel: isRecurring ? 'Monthly recurring retainer' : 'One-time support block',
+    selectedCommitment: isRecurring ? `${snapshot.hours} hours/month` : `${snapshot.hours} hours total`,
+    totalLabel: isRecurring ? 'Monthly total' : 'One-time total',
     effectiveRate: `${snapshot.effectiveRate}`,
     monthlyTotal: `${snapshot.monthlyTotal}`,
     supportLabel: String(snapshot.supportLabel || ''),
@@ -118,8 +124,8 @@ export default async function handler(req, res) {
 
   try {
     const baseUrl = clientBaseUrl.replace(/\/$/, '');
-    const session = await stripe.checkout.sessions.create({
-      mode: 'subscription',
+    const sessionConfig = {
+      mode: isRecurring ? 'subscription' : 'payment',
       success_url: `${baseUrl}/capabilities?checkout=success`,
       cancel_url: `${baseUrl}/capabilities?checkout=cancelled`,
       customer_email: email,
@@ -130,27 +136,46 @@ export default async function handler(req, res) {
           price_data: {
             currency: 'usd',
             product_data: {
-              name: `Manifest FTS Retainer — ${snapshot.hours} hours/month`,
-              description: `${snapshot.supportLabel} · Flexible monthly support for design, development, strategy, and digital execution.`,
+              name: isRecurring
+                ? `Manifest FTS Retainer — ${snapshot.hours} hours/month`
+                : `Manifest FTS Support Block — ${snapshot.hours} hours`,
+              description: isRecurring
+                ? `${snapshot.supportLabel} · Flexible monthly support for design, development, strategy, and digital execution.`
+                : `${snapshot.supportLabel} · One-time block of support for design, development, strategy, and digital execution.`,
               metadata,
             },
-            recurring: {
-              interval: 'month',
-            },
+            ...(isRecurring
+              ? {
+                  recurring: {
+                    interval: 'month',
+                  },
+                }
+              : {}),
             unit_amount: Math.round(Number(snapshot.monthlyTotal) * 100),
           },
         },
       ],
-      subscription_data: {
-        metadata,
-      },
       allow_promotion_codes: false,
       custom_text: {
         submit: {
-          message: 'Your brief and retainer preferences will be included with this checkout session.',
+          message: isRecurring
+            ? 'Your brief and retainer preferences will be included with this checkout session.'
+            : 'Your brief and support preferences will be included with this checkout session.',
         },
       },
-    });
+    };
+
+    if (isRecurring) {
+      sessionConfig.subscription_data = {
+        metadata,
+      };
+    } else {
+      sessionConfig.payment_intent_data = {
+        metadata,
+      };
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionConfig);
 
     return res.status(200).json({ ok: true, checkoutUrl: session.url, sessionId: session.id });
   } catch (error) {

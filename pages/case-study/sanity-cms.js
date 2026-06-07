@@ -230,12 +230,12 @@ function SanityCMSCaseStudyPage() {
 
         <section className="bg-gray-50">
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-16">
-            <div className="rounded-2xl border border-green-200 bg-green-50 p-6 sm:p-8">
+            <div className="rounded-2xl border border-green-200 bg-emerald-50 p-6 sm:p-8">
               <h3 className="text-2xl font-bold text-gray-900">Great fit when you need</h3>
               <ul className="mt-5 space-y-3 text-base leading-relaxed text-gray-800">
                 {fitGuidance.map((point) => (
                   <li key={point} className="flex gap-3">
-                    <span className="mt-1 h-2.5 w-2.5 flex-none rounded-full bg-green-900" />
+                    <span className="mt-1 h-2.5 w-2.5 flex-none rounded-full bg-emerald-900" />
                     <span>{point}</span>
                   </li>
                 ))}

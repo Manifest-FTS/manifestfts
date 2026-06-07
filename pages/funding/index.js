@@ -25,7 +25,7 @@ export default function Funding() {
   return (
     <Layout>
       <section className="section-box bg-red-100">
-        <div className="banner-hero banner-2 bg-about-1 bg-green-100">
+        <div className="banner-hero banner-2 bg-about-1 bg-emerald-100">
           <div className="container">
             <div className="row">
               <div className="col-lg-9"><span className="tag-1 bg-5 color-green-900 mr-20 px-4 py-2 rounded-md">Funding</span>

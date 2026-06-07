@@ -5,7 +5,7 @@ function Capabilities() {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto text-center max-w-5xl">
-          <span className="text-green-700 bg-green-100 px-4 py-2 rounded-full">Core Capabilities</span>
+          <span className="text-green-700 bg-emerald-100 px-4 py-2 rounded-full">Core Capabilities</span>
           <h2 className="text-4xl font-bold text-gray-900 mt-4">Forward-thinking solutions</h2>
           <p className="text-lg text-gray-600 mt-4">Our forward-thinking approach leverages thoughtful creativity, cutting-edge software, and technology to give value-rich experiences to our partners.</p>
       </div>

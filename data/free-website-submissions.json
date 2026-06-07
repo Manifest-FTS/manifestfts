@@ -1,5 +1,76 @@
 [
   {
+    "id": "fw_1776280936228_tqi3o2",
+    "createdAt": "2026-04-15T19:22:16.228Z",
+    "updatedAt": "2026-04-15T19:22:16.228Z",
+    "status": "new",
+    "intake": {
+      "businessName": "05/24/2024",
+      "contactName": "Kevin Williams",
+      "email": "billing@manifestfts.com",
+      "phone": "7328223031",
+      "businessCategory": "small_business",
+      "businessDescription": "Testing this.",
+      "serviceArea": "",
+      "websiteStatus": "no_site",
+      "desiredPages": "",
+      "primaryGoal": "visibility",
+      "servicesOffered": "",
+      "preferredStyleTone": "",
+      "socialLinks": "",
+      "googleBusinessProfileStatus": "unsure",
+      "domainStatus": "unsure",
+      "logoStatus": "none",
+      "imageUploadNotes": "",
+      "notesSpecialRequests": "Selected Plan: starter\nWebsite URL: N/A\nPrimary Goal: visibility\nBest Time To Call: N/A\nMessage: Testing this.",
+      "templateAcknowledged": true,
+      "upgradeInterests": {
+        "advancedSEO": false,
+        "copywritingContentHelp": false,
+        "blogContentStrategy": false,
+        "domainEmailSetup": false,
+        "hostingMaintenance": true,
+        "customDesignFeatures": false
+      }
+    },
+    "internalNotes": [],
+    "generatedContentDraft": {
+      "heroHeading": "05/24/2024 — Trusted small_business in your service area",
+      "heroSubheading": "Clear, mobile-friendly, and launch-ready — built to help customers find and contact you quickly.",
+      "aboutSection": "05/24/2024 provides dependable service with a focus on professionalism, clarity, and customer experience. This draft can be personalized once final details are confirmed.",
+      "servicesSummary": "Core services can be listed here in plain language with short benefit-focused descriptions.",
+      "contactCTA": "Ready to Contact Us? Contact us today to request a quote or schedule your first conversation.",
+      "seoTitleSuggestion": "05/24/2024 | small_business in your service area",
+      "metaDescriptionSuggestion": "05/24/2024 offers professional small_business services in your service area. Contact us for reliable support and clear next steps.",
+      "locationServiceNotes": "Add nearby locations, neighborhoods, and service qualifiers as needed for premium SEO expansion."
+    },
+    "seoVisibilityNotes": "Basic on-page SEO is included. Review service + location specificity for premium strategy opportunities.",
+    "premiumUpsellRecommendations": "Evaluate for service pages, location pages, and enhanced copywriting after intake review.",
+    "fulfillment": {
+      "templateAssignment": "",
+      "contentReadiness": "not_ready",
+      "assetReadiness": "missing",
+      "wordpressSetupStatus": "pending",
+      "previewUrl": "",
+      "launchUrl": "",
+      "assignedTeamMember": "",
+      "handoffStatus": "not_started",
+      "readinessForFulfillment": false,
+      "contentMissing": true,
+      "contentApproved": false,
+      "paidConversion": false
+    },
+    "timeline": [
+      {
+        "id": "ev_1776280936228_9xwfdc",
+        "type": "created",
+        "message": "Submission created from public free website intake.",
+        "createdAt": "2026-04-15T19:22:16.228Z",
+        "actor": "public_form"
+      }
+    ]
+  },
+  {
     "id": "fw_1774664372314_z5h00i",
     "createdAt": "2026-03-28T02:19:32.314Z",
     "updatedAt": "2026-03-28T02:19:32.314Z",

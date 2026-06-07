@@ -196,7 +196,7 @@ const FormProject = () => {
 
                     <div className="col-lg-12 mt-10">
                       <div
-                        className="d-flex align-items-start justify-content-between flex-wrap"
+                        className="d-flex items-center justify-content-between flex-wrap"
                         style={{ gap: 16 }}
                       >
                         <div>

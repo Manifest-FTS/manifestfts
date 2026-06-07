@@ -96,7 +96,7 @@ function Index3() {
           </div>
           {/* Content Column */}
           <div className="w-full lg:w-1/2 px-4 justify-center">
-            {/* <span className="bg-green-100 text-green-900 px-4 py-2 rounded-full">
+            {/* <span className="bg-emerald-100 text-green-900 px-4 py-2 rounded-full">
               Case Study
             </span> */}
 
@@ -206,7 +206,7 @@ function Index3() {
       </section>
 
       {/* Call-to-Action Section */}
-      <section className="py-[60px] mt-[70px] bg-green-900">
+      <section className="py-[60px] mt-[70px] bg-teal-800">
         <div className="flex justify-center items-center space-x-5">
           <Link href="/#contact-us" passHref>
             <a className="inline-flex items-center font-bold bg-black text-white transition px-6 py-3 rounded-full cursor-pointer">
@@ -225,7 +225,7 @@ function Index3() {
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 mt-16">
           <div className="flex justify-center px-4">
-            <span className="bg-green-100 text-green-900 mr-5 px-4 py-2 rounded-full">
+            <span className="bg-emerald-100 text-green-900 mr-5 px-4 py-2 rounded-full">
               Software Solutions
             </span>
           </div>
