@@ -95,9 +95,10 @@ async function sendEmail(req, res) {
       Email: ${body.email}\r\n
       Phone: ${body.phone}\r\n
       Company: ${body.company || "N/A"}\r\n
+      Inquiry: ${body.inquiry || "N/A"}\r\n
       Message: ${body.message}
     `;
-      subject = "New Project Inquiry - Manifest FTS";
+      subject = "New Contact Inquiry - Manifest FTS";
     } else if (formType === "wordpressHosting") {
       // Handle "WordPress Hosting" form
       contactEmail = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
