@@ -88,9 +88,9 @@ const FormProject = () => {
                     Let’s start the conversation.
                   </h2>
                   <p className="text-body-text color-gray-600 mt-20 mb-0">
-                    Questions, project inquiries, partnerships, or ongoing support —
-                    send us a message and I&rsquo;ll follow up with next steps. You
-                    can also call or text{" "}
+                    New project or estimate requests, product support, partnerships,
+                    or general questions — send us a message and I&rsquo;ll follow up
+                    with next steps. You can also call or text{" "}
                     <span className="text-heading-6 color-gray-900">
                       +1 864-660-9125
                     </span>
@@ -104,8 +104,9 @@ const FormProject = () => {
                       Typical inquiries
                     </span>
                     <p className="text-body-text-md color-gray-600 mt-15 mb-0">
-                      New projects, redesigns, web and mobile work, product support,
-                      technical guidance, partnerships, and ongoing digital help.
+                      New projects and estimates, redesigns, web and mobile work,
+                      support for our products, technical guidance, partnerships,
+                      and ongoing digital help.
                     </p>
                   </div>
                 </div>
@@ -117,6 +118,30 @@ const FormProject = () => {
                     onSubmit={showVerification ? verifyAndSend : handleOnSubmit}
                   >
                     <input type="hidden" name="formType" value="getQuote" />
+
+                    <div className="col-lg-12">
+                      <div className="form-group">
+                        <select
+                          className="form-control"
+                          name="inquiry"
+                          defaultValue=""
+                          required
+                        >
+                          <option value="" disabled>
+                            What can we help with?
+                          </option>
+                          <option value="New project or estimate">
+                            New project or estimate
+                          </option>
+                          <option value="Jengo Budget">Jengo Budget</option>
+                          <option value="Visual Feedback for Bonsai">
+                            Visual Feedback for Bonsai
+                          </option>
+                          <option value="Jongo">Jongo</option>
+                          <option value="Other inquiry">Other inquiry</option>
+                        </select>
+                      </div>
+                    </div>
 
                     <div className="col-lg-6">
                       <div className="form-group">
