@@ -185,7 +185,6 @@ const FormProject = () => {
                           type="text"
                           name="phone"
                           placeholder="Phone (optional)"
-                          required
                         />
                       </div>
                     </div>

@@ -2,10 +2,16 @@ import {
   buildCustomerFreeWebsiteConfirmationEmail,
   buildInternalFreeWebsiteIntakeEmail,
 } from "../../lib/email/freeWebsiteIntakeEmails";
+import { buildContactInquiryEmail } from "../../lib/email/contactInquiryEmails";
 import { sendNewsletterVerificationEmail } from "../../lib/email/mailjetNewsletter";
 
 const SMTP2GO_API_URL = "https://api.smtp2go.com/v3";
 const SMTP2GO_API_KEY = process.env.SMTP2GO_API_KEY;
+const PRODUCT_INQUIRIES = new Set([
+  "Jengo Budget",
+  "Visual Feedback for Bonsai",
+  "Jongo",
+]);
 
 async function maybeSendNewsletterVerification({ email, name, source }) {
   if (!email) {
@@ -83,6 +89,8 @@ async function sendEmail(req, res) {
     let subject = "New Lead from Manifest FTS";
     let contactEmail = "";
     let contactName = "";
+    let htmlMessage = "";
+    let cc = [];
 
     // Check the form type to determine which form was submitted
     if (formType === "getQuote") {
@@ -90,15 +98,11 @@ async function sendEmail(req, res) {
       contactEmail = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
       contactName = typeof body.fullname === "string" ? body.fullname.trim() : "";
 
-      message = `
-      Name: ${body.fullname}\r\n
-      Email: ${body.email}\r\n
-      Phone: ${body.phone}\r\n
-      Company: ${body.company || "N/A"}\r\n
-      Inquiry: ${body.inquiry || "N/A"}\r\n
-      Message: ${body.message}
-    `;
-      subject = "New Contact Inquiry - Manifest FTS";
+      const inquiryEmail = buildContactInquiryEmail(body);
+      message = inquiryEmail.text;
+      htmlMessage = inquiryEmail.html;
+      subject = inquiryEmail.subject;
+      cc = PRODUCT_INQUIRIES.has(body.inquiry) ? ["arunj@manifestfts.com"] : [];
     } else if (formType === "wordpressHosting") {
       // Handle "WordPress Hosting" form
       contactEmail = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
@@ -178,9 +182,10 @@ async function sendEmail(req, res) {
     try {
       await sendSmtp2GoEmail({
         to: ["hello@manifestfts.com"],
+        cc,
         subject,
         textBody: message,
-        htmlBody: message.replace(/\r\n/g, "<br>"),
+        htmlBody: htmlMessage || message.replace(/\r\n/g, "<br>"),
       });
 
       await maybeSendNewsletterVerification({
