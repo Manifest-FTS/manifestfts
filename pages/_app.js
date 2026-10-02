@@ -1,7 +1,5 @@
 import { Toaster } from 'react-hot-toast';
-import "../public/assets/css/style.css";
-import "../public/assets/css/swiper-custom.css";
-import "../public/assets/css/globals.min.css";
+import '../public/signal/tokens.css';
 
 import React, { useEffect } from "react";
 import 'react-modal-video/css/modal-video.css';
@@ -71,6 +69,7 @@ const pageMeta = {
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
+  const isSignal = router.pathname === '/signal' || router.pathname.startsWith('/signal/')
 
   const normalizedPath = (router.asPath || '/').split('#')[0].split('?')[0] || '/'
   const canonical = `${SITE_URL}${normalizedPath === '/' ? '' : normalizedPath}`
@@ -120,6 +119,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        {!isSignal && <link key="legacy-style" rel="stylesheet" href="/assets/css/style.css" />}
+        {!isSignal && <link key="legacy-swiper" rel="stylesheet" href="/assets/css/swiper-custom.css" />}
+        {!isSignal && <link key="legacy-globals" rel="stylesheet" href="/assets/css/globals.min.css" />}
         <title key="title">{seo.title}</title>
         <meta key="description" name="description" content={seo.description} />
         <meta key="robots" name="robots" content="index, follow" />
@@ -174,11 +176,11 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
-      <RetainerProvider>
+      {isSignal ? <Component {...pageProps} /> : <RetainerProvider>
         <Toaster />
         <Component {...pageProps} />
         <RetainerModal />
-      </RetainerProvider>
+      </RetainerProvider>}
     </>
   )
 }

@@ -7,12 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test:signal": "node --test tests/signal.test.js",
     "compile:style": "sass public/assets/scss/style.scss public/assets/css/style.css --watch",
     "compile:globals": "sass public/assets/scss/globals.scss public/assets/css/globals.min.css --watch",
     "compile:all": "npm-run-all --parallel compile:*"
   },
   "dependencies": {
     "@babel/core": "^7.0.0",
+    "@fontsource-variable/newsreader": "^5.3.0",
+    "@fontsource-variable/plus-jakarta-sans": "^5.3.0",
     "@heroicons/react": "^2.2.0",
     "@mux/mux-player-react": "^2.4.1",
     "@stripe/react-stripe-js": "^2.1.0",

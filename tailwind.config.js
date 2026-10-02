@@ -1,3 +1,5 @@
+const signal = require('./signal.tailwind');
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -5,7 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      ...signal,
       colors: {
+        ...signal.colors,
         primary: '#21759B', // WordPress Blue
         secondary: '#F0A500', // WordPress Yellow
         accent: '#F1F1F1', // Light background color

@@ -1,0 +1,59 @@
+/* Manifest Signal v0.1.0 — canonical tokens; no legacy dependencies. */
+@font-face {
+  font-family: 'Signal Newsreader';
+  src: url('/signal/newsreader.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Signal Jakarta';
+  src: url('/signal/jakarta.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+.signal-theme {
+  --bg-canvas: #F7F3EB;
+  --bg-surface: #EFEBE3;
+  --bg-elevated: #FFFCF7;
+  --text-primary: #29231F;
+  --text-secondary: #51453D;
+  --accent-signal-primary: #923D2B;
+  --accent-signal-hover: #7D3223;
+  --accent-warning: #785015;
+  --accent-success: #365C45;
+  --accent-error: #923D2B;
+  --border-subtle: #D8C9BB;
+  --border-strong: #89766A;
+  --success-subtle: #E2EBDD;
+  --warning-subtle: #F4E8D0;
+  --font-display: 'Signal Newsreader', Georgia, serif;
+  --font-body: 'Signal Jakarta', system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --text-h1: clamp(2.75rem, 6vw, 5rem);
+  --text-h2: clamp(2rem, 4vw, 3rem);
+  --text-h3: 1.5rem;
+  --text-body: 1rem;
+  --text-caption: .8125rem;
+  --text-metric: 3.5rem;
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --shadow-soft: 0 4px 12px rgb(65 43 29 / .05), 0 16px 40px rgb(65 43 29 / .06);
+  --shadow-raised: 0 8px 16px rgb(65 43 29 / .08), 0 24px 56px rgb(65 43 29 / .09);
+  --ease-settle: cubic-bezier(.22, 1, .36, 1);
+  --ease-spring: cubic-bezier(.34, 1.35, .64, 1);
+  --duration-fast: 120ms;
+  --duration-base: 220ms;
+  --duration-slow: 360ms;
+}
