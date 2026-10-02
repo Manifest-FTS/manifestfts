@@ -1,0 +1,33 @@
+# Manifest FTS
+
+> Manifest FTS is an engineering-led digital partner that designs, builds, and supports durable web platforms, secure infrastructure, and practical technology strategy.
+
+Manifest FTS focuses on three operating principles: trusted technology partnership, data trust and security, and appropriate technology. We connect product discovery, accessible UX, full-stack engineering, managed infrastructure, and ongoing support so organizations can make informed decisions about their digital systems.
+
+## Core services
+- [Services overview](https://www.manifestfts.com/services): Product design and UX engineering, full-stack web development, managed infrastructure and data trust, and AI search and citation optimization.
+- [Product design and UX engineering](https://www.manifestfts.com/services#product-design): Human-centered, accessible digital product design and front-end engineering.
+- [Full-stack web development](https://www.manifestfts.com/services#web-development): Modern CMS, headless platforms, commerce, integrations, and custom web applications.
+- [Managed infrastructure and data trust](https://www.manifestfts.com/services#infrastructure): Hosting, domain governance, access reviews, backup planning, and ongoing technical stewardship.
+- [AI search and citation optimization](https://www.manifestfts.com/services#signal): Evidence-led answer-engine visibility and citation work. Manifest Signal is an in-development product concept; sample dashboards are illustrative, not live provider data.
+
+## Selected work
+- [NC Waterfalls](https://www.manifestfts.com/case-study/nc-waterfalls): Searchable archive built from decades of North Carolina waterfall fieldwork. Published launch figures are historical snapshots and are labeled on the case study.
+- [Barclay Rex](https://www.manifestfts.com/case-study/barclay-rex): Long-running digital commerce and platform modernization partnership.
+- [Community Coalition on Race](https://www.communitycoalitiononrace.org/): Mission-focused digital outreach and NationBuilder platform work.
+- [Garden State Equality](https://www.gardenstateequality.org/): Managed WordPress hosting and digital strategy.
+- [Selected client stories](https://www.manifestfts.com/work): Story summaries, documented evidence, and metric context.
+
+## Insights
+- [Insights index](https://www.manifestfts.com/insights): Practical writing on web architecture, data trust, and AI search.
+- [Choosing a long-term technology partner](https://www.manifestfts.com/insights/choosing-a-technology-partner): Evaluation questions for engineering partnerships.
+- [Data trust is an infrastructure decision](https://www.manifestfts.com/insights/data-trust-is-infrastructure): Access, data-flow, backup, and vendor-boundary practices.
+- [AI search visibility without the hype](https://www.manifestfts.com/insights/ai-search-without-the-hype): Measurement and source-quality guidance for answer engines.
+
+## Contact
+- [Start a project conversation](https://www.manifestfts.com/contact): Select needs, describe context, and send a tailored project brief.
+- [About Manifest FTS](https://www.manifestfts.com/about)
+- [Privacy policy](https://www.manifestfts.com/privacy-policy)
+
+## Measurement notes
+Metrics shown in interactive previews are illustrative. Citation visibility, competitive share of voice, sentiment, accuracy, and business outcomes are distinct measures; any reported result should name its sample, denominator, method, date range, and source. A crawler being able to access a site does not guarantee that a system indexes, cites, or recommends it.
