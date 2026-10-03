@@ -1,266 +1,110 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/no-unescaped-entities */
-import dynamic from "next/dynamic";
-import Link from "next/link";
-import { useState } from "react";
-import 'react-modal-video/css/modal-video.css';
-import Accordion from "../components/elements/Accordion";
-import Faqs from "../components/faqs/Faqs";
-import FormProject from "../components/form-project/FormProject";
-import Layout from "../components/layout/Layout";
-const ModalVideo = dynamic(import("react-modal-video"), {
-    ssr: false,
-});
+import { useMemo, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import Layout from '../components/layout/Layout';
+import { Button, Tag } from '../components/manifest-site';
+import { stories } from '../data/manifestSiteContent';
 
-function Work() {
-    const [isOpen, setOpen] = useState(false);
-    return (
-        <>
+const FILTERS = ['All stories', 'Platforms', 'Commerce', 'Public impact', 'Infrastructure'];
 
-            <Layout>
-                <section className="section-box bg-red-100">
-                    <div className="banner-hero banner-2 bg-about-1 bg-emerald-100">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-lg-9"><span className="tag-1 bg-5 color-green-900 mr-20 px-4 py-2 rounded-md">Our Work</span>
-                                    <h1 className="text-display-3 mt-30">We increase leads, sales, experiences and more for our valued partners.</h1>
-                                    {/* <p className="text-body-lead-large color-gray-700 mt-40 pr-40">Manifest is a creative digital agency that offers branding, design, and innovative web technology to forward thinking businesses and brands. </p> */}
-
-                                </div>
-                                <div className="col-lg-5 d-none d-lg-block">
-                                    {/* <div className="banner-imgs">
-                                        <div className="block-1 shape-1"><img src="/assets/imgs/page/about/1/banner2.png" alt="Agon" /></div><img className="rounded img-responsive shape-2" alt="Agon" src="/assets/imgs/agencys1.jpg" />
-                                    </div> */}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* // NC Waterfalls */}
-                <section className="section-box">
-                    <div className="container mt-120">
-                        <div className="row">
-                            <div className="col-lg-6 col-sm-12 block-img-we-do"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/work-ncwf.jpg" alt="NC Waterfalls digital archive on laptop" /></div>
-                            <div className="col-lg-6 col-sm-12 block-we-do">
-                                <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Custom Searchable Archive</span>
-                                <h3 className="text-heading-1 mt-30">NC Waterfalls</h3>
-                                <p className="text-body-lead-large color-gray-600 mt-30">Translating decades of waterfall exploration into a durable, searchable digital archive built for discovery and longevity.</p>
-                                <div className="align-items-center">
-                                    <Link href="/case-study/nc-waterfalls" passHref>
-                                        <span className="btn btn-light icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3">View Case Study</span>
-                                    </Link>
-                                    <a href="https://www.ncwaterfalls.com" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
-                                </div>
-                                <div className="row">
-                                    <div className="col-12 mt-50">
-                                        <h2 className="text-heading-7 text-center color-gray-900 mb-10">Powered by</h2>
-                                        <ul className="list-partners border-0">
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Next.js" src="/assets/imgs/logos/nextjs.svg" /></a></Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="TailwindCSS" src="/assets/imgs/logos/tailwindcss.svg" /></a></Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Strapi CMS" src="/assets/imgs/logos/strapi.svg" /></a></Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Vercel" src="/assets/imgs/logos/vercel.svg" /></a></Link>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* // JoyFeed */}
-                {/* <section className="section-box">
-                    <div className="container mt-120 re-order">
-                        <div className="row">
-
-                            <div className="col-lg-6 col-sm-12 block-we-do first">
-                                <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Wellness Social Platform</span>
-                                <h3 className="text-heading-1 mt-30">JoyFeed</h3>
-                                <p className="text-body-lead-large color-gray-600 mt-30">JoyFeed is a restorative social platform built around positive content, meaningful engagement, and emotional wellbeing.</p>
-                                <p className="text-body-lead-large color-gray-600 mt-30">A signature product feature is the persistent BLS ambient audio layer, available from a floating bottom-right control across the full platform experience.</p>
-                                <div className="align-items-center">
-                                    <span className="btn btn-light color-gray-500 text-body-lead mb-15 mt-30 mr-10 pl-12 pr-12 py-3 cursor-not-allowed">Case Study Coming Soon</span>
-                                </div>
-                            </div>
-
-                            <div className="col-lg-6 col-sm-12 block-img-we-do second"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/work-ozone.png" alt="JoyFeed platform preview on laptop" /></div>
-                        </div>
-                    </div>
-                </section> */}
-
-                {/* // CCoalition on Race */}
-                <section className="section-box">
-                    <div className="container mt-120">
-                        <div className="row">
-                            <div className="col-lg-6 col-sm-12 block-img-we-do"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/ccr-f1.webp" alt="Community Coalition on Race website on laptop" /></div>
-                            <div className="col-lg-6 col-sm-12 block-we-do">
-                                <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">NationBuilder Outreach Platform</span>
-                                <h3 className="text-heading-1 mt-30">South Orange & Maplewood Community Coalition on Race</h3>
-                                <p className="text-body-lead-large color-gray-600 mt-30">The South Orange/Maplewood Community Coalition on Race is a nationally recognized non-profit organization committed to building a unique, suburban community that is free of racial segregation.</p>
-                                <p className="text-body-lead-large color-gray-600 mt-30">Strategic UI/UX in AdobeXD utlizing our partners existing brand, digital campaign strategy and search engine optimization.</p>
-                                <a href="https://www.communitycoalitiononrace.org/" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
-                                <div className="row">
-                                    <div className="col-12 mt-50">
-                                        <h2 className="text-heading-7 text-center color-gray-900 mb-10">Powered by</h2>
-                                        <ul className="list-partners border-0">
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Adobe" src="/assets/imgs/logos/adobe.svg" />
-                                                </a></Link>
-                                            </li>  
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="NationBuilder" src="/assets/imgs/logos/nationbuilder-horizontal-black.svg" />
-                                                </a></Link>
-                                            </li>                         
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* // Garden State Equality */}
-                <section className="section-box">
-                    <div className="container mt-120 re-order">
-                        <div className="row">
-                            
-                            <div className="col-lg-6 col-sm-12 block-we-do first">
-                                <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">WordPress</span>
-                                <h3 className="text-heading-1 mt-30">Garden State Equality</h3>
-                                <p className="text-body-lead-large color-gray-600 mt-30">Garden State Equality lifts up the diverse voices of LGBTQ+ communities through education and advocacy to advance the movement for equality in New Jersey and nationally.</p>
-                                <p className="text-body-lead-large color-gray-600 mt-30">Managed hosting, search engine optimization and digital strategy.</p>
-                                <a href="https://www.gardenstateequality.org/" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
-                                <div className="row">
-                                    <div className="col-12 mt-50">
-                                        <h2 className="text-heading-7 text-center color-gray-900 mb-10">Powered by</h2>
-                                        <ul className="list-partners border-0">
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="WordPress" src="/assets/imgs/logos/wordpress.svg" />
-                                                </a></Link>
-                                            </li>                            
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="col-lg-6 col-sm-12 block-img-we-do second"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/gse-f1.webp" alt="Ozone's website on laptop" /></div>
-                        </div>
-                    </div>
-                </section>
-
-
-                {/* // Barclay */}
-                <section className="section-box">
-                    <div className="container mt-120">
-                        <div className="row">
-                            <div className="col-lg-6 col-sm-12 block-img-we-do"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/rex-f1.webp" alt="Barclay Rex website on laptop" /></div>
-                            <div className="col-lg-6 col-sm-12 block-we-do">
-                                <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Strapi Extensible CMS API</span>
-                                <h3 className="text-heading-1 mt-30">Barclay Rex</h3>
-                                <p className="text-body-lead-large color-gray-600 mt-30">Barclay Rex has become one of the top tobacconists in New York City and is the last family-owned tobacconist in the city with over 111 years of service and excellence in fine tobacco</p>
-                                <p className="text-body-lead-large color-gray-600 mt-30">Strategic UI/UX in AdobeXD utlizing our partners existing brand. Digital e-Commerce strategy, and progressive web application development with Strapi CMS/API.</p>
-                                <div className="align-items-center">
-                                    <a href="https://barclayrex.com" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
-                                </div>
-                                <div className="row">
-                                    <div className="col-12 mt-50">
-                                        <h2 className="text-heading-7 text-center color-gray-900 mb-10">Powered by</h2>
-                                        <ul className="list-partners border-0">
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Adobe" src="/assets/imgs/logos/adobe.svg" />
-                                                </a></Link>
-                                            </li>  
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Bootstrap" src="/assets/imgs/logos/tailwindcss.svg" />
-                                                </a></Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Strapi CMS" src="/assets/imgs/logos/strapi.svg" />
-                                                </a></Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Next.js" src="/assets/imgs/logos/nextjs.svg" />
-                                                </a></Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Vercel" src="/assets/imgs/logos/vercel.svg" />
-                                                </a></Link>
-                                            </li>                              
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* // Ozone */}
-                <section className="section-box">
-                    <div className="container mt-120 re-order">
-                        <div className="row">
-                            
-                            <div className="col-lg-6 col-sm-12 block-we-do first">
-                                <span className="tag-1 bg-6 color-green-900 mr-20 px-4 py-2 rounded-md">Sanity + WordPress Hybrid</span>
-                                <h3 className="text-heading-1 mt-30">OZONE</h3>
-                                <p className="text-body-lead-large color-gray-600 mt-30">Ozone paragliders and kites are one of the world's leading paragliding, paramotoring, kitesurf, snow kite and power kite manufacturers.</p><p className="text-body-lead-large color-gray-600 mt-30">Strategic development utlizing our partners existing brand and provided Figma UI/UX designs. Digital e-Commerce strategy, and e-commerce web application with Sanity API.</p>
-                                <a href="https://flyozone.com/" target="_blank" rel="noreferrer" className="btn icon-arrow-right color-gray-900 text-body-lead mb-15 mt-30 pl-0 pr-12 py-3">Visit Website</a>
-                                <div className="row">
-                                    <div className="col-12 mt-50">
-                                        <h2 className="text-heading-7 text-center color-gray-900 mb-10">Powered by</h2>
-                                        <ul className="list-partners border-0">
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Figma" src="/assets/imgs/logos/figma.svg" />
-                                                </a></Link>
-                                            </li>  
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Sanity CMS" src="/assets/imgs/logos/sanity.svg" />
-                                                </a></Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="WordPress" src="/assets/imgs/logos/wordpress.svg" />
-                                                </a></Link>
-                                            </li>  
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="React.js" src="/assets/imgs/logos/reactjs.svg" />
-                                                </a></Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/#"><a className="item-logo box-hover-shadow hover-up"><img alt="Vue.js" src="/assets/imgs/logos/vuejs.svg" />
-                                                </a></Link>
-                                            </li>                             
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="col-lg-6 col-sm-12 block-img-we-do second"><img className="bdrd-16 img-responsive" src="/assets/imgs/work/oz-f1.webp" alt="Ozone's website on laptop" /></div>
-                        </div>
-                    </div>
-                </section>
-        
-                
-                <FormProject/>
-
-                <ModalVideo
-                    channel="youtube"
-                    autoplay
-                    isOpen={isOpen}
-                    videoId="7e90gBu4pas"
-                    onClose={() => setOpen(false)}
-                />
-
-            </Layout>
-
-        </>
-    )
+function getStoryGroup(story) {
+  if (story.slug === 'nc-waterfalls') return 'Platforms';
+  if (story.slug === 'barclay-rex') return 'Commerce';
+  if (story.slug === 'community-coalition') return 'Public impact';
+  return 'Infrastructure';
 }
 
-export default Work;
+function StoryLink({ story, className, children, ...props }) {
+  if (story.external) {
+    return <a className={className} href={story.href} target="_blank" rel="noreferrer" {...props}>{children}</a>;
+  }
+  return <Link href={story.href} legacyBehavior><a className={className} {...props}>{children}</a></Link>;
+}
+
+function StoryMetrics({ metrics }) {
+  return <div className="mf-work-metrics">{metrics.map((metric) => <div className="mf-work-metric" key={metric.label}><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</div>;
+}
+
+function FeaturedStory({ story }) {
+  return <article className="mf-work-featured">
+    <div className="mf-work-featured__copy">
+      <p className="mf-work-kicker"><span>FEATURED PARTNERSHIP</span><span>01 / 04</span></p>
+      <Tag tone="info">{story.category}</Tag>
+      <h2>{story.name}</h2>
+      <p className="mf-work-featured__summary">{story.summary}</p>
+      <p className="mf-work-featured__detail">A long-term collaboration turned a fieldwork collection into a structured archive people can search, explore, and continue to learn from.</p>
+      <StoryMetrics metrics={story.metrics} />
+      <p className="mf-work-disclosure">{story.note}</p>
+      <div className="mf-work-featured__actions"><StoryLink story={story} className="mf-button">Read the project story <span aria-hidden="true">↗</span></StoryLink><a className="mf-work-text-link" href="https://www.ncwaterfalls.com" target="_blank" rel="noreferrer">Visit NC Waterfalls <span aria-hidden="true">↗</span></a></div>
+    </div>
+    <StoryLink story={story} className="mf-work-featured__visual" aria-label={`Open ${story.name} project story`}>
+      <Image src="/assets/imgs/work/dt-work-nc-waterfalls@2x.png" alt={story.alt} width={1100} height={820} priority />
+      <span className="mf-work-image-index">FIELD NOTES / NC · 2022—ONGOING</span>
+      <span className="mf-work-image-caption"><span>01</span> A living archive, built to grow.</span>
+      <span className="mf-work-image-spark" aria-hidden="true">↗</span>
+    </StoryLink>
+  </article>;
+}
+
+function StoryCard({ story, index }) {
+  const themes = ['violet', 'mint', 'orange'];
+  const theme = themes[index % themes.length];
+  return <article className={`mf-work-card mf-work-card--${theme}`}>
+    <StoryLink story={story} className="mf-work-card__link" aria-label={`View ${story.name} story`}>
+      <div className="mf-work-card__visual">
+        <Image src={story.image} alt={story.alt} width={900} height={560} />
+        <span className="mf-work-card__number">{String(index + 2).padStart(2, '0')}</span>
+        <span className="mf-work-card__arrow" aria-hidden="true">↗</span>
+      </div>
+      <div className="mf-work-card__content">
+        <div className="mf-work-card__meta"><Tag tone="info">{story.category}</Tag><span>{getStoryGroup(story)}</span></div>
+        <h3>{story.name}</h3>
+        <p>{story.summary}</p>
+        <StoryMetrics metrics={story.metrics.slice(0, 2)} />
+        <p className="mf-work-disclosure">{story.note}</p>
+        <span className="mf-work-card__cta">{story.external ? 'Visit organization' : 'Read the story'} <span aria-hidden="true">↗</span></span>
+      </div>
+    </StoryLink>
+  </article>;
+}
+
+export default function WorkPage() {
+  const [activeFilter, setActiveFilter] = useState('All stories');
+  const featuredStory = stories[0];
+  const filteredStories = useMemo(() => {
+    return activeFilter === 'All stories'
+      ? stories.slice(1)
+      : stories.filter((story) => getStoryGroup(story) === activeFilter);
+  }, [activeFilter]);
+
+  return <Layout><div className="mfts-site mf-work-page">
+    <header className="mf-work-hero">
+      <div className="mf-container mf-work-hero__inner">
+        <p className="mf-work-eyebrow"><span className="mf-work-eyebrow__mark">M</span> MANIFEST FTS / SELECTED PARTNERSHIPS</p>
+        <div className="mf-work-hero__layout">
+          <div><h1>Built with people.<br /><span>Made to matter.</span></h1><p>Client stories about lasting platforms, thoughtful engineering, and the work behind the outcomes.</p></div>
+          <div className="mf-work-hero__aside"><div className="mf-work-hero__orbit" aria-hidden="true"><i /><i /><i /><span>M</span></div><span>THE WORK IS THE RELATIONSHIP.</span><p>Every project begins with a specific challenge. The strongest results come from understanding the people, systems, and constraints around it.</p><a href="#stories">Explore the stories <span aria-hidden="true">↓</span></a></div>
+        </div>
+        <div className="mf-work-hero__index" aria-hidden="true"><span>01 — DISCOVER</span><span>02 — BUILD</span><span>03 — SUPPORT</span><i /></div>
+      </div>
+    </header>
+
+    {activeFilter === 'All stories' && <section className="mf-work-feature-section" aria-label="Featured client story">
+      <div className="mf-container"><div className="mf-work-featured-wrap"><span className="mf-work-featured__scribble" aria-hidden="true">↗</span><span className="mf-work-featured__side-note" aria-hidden="true">A LONG VIEW<br />BY DESIGN</span><FeaturedStory story={featuredStory} /></div></div>
+    </section>}
+
+    <section id="stories" className="mf-work-gallery">
+      <div className="mf-container">
+        <div className="mf-work-gallery__heading"><div><p className="mf-eyebrow">A FEW GOOD COLLABORATIONS</p><h2>Different challenges.<br /><span>Thoughtful outcomes.</span></h2></div><p>From mission-led organizations to established businesses, we adapt the work to the people who will depend on it.</p></div>
+        <div className="mf-work-filters" role="group" aria-label="Filter stories by discipline">
+          {FILTERS.map((filter) => <button type="button" key={filter} className={activeFilter === filter ? 'is-active' : ''} aria-pressed={activeFilter === filter} onClick={() => setActiveFilter(filter)}>{filter}<span>{filter === 'All stories' ? stories.length : stories.filter((story) => getStoryGroup(story) === filter).length}</span></button>)}
+        </div>
+        {filteredStories.length ? <div className="mf-work-grid">{filteredStories.map((story, index) => <StoryCard story={story} index={index} key={story.slug} />)}</div> : <div className="mf-work-empty">More stories in this discipline are being prepared. <button type="button" onClick={() => setActiveFilter('All stories')}>See all stories →</button></div>}
+      </div>
+    </section>
+
+    <section className="mf-work-note-section"><div className="mf-container mf-work-note"><span className="mf-work-note__asterisk" aria-hidden="true">✳</span><div><p className="mf-eyebrow">A NOTE ON THE NUMBERS</p><h2>Useful evidence, with the context attached.</h2><p>Metrics on this page are drawn from published project materials. Some are historical or client-reported; others describe qualitative work where no verified numeric outcome is available. They are not guarantees of future performance.</p></div><Link href="/insights/choosing-a-technology-partner" legacyBehavior><a className="mf-work-text-link">How we think about outcomes ↗</a></Link></div></section>
+
+    <section className="mf-section"><div className="mf-container mf-work-cta"><div><p className="mf-eyebrow">YOUR STORY STARTS WITH A CONVERSATION</p><h2>What should your technology make possible?</h2><p>Bring us the ambition, the constraint, or the complicated middle. We’ll help you decide what to do next.</p></div><Button href="/contact">Start a project brief <span aria-hidden="true">↗</span></Button><span className="mf-work-cta__shape" aria-hidden="true">M</span></div></section>
+  </div></Layout>;
+}
