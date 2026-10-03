@@ -3,6 +3,7 @@ import "../public/assets/css/style.css";
 import "../public/assets/css/swiper-custom.css";
 import "../public/assets/css/globals.min.css";
 import "../styles/manifest-system.css";
+import "../styles/manifest-work.css";
 
 import React, { useEffect } from "react";
 import 'react-modal-video/css/modal-video.css';
