@@ -48,9 +48,9 @@ export default function HomePage() {
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-[-280px] h-[560px] w-[1100px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,color-mix(in_srgb,var(--accent)_16%,transparent),transparent)]" />
         <div className="container-page relative">
           <div className="mx-auto max-w-3xl text-center">
-            <Link href="/methodology" className="inline-flex animate-rise items-center gap-2 rounded-full border border-border bg-panel/80 py-1 pl-1 pr-3 text-[13px] text-fg-soft shadow-card backdrop-blur transition hover:border-border-strong/60">
+            <Link href="/tools" className="inline-flex animate-rise items-center gap-2 rounded-full border border-border bg-panel/80 py-1 pl-1 pr-3 text-[13px] text-fg-soft shadow-card backdrop-blur transition hover:border-border-strong/60">
               <span className="rounded-full bg-accent-subtle px-2 py-0.5 text-[12px] font-semibold text-accent-on-subtle">New</span>
-              Confidence intervals on every metric
+              Free GEO audit and AI search tools
               <ArrowRight className="size-3.5 text-fg-faint" aria-hidden />
             </Link>
             <h1 className="mt-6 animate-rise text-[40px] font-semibold leading-[1.04] tracking-[-0.045em] text-fg [animation-delay:60ms] sm:text-[56px] lg:text-[68px]">
@@ -228,7 +228,7 @@ export default function HomePage() {
           <div>
             <p className="eyebrow">Free tool</p>
             <h2 id="tool-title" className="mt-3 text-[28px] font-semibold leading-tight tracking-[-0.03em] text-fg sm:text-[34px]">Can AI crawlers actually read your site?</h2>
-            <p className="mt-3 max-w-xl text-[16px] leading-relaxed text-fg-muted">Check robots.txt rules for eleven AI crawlers, indexability, structured data, and server-rendered content in about ten seconds. No account needed.</p>
+            <p className="mt-3 max-w-xl text-[16px] leading-relaxed text-fg-muted">Run a free GEO audit: crawler access for 26 AI bots, citability, schema, entity and E-E-A-T signals, with a composite score and a prioritized fix list. No account needed.</p>
           </div>
           <form action="/tools/ai-readiness-checker" method="get" className="flex flex-col gap-2.5 sm:flex-row">
             <label htmlFor="home-url" className="sr-only">Website URL</label>

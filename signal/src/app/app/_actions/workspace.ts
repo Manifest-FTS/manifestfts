@@ -9,7 +9,7 @@ import { requireUser } from '@/lib/auth/session';
 import { authorize, logActivity } from '@/lib/workspace';
 import { newId, normalizeDomain, slugify } from '@/lib/utils';
 import { limitsFor, TRIAL_DAYS } from '@/lib/plans';
-import { seedSampleHistory, syncAuditTasks } from '@/lib/pipeline';
+import { saveAudit, seedSampleHistory } from '@/lib/pipeline';
 import { runReadinessAudit } from '@/lib/readiness';
 import { rateLimit } from '@/lib/rate-limit';
 import { ENGINES } from '@/lib/engines';
@@ -79,10 +79,7 @@ export async function createWorkspace(_: ActionState, formData: FormData): Promi
 
   after(async () => {
     try {
-      const report = await runReadinessAudit(`https://${data.domain}`);
-      const auditId = newId('aud');
-      await db.insert(schema.audits).values({ id: auditId, workspaceId, url: report.finalUrl, score: report.score, results: report.results, crawlers: report.crawlers, durationMs: report.durationMs });
-      await syncAuditTasks(workspaceId, auditId, report.results);
+      await saveAudit(workspaceId, await runReadinessAudit(`https://${data.domain}`));
     } catch (error) {
       console.warn('[onboarding] readiness audit skipped:', error instanceof Error ? error.message : error);
     }
@@ -135,6 +132,7 @@ export async function clearSampleData(workspaceId: string): Promise<ActionState>
   const auth = await authorize(workspaceId, 'admin');
   if (!auth.ok) return { error: auth.error };
   await auth.db.delete(schema.runs).where(and(eq(schema.runs.workspaceId, workspaceId), eq(schema.runs.source, 'sample')));
+  await auth.db.delete(schema.trafficEvents).where(and(eq(schema.trafficEvents.workspaceId, workspaceId), eq(schema.trafficEvents.dataSource, 'sample')));
   // Remove only tasks generated from sample observations; audit tasks and manual tasks stay.
   await auth.db.delete(schema.tasks).where(and(eq(schema.tasks.workspaceId, workspaceId), inArray(schema.tasks.status, ['todo', 'in_progress']), or(like(schema.tasks.dedupeKey, 'gap:%'), like(schema.tasks.dedupeKey, 'source:%'), like(schema.tasks.dedupeKey, 'claim:%'))));
   await logActivity(workspaceId, auth.user.id, 'workspace.sample_cleared', 'Cleared sample observations');

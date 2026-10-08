@@ -31,6 +31,7 @@ export default async function ReportPage({ params }: PageProps<'/app/[workspace]
         periodEnd={report.periodEnd}
         summary={report.summary}
         summarySlot={canEdit ? <SummaryEditor workspaceId={workspace.id} reportId={report.id} initial={report.summary} /> : undefined}
+        branding={{ name: workspace.reportBrandName, color: workspace.reportAccentColor, logo: workspace.reportLogoUrl, hideSignal: workspace.hideSignalBranding }}
       />
     </>
   );

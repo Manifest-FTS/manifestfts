@@ -60,8 +60,8 @@ export const FEATURES = [
   },
   {
     id: 'readiness',
-    title: 'Readiness audits',
-    summary: 'Check robots.txt rules for eleven AI crawlers, indexability, structured data, and server-rendered content in seconds.',
+    title: 'GEO audits',
+    summary: 'GEO audits score citability, crawler access for 26 AI bots, schema, brand entity, E-E-A-T, and platform health, with a prioritized fix list.',
     points: ['Retrieval vs training crawler policy', 'JSON-LD entity and metadata checks', 'Failing checks become tasks automatically'],
   },
   {
@@ -71,10 +71,28 @@ export const FEATURES = [
     points: ['Generated from gaps, sources, audits, and claims', 'Owners, priorities, and due dates', 'Closed automatically when checks pass'],
   },
   {
+    id: 'traffic',
+    title: 'AI traffic analytics',
+    summary: 'Connect visibility to visits: see sessions that arrive from ChatGPT, Perplexity, Gemini, Claude, and Copilot, and which pages they land on.',
+    points: ['One-line, cookieless snippet', 'Landings by assistant and page', 'Respects Global Privacy Control'],
+  },
+  {
+    id: 'content',
+    title: 'Content studio',
+    summary: 'Evidence-based briefs for the questions where engines leave you out, with optional AI drafts that flag every unverified fact.',
+    points: ['Briefs built from cited sources and your facts', 'AI drafts with [VERIFY] placeholders', 'Draft, review, and publish tracking'],
+  },
+  {
+    id: 'integrations',
+    title: 'Integrations',
+    summary: 'Send runs, audits, and accuracy flags to Slack or signed webhooks, and notify search engines of changes instantly with IndexNow.',
+    points: ['Slack and HMAC-signed webhooks', 'IndexNow submission for changed pages', 'JSON export of every observation'],
+  },
+  {
     id: 'reports',
     title: 'Stakeholder reports',
-    summary: 'Snapshot a period into a clean report with your summary, then print it or share a private, revocable link.',
-    points: ['Fixed snapshots that do not drift', 'Print and PDF ready', 'Private share links for clients and leadership'],
+    summary: 'Snapshot a period into a clean report with your summary, then print it or share a private, revocable link, under your own brand on the Agency plan.',
+    points: ['Fixed snapshots that do not drift', 'Print and PDF ready', 'White-label branding for agencies'],
   },
   {
     id: 'team',
@@ -85,6 +103,16 @@ export const FEATURES = [
 ];
 
 export const CHANGELOG = [
+  {
+    version: '1.1',
+    date: '2026-10-08',
+    title: 'GEO audits, a free tools hub, AI traffic, and integrations',
+    items: [
+      'GEO audit with a composite score across citability, crawler access, brand entity, E-E-A-T, schema, and platform health, plus priority issues and citability recommendations.',
+      'Crawler coverage expanded to 26 AI and search bots, with “partial” access flagged when a bot is blocked from pages in your own sitemap.',
+      'Free tools hub: AI robots.txt checker; ChatGPT, Perplexity, Gemini, and Claude visibility checkers; AI prompt, llms.txt, robots.txt, and schema generators; structured data and sitemap validators; embeddable widgets.',
+    ],
+  },
   {
     version: '1.0',
     date: '2026-10-05',

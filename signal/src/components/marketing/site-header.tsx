@@ -13,7 +13,7 @@ const NAV = [
   { href: '/methodology', label: 'Methodology' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/docs', label: 'Docs' },
-  { href: '/tools/ai-readiness-checker', label: 'Free checker' },
+  { href: '/tools', label: 'Free tools' },
 ];
 
 export function SiteHeader() {

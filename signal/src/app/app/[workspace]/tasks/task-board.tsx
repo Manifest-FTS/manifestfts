@@ -158,7 +158,10 @@ export function TaskBoard({ tasks, workspaceId, slug, members, canEdit }: { task
               <div className="mt-5 rounded-xl border border-border bg-bg-subtle p-4">
                 <p className="text-[12px] font-medium uppercase tracking-wider text-fg-faint">Evidence</p>
                 <p className="mt-1 text-[14px] text-fg">{detail.evidence.label}</p>
-                <Link href={evidenceHref(slug, detail.evidence)} className="mt-2 inline-flex items-center gap-1 text-[13px] font-medium text-accent hover:underline">View evidence <ArrowRight className="size-3.5" aria-hidden /></Link>
+                <div className="mt-2 flex flex-wrap gap-4">
+                  <Link href={evidenceHref(slug, detail.evidence)} className="inline-flex items-center gap-1 text-[13px] font-medium text-accent hover:underline">View evidence <ArrowRight className="size-3.5" aria-hidden /></Link>
+                  {detail.evidence.kind === 'prompt' && <Link href={`/app/${slug}/content?prompt=${detail.evidence.refId}`} className="inline-flex items-center gap-1 text-[13px] font-medium text-accent hover:underline">Create a content brief <ArrowRight className="size-3.5" aria-hidden /></Link>}
+                </div>
               </div>
             )}
             <dl className="mt-5 grid grid-cols-2 gap-3 text-[13px]">

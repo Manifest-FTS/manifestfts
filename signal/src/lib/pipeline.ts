@@ -10,6 +10,7 @@ import { ENGINE_BY_ID } from '@/lib/engines';
 import { newId } from '@/lib/utils';
 import { notifyMembers } from '@/lib/workspace';
 import { limitsFor } from '@/lib/plans';
+import { dispatchEvent } from '@/lib/integrations';
 
 /** Engines that will actually run for this workspace in its current data mode. */
 export function runnableEngines(workspace: Workspace): EngineId[] {
@@ -128,6 +129,12 @@ export async function executeRun(runId: string) {
     .where(eq(schema.runs.id, runId));
   await generateInsightTasks(ctx.workspace.id);
   if (run.trigger === 'scheduled') await emailRunAlert(ctx.workspace, runId, jobs.length - failed, failed, allFailed);
+  await dispatchEvent(ctx.workspace, allFailed ? 'run.failed' : 'run.completed', {
+    title: allFailed ? 'Observation run failed' : 'Observation run completed',
+    text: allFailed ? (lastError ?? 'No answers were collected.') : `${jobs.length - failed} of ${jobs.length} answers collected${run.source === 'sample' ? ' (sample data)' : ''}.`,
+    path: `/app/${ctx.workspace.slug}/overview`,
+    data: { runId, collected: jobs.length - failed, failed, source: run.source },
+  });
   await notifyMembers(ctx.workspace.id, allFailed
     ? { kind: 'run_failed', title: 'Observation run failed', body: lastError ?? 'No answers were collected.', href: `/app/${ctx.workspace.slug}/overview` }
     : { kind: 'run_completed', title: 'Observation run completed', body: `${jobs.length - failed} of ${jobs.length} answers collected${failed ? `; ${failed} failed` : ''}.`, href: `/app/${ctx.workspace.slug}/overview` });
@@ -183,6 +190,8 @@ export async function seedSampleHistory(workspaceId: string, weeks = 8) {
     if (answers.length) await db.insert(schema.answers).values(answers);
     if (claims.length) await db.insert(schema.claims).values(claims);
   }
+  const { seedSampleTraffic } = await import('@/lib/traffic-data');
+  await seedSampleTraffic(workspaceId);
   await generateInsightTasks(workspaceId);
 }
 
@@ -216,6 +225,24 @@ export async function syncAuditTasks(workspaceId: string, auditId: string, resul
         .where(and(eq(schema.tasks.workspaceId, workspaceId), eq(schema.tasks.dedupeKey, key), ne(schema.tasks.status, 'done')));
     }
   }
+}
+
+/** Stores a readiness audit and syncs its tasks. Returns the audit id. */
+export async function saveAudit(workspaceId: string, report: import('@/lib/readiness').ReadinessReport) {
+  const db = await getDb();
+  const auditId = newId('aud');
+  await db.insert(schema.audits).values({
+    id: auditId, workspaceId, url: report.finalUrl, score: report.score, results: report.results,
+    crawlers: report.crawlers, subscores: report.subscores, details: report.details, durationMs: report.durationMs,
+  });
+  await syncAuditTasks(workspaceId, auditId, report.results);
+  const failing = report.results.filter((r) => r.status === 'fail').length;
+  await dispatchEvent(workspaceId, 'audit.completed', {
+    title: `Readiness audit: ${report.score}/100`,
+    text: `${report.finalUrl} · ${failing} failing check${failing === 1 ? '' : 's'}.`,
+    data: { auditId, url: report.finalUrl, score: report.score, subscores: report.subscores, failing },
+  }).then(() => undefined);
+  return auditId;
 }
 
 /** Turns patterns in recent answers into evidence-linked recommendations. */

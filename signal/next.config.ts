@@ -33,12 +33,24 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   output: 'standalone',
+  // The parent repository has its own lockfile; pin the root to this app so tracing and
+  // the standalone output stay self-contained (Coolify builds with base directory signal/).
+  turbopack: { root: process.cwd() },
+  outputFileTracingRoot: process.cwd(),
   serverExternalPackages: ['@electric-sql/pglite', 'postgres'],
   images: { formats: ['image/avif', 'image/webp'] },
   experimental: { optimizePackageImports: ['lucide-react', 'radix-ui'], authInterrupts: true },
   async headers() {
     return [
-      { source: '/:path*', headers: securityHeaders },
+      // Everything except embeddable widgets is unframeable.
+      { source: '/((?!embed/).*)', headers: securityHeaders },
+      {
+        source: '/embed/:path*',
+        headers: [
+          ...securityHeaders.filter((h) => h.key !== 'X-Frame-Options' && h.key !== 'Content-Security-Policy' && h.key !== 'Cross-Origin-Opener-Policy'),
+          { key: 'Content-Security-Policy', value: csp.replace("frame-ancestors 'none'", 'frame-ancestors *') },
+        ],
+      },
       { source: '/app/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] },
       { source: '/r/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] },
     ];

@@ -46,9 +46,33 @@ export interface CrawlerAccess {
   agent: string;
   owner: string;
   purpose: string;
-  kind: 'retrieval' | 'training';
+  kind: 'retrieval' | 'training' | 'other';
   allowed: boolean;
+  /** Older audits predate this field; treat a missing value as allowed/blocked from `allowed`. */
+  status?: 'allowed' | 'partial' | 'blocked';
   rule: string | null;
+}
+
+export interface AuditSubscores {
+  citability: number;
+  crawlers: number;
+  brand: number;
+  eeat: number;
+  schema: number;
+  platform: number;
+}
+
+export interface AuditDetails {
+  issues: { severity: 'high' | 'medium' | 'low'; title: string; detail: string; fix: string }[];
+  schemas: string[];
+  citability: {
+    score: number; words: number; paragraphs: number; quotable: number; factRich: number; questionHeadings: number; structured: boolean;
+    weakBlocks: { excerpt: string; reason: string; words: number }[];
+    recommendations: string[];
+  };
+  llms: { present: boolean; url: string; bytes: number };
+  sitemap: { present: boolean; url: string; urls: number; declared: boolean };
+  page: { title: string | null; description: string | null; h1: string | null; lang: string | null; canonical: string | null; words: number; internalLinks: number; externalLinks: number };
 }
 
 export interface TaskEvidence {
@@ -106,8 +130,19 @@ export const workspaces = pgTable('workspaces', {
   subscriptionStatus: text('subscription_status'),
   currentPeriodEnd: timestamp('current_period_end', { withTimezone: true }),
   onboardedAt: timestamp('onboarded_at', { withTimezone: true }),
+  /** Public key used by the AI traffic snippet. Not a secret. */
+  trackingKey: text('tracking_key'),
+  slackWebhookUrl: text('slack_webhook_url'),
+  webhookUrl: text('webhook_url'),
+  webhookSecret: text('webhook_secret'),
+  indexnowKey: text('indexnow_key'),
+  /** White-label report branding (Agency plan). */
+  reportBrandName: text('report_brand_name'),
+  reportAccentColor: text('report_accent_color'),
+  reportLogoUrl: text('report_logo_url'),
+  hideSignalBranding: boolean('hide_signal_branding').notNull().default(false),
   createdAt: createdAt(),
-}, (t) => [uniqueIndex('workspaces_slug_idx').on(t.slug)]);
+}, (t) => [uniqueIndex('workspaces_slug_idx').on(t.slug), uniqueIndex('workspaces_tracking_idx').on(t.trackingKey)]);
 
 export const memberships = pgTable('memberships', {
   workspaceId: text('workspace_id').notNull().references(() => workspaces.id, { onDelete: 'cascade' }),
@@ -208,6 +243,8 @@ export const audits = pgTable('audits', {
   score: integer('score').notNull(),
   results: jsonb('results').$type<CheckResult[]>().notNull(),
   crawlers: jsonb('crawlers').$type<CrawlerAccess[]>().notNull().default([]),
+  subscores: jsonb('subscores').$type<AuditSubscores | null>(),
+  details: jsonb('details').$type<AuditDetails | null>(),
   durationMs: integer('duration_ms'),
   createdAt: createdAt(),
 }, (t) => [index('audits_ws_idx').on(t.workspaceId, t.createdAt)]);
@@ -262,6 +299,37 @@ export const activity = pgTable('activity', {
   createdAt: createdAt(),
 }, (t) => [index('activity_ws_idx').on(t.workspaceId, t.createdAt)]);
 
+export type TrafficSource = 'chatgpt' | 'perplexity' | 'gemini' | 'claude' | 'copilot' | 'deepseek' | 'meta_ai' | 'other_ai' | 'search' | 'social' | 'referral' | 'direct';
+
+/** Landings recorded by the AI traffic snippet. No IP addresses or cookies are stored. */
+export const trafficEvents = pgTable('traffic_events', {
+  id: id(),
+  workspaceId: text('workspace_id').notNull().references(() => workspaces.id, { onDelete: 'cascade' }),
+  source: text('source').$type<TrafficSource>().notNull(),
+  referrerHost: text('referrer_host'),
+  landingPath: text('landing_path').notNull(),
+  /** Salted daily hash for unique-visitor counts; cannot be reversed or linked across days. */
+  visitorHash: text('visitor_hash'),
+  dataSource: text('data_source').$type<DataMode>().notNull().default('live'),
+  occurredAt: timestamp('occurred_at', { withTimezone: true }).notNull().defaultNow(),
+}, (t) => [index('traffic_ws_idx').on(t.workspaceId, t.occurredAt)]);
+
+export const contentBriefs = pgTable('content_briefs', {
+  id: id(),
+  workspaceId: text('workspace_id').notNull().references(() => workspaces.id, { onDelete: 'cascade' }),
+  promptId: text('prompt_id').references(() => prompts.id, { onDelete: 'set null' }),
+  title: text('title').notNull(),
+  question: text('question').notNull(),
+  brief: text('brief').notNull(),
+  draft: text('draft'),
+  draftModel: text('draft_model'),
+  status: text('status').$type<'brief' | 'drafting' | 'in_review' | 'published'>().notNull().default('brief'),
+  publishedUrl: text('published_url'),
+  createdById: text('created_by_id').references(() => users.id, { onDelete: 'set null' }),
+  createdAt: createdAt(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+}, (t) => [index('briefs_ws_idx').on(t.workspaceId)]);
+
 export const rateLimits = pgTable('rate_limits', {
   key: text('key').primaryKey(),
   count: integer('count').notNull(),
@@ -291,3 +359,5 @@ export type Audit = typeof audits.$inferSelect;
 export type Task = typeof tasks.$inferSelect;
 export type Report = typeof reports.$inferSelect;
 export type Notification = typeof notifications.$inferSelect;
+export type TrafficEvent = typeof trafficEvents.$inferSelect;
+export type ContentBrief = typeof contentBriefs.$inferSelect;

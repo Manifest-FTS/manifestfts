@@ -67,8 +67,8 @@ const agent = new Agent({
       });
     },
   },
-  headersTimeout: 8000,
-  bodyTimeout: 8000,
+  headersTimeout: 15_000,
+  bodyTimeout: 15_000,
 });
 
 export interface SafeResponse {
@@ -82,7 +82,7 @@ export interface SafeResponse {
 
 const USER_AGENT = 'ManifestSignalBot/1.0 (+https://signal.manifestfts.com/docs/readiness-checks)';
 
-export async function safeFetch(input: string, { maxBytes = 1_500_000, maxRedirects = 4, timeoutMs = 9000, accept = 'text/html,*/*;q=0.8' } = {}): Promise<SafeResponse> {
+export async function safeFetch(input: string, { maxBytes = 1_500_000, maxRedirects = 4, timeoutMs = 15_000, accept = 'text/html,*/*;q=0.8' } = {}): Promise<SafeResponse> {
   let url = assertSafeUrl(input);
   const started = Date.now();
   for (let redirects = 0; ; redirects++) {
@@ -122,4 +122,21 @@ export async function safeFetch(input: string, { maxBytes = 1_500_000, maxRedire
       redirects,
     };
   }
+}
+
+/** POSTs JSON to a user-supplied public URL with the same SSRF protections. Redirects are not followed. */
+export async function safePostJson(input: string, body: unknown, headers: Record<string, string> = {}, timeoutMs = 8000) {
+  const url = assertSafeUrl(input);
+  if (url.protocol !== 'https:') throw new UnsafeUrlError('Webhook URLs must use https.');
+  const payload = typeof body === 'string' ? body : JSON.stringify(body);
+  const response = await undiciFetch(url, {
+    dispatcher: agent,
+    method: 'POST',
+    redirect: 'manual',
+    headers: { 'content-type': 'application/json', 'user-agent': USER_AGENT, ...headers },
+    body: payload,
+    signal: AbortSignal.timeout(timeoutMs),
+  });
+  await response.body?.cancel();
+  return { status: response.status, ok: response.status >= 200 && response.status < 300 };
 }

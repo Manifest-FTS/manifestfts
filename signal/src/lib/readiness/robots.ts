@@ -81,5 +81,7 @@ export function evaluateRobots(robots: RobotsFile, agent: string, path = '/') {
     allowed: best ? best.allow : true,
     matchedAgent,
     rule: best ? `${best.allow ? 'Allow' : 'Disallow'}: ${best.pattern}` : null,
+    /** The selected group restricts at least one path (used to report "partial" access). */
+    restricted: rules.some((r) => !r.allow && r.pattern !== ''),
   };
 }

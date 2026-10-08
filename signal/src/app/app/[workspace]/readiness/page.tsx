@@ -7,7 +7,7 @@ import { formatDateTime, relativeTime } from '@/lib/format';
 import { PageHeader } from '@/components/app/page-header';
 import { Card, CardBody, CardHeader } from '@/components/ui/card';
 import { EmptyState } from '@/components/ui/empty-state';
-import { ChecksList, CrawlerTable, ScoreRing } from '@/components/readiness/report-view';
+import { ChecksList, CrawlerAccessView, GeoReport, ScoreRing } from '@/components/readiness/report-view';
 import { AuditForm } from './audit-form';
 import { cn } from '@/lib/cn';
 
@@ -27,7 +27,7 @@ export default async function ReadinessPage({ params, searchParams }: PageProps<
 
   return (
     <>
-      <PageHeader title="Readiness" description="Whether answer engines can reach, read, and attribute your pages. Failing checks become tasks and close automatically when a later audit passes." />
+      <PageHeader title="Readiness" description="GEO audit: whether answer engines can reach, parse, trust, and cite your pages. Failing checks become tasks and close automatically when a later audit passes." />
       <Card className="mb-5 p-5">
         <AuditForm workspaceId={workspace.id} defaultUrl={audit?.url ?? `https://${workspace.domain}`} disabled={!canRun} />
         <p className="mt-2 text-[12px] text-fg-faint">Audit any page on {workspace.domain}. Checks run from our servers as ManifestSignalBot and take about ten seconds.</p>
@@ -37,26 +37,42 @@ export default async function ReadinessPage({ params, searchParams }: PageProps<
         <Card><EmptyState icon={<FileSearch />} title="No audits yet" description={`Run an audit of ${workspace.domain} to check crawler access, metadata, and structured data.`} /></Card>
       ) : (
         <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_300px]">
-          <div className="grid gap-5">
-            <Card className="flex flex-col gap-5 p-5 sm:flex-row sm:items-center">
-              <ScoreRing score={audit.score} />
-              <div className="min-w-0">
-                <h2 className="break-all font-mono text-[15px] font-semibold text-fg">{audit.url}</h2>
-                <p className="mt-1 text-[13.5px] text-fg-muted">{counts!.fail} failing · {counts!.warn} warnings · {counts!.pass} passing</p>
-                <p className="mt-1 text-[12px] text-fg-faint">Audited {formatDateTime(audit.createdAt)}{audit.durationMs ? ` in ${(audit.durationMs / 1000).toFixed(1)}s` : ''}</p>
-              </div>
-            </Card>
-            {audit.crawlers.length > 0 && (
-              <Card>
-                <CardHeader title="AI crawler access" description="From robots.txt. Retrieval crawlers power live answers; training crawlers are a policy choice." />
-                <CardBody><CrawlerTable crawlers={audit.crawlers} /></CardBody>
+          {audit.subscores && audit.details ? (
+            <GeoReport
+              score={audit.score}
+              subscores={audit.subscores}
+              crawlers={audit.crawlers}
+              details={audit.details}
+              results={audit.results}
+              header={
+                <>
+                  <p className="mt-3 break-all font-mono text-[13px] text-fg-soft">{audit.url}</p>
+                  <p className="mt-1 text-[12px] text-fg-faint">{counts!.fail} failing · {counts!.warn} warnings · {counts!.pass} passing · audited {formatDateTime(audit.createdAt)}{audit.durationMs ? ` in ${(audit.durationMs / 1000).toFixed(1)}s` : ''}</p>
+                </>
+              }
+            />
+          ) : (
+            <div className="grid gap-5">
+              <Card className="flex flex-col gap-5 p-5 sm:flex-row sm:items-center">
+                <ScoreRing score={audit.score} />
+                <div className="min-w-0">
+                  <h2 className="break-all font-mono text-[15px] font-semibold text-fg">{audit.url}</h2>
+                  <p className="mt-1 text-[13.5px] text-fg-muted">{counts!.fail} failing · {counts!.warn} warnings · {counts!.pass} passing</p>
+                  <p className="mt-1 text-[12px] text-fg-faint">Audited {formatDateTime(audit.createdAt)} with an earlier version of the audit. Run a new audit for the full GEO report.</p>
+                </div>
               </Card>
-            )}
-            <Card>
-              <CardHeader title="Checks" />
-              <CardBody><ChecksList results={audit.results} /></CardBody>
-            </Card>
-          </div>
+              {audit.crawlers.length > 0 && (
+                <Card>
+                  <CardHeader title="AI crawler access" />
+                  <CardBody><CrawlerAccessView crawlers={audit.crawlers} /></CardBody>
+                </Card>
+              )}
+              <Card>
+                <CardHeader title="Checks" />
+                <CardBody><ChecksList results={audit.results} /></CardBody>
+              </Card>
+            </div>
+          )}
           <Card className="self-start">
             <CardHeader title="Audit history" />
             <CardBody className="pt-3">

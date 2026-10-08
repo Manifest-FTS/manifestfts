@@ -107,6 +107,22 @@ export function brandSentiment(text: string, brandNames: string[]): Sentiment | 
 
 // Concrete, checkable statements: dates, prices, quantities, places, ownership, and credentials.
 // Generic descriptors ("offers", "pricing", "support") are deliberately excluded to keep review queues useful.
+/** Counts positive and negative descriptors used in sentences that mention the brand. */
+export function brandDescriptors(texts: string[], brandNames: string[]) {
+  const pos = new Map<string, number>();
+  const neg = new Map<string, number>();
+  for (const text of texts) {
+    for (const s of sentences(text)) {
+      if (firstIndex(s, brandNames) < 0) continue;
+      const lower = s.toLowerCase();
+      for (const w of POSITIVE) if (lower.includes(w)) pos.set(w, (pos.get(w) ?? 0) + 1);
+      for (const w of NEGATIVE) if (lower.includes(w)) neg.set(w, (neg.get(w) ?? 0) + 1);
+    }
+  }
+  const top = (m: Map<string, number>) => [...m.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8).map(([term, count]) => ({ term, count }));
+  return { strengths: top(pos), concerns: top(neg) };
+}
+
 const FACT_SIGNALS = /\b(founded|established|headquartered|headquarters|based in|located in|offices? in|owned by|acquired|ceo|founder|co-founder|certified|accredited|compliant|launched in|plans? start|starts? at|per month|per year|employees|staff of|years? of experience|since (?:19|20)\d{2})\b|\$\s?\d|\b(?:19|20)\d{2}\b|\b\d[\d,.]*\s?(?:%|percent|customers|clients|locations|offices|employees|people|countries|states|integrations)\b/i;
 
 /** Extracts brand-specific sentences that contain checkable statements. */

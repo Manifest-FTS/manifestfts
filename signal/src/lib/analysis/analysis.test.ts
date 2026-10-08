@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { analyzeAnswer, brandSentiment, collectCitations, domainMatches, extractClaims, matchFact, rankMentions } from './index';
+import { analyzeAnswer, brandDescriptors, brandSentiment, collectCitations, domainMatches, extractClaims, matchFact, rankMentions } from './index';
 import { summarize, wilson, isMeaningfulChange } from '@/lib/metrics';
 import { evaluateRobots, parseRobots } from '@/lib/readiness/robots';
 import { sampleAnswer } from '@/lib/providers/sample';
@@ -173,5 +173,13 @@ describe('claim specificity', () => {
   it('keeps prices, years, places, and counts', () => {
     const text = 'Acme plans start at $49 per month. Acme is headquartered in Denver. Acme serves 1,200 customers.';
     expect(extractClaims(text, ['Acme'])).toHaveLength(3);
+  });
+});
+
+describe('brandDescriptors', () => {
+  it('counts descriptors only in sentences about the brand', () => {
+    const r = brandDescriptors(['Acme is reliable and popular. Contoso is expensive.', 'Acme can be expensive for small teams.'], ['Acme']);
+    expect(r.strengths.map((x) => x.term)).toEqual(expect.arrayContaining(['reliable', 'popular']));
+    expect(r.concerns).toEqual([{ term: 'expensive', count: 1 }]);
   });
 });

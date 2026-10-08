@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Check, Eye, FileSearch, Layers, ListChecks, MessageSquareQuote, PieChart, ShieldCheck, Users } from 'lucide-react';
+import { Check, Eye, FileSearch, Layers, ListChecks, MessageSquareQuote, MousePointerClick, PenLine, PieChart, Plug, ShieldCheck, Users } from 'lucide-react';
 import { PageHero } from '@/components/marketing/page-hero';
 import { CtaBand } from '@/components/marketing/cta-band';
 import { JsonLd } from '@/components/json-ld';
@@ -13,7 +13,7 @@ export const metadata = pageMetadata({
   path: '/features',
 });
 
-const ICONS: Record<string, typeof Eye> = { visibility: Eye, answers: MessageSquareQuote, sources: Layers, accuracy: ShieldCheck, readiness: FileSearch, tasks: ListChecks, reports: PieChart, team: Users };
+const ICONS: Record<string, typeof Eye> = { visibility: Eye, answers: MessageSquareQuote, sources: Layers, accuracy: ShieldCheck, readiness: FileSearch, tasks: ListChecks, traffic: MousePointerClick, content: PenLine, integrations: Plug, reports: PieChart, team: Users };
 
 export default function FeaturesPage() {
   return (
@@ -37,7 +37,7 @@ export default function FeaturesPage() {
             <section key={f.id} id={f.id} aria-labelledby={`${f.id}-title`} className="grid scroll-mt-20 gap-10 py-16 sm:py-20 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
               <div>
                 <span className="grid size-11 place-items-center rounded-xl bg-accent-subtle text-accent"><Icon className="size-5" aria-hidden /></span>
-                <p className="mt-6 font-mono text-[12px] font-semibold text-fg-faint">0{i + 1}</p>
+                <p className="mt-6 font-mono text-[12px] font-semibold text-fg-faint">{String(i + 1).padStart(2, '0')}</p>
                 <h2 id={`${f.id}-title`} className="mt-1 text-[28px] font-semibold leading-tight tracking-[-0.03em] text-fg sm:text-[32px]">{f.title}</h2>
                 <p className="mt-4 max-w-lg text-[16.5px] leading-relaxed text-fg-muted">{f.summary}</p>
               </div>

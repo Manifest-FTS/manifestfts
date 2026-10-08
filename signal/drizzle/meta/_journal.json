@@ -15,6 +15,20 @@
       "when": 1791224022718,
       "tag": "0001_audit_crawlers",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791431288801,
+      "tag": "0002_geo_audit",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1791432232867,
+      "tag": "0003_addons",
+      "breakpoints": true
     }
   ]
 }

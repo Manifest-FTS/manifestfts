@@ -6,8 +6,8 @@ import { ArrowRight, Globe, RotateCcw } from 'lucide-react';
 import { Button, buttonClass } from '@/components/ui/button';
 import { Alert } from '@/components/ui/alert';
 import { Skeleton } from '@/components/ui/skeleton';
-import { ChecksList, CrawlerTable, ScoreRing, type CrawlerRow } from './report-view';
-import type { CheckResult } from '@/lib/db/schema';
+import { CrawlerAccessView, GeoReport } from './report-view';
+import type { AuditDetails, AuditSubscores, CheckResult, CrawlerAccess } from '@/lib/db/schema';
 import { track } from '@/lib/analytics';
 
 interface Report {
@@ -16,12 +16,15 @@ interface Report {
   score: number;
   durationMs: number;
   results: CheckResult[];
-  crawlers: CrawlerRow[];
+  crawlers: CrawlerAccess[];
+  subscores: AuditSubscores;
+  details: AuditDetails;
 }
 
 type State = { status: 'idle' } | { status: 'loading'; url: string } | { status: 'error'; message: string } | { status: 'done'; report: Report };
 
-export function ReadinessChecker() {
+/** Public GEO audit. In `embed` mode it renders compactly and links out to the full tool. */
+export function ReadinessChecker({ embed = false, focus = 'full' }: { embed?: boolean; focus?: 'full' | 'crawlers' }) {
   const params = useSearchParams();
   const [url, setUrl] = React.useState(params.get('url') ?? '');
   const [state, setState] = React.useState<State>({ status: 'idle' });
@@ -31,7 +34,7 @@ export function ReadinessChecker() {
   const run = React.useCallback(async (target: string) => {
     if (!target.trim()) return;
     setState({ status: 'loading', url: target });
-    track('readiness_check_run', { surface: 'public' });
+    track('readiness_check_run', { surface: embed ? 'embed' : 'public' });
     try {
       const res = await fetch('/api/tools/readiness', {
         method: 'POST',
@@ -55,7 +58,7 @@ export function ReadinessChecker() {
       });
     }
     requestAnimationFrame(() => resultsRef.current?.focus());
-  }, []);
+  }, [embed]);
 
   React.useEffect(() => {
     const initial = params.get('url');
@@ -78,7 +81,7 @@ export function ReadinessChecker() {
           e.preventDefault();
           const next = new URL(window.location.href);
           next.searchParams.set('url', url.trim());
-          window.history.replaceState(null, '', next);
+          if (!embed) window.history.replaceState(null, '', next);
           void run(url);
         }}
         className="flex flex-col gap-2.5 rounded-2xl border border-border bg-panel p-2.5 shadow-raised sm:flex-row"
@@ -99,14 +102,14 @@ export function ReadinessChecker() {
             className="h-12 w-full rounded-xl bg-transparent pl-10 pr-3 text-[15.5px] text-fg placeholder:text-fg-faint focus:outline-none"
           />
         </div>
-        <Button type="submit" size="lg" loading={state.status === 'loading'}>{state.status === 'loading' ? 'Checking…' : 'Check readiness'}</Button>
+        <Button type="submit" size="lg" loading={state.status === 'loading'}>{state.status === 'loading' ? 'Auditing…' : 'Run GEO audit'}</Button>
       </form>
-      <p className="mt-3 text-[13px] text-fg-faint">We fetch one public page plus robots.txt and llms.txt from our servers. Nothing is stored.</p>
+      <p className="mt-3 text-[13px] text-fg-faint">We fetch one public page plus robots.txt, llms.txt, and your sitemap from our servers. Results can take up to 30 seconds. Nothing is stored.</p>
 
       <div ref={resultsRef} tabIndex={-1} aria-live="polite" className="mt-10 outline-none">
         {state.status === 'loading' && (
           <div className="grid gap-4" aria-label="Running checks">
-            <p className="text-[14px] text-fg-muted">Fetching {state.url} and evaluating 16 checks…</p>
+            <p className="text-[14px] text-fg-muted">Fetching {state.url}, robots.txt, llms.txt, and the sitemap, then scoring six dimensions…</p>
             <Skeleton className="h-36" />
             <Skeleton className="h-64" />
           </div>
@@ -117,31 +120,40 @@ export function ReadinessChecker() {
           </Alert>
         )}
         {state.status === 'done' && counts && (
-          <div className="grid animate-rise gap-10">
-            <div className="flex flex-col gap-6 rounded-2xl border border-border bg-panel p-6 shadow-card sm:flex-row sm:items-center">
-              <ScoreRing score={state.report.score} />
-              <div className="min-w-0 flex-1">
-                <h2 className="text-[20px] font-semibold tracking-[-0.02em] text-fg">AI readiness for <span className="break-all font-mono text-[17px]">{new URL(state.report.finalUrl).host}</span></h2>
-                <p className="mt-1.5 text-[14px] text-fg-muted">{counts.fail} failing · {counts.warn} warnings · {counts.pass} passing · checked in {(state.report.durationMs / 1000).toFixed(1)}s</p>
-                <p className="mt-3 text-[13px] text-fg-faint">A strong score means the page is technically accessible and well described. It does not guarantee that any engine will cite it.</p>
-              </div>
-            </div>
+          <div className="grid animate-rise gap-8">
+            {focus === 'crawlers' ? (
+              <section className="rounded-2xl border border-border bg-panel p-6 shadow-card" aria-labelledby="robots-title">
+                <h2 id="robots-title" className="text-[18px] font-semibold text-fg">AI crawler access for <span className="break-all font-mono text-[16px]">{new URL(state.report.finalUrl).host}</span></h2>
+                <p className="mb-5 mt-1 text-[13.5px] text-fg-muted">Evaluated against robots.txt for <span className="font-mono">{new URL(state.report.finalUrl).pathname}</span> and the pages in your sitemap.</p>
+                <CrawlerAccessView crawlers={state.report.crawlers} />
+                {!embed && <p className="mt-5 text-[13px] text-fg-muted">Want the full picture? <a href={`/tools/ai-readiness-checker?url=${encodeURIComponent(state.report.finalUrl)}`} className="font-medium text-accent hover:underline">Run the complete GEO audit</a> or <Link href="/tools/robots-txt-generator" className="font-medium text-accent hover:underline">generate a robots.txt</Link>.</p>}
+              </section>
+            ) : (
+            <GeoReport
+              score={state.report.score}
+              subscores={state.report.subscores}
+              crawlers={state.report.crawlers}
+              details={state.report.details}
+              results={embed ? [] : state.report.results}
+              header={
+                <>
+                  <p className="mt-3 break-all font-mono text-[13px] text-fg-soft">{state.report.finalUrl}</p>
+                  <p className="mt-1 text-[12.5px] text-fg-faint">{counts.fail} failing · {counts.warn} warnings · {counts.pass} passing · {(state.report.durationMs / 1000).toFixed(1)}s. A strong score means the page is accessible and well described; it does not guarantee citation.</p>
+                </>
+              }
+            />
+            )}
             <div className="rounded-2xl border border-accent/25 bg-accent-subtle p-6 sm:flex sm:items-center sm:justify-between sm:gap-6">
               <div>
-                <p className="text-[15.5px] font-semibold text-fg">See what engines actually say about this site</p>
+                <p className="text-[15.5px] font-semibold text-fg">{embed ? 'Get the full report and track progress' : 'See what engines actually say about this site'}</p>
                 <p className="mt-1 text-[14px] text-fg-soft">Track answers, citations, and accuracy across ChatGPT, Perplexity, Gemini, and Claude. Failing checks become tasks automatically.</p>
               </div>
-              <Link href="/signup" onClick={() => track('signup_started', { label: 'checker_result' })} className={buttonClass({ className: 'mt-4 sm:mt-0' })}>Start free trial <ArrowRight aria-hidden /></Link>
+              {embed ? (
+                <a href={`/tools/ai-readiness-checker?url=${encodeURIComponent(state.report.finalUrl)}&utm_source=embed`} target="_blank" rel="noopener" className={buttonClass({ className: 'mt-4 sm:mt-0' })}>Open full report <ArrowRight aria-hidden /></a>
+              ) : (
+                <Link href="/signup" onClick={() => track('signup_started', { label: 'checker_result' })} className={buttonClass({ className: 'mt-4 sm:mt-0' })}>Start free trial <ArrowRight aria-hidden /></Link>
+              )}
             </div>
-            <section aria-labelledby="crawlers-title">
-              <h2 id="crawlers-title" className="text-[18px] font-semibold text-fg">AI crawler access</h2>
-              <p className="mt-1 mb-4 text-[14px] text-fg-muted">Evaluated against robots.txt for <span className="font-mono">{new URL(state.report.finalUrl).pathname}</span>. Retrieval crawlers power live answers; training crawlers are a policy choice.</p>
-              <CrawlerTable crawlers={state.report.crawlers} />
-            </section>
-            <section aria-labelledby="checks-title">
-              <h2 id="checks-title" className="mb-4 text-[18px] font-semibold text-fg">All checks</h2>
-              <ChecksList results={state.report.results} />
-            </section>
           </div>
         )}
       </div>

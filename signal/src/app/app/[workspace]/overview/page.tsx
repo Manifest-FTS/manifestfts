@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, FileSearch, Inbox, ListChecks, MessageSquareQuote, Users } from 'lucide-react';
 import { requireWorkspace } from '@/lib/workspace';
-import { accuracySummary, latestAudit, latestRun, openTasks, overviewData, parseFilters, workspaceTopics } from '@/lib/queries';
+import { accuracySummary, brandPerception, latestAudit, latestRun, openTasks, overviewData, parseFilters, workspaceTopics } from '@/lib/queries';
 import { PageHeader } from '@/components/app/page-header';
 import { FilterScope } from '@/components/app/filters';
 import { StatTile } from '@/components/app/stat-tile';
@@ -24,13 +24,14 @@ export default async function OverviewPage({ params, searchParams }: PageProps<'
   const sp = await searchParams;
   const { workspace } = await requireWorkspace(slug);
   const filters = parseFilters(sp);
-  const [data, topics, accuracy, tasks, run, audit] = await Promise.all([
+  const [data, topics, accuracy, tasks, run, audit, perception] = await Promise.all([
     overviewData(workspace, filters),
     workspaceTopics(workspace.id),
     accuracySummary(workspace.id),
     openTasks(workspace.id, 5),
     latestRun(workspace.id),
     latestAudit(workspace.id),
+    brandPerception(workspace, filters.days),
   ]);
   const base = `/app/${slug}`;
   const c = data.current;
@@ -138,6 +139,42 @@ export default async function OverviewPage({ params, searchParams }: PageProps<'
                 </CardBody>
               </Card>
             </div>
+
+            <Card>
+              <CardHeader title="Brand perception" description={`How engines describe ${workspace.brandName}, from ${perception.sampled} recent answers that mention you. Lexicon-based; open answers for context.`} />
+              <CardBody className="grid gap-6 pt-4 md:grid-cols-[1fr_1fr_1.1fr]">
+                <div>
+                  <p className="text-[12px] font-semibold uppercase tracking-wider text-fg-faint">Strengths engines mention</p>
+                  {perception.strengths.length ? (
+                    <ul className="mt-3 flex flex-wrap gap-1.5">{perception.strengths.map((d) => <li key={d.term}><Badge tone="success">{d.term}<span className="tabular opacity-70">×{d.count}</span></Badge></li>)}</ul>
+                  ) : <p className="mt-3 text-[13px] text-fg-muted">None detected yet.</p>}
+                </div>
+                <div>
+                  <p className="text-[12px] font-semibold uppercase tracking-wider text-fg-faint">Concerns engines raise</p>
+                  {perception.concerns.length ? (
+                    <ul className="mt-3 flex flex-wrap gap-1.5">{perception.concerns.map((d) => <li key={d.term}><Badge tone="danger">{d.term}<span className="tabular opacity-70">×{d.count}</span></Badge></li>)}</ul>
+                  ) : <p className="mt-3 text-[13px] text-fg-muted">No recurring concerns detected.</p>}
+                </div>
+                <div>
+                  <p className="text-[12px] font-semibold uppercase tracking-wider text-fg-faint">Tone of mentions</p>
+                  {c.positive.n ? (
+                    <>
+                      <div className="mt-3 flex h-2.5 overflow-hidden rounded-full" role="img" aria-label={`${pct(c.positive.value)} positive, ${pct(c.negative.value)} negative, remainder neutral`}>
+                        <div style={{ width: `${(c.positive.value ?? 0) * 100}%`, background: 'var(--success)' }} />
+                        <div className="border-x-2 border-panel" style={{ width: `${(1 - (c.positive.value ?? 0) - (c.negative.value ?? 0)) * 100}%`, background: 'var(--series-muted)' }} />
+                        <div style={{ width: `${(c.negative.value ?? 0) * 100}%`, background: 'var(--danger)' }} />
+                      </div>
+                      <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[12.5px] text-fg-muted">
+                        <li><strong className="font-semibold text-fg tabular">{pct(c.positive.value)}</strong> positive</li>
+                        <li><strong className="font-semibold text-fg tabular">{pct(1 - (c.positive.value ?? 0) - (c.negative.value ?? 0))}</strong> neutral</li>
+                        <li><strong className="font-semibold text-fg tabular">{pct(c.negative.value)}</strong> negative</li>
+                      </ul>
+                      <p className="mt-1 text-[11.5px] text-fg-faint">n={c.positive.n} mentions</p>
+                    </>
+                  ) : <p className="mt-3 text-[13px] text-fg-muted">No mentions in this period.</p>}
+                </div>
+              </CardBody>
+            </Card>
 
             <div className="grid gap-5 md:grid-cols-2">
               <Card className="flex items-center gap-5 p-5">

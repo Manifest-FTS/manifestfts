@@ -27,7 +27,7 @@ export const PLANS: PlanDef[] = [
     seats: 3,
     engines: ['chatgpt', 'perplexity', 'gemini'],
     cadence: 'weekly',
-    features: ['25 tracked prompts', '3 answer engines', 'Weekly observation runs', '3 competitors', 'Readiness audits', 'Evidence-linked task list', '3 seats'],
+    features: ['25 tracked prompts', '3 answer engines', 'Weekly observation runs', '3 competitors', 'GEO audits and evidence-linked tasks', 'AI traffic analytics', 'Content briefs', 'Slack, webhooks, and IndexNow', '3 seats'],
   },
   {
     id: 'growth',
@@ -40,7 +40,7 @@ export const PLANS: PlanDef[] = [
     engines: 'all',
     cadence: 'daily',
     highlight: true,
-    features: ['100 tracked prompts', 'All 6 answer engines', 'Daily observation runs', '6 competitors', 'Accuracy monitoring and fact sheet', 'Shareable reports', '10 seats'],
+    features: ['100 tracked prompts', 'All 6 answer engines', 'Daily observation runs', '6 competitors', 'Accuracy monitoring and fact sheet', 'AI-drafted pages from briefs', 'Shareable reports', '10 seats'],
   },
   {
     id: 'agency',
@@ -52,7 +52,7 @@ export const PLANS: PlanDef[] = [
     seats: null,
     engines: 'all',
     cadence: 'daily',
-    features: ['300 tracked prompts', 'All 6 answer engines', 'Daily observation runs', '10 competitors', 'Unlimited seats', 'Client-ready shared reports', 'Priority support from Manifest FTS'],
+    features: ['300 tracked prompts', 'All 6 answer engines', 'Daily observation runs', '10 competitors', 'White-label client reports', 'Unlimited seats', 'Priority support from Manifest FTS'],
   },
 ];
 

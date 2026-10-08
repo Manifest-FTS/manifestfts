@@ -1,3 +1,5 @@
+import { CRAWLERS } from '@/lib/readiness/crawlers';
+
 export interface Doc {
   slug: string;
   title: string;
@@ -206,44 +208,47 @@ Engines repeat what their sources say. Publish the correct information on an aut
   },
   {
     slug: 'readiness-checks',
-    title: 'AI readiness checks explained',
-    description: 'What each readiness check tests, which AI crawlers Signal evaluates in robots.txt, and how scores are calculated.',
+    title: 'GEO audit and AI readiness checks explained',
+    description: 'How the GEO audit scores citability, crawler access for 26 AI bots, brand entity, E-E-A-T, schema, and platform health, and what each check means.',
     category: 'Improving visibility',
-    updated: '2026-10-05',
+    updated: '2026-10-08',
     body: `
-The readiness audit fetches a page from Signal's servers and evaluates whether answer engines can access, understand, and attribute it. It runs on demand in the app and in the free [AI readiness checker](/tools/ai-readiness-checker).
+The GEO (generative engine optimization) audit fetches a page from Signal's servers and evaluates whether answer engines can discover, parse, trust, and cite it. It runs on demand in the app and in the free [GEO audit](/tools/ai-readiness-checker).
+
+## The composite GEO score
+
+The composite score (0–100) is a weighted average of six dimensions:
+
+| Dimension | Weight | What it measures |
+| --- | --- | --- |
+| Citability | 25% | Self-contained, fact-rich passages an engine can quote: 100–170 word sections, concrete facts, question-style headings, lists and tables |
+| Crawlers | 20% | Whether retrieval crawlers can reach the page and your sitemap pages; whether robots.txt is published |
+| Schema | 15% | Valid JSON-LD, an organization or product entity, content types such as FAQPage or Article, sameAs profiles |
+| E-E-A-T | 15% | Authorship, published and updated dates, About, Contact, and Privacy pages, outbound sources, HTTPS |
+| Platform | 15% | Indexability, response time, server-rendered text, canonical, title, description, Open Graph, language, sitemap, llms.txt |
+| Brand | 10% | Entity clarity: organization data, logo, sameAs, site name, brand in title, About and Contact links, official profiles |
+
+A high score means the page is technically accessible and well described. It does not guarantee that any engine will index, cite, or recommend it.
 
 ## Crawler access
 
-Signal parses robots.txt according to RFC 9309 and evaluates each crawler against the audited path. Crawlers are split into two groups because they have different consequences.
+Signal parses robots.txt according to RFC 9309 and evaluates each crawler against the audited path and against the pages your XML sitemap lists. Each crawler is **allowed**, **partial** (this page is allowed, but the crawler is blocked from at least one page in your sitemap), or **blocked**. Blocking private areas that are not in your sitemap, such as /admin or /api, is good hygiene and stays allowed.
+
+${CRAWLERS.length} crawlers are evaluated:
 
 | Crawler | Operator | Purpose | Group |
 | --- | --- | --- | --- |
-| OAI-SearchBot | OpenAI | ChatGPT search results and citations | Retrieval |
-| ChatGPT-User | OpenAI | Pages fetched when a user asks | Retrieval |
-| PerplexityBot | Perplexity | Perplexity answer index | Retrieval |
-| Claude-SearchBot | Anthropic | Claude search results | Retrieval |
-| Googlebot | Google | Google Search, including AI Overviews | Retrieval |
-| Bingbot | Microsoft | Bing index, which grounds Copilot | Retrieval |
-| GPTBot | OpenAI | Model training | Training |
-| ClaudeBot | Anthropic | Model training | Training |
-| Google-Extended | Google | Gemini training opt-out token | Training |
-| Applebot-Extended | Apple | Apple Intelligence training opt-out token | Training |
-| CCBot | Common Crawl | Open web corpus | Training |
+${CRAWLERS.map((c) => `| ${c.agent} | ${c.owner} | ${c.purpose} | ${c.kind === 'retrieval' ? 'Retrieval' : c.kind === 'training' ? 'Training' : 'Other'} |`).join('\n')}
 
 Blocking a **retrieval** crawler removes the page from that engine's live answers and is reported as a failure. Blocking a **training** crawler is a legitimate policy choice and is reported for information only.
 
-## Discovery, content, and schema
+## Priority issues
 
-The audit also checks for a sitemap declared in robots.txt, an optional llms.txt file, noindex directives, a canonical URL, a descriptive title and meta description, a single H1, the amount of readable text present without JavaScript, Open Graph metadata, valid JSON-LD, and an Organization, Product, or SoftwareApplication entity.
-
-## Scoring
-
-Each check is pass (1), warning (0.5), or fail (0). Informational checks are not scored. The score is the average of scored checks, from 0 to 100. A high score means the page is technically accessible and well described; it does not guarantee that any engine will index, cite, or recommend it.
+Failing checks are high priority and warnings are medium. Weak citation blocks (paragraphs that refer back to earlier text, lack concrete facts, or run very long) are listed with an excerpt so editors can rewrite them. In the app, failing and warning checks become tasks and close automatically when a later audit passes.
 
 ## Network and privacy
 
-The audit fetches only public http and https URLs on standard ports, refuses private and reserved network addresses, follows at most four redirects, and reads at most 1.5 MB of HTML. Requests identify as ManifestSignalBot.
+The audit fetches only public http and https URLs on standard ports, refuses private and reserved network addresses, follows at most four redirects, reads at most 1.5 MB of HTML per page, and waits up to 15 seconds for a response. Requests identify as ManifestSignalBot.
 `,
   },
   {
@@ -267,6 +272,76 @@ Each task records the evidence that created it and links back to it. You can als
 ## Reports
 
 A report captures a period's metrics, engine breakdown, top sources, accuracy status, and completed tasks as a fixed snapshot, so numbers do not shift after you share them. Add an executive summary in your own words. Reports can be printed or saved as PDF from the browser, and owners and admins can create a private share link for stakeholders without accounts. Share links can be revoked at any time.
+`,
+  },
+  {
+    slug: 'ai-traffic',
+    title: 'Measuring AI traffic',
+    description: 'Install the cookieless snippet to see visits from ChatGPT, Perplexity, Gemini, Claude, and Copilot, and which pages they land on.',
+    category: 'Measuring visibility',
+    updated: '2026-10-08',
+    body: `
+Visibility in answers matters because some people click through. The AI traffic view connects the two by recording landings that arrive from AI assistants.
+
+## Install the snippet
+
+Copy the snippet from **AI traffic** and add it to every page before the closing head tag. It records one landing per browser session.
+
+## What is collected
+
+The page path, the referrer, the utm_source parameter, and the page's host. No cookies are set, no IP addresses are stored, and browsers that send Global Privacy Control are skipped. Unique visitors are counted with a salted hash that changes every day, so visits cannot be linked across days. Only landings on your workspace domain and its subdomains are accepted.
+
+## How sources are classified
+
+Landings are attributed by referrer: chatgpt.com, perplexity.ai, gemini.google.com, claude.ai, copilot.microsoft.com, and other assistants. Some assistants strip the referrer; ChatGPT adds utm_source=chatgpt.com to links, which Signal also recognizes. Everything else is grouped as search, social, other websites, or direct.
+
+## Limits
+
+AI crawlers do not run JavaScript, so this measures people, not bot fetches. Visits with no referrer are counted as direct even when they began in an assistant's app, so AI traffic is a floor, not a total.
+`,
+  },
+  {
+    slug: 'content-studio',
+    title: 'Content studio: briefs and AI drafts',
+    description: 'Create evidence-based briefs for questions where engines leave you out, draft pages with Claude, and track them to publication.',
+    category: 'Improving visibility',
+    updated: '2026-10-08',
+    body: `
+The content studio turns a visibility gap into a page worth citing.
+
+## Briefs
+
+Create a brief from a tracked prompt or a custom question. Signal compiles how often you were named, which competitors were named instead, the sources engines cited for that question, your fact sheet, and a recommended structure: a direct opening answer, question-style sections of 100–170 words, proof and trust signals, and markup.
+
+## AI drafts
+
+On Growth and Agency plans, when AI drafting is enabled, Claude can write a first draft from the brief. Drafts use only the facts in the brief; anything else appears as a **[VERIFY: …]** placeholder that an editor must resolve. Treat every draft as a starting point for an expert, not a finished page.
+
+## Publishing and measuring
+
+Set the status as the page moves from brief to review to published, and record the live URL. Then run a readiness audit on it, submit it with IndexNow, and keep tracking the question to see whether mentions and citations change.
+`,
+  },
+  {
+    slug: 'integrations',
+    title: 'Integrations: Slack, webhooks, and IndexNow',
+    description: 'Send Signal events to Slack or your own systems with signed webhooks, and notify search engines of changed pages with IndexNow.',
+    category: 'Improving visibility',
+    updated: '2026-10-08',
+    body: `
+Configure integrations in **Settings → Integrations**. Admins and owners can change them.
+
+## Slack
+
+Create an incoming webhook in Slack for the channel you want, paste its URL, and send a test. Signal posts when runs complete or fail, when readiness audits finish, and when a claim is reviewed as inaccurate.
+
+## Webhooks
+
+Webhooks receive the same events as JSON: \`run.completed\`, \`run.failed\`, \`audit.completed\`, \`accuracy.inaccurate\`, and \`test\`. Each request includes an \`x-signal-event\` header and an \`x-signal-signature\` header containing \`sha256=\` followed by the HMAC-SHA256 of the raw request body, keyed with your signing secret. Compare signatures with a constant-time comparison and reject mismatches. Rotate the secret at any time.
+
+## IndexNow
+
+IndexNow lets you notify Bing and other participating engines that pages changed. Bing's index grounds Microsoft Copilot and contributes to ChatGPT search. Generate a key, publish it as a text file at the address shown, verify it, then submit changed URLs or your whole sitemap. Google does not participate in IndexNow; use your sitemap and Search Console for Google.
 `,
   },
   {

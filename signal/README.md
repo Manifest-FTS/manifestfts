@@ -22,8 +22,14 @@ Without `DATABASE_URL`, data lives in `./.data/pglite`. Without Mailjet, Stripe,
 - Add an hourly scheduled task: `curl -fsS -X POST -H "Authorization: Bearer $CRON_SECRET" https://<host>/api/cron`
 - The health check is at `/api/health`.
 
+## Features
+- **Measure:** prompts across ChatGPT, Perplexity, Gemini, Claude, AI Overviews, and Copilot (live or labeled sample data); sources; competitors and share of voice; brand perception; **AI traffic** from a cookieless snippet (`/t.js`).
+- **Improve:** **GEO audits** (composite score across citability, crawlers, brand, E-E-A-T, schema, and platform; 26 AI crawlers with allowed/partial/blocked), accuracy monitoring, evidence-linked tasks, and a **content studio** with evidence-based briefs and optional Claude drafts.
+- **Share and integrate:** reports with private links and **white-label branding** (Agency), Slack and HMAC-signed webhooks, **IndexNow**, and JSON export.
+- **Free tools** (`/tools`, embeddable at `/embed/[slug]`): GEO audit, AI robots.txt checker, ChatGPT/Perplexity/Gemini/Claude visibility checkers (live when engine keys are set), AI prompt, llms.txt, robots.txt, and schema generators, and structured data and sitemap validators.
+
 ## Structure
-- `src/app/(marketing)`: home, features, pricing, methodology, docs, free AI readiness checker, legal pages
+- `src/app/(marketing)`: home, features, pricing (with managed services), methodology, solutions, docs, free tools hub, legal pages
 - `src/app/(auth)`: sign up, sign in, password reset, email verification, invitations
 - `src/app/app`: onboarding, the workspace dashboard (overview, prompts, sources, competitors, accuracy, readiness, tasks, reports, settings), and the account page
 - `src/lib`: database schema, auth, analysis and metrics, readiness audits, providers (live and sample), pipeline, queries

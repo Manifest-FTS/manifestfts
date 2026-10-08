@@ -296,3 +296,12 @@ export async function taskCounts(workspaceId: string) {
   const rows = await db.select({ status: schema.tasks.status, count: sql<number>`count(*)::int` }).from(schema.tasks).where(eq(schema.tasks.workspaceId, workspaceId)).groupBy(schema.tasks.status);
   return Object.fromEntries(rows.map((r) => [r.status, r.count])) as Partial<Record<'todo' | 'in_progress' | 'done', number>>;
 }
+
+export async function brandPerception(workspace: Workspace, days: number) {
+  const { brandDescriptors } = await import('@/lib/analysis');
+  const db = await getDb();
+  const rows = await db.select({ text: schema.answers.text }).from(schema.answers)
+    .where(and(eq(schema.answers.workspaceId, workspace.id), eq(schema.answers.source, workspace.dataMode), eq(schema.answers.brandMentioned, true), gte(schema.answers.observedAt, new Date(Date.now() - days * 86400_000))))
+    .orderBy(desc(schema.answers.observedAt)).limit(300);
+  return { sampled: rows.length, ...brandDescriptors(rows.map((r) => r.text), [workspace.brandName, ...workspace.brandAliases]) };
+}

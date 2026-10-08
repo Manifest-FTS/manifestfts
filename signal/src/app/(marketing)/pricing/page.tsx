@@ -33,10 +33,15 @@ const ROWS: Row[] = [
   ['Competitors', PLANS.map((p) => String(p.competitors))],
   ['Seats', PLANS.map((p) => (p.seats ? String(p.seats) : 'Unlimited'))],
   ['Confidence intervals on every metric', [true, true, true]],
-  ['Readiness audits', [true, true, true]],
+  ['GEO audits with composite score', [true, true, true]],
   ['Evidence-linked tasks', [true, true, true]],
+  ['AI traffic analytics', [true, true, true]],
+  ['Content briefs', [true, true, true]],
+  ['AI-drafted pages', [false, true, true]],
   ['Accuracy monitoring', [false, true, true]],
   ['Shareable reports', [false, true, true]],
+  ['White-label reports', [false, false, true]],
+  ['Slack, webhooks, and IndexNow', [true, true, true]],
   ['JSON export', [true, true, true]],
   ['Priority support from Manifest FTS', [false, false, true]],
 ];
@@ -101,6 +106,36 @@ export default function PricingPage() {
               ))}
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="managed-title" className="container-page pb-20">
+        <div className="overflow-hidden rounded-3xl border border-border bg-panel shadow-card lg:grid lg:grid-cols-[1.1fr_1fr]">
+          <div className="p-8 sm:p-10">
+            <p className="eyebrow">Managed AEO by Manifest FTS</p>
+            <h2 id="managed-title" className="mt-3 text-[28px] font-semibold tracking-[-0.03em] text-fg sm:text-[32px]">Prefer done-for-you? We ship the fixes.</h2>
+            <p className="mt-3 text-[15.5px] leading-relaxed text-fg-muted">Add a managed program to any plan. Manifest FTS’s engineers and editors execute the work Signal recommends, and Signal measures the result with the same confidence intervals you see in the app.</p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              <Link href="/contact?topic=services" className={buttonClass()}>Book a strategy call</Link>
+              <Link href="/tools/ai-readiness-checker" className={buttonClass({ variant: 'secondary' })}>Start with a free GEO audit</Link>
+            </div>
+            <p className="mt-4 text-[13px] text-fg-faint">Scoped and quoted per engagement. No guarantees of rankings, citations, or traffic; we report what changes and how confident we are.</p>
+          </div>
+          <ul className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            {[
+              ['Answer-ready content', 'Pages and comparisons written to the briefs Signal generates, reviewed for accuracy.'],
+              ['Technical AEO', 'Crawler access, schema and entity markup, internal linking, sitemaps, IndexNow.'],
+              ['Source and authority building', 'Accurate listings and coverage on the third-party sites engines cite; digital PR.'],
+              ['Community presence', 'Guidance and participation plans for Reddit, Quora, and forums engines rely on, done transparently.'],
+              ['Strategy and reporting', 'A named strategist, written monthly reports, and a shared Slack channel.'],
+              ['Platform engineering', 'Site migrations, server rendering, and performance work by the Manifest FTS engineering team.'],
+            ].map(([t, d]) => (
+              <li key={t} className="bg-panel p-6">
+                <h3 className="text-[15px] font-semibold text-fg">{t}</h3>
+                <p className="mt-1.5 text-[13.5px] leading-relaxed text-fg-muted">{d}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

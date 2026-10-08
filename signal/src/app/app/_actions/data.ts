@@ -6,7 +6,7 @@ import { schema } from '@/lib/db';
 import { authorize, isReadOnly, logActivity } from '@/lib/workspace';
 import { limitsFor } from '@/lib/plans';
 import { newId, normalizeDomain } from '@/lib/utils';
-import { generateInsightTasks, syncAuditTasks } from '@/lib/pipeline';
+import { generateInsightTasks, saveAudit } from '@/lib/pipeline';
 import { runReadinessAudit, UnsafeUrlError } from '@/lib/readiness';
 import { rateLimit } from '@/lib/rate-limit';
 import type { ActionState } from './workspace';
@@ -136,7 +136,12 @@ export async function reviewClaim(input: z.input<typeof reviewSchema>): Promise<
   await auth.db.update(schema.claims)
     .set({ status: parsed.data.status, note: parsed.data.note ?? null, reviewedById: reviewed ? auth.user.id : null, reviewedAt: reviewed ? new Date() : null })
     .where(and(eq(schema.claims.id, parsed.data.claimId), eq(schema.claims.workspaceId, parsed.data.workspaceId)));
-  if (parsed.data.status === 'inaccurate') await generateInsightTasks(parsed.data.workspaceId);
+  if (parsed.data.status === 'inaccurate') {
+    await generateInsightTasks(parsed.data.workspaceId);
+    const { dispatchEvent } = await import('@/lib/integrations');
+    const [claim] = await auth.db.select({ text: schema.claims.text }).from(schema.claims).where(eq(schema.claims.id, parsed.data.claimId));
+    await dispatchEvent(auth.workspace, 'accuracy.inaccurate', { title: 'Inaccurate claim flagged', text: `“${claim?.text ?? ''}”${parsed.data.note ? `\nNote: ${parsed.data.note}` : ''}`, path: `/app/${auth.workspace.slug}/accuracy?status=inaccurate`, data: { claimId: parsed.data.claimId } });
+  }
   refresh(auth.workspace.slug);
   return { ok: true };
 }
@@ -209,9 +214,7 @@ export async function runAudit(_: ActionState, formData: FormData): Promise<Acti
   if (!(await rateLimit(`audit:${workspaceId}`, 30, 3600)).ok) return { error: 'Audit limit reached for this hour. Try again shortly.' };
   try {
     const report = await runReadinessAudit(url);
-    const auditId = newId('aud');
-    await auth.db.insert(schema.audits).values({ id: auditId, workspaceId, url: report.finalUrl, score: report.score, results: report.results, crawlers: report.crawlers, durationMs: report.durationMs });
-    await syncAuditTasks(workspaceId, auditId, report.results);
+    await saveAudit(workspaceId, report);
     await logActivity(workspaceId, auth.user.id, 'audit.run', report.finalUrl);
     refresh(auth.workspace.slug);
     return { ok: true, message: `Audit complete: score ${report.score}.` };

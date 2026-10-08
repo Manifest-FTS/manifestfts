@@ -1,6 +1,7 @@
 'use client';
 import * as React from 'react';
 import { Table2 } from 'lucide-react';
+import { niceStep } from '@/lib/chart-scale';
 
 export interface Series {
   id: string;
@@ -15,6 +16,8 @@ interface Props {
   labels: string[];
   series: Series[];
   format?: (v: number) => string;
+  /** Serializable alternative to `format` for use from server components. */
+  valueFormat?: 'percent' | 'count';
   max?: number;
   height?: number;
   description?: string;
@@ -22,18 +25,14 @@ interface Props {
 
 const PAD = { top: 12, right: 12, bottom: 26, left: 40 };
 
-function niceMax(v: number) {
-  if (v <= 0) return 1;
-  const pow = 10 ** Math.floor(Math.log10(v));
-  const n = v / pow;
-  return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 2.5 ? 2.5 : n <= 5 ? 5 : 10) * pow;
-}
-
 /**
  * Multi-series line chart: 2px lines, hairline grid, crosshair + one tooltip listing every
  * series, keyboard-navigable points, a legend for 2+ series, and a table view.
  */
-export function LineChart({ title, labels, series, format = (v) => `${Math.round(v * 100)}%`, max, height = 240, description }: Props) {
+const FORMATS = { percent: (v: number) => `${Math.round(v * 100)}%`, count: (v: number) => Math.round(v).toLocaleString() };
+
+export function LineChart({ title, labels, series, format: formatProp, valueFormat = 'percent', max, height = 240, description }: Props) {
+  const format = formatProp ?? FORMATS[valueFormat];
   const ref = React.useRef<HTMLDivElement>(null);
   const [width, setWidth] = React.useState(640);
   const [active, setActive] = React.useState<number | null>(null);
@@ -48,12 +47,13 @@ export function LineChart({ title, labels, series, format = (v) => `${Math.round
   }, []);
 
   const all = series.flatMap((s) => s.values.filter((v): v is number => v !== null));
-  const top = max ?? niceMax(Math.max(...all, 0.0001));
+  const step = max !== undefined ? max / 4 : niceStep(Math.max(...all, 0.0001) / 4, valueFormat === 'count');
+  const top = max ?? step * 4;
   const innerW = width - PAD.left - PAD.right;
   const innerH = height - PAD.top - PAD.bottom;
   const x = (i: number) => PAD.left + (labels.length <= 1 ? innerW / 2 : (i / (labels.length - 1)) * innerW);
   const y = (v: number) => PAD.top + innerH - (v / top) * innerH;
-  const ticks = [0, 0.25, 0.5, 0.75, 1].map((t) => t * top);
+  const ticks = [0, 1, 2, 3, 4].map((i) => i * step);
   const labelEvery = Math.ceil(labels.length / Math.max(2, Math.floor(innerW / 70)));
 
   const pathFor = (values: (number | null)[]) => {
@@ -139,7 +139,7 @@ export function LineChart({ title, labels, series, format = (v) => `${Math.round
                 <text x={PAD.left - 8} y={y(t)} dy="0.32em" textAnchor="end" className="fill-fg-faint text-[11px] tabular">{format(t)}</text>
               </g>
             ))}
-            {labels.map((l, i) => (i % labelEvery === 0 || i === labels.length - 1) && (
+            {labels.map((l, i) => (labels.length - 1 - i) % labelEvery === 0 && (
               <text key={l} x={x(i)} y={height - 6} textAnchor="middle" className="fill-fg-faint text-[11px]">{l}</text>
             ))}
             {series.length === 1 && (

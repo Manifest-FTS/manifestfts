@@ -1,4 +1,4 @@
-import { BookOpen, FileSearch, Gauge, Layers, ListChecks, MessageSquareQuote, PieChart, Settings, ShieldCheck, Swords } from 'lucide-react';
+import { BookOpen, FileSearch, Gauge, Layers, ListChecks, MessageSquareQuote, MousePointerClick, PenLine, PieChart, Settings, ShieldCheck, Swords } from 'lucide-react';
 
 export const NAV_GROUPS = [
   { label: null, items: [{ href: 'overview', label: 'Overview', icon: Gauge }] },
@@ -8,6 +8,7 @@ export const NAV_GROUPS = [
       { href: 'prompts', label: 'Prompts', icon: MessageSquareQuote },
       { href: 'sources', label: 'Sources', icon: Layers },
       { href: 'competitors', label: 'Competitors', icon: Swords },
+      { href: 'traffic', label: 'AI traffic', icon: MousePointerClick },
     ],
   },
   {
@@ -15,6 +16,7 @@ export const NAV_GROUPS = [
     items: [
       { href: 'accuracy', label: 'Accuracy', icon: ShieldCheck },
       { href: 'readiness', label: 'Readiness', icon: FileSearch },
+      { href: 'content', label: 'Content studio', icon: PenLine },
       { href: 'tasks', label: 'Tasks', icon: ListChecks },
     ],
   },
