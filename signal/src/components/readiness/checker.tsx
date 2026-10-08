@@ -33,12 +33,26 @@ export function ReadinessChecker() {
     setState({ status: 'loading', url: target });
     track('readiness_check_run', { surface: 'public' });
     try {
-      const res = await fetch('/api/tools/readiness', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ url: target }) });
-      const data = await res.json();
-      if (!res.ok) setState({ status: 'error', message: data.error ?? 'Something went wrong. Please try again.' });
+      const res = await fetch('/api/tools/readiness', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ url: target }),
+        signal: AbortSignal.timeout(45_000),
+      });
+      const data = await res.json().catch(() => null);
+      if (!data) setState({ status: 'error', message: `The server returned an unexpected response (HTTP ${res.status}). Please try again in a moment.` });
+      else if (!res.ok) setState({ status: 'error', message: data.error ?? 'Something went wrong. Please try again.' });
       else setState({ status: 'done', report: data });
-    } catch {
-      setState({ status: 'error', message: 'Network error. Check your connection and try again.' });
+    } catch (error) {
+      const timedOut = error instanceof DOMException && error.name === 'TimeoutError';
+      setState({
+        status: 'error',
+        message: timedOut
+          ? 'The check took too long. The site may be slow to respond; try again or check a specific page.'
+          : navigator.onLine === false
+            ? 'You appear to be offline. Check your connection and try again.'
+            : 'We couldn’t reach the Signal server. Refresh the page and try again.',
+      });
     }
     requestAnimationFrame(() => resultsRef.current?.focus());
   }, []);

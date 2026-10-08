@@ -8,6 +8,16 @@ import { isSameOrigin } from '@/lib/same-origin';
 const body = z.object({ url: z.string().trim().min(3).max(2048) });
 
 export async function POST(request: Request) {
+  try {
+    return await handle(request);
+  } catch (error) {
+    // Always answer in JSON so the checker can show a useful message instead of a generic failure.
+    console.error('[readiness] unexpected error:', error);
+    return NextResponse.json({ error: 'Something went wrong on our side while running the check. Please try again.' }, { status: 500 });
+  }
+}
+
+async function handle(request: Request) {
   // Same-origin only: this endpoint makes outbound requests on the caller's behalf.
   if (!isSameOrigin(request)) {
     return NextResponse.json({ error: 'Cross-origin requests are not allowed.' }, { status: 403 });
@@ -16,7 +26,8 @@ export async function POST(request: Request) {
   if (!parsed.success) return NextResponse.json({ error: 'Enter a website address to check.' }, { status: 400 });
 
   const { ip } = await clientInfo();
-  const limit = await rateLimit(`readiness:${ip}`, 10, 3600);
+  // Public, unauthenticated tool: limit per IP in production; unlimited locally so testing isn't blocked.
+  const limit = process.env.NODE_ENV === 'production' ? await rateLimit(`readiness:${ip}`, 20, 3600) : { ok: true, retryAfter: 0 };
   if (!limit.ok) {
     return NextResponse.json({ error: `You have run several checks recently. Try again in ${Math.ceil(limit.retryAfter / 60)} minutes, or start a free trial for unlimited audits.` }, { status: 429, headers: { 'Retry-After': String(limit.retryAfter) } });
   }
