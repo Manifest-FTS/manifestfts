@@ -3,13 +3,13 @@ import { z } from 'zod';
 import { runReadinessAudit, UnsafeUrlError } from '@/lib/readiness';
 import { rateLimit } from '@/lib/rate-limit';
 import { clientInfo } from '@/lib/auth/session';
+import { isSameOrigin } from '@/lib/same-origin';
 
 const body = z.object({ url: z.string().trim().min(3).max(2048) });
 
 export async function POST(request: Request) {
   // Same-origin only: this endpoint makes outbound requests on the caller's behalf.
-  const origin = request.headers.get('origin');
-  if (origin && new URL(origin).host !== new URL(request.url).host && origin !== process.env.NEXT_PUBLIC_SITE_URL) {
+  if (!isSameOrigin(request)) {
     return NextResponse.json({ error: 'Cross-origin requests are not allowed.' }, { status: 403 });
   }
   const parsed = body.safeParse(await request.json().catch(() => null));
