@@ -1,314 +1,67 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/no-unescaped-entities */
-import dynamic from "next/dynamic";
-import Link from "next/link";
-import MuxPlayer from "@mux/mux-player-react";
-import { useState } from "react";
-import { motion } from "framer-motion";
-import "react-modal-video/css/modal-video.css";
-import FormProject from "../components/form-project/FormProject";
-import Testimonials from "../components/testimonials";
-import Layout from "../components/layout/Layout";
-// Note: The original GSAP animation has been replaced by Framer Motion.
-// If you still need GSAP for other purposes, you can import it separately.
+import Link from 'next/link';
+import Image from 'next/image';
+import Layout from '../components/layout/Layout';
+import { Button, SectionIntro, SignalPreview, Tag } from '../components/manifest-site';
+import { services, stories } from '../data/manifestSiteContent';
 
-const ModalVideo = dynamic(import("react-modal-video"), {
-  ssr: false,
-});
+const pillars = [
+  { icon: '⌁', title: 'Data trust & resilient infrastructure', body: 'Secure access, clear ownership, recoverable data, and infrastructure that is maintained with care. We make operational responsibilities visible instead of hiding them behind a hosting plan.' },
+  { icon: '◇', title: 'Appropriate, sustainable technology', body: 'We select tools to fit the real problem, the team that will run them, and the cost of change. That means fewer unnecessary dependencies and platforms built for measured evolution.' },
+  { icon: '↗', title: 'Continuous partnership', body: 'Roadmaps keep moving after launch. A consistent engineering partner helps prioritize improvements, resolve technical issues, and manage the steady work that keeps digital products useful.' },
+];
 
-function Index3() {
-  const [isOpen, setOpen] = useState(false);
-
-  return (
-    <Layout>
-        <section
-          id="home-hero"
-          className="section-box position-relative overflow-hidden"
-        >
-          <div className="flex brand-video-copy">
-            <h1 className="text-3xl md:text-7xl font-bold">
-              Forward Thinking Solutions
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-bold text-white max-w-4xl">
-              Your design, development, and technology partner — building and supporting applications and digital platforms as your business grows.
-            </h2>
-            <div className="text-body-lead-medium mt-30">
-              <a className="play-reel" onClick={() => setOpen(true)}>
-                <img
-                  width="55"
-                  height="55"
-                  src="/assets/imgs/SVG/icon-video-play.svg"
-                  alt="Play reel"
-                />
-                <div className="text-body-small text-bold">PLAY REEL</div>
-              </a>
-            </div>
+export default function Home() {
+  const featured = stories.slice(0, 2);
+  return <Layout>
+    <div className="mfts-site">
+      <section className="mf-hero">
+        <div className="mf-container mf-hero__layout">
+          <div>
+            <p className="mf-eyebrow"><span className="mf-dot" /> TRUSTED TECHNOLOGY PARTNER · EST. DIGITAL PARTNERSHIP</p>
+            <h1>Technology that holds up as your organization grows.</h1>
+            <p className="mf-hero__copy">Manifest FTS designs, builds, and supports durable digital platforms. We bring product thinking and engineering together—and stay accountable for the systems we put into the world.</p>
+            <div className="mf-hero__actions"><Button href="/contact">Tell us what you’re working on <span aria-hidden="true">↗</span></Button><Button href="/services" variant="secondary">Explore our services</Button></div>
+            <div className="mf-hero__micro"><span><i className="mf-dot" /> PRACTICAL BY DEFAULT</span><span>SECURITY IN THE DELIVERY PLAN</span><span>PARTNER AFTER LAUNCH</span></div>
           </div>
-        </section>
-
-      {/* Partners Section */}
-      {/* <div className="my-20 overflow-visible">
-        <div className="max-w-7xl mx-auto px-5">
-          <h2 className="text-center text-lg font-semibold text-gray-900 mb-16">
-            emPowered by the Best Software on Earth
-          </h2>
-          <div className="flex flex-wrap justify-center gap-12">
-            {[
-              { href: "/#", alt: "Adobe", src: "/assets/imgs/logos/adobe.svg" },
-              { href: "/#", alt: "Figma", src: "/assets/imgs/logos/figma.svg" },
-              { href: "/#", alt: "Netlify CMS", src: "/assets/imgs/logos/netlifycms.svg" },
-              { href: "/#", alt: "Wordpress", src: "/assets/imgs/logos/wordpress.svg" },
-              { href: "/#", alt: "Strapi", src: "/assets/imgs/logos/strapi.svg" },
-              { href: "/#", alt: "Sanity", src: "/assets/imgs/logos/sanity.svg" },
-              { href: "/#", alt: "React.js", src: "/assets/imgs/logos/reactjs.svg" },
-              { href: "/#", alt: "Next.js", src: "/assets/imgs/logos/nextjs.svg" },
-              { href: "/#", alt: "TailwindCSS", src: "/assets/imgs/logos/tailwindcss.svg" },
-              { href: "/#", alt: "HTML5", src: "/assets/imgs/logos/html5.svg" },
-              { href: "/#", alt: "Bootstrap", src: "/assets/imgs/logos/bootstrap.svg" },
-              { href: "/#", alt: "Netlify", src: "/assets/imgs/logos/netlify.svg" },
-              { href: "/#", alt: "Vercel", src: "/assets/imgs/logos/vercel.svg" },
-              { href: "/#", alt: "Heroku", src: "/assets/imgs/logos/heroku.svg" },
-              { href: "/#", alt: "Pantheon", src: "/assets/imgs/logos/pantheon.svg" },
-            ].map((partner, index) => (
-              <Link key={index} href={partner.href}>
-                <a className="transition transform hover:-translate-y-1 hover:shadow-lg">
-                  <img alt={partner.alt} src={partner.src} className="mx-auto" />
-                </a>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div> */}
-
-      {/* Work Section */}
-      <section className="py-8">
-        <div className="max-w-7xl mx-auto px-4 mt-16 md:mt-[120px] flex flex-wrap">
-          {/* Image Column */}
-          <div className="w-full lg:w-1/2 px-4">
-            <motion.img
-              src="/assets/imgs/work/work-ncwf.jpg"
-              alt="Barclay Rex website on laptop"
-              className="rounded-lg w-full"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            />
-          </div>
-          {/* Content Column */}
-          <div className="w-full lg:w-1/2 px-4 justify-center">
-            {/* <span className="bg-emerald-100 text-green-900 px-4 py-2 rounded-full">
-              Case Study
-            </span> */}
-
-            <h3 className="mt-9 text-5xl font-bold text-gray-900">
-              NC Waterfalls
-            </h3>
-
-            <p className="text-xl text-gray-600 my-4">
-              Building a living archive for North Carolina’s waterfalls — 
-              transforming decades of fieldwork into enduring digital infrastructure.
-            </p>
-
-            <div className="flex items-center mt-8 space-x-4">
-              <Link href="/case-study/nc-waterfalls" passHref>
-                <a
-                  className="inline-flex items-center text-gray-900 border bg-gray-100 px-6 py-3 rounded-full transition hover:bg-gray-200"
-                  onClick={() => {
-                    if (typeof window !== "undefined" && window.dataLayer) {
-                      window.dataLayer.push({
-                        event: "case_study_click",
-                        case_study: "nc_waterfalls",
-                        location: "homepage_feature"
-                      });
-                    }
-                  }}
-                >
-                  View Case Study
-                </a>
-              </Link>
-
-              <a
-                href="https://www.ncwaterfalls.com?utm_source=manifestfts&utm_medium=homepage&utm_campaign=nc_waterfalls_feature"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center bg-white text-gray-900 border border-gray-300 hover:bg-gray-100 px-6 py-3 rounded-full transition"
-                onClick={() => {
-                  if (typeof window !== "undefined" && window.dataLayer) {
-                    window.dataLayer.push({
-                      event: "external_project_click",
-                      project: "nc_waterfalls",
-                      location: "homepage_feature"
-                    });
-                  }
-                }}
-              >
-                Visit Website
-              </a>
-            </div>
-            <div className="mt-12">
-              <h2 className="text-center text-sm font-semibold text-gray-900 mb-4">
-                Powered by
-              </h2>
-              <div className="flex justify-center gap-6">
-                {[
-                  { href: "/#", alt: "Adobe", src: "/assets/imgs/logos/figma.svg" },
-                  { href: "/#", alt: "Strapi CMS", src: "/assets/imgs/logos/sanity.svg" },
-                  { href: "/#", alt: "Next.js", src: "/assets/imgs/logos/nextjs.svg" },
-                  { href: "/#", alt: "Bootstrap", src: "/assets/imgs/logos/vercel.svg" },
-                ].map((partner, index) => (
-                  <Link key={index} href={partner.href}>
-                    <a className="transition transform hover:-translate-y-1 hover:shadow-lg">
-                      <img alt={partner.alt} src={partner.src} className="mx-auto" />
-                    </a>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-          
-
+          <SignalPreview />
         </div>
       </section>
 
-      {/* JoyFeed Case Study Section */}
-      <section className="py-8 hidden">
-        <div className="max-w-7xl mx-auto px-4 mt-8 md:mt-16 flex flex-wrap items-center">
-          {/* Content Column (left on desktop) */}
-          <div className="w-full lg:w-1/2 px-4 order-2 lg:order-1">
-            <h3 className="mt-9 text-5xl font-bold text-gray-900">JoyFeed</h3>
+      <section className="mfts-site mf-trustbar" aria-label="Selected client partnerships">
+        <div className="mf-container"><span className="mf-trustbar__label">Trusted by teams building useful things</span><div className="mf-trustbar__text"><span>NC Waterfalls</span><span>Barclay Rex</span><span>Garden State Equality</span><span>Community Coalition on Race</span></div></div>
+      </section>
 
-            <p className="text-xl text-gray-600 my-4">
-              A restorative social wellness platform designed around positive content,
-              meaningful engagement, and a persistent BLS ambient audio layer.
-            </p>
-
-            <div className="flex items-center mt-8 space-x-4">
-              {/* JoyFeed case study link intentionally stubbed until publish-ready */}
-              <span className="inline-flex items-center text-gray-500 border bg-gray-100 px-6 py-3 rounded-full cursor-not-allowed">
-                Case Study Coming Soon
-              </span>
-            </div>
-          </div>
-
-          {/* Image Column (right on desktop, top on mobile) */}
-          <div className="w-full lg:w-1/2 px-4 order-1 lg:order-2">
-            <motion.img
-              src="/assets/imgs/work/work-ozone.png"
-              alt="JoyFeed product preview"
-              className="rounded-lg w-full"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            />
-          </div>
+      <section className="mfts-site mf-section">
+        <div className="mf-container">
+          <SectionIntro eyebrow="A PARTNER FOR THE WHOLE SYSTEM" title="Good technology is useful, understandable, and cared for." copy="We help ambitious organizations make sound decisions about their digital products, platform architecture, data, and the people who depend on them." />
+          <div className="mf-grid-3">{pillars.map((pillar, index) => <article className="mf-card mf-pillar" key={pillar.title}><span className="mf-pillar__icon" aria-hidden="true">{pillar.icon}</span><p className="mf-eyebrow">0{index + 1} / MANIFEST PRINCIPLE</p><h3>{pillar.title}</h3><p>{pillar.body}</p></article>)}</div>
         </div>
       </section>
 
-      {/* Call-to-Action Section */}
-      <section className="py-[60px] mt-[70px] bg-teal-800">
-        <div className="flex justify-center items-center space-x-5">
-          <Link href="/#contact-us" passHref>
-            <a className="inline-flex items-center font-bold bg-black text-white transition px-6 py-3 rounded-full cursor-pointer">
-              Contact Us
-            </a>
-          </Link>
-          <Link href="/work" passHref>
-            <a className="inline-flex items-center font-bold bg-white text-gray-900 border border-gray-300 transition px-6 py-3 rounded-full cursor-pointer">
-              Our Work
-            </a>
-          </Link>
+      <section className="mfts-site mf-section mf-section--soft">
+        <div className="mf-container">
+          <SectionIntro eyebrow="WHAT WE DO" title="From the first product decision to the work that follows." copy="One engineering-led team can connect discovery, design, development, infrastructure, and ongoing improvement." action={<Button href="/services" variant="secondary">See all services ↗</Button>} />
+          <div className="mf-grid-4">{services.map((service) => <Link href={`/services#${service.id}`} key={service.id} legacyBehavior><a className="mf-card mf-service-card"><span className="mf-service-card__num">{service.number} / DISCIPLINE</span><h3>{service.title}</h3><p>{service.summary}</p><span className="mf-service-card__link">Explore capability ↗</span></a></Link>)}</div>
         </div>
       </section>
 
-      {/* CMS Recommendation Section */}
-      <section className="py-8">
-        <div className="max-w-7xl mx-auto px-4 mt-16">
-          <div className="flex justify-center px-4">
-            <span className="bg-emerald-100 text-green-900 mr-5 px-4 py-2 rounded-full">
-              Software Solutions
-            </span>
-          </div>
-          <h2 className="text-center text-5xl font-bold text-gray-900 mb-4">
-            Why we recommend Sanity CMS
-            <br />
-            for modern content teams
-          </h2>
-          <p className="mt-8 text-2xl text-gray-600 text-center max-w-3xl mx-auto">
-            Sanity is not our product — it is a platform we love implementing for clients who need flexible, scalable, and future-ready content operations. We design the system around your team so publishing is easier now and growth is cleaner later.
-          </p>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 mt-12">
-          <div className="flex justify-center">
-            <div className="w-full lg:w-10/12">
-              <div className="rounded-lg shadow-lg overflow-hidden img-responsive bdrd-16 effect-1">
-                <MuxPlayer
-                  streamType="on-demand"
-                  playbackId="xVEspFYOw6gtvRjEMk8xFnrjXtJ3YqGzajrvtjdV1cU"
-                  metadataVideoTitle=""
-                  metadataViewerUserId=""
-                  primaryColor="#FFFFFF"
-                  secondaryColor="#000000"
-                  autoPlay={true}
-                  loop={true}
-                  muted={true}
-                  className="w-full h-full"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 mt-10">
-          <div className="flex flex-wrap">
-            <div className="w-full lg:w-1/3 px-4 mt-12">
-              <h4 className="text-2xl font-semibold">
-                Real-Time Collaboration
-              </h4>
-              <p className="mt-4 text-lg text-gray-600">
-                Track changes with live multi-user editing, visual cues, and communication tools.
-              </p>
-            </div>
-            <div className="w-full lg:w-1/3 px-4 mt-12">
-              <h4 className="text-2xl font-semibold">
-                Content First Experience
-              </h4>
-              <p className="mt-4 text-lg text-gray-600">
-                An intuitive administrative interface that lets you edit content without software hassles.
-              </p>
-            </div>
-            <div className="w-full lg:w-1/3 px-4 mt-12">
-              <h4 className="text-2xl font-semibold">Powerful Solution</h4>
-              <p className="mt-4 text-lg text-gray-600">
-                Its powerful API allows dynamic relational systems and ecommerce platforms to come to life.
-              </p>
-            </div>
-          </div>
-          <div className="flex justify-center mt-9 font-bold">
-            <Link href="/case-study/sanity-cms">
-              <a className="inline-flex items-center bg-black text-white transition px-6 py-3 rounded-full hover:bg-gray-800">
-                Read Sanity CMS Case Study
-              </a>
-            </Link>
-          </div>
+      <section className="mfts-site mf-section">
+        <div className="mf-container">
+          <SectionIntro eyebrow="SELECTED CLIENT STORIES" title="Durable work, shaped around real needs." copy="We measure what can be verified and say plainly when a result is qualitative, historical, or still unknown." action={<Button href="/work" variant="secondary">Explore client stories ↗</Button>} />
+          <div className="mf-grid-2">{featured.map((story) => <Link href={story.href} key={story.slug} legacyBehavior><a className="mf-card mf-story-card"><Image className="mf-story-card__image" src={story.image} alt={story.alt} width={900} height={500} /><div className="mf-story-card__body"><Tag tone="info">{story.category}</Tag><h3>{story.name}</h3><p>{story.summary}</p><div className="mf-stat-row">{story.metrics.slice(0,2).map((metric) => <span className="mf-stat" key={metric.label}><strong>{metric.value}</strong><small>{metric.label}</small></span>)}</div><p className="mf-form-note" style={{marginTop:12}}>{story.note}</p></div></a></Link>)}</div>
         </div>
       </section>
 
-      <Testimonials />
+      <section className="mfts-site mf-section mf-section--soft">
+        <div className="mf-container mf-grid-2" style={{alignItems:'center'}}>
+          <div><p className="mf-eyebrow">A PRACTICAL WAY TO WORK TOGETHER</p><h2 className="mf-title">One-time build or ongoing technology partner?</h2><p className="mf-lede">Some needs call for a clear project. Others need a steady engineering relationship. We help you choose a sensible starting point, define ownership, and make room for what changes next.</p><div className="mf-hero__actions"><Button href="/contact">Find the right engagement <span aria-hidden="true">↗</span></Button><Button href="/capabilities" variant="secondary">How the retainer works</Button></div></div>
+          <blockquote className="mf-quote">“The right foundation changes what’s possible. Build for the work you have now—and leave a path for what comes next.”<cite>Manifest FTS / Engineering-led partnership</cite></blockquote>
+        </div>
+      </section>
 
-      <FormProject />
-
-      <ModalVideo
-        channel="youtube"
-        videoId="-SqGLNUkM30"
-        youtube={{
-          autoplay: 1,
-          rel: 0,
-        }}
-        isOpen={isOpen}
-        onClose={() => setOpen(false)}
-      />
-    </Layout>
-  );
+      <section className="mfts-site mf-section" id="contact-us">
+        <div className="mf-container mf-band"><p className="mf-eyebrow">START WITH A CONVERSATION</p><h2>Bring us the messy middle. We’ll help make the next step clear.</h2><p>Tell us what is changing, what is not working, or what you want to build. We will respond with practical questions—not a prewritten pitch.</p><Button href="/contact">Build a project brief <span aria-hidden="true">↗</span></Button></div>
+      </section>
+    </div>
+  </Layout>;
 }
-
-export default Index3;

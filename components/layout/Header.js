@@ -1,169 +1,37 @@
-/* eslint-disable @next/next/no-img-element */
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useState, useEffect, useMemo } from "react";
-import dynamic from "next/dynamic";
-import { RetainerTrigger } from "../retainer";
-import logo from '/public/assets/anim/mfts-animated-logo.json';
-
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { Button } from '../manifest-site';
+import Image from 'next/image';
 
 const NAV_ITEMS = [
-  { href: "/capabilities", label: "Capabilities" },
-  { href: "/work", label: "Work" },
-  { href: "/about", label: "About" },
-  { href: "/ahead-with-fts", label: "Ahead with FTS" },
+  { href: '/services', label: 'Services' },
+  { href: '/work', label: 'Work' },
+  { href: '/insights', label: 'Insights' },
+  { href: '/about', label: 'About' },
 ];
 
-const Header = ({ handleOpen, headerStyle = "", isMobileMenuOpen = false }) => {
+export default function Header() {
   const router = useRouter();
-  const [scroll, setScroll] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const currentPath = (router.asPath || '/').split(/[?#]/)[0];
+  const isActive = (href) => currentPath === href || (href !== '/' && currentPath.startsWith(`${href}/`));
 
-  const headerClassName = useMemo(() => {
-    return ["header", "sticky-bar", "site-header", headerStyle, scroll ? "stick" : ""]
-      .filter(Boolean)
-      .join(" ");
-  }, [headerStyle, scroll]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScroll(window.scrollY > 24);
-    };
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const lottieStyle = { width: 225 };
-
-  const normalizePath = (path) => {
-    if (!path) return "/";
-    const base = path.split("?")[0].split("#")[0];
-    return base || "/";
-  };
-
-  const isActive = (href) => {
-    const current = normalizePath(router.asPath || router.pathname || "/");
-    if (href === "/") return current === "/";
-    return current === href || current.startsWith(`${href}/`);
-  };
-
-  const getNavLinkClasses = (href) => {
-    const active = isActive(href);
-    const baseClasses =
-      "site-header__link inline-flex items-center rounded-lg !px-3 !py-2 !font-semibold !text-base !transition-colors !duration-200 xl:!px-4 xl:!text-lg";
-
-    if (scroll) {
-      return `${baseClasses} ${
-        active
-          ? "is-active !text-[#3f8077] !bg-[rgba(63,128,119,0.10)] hover:!text-[#3f8077] hover:!bg-[rgba(16,24,40,0.05)]"
-          : "!text-gray-900 hover:!text-[#3f8077] hover:!bg-[rgba(16,24,40,0.05)]"
-      }`;
-    }
-
-    return `${baseClasses} ${
-      active
-        ? "is-active !text-emerald-500 !bg-white/10 hover:!text-emerald-500 hover:!bg-white/10"
-        : "!text-white hover:!text-emerald-500 hover:!bg-white/5"
-    }`;
-  };
-
-  const retainerButtonClasses =
-    "btn site-header__cta rounded-full px-3 py-2 text-base font-bold text-white bg-emerald-600 transition-colors duration-200 hover:bg-gray-100 hover:text-emerald-600";
-
-  return (
-    <header id="navbar" className={headerClassName}>
-      <div className="container">
-        <div className="main-header site-header__bar">
-          <div className="site-header__brand">
-            <div className="header-logo">
-              <Link href="/">
-                <a className="d-flex align-items-center" aria-label="Manifest FTS home">
-                  {!mounted ? (
-                    <img
-                      alt=""
-                      src="/assets/imgs/logo-white.svg"
-                      width="200"
-                      height="30"
-                      className="img-fluid"
-                      style={{ maxHeight: 32 }}
-                    />
-                  ) : scroll ? (
-                    <img
-                      alt=""
-                      src="/assets/imgs/logo.svg"
-                      width="200"
-                      height="30"
-                      className="img-fluid"
-                      style={{ maxHeight: 32 }}
-                    />
-                  ) : (
-                    <Lottie animationData={logo} loop={false} style={lottieStyle} />
-                  )}
-                </a>
-              </Link>
-            </div>
-          </div>
-
-          <nav className="site-header__center" aria-label="Primary">
-            <div className="site-header__nav">
-              <ul className="site-header__list">
-                {NAV_ITEMS.map((item) => (
-                  <li key={item.href} className="site-header__item">
-                    <Link href={item.href}>
-                      <a className={getNavLinkClasses(item.href)}>
-                        {item.label}
-                      </a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </nav>
-
-          <div className="site-header__actions">
-            <div className="site-header__mobile-actions">
-              <RetainerTrigger
-                className={retainerButtonClasses}
-                source="header_cta"
-                hours={10}
-              >
-                Retainer
-              </RetainerTrigger>
-              {!isMobileMenuOpen ? (
-                <button
-                  type="button"
-                  className="site-header__burger burger-icon burger-icon-white"
-                  onClick={handleOpen}
-                  aria-label="Open menu"
-                  aria-expanded="false"
-                  aria-controls="mobile-navigation"
-                >
-                  <span className="burger-icon-top" />
-                  <span className="burger-icon-mid" />
-                  <span className="burger-icon-bottom" />
-                </button>
-              ) : null}
-            </div>
-            <div className="site-header__desktop-cta">
-              <RetainerTrigger
-                className={retainerButtonClasses}
-                source="header_cta"
-                hours={10}
-              >
-                Start a Retainer
-              </RetainerTrigger>
-            </div>
-          </div>
-        </div>
+  return <div className="mfts-site"><header className="mfts-v2-header">
+    <div className="mf-container mfts-v2-header__inner">
+      <Link href="/" legacyBehavior><a className="mfts-v2-header__brand" aria-label="Manifest FTS home"><Image src="/assets/imgs/logo.svg" alt="Manifest FTS — Forward Thinking Solutions" width={190} height={34} priority /></a></Link>
+      <nav className="mfts-v2-header__nav" aria-label="Primary navigation">
+        {NAV_ITEMS.map((item) => <Link href={item.href} key={item.href} legacyBehavior><a aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a></Link>)}
+      </nav>
+      <div className="mfts-v2-header__actions">
+        <Button href="/contact" variant="quiet">Talk through a project</Button>
+        <Button href="/contact"><span className="mf-header-full">Start a conversation</span><span className="mf-header-short">Start project</span><span aria-hidden="true">↗</span></Button>
+        <button type="button" className="mfts-v2-header__menu" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen} aria-controls="mfts-mobile-navigation" onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? '×' : '☰'}</button>
       </div>
-    </header>
-  );
-};
-
-export default Header;
+    </div>
+    <nav id="mfts-mobile-navigation" className={`mfts-v2-header__drawer ${menuOpen ? 'is-open' : ''}`} aria-label="Mobile navigation" aria-hidden={!menuOpen}>
+      {NAV_ITEMS.map((item) => <Link href={item.href} key={item.href} legacyBehavior><a tabIndex={menuOpen ? 0 : -1} aria-current={isActive(item.href) ? 'page' : undefined} onClick={() => setMenuOpen(false)}>{item.label}</a></Link>)}
+      <Link href="/contact" legacyBehavior><a tabIndex={menuOpen ? 0 : -1} onClick={() => setMenuOpen(false)}>Start a conversation ↗</a></Link>
+    </nav>
+  </header></div>;
+}

@@ -2,6 +2,8 @@ import { Toaster } from 'react-hot-toast';
 import "../public/assets/css/style.css";
 import "../public/assets/css/swiper-custom.css";
 import "../public/assets/css/globals.min.css";
+import "../styles/manifest-system.css";
+import "../styles/manifest-work.css";
 
 import React, { useEffect } from "react";
 import 'react-modal-video/css/modal-video.css';
@@ -12,15 +14,28 @@ import Script from 'next/script'
 import { useRouter } from 'next/router'
 import { GTM_ID, pageview } from '../lib/gtm'
 import { RetainerModal, RetainerProvider } from '../components/retainer'
+import { insights } from '../data/manifestSiteContent'
 
 const SITE_URL = 'https://www.manifestfts.com'
 const DEFAULT_OG_IMAGE = `${SITE_URL}/assets/imgs/hero-image.png`
 
 const pageMeta = {
   '/': {
-    title: 'Manifest FTS | Forward Thinking Digital Solutions',
+    title: 'Manifest FTS | Your Long-Term Technology Partner',
     description:
-      'Manifest FTS helps organizations build modern web platforms that increase leads, sales, and long-term digital resilience.',
+      'Manifest FTS is an engineering-led digital partner for durable web platforms, secure infrastructure, and practical technology strategy.',
+  },
+  '/services': {
+    title: 'Digital Product, Web & Infrastructure Services | Manifest FTS',
+    description: 'Product design and UX engineering, full-stack web development, managed infrastructure and data trust, and practical AI search optimization.',
+  },
+  '/insights': {
+    title: 'Insights on Web Architecture, Data Trust & AI Search | Manifest FTS',
+    description: 'Practical guidance from Manifest FTS on durable web architecture, data trust, managed infrastructure, and responsible AI search visibility.',
+  },
+  '/contact': {
+    title: 'Start a Technology Partnership | Manifest FTS',
+    description: 'Tell Manifest FTS what you are building or improving. Share your needs and receive a clear, tailored project brief conversation.',
   },
   '/work': {
     title: 'Our Work | Manifest FTS',
@@ -74,15 +89,20 @@ function MyApp({ Component, pageProps }) {
 
   const normalizedPath = (router.asPath || '/').split('#')[0].split('?')[0] || '/'
   const canonical = `${SITE_URL}${normalizedPath === '/' ? '' : normalizedPath}`
-  const seo = pageMeta[normalizedPath] || {
+  const insight = insights.find((article) => normalizedPath === `/insights/${article.slug}`)
+  const seo = pageMeta[normalizedPath] || (insight ? {
+    title: `${insight.title} | Manifest FTS`,
+    description: insight.summary,
+  } : {
     title: 'Manifest FTS | Forward Thinking Digital Solutions',
     description:
       'Manifest FTS builds web and platform experiences that strengthen growth, clarity, and long-term digital performance.',
-  }
+  })
 
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
     name: 'Manifest FTS',
     url: SITE_URL,
     logo: `${SITE_URL}/assets/imgs/logo.svg`,
@@ -109,6 +129,26 @@ function MyApp({ Component, pageProps }) {
       name: 'Manifest FTS',
     },
   }
+
+  const serviceSchemas = normalizedPath === '/services' ? [
+    ['Product design and UX engineering', 'Human-centered product design and accessible UX engineering for websites and digital platforms.'],
+    ['Full-stack web development', 'Modern CMS, enterprise websites, headless content platforms, and custom web application development.'],
+    ['Managed infrastructure and data trust', 'Long-term hosting, domain governance, security review, backups, and resilient platform operations.'],
+    ['AI search and citation optimization', 'Practical answer-engine visibility analysis and citation optimization, informed by Manifest Signal.'],
+  ].map(([name, description]) => ({
+    '@context': 'https://schema.org', '@type': 'Service', name, description,
+    provider: { '@id': `${SITE_URL}/#organization` }, areaServed: 'United States', url: `${SITE_URL}/services`,
+  })) : []
+
+  const caseStudyTitles = {
+    '/case-study/nc-waterfalls': ['NC Waterfalls', 'A searchable digital archive built from decades of North Carolina waterfall fieldwork.'],
+    '/case-study/barclay-rex': ['Barclay Rex', 'A multi-year digital commerce and platform modernization partnership.'],
+    '/case-study/optumpricer': ['OptumPricer', 'A SaaS platform modernization focused on onboarding, subscriptions, and a scalable product foundation.'],
+  }
+  const caseStudy = caseStudyTitles[normalizedPath]
+    ? { '@context': 'https://schema.org', '@type': ['Article', 'CreativeWork'], headline: caseStudyTitles[normalizedPath][0], name: caseStudyTitles[normalizedPath][0], description: caseStudyTitles[normalizedPath][1], author: { '@id': `${SITE_URL}/#organization` }, publisher: { '@id': `${SITE_URL}/#organization` }, mainEntityOfPage: canonical, about: ['Digital transformation', 'Web platform engineering', 'Technology partnership'] }
+    : null
+  const schemaGraph = [organizationSchema, websiteSchema, webPageSchema, ...serviceSchemas, ...(caseStudy ? [caseStudy] : [])]
 
   useEffect(() => {
     router.events.on('routeChangeComplete', pageview)
@@ -139,26 +179,8 @@ function MyApp({ Component, pageProps }) {
         <meta key="twitter:title" name="twitter:title" content={seo.title} />
         <meta key="twitter:description" name="twitter:description" content={seo.description} />
         <meta key="twitter:image" name="twitter:image" content={DEFAULT_OG_IMAGE} />
+        <script key="manifest-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': schemaGraph }).replace(/</g, '\\u003c') }} />
       </Head>
-
-      <Script
-        id="schema-organization"
-        type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <Script
-        id="schema-website"
-        type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
-      <Script
-        id="schema-webpage"
-        type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
-      />
 
       {/* Google Tag Manager - Global base code */}
       <Script

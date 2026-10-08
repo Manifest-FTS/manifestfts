@@ -1,0 +1,1 @@
+ALTER TABLE "audits" ADD COLUMN "crawlers" jsonb DEFAULT '[]'::jsonb NOT NULL;
