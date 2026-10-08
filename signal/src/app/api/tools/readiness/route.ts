@@ -13,7 +13,8 @@ export async function POST(request: Request) {
   } catch (error) {
     // Always answer in JSON so the checker can show a useful message instead of a generic failure.
     console.error('[readiness] unexpected error:', error);
-    return NextResponse.json({ error: 'Something went wrong on our side while running the check. Please try again.' }, { status: 500 });
+    const detail = process.env.NODE_ENV !== 'production' && error instanceof Error ? ` (${error.message})` : '';
+    return NextResponse.json({ error: `Something went wrong on our side while running the check. Please try again.${detail}` }, { status: 500 });
   }
 }
 
@@ -27,7 +28,15 @@ async function handle(request: Request) {
 
   const { ip } = await clientInfo();
   // Public, unauthenticated tool: limit per IP in production; unlimited locally so testing isn't blocked.
-  const limit = process.env.NODE_ENV === 'production' ? await rateLimit(`readiness:${ip}`, 20, 3600) : { ok: true, retryAfter: 0 };
+  let limit = { ok: true, retryAfter: 0 };
+  if (process.env.NODE_ENV === 'production') {
+    try {
+      limit = await rateLimit(`readiness:${ip}`, 20, 3600);
+    } catch (error) {
+      // A rate-limit store outage should not take the free tool down; log it and continue.
+      console.error('[readiness] rate limiter unavailable:', error);
+    }
+  }
   if (!limit.ok) {
     return NextResponse.json({ error: `You have run several checks recently. Try again in ${Math.ceil(limit.retryAfter / 60)} minutes, or start a free trial for unlimited audits.` }, { status: 429, headers: { 'Retry-After': String(limit.retryAfter) } });
   }
