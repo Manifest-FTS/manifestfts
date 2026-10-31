@@ -12,28 +12,28 @@ function Capabilities() {
 
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mt-12">
         <div className="text-center">
-          <img src="/assets/imgs/icon-branding.png" alt="Branding" className="h-24 mx-auto" />
+          <img loading="lazy" decoding="async" src="/assets/imgs/icon-branding.png" alt="Branding" className="h-24 mx-auto" />
           <h3 className="text-2xl font-semibold mt-4">Branding</h3>
           <p className="text-gray-600 mt-2">
             Elevate your brand identity by crafting a memorable narrative that inspires customer trust and loyalty.
           </p>
         </div>
         <div className="text-center">
-          <img src="/assets/imgs/icon-design.png" alt="Design" className="h-24 mx-auto" />
+          <img loading="lazy" decoding="async" src="/assets/imgs/icon-design.png" alt="Design" className="h-24 mx-auto" />
           <h3 className="text-2xl font-semibold mt-4">Design</h3>
           <p className="text-gray-600 mt-2">
             Create visually striking designs that seamlessly bridge digital and print media, ensuring consistency and style.
           </p>
         </div>
         <div className="text-center">
-          <img src="/assets/imgs/icon-software.png" alt="Software" className="h-24 mx-auto" />
+          <img loading="lazy" decoding="async" src="/assets/imgs/icon-software.png" alt="Software" className="h-24 mx-auto" />
           <h3 className="text-2xl font-semibold mt-4">Software</h3>
           <p className="text-gray-600 mt-2">
             Develop innovative software solutions that empower users with efficient mobile and web experiences for challenges.
           </p>
         </div>
         <div className="text-center">
-          <img src="/assets/imgs/icon-hosting.png" alt="Hosting" className="h-24 mx-auto" />
+          <img loading="lazy" decoding="async" src="/assets/imgs/icon-hosting.png" alt="Hosting" className="h-24 mx-auto" />
           <h3 className="text-2xl font-semibold mt-4"><Link href="/wordpress-hosting">Hosting</Link></h3>
           <p className="text-gray-600 mt-2">
             Secure, reliable hosting & maintenance with scalable infrastructure designed to support your business.

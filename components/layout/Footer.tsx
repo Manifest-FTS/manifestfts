@@ -1,23 +1,8 @@
-import gsap, { Linear } from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
-  const logoRef = useRef<HTMLDivElement>(null);
-
-  // Use gsap to control the rotation
-  useEffect(() => {
-    if (logoRef.current) {
-      gsap.to(logoRef.current, {
-        rotation: 360,
-        duration: 10,
-        repeat: -1,
-        ease: Linear.easeNone,
-      });
-    }
-  }, []);
-
   const [year, setYear] = useState(2023);
   useEffect(() => {
     setYear(new Date().getFullYear());
@@ -50,7 +35,7 @@ const Footer = () => {
 
             {/* Menu Sections */}
             <div className="mb-8 text-center lg:text-left">
-              <h4 className="text-lg font-semibold">Manifest</h4>
+              <h2 className="text-lg font-semibold">Manifest</h2>
               <ul className="menu-footer mt-4">
                 <li>
                   <Link href="/about">
@@ -81,7 +66,7 @@ const Footer = () => {
             </div>
 
             <div className="mb-8 text-center lg:text-left">
-              <h4 className="text-lg font-semibold">Case Studies</h4>
+              <h2 className="text-lg font-semibold">Case Studies</h2>
               <ul className="menu-footer mt-4">
                 <li>
                   <Link href="/case-study/nc-waterfalls">

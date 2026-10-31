@@ -115,7 +115,7 @@ function CapabilitiesPage() {
                     <span className="text-body-capitalized color-gray-500 text-uppercase">
                       {card.tag}
                     </span>
-                    <h4 className="text-heading-4 color-gray-900 mb-15 mt-20">{card.title}</h4>
+                    <h2 className="text-heading-4 color-gray-900 mb-15 mt-20">{card.title}</h2>
                     <p className="text-body-text-md color-gray-600 mb-0">{card.copy}</p>
                   </div>
                 </div>

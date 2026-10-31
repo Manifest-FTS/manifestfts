@@ -1,12 +1,10 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import { GTM_ID, pageview } from '../lib/gtm'
+import { GTM_ID } from '../lib/gtm'
 
 export default function Document() {
   return (
-    <Html>
-      <Head>
-        <meta name="description" content="We help our partners acquire new customers, increase donations and donor activity, sell more stuff and create better user experiences." />
-      </Head>
+    <Html lang="en">
+      <Head />
       <body>
         <noscript>
           <iframe

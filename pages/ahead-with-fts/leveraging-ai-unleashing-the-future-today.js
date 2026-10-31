@@ -101,57 +101,7 @@ function BlogSingle() {
                                                 <Link href="/blog-1" legacyBehavior><a className="btn btn-tag mr-10">Travel tips</a></Link>
                                                 <Link href="/blog-2" legacyBehavior><a className="btn btn-tag">Houes</a></Link>
                                             </div> */}
-                                        </div>
-                                    <div className="mt-60 hidden">
-                                        <h4 className="text-heading-2">Comments</h4>
-                                        <div className="box-comments">
-                                            <ul>
-                                                <li>
-                                                    <div className="item-comment">
-                                                        <div className="blog-img-user">
-                                                            <div className="img-user img-user-round"><img src="/assets/imgs/page/blog/single/user-1.png" alt="Agon" /></div>
-                                                            <h4 className="text-heading-6 color-gray-900">Robert Fox</h4>
-                                                            <p className="text-body-small color-gray-500">August 25, 2022</p>
-                                                        </div>
-                                                        <div className="text-comment">White white dreamy drama tically place everything although. Place out apartment afternoon whimsical kinder, little romantic joy we flowers handmade.</div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div className="item-comment">
-                                                        <div className="blog-img-user">
-                                                            <div className="img-user img-user-round"><img src="/assets/imgs/page/blog/single/user-2.png" alt="Agon" /></div>
-                                                            <h4 className="text-heading-6 color-gray-900">Robert Fox</h4>
-                                                            <p className="text-body-small color-gray-500">August 25, 2022</p>
-                                                        </div>
-                                                        <div className="text-comment">White white dreamy drama tically place everything although. Place out apartment afternoon whimsical kinder, little romantic joy we flowers handmade.</div>
-                                                    </div>
-                                                    <ul>
-                                                        <li>
-                                                            <div className="item-comment">
-                                                                <div className="blog-img-user">
-                                                                    <div className="img-user img-user-round"><img src="/assets/imgs/page/blog/single/user-3.png" alt="Agon" /></div>
-                                                                    <h4 className="text-heading-6 color-gray-900">Robert Fox</h4>
-                                                                    <p className="text-body-small color-gray-500">August 25, 2022</p>
-                                                                </div>
-                                                                <div className="text-comment">White white dreamy drama tically place everything although. Place out apartment afternoon whimsical kinder, little romantic joy we flowers handmade.</div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div className="border-bottom mt-50 mb-50" />
-                                        <h4 className="text-heading-4 color-gray-900 mb-40">Leave a comment</h4>
-                                        <div className="form-comment">
-                                            <form action="#">
-                                                <div className="form-group"><textarea className="input-comment" placeholder="Write a comment" /></div>
-                                                <div className="row">
-                                                    <div className="col-lg-5 col-md-6 col-sm-7 mb-30"><label className="box-agree"><input className="chkbox-aggree" type="checkbox" /><span className="text-body-text-md color-gray-1200">Save my name, email, and website in this browser for the next time I comment.</span></label></div>
-                                                    <div className="col-lg-7 col-md-6 col-sm-5 text-end"><button className="btn btn-black shape-square btn-md text-body-text">Post comment</button></div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
+                                        </div>
                                 </div>
                             </div>
                         </div>

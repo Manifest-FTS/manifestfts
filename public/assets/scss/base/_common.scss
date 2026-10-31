@@ -473,7 +473,8 @@ a {
 }
 .color-green-900
 {
-    color: $color-green-900 !important;
+    // darker than $color-green-900 so tag text on tinted bg meets WCAG AA
+    color: #2F6159 !important;
 }
 .color-green-500
 {

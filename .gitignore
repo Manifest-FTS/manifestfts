@@ -39,3 +39,16 @@ package-lock.json
 
 yarn.lock
 .idea
+.claude
+
+
+# Ignore node_modules in all directories
+node_modules/
+
+# Ignore Next.js generated files in all directories
+.next/
+out/
+
+# Build directories
+dist/
+build/
