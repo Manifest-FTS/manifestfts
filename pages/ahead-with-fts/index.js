@@ -38,15 +38,15 @@ function Blog2() {
                                   <div className="card-grid-style-4">
                                     <div className="grid-4-img mb-20">
                                         <Link href="/ahead-with-fts/is-saas-right-for-your-business" passHref>
-                                            <img src="/assets/imgs/blog/thumb-saas-business.jpg" alt="Google Analytics Dashboard" />
+                                            <img width="1290" height="1506" src="/assets/imgs/blog/thumb-saas-business.jpg" alt="Google Analytics Dashboard" />
                                         </Link>
                                     </div>
                                     <span className="text-heading-4"><Link href="/ahead-with-fts/is-saas-right-for-your-business" passHref>Is SaaS (Software as a Service) Right for Your Business?</Link></span>
 
                                     <p className="text-body-text color-gray-500 mt-5">Discover whether SaaS is the right fit for your business. Explore the benefits and considerations of adopting a cloud-based software model.</p>
                                     <div className="blog-img-user">
-                                      <div className="img-user img-user-round"><img src="/assets/imgs/blog/logo@2x-mark.png" alt="Ahead with FTS" /></div>
-                                      <h4 className="text-heading-6 color-gray-900">Ahead w. FTS</h4>
+                                      <div className="img-user img-user-round"><img width="244" height="244" loading="lazy" decoding="async" src="/assets/imgs/blog/logo@2x-mark.png" alt="Ahead with FTS" /></div>
+                                      <h3 className="text-heading-6 color-gray-900">Ahead w. FTS</h3>
                                       <p className="text-body-small color-gray-500">October 21, 2024</p>
                                     </div>
                                   </div>
@@ -56,15 +56,15 @@ function Blog2() {
                                     <div className="card-grid-style-4">
                                         <div className="grid-4-img mb-20">
                                             <Link href="/ahead-with-fts/upgrading-to-google-analytics-4-the-time-is-now" passHref>
-                                                <img src="/assets/imgs/blog/thumb-google-dash.webp" alt="Google Analytics Dashboard" />
+                                                <img width="1290" height="1506" loading="lazy" decoding="async" src="/assets/imgs/blog/thumb-google-dash.webp" alt="Google Analytics Dashboard" />
                                             </Link>
                                         </div>
                                         <span className="text-heading-4"><Link href="/ahead-with-fts/upgrading-to-google-analytics-4-the-time-is-now" passHref>Upgrading to Google Analytics 4: Why the Time is Now!</Link></span>
 
                                         <p className="text-body-text color-gray-500 mt-5">On July 1, 2023, Google Universal Analytics 3 (GA3), the analytics tool that marketers and businesses worldwide have come to rely on, is heading into the sunset.</p>
                                         <div className="blog-img-user">
-                                            <div className="img-user img-user-round"><img src="/assets/imgs/blog/author-kevinw.jpg" alt="Kevin W." /></div>
-                                            <h4 className="text-heading-6 color-gray-900">Kevin Williams</h4>
+                                            <div className="img-user img-user-round"><img width="800" height="800" loading="lazy" decoding="async" src="/assets/imgs/blog/author-kevinw.jpg" alt="Kevin W." /></div>
+                                            <h3 className="text-heading-6 color-gray-900">Kevin Williams</h3>
                                             <p className="text-body-small color-gray-500">July 7, 2023</p>
                                         </div>
                                     </div>
@@ -74,15 +74,15 @@ function Blog2() {
                                     <div className="card-grid-style-4">
                                         <div className="grid-4-img mb-20">
                                             <Link href="/ahead-with-fts/leveraging-ai-unleashing-the-future-today" passHref>
-                                                <img src="/assets/imgs/blog/thumb-ai-touch.webp" alt="Leveraging Artificial Intelligence" />
+                                                <img width="1290" height="1506" loading="lazy" decoding="async" src="/assets/imgs/blog/thumb-ai-touch.webp" alt="Leveraging Artificial Intelligence" />
                                             </Link>
                                         </div>
                                         <span className="text-heading-4"><Link href="/ahead-with-fts/leveraging-ai-unleashing-the-future-today" passHref>Leveraging AI: Unleashing the Future Today</Link></span>
 
                                         <p className="text-body-text color-gray-500 mt-5">Explore how artificial intelligence can revolutionize processes, boost productivity, and offer unique customer experiences. Stay Ahead with FTS.</p>
                                         <div className="blog-img-user">
-                                            <div className="img-user img-user-round"><img src="/assets/imgs/blog/author-kevinw.jpg" alt="Kevin W." /></div>
-                                            <h4 className="text-heading-6 color-gray-900">Kevin Williams</h4>
+                                            <div className="img-user img-user-round"><img width="800" height="800" loading="lazy" decoding="async" src="/assets/imgs/blog/author-kevinw.jpg" alt="Kevin W." /></div>
+                                            <h3 className="text-heading-6 color-gray-900">Kevin Williams</h3>
                                             <p className="text-body-small color-gray-500">May 11, 2023</p>
                                         </div>
                                     </div>
@@ -92,15 +92,15 @@ function Blog2() {
                                     <div className="card-grid-style-4">
                                         <div className="grid-4-img mb-20">
                                             <Link href="/ahead-with-fts/the-future-of-work-preparing-for-a-hybrid-workplace" passHref>
-                                                <img src="/assets/imgs/blog/thumb-future-office.webp" alt="Hybrid Workplace" />
+                                                <img width="1290" height="1506" loading="lazy" decoding="async" src="/assets/imgs/blog/thumb-future-office.webp" alt="Hybrid Workplace" />
                                             </Link>
                                         </div>
                                         <span className="text-heading-4"><Link href="/ahead-with-fts/the-future-of-work-preparing-for-a-hybrid-workplace" passHref>The Future of Work: Preparing for a Hybrid Workplace</Link></span>
 
                                         <p className="text-body-text color-gray-500 mt-5">Unpack the potential of a hybrid workplace model in fostering productivity and employee satisfaction. Future-proof your workspace with FTS.</p>
                                         <div className="blog-img-user">
-                                            <div className="img-user img-user-round"><img src="/assets/imgs/blog/author-kevinw.jpg" alt="Kevin W." /></div>
-                                            <h4 className="text-heading-6 color-gray-900">Kevin Williams</h4>
+                                            <div className="img-user img-user-round"><img width="800" height="800" loading="lazy" decoding="async" src="/assets/imgs/blog/author-kevinw.jpg" alt="Kevin W." /></div>
+                                            <h3 className="text-heading-6 color-gray-900">Kevin Williams</h3>
                                             <p className="text-body-small color-gray-500">May 4, 2023</p>
                                         </div>
                                     </div>
@@ -113,12 +113,12 @@ function Blog2() {
                                         </a></Link>
 
                                         <div className="blog-img-user">
-                                            <div className="img-user img-user-round"><img src="/assets/imgs/page/blog/2/user-3.png" alt="Agon" /></div>
+                                            <div className="img-user img-user-round"><img width="123" height="126" loading="lazy" decoding="async" src="/assets/imgs/page/blog/2/user-3.png" alt="Agon" /></div>
                                             <h4 className="text-body-lead color-gray-500">Jane Cooper</h4>
                                             <p className="text-body-small color-gray-500">August 25, 2022</p>
                                         </div>
                                         <div className="style-1-img color-bg-10">
-                                            <Link href="/blog-single"><a><img src="/assets/imgs/page/blog/2/img-news-1.png" alt="Agon" />
+                                            <Link href="/blog-single"><a><img width="360" height="360" loading="lazy" decoding="async" src="/assets/imgs/page/blog/2/img-news-1.png" alt="Agon" />
                                             </a></Link>
                                         </div>
                                     </div>
@@ -127,12 +127,12 @@ function Blog2() {
                                         </a></Link>
 
                                         <div className="blog-img-user">
-                                            <div className="img-user img-user-round"><img src="/assets/imgs/page/blog/2/user-4.png" alt="Agon" /></div>
+                                            <div className="img-user img-user-round"><img width="123" height="126" loading="lazy" decoding="async" src="/assets/imgs/page/blog/2/user-4.png" alt="Agon" /></div>
                                             <h4 className="text-body-lead color-gray-500">Wade Warren</h4>
                                             <p className="text-body-small color-gray-500">August 25, 2022</p>
                                         </div>
                                         <div className="style-1-img color-bg-2">
-                                            <Link href="/blog-single"><a><img src="/assets/imgs/page/blog/2/img-news-1.png" alt="Agon" />
+                                            <Link href="/blog-single"><a><img width="360" height="360" loading="lazy" decoding="async" src="/assets/imgs/page/blog/2/img-news-1.png" alt="Agon" />
                                             </a></Link>
                                         </div>
                                     </div>
@@ -141,12 +141,12 @@ function Blog2() {
                                         </a></Link>
 
                                         <div className="blog-img-user">
-                                            <div className="img-user img-user-round"><img src="/assets/imgs/page/blog/2/user-5.png" alt="Agon" /></div>
+                                            <div className="img-user img-user-round"><img width="123" height="126" loading="lazy" decoding="async" src="/assets/imgs/page/blog/2/user-5.png" alt="Agon" /></div>
                                             <h4 className="text-body-lead color-gray-500">Jenny Wilson</h4>
                                             <p className="text-body-small color-gray-500">August 25, 2022</p>
                                         </div>
                                         <div className="style-1-img color-bg-5">
-                                            <Link href="/blog-single"><a><img src="/assets/imgs/page/blog/2/img-news-1.png" alt="Agon" />
+                                            <Link href="/blog-single"><a><img width="360" height="360" loading="lazy" decoding="async" src="/assets/imgs/page/blog/2/img-news-1.png" alt="Agon" />
                                             </a></Link>
                                         </div>
                                     </div>
@@ -155,12 +155,12 @@ function Blog2() {
                                         </a></Link>
 
                                         <div className="blog-img-user">
-                                            <div className="img-user img-user-round"><img src="/assets/imgs/page/blog/2/user-6.png" alt="Agon" /></div>
+                                            <div className="img-user img-user-round"><img width="123" height="126" loading="lazy" decoding="async" src="/assets/imgs/page/blog/2/user-6.png" alt="Agon" /></div>
                                             <h4 className="text-body-lead color-gray-500">Robert Fox</h4>
                                             <p className="text-body-small color-gray-500">August 25, 2022</p>
                                         </div>
                                         <div className="style-1-img color-bg-9">
-                                            <Link href="/blog-single"><a><img src="/assets/imgs/page/blog/2/img-news-1.png" alt="Agon" />
+                                            <Link href="/blog-single"><a><img width="360" height="360" loading="lazy" decoding="async" src="/assets/imgs/page/blog/2/img-news-1.png" alt="Agon" />
                                             </a></Link>
                                         </div>
                                     </div>
@@ -188,7 +188,7 @@ function Blog2() {
                                         </a></Link>
 
                                         <div className="grid-4-img color-bg-9">
-                                            <Link href="/blog-single"><a><img src="/assets/imgs/page/homepage1/img-news-1.png" alt="Agon" />
+                                            <Link href="/blog-single"><a><img width="1290" height="825" loading="lazy" decoding="async" src="/assets/imgs/page/homepage1/img-news-1.png" alt="Agon" />
                                             </a></Link>
                                         </div>
                                     </div>
@@ -199,7 +199,7 @@ function Blog2() {
                                         </a></Link>
 
                                         <div className="grid-4-img color-bg-6">
-                                            <Link href="/blog-single"><a><img src="/assets/imgs/page/homepage1/img-news-2.png" alt="Agon" />
+                                            <Link href="/blog-single"><a><img width="1290" height="825" loading="lazy" decoding="async" src="/assets/imgs/page/homepage1/img-news-2.png" alt="Agon" />
                                             </a></Link>
                                         </div>
                                     </div>
@@ -210,7 +210,7 @@ function Blog2() {
                                         </a></Link>
 
                                         <div className="grid-4-img color-bg-4">
-                                            <Link href="/blog-single"><a><img src="/assets/imgs/page/homepage1/img-news-3.png" alt="Agon" />
+                                            <Link href="/blog-single"><a><img width="1290" height="825" loading="lazy" decoding="async" src="/assets/imgs/page/homepage1/img-news-3.png" alt="Agon" />
                                             </a></Link>
                                         </div>
                                     </div>
@@ -221,7 +221,7 @@ function Blog2() {
                                         </a></Link>
 
                                         <div className="grid-4-img color-bg-2">
-                                            <Link href="/blog-single"><a><img src="/assets/imgs/page/homepage1/img-news-4.png" alt="Agon" />
+                                            <Link href="/blog-single"><a><img width="1290" height="825" loading="lazy" decoding="async" src="/assets/imgs/page/homepage1/img-news-4.png" alt="Agon" />
                                             </a></Link>
                                         </div>
                                     </div>
@@ -232,7 +232,7 @@ function Blog2() {
                                         </a></Link>
 
                                         <div className="grid-4-img color-bg-8">
-                                            <Link href="/blog-single"><a><img src="/assets/imgs/page/homepage1/img-news-5.png" alt="Agon" />
+                                            <Link href="/blog-single"><a><img width="1290" height="825" loading="lazy" decoding="async" src="/assets/imgs/page/homepage1/img-news-5.png" alt="Agon" />
                                             </a></Link>
                                         </div>
                                     </div>
@@ -243,7 +243,7 @@ function Blog2() {
                                         </a></Link>
 
                                         <div className="grid-4-img color-bg-1">
-                                            <Link href="/blog-single"><a><img src="/assets/imgs/page/homepage1/img-news-6.png" alt="Agon" />
+                                            <Link href="/blog-single"><a><img width="1290" height="825" loading="lazy" decoding="async" src="/assets/imgs/page/homepage1/img-news-6.png" alt="Agon" />
                                             </a></Link>
                                         </div>
                                     </div>
@@ -254,7 +254,7 @@ function Blog2() {
                                         </a></Link>
 
                                         <div className="grid-4-img color-bg-2">
-                                            <Link href="/blog-single"><a><img src="/assets/imgs/page/homepage1/img-news-7.png" alt="Agon" />
+                                            <Link href="/blog-single"><a><img width="1290" height="825" loading="lazy" decoding="async" src="/assets/imgs/page/homepage1/img-news-7.png" alt="Agon" />
                                             </a></Link>
                                         </div>
                                     </div>
@@ -265,7 +265,7 @@ function Blog2() {
                                         </a></Link>
 
                                         <div className="grid-4-img color-bg-8">
-                                            <Link href="/blog-single"><a><img src="/assets/imgs/page/homepage1/img-news-8.png" alt="Agon" />
+                                            <Link href="/blog-single"><a><img width="1290" height="825" loading="lazy" decoding="async" src="/assets/imgs/page/homepage1/img-news-8.png" alt="Agon" />
                                             </a></Link>
                                         </div>
                                     </div>
@@ -276,7 +276,7 @@ function Blog2() {
                                         </a></Link>
 
                                         <div className="grid-4-img color-bg-1">
-                                            <Link href="/blog-single"><a><img src="/assets/imgs/page/homepage1/img-news-9.png" alt="Agon" />
+                                            <Link href="/blog-single"><a><img width="1290" height="825" loading="lazy" decoding="async" src="/assets/imgs/page/homepage1/img-news-9.png" alt="Agon" />
                                             </a></Link>
                                         </div>
                                     </div>
@@ -305,7 +305,7 @@ function Blog2() {
                                                 </div>
                                             </div>
                                             <div className="col-lg-7 col-md-5 mt-30 mt-lg-0 mt-md-30 mt-sm-30 position-relative text-end">
-                                                <div className="block-chart shape-1"><img src="/assets/imgs/template/chart.png" alt="Agon" /></div><img className="img-responsive img-newsletter" src="/assets/imgs/template/img-newsletter.png" alt="Agon" />
+                                                <div className="block-chart shape-1"><img width="888" height="672" loading="lazy" decoding="async" src="/assets/imgs/template/chart.png" alt="Agon" /></div><img width="998" height="1211" loading="lazy" decoding="async" className="img-responsive img-newsletter" src="/assets/imgs/template/img-newsletter.png" alt="Agon" />
                                             </div>
                                         </div>
                                     </div>

@@ -38,7 +38,7 @@ function About1() {
           <div className="container mx-auto px-6">
             <div className="flex flex-wrap items-center">
               <div className="w-full lg:w-7/12">
-                <span className="bg-orange-200 text-orange-600 px-4 py-2 rounded-full">Core Capabilities</span>
+                <span className="bg-orange-200 text-orange-900 px-4 py-2 rounded-full">Core Capabilities</span>
                 <h1 className="text-4xl font-bold mt-6">We harness innovation to manifest value for businesses and brands.</h1>
                 <p className="text-lg text-gray-600 mt-8">Manifest is a digital consultancy and software development agency that empowers forward-thinking brands through cutting-edge digital experiences.</p>
                 <p className="text-lg text-gray-600 my-6">Our expertise spans brand and digital strategy, user experience design, software development, implementation, and data systems. We are a value-driven agency working with some of the most talented professionals to drive results.</p>
@@ -65,7 +65,7 @@ function About1() {
         </section>
         <section className="py-16 bg-white">
           <div className="container mx-auto">
-            <h3 className="text-3xl font-semibold mb-8">Our Team</h3>
+            <h2 className="text-3xl font-semibold mb-8">Our Team</h2>
             <TeamSlider />
           </div>
         </section>

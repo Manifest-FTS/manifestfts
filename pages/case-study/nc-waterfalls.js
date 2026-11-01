@@ -3,6 +3,8 @@ import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Layout from "../../components/layout/Layout";
+import LazyVideo from "../../components/elements/LazyVideo";
+import { DEFAULT_OG_IMAGE, ORG_ID, absoluteUrl } from "../../lib/site";
 
 const statBlocks = [
   { value: "4,700+", label: "users", sub: "during launch week" },
@@ -16,7 +18,7 @@ const statBlocks = [
 ];
 
 function NcWaterfallsCaseStudy() {
-  const canonical = "https://www.manifestfts.com/case-study/nc-waterfalls";
+  const canonical = absoluteUrl("/case-study/nc-waterfalls");
 
   const caseStudySchema = {
     "@context": "https://schema.org",
@@ -26,39 +28,33 @@ function NcWaterfallsCaseStudy() {
     description:
       "How Manifest FTS translated decades of waterfall exploration and field research into a searchable, scalable, high-performance digital archive.",
     url: canonical,
-    author: {
-      "@type": "Organization",
-      name: "Manifest FTS",
-    },
+    author: { "@id": ORG_ID },
     about: ["Digital Infrastructure", "Information Architecture", "SEO", "Performance Optimization"],
   };
 
   return (
     <>
       <Head>
-        <title>Case Study: NC Waterfalls | Manifest FTS</title>
-        <meta
-          name="description"
+        <title key="title">Case Study: NC Waterfalls | Manifest FTS</title>
+        <meta key="description" name="description"
           content="How Manifest FTS translated decades of NC waterfall exploration into a durable, searchable, and globally discoverable digital archive."
         />
-        <link rel="canonical" href={canonical} />
+        <link key="canonical" rel="canonical" href={canonical} />
 
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content="NC Waterfalls Case Study | Manifest FTS" />
-        <meta
-          property="og:description"
+        <meta key="og:type" property="og:type" content="article" />
+        <meta key="og:title" property="og:title" content="NC Waterfalls Case Study | Manifest FTS" />
+        <meta key="og:description" property="og:description"
           content="Translating decades of waterfall exploration into enduring digital infrastructure built for discovery and longevity."
         />
-        <meta property="og:url" content={canonical} />
-        <meta property="og:image" content="https://www.manifestfts.com/assets/imgs/hero-image.pjpgng" />
+        <meta key="og:url" property="og:url" content={canonical} />
+        <meta key="og:image" property="og:image" content={DEFAULT_OG_IMAGE} />
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="NC Waterfalls Case Study | Manifest FTS" />
-        <meta
-          name="twitter:description"
+        <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
+        <meta key="twitter:title" name="twitter:title" content="NC Waterfalls Case Study | Manifest FTS" />
+        <meta key="twitter:description" name="twitter:description"
           content="A multi-year effort to transform waterfall fieldwork into scalable digital infrastructure."
         />
-        <meta name="twitter:image" content="https://www.manifestfts.com/assets/imgs/hero-image.jpg" />
+        <meta key="twitter:image" name="twitter:image" content={DEFAULT_OG_IMAGE} />
 
         <script
           type="application/ld+json"
@@ -144,11 +140,13 @@ function NcWaterfallsCaseStudy() {
                 <img 
                   src="/assets/imgs/case-studies/ncwf-attributes.jpg" 
                   alt="Waterfall Data Attributes and Specifications" 
-                  className="w-full rounded-2xl shadow-lg"
+                  width={1118}
+                  height={336}
+                  className="w-full h-auto rounded-2xl shadow-lg"
                 />
               </div>
               <div className="order-1 md:order-2 md:w-1/2">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900"><span className="text-green-600">Building</span> the archive</h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900"><span className="text-green-700">Building</span> the archive</h2>
                 <p className="text-lg text-gray-700 my-8">
                   Each waterfall represents more than an image. It carries geographic nuance, access considerations, seasonal variables, safety context, and experiential insight gathered over years in the field.
                 </p>
@@ -166,7 +164,7 @@ function NcWaterfallsCaseStudy() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-                  <span className="text-green-600">Expanding</span> the archive
+                  <span className="text-green-700">Expanding</span> the archive
                 </h2>
 
                 <p className="text-lg text-gray-700 mt-8">
@@ -178,19 +176,10 @@ function NcWaterfallsCaseStudy() {
                 </p>
               </div>
               <div>
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
+                <LazyVideo
+                  src="/assets/imgs/case-studies/ncwaterfalls-then-now-looking-glass.mp4"
                   className="w-full rounded-2xl shadow-lg"
-                >
-                  <source
-                    src="/assets/imgs/case-studies/ncwaterfalls-then-now-looking-glass.mp4"
-                    type="video/mp4"
-                  />
-                </video>
+                />
               </div>
             </div>
           </div>
@@ -200,7 +189,7 @@ function NcWaterfallsCaseStudy() {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Early signals</h2>
-              <p className="text-lg text-gray-700 mt-6">Within the first weeks of launch, the platform signaled strong engagement and retention — evidence of meaningful, organic exploration. <a href="https://ncwaterfalls.com/waterfalls/sliding-rock-falls?utm_source=fts_case_study&utm_medium=referral&utm_campaign=nc_waterfalls" target="_blank" rel="noopener noreferrer" className="text-green-600 underline">Sliding Rock Falls</a> quickly emerged as the most searched and viewed waterfall.</p>
+              <p className="text-lg text-gray-700 mt-6">Within the first weeks of launch, the platform signaled strong engagement and retention — evidence of meaningful, organic exploration. <a href="https://ncwaterfalls.com/waterfalls/sliding-rock-falls?utm_source=fts_case_study&utm_medium=referral&utm_campaign=nc_waterfalls" target="_blank" rel="noopener noreferrer" className="text-green-700 underline">Sliding Rock Falls</a> quickly emerged as the most searched and viewed waterfall.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -249,7 +238,7 @@ function NcWaterfallsCaseStudy() {
               </span>{" "}
               If you&rsquo;re looking for a builder who can think across design, systems, and strategy,{" "}
               <Link href="/#contact-us">
-                <a className="text-green-600 underline hover:text-green-700 transition-colors">
+                <a className="text-green-700 underline hover:text-green-800 transition-colors">
                   let&rsquo;s talk
                 </a>
               </Link>.

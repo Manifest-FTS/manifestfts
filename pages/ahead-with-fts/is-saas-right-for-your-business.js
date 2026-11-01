@@ -24,7 +24,7 @@ function BlogSingle() {
                                 <div className="col-lg-1 col-md-12" />
                                 <div className="col-lg-1 col-md-2 col-sm-2 col-3 text-center">
                                     {/* <div className="social-sticky">
-                                        <h3 className="text-heading-6 color-gray-400 mb-20 mt-5">Share</h3>
+                                        <h2 className="text-heading-6 color-gray-400 mb-20 mt-5">Share</h2>
                                         <Link href="/https://facebook.com" legacyBehavior><a className="share-social share-fb"></a></Link>
                                         <br />
                                         <Link href="/https://twitter.com" legacyBehavior><a className="share-social share-tw"></a></Link>
@@ -44,7 +44,7 @@ function BlogSingle() {
                                         <div className="col-lg-6 col-md-7 col-sm-7 col-7">
                                             <div className="blog-img-user">
                                                 <div className="img-user img-user-round"><img src="/assets/imgs/blog/logo@2x-mark.png" alt="Ahead w FTS" /></div>
-                                                <h4 className="text-body-lead color-gray-900">Ahead w FTS</h4>
+                                                <h2 className="text-body-lead color-gray-900">Ahead w FTS</h2>
                                                 <p className="text-body-small color-gray-500">October 21, 2024</p>
                                             </div>
                                         </div>
@@ -61,7 +61,7 @@ function BlogSingle() {
                                         <p>That&rsquo;s a pretty somber picture, isn&rsquo;t it? But don&rsquo;t worry, all is not lost. Now is the perfect time to embrace the change, familiarize yourself with GA4, and start benefiting from its advanced capabilities. Yes, the clock is ticking, but don&rsquo;t let that create a sense of dread. See it instead as a call to action!</p>
 
                                         <img className="img-responsive bdr-16" src="/assets/imgs/blog/blog-saas-notion.jpg" alt="Notion SaaS" />
-                                        <caption>Notion SaaS Homepage. Photo by <a href="https://unsplash.com/@teamnocoloco" target="_blank" rel="noreferrer">Team Nocoloco</a>.</caption>
+                                        <p className="text-body-small color-gray-500 mt-10 mb-20">Notion SaaS Homepage. Photo by <a className="underline" href="https://unsplash.com/@teamnocoloco" target="_blank" rel="noreferrer">Team Nocoloco</a>.</p>
 
                                         <h2 className="text-heading-3">Advantages of SaaS for Your Business</h2>
                                         
@@ -89,7 +89,7 @@ function BlogSingle() {
                                         </ol>
 
                                         <img className="img-responsive bdr-16" src="/assets/imgs/blog/blog-saas-shopify.jpg" alt="Shopify on Laptop" />
-                                        <caption>Shopify ecommerce platform. Photo by <a href="https://unsplash.com/@hookle" target="_blank" rel="noreferrer">hookle</a>.</caption>
+                                        <p className="text-body-small color-gray-500 mt-10 mb-20">Shopify ecommerce platform. Photo by <a className="underline" href="https://unsplash.com/@hookle" target="_blank" rel="noreferrer">hookle</a>.</p>
 
                                         <h2 className="text-heading-3">Shopify: A SaaS Success Story in E-commerce</h2>
                                         <p>One of the most successful SaaS platforms helping businesses thrive is Shopify. Shopify is a well-known SaaS provider in the e-commerce space, enabling small and medium-sized businesses to build and manage their online stores with ease.</p>
@@ -110,57 +110,7 @@ function BlogSingle() {
                                                 <Link href="/blog-1" legacyBehavior><a className="btn btn-tag mr-10">Travel tips</a></Link>
                                                 <Link href="/blog-2" legacyBehavior><a className="btn btn-tag">Houes</a></Link>
                                             </div> */}
-                                        </div>
-                                    <div className="mt-60 hidden">
-                                        <h4 className="text-heading-2">Comments</h4>
-                                        <div className="box-comments">
-                                            <ul>
-                                                <li>
-                                                    <div className="item-comment">
-                                                        <div className="blog-img-user">
-                                                            <div className="img-user img-user-round"><img src="/assets/imgs/page/blog/single/user-1.png" alt="Agon" /></div>
-                                                            <h4 className="text-heading-6 color-gray-900">Robert Fox</h4>
-                                                            <p className="text-body-small color-gray-500">August 25, 2022</p>
-                                                        </div>
-                                                        <div className="text-comment">White white dreamy drama tically place everything although. Place out apartment afternoon whimsical kinder, little romantic joy we flowers handmade.</div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div className="item-comment">
-                                                        <div className="blog-img-user">
-                                                            <div className="img-user img-user-round"><img src="/assets/imgs/page/blog/single/user-2.png" alt="Agon" /></div>
-                                                            <h4 className="text-heading-6 color-gray-900">Robert Fox</h4>
-                                                            <p className="text-body-small color-gray-500">August 25, 2022</p>
-                                                        </div>
-                                                        <div className="text-comment">White white dreamy drama tically place everything although. Place out apartment afternoon whimsical kinder, little romantic joy we flowers handmade.</div>
-                                                    </div>
-                                                    <ul>
-                                                        <li>
-                                                            <div className="item-comment">
-                                                                <div className="blog-img-user">
-                                                                    <div className="img-user img-user-round"><img src="/assets/imgs/page/blog/single/user-3.png" alt="Agon" /></div>
-                                                                    <h4 className="text-heading-6 color-gray-900">Robert Fox</h4>
-                                                                    <p className="text-body-small color-gray-500">August 25, 2022</p>
-                                                                </div>
-                                                                <div className="text-comment">White white dreamy drama tically place everything although. Place out apartment afternoon whimsical kinder, little romantic joy we flowers handmade.</div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div className="border-bottom mt-50 mb-50" />
-                                        <h4 className="text-heading-4 color-gray-900 mb-40">Leave a comment</h4>
-                                        <div className="form-comment">
-                                            <form action="#">
-                                                <div className="form-group"><textarea className="input-comment" placeholder="Write a comment" /></div>
-                                                <div className="row">
-                                                    <div className="col-lg-5 col-md-6 col-sm-7 mb-30"><label className="box-agree"><input className="chkbox-aggree" type="checkbox" /><span className="text-body-text-md color-gray-1200">Save my name, email, and website in this browser for the next time I comment.</span></label></div>
-                                                    <div className="col-lg-7 col-md-6 col-sm-5 text-end"><button className="btn btn-black shape-square btn-md text-body-text">Post comment</button></div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
+                                        </div>
                                 </div>
                             </div>
                         </div>

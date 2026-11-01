@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../components/layout/Layout";
+import { DEFAULT_OG_IMAGE, ORG_ID, absoluteUrl } from "../../lib/site";
 
 const keyFeatures = [
   {
@@ -52,7 +53,7 @@ const technologyApproachPoints = [
 ];
 
 function JoyFeedCaseStudyDraftPage() {
-  const canonical = "https://www.manifestfts.com/case-study/joyfeed";
+  const canonical = absoluteUrl("/case-study/joyfeed");
 
   const caseStudySchema = {
     "@context": "https://schema.org",
@@ -62,10 +63,7 @@ function JoyFeedCaseStudyDraftPage() {
     description:
       "Draft case study for JoyFeed, including strategy, UX, and technical direction for an atmosphere-driven platform with a persistent BLS ambient audio layer.",
     url: canonical,
-    author: {
-      "@type": "Organization",
-      name: "Manifest FTS",
-    },
+    author: { "@id": ORG_ID },
     about: [
       "Wellness Platform",
       "Product Strategy",
@@ -77,34 +75,29 @@ function JoyFeedCaseStudyDraftPage() {
   return (
     <>
       <Head>
-        <title>Case Study Draft: JoyFeed | Manifest FTS</title>
-        <meta
-          name="description"
+        <title key="title">Case Study Draft: JoyFeed | Manifest FTS</title>
+        <meta key="description" name="description"
           content="Draft JoyFeed case study focused on strategy, UX, and a persistent BLS ambient audio layer for a restorative platform experience."
         />
-        <link rel="canonical" href={canonical} />
+        <link key="canonical" rel="canonical" href={canonical} />
 
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content="Case Study Draft: JoyFeed | Manifest FTS" />
-        <meta
-          property="og:description"
+        <meta key="og:type" property="og:type" content="article" />
+        <meta key="og:title" property="og:title" content="Case Study Draft: JoyFeed | Manifest FTS" />
+        <meta key="og:description" property="og:description"
           content="A draft case study showing how JoyFeed combines positive content systems with persistent wellness audio to create a restorative digital environment."
         />
-        <meta property="og:url" content={canonical} />
-        <meta
-          property="og:image"
-          content="https://www.manifestfts.com/assets/imgs/hero-image.jpg"
+        <meta key="og:url" property="og:url" content={canonical} />
+        <meta key="og:image" property="og:image"
+          content={DEFAULT_OG_IMAGE}
         />
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Case Study Draft: JoyFeed | Manifest FTS" />
-        <meta
-          name="twitter:description"
+        <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
+        <meta key="twitter:title" name="twitter:title" content="Case Study Draft: JoyFeed | Manifest FTS" />
+        <meta key="twitter:description" name="twitter:description"
           content="Draft case study for JoyFeed with BLS Ambient Audio Layer as a signature platform feature."
         />
-        <meta
-          name="twitter:image"
-          content="https://www.manifestfts.com/assets/imgs/hero-image.jpg"
+        <meta key="twitter:image" name="twitter:image"
+          content={DEFAULT_OG_IMAGE}
         />
 
         <script

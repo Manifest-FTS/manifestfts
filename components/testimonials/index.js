@@ -9,7 +9,7 @@ SwiperCore.use([Autoplay]);
 const ContinuousTestimonialSlider = () => {
     const data = [
         {
-            avatar: "cfuscarino.png",
+            avatar: "cfuscarino.webp",
             name: "Christian Fuscarino",
             title: "Executive Director",
             company: "Garden State Equality",
@@ -17,7 +17,7 @@ const ContinuousTestimonialSlider = () => {
             bg: ""
         },
         {
-            avatar: "kadams.png",
+            avatar: "kadams.webp",
             name: "Kevin Adams",
             title: "Executive Director & Founder",
             company: "Waterfall Keepers of NC",
@@ -25,7 +25,7 @@ const ContinuousTestimonialSlider = () => {
             bg: "bd-bg-6"
         },
         {
-            avatar: "vnastri.png",
+            avatar: "vnastri.webp",
             name: "Vanessa Nastri",
             title: "CEO",
             company: "Barclay Rex Cigars",
@@ -33,7 +33,7 @@ const ContinuousTestimonialSlider = () => {
             bg: "bd-bg-10"
         },
         {
-            avatar: "fsalzano.png",
+            avatar: "fsalzano.webp",
             name: "Frank Salzano",
             title: "Astrologer",
             company: "Medicine of The Starry Heavens",
@@ -41,7 +41,7 @@ const ContinuousTestimonialSlider = () => {
             bg: "bd-bg-6"
         },
         {
-            avatar: "kadams.png",
+            avatar: "kadams.webp",
             name: "Kevin Adams",
             title: "Photographer",
             company: "Kadamsphoto.com",
@@ -49,7 +49,7 @@ const ContinuousTestimonialSlider = () => {
             bg: ""
         },
         {
-            avatar: "ngagnier.png",
+            avatar: "ngagnier.webp",
             name: "Nancy Gagnier",
             title: "Executive Director",
             company: "South Orange/Maplewood Community Coalition on Race",
@@ -57,7 +57,7 @@ const ContinuousTestimonialSlider = () => {
             bg: "bd-bg-10"
         },
         {
-            avatar: "rarobertson.png",
+            avatar: "rarobertson.webp",
             name: "Rebecca Ann Robertson",
             title: "Founding Director",
             company: "Mayan Melipona Bee Sanctuary",
@@ -101,7 +101,7 @@ const ContinuousTestimonialSlider = () => {
                     <SwiperSlide key={i} className="flex items-center justify-center">
                         <div className={`card-grid-style-3 hover:shadow-lg transition-shadow duration-300 ${item.bg} w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl p-4 bg-white rounded-lg shadow-md flex flex-col justify-center`}> 
                             <div className="flex justify-center">
-                                <img className="w-[75px] h-[75px] rounded-full" src={`assets/imgs/testimonials/${item.avatar}`} alt="Testimonial" />
+                                <img loading="lazy" decoding="async" width="75" height="75" className="w-[75px] h-[75px] rounded-full" src={`/assets/imgs/testimonials/${item.avatar}`} alt="" />
                             </div>
                             
                             <h3 className="text-lg font-semibold text-gray-800 mt-4 text-center">{item.name}</h3>

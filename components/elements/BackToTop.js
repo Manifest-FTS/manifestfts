@@ -25,8 +25,8 @@ function BackToTop() {
     return (
         <>
             {hasScrolled && (
-                <a id="scrollUp" href="#top" style={{ position: 'fixed', zIndex: 2147483647 }}>
-                    <i className="fi-rr-arrow-small-up" />
+                <a id="scrollUp" href="#top" aria-label="Back to top" style={{ position: 'fixed', zIndex: 2147483647 }}>
+                    <i className="fi-rr-arrow-small-up" aria-hidden="true" />
                 </a>
 
 

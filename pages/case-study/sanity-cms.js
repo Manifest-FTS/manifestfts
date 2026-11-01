@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
-import MuxPlayer from "@mux/mux-player-react";
+import LazyMuxPlayer from "../../components/elements/LazyMuxPlayer";
 import Layout from "../../components/layout/Layout";
+import { DEFAULT_OG_IMAGE, ORG_ID, absoluteUrl } from "../../lib/site";
 
 const platformHighlights = [
   {
@@ -61,7 +62,7 @@ const notIdealGuidance = [
 ];
 
 function SanityCMSCaseStudyPage() {
-  const canonical = "https://www.manifestfts.com/case-study/sanity-cms";
+  const canonical = absoluteUrl("/case-study/sanity-cms");
 
   const caseStudySchema = {
     "@context": "https://schema.org",
@@ -71,10 +72,7 @@ function SanityCMSCaseStudyPage() {
     description:
       "A client-friendly case study on why Manifest FTS uses and recommends Sanity CMS for teams that need flexible, scalable, and future-ready content systems.",
     url: canonical,
-    author: {
-      "@type": "Organization",
-      name: "Manifest FTS",
-    },
+    author: { "@id": ORG_ID },
     about: [
       "Sanity CMS",
       "Content Operations",
@@ -86,34 +84,29 @@ function SanityCMSCaseStudyPage() {
   return (
     <>
       <Head>
-        <title>Case Study: Sanity CMS Platform | Manifest FTS</title>
-        <meta
-          name="description"
+        <title key="title">Case Study: Sanity CMS Platform | Manifest FTS</title>
+        <meta key="description" name="description"
           content="A client-friendly case study on why Manifest FTS recommends Sanity CMS for flexible, scalable, and future-ready content operations."
         />
-        <link rel="canonical" href={canonical} />
+        <link key="canonical" rel="canonical" href={canonical} />
 
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content="Case Study: Sanity CMS Platform | Manifest FTS" />
-        <meta
-          property="og:description"
+        <meta key="og:type" property="og:type" content="article" />
+        <meta key="og:title" property="og:title" content="Case Study: Sanity CMS Platform | Manifest FTS" />
+        <meta key="og:description" property="og:description"
           content="How Manifest FTS uses Sanity CMS to create practical publishing systems that scale with business growth."
         />
-        <meta property="og:url" content={canonical} />
-        <meta
-          property="og:image"
-          content="https://www.manifestfts.com/assets/imgs/hero-image.jpg"
+        <meta key="og:url" property="og:url" content={canonical} />
+        <meta key="og:image" property="og:image"
+          content={DEFAULT_OG_IMAGE}
         />
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Case Study: Sanity CMS Platform | Manifest FTS" />
-        <meta
-          name="twitter:description"
+        <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
+        <meta key="twitter:title" name="twitter:title" content="Case Study: Sanity CMS Platform | Manifest FTS" />
+        <meta key="twitter:description" name="twitter:description"
           content="Why Manifest FTS recommends Sanity CMS for modern, scalable, and client-friendly content operations."
         />
-        <meta
-          name="twitter:image"
-          content="https://www.manifestfts.com/assets/imgs/hero-image.jpg"
+        <meta key="twitter:image" name="twitter:image"
+          content={DEFAULT_OG_IMAGE}
         />
 
         <script
@@ -168,7 +161,7 @@ function SanityCMSCaseStudyPage() {
         <section className="bg-white">
           <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
             <div className="overflow-hidden rounded-2xl border border-gray-200 bg-gray-100 shadow-sm">
-              <MuxPlayer
+              <LazyMuxPlayer
                 streamType="on-demand"
                 playbackId="xVEspFYOw6gtvRjEMk8xFnrjXtJ3YqGzajrvtjdV1cU"
                 metadataVideoTitle="Sanity CMS Case Study Overview"

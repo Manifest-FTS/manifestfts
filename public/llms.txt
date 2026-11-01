@@ -1,0 +1,34 @@
+# Manifest FTS
+
+> Manifest FTS (Manifest Forward Thinking Solutions, Manifest FTS LLC) is a design, development, and technology studio based in Greenville, South Carolina. It plans, designs, builds, and supports websites, web applications, and digital platforms for businesses and nonprofits across the United States.
+
+- Founder: Kevin Williams, Founder & Software Engineer
+- Location: Greenville, SC, USA (no public street address; work is delivered remotely)
+- Contact: devkev@manifestfts.com
+- Canonical site: https://manifestfts.com
+
+## Services
+- [Capabilities and monthly retainer](https://manifestfts.com/capabilities): Ongoing support for design, development, strategy, and digital execution under one flexible monthly commitment. Covers websites and web applications, interface design and UX refinement, enhancements, maintenance, SEO implementation, and technical guidance.
+- [Managed WordPress hosting](https://manifestfts.com/wordpress-hosting): Managed hosting, updates, security, performance, and migrations handled by Manifest FTS engineers. Plans listed on the page start at $39/month (Starter) and $149/month (Growth).
+- [Free website program](https://manifestfts.com/free-website): A professional website for small businesses and nonprofits with no upfront build cost; hosting, support, maintenance, backups, and SSL are included in a monthly plan (listed plans: Basic and Professional).
+
+## Case studies
+- [NC Waterfalls](https://manifestfts.com/case-study/nc-waterfalls): Decades of North Carolina waterfall fieldwork translated into a searchable, scalable digital archive.
+- [Barclay Rex](https://manifestfts.com/case-study/barclay-rex): Digital infrastructure modernization and eCommerce for New York City's oldest cigar shop (founded 1910).
+- [OptumPricer](https://manifestfts.com/case-study/optumpricer): A legacy prototype rebuilt as a scalable SaaS platform with improved onboarding, subscriptions, and performance.
+- [Sanity CMS](https://manifestfts.com/case-study/sanity-cms): Why Manifest FTS implements Sanity CMS for flexible, scalable content operations.
+- [All work](https://manifestfts.com/work): Selected partnerships and platform outcomes.
+
+## Articles (Ahead with FTS)
+- [Is SaaS right for your business?](https://manifestfts.com/ahead-with-fts/is-saas-right-for-your-business) (2024-10-21)
+- [Upgrading to Google Analytics 4: why the time is now](https://manifestfts.com/ahead-with-fts/upgrading-to-google-analytics-4-the-time-is-now) (2023-07-07)
+- [Leveraging AI: unleashing the future today](https://manifestfts.com/ahead-with-fts/leveraging-ai-unleashing-the-future-today) (2023-05-11)
+- [The future of work: preparing for a hybrid workplace](https://manifestfts.com/ahead-with-fts/the-future-of-work-preparing-for-a-hybrid-workplace) (2023-05-04)
+
+## Company
+- [About Manifest FTS](https://manifestfts.com/about): Approach, team, and capabilities.
+- [Privacy policy](https://manifestfts.com/privacy-policy)
+- [Terms of use](https://manifestfts.com/terms)
+
+## Optional
+- [Sitemap](https://manifestfts.com/sitemap.xml)

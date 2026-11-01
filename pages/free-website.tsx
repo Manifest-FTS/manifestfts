@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import dynamic from "next/dynamic";
+import { ORG_ID, absoluteUrl } from "../lib/site";
 import logo from "../public/assets/anim/mfts-animated-logo.json";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
@@ -28,13 +29,13 @@ declare global {
   }
 }
 
-const SITE_URL = "https://www.manifestfts.com/free-website";
+const SITE_URL = absoluteUrl("/free-website");
 const SITE_NAME = "Manifest FTS";
 const PAGE_TITLE =
   "Free Website for Small Businesses & Nonprofits | Manifest FTS";
 const PAGE_DESCRIPTION =
   "Get a professional website with no upfront website build cost. Manifest FTS helps small businesses and nonprofits launch a modern website with hosting, support, maintenance, backups, and SSL included.";
-const OG_IMAGE = "https://www.manifestfts.com/assets/imgs/marketing/wordpress.jpg";
+const OG_IMAGE = absoluteUrl("/assets/imgs/marketing/wordpress.jpg");
 
 const testimonialHighlights = [
   {
@@ -87,11 +88,7 @@ function WordPressLandingPage() {
       "@type": "Service",
       name: "Free Website Program",
       serviceType: "Website Design, Hosting, and Ongoing Support",
-      provider: {
-        "@type": "Organization",
-        name: "Manifest FTS",
-        url: "https://www.manifestfts.com",
-      },
+      provider: { "@id": ORG_ID },
       areaServed: "US",
       url: SITE_URL,
       description: PAGE_DESCRIPTION,
@@ -111,17 +108,6 @@ function WordPressLandingPage() {
           url: SITE_URL + "#plans",
         },
       ],
-    };
-  }, []);
-
-  const organizationJsonLd = useMemo(function buildOrganizationJsonLd(): JsonLdObject {
-    return {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "Manifest FTS",
-      url: "https://www.manifestfts.com",
-      logo: "https://www.manifestfts.com/favicon.ico",
-      sameAs: [],
     };
   }, []);
 
@@ -307,37 +293,31 @@ function WordPressLandingPage() {
   return (
     <>
       <Head>
-        <title>{PAGE_TITLE}</title>
-        <meta name="description" content={PAGE_DESCRIPTION} />
-        <meta
-          name="keywords"
+        <title key="title">{PAGE_TITLE}</title>
+        <meta key="description" name="description" content={PAGE_DESCRIPTION} />
+        <meta key="keywords" name="keywords"
           content="free website, small business website, nonprofit website, managed WordPress support, website maintenance, website hosting, WordPress website plans, affordable web design"
         />
-        <meta name="robots" content="index,follow,max-image-preview:large" />
-        <meta
-          name="viewport"
+        <meta key="robots" name="robots" content="index,follow,max-image-preview:large" />
+        <meta key="viewport" name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
         />
-        <link rel="canonical" href={SITE_URL} />
+        <link key="canonical" rel="canonical" href={SITE_URL} />
 
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content={SITE_NAME} />
-        <meta property="og:title" content={PAGE_TITLE} />
-        <meta property="og:description" content={PAGE_DESCRIPTION} />
-        <meta property="og:url" content={SITE_URL} />
-        <meta property="og:image" content={OG_IMAGE} />
+        <meta key="og:type" property="og:type" content="website" />
+        <meta key="og:site_name" property="og:site_name" content={SITE_NAME} />
+        <meta key="og:title" property="og:title" content={PAGE_TITLE} />
+        <meta key="og:description" property="og:description" content={PAGE_DESCRIPTION} />
+        <meta key="og:url" property="og:url" content={SITE_URL} />
+        <meta key="og:image" property="og:image" content={OG_IMAGE} />
+        <meta key="og:image:width" property="og:image:width" content="1403" />
+        <meta key="og:image:height" property="og:image:height" content="750" />
+        <meta key="og:image:alt" property="og:image:alt" content="WordPress website managed by Manifest FTS" />
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={PAGE_TITLE} />
-        <meta name="twitter:description" content={PAGE_DESCRIPTION} />
-        <meta name="twitter:image" content={OG_IMAGE} />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd),
-          }}
-        />
+        <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
+        <meta key="twitter:title" name="twitter:title" content={PAGE_TITLE} />
+        <meta key="twitter:description" name="twitter:description" content={PAGE_DESCRIPTION} />
+        <meta key="twitter:image" name="twitter:image" content={OG_IMAGE} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

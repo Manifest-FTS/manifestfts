@@ -2,7 +2,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import MuxPlayer from "@mux/mux-player-react";
+import Image from "next/image";
+import LazyMuxPlayer from "../components/elements/LazyMuxPlayer";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import "react-modal-video/css/modal-video.css";
@@ -33,15 +34,15 @@ function Index3() {
               Your design, development, and technology partner — building and supporting applications and digital platforms as your business grows.
             </h2>
             <div className="text-body-lead-medium mt-30">
-              <a className="play-reel" onClick={() => setOpen(true)}>
+              <button type="button" className="play-reel" onClick={() => setOpen(true)}>
                 <img
                   width="55"
                   height="55"
                   src="/assets/imgs/SVG/icon-video-play.svg"
-                  alt="Play reel"
+                  alt=""
                 />
                 <div className="text-body-small text-bold">PLAY REEL</div>
-              </a>
+              </button>
             </div>
           </div>
         </section>
@@ -72,7 +73,7 @@ function Index3() {
             ].map((partner, index) => (
               <Link key={index} href={partner.href}>
                 <a className="transition transform hover:-translate-y-1 hover:shadow-lg">
-                  <img alt={partner.alt} src={partner.src} className="mx-auto" />
+                  <img loading="lazy" decoding="async" alt={partner.alt} src={partner.src} className="mx-auto" />
                 </a>
               </Link>
             ))}
@@ -158,7 +159,7 @@ function Index3() {
                 ].map((partner, index) => (
                   <Link key={index} href={partner.href}>
                     <a className="transition transform hover:-translate-y-1 hover:shadow-lg">
-                      <img alt={partner.alt} src={partner.src} className="mx-auto" />
+                      <img loading="lazy" decoding="async" alt={partner.alt} src={partner.src} className="mx-auto" />
                     </a>
                   </Link>
                 ))}
@@ -192,15 +193,22 @@ function Index3() {
 
           {/* Image Column (right on desktop, top on mobile) */}
           <div className="w-full lg:w-1/2 px-4 order-1 lg:order-2">
-            <motion.img
-              src="/assets/imgs/work/work-ozone.png"
-              alt="JoyFeed product preview"
-              className="rounded-lg w-full"
+            <motion.div
+              className="rounded-lg w-full overflow-hidden"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-            />
+            >
+              <Image
+                src="/assets/imgs/work/work-ozone.png"
+                alt="JoyFeed product preview"
+                width={1417}
+                height={1493}
+                layout="responsive"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -225,7 +233,7 @@ function Index3() {
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 mt-16">
           <div className="flex justify-center px-4">
-            <span className="bg-emerald-100 text-green-900 mr-5 px-4 py-2 rounded-full">
+            <span className="bg-emerald-100 color-green-900 mr-5 px-4 py-2 rounded-full">
               Software Solutions
             </span>
           </div>
@@ -242,10 +250,10 @@ function Index3() {
           <div className="flex justify-center">
             <div className="w-full lg:w-10/12">
               <div className="rounded-lg shadow-lg overflow-hidden img-responsive bdrd-16 effect-1">
-                <MuxPlayer
+                <LazyMuxPlayer
                   streamType="on-demand"
                   playbackId="xVEspFYOw6gtvRjEMk8xFnrjXtJ3YqGzajrvtjdV1cU"
-                  metadataVideoTitle=""
+                  metadataVideoTitle="Sanity CMS overview"
                   metadataViewerUserId=""
                   primaryColor="#FFFFFF"
                   secondaryColor="#000000"
@@ -261,23 +269,23 @@ function Index3() {
         <div className="max-w-7xl mx-auto px-4 mt-10">
           <div className="flex flex-wrap">
             <div className="w-full lg:w-1/3 px-4 mt-12">
-              <h4 className="text-2xl font-semibold">
+              <h3 className="text-2xl font-semibold">
                 Real-Time Collaboration
-              </h4>
+              </h3>
               <p className="mt-4 text-lg text-gray-600">
                 Track changes with live multi-user editing, visual cues, and communication tools.
               </p>
             </div>
             <div className="w-full lg:w-1/3 px-4 mt-12">
-              <h4 className="text-2xl font-semibold">
+              <h3 className="text-2xl font-semibold">
                 Content First Experience
-              </h4>
+              </h3>
               <p className="mt-4 text-lg text-gray-600">
                 An intuitive administrative interface that lets you edit content without software hassles.
               </p>
             </div>
             <div className="w-full lg:w-1/3 px-4 mt-12">
-              <h4 className="text-2xl font-semibold">Powerful Solution</h4>
+              <h3 className="text-2xl font-semibold">Powerful Solution</h3>
               <p className="mt-4 text-lg text-gray-600">
                 Its powerful API allows dynamic relational systems and ecommerce platforms to come to life.
               </p>

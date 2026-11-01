@@ -4,9 +4,25 @@ import { useRouter } from "next/router";
 import { useState, useEffect, useMemo } from "react";
 import dynamic from "next/dynamic";
 import { RetainerTrigger } from "../retainer";
-import logo from '/public/assets/anim/mfts-animated-logo.json';
 
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+// Load lottie and the 67KB logo animation together, off the shared bundle.
+const AnimatedLogo = dynamic(
+  () =>
+    Promise.all([
+      import("lottie-react"),
+      import("../../public/assets/anim/mfts-animated-logo.json"),
+    ]).then(([lottie, data]) => {
+      const Lottie = lottie.default;
+      const AnimatedLogoInner = (props) => <Lottie animationData={data.default} {...props} />;
+      return AnimatedLogoInner;
+    }),
+  {
+    ssr: false,
+    loading: () => (
+      <img alt="" src="/assets/imgs/logo-white.svg" width="200" height="30" className="img-fluid" style={{ maxHeight: 32 }} />
+    ),
+  }
+);
 
 const NAV_ITEMS = [
   { href: "/capabilities", label: "Capabilities" },
@@ -74,7 +90,7 @@ const Header = ({ handleOpen, headerStyle = "", isMobileMenuOpen = false }) => {
   };
 
   const retainerButtonClasses =
-    "btn site-header__cta rounded-full px-3 py-2 text-base font-bold text-white bg-emerald-600 transition-colors duration-200 hover:bg-gray-100 hover:text-emerald-600";
+    "btn site-header__cta rounded-full px-3 py-2 text-base font-bold text-white bg-emerald-700 transition-colors duration-200 hover:bg-gray-100 hover:text-emerald-600";
 
   return (
     <header id="navbar" className={headerClassName}>
@@ -103,7 +119,7 @@ const Header = ({ handleOpen, headerStyle = "", isMobileMenuOpen = false }) => {
                       style={{ maxHeight: 32 }}
                     />
                   ) : (
-                    <Lottie animationData={logo} loop={false} style={lottieStyle} />
+                    <AnimatedLogo loop={false} style={lottieStyle} />
                   )}
                 </a>
               </Link>

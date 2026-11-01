@@ -8,6 +8,7 @@ import logo from '../public/assets/anim/mfts-animated-logo.json';
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import { absoluteUrl } from "../lib/site";
 import dynamic from "next/dynamic";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -142,17 +143,20 @@ const WordPressLandingPage = () => {
   return (
     <>
       <Head>
-        <meta name="description" content="Discover managed WordPress hosting services. WordPress hosting for seamless performance, security, and uptime. Let our expert engineers optimize your website." />
-        <meta name="keywords" content="WordPress hosting, managed WordPress hosting, WordPress support, fast hosting, reliable hosting, WordPress security, performance optimization" />
-        <meta property="og:title" content="Premium WordPress Hosting | ManifestFTS" />
-        <meta property="og:description" content="Experience top-tier WordPress hosting with expert management and fast, secure, and reliable hosting services tailored to your needs." />
-        <meta property="og:image" content="URL_to_image.jpg" />
-        <meta property="og:url" content="https://yourdomain.com/wp-hosting" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Premium WordPress Hosting | ManifestFTS" />
-        <meta name="twitter:description" content="Optimized WordPress hosting for businesses and hobbyists. Scalable, secure, and managed by experts to ensure your website performs at its best." />
-        <meta name="twitter:image" content="URL_to_image.jpg" />
-        <link rel="canonical" href="https://yourdomain.com/wp-hosting" />
+        <meta key="description" name="description" content="Discover managed WordPress hosting services. WordPress hosting for seamless performance, security, and uptime. Let our expert engineers optimize your website." />
+        <meta key="keywords" name="keywords" content="WordPress hosting, managed WordPress hosting, WordPress support, fast hosting, reliable hosting, WordPress security, performance optimization" />
+        <meta key="og:title" property="og:title" content="Premium WordPress Hosting | ManifestFTS" />
+        <meta key="og:description" property="og:description" content="Experience top-tier WordPress hosting with expert management and fast, secure, and reliable hosting services tailored to your needs." />
+        <meta key="og:image" property="og:image" content={absoluteUrl("/assets/imgs/marketing/wordpress.jpg")} />
+        <meta key="og:image:width" property="og:image:width" content="1403" />
+        <meta key="og:image:height" property="og:image:height" content="750" />
+        <meta key="og:image:alt" property="og:image:alt" content="WordPress website managed by Manifest FTS" />
+        <meta key="og:url" property="og:url" content={absoluteUrl("/wordpress-hosting")} />
+        <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
+        <meta key="twitter:title" name="twitter:title" content="Premium WordPress Hosting | ManifestFTS" />
+        <meta key="twitter:description" name="twitter:description" content="Optimized WordPress hosting for businesses and hobbyists. Scalable, secure, and managed by experts to ensure your website performs at its best." />
+        <meta key="twitter:image" name="twitter:image" content={absoluteUrl("/assets/imgs/marketing/wordpress.jpg")} />
+        <link key="canonical" rel="canonical" href={absoluteUrl("/wordpress-hosting")} />
       </Head>
       <WPLanding>
         {/* Hero Section with Animated Ethereal Background */}
@@ -250,7 +254,7 @@ const WordPressLandingPage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                <h4 className="text-xl font-semibold text-dark">Starter</h4>
+                <h3 className="text-xl font-semibold text-dark">Starter</h3>
                 <p className="mt-2 text-gray-600 text-base font-bold">$39/month</p>
                 <ul className="mt-4 text-gray-600">
                   <li>1 WordPress Install</li>
@@ -276,7 +280,7 @@ const WordPressLandingPage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                <h4 className="text-xl font-semibold text-dark">Growth</h4>
+                <h3 className="text-xl font-semibold text-dark">Growth</h3>
                 <p className="mt-2 text-gray-600 text-base font-bold">$149/month</p>
                 <ul className="mt-4 text-gray-600">
                   <li>Everything in <em>Starter</em> +</li>
@@ -301,7 +305,7 @@ const WordPressLandingPage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                <h4 className="text-xl font-semibold text-dark">Enterprise</h4>
+                <h3 className="text-xl font-semibold text-dark">Enterprise</h3>
                 <p className="mt-2 text-gray-600 text-base font-bold">Custom Pricing</p>
                 <ul className="mt-4 text-gray-600">
                   <li>Everything in <em>Growth</em> +</li>
